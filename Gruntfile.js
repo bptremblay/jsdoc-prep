@@ -1,11 +1,4 @@
-/**
- * Gruntfile for validating Wayfair JS Grunt v0.4.1
- * 
- * @author Nick Dreckshage <adahodwala@csnstore.com>
- * @author Mike Ng <mng@wayfair.com>
- * @copyright 2013 Wayfair, LLC - All rights reserved
- * @version SVN: $Id$
- */
+
 
 /* global require, module */
 

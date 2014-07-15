@@ -1,5 +1,5 @@
 // ==========================================================================
-// Copyright: &copy;Wayfair LLC All rights reserved.
+// Copyright: &copy;Ben Tremblay All rights reserved.
 // ==========================================================================
 
 requirejs.config({
@@ -66,7 +66,7 @@ define([
 
     var toolChains = {};
     toolChains.pluginsToUseInHealthCheckVersionOne = new ToolChain(
-      'General Code Health Check', [
+      'General Code JsDoc Fixup', [
       'minFilter',
       'parseFilter',
       'thirdPartyFilter',
@@ -85,7 +85,7 @@ define([
       'jsBeautifyProc',
       'jsDocNameFixerProc',
       'jsDoccerProc',
-      'polyStyleProc',
+
       'parseFilter',
       'jsBeautifyProc'
     ]);
@@ -212,7 +212,7 @@ define([
 
   $('#test').on('click', function() {
     $('#results').text('twiddling...');
-    // health check recipe
+    // JsDoc Fixup recipe
 
     var processingChain = [];
     var tools = currentToolChain.tools;

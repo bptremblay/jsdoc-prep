@@ -1,6 +1,6 @@
 /**
- * @author Wayfair
- * @fileoverview Copyright(c) 2013 Wayfair, Inc., All Rights Reserved.
+ * @author Ben Tremblay
+ * @fileoverview Copyright(c) 2013 Ben Tremblay., All Rights Reserved.
  */
 define(function(){
     "use strict";

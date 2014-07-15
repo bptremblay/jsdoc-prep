@@ -2,17 +2,10 @@
  * fileSystemProcessor.js
  * 
  * @author btremblay
- * @copyright 2013 Wayfair LLC
+ * @copyright 2013 Ben Tremblay
  * @module fileSystemProcessor
  */
 
-/**
- * @class FileSystemProcessor
- * @constructor
- * @return {FileSystemProcessor}
- */
-function FileSystemProcessor() {
-}
 
 var _fs = require('fs');
 var _path = require('path');
@@ -191,7 +184,6 @@ var then = 0;
  * @function
  * @name run
  * @method run
- * @memberOf FileSystemProcessor
  */
 function run(options) {
 
@@ -259,7 +251,6 @@ function run(options) {
  * 
  * @function
  * @name getPlugins
- * @memberOf FileSystemProcessor
  * @method getPlugins
  * @return {Object} Dictionary of Plugin info. Methods are stripped, only
  *         fields are included.
@@ -286,9 +277,7 @@ function getPlugins() {
 	return output;
 }
 
-/**
- * memberOf FileSystemProcessor
- */
+
 module.exports = {
 	'run' : run,
 	'getPlugins' : getPlugins

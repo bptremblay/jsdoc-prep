@@ -2,7 +2,7 @@
  * singleFileProcessor.js Single File Processor
  * 
  * @author btremblay
- * @copyright 2013 Wayfair LLC
+ * @copyright 2013 Ben Tremblay
  * @module singleFileProcessor
  */
 
@@ -104,7 +104,7 @@ var fixJSDocFormattingProc = {
 };
 
 function createJavaClass(input, amdProcData) {
-	var exportPath = 'C:\\Users\\btremblay\\workspace\\statebaster\\src\\storefront\\modules\\';
+	var exportPath = 'statebaster\\src\\storefront\\modules\\';
 	var classFileName = input.camelName + '.java';
 
 	var packageSubpath = amdProcData.webPath;
@@ -228,11 +228,11 @@ var amdProc = {
 			// "results": {},
 			// "errors": {},
 			// "outputDirectory":
-			// "C:\\Users\\btremblay\\workspace\\js-health-check\\processed",
+			// "js-health-check\\processed",
 			// "path":
-			// "C:\\Users\\btremblay\\workspace\\js-health-check\\js_test_resources\\v2\\common\\core\\browser_utils_spec.js",
+			// "js-health-check\\js_test_resources\\v2\\common\\core\\browser_utils_spec.js",
 			// "folderPath":
-			// "C:\\Users\\btremblay\\workspace\\js-health-check\\js_test_resources\\v2\\common\\core",
+			// "js-health-check\\js_test_resources\\v2\\common\\core",
 			// "fileName": "browser_utils_spec.js",
 			// "packagePath": "\\v2\\common\\core",
 			// "libFile": false,
@@ -241,7 +241,7 @@ var amdProc = {
 			// "name": "browser_utils_spec",
 			// "camelName": "BrowserUtilsSpec",
 			// "processedFilePath":
-			// "C:\\Users\\btremblay\\workspace\\js-health-check\\processed\\v2\\common\\core\\browser_utils_spec.js",
+			// "js-health-check\\processed\\v2\\common\\core\\browser_utils_spec.js",
 			// "couldParseOriginalSource": true,
 			// "couldParseProcessedSource": true,
 			// "corrupted": false,
@@ -410,7 +410,7 @@ var jsDogProc = {
 			var jsdog = require('jsdog');
 
 			// var testFile =
-			// "C:\\Users\\btremblay\\workspace\\wayfairtoolkit\\processed\\js\\toolkit\\logger.js";
+			// "jsdoc-preptoolkit\\processed\\js\\toolkit\\logger.js";
 			var path = '';
 
 			if (WRITE_ENABLED) {
@@ -1766,77 +1766,7 @@ var jsDoccerProc = {
 		}
 };
 
-var polyStyleProc = {
-		id: 'polyStyleProc',
-		type: 'processor',
-		description: 'Runs Polystyle beautifier tool.',
-		/**
-		 * Process.
-		 * 
-		 * @name process
-		 * @method process
-		 * @param {Object}
-		 *            input
-		 * @param {Function}
-		 *            doneCallback
-		 */
-		process: function(input, doneCallback) {
-			if (input.errors[this.id] == null) {
-				input.errors[this.id] = [];
-			}
 
-			/**
-			 * Run gjs lint.
-			 * 
-			 * @name runGjsLint
-			 * @method runGjsLint
-			 * @param fileName
-			 */
-			function runPolyStyle(fileName) {
-				fileName = _path.normalize(fileName);
-
-				var exePath =
-					'\"C:\\Program Files (x86)\\Polystyle\\internal\\polystyleRunner.exe\" -integration-use-key 0001abhmbhbncihnekdphfdkfgcbhddcfegadjhpbpcnghfcbehlbbbnaghkdmfabadnaobcflcgfieeekhceffkhiebbofmchelblgmabblbpbbabdbgnegbmebabanbngiemhdenbnfkdedmdphkahgbhialaaflacgacpbfdjcfchenaheigiclhndcfifhgbbcelcmcdhnfhhlepflejdafnbkafdignadbbeacbemgedhddalcjclbodmdgfadf -polystyle-home \"C:\\Program Files (x86)\\Polystyle\" -integration-external-ide \"Eclipse SDK\" \"C:\\Program Files (x86)\\eclipse\\eclipse.exe\"';
-				// // // console.log('polystyleRunner: ' + exePath + ' <> ' +
-				// fileName);
-				var exec = require('child_process').exec;
-				var child = exec(exePath + ' ' + fileName, function(error, stdout, stderr) {
-					// if (error != null) {
-					// // console.error(stderr);
-					// error handling & exit
-					// }
-					// normal
-					// // // console.log(stdout);
-				});
-
-				/**
-				 * Handler for close event.
-				 * 
-				 * @name close
-				 * @method close
-				 * @param code
-				 */
-				child.on('close', function(code) {
-					// // // console.log('child process exited with code ' +
-					// code);
-					var source = readFile(fileName);
-					input.source = source;
-					doneCallback(input);
-				});
-			}
-
-			writeFile(input.processedFilePath, input.source);
-
-			var path = '';
-
-			if (WRITE_ENABLED) {
-				path = input.processedFilePath;
-			} else {
-				path = input.path;
-			}
-			runPolyStyle(path);
-		}
-};
 
 // read the file
 // process the file
@@ -1850,15 +1780,14 @@ var polyStyleProc = {
  */
 function test() {
 
-	var basePath = 'C:\\Users\\btremblay\\workspace\\wayfairtoolkit';
-	var inPath = 'C:\\Users\\btremblay\\workspace\\wayfairtoolkit\\includes\\js\\toolkit\\toolkit.js';
-	var outPath = 'C:\\Users\\btremblay\\workspace\\wayfairtoolkit\\processed';
-	var testPath = 'C:\\Users\\btremblay\\workspace\\wayfairtoolkit\\jstests';
-	var docPath = 'C:\\Users\\btremblay\\workspace\\wayfairtoolkit\\jsdocs';
+	var basePath = 'jsdoc-preptoolkit';
+	var inPath = 'jsdoc-preptoolkit\\includes\\js\\toolkit\\toolkit.js';
+	var outPath = 'jsdoc-preptoolkit\\processed';
+	var testPath = 'jsdoc-preptoolkit\\jstests';
+	var docPath = 'jsdoc-preptoolkit\\jsdocs';
 	processFile(basePath, inPath, outPath, testPath, docPath, [
 	                                                           // trimProc,
 	                                                           // headerProc,
-	                                                           // polyStyleProc,
 	                                                           // jsBeautifyProc,
 	                                                           // jsHintProc
 
@@ -2490,7 +2419,7 @@ function uglyDucklify(moduleName, input) {
 	}
 
 	// var duckMap =
-	// _path.normalize("C:\\Users\\btremblay\\workspace\\wayfairtoolkit\\multipage-shim\\www\\js\\wayfair\\map.json");
+	// _path.normalize("jsdoc-preptoolkit\\multipage-shim\\www\\js\\jsdoc-prep\\map.json");
 
 	// _fs.writeFileSync(duckMap, JSON.stringify(JSON.parse(result.map),
 	// null, 2));
@@ -3334,7 +3263,6 @@ var jsDoc3PrepProc = {
 var plugins = {
 		'trimProc': trimProc,
 		'headerProc': headerProc,
-		'polyStyleProc': polyStyleProc,
 		'jsBeautifyProc': jsBeautifyProc,
 		'gsLintProc': gsLintProc,
 		'jsHintProc': jsHintProc,
@@ -3373,31 +3301,3 @@ module.exports = {
 		'setWriteEnable': setWriteEnable,
 		'getAmdConfig': getAmdConfig
 };
-
-// var testDoclet = '/** @constructor Foo */';
-// var testDoclet2 = '/**\n';
-// testDoclet2 += ' * Foos the fong.\n';
-// testDoclet2 += ' * @constructor Foo\n';
-// testDoclet2 += '* @class Foo\n';
-// testDoclet2 += '*@constructor Fifi\n';
-// testDoclet2 += '*@extends Donkey\n';
-// testDoclet2 += '*@alias module:foo\n';
-// testDoclet2 += '*@description A well-defined description.\n';
-// testDoclet2 += ' * @return {Boolean} Yoda success.\n';
-// testDoclet2 += ' * @param {String} yoda The yoda.\n';
-// testDoclet2 += ' * @param {Boolean} fly Yoda flies if true.\n';
-// testDoclet2 += ' * @param el The DOM element to use.\n';
-// testDoclet2 += ' * @param {String} nickname\n';
-// testDoclet2 += ' * @param erase\n';
-// testDoclet2 += ' * \n';
-// testDoclet2 += ' * Continues to free the world.\n';
-// testDoclet2 += ' */';
-
-// var fakeEntry = {};
-// fakeEntry.results = {};
-// fakeEntry.results.amdProc = {};
-// fakeEntry.results.amdProc.requires = [];
-// // console.log(printDoclet(parseDoclet(fakeEntry, testDoclet, false, "")));
-// // console.log(printDoclet(parseDoclet(fakeEntry, testDoclet2, false, "")));
-// // console.log(printDoclet(parseDoclet(fakeEntry, '/** @lends
-// Marshmallow.prototype */', false, "")));

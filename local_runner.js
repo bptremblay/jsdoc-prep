@@ -60,18 +60,14 @@ var processingChain = [
   //'trimProc',
   'amdFilter',
   'jsBeautifyProc',
-  // 'polyStyleProc',
   'amdProc',
   'jsDoccerProc',
   'jsDocNameFixerProc',
   //'fixClassDeclarationsProc',
   'jsDoc3PrepProc',
   'trimProc',
-  'jsBeautifyProc',
-  //'esFormatterProc'
-  //'polyStyleProc'
-// 'polyStyleProc'
-];
+  'jsBeautifyProc'
+  ];
 
 var opts = {
   callBack: healthCheckCallback,
