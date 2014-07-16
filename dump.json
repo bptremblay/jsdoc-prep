@@ -1,0 +1,1650 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "Fronum",
+        "range": [
+          142,
+          148
+        ]
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    155,
+                    159
+                  ]
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "chewBakka",
+                  "range": [
+                    160,
+                    169
+                  ]
+                },
+                "range": [
+                  155,
+                  169
+                ]
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "FunctionExpression",
+                        "id": {
+                          "type": "Identifier",
+                          "name": "DonutView",
+                          "range": [
+                            206,
+                            215
+                          ]
+                        },
+                        "params": [],
+                        "defaults": [],
+                        "body": {
+                          "type": "BlockStatement",
+                          "body": [
+                            {
+                              "type": "ReturnStatement",
+                              "argument": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "Fronum",
+                                  "range": [
+                                    233,
+                                    239
+                                  ]
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "prototype",
+                                  "range": [
+                                    240,
+                                    249
+                                  ]
+                                },
+                                "range": [
+                                  233,
+                                  249
+                                ]
+                              },
+                              "range": [
+                                226,
+                                250
+                              ]
+                            }
+                          ],
+                          "range": [
+                            218,
+                            256
+                          ]
+                        },
+                        "rest": null,
+                        "generator": false,
+                        "expression": false,
+                        "range": [
+                          197,
+                          256
+                        ]
+                      },
+                      "range": [
+                        190,
+                        259
+                      ]
+                    }
+                  ],
+                  "range": [
+                    184,
+                    260
+                  ]
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  172,
+                  260
+                ]
+              },
+              "range": [
+                155,
+                260
+              ]
+            },
+            "range": [
+              155,
+              261
+            ]
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": true,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    305,
+                    309
+                  ]
+                },
+                "property": {
+                  "type": "Literal",
+                  "value": "stupidFunction",
+                  "raw": "\"stupidFunction\"",
+                  "range": [
+                    310,
+                    326
+                  ]
+                },
+                "range": [
+                  305,
+                  327
+                ]
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "VariableDeclaration",
+                      "declarations": [
+                        {
+                          "type": "VariableDeclarator",
+                          "id": {
+                            "type": "Identifier",
+                            "name": "output",
+                            "range": [
+                              352,
+                              358
+                            ]
+                          },
+                          "init": {
+                            "type": "Literal",
+                            "value": 100,
+                            "raw": "100",
+                            "range": [
+                              361,
+                              364
+                            ]
+                          },
+                          "range": [
+                            352,
+                            364
+                          ]
+                        }
+                      ],
+                      "kind": "var",
+                      "range": [
+                        348,
+                        365
+                      ]
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "UpdateExpression",
+                        "operator": "++",
+                        "argument": {
+                          "type": "Identifier",
+                          "name": "output",
+                          "range": [
+                            370,
+                            376
+                          ]
+                        },
+                        "prefix": false,
+                        "range": [
+                          370,
+                          378
+                        ]
+                      },
+                      "range": [
+                        370,
+                        379
+                      ]
+                    },
+                    {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "Identifier",
+                        "name": "output",
+                        "range": [
+                          391,
+                          397
+                        ]
+                      },
+                      "range": [
+                        384,
+                        398
+                      ]
+                    }
+                  ],
+                  "range": [
+                    342,
+                    402
+                  ]
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  330,
+                  402
+                ]
+              },
+              "range": [
+                305,
+                402
+              ]
+            },
+            "range": [
+              305,
+              403
+            ]
+          },
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "privateFunction",
+                  "range": [
+                    500,
+                    515
+                  ]
+                },
+                "init": {
+                  "type": "FunctionExpression",
+                  "id": null,
+                  "params": [
+                    {
+                      "type": "Identifier",
+                      "name": "a",
+                      "range": [
+                        528,
+                        529
+                      ]
+                    },
+                    {
+                      "type": "Identifier",
+                      "name": "b",
+                      "range": [
+                        531,
+                        532
+                      ]
+                    },
+                    {
+                      "type": "Identifier",
+                      "name": "c",
+                      "range": [
+                        534,
+                        535
+                      ]
+                    }
+                  ],
+                  "defaults": [],
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ReturnStatement",
+                        "argument": {
+                          "type": "Literal",
+                          "value": "hodag zero",
+                          "raw": "'hodag zero'",
+                          "range": [
+                            550,
+                            562
+                          ]
+                        },
+                        "range": [
+                          543,
+                          563
+                        ]
+                      }
+                    ],
+                    "range": [
+                      537,
+                      567
+                    ]
+                  },
+                  "rest": null,
+                  "generator": false,
+                  "expression": false,
+                  "range": [
+                    518,
+                    567
+                  ]
+                },
+                "range": [
+                  500,
+                  567
+                ]
+              }
+            ],
+            "kind": "var",
+            "range": [
+              496,
+              568
+            ]
+          }
+        ],
+        "range": [
+          151,
+          570
+        ]
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        133,
+        570
+      ]
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "AssignmentExpression",
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "MemberExpression",
+            "computed": false,
+            "object": {
+              "type": "Identifier",
+              "name": "Fronum",
+              "range": [
+                582,
+                588
+              ]
+            },
+            "property": {
+              "type": "Identifier",
+              "name": "prototype",
+              "range": [
+                589,
+                598
+              ]
+            },
+            "range": [
+              582,
+              598
+            ]
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "worldPuzzle",
+            "range": [
+              599,
+              610
+            ]
+          },
+          "range": [
+            582,
+            610
+          ]
+        },
+        "right": {
+          "type": "FunctionExpression",
+          "id": null,
+          "params": [
+            {
+              "type": "Identifier",
+              "name": "toothache",
+              "range": [
+                623,
+                632
+              ]
+            },
+            {
+              "type": "Identifier",
+              "name": "tomato",
+              "range": [
+                634,
+                640
+              ]
+            }
+          ],
+          "defaults": [],
+          "body": {
+            "type": "BlockStatement",
+            "body": [
+              {
+                "type": "VariableDeclaration",
+                "declarations": [
+                  {
+                    "type": "VariableDeclarator",
+                    "id": {
+                      "type": "Identifier",
+                      "name": "x",
+                      "range": [
+                        650,
+                        651
+                      ]
+                    },
+                    "init": {
+                      "type": "Literal",
+                      "value": 0,
+                      "raw": "0",
+                      "range": [
+                        654,
+                        655
+                      ]
+                    },
+                    "range": [
+                      650,
+                      655
+                    ]
+                  }
+                ],
+                "kind": "var",
+                "range": [
+                  646,
+                  656
+                ]
+              },
+              {
+                "type": "ReturnStatement",
+                "argument": {
+                  "type": "BinaryExpression",
+                  "operator": "-",
+                  "left": {
+                    "type": "Identifier",
+                    "name": "x",
+                    "range": [
+                      666,
+                      667
+                    ]
+                  },
+                  "right": {
+                    "type": "Literal",
+                    "value": 100,
+                    "raw": "100",
+                    "range": [
+                      670,
+                      673
+                    ]
+                  },
+                  "range": [
+                    666,
+                    673
+                  ]
+                },
+                "range": [
+                  659,
+                  674
+                ]
+              }
+            ],
+            "range": [
+              642,
+              676
+            ]
+          },
+          "rest": null,
+          "generator": false,
+          "expression": false,
+          "range": [
+            613,
+            676
+          ]
+        },
+        "range": [
+          582,
+          676
+        ]
+      },
+      "range": [
+        582,
+        677
+      ]
+    },
+    {
+      "type": "FunctionDeclaration",
+      "id": {
+        "type": "Identifier",
+        "name": "SecondClass",
+        "range": [
+          688,
+          699
+        ]
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [],
+        "range": [
+          702,
+          704
+        ]
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        679,
+        704
+      ]
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "AssignmentExpression",
+        "operator": "=",
+        "left": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "MemberExpression",
+            "computed": false,
+            "object": {
+              "type": "Identifier",
+              "name": "SecondClass",
+              "range": [
+                705,
+                716
+              ]
+            },
+            "property": {
+              "type": "Identifier",
+              "name": "prototype",
+              "range": [
+                717,
+                726
+              ]
+            },
+            "range": [
+              705,
+              726
+            ]
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "fixTheWorld",
+            "range": [
+              727,
+              738
+            ]
+          },
+          "range": [
+            705,
+            738
+          ]
+        },
+        "right": {
+          "type": "FunctionExpression",
+          "id": null,
+          "params": [
+            {
+              "type": "Identifier",
+              "name": "toothache",
+              "range": [
+                751,
+                760
+              ]
+            },
+            {
+              "type": "Identifier",
+              "name": "tomato",
+              "range": [
+                762,
+                768
+              ]
+            }
+          ],
+          "defaults": [],
+          "body": {
+            "type": "BlockStatement",
+            "body": [
+              {
+                "type": "ReturnStatement",
+                "argument": {
+                  "type": "Literal",
+                  "value": false,
+                  "raw": "false",
+                  "range": [
+                    781,
+                    786
+                  ]
+                },
+                "range": [
+                  774,
+                  787
+                ]
+              }
+            ],
+            "range": [
+              770,
+              789
+            ]
+          },
+          "rest": null,
+          "generator": false,
+          "expression": false,
+          "range": [
+            741,
+            789
+          ]
+        },
+        "range": [
+          705,
+          789
+        ]
+      },
+      "range": [
+        705,
+        790
+      ]
+    }
+  ],
+  "range": [
+    133,
+    790
+  ],
+  "comments": [
+    {
+      "type": "Block",
+      "value": "*\n * js_test_resources/fronum.js\n *\n * @author Fredrum <rf@monath.net>\n * @copyright JPMorgan Chase & Co. All rights reserved.\n ",
+      "range": [
+        0,
+        132
+      ]
+    },
+    {
+      "type": "Block",
+      "value": "\n   * This function is stupid.\n   ",
+      "range": [
+        264,
+        302
+      ]
+    },
+    {
+      "type": "Block",
+      "value": "*\n   * @private\n   * @param a\n   * @param b\n   * @param c\n   * @return <String>\n   ",
+      "range": [
+        406,
+        493
+      ]
+    },
+    {
+      "type": "Block",
+      "value": "*\n *\n ",
+      "range": [
+        571,
+        581
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "type": "Keyword",
+      "value": "function",
+      "range": [
+        133,
+        141
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "Fronum",
+      "range": [
+        142,
+        148
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        148,
+        149
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        149,
+        150
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        151,
+        152
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "this",
+      "range": [
+        155,
+        159
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ".",
+      "range": [
+        159,
+        160
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "chewBakka",
+      "range": [
+        160,
+        169
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "=",
+      "range": [
+        170,
+        171
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "function",
+      "range": [
+        172,
+        180
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        181,
+        182
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        182,
+        183
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        184,
+        185
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "return",
+      "range": [
+        190,
+        196
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "function",
+      "range": [
+        197,
+        205
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "DonutView",
+      "range": [
+        206,
+        215
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        215,
+        216
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        216,
+        217
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        218,
+        219
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "return",
+      "range": [
+        226,
+        232
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "Fronum",
+      "range": [
+        233,
+        239
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ".",
+      "range": [
+        239,
+        240
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "prototype",
+      "range": [
+        240,
+        249
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        249,
+        250
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        255,
+        256
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        259,
+        260
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        260,
+        261
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "this",
+      "range": [
+        305,
+        309
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "[",
+      "range": [
+        309,
+        310
+      ]
+    },
+    {
+      "type": "String",
+      "value": "\"stupidFunction\"",
+      "range": [
+        310,
+        326
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "]",
+      "range": [
+        326,
+        327
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "=",
+      "range": [
+        328,
+        329
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "function",
+      "range": [
+        330,
+        338
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        339,
+        340
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        340,
+        341
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        342,
+        343
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "var",
+      "range": [
+        348,
+        351
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "output",
+      "range": [
+        352,
+        358
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "=",
+      "range": [
+        359,
+        360
+      ]
+    },
+    {
+      "type": "Numeric",
+      "value": "100",
+      "range": [
+        361,
+        364
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        364,
+        365
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "output",
+      "range": [
+        370,
+        376
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "++",
+      "range": [
+        376,
+        378
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        378,
+        379
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "return",
+      "range": [
+        384,
+        390
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "output",
+      "range": [
+        391,
+        397
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        397,
+        398
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        401,
+        402
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        402,
+        403
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "var",
+      "range": [
+        496,
+        499
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "privateFunction",
+      "range": [
+        500,
+        515
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "=",
+      "range": [
+        516,
+        517
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "function",
+      "range": [
+        518,
+        526
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        527,
+        528
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "a",
+      "range": [
+        528,
+        529
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ",",
+      "range": [
+        529,
+        530
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "b",
+      "range": [
+        531,
+        532
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ",",
+      "range": [
+        532,
+        533
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "c",
+      "range": [
+        534,
+        535
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        535,
+        536
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        537,
+        538
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "return",
+      "range": [
+        543,
+        549
+      ]
+    },
+    {
+      "type": "String",
+      "value": "'hodag zero'",
+      "range": [
+        550,
+        562
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        562,
+        563
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        566,
+        567
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        567,
+        568
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        569,
+        570
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "Fronum",
+      "range": [
+        582,
+        588
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ".",
+      "range": [
+        588,
+        589
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "prototype",
+      "range": [
+        589,
+        598
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ".",
+      "range": [
+        598,
+        599
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "worldPuzzle",
+      "range": [
+        599,
+        610
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "=",
+      "range": [
+        611,
+        612
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "function",
+      "range": [
+        613,
+        621
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        622,
+        623
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "toothache",
+      "range": [
+        623,
+        632
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ",",
+      "range": [
+        632,
+        633
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "tomato",
+      "range": [
+        634,
+        640
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        640,
+        641
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        642,
+        643
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "var",
+      "range": [
+        646,
+        649
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "x",
+      "range": [
+        650,
+        651
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "=",
+      "range": [
+        652,
+        653
+      ]
+    },
+    {
+      "type": "Numeric",
+      "value": "0",
+      "range": [
+        654,
+        655
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        655,
+        656
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "return",
+      "range": [
+        659,
+        665
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "x",
+      "range": [
+        666,
+        667
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "-",
+      "range": [
+        668,
+        669
+      ]
+    },
+    {
+      "type": "Numeric",
+      "value": "100",
+      "range": [
+        670,
+        673
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        673,
+        674
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        675,
+        676
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        676,
+        677
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "function",
+      "range": [
+        679,
+        687
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "SecondClass",
+      "range": [
+        688,
+        699
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        699,
+        700
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        700,
+        701
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        702,
+        703
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        703,
+        704
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "SecondClass",
+      "range": [
+        705,
+        716
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ".",
+      "range": [
+        716,
+        717
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "prototype",
+      "range": [
+        717,
+        726
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ".",
+      "range": [
+        726,
+        727
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "fixTheWorld",
+      "range": [
+        727,
+        738
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "=",
+      "range": [
+        739,
+        740
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "function",
+      "range": [
+        741,
+        749
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        750,
+        751
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "toothache",
+      "range": [
+        751,
+        760
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ",",
+      "range": [
+        760,
+        761
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "tomato",
+      "range": [
+        762,
+        768
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        768,
+        769
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        770,
+        771
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "return",
+      "range": [
+        774,
+        780
+      ]
+    },
+    {
+      "type": "Boolean",
+      "value": "false",
+      "range": [
+        781,
+        786
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        786,
+        787
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        788,
+        789
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        789,
+        790
+      ]
+    }
+  ],
+  "errors": []
+}
