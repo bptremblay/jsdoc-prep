@@ -9,7 +9,7 @@
 
 var _fs = require('fs');
 var _path = require('path');
-//var _requirejs = require('requirejs');
+// var _requirejs = require('requirejs');
 var _wrench = require('wrench');
 var _minimatch = require('minimatch');
 
@@ -108,8 +108,16 @@ function nextFile() {
 				delete result.undoBuffer;
 				result.source = result.rawSource;
 				delete result.rawSource;
-				sfp.writeFile(resultsPath + '/' + result.packagePath + '/'
-						+ result.fileName + '.json', JSON.stringify(result,
+				var resultsPathFile = ''; 
+				if (result.packagePath.length === 0){
+					resultsPathFile = resultsPath + '/' + result.fileName + '.json';
+				}
+				else{
+					resultsPathFile = resultsPath + '/' + result.packagePath + '/' + result.fileName + '.json';
+				}
+				//console.warn(result);
+				//console.warn(result.fileName);
+				sfp.writeFile(resultsPathFile, JSON.stringify(result,
 						null, 2));
 
 				// queue = [];
@@ -135,41 +143,16 @@ function nextFile() {
 					resultsBlock.resultsPath = resultsPath;
 
 					sfp.setWriteEnable(true);
-					sfp.writeFile(resultsPath + '/health-check.json', JSON
+					sfp.writeFile(resultsPath + '/jsdoc-prep.json', JSON
 							.stringify(resultsBlock, null, 2));
 
 					if (cb != null) {
 						cb(resultsBlock);
 					}
 
-					//console.log(JSON.stringify(sfp.getAmdConfig(), null, 2));
+					// console.log(JSON.stringify(sfp.getAmdConfig(), null, 2));
 
-					if (false) {
-						var yuidoc = require('yuidocjs');
-						var options = {
-							'linkNatives' : 'true',
-							'attributesEmit' : 'true',
-							'selleck' : 'true',
-							paths : [ outPath ],
-							outdir : docPath
-						};
-
-						try {
-							var yd = new yuidoc.YUIDoc(options);
-							var json = yd.run();
-
-							var builder = new yuidoc.DocBuilder(options, json);
-
-							builder.compile(function() {
-								var endtime = (new Date).getTime();
-								console.log('Completed in '
-										+ ((endtime - starttime) / 1000)
-										+ ' seconds', 'info', 'yuidoc');
-							});
-						} catch (e) {
-							console.error(e);
-						}
-					}
+					
 				}
 			}, WRITE_NEW_FILES);
 }
@@ -207,7 +190,7 @@ function run(options) {
 		}
 		return output;
 	}
-	// console.warn(options);
+	//console.warn(options);
 	cb = options.callBack;
 	SCAN_PATH = options.scanPath;
 	outPath = options.writePath;
@@ -235,7 +218,7 @@ function run(options) {
 
 		if (stat.isFile() && (path.indexOf('.js') != -1)) {
 			if (_path.extname(path) === ".js") {
-				//console.log(path);
+					//console.log(path);
 				queue.push(path);
 			}
 		}
@@ -246,14 +229,14 @@ function run(options) {
 }
 
 /**
- * Gets the plugins exposed via singleFileProcessor. NOTE: There's no reason
- * why we can't expose plugins that are imported from other files, too.
+ * Gets the plugins exposed via singleFileProcessor. NOTE: There's no reason why
+ * we can't expose plugins that are imported from other files, too.
  * 
  * @function
  * @name getPlugins
  * @method getPlugins
- * @return {Object} Dictionary of Plugin info. Methods are stripped, only
- *         fields are included.
+ * @return {Object} Dictionary of Plugin info. Methods are stripped, only fields
+ *         are included.
  */
 function getPlugins() {
 	var output = {};
@@ -280,5 +263,6 @@ function getPlugins() {
 
 module.exports = {
 	'run' : run,
-	'getPlugins' : getPlugins
+	'getPlugins' : getPlugins,
+	'rimraf': require('rimraf')
 };

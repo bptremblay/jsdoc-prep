@@ -3,26 +3,25 @@ var fs = require('fs');
 var healthCheck = require('./fileSystemProcessor');
 var rimraf = require('rimraf');
 //
-var outPath = 'C:\\Users\\btremblay\\workspace\\js-health-check\\processed';
-var testPath = 'C:\\Users\\btremblay\\workspace\\js-health-check\\jstests';
-var docPath = 'C:\\Users\\btremblay\\workspace\\js-health-check\\jsdocs';
-var resultsPath = 'C:\\Users\\btremblay\\workspace\\js-health-check\\results';
-var scanPath = 'D:\\code\\resources\\st4\\includes\\js\\amd_modules';
+var outPath = 'processed';
+var testPath = 'jstests';
+var docPath = 'jsdocs';
+var resultsPath = 'results';
+var scanPath = 'test';
 
-// var scanPath = 'C:\\Users\\btremblay\\workspace\\Html5Charting\\src\\js';
 
 function healthCheckCallback(healthCheckResults) {
   console.log('ALL DONE');
 
   function runJsDoc(sourceDirectory) {
-    rimraf('/Users/btremblay/workspace/js-health-check/jsdocs', function() {
+    rimraf('/Users/f558910/workspace/jsdoc-prep/jsdocs', function() {
       // sourceDirectory = path.normalize(sourceDirectory);
       var exePath = path.normalize('jsdoc');
       // console.warn('runJsDoc: ' + exePath + ' <> ' + sourceDirectory);
-      // $ jsdoc -r -l -d ~/workspace/js-health-check/out
-      // ~/workspace/js-health-check/processed/framework
+      // $ jsdoc -r -l -d ~/workspace/jsdoc-prep/out
+      // ~/workspace/jsdoc-prep/processed/framework
       var exec = require('child_process').exec;
-      var cmdLine = exePath + ' -r -l -d /Users/btremblay/workspace/js-health-check/jsdocs '
+      var cmdLine = exePath + ' -r -l -d /Users/f558910/workspace/jsdoc-prep/jsdocs '
           + sourceDirectory + '';
       console.log(cmdLine);
 
@@ -46,7 +45,7 @@ function healthCheckCallback(healthCheckResults) {
     });
   }
 
-  runJsDoc('/Users/btremblay/workspace/js-health-check/processed');
+  runJsDoc('/Users/f558910/workspace/jsdoc-prep/processed');
 }
 
 

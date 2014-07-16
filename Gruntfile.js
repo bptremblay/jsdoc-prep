@@ -1,5 +1,4 @@
 
-
 /* global require, module */
 
 var _ = require('underscore');
@@ -13,10 +12,10 @@ var _ = require('underscore');
 module.exports = function(grunt) {
 	'use strict';
 
-	var myPath = 'js_test_resources';
-	var outputPath = 'processed';
-	var reportPath = 'results';
-	var docPath = reportPath + '/doc';
+	var myPath = 'test-source';
+	var outputPath = 'test-output';
+	var reportPath = 'test-results';
+	var docPath = 'test-jsdocs';
 	var myFiles = [ myPath + '/**/*.js' ];
 	var myProcessedFiles = [ outputPath + '/**/*.js' ];
 
@@ -98,66 +97,66 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('beautify', [ 'jsbeautifier' ]);
 	grunt
-			.registerTask(
-					'doc',
-					function() {
-						var config = grunt.config('doc');
-						var path = require('path');
-						var fs = require('fs');
-						var rimraf = require('rimraf');
-						var outPath = config.outPath;
-						var docPath = config.docPath;
-						docPath = path.resolve(docPath);
-						docPath = path.normalize(docPath);
-						var USE_HARUKI = false;
+	.registerTask(
+			'doc',
+			function() {
+				var config = grunt.config('doc');
+				var path = require('path');
+				var fs = require('fs');
+				var rimraf = require('rimraf');
+				var outPath = config.outPath;
+				var docPath = config.docPath;
+				//docPath = path.resolve(docPath);
+				//docPath = path.normalize(docPath);
+				var USE_HARUKI = false;
 
-						function runJsDoc(gruntInstance, sourceDirectory) {
-							var done = gruntInstance.async();
-							rimraf(
-									docPath,
-									function() {
-										var exePath = path
-												.normalize('node_modules/.bin/jsdoc');
-										var exec = require('child_process').exec;
-										// var cmdLine = exePath + ' -r -l -t
-										// templates/default -d ' + docPath +
-										// ' ' + sourceDirectory + '';
-										// // console.log(cmdLine);
-										var cmdLine = exePath;
+				function runJsDoc(gruntInstance, sourceDirectory) {
+					var done = gruntInstance.async();
+					rimraf(
+							docPath,
+							function() {
+								var exePath = path
+								.normalize('node_modules/.bin/jsdoc');
+								var exec = require('child_process').exec;
+								// var cmdLine = exePath + ' -r -l -t
+								// templates/default -d ' + docPath +
+								// ' ' + sourceDirectory + '';
+								// // console.log(cmdLine);
+								var cmdLine = exePath;
 
-										if (USE_HARUKI) {
-											cmdLine += ' -r -l -t templates/haruki -d console -q format=json'
-													+ ' '
-													+ sourceDirectory
-													+ '';
-										} else {
-											cmdLine += ' -r -l -d ' + docPath
-													+ ' ' + sourceDirectory
-													+ '';
-										}
+								if (USE_HARUKI) {
+									cmdLine += ' -r -l -t templates/haruki -d console -q format=json'
+										+ ' '
+										+ sourceDirectory
+										+ '';
+								} else {
+									cmdLine += ' -r -l -d ' + docPath
+									+ ' ' + sourceDirectory
+									+ '';
+								}
 
-										console.log(cmdLine);
-										var child = exec(cmdLine, function(
-												error, stdout, stderr) {
+								console.log(cmdLine);
+								var child = exec(cmdLine, function(
+										error, stdout, stderr) {
 
-											// normal
-											// console.log(stdout);
-											console.error(stderr);
+									// normal
+									// console.log(stdout);
+									console.error(stderr);
+								});
+								child
+								.on(
+										'close',
+										function(code) {
+											console
+											.log('child process exited with code '
+													+ code);
+											done();
 										});
-										child
-												.on(
-														'close',
-														function(code) {
-															console
-																	.log('child process exited with code '
-																			+ code);
-															done();
-														});
-									});
-						}
+							});
+				}
 
-						runJsDoc(this, outPath);
-					});
+				runJsDoc(this, outPath);
+			});
 
 	grunt.registerTask('prepForJsDoc', function() {
 
@@ -175,34 +174,35 @@ module.exports = function(grunt) {
 		var scanPath = config.scanPath;
 		// 'jsDoccerProc',
 		var processingChain = [
-		// 'thirdPartyFilter',
-		// 'minFilter',
-		'badCharactersProc',
-		// //'amdFilter',
-		// 'jsBeautifyProc',
-		'amdProc', 
-		'jsDoccerProc', 'jsBeautifyProc',
-		// 'jsDocNameFixerProc',
-		// BPT
-		'jsDoc3PrepProc', 'jsBeautifyProc'
-		// 'fixJSDocFormattingProc',
-		// 'generateJavaProc',
-		// 'jsBeautifyProc'
-		];
+		                       // 'thirdPartyFilter',
+		                       // 'minFilter',
+		                       'badCharactersProc',
+		                       //'amdFilter',
+		                       'jsBeautifyProc', 'amdProc',
+		                       'jsDoccerProc', 
+		                       'jsBeautifyProc',
+		                       //'jsDocNameFixerProc',
+		                       //		// BPT
+		                       //'jsDoc3PrepProc', 
+		                       'jsBeautifyProc',
+		                       'fixJSDocFormattingProc',
+		                       //'generateJavaProc',
+		                       'jsBeautifyProc'
+		                       ];
 
 		// var processingChain = ['amdProc'];
 
 		var done = this.async();
 
 		var opts = {
-			callBack : done,
-			scanPath : scanPath,
-			writePath : outPath,
-			writeTestPath : testPath,
-			writeDocPath : docPath,
-			writeResultsPath : resultsPath,
-			writeEnable : true,
-			processingChain : processingChain
+				callBack : done,
+				scanPath : scanPath,
+				writePath : outPath,
+				writeTestPath : testPath,
+				writeDocPath : docPath,
+				writeResultsPath : resultsPath,
+				writeEnable : true,
+				processingChain : processingChain
 		};
 
 		rimraf(outPath, function() {
@@ -302,303 +302,9 @@ module.exports = function(grunt) {
 
 	var firstDoclet = null;
 
-	function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode) {
 
-		var commentBuffer = '';
-		var docletData = {};
-		docletData.params = [];
 
-		if (nextLineOfCode.indexOf('.extend') !== -1) {
-			var splitCode = nextLineOfCode.split('.extend');
-			var leftOfExtend = splitCode[0].trim();
-			var rightOfExtend = splitCode[1].trim();
-			var leftOfEquals = '';
-			var rightOfEquals = '';
 
-			if (leftOfExtend.indexOf('=') != -1) {
-				// var OptionImageCollection,Backbone.Collection,(
-				// var OptionImageModel,Backbone.Model,(
-				// $.wf.ProductModel,ProductChildModel,(
-				leftOfEquals = leftOfExtend.split('=')[0].trim();
-				rightOfEquals = leftOfExtend.split('=')[1].trim();
-
-				if (leftOfEquals.indexOf('var ') !== -1) {
-					leftOfEquals = leftOfEquals.split('var ')[1].trim();
-				}
-				// // console.warn("AUGMENTS >>>>>>>>" + leftOfEquals + "," +
-				// rightOfEquals + "," + rightOfExtend);
-				docletData['@augments'] = rightOfEquals;
-			} else {
-				// $,(ProductValidator.prototype,
-				if (rightOfExtend.indexOf('(') !== -1) {
-					rightOfExtend = rightOfExtend.substring(1);
-				}
-
-				if (rightOfExtend.indexOf(',') !== -1) {
-					rightOfExtend = rightOfExtend.split(',')[0].trim();
-				}
-				docletData['@augments'] = rightOfExtend;
-				// // console.warn("AUGMENTS >>>>>>>>" + leftOfExtend + "," +
-				// rightOfExtend);
-			}
-
-			// $.wf.QuickShipOptions = Backbone.View.extend(
-			// // console.warn(" AUGMENTS >>>>>>>>>>>>>>>>>" + nextLineOfCode);
-		}
-
-		if (firstDoclet == null) {
-			firstDoclet = docletData;
-		}
-
-		// if (defineModuleInTopOfFile) {
-		docletData.requiresList = []; // input.results.amdProc.requires;
-		// }
-		docletData.moduleName = input.name;
-		docletData.camelName = camelize(input.name); // input.camelName;
-
-		if (doclet.indexOf('/**') === -1 || doclet.indexOf('*/') === -1) {
-			// console.error('parseDoclet FORMAT ERROR: ' + doclet);
-			return doclet;
-		}
-
-		// strip comment tags
-		var chunker = doclet.split('/**')[1];
-		chunker = chunker.split('*/')[0];
-		// // // console.log(chunker);
-		var lines = chunker.split('\n');
-		var index = 0;
-		var linesLength = lines.length;
-		var currentTag = '';
-
-		for (index = 0; index < linesLength; index++) {
-			var line = lines[index].trim();
-
-			if (line.length === 0) {
-				continue;
-			}
-
-			if (line.indexOf('*') === 0) {
-				// strip the comment star
-				line = line.substring(1).trim();
-			} else {
-				// // console.warn('parseDoclet: a line did not begin with * ' +
-				// line);
-			}
-
-			// FIXME: concatenate text in multiple lines under a tag (don't
-			// trucate
-			// text to the line)
-			if (line.indexOf('@') === 0) {
-				// it's a jsDoc comment
-				var tag = line.split(' ')[0];
-				tag = tag.split('@')[1];
-				var tagData = line.split(' ');
-				tagData.shift();
-
-				if (tag === 'param') {
-					var paramDescription = '';
-					var paramChunk = tagData[0].trim();
-					var paramName = '';
-					var paramType = '';
-
-					if (paramChunk.indexOf('{') === 0) {
-						paramType = paramChunk;
-						paramName = tagData[1].trim();
-						tagData.shift();
-						tagData.shift();
-					} else {
-						paramName = paramChunk;
-						tagData.shift();
-					}
-					paramDescription = tagData.join(' ').trim();
-
-					docletData.params.push({
-						name : paramName,
-						type : paramType,
-						description : paramDescription
-					});
-				}
-				// else if (tag === 'requires') {
-				// var paramDescription = '';
-				// var paramChunk = tagData[0].trim();
-				// var paramName = '';
-				// var paramType = '';
-				//
-				// if (paramChunk.indexOf('{') === 0) {
-				// paramType = paramChunk;
-				// paramName = tagData[1].trim();
-				// tagData.shift();
-				// tagData.shift();
-				// } else {
-				// paramName = paramChunk;
-				// tagData.shift();
-				// }
-				// paramDescription = tagData.join(' ').trim();
-				//
-				// docletData.requires.push({
-				// name: paramName,
-				// type: paramType,
-				// description: paramDescription
-				// });
-				// }
-				else {
-					docletData['@' + tag] = tagData.join(' ').trim();
-					currentTag = tag;
-				}
-			} else {
-				// it's a freeform description comment... who owns it?
-				commentBuffer += ' ' + line.trim();
-				commentBuffer = commentBuffer.trim();
-			}
-		}
-		docletData['freeText'] = commentBuffer.trim();
-
-		var nodeType = 'NONFUNCTION';
-
-		if (docletData['@constructor'] != null) {
-			nodeType = 'CLASS';
-		}
-
-		if (docletData['@class'] != null) {
-			nodeType = 'CLASS';
-		}
-
-		if (docletData['@constructor'] != null
-				&& docletData['@constructor'].length > 0) {
-			docletData['className'] = docletData['@constructor'];
-		} else if (docletData['@class'] != null
-				&& docletData['@class'].length > 0) {
-			docletData['constructor'] = docletData['@class'];
-			docletData['className'] = docletData['@class'];
-			delete docletData['@class'];
-		}
-
-		if (docletData['className'] != null
-				&& docletData['className'].length > 0) {
-			if (docletData['@name'] != null && docletData['@name'].length > 0) {
-				docletData['className'] = docletData['@class'];
-			}
-			nodeType = 'CLASS';
-		}
-
-		if (docletData['@exports'] != null || docletData['@module'] != null) {
-			nodeType = 'MODULE';
-		} else if (docletData['@lends'] != null) {
-			nodeType = 'LENDS';
-		} else if (docletData['@var'] != null) {
-			nodeType = 'VAR';
-		} else if (docletData['@type'] != null) {
-			nodeType = 'VAR';
-		}
-		docletData.nodeType = nodeType;
-		// // console.log(JSON.stringify(docletData));
-		return docletData;
-	}
-
-	/**
-	 * Get last js doc comment.
-	 * 
-	 * @name getLastJsDocComment
-	 * @method getLastJsDocComment
-	 * @param {Object}
-	 *            inputObject
-	 * @param linesIn
-	 * @param lineNumber
-	 * @return {Object}
-	 */
-	function getLastJsDocComment(inputObject, lines, lineNumber) {
-		var comments = {};
-		comments.code = '';
-		// lineNumber is line of the function... so scan up!
-		var jsDoc = false;
-		var start = -1;
-		var end = -1;
-		var inside = false;
-
-		// lineNumber is 1-based, so subtract 2
-		for (var index = (lineNumber - 2); index > -1; index--) {
-			var line = lines[index].trim();
-
-			// whitespace, comment parts, or something esle
-			if (line.length === 0) {
-				// ignore
-				continue;
-			} else if (line.indexOf('/*') === 0 && line.indexOf('*/') !== -1) {
-				// beginning
-				start = index;
-				end = index;
-				jsDoc = line.indexOf('/**') !== -1;
-				comments.start = start;
-				comments.end = end;
-				comments.jsDoc = jsDoc;
-				break;
-				// // console.log(comments);
-				break;
-			} else if (line.indexOf('*/') === 0) {
-				// end
-				end = index;
-				inside = true;
-			} else if (line.indexOf('/**') === 0) {
-				// beginning
-				start = index;
-				jsDoc = true;
-				comments.start = start;
-				comments.end = end;
-				comments.jsDoc = jsDoc;
-				// // console.log(comments);
-				break;
-			} else if (line.indexOf('/*') === 0) {
-				// beginning of a non-doc comment
-				start = index;
-				jsDoc = false;
-				comments.start = start;
-				comments.end = end;
-				comments.jsDoc = jsDoc;
-				// // console.log(comments);
-				break;
-			} else if (line.indexOf('*') === 0) {
-				// inside a comment if already inside a comment
-				if (inside) {
-					continue;
-				} else {
-					// console.warn('getLastJsDocComment: ' + inputObject.module
-					// + ',
-					// (line.indexOf(' * ') === 0) ' + line + ', ' +
-					// inputObject.namem +
-					// ', ' + lineNumber);
-					break;
-				}
-			} else if (line.indexOf('//') === 0) {
-				// one line comment
-				// TODO: capture this?
-				continue;
-			} else {
-				// something else, like code... stop
-				if (inside) {
-					continue;
-				} else {
-					// console.warn('getLastJsDocComment: ' + inputObject.module
-					// + ', line
-					// is something else: ' + line + ', ' + inputObject.name +
-					// ', ' +
-					// lineNumber);
-					break;
-				}
-			}
-		}
-
-		if (comments.start > -1 && comments.end > -1) {
-			var temp = [];
-
-			for (var x = start; x < end + 1; x++) {
-				temp.push(lines[x].trim());
-			}
-			// // console.log(temp.join(''));
-			comments.code = temp.join('\n').trim();
-			// // console.log(comments.code);
-		}
-		return comments;
-	}
 
 	/**
 	 * Camelize.
@@ -659,14 +365,14 @@ module.exports = function(grunt) {
 	// grunt.registerTask('default', ['prepForJsDoc']);
 
 	//grunt.registerTask('default', [ 'prepForJsDoc', 'beautify', 'doc' ]);
-	grunt.registerTask('default', [  'prepForJsDoc', 'beautify', 'doc' ]);
+	grunt.registerTask('default', [ 'prepForJsDoc', 'beautify' ]);
 	grunt.loadNpmTasks('grunt-node-inspector');
 	grunt.loadNpmTasks('grunt-fixmyjs');
-	grunt.loadNpmTasks('grunt-githooks');
-	grunt.loadNpmTasks('grunt-dependo');
+	//grunt.loadNpmTasks('grunt-githooks');
+	//grunt.loadNpmTasks('grunt-dependo');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-jsbeautifier');
-	grunt.loadNpmTasks('grunt-contrib-jasmine');
-	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-plato');
+	//	grunt.loadNpmTasks('grunt-contrib-jasmine');
+	//	grunt.loadNpmTasks('grunt-contrib-connect');
+	//	grunt.loadNpmTasks('grunt-plato');
 };

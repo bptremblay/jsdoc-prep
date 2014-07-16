@@ -1,0 +1,169 @@
+{
+  "results": [
+    {
+      "results": {
+        "amdProc": {
+          "requires": [],
+          "moduleName": "doclet",
+          "AMD": false,
+          "webPath": ""
+        }
+      },
+      "errors": {
+        "thirdPartyFilter": [],
+        "minFilter": [],
+        "badCharactersProc": [
+          {
+            "id": "(error)",
+            "raw": "Bad character(s) found.",
+            "code": "wfBC",
+            "evidence": "",
+            "line": -1,
+            "character": -1,
+            "scope": "(main)",
+            "a": "",
+            "reason": "Bad character(s) found: ''\\t''."
+          }
+        ],
+        "jsBeautifyProc": [],
+        "jsDoccerProc": [
+          {
+            "id": "(error)",
+            "raw": "No jsDoc Comments for method 'chewBakka'.",
+            "code": "wfJD",
+            "evidence": "this.chewBakka = function() {",
+            "line": 9,
+            "character": -1,
+            "scope": "(main)",
+            "a": "",
+            "reason": "No jsDoc Comments for method 'chewBakka'."
+          }
+        ],
+        "fixJSDocFormattingProc": []
+      },
+      "outputDirectory": "test-output",
+      "path": "test-source/doclet.js",
+      "folderPath": "test-source",
+      "fileName": "doclet.js",
+      "packagePath": "",
+      "webPath": "",
+      "libFile": false,
+      "min": false,
+      "realName": "doclet",
+      "name": "doclet",
+      "camelName": "Doclet",
+      "processedFilePath": "test-output/doclet.js",
+      "couldParseOriginalSource": true,
+      "jsDoccerProcData": {
+        "lines": 22,
+        "requires": [],
+        "className": "Doclet",
+        "packagePath": "",
+        "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output",
+        "uses_Y": false,
+        "no_lib": true,
+        "inferencedClassName": "Doclet",
+        "uses_$": false,
+        "chars": 282,
+        "uses_YUI": false,
+        "fields": [],
+        "moduleName": "doclet",
+        "uses_console_log": false,
+        "uses_backbone": false,
+        "classes": {
+          "Fronum": {
+            "name": "Fronum",
+            "visibility": "public",
+            "constructor": true,
+            "static": false,
+            "lineNumber": 7,
+            "memberOf": "",
+            "args": [],
+            "return": "void",
+            "classDeclarationFlag": true,
+            "line": "function Fronum() {"
+          }
+        },
+        "methods": [
+          {
+            "name": "Fronum",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 7,
+            "memberOf": "",
+            "originalJsDocDescription": {
+              "copyright": {
+                "name": "JPMorgan",
+                "type": "",
+                "description": "Chase & Co. All rights reserved.",
+                "attribute": "copyright"
+              },
+              "author": {
+                "name": "",
+                "type": "",
+                "description": "Fredrum <rf@monath.net>",
+                "attribute": "author"
+              },
+              "description": " * js_test_resources/fronum.js"
+            },
+            "args": [],
+            "description": " * Fronum.",
+            "return": "void",
+            "classDeclarationFlag": false,
+            "line": "function Fronum() {"
+          },
+          {
+            "name": "chewBakka",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 9,
+            "memberOf": "this",
+            "originalJsDocDescription": {},
+            "args": [],
+            "description": " * Chew bakka.",
+            "return": "void",
+            "classDeclarationFlag": false,
+            "line": "this.chewBakka = function() {"
+          },
+          {
+            "name": "chonkey",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 19,
+            "params": " * @param toothache\n * @param tomato",
+            "memberOf": "Fronum.prototype",
+            "originalJsDocDescription": {
+              "description": " *"
+            },
+            "args": [
+              "toothache",
+              "tomato"
+            ],
+            "description": " * Chonkey.",
+            "return": "void",
+            "classDeclarationFlag": false,
+            "line": "Fronum.prototype.chonkey = function(toothache, tomato) {"
+          }
+        ],
+        "is_module": false,
+        "uses_alert": false,
+        "uses_y_log": false,
+        "requiresRaw": [],
+        "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output",
+        "fileName": "doclet.js",
+        "strict": false
+      },
+      "possibleClassname": "Fronum",
+      "testStubs": "\n\n",
+      "couldParseProcessedSource": true,
+      "corrupted": false,
+      "numberOfLines": 26
+    }
+  ],
+  "path": "test-source",
+  "timeInSeconds": 0.253,
+  "outPath": "test-output",
+  "testPath": "test-jstests",
+  "docPath": "test-jsdocs",
+  "resultsPath": "test-results"
+}

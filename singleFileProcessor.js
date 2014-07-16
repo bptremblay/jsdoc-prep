@@ -85,7 +85,7 @@ var fixJSDocFormattingProc = {
 			if (input.errors[this.id] == null) {
 				input.errors[this.id] = [];
 			}
-			// console.log('fixJSDocFormattingProc ' + input.name);
+			console.log('fixJSDocFormattingProc ' + input.name);
 			var fixJSDocFormattingResult = input.source;
 			// writeFile(input.processedFilePath + ".test.js", input.source);
 			try{
@@ -228,11 +228,11 @@ var amdProc = {
 			// "results": {},
 			// "errors": {},
 			// "outputDirectory":
-			// "js-health-check\\processed",
+			// "jsdoc-prep\\processed",
 			// "path":
-			// "js-health-check\\js_test_resources\\v2\\common\\core\\browser_utils_spec.js",
+			// "jsdoc-prep\\js_test_resources\\v2\\common\\core\\browser_utils_spec.js",
 			// "folderPath":
-			// "js-health-check\\js_test_resources\\v2\\common\\core",
+			// "jsdoc-prep\\js_test_resources\\v2\\common\\core",
 			// "fileName": "browser_utils_spec.js",
 			// "packagePath": "\\v2\\common\\core",
 			// "libFile": false,
@@ -241,7 +241,7 @@ var amdProc = {
 			// "name": "browser_utils_spec",
 			// "camelName": "BrowserUtilsSpec",
 			// "processedFilePath":
-			// "js-health-check\\processed\\v2\\common\\core\\browser_utils_spec.js",
+			// "jsdoc-prep\\processed\\v2\\common\\core\\browser_utils_spec.js",
 			// "couldParseOriginalSource": true,
 			// "couldParseProcessedSource": true,
 			// "corrupted": false,
@@ -263,36 +263,6 @@ var amdProc = {
 			console.warn("convert DONE");
 			// // // console.log(JSON.stringify(converted));
 
-			// {
-			// "callsYuiApi": false,
-			// "rawSource":
-			// "define( ['browser_utils'], function(browser_utils) {\r\n
-			// describe('browser_utils_spec', function(){\r\n
-			// describe('OpenPopup',
-			// function() {\r\n });\r\n\r\n describe('CreateBookmarkLink',
-			// function()
-			// {\r\n
-			// });\r\n });\r\n});",
-			// "name": "browser_utils_spec",
-			// "isShim": false,
-			// "min": false,
-			// "path":
-			// "C:/Users/btremblay/workspace/js-health-check/js_test_resources/v2/common/core/browser_utils_spec.js",
-			// "isModule": true,
-			// "isMain": false,
-			// "requires": ["'browser_utils'"],
-			// "source":
-			// "define(\"browser_utils_spec\", ['browser_utils'],
-			// function(browser_utils)
-			// {\r\n describe('browser_utils_spec', function(){\r\n
-			// describe('OpenPopup',
-			// function() {\r\n });\r\n\r\n describe('CreateBookmarkLink',
-			// function()
-			// {\r\n
-			// });\r\n });\r\n});",
-			// "libFile": false,
-			// "realName": "browser_utils_spec"
-			// }
 
 			function fixRequires(inputArray) {
 				var result = [];
@@ -1865,6 +1835,7 @@ function setWriteEnable(val) {
  */
 
 function processFile(baseDirectory, filePathName, outputDirectory,testDirectory, docDirectory, processorChain, completionCallback,writeEnable) {
+	var pathDelim = filePathName.indexOf('/') == -1 ? '\\' : '/';
 	WRITE_ENABLED = writeEnable = writeEnable != null ? writeEnable : false;
 	finishedProcessingChain = _finishedProcessingChain;
 	// // // console.log(filePathName);
@@ -1887,13 +1858,19 @@ function processFile(baseDirectory, filePathName, outputDirectory,testDirectory,
 	safeCreateDir(testDirectory);
 	safeCreateDir(docDirectory);
 	safeCreateDir(outputDirectory);
-	var wholePath = filePathName.split('\\');
+	var wholePath = filePathName.split(pathDelim);
 	var fileName = wholePath.pop();
-	wholePath = wholePath.join('\\');
+	wholePath = wholePath.join(pathDelim);
 	output.folderPath = wholePath;
 	output.fileName = fileName;
 	output.packagePath = wholePath.substring(baseDirectory.length);
-	output.webPath = output.packagePath.split('\\').join('/');
+	if (pathDelim === '\\'){
+		output.webPath = output.packagePath.split('\\').join('/');
+	}
+	else{
+		output.webPath = output.packagePath;
+	}
+	
 	var outputSourceDir = _path.normalize(outputDirectory + '/'
 			+ output.packagePath);
 	safeCreateDir(outputSourceDir);
@@ -2435,9 +2412,10 @@ function uglyDucklify(moduleName, input) {
 var modules = {};
 
 function convert(input, filePathname) {
-	var wholePath = filePathname.split('\\');
+	var pathDelim = filePathname.indexOf('/') == -1 ? '\\' : '/';
+	var wholePath = filePathname.split(pathDelim);
 	wholePath.pop();
-	wholePath = wholePath.join('\\');
+	wholePath = wholePath.join(pathDelim);
 	var temp = trim(input);
 
 	var moduleName = '?';
@@ -2457,7 +2435,10 @@ function convert(input, filePathname) {
 	// // // console.log(filePathname);
 	// filePathname = filePathname.split("newcore\\")[1];
 	// // // console.log(filePathname);
-	filePathname = filePathname.split('\\').join('/');
+	if (pathDelim === '\\'){
+		filePathname = filePathname.split('\\').join('/');
+	}
+	
 	// // // console.log(filePathname);
 	output.path = filePathname;
 
