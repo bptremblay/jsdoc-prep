@@ -1,0 +1,180 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "status_code_mapper",
+      "AMD": true,
+      "webPath": "/src/dashboard/js/service"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'StatusCodeMapper'.",
+        "code": "wfJD",
+        "evidence": "return function StatusCodeMapper(settings) {",
+        "line": 1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'StatusCodeMapper'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setLang'.",
+        "code": "wfJD",
+        "evidence": "this.setLang = function(lang) {",
+        "line": 450,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setLang'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getLang'.",
+        "code": "wfJD",
+        "evidence": "this.getLang = function() {",
+        "line": 456,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getLang'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getAccountsMessage'.",
+        "code": "wfJD",
+        "evidence": "this.getAccountsMessage = function(name, lang) {",
+        "line": 460,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getAccountsMessage'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/dashboard/js/service/statusCodeMapper.js",
+  "folderPath": "test-source/src/dashboard/js/service",
+  "fileName": "statusCodeMapper.js",
+  "packagePath": "/src/dashboard/js/service",
+  "webPath": "/src/dashboard/js/service",
+  "libFile": false,
+  "min": false,
+  "realName": "status_code_mapper",
+  "name": "status_code_mapper",
+  "camelName": "StatusCodeMapper",
+  "processedFilePath": "test-output/src/dashboard/js/service/statusCodeMapper.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 472,
+    "requires": [],
+    "className": "StatusCodeMapper",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/service",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "StatusCodeMapper",
+    "uses_$": false,
+    "chars": 18005,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "statusCodeMapper",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "StatusCodeMapper",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1,
+        "params": " * @param settings",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "settings"
+        ],
+        "description": " * Status code mapper.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function StatusCodeMapper(settings) {"
+      },
+      {
+        "name": "setLang",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 450,
+        "params": " * @param lang",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "lang"
+        ],
+        "description": " * Set lang.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.setLang = function(lang) {"
+      },
+      {
+        "name": "getLang",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 456,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "returns": "{Object}",
+        "description": " * Get lang.",
+        "return": "{}",
+        "classDeclarationFlag": false,
+        "line": "this.getLang = function() {"
+      },
+      {
+        "name": "getAccountsMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 460,
+        "params": " * @param name\n * @param lang",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "name",
+          "lang"
+        ],
+        "returns": "{Object}",
+        "description": " * Get accounts message.",
+        "return": "{}",
+        "classDeclarationFlag": false,
+        "line": "this.getAccountsMessage = function(name, lang) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/service",
+    "fileName": "statusCodeMapper.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 502
+}

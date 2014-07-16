@@ -1,0 +1,151 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "a_u_t_o_l_e_a_s_e_summary",
+      "AMD": true,
+      "webPath": "/src/dashboard/js/component"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'CardSummaryComponent'.",
+        "code": "wfJD",
+        "evidence": "return function CardSummaryComponent(instanceName, controller, model, specLoader, handler) {",
+        "line": 1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'CardSummaryComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'activate'.",
+        "code": "wfJD",
+        "evidence": "activate: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'activate'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'deactivate'.",
+        "code": "wfJD",
+        "evidence": "deactivate: function() {",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'deactivate'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/dashboard/js/component/AUTOLEASESummary.js",
+  "folderPath": "test-source/src/dashboard/js/component",
+  "fileName": "AUTOLEASESummary.js",
+  "packagePath": "/src/dashboard/js/component",
+  "webPath": "/src/dashboard/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "a_u_t_o_l_e_a_s_e_summary",
+  "name": "a_u_t_o_l_e_a_s_e_summary",
+  "camelName": "AUTOLEASESummary",
+  "processedFilePath": "test-output/src/dashboard/js/component/AUTOLEASESummary.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 22,
+    "requires": [],
+    "className": "AUTOLEASESummary",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "AUTOLEASESummary",
+    "uses_$": false,
+    "chars": 562,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "AUTOLEASESummary",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "CardSummaryComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1,
+        "params": " * @param instanceName\n * @param controller\n * @param model\n * @param specLoader\n * @param handler",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "instanceName",
+          "controller",
+          "model",
+          "specLoader",
+          "handler"
+        ],
+        "description": " * Card summary component.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function CardSummaryComponent(instanceName, controller, model, specLoader, handler) {"
+      },
+      {
+        "name": "activate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Activate.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "activate: function() {"
+      },
+      {
+        "name": "deactivate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Deactivate.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "deactivate: function() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "fileName": "AUTOLEASESummary.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 41
+}

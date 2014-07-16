@@ -1,0 +1,168 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "blue/template/helper",
+        "blue/$",
+        "blue/is"
+      ],
+      "moduleName": "component_inspector",
+      "AMD": true,
+      "webPath": "/src/components/js/lib"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'ComponentInspector'.",
+        "code": "wfJD",
+        "evidence": "return function ComponentInspector(ControllerPrototype) {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'ComponentInspector'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/components/js/lib/ComponentInspector.js",
+  "folderPath": "test-source/src/components/js/lib",
+  "fileName": "ComponentInspector.js",
+  "packagePath": "/src/components/js/lib",
+  "webPath": "/src/components/js/lib",
+  "libFile": false,
+  "min": false,
+  "realName": "component_inspector",
+  "name": "component_inspector",
+  "camelName": "ComponentInspector",
+  "processedFilePath": "test-output/src/components/js/lib/ComponentInspector.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 70,
+    "requires": [],
+    "className": "ComponentInspector",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/components/js/lib",
+    "uses_Y": false,
+    "no_lib": false,
+    "inferencedClassName": "ComponentInspector",
+    "uses_$": true,
+    "chars": 3392,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "[\n  blue/template/helper",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 4,
+        "line": "], function(template, $, is) {",
+        "visibility": "private",
+        "args": [
+          "template",
+          "$",
+          "is"
+        ],
+        "name": "_anonymous4",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "data",
+        "constructor": true,
+        "lineNumber": 7,
+        "extends": "original",
+        "declaredByExtend": true,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": " * Creates a new instance of data.",
+        "classDeclarationFlag": true,
+        "line": "var data = $.extend({}, original);"
+      },
+      {
+        "lineNumber": 12,
+        "line": "template.registerHelper('getComponentData', function(model, options) {",
+        "visibility": "private",
+        "args": [
+          "model",
+          "options"
+        ],
+        "name": "_anonymous12",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "ComponentInspector",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "params": " * @param ControllerPrototype",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "ControllerPrototype"
+        ],
+        "description": " * Component inspector.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function ComponentInspector(ControllerPrototype) {"
+      },
+      {
+        "lineNumber": 31,
+        "line": "Object.keys(controller.components).forEach(function(instanceName) {",
+        "visibility": "private",
+        "args": [
+          "instanceName"
+        ],
+        "name": "_anonymous31",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 34,
+        "line": "Object.keys(signals).forEach(function(signal) {",
+        "visibility": "private",
+        "args": [
+          "signal"
+        ],
+        "name": "_anonymous34",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 35,
+        "line": "controller.receive(instanceName + '/' + signal, function(data) {",
+        "visibility": "private",
+        "args": [
+          "data"
+        ],
+        "name": "_anonymous35",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      }
+    ],
+    "is_module": true,
+    "uses_alert": true,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/components/js/lib",
+    "fileName": "ComponentInspector.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 95
+}

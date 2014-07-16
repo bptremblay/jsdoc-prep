@@ -1,0 +1,381 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "index",
+      "AMD": true,
+      "webPath": ""
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'IndexView'.",
+        "code": "wfJD",
+        "evidence": "function IndexView() {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'IndexView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 49,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showModalPopup'.",
+        "code": "wfJD",
+        "evidence": "this.showModalPopup = function(url, name) {",
+        "line": 279,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showModalPopup'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showOverlay'.",
+        "code": "wfJD",
+        "evidence": "this.showOverlay = function() {",
+        "line": 300,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showOverlay'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideOverlay'.",
+        "code": "wfJD",
+        "evidence": "this.hideOverlay = function() {",
+        "line": 304,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideOverlay'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'preLoader'.",
+        "code": "wfJD",
+        "evidence": "this.preLoader = function() {",
+        "line": 309,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'preLoader'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'changeStyle'.",
+        "code": "wfJD",
+        "evidence": "this.changeStyle = function() {",
+        "line": 320,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'changeStyle'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'onDataChange'.",
+        "code": "wfJD",
+        "evidence": "this.onDataChange = function() {",
+        "line": 324,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'onDataChange'."
+      }
+    ],
+    "jsDoc3PrepProc": [],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/index.js",
+  "folderPath": "test-source",
+  "fileName": "index.js",
+  "packagePath": "",
+  "webPath": "",
+  "libFile": false,
+  "min": false,
+  "realName": "index",
+  "name": "index",
+  "camelName": "Index",
+  "processedFilePath": "test-output/index.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 331,
+    "requires": [],
+    "className": "Index",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Index",
+    "uses_$": false,
+    "chars": 12635,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "index",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "IndexView": {
+        "name": "IndexView",
+        "visibility": "public",
+        "constructor": true,
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "args": [],
+        "return": "void",
+        "classDeclarationFlag": true,
+        "line": "function IndexView() {"
+      }
+    },
+    "methods": [
+      {
+        "lineNumber": 4,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous4",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "IndexView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Index view.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function IndexView() {"
+      },
+      {
+        "lineNumber": 37,
+        "line": "template.registerHelper('summaryItems', function(context, options) {",
+        "visibility": "private",
+        "args": [
+          "context",
+          "options"
+        ],
+        "name": "_anonymous37",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 49,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "lineNumber": 241,
+        "line": "this.receive('searchComponent/focusOnSearchField', function(e) {",
+        "visibility": "private",
+        "args": [
+          "e"
+        ],
+        "name": "_anonymous241",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 254,
+        "line": "this.receive('myNotificationsComponent/enableShowMore', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous254",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 261,
+        "line": "this.receive('myNotificationsComponent/disableShowMore', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous261",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 271,
+        "line": "setTimeout(function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous271",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "showModalPopup",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 279,
+        "params": " * @param url\n * @param name",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "url",
+          "name"
+        ],
+        "description": " * Show modal popup.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.showModalPopup = function(url, name) {"
+      },
+      {
+        "lineNumber": 288,
+        "line": "setTimeout(function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous288",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 289,
+        "line": "$('#modal-iframe').load(function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous289",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "showOverlay",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 300,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Show overlay.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.showOverlay = function() {"
+      },
+      {
+        "name": "hideOverlay",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 304,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Hide overlay.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.hideOverlay = function() {"
+      },
+      {
+        "name": "preLoader",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 309,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Pre loader.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.preLoader = function() {"
+      },
+      {
+        "lineNumber": 310,
+        "line": "$(document).ajaxStart(function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous310",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 314,
+        "line": "$(document).ajaxStop(function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous314",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "changeStyle",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 320,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Change style.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.changeStyle = function() {"
+      },
+      {
+        "name": "onDataChange",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 324,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * On data change.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.onDataChange = function() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output",
+    "fileName": "index.js",
+    "strict": false
+  },
+  "possibleClassname": "IndexView",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 373
+}

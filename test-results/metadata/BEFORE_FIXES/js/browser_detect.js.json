@@ -1,0 +1,168 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "browser_detect",
+      "AMD": true,
+      "webPath": "/BEFORE_FIXES/js"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsHintProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'searchString'.",
+        "code": "wfJD",
+        "evidence": "searchString: function(data) {",
+        "line": 18,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'searchString'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'searchVersion'.",
+        "code": "wfJD",
+        "evidence": "searchVersion: function(dataString) {",
+        "line": 32,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'searchVersion'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/BEFORE_FIXES/js/browser_detect.js",
+  "folderPath": "test-source/BEFORE_FIXES/js",
+  "fileName": "browser_detect.js",
+  "packagePath": "/BEFORE_FIXES/js",
+  "webPath": "/BEFORE_FIXES/js",
+  "libFile": false,
+  "min": false,
+  "realName": "browser_detect",
+  "name": "browser_detect",
+  "camelName": "BrowserDetect",
+  "processedFilePath": "test-output/BEFORE_FIXES/js/browser_detect.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 118,
+    "requires": [],
+    "className": "BrowserDetect",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES/js",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "BrowserDetect",
+    "uses_$": false,
+    "chars": 3077,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "[]",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 5,
+        "line": "define([], function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous5",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lends": "BrowserDetect.prototype",
+        "lineNumber": 12,
+        "line": "var BrowserDetect = {",
+        "name": "BrowserDetect",
+        "description": "   * Creates a new instance of BrowserDetect.\n   *",
+        "classDeclarationFlag": true,
+        "originalJsDocDescription": {
+          "constructor": {
+            "type": "",
+            "description": "",
+            "attribute": "constructor"
+          },
+          "description": "   * Creates a new instance of BrowserDetect.\n   *"
+        },
+        "memberOf": "BrowserDetect"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "BrowserDetect",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "searchString",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 18,
+        "params": " * @param data",
+        "memberOf": "BrowserDetect",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": " * Search string.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "searchString: function(data) {"
+      },
+      {
+        "name": "searchVersion",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 32,
+        "params": " * @param dataString",
+        "memberOf": "BrowserDetect",
+        "originalJsDocDescription": {},
+        "args": [
+          "dataString"
+        ],
+        "description": " * Search version.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "searchVersion: function(dataString) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES/js",
+    "fileName": "browser_detect.js",
+    "strict": true
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 137
+}

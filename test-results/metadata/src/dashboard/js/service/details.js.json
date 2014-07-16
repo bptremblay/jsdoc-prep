@@ -1,0 +1,96 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "details",
+      "AMD": true,
+      "webPath": "/src/dashboard/js/service"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'detailService'.",
+        "code": "wfJD",
+        "evidence": "return function detailService() {",
+        "line": 1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'detailService'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/dashboard/js/service/details.js",
+  "folderPath": "test-source/src/dashboard/js/service",
+  "fileName": "details.js",
+  "packagePath": "/src/dashboard/js/service",
+  "webPath": "/src/dashboard/js/service",
+  "libFile": false,
+  "min": false,
+  "realName": "details",
+  "name": "details",
+  "camelName": "Details",
+  "processedFilePath": "test-output/src/dashboard/js/service/details.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 17,
+    "requires": [],
+    "className": "Details",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/service",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Details",
+    "uses_$": false,
+    "chars": 443,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "details",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "detailService",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Detail service.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function detailService() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/service",
+    "fileName": "details.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 23
+}

@@ -1,0 +1,116 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "messages"
+      ],
+      "moduleName": "tab_panel",
+      "AMD": true,
+      "webPath": "/BEFORE_FIXES/js"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsHintProc": [],
+    "jsDoccerProc": [],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/BEFORE_FIXES/js/tab_panel.js",
+  "folderPath": "test-source/BEFORE_FIXES/js",
+  "fileName": "tab_panel.js",
+  "packagePath": "/BEFORE_FIXES/js",
+  "webPath": "/BEFORE_FIXES/js",
+  "libFile": false,
+  "min": false,
+  "realName": "tab_panel",
+  "name": "tab_panel",
+  "camelName": "TabPanel",
+  "processedFilePath": "test-output/BEFORE_FIXES/js/tab_panel.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 14,
+    "requires": [
+      "$ in {@link jquery.js\"}",
+      "Messages in {@link 'messages.js\"}"
+    ],
+    "className": "TabPanel",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES/js",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "TabPanel",
+    "uses_$": false,
+    "chars": 178,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "[\n  jquery",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "TabPanel": {
+        "name": "TabPanel",
+        "visibility": "public",
+        "constructor": true,
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "",
+        "args": [],
+        "return": "void",
+        "classDeclarationFlag": true,
+        "line": "function TabPanel() {}"
+      }
+    },
+    "methods": [
+      {
+        "lineNumber": 6,
+        "line": "], function($, Messages) {",
+        "visibility": "private",
+        "args": [
+          "$",
+          "Messages"
+        ],
+        "name": "_anonymous6",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "TabPanel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "TabPanel",
+        "originalJsDocDescription": {
+          "constructor": {
+            "type": "",
+            "description": "",
+            "attribute": "constructor"
+          },
+          "description": ""
+        },
+        "args": [],
+        "description": " * Tab panel.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function TabPanel() {}"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [
+      "$",
+      "Messages"
+    ],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES/js",
+    "fileName": "tab_panel.js",
+    "strict": true
+  },
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 21
+}

@@ -1,0 +1,843 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "data_transform",
+      "AMD": true,
+      "webPath": "/src/dashboard/js/service"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'DataTransform'.",
+        "code": "wfJD",
+        "evidence": "return function DataTransform(settings) {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'DataTransform'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getFootNote'.",
+        "code": "wfJD",
+        "evidence": "this.getFootNote = function(type) {",
+        "line": 102,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getFootNote'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'activeSummary'.",
+        "code": "wfJD",
+        "evidence": "this.activeSummary = function(activeAccountId, requestedAccountId, data) {",
+        "line": 317,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'activeSummary'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'mockService'.",
+        "code": "wfJD",
+        "evidence": "this.mockService = function(url) {",
+        "line": 330,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'mockService'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'prepareSummaryData'.",
+        "code": "wfJD",
+        "evidence": "this.prepareSummaryData = function(account) {",
+        "line": 336,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'prepareSummaryData'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getComponentSpec'.",
+        "code": "wfJD",
+        "evidence": "this.getComponentSpec = function(accountType) {",
+        "line": 382,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getComponentSpec'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'associateReceivers'.",
+        "code": "wfJD",
+        "evidence": "this.associateReceivers = function(component, context, instanceName, accountType) {",
+        "line": 399,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'associateReceivers'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'createSummaryAccountComponent'.",
+        "code": "wfJD",
+        "evidence": "this.createSummaryAccountComponent = function(context, account, supportedAccountTypes) {",
+        "line": 407,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'createSummaryAccountComponent'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/dashboard/js/service/dataTransform.js",
+  "folderPath": "test-source/src/dashboard/js/service",
+  "fileName": "dataTransform.js",
+  "packagePath": "/src/dashboard/js/service",
+  "webPath": "/src/dashboard/js/service",
+  "libFile": false,
+  "min": false,
+  "realName": "data_transform",
+  "name": "data_transform",
+  "camelName": "DataTransform",
+  "processedFilePath": "test-output/src/dashboard/js/service/dataTransform.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 431,
+    "requires": [],
+    "className": "DataTransform",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/service",
+    "uses_Y": false,
+    "no_lib": false,
+    "inferencedClassName": "DataTransform",
+    "uses_$": true,
+    "chars": 18107,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "dataTransform",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "Contains": {
+        "name": "Contains",
+        "visibility": "public",
+        "constructor": true,
+        "static": false,
+        "lineNumber": 314,
+        "memberOf": "$",
+        "args": [
+          "a",
+          "i",
+          "m"
+        ],
+        "return": "void",
+        "classDeclarationFlag": true,
+        "line": "$.expr[':'].Contains = function(a, i, m) {"
+      }
+    },
+    "methods": [
+      {
+        "lineNumber": 5,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous5",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "DataTransform",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "params": " * @param settings",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "settings"
+        ],
+        "description": " * Data transform.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function DataTransform(settings) {"
+      },
+      {
+        "name": "accountSummaryData",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 17,
+        "params": " * @param data",
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "asOfDateFormat",
+            "type": "",
+            "description": "will convert as-of-date format",
+            "attribute": "function"
+          },
+          "description": "     * Function for convert a data for accouts summary based on account type",
+          "memberOf": {
+            "name": "module:dataTransform",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [
+          "data"
+        ],
+        "description": "     * Function for convert a data for accouts summary based on account type",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.accountSummaryData = function(data) {"
+      },
+      {
+        "name": "accountDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 39,
+        "params": " * @param detailsData\n * @param accountType",
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "accountDetails",
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "description": "     * Function for converting data for Account Details",
+          "memberOf": {
+            "name": "module:dataTransform",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [
+          "detailsData",
+          "accountType"
+        ],
+        "description": "     * Function for converting data for Account Details",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.accountDetails = function(detailsData, accountType) {"
+      },
+      {
+        "name": "activityGroupList",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 65,
+        "params": " * @param data\n * @param accType",
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "activityGroupList",
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "description": "     * Function for converting data to Activity with Pedning/Posting group",
+          "memberOf": {
+            "name": "module:dataTransform",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [
+          "data",
+          "accType"
+        ],
+        "description": "     * Function for converting data to Activity with Pedning/Posting group",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.activityGroupList = function(data, accType) {"
+      },
+      {
+        "name": "getFootNote",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 102,
+        "params": " * @param type",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "type"
+        ],
+        "returns": "{Object}",
+        "description": " * Get foot note.",
+        "return": "{}",
+        "classDeclarationFlag": false,
+        "line": "this.getFootNote = function(type) {"
+      },
+      {
+        "name": "isEmptyObject",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 115,
+        "params": " * @param obj",
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "isEmptyObject",
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "description": "     * Function for validate whether is isEmptyObject",
+          "memberOf": {
+            "name": "module:dataTransform",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [
+          "obj"
+        ],
+        "returns": "{Boolean}",
+        "description": "     * Function for validate whether is isEmptyObject",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "this.isEmptyObject = function(obj) {"
+      },
+      {
+        "name": "accountAmountInfo",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 124,
+        "params": " * @param actData\n * @param accountType",
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "isDefined",
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "description": "     * Function for convert amount and date based on acc type for activity",
+          "memberOf": {
+            "name": "module:dataTransform",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [
+          "actData",
+          "accountType"
+        ],
+        "description": "     * Function for convert amount and date based on acc type for activity",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.accountAmountInfo = function(actData, accountType) {"
+      },
+      {
+        "name": "isDefined",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 160,
+        "params": " * @param data",
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "isDefined",
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "description": "     * Function for validate whether  defined/undefined",
+          "memberOf": {
+            "name": "module:dataTransform",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [
+          "data"
+        ],
+        "returns": "{Boolean}",
+        "description": "     * Function for validate whether  defined/undefined",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "this.isDefined = function(data) {"
+      },
+      {
+        "name": "currencyFormat",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 173,
+        "params": " * @param amount",
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "convertToDollarDecimal()",
+            "type": "",
+            "description": "will return the currency with separator",
+            "attribute": "function"
+          },
+          "description": "     * Function for convert a currency with separator with $ sign",
+          "memberOf": {
+            "name": "module:dataTransform",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [
+          "amount"
+        ],
+        "description": "     * Function for convert a currency with separator with $ sign",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.currencyFormat = function(amount) {"
+      },
+      {
+        "name": "convertToDollarDecimal",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 182,
+        "params": " * @param amount",
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "convertToDollarDecimal",
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "description": "     * Function for convert a currency with separator",
+          "memberOf": {
+            "name": "module:dataTransform",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [
+          "amount"
+        ],
+        "description": "     * Function for convert a currency with separator",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.convertToDollarDecimal = function(amount) {"
+      },
+      {
+        "name": "asOfDateWithHrs",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 191,
+        "params": " * @param accDate",
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "asOfDateWithHrs",
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "description": "     * Function for convert a as-of-date for summary with time and time zone",
+          "memberOf": {
+            "name": "module:dataTransform",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [
+          "accDate"
+        ],
+        "description": "     * Function for convert a as-of-date for summary with time and time zone",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.asOfDateWithHrs = function(accDate) {"
+      },
+      {
+        "name": "asOfDateWithMM",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 204,
+        "params": " * @param accDate",
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "asOfDateWithMM",
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "description": "     * Function for convert a as-of-date for summary with Month name and date, year",
+          "memberOf": {
+            "name": "module:dataTransform",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [
+          "accDate"
+        ],
+        "description": "     * Function for convert a as-of-date for summary with Month name and date, year",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.asOfDateWithMM = function(accDate) {"
+      },
+      {
+        "name": "splitMMDDYYYY",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 216,
+        "params": " * @param aDate",
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "splitMMDDYYYY",
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "description": "     * Function for convert date from string to date with '/' separator MM/DD/YYYY",
+          "memberOf": {
+            "name": "module:dataTransform",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [
+          "aDate"
+        ],
+        "description": "     * Function for convert date from string to date with '/' separator MM/DD/YYYY",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.splitMMDDYYYY = function(aDate) {"
+      },
+      {
+        "name": "convertDate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 228,
+        "params": " * @param currentDate",
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "convertDate",
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "description": "     * Function for convert a date format with MM/DD/YYYY",
+          "memberOf": {
+            "name": "module:dataTransform",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [
+          "currentDate"
+        ],
+        "description": "     * Function for convert a date format with MM/DD/YYYY",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.convertDate = function(currentDate) {"
+      },
+      {
+        "name": "getLeadValue",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 238,
+        "params": " * @param accData",
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "getLeadValue",
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "description": "     * Function for add lead value based on acc type",
+          "memberOf": {
+            "name": "module:dataTransform",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [
+          "accData"
+        ],
+        "returns": "{Object}",
+        "description": "     * Function for add lead value based on acc type",
+        "return": "{}",
+        "classDeclarationFlag": false,
+        "line": "this.getLeadValue = function(accData) {"
+      },
+      {
+        "name": "objectClone",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 278,
+        "params": " * @param objectVal",
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "objectClone",
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "description": "     * Function for cloning object",
+          "memberOf": {
+            "name": "module:dataTransform",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [
+          "objectVal"
+        ],
+        "description": "     * Function for cloning object",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.objectClone = function(objectVal) {"
+      },
+      {
+        "name": "searchTable",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 288,
+        "params": " * @param selector\n * @param searchTerm",
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "searchTable",
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "description": "     * Function to search the table data",
+          "memberOf": {
+            "name": "module:dataTransform",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [
+          "selector",
+          "searchTerm"
+        ],
+        "description": "     * Function to search the table data",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.searchTable = function(selector, searchTerm) {"
+      },
+      {
+        "lineNumber": 295,
+        "line": "$('tr:Contains(\\'' + searchTerm + '\\')').each(function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous295",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 308,
+        "line": "filteredList.forEach(function(searchKey) {",
+        "visibility": "private",
+        "args": [
+          "searchKey"
+        ],
+        "name": "_anonymous308",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lends": "Contains.prototype",
+        "lineNumber": 314,
+        "line": "$.expr[':'].Contains = function(a, i, m) {",
+        "name": "Contains",
+        "description": " * Creates a new instance of Contains.",
+        "classDeclarationFlag": true,
+        "originalJsDocDescription": {},
+        "memberOf": ""
+      },
+      {
+        "name": "activeSummary",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 317,
+        "params": " * @param activeAccountId\n * @param requestedAccountId\n * @param data",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "activeAccountId",
+          "requestedAccountId",
+          "data"
+        ],
+        "description": " * Active summary.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.activeSummary = function(activeAccountId, requestedAccountId, data) {"
+      },
+      {
+        "lineNumber": 319,
+        "line": "Object.keys(data).forEach(function(val) {",
+        "visibility": "private",
+        "args": [
+          "val"
+        ],
+        "name": "_anonymous319",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "mockService",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 330,
+        "params": " * @param url",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "url"
+        ],
+        "description": " * Mock service.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.mockService = function(url) {"
+      },
+      {
+        "name": "prepareSummaryData",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 336,
+        "params": " * @param account",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "account"
+        ],
+        "description": " * Prepare summary data.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.prepareSummaryData = function(account) {"
+      },
+      {
+        "name": "getComponentSpec",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 382,
+        "params": " * @param accountType",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "accountType"
+        ],
+        "returns": "{Object}",
+        "description": " * Get component spec.",
+        "return": "{}",
+        "classDeclarationFlag": false,
+        "line": "this.getComponentSpec = function(accountType) {"
+      },
+      {
+        "name": "associateReceivers",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 399,
+        "params": " * @param component\n * @param context\n * @param instanceName\n * @param accountType",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "component",
+          "context",
+          "instanceName",
+          "accountType"
+        ],
+        "description": " * Associate receivers.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.associateReceivers = function(component, context, instanceName, accountType) {"
+      },
+      {
+        "lineNumber": 401,
+        "line": "Object.keys(spec.actions).forEach(function(action) {",
+        "visibility": "private",
+        "args": [
+          "action"
+        ],
+        "name": "_anonymous401",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 402,
+        "line": "context.receive(instanceName + '/' + action, function(data) {",
+        "visibility": "private",
+        "args": [
+          "data"
+        ],
+        "name": "_anonymous402",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "createSummaryAccountComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 407,
+        "params": " * @param context\n * @param account\n * @param supportedAccountTypes",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "context",
+          "account",
+          "supportedAccountTypes"
+        ],
+        "description": " * Create summary account component.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.createSummaryAccountComponent = function(context, account, supportedAccountTypes) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/service",
+    "fileName": "dataTransform.js",
+    "strict": false
+  },
+  "possibleClassname": "Contains",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 490
+}

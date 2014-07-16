@@ -1,0 +1,206 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "personal_details",
+      "AMD": true,
+      "webPath": "/src/profile/js/component"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'edit'.",
+        "code": "wfJD",
+        "evidence": "edit: function() {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'edit'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'save'.",
+        "code": "wfJD",
+        "evidence": "save: function() {",
+        "line": 12,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'save'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'changeImage'.",
+        "code": "wfJD",
+        "evidence": "changeImage: function() {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'changeImage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'resetPassword'.",
+        "code": "wfJD",
+        "evidence": "resetPassword: function() {",
+        "line": 18,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'resetPassword'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/profile/js/component/personal_details.js",
+  "folderPath": "test-source/src/profile/js/component",
+  "fileName": "personal_details.js",
+  "packagePath": "/src/profile/js/component",
+  "webPath": "/src/profile/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "personal_details",
+  "name": "personal_details",
+  "camelName": "PersonalDetails",
+  "processedFilePath": "test-output/src/profile/js/component/personal_details.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 23,
+    "requires": [],
+    "className": "PersonalDetails",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/profile/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "PersonalDetails",
+    "uses_$": false,
+    "chars": 428,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "personal_details",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "edit",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Edit.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "edit: function() {"
+      },
+      {
+        "name": "save",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 12,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Save.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "save: function() {"
+      },
+      {
+        "name": "changeImage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Change image.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "changeImage: function() {"
+      },
+      {
+        "name": "resetPassword",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 18,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Reset password.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "resetPassword: function() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/profile/js/component",
+    "fileName": "personal_details.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 37
+}

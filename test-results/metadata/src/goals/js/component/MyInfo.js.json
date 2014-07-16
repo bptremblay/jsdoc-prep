@@ -1,0 +1,201 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "my_info",
+      "AMD": true,
+      "webPath": "/src/goals/js/component"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'SummaryMockComponent'.",
+        "code": "wfJD",
+        "evidence": "return function SummaryMockComponent(instanceName, controller, model, specLoader, handler) {",
+        "line": 1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'SummaryMockComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'clickProfile'.",
+        "code": "wfJD",
+        "evidence": "clickProfile: function() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'clickProfile'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'clickLogOut'.",
+        "code": "wfJD",
+        "evidence": "clickLogOut: function() {",
+        "line": 19,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'clickLogOut'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'myProfile'.",
+        "code": "wfJD",
+        "evidence": "myProfile: function() {",
+        "line": 31,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'myProfile'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'logOut'.",
+        "code": "wfJD",
+        "evidence": "logOut: function() {",
+        "line": 35,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'logOut'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/goals/js/component/MyInfo.js",
+  "folderPath": "test-source/src/goals/js/component",
+  "fileName": "MyInfo.js",
+  "packagePath": "/src/goals/js/component",
+  "webPath": "/src/goals/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "my_info",
+  "name": "my_info",
+  "camelName": "MyInfo",
+  "processedFilePath": "test-output/src/goals/js/component/MyInfo.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 49,
+    "requires": [],
+    "className": "MyInfo",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/goals/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "MyInfo",
+    "uses_$": false,
+    "chars": 1150,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "MyInfo",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "SummaryMockComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1,
+        "params": " * @param instanceName\n * @param controller\n * @param model\n * @param specLoader\n * @param handler",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "instanceName",
+          "controller",
+          "model",
+          "specLoader",
+          "handler"
+        ],
+        "description": " * Summary mock component.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function SummaryMockComponent(instanceName, controller, model, specLoader, handler) {"
+      },
+      {
+        "name": "clickProfile",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Click profile.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "clickProfile: function() {"
+      },
+      {
+        "name": "clickLogOut",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 19,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Click log out.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "clickLogOut: function() {"
+      },
+      {
+        "name": "myProfile",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 31,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * My profile.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "myProfile: function() {"
+      },
+      {
+        "name": "logOut",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 35,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Log out.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "logOut: function() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/goals/js/component",
+    "fileName": "MyInfo.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 72
+}

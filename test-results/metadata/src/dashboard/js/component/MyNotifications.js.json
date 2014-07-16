@@ -1,0 +1,176 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "my_notifications",
+      "AMD": true,
+      "webPath": "/src/dashboard/js/component"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'enableNotification'.",
+        "code": "wfJD",
+        "evidence": "enableNotification: function(data) {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'enableNotification'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showMore'.",
+        "code": "wfJD",
+        "evidence": "showMore: function() {",
+        "line": 18,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showMore'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateNotificationList'.",
+        "code": "wfJD",
+        "evidence": "updateNotificationList: function(data) {",
+        "line": 24,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateNotificationList'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/dashboard/js/component/MyNotifications.js",
+  "folderPath": "test-source/src/dashboard/js/component",
+  "fileName": "MyNotifications.js",
+  "packagePath": "/src/dashboard/js/component",
+  "webPath": "/src/dashboard/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "my_notifications",
+  "name": "my_notifications",
+  "camelName": "MyNotifications",
+  "processedFilePath": "test-output/src/dashboard/js/component/MyNotifications.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 46,
+    "requires": [],
+    "className": "MyNotifications",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "MyNotifications",
+    "uses_$": false,
+    "chars": 1815,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "MyNotifications",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "enableNotification",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "params": " * @param data",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": " * Enable notification.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "enableNotification: function(data) {"
+      },
+      {
+        "name": "showMore",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 18,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Show more.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "showMore: function() {"
+      },
+      {
+        "name": "updateNotificationList",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 24,
+        "params": " * @param data",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": " * Update notification list.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "updateNotificationList: function(data) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "fileName": "MyNotifications.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 64
+}

@@ -1,0 +1,149 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "payment_complete",
+      "AMD": true,
+      "webPath": "/src/dashboard/js/component"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'enablePaymentComplete'.",
+        "code": "wfJD",
+        "evidence": "enablePaymentComplete: function(data) {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'enablePaymentComplete'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'closePaymentComplete'.",
+        "code": "wfJD",
+        "evidence": "closePaymentComplete: function() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'closePaymentComplete'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/dashboard/js/component/PaymentComplete.js",
+  "folderPath": "test-source/src/dashboard/js/component",
+  "fileName": "PaymentComplete.js",
+  "packagePath": "/src/dashboard/js/component",
+  "webPath": "/src/dashboard/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "payment_complete",
+  "name": "payment_complete",
+  "camelName": "PaymentComplete",
+  "processedFilePath": "test-output/src/dashboard/js/component/PaymentComplete.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 19,
+    "requires": [],
+    "className": "PaymentComplete",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "PaymentComplete",
+    "uses_$": false,
+    "chars": 484,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "PaymentComplete",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "enablePaymentComplete",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "params": " * @param data",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": " * Enable payment complete.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "enablePaymentComplete: function(data) {"
+      },
+      {
+        "name": "closePaymentComplete",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Close payment complete.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "closePaymentComplete: function() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "fileName": "PaymentComplete.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 32
+}

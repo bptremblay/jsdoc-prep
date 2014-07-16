@@ -1,0 +1,160 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "summary_mock",
+      "AMD": true,
+      "webPath": "/src/dashboard/js/component"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'SummaryComponent'.",
+        "code": "wfJD",
+        "evidence": "return function SummaryComponent(instanceName, controller, model, specLoader, handler) {",
+        "line": 1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'SummaryComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getAccountSummaryDetails'.",
+        "code": "wfJD",
+        "evidence": "getAccountSummaryDetails: function(params) {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getAccountSummaryDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setActiveAccount'.",
+        "code": "wfJD",
+        "evidence": "setActiveAccount: function(data) {",
+        "line": 253,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setActiveAccount'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/dashboard/js/component/Summary_mock.js",
+  "folderPath": "test-source/src/dashboard/js/component",
+  "fileName": "Summary_mock.js",
+  "packagePath": "/src/dashboard/js/component",
+  "webPath": "/src/dashboard/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "summary_mock",
+  "name": "summary_mock",
+  "camelName": "SummaryMock",
+  "processedFilePath": "test-output/src/dashboard/js/component/Summary_mock.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 276,
+    "requires": [],
+    "className": "SummaryMock",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "SummaryMock",
+    "uses_$": false,
+    "chars": 10673,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "Summary_mock",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "SummaryComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1,
+        "params": " * @param instanceName\n * @param controller\n * @param model\n * @param specLoader\n * @param handler",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "instanceName",
+          "controller",
+          "model",
+          "specLoader",
+          "handler"
+        ],
+        "description": " * Summary component.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function SummaryComponent(instanceName, controller, model, specLoader, handler) {"
+      },
+      {
+        "name": "getAccountSummaryDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "params": " * @param params",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "params"
+        ],
+        "returns": "{Object}",
+        "description": " * Get account summary details.",
+        "return": "{}",
+        "classDeclarationFlag": false,
+        "line": "getAccountSummaryDetails: function(params) {"
+      },
+      {
+        "name": "setActiveAccount",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 253,
+        "params": " * @param data",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": " * Set active account.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "setActiveAccount: function(data) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "fileName": "Summary_mock.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 303
+}

@@ -1,0 +1,128 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "gallery_dao",
+        "gallery_model",
+        "gallery_view"
+      ],
+      "moduleName": "tests",
+      "AMD": false,
+      "webPath": "/BEFORE_FIXES/js"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsHintProc": [
+      {
+        "id": "(error)",
+        "raw": "'{a}' is not defined.",
+        "code": "W117",
+        "evidence": "requirejs.config({",
+        "line": 1,
+        "character": 1,
+        "scope": "(main)",
+        "a": "requirejs",
+        "reason": "'requirejs' is not defined."
+      }
+    ],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'log'.",
+        "code": "wfJD",
+        "evidence": "function log(msg) {",
+        "line": 21,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'log'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/BEFORE_FIXES/js/tests.js",
+  "folderPath": "test-source/BEFORE_FIXES/js",
+  "fileName": "tests.js",
+  "packagePath": "/BEFORE_FIXES/js",
+  "webPath": "/BEFORE_FIXES/js",
+  "libFile": false,
+  "min": false,
+  "realName": "tests",
+  "name": "tests",
+  "camelName": "Tests",
+  "processedFilePath": "test-output/BEFORE_FIXES/js/tests.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 33,
+    "requires": [
+      "Dao in {@link 'gallery_dao.js\"}",
+      "Model in {@link 'gallery_model.js\"}",
+      "View in {@link 'gallery_view.js\"}"
+    ],
+    "className": "Tests",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES/js",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Tests",
+    "uses_$": false,
+    "chars": 732,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "tests",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 18,
+        "line": "], function(Dao, Model, View) {",
+        "visibility": "private",
+        "args": [
+          "Dao",
+          "Model",
+          "View"
+        ],
+        "name": "_anonymous18",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "log",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 21,
+        "params": " * @param msg",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "msg"
+        ],
+        "description": " * Log.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function log(msg) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": true,
+    "uses_y_log": false,
+    "requiresRaw": [
+      "Dao",
+      "Model",
+      "View"
+    ],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES/js",
+    "fileName": "tests.js",
+    "strict": true
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 46
+}

@@ -1,0 +1,407 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "index",
+      "AMD": true,
+      "webPath": "/src/logon/js/view"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'attachVisuals'.",
+        "code": "wfJD",
+        "evidence": "function attachVisuals() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'attachVisuals'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'elasout'.",
+        "code": "wfJD",
+        "evidence": "domManager.easing.elasout = function(x, t, b, c, d) {",
+        "line": 19,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'elasout'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'click'.",
+        "code": "wfJD",
+        "evidence": "domManager('.logon-toggle').on('click', function() {",
+        "line": 53,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'click'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'click'.",
+        "code": "wfJD",
+        "evidence": "domManager('.scrolly-link').on('click', function() {",
+        "line": 56,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'click'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'AuthView'.",
+        "code": "wfJD",
+        "evidence": "return function AuthView() {",
+        "line": 63,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'AuthView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 71,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'focusout'.",
+        "code": "wfJD",
+        "evidence": "$('#userId').on('focusout', function(e) {",
+        "line": 126,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'focusout'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'click'.",
+        "code": "wfJD",
+        "evidence": "$('#login-button').on('click', function(e) {",
+        "line": 129,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'click'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'enableLogonButton'.",
+        "code": "wfJD",
+        "evidence": "this.enableLogonButton = function(inputData) {",
+        "line": 136,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'enableLogonButton'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'changeStyle'.",
+        "code": "wfJD",
+        "evidence": "this.changeStyle = function() {",
+        "line": 146,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'changeStyle'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateErrorMsg'.",
+        "code": "wfJD",
+        "evidence": "this.updateErrorMsg = function(inputData) {",
+        "line": 151,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateErrorMsg'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/logon/js/view/index.js",
+  "folderPath": "test-source/src/logon/js/view",
+  "fileName": "index.js",
+  "packagePath": "/src/logon/js/view",
+  "webPath": "/src/logon/js/view",
+  "libFile": false,
+  "min": false,
+  "realName": "index",
+  "name": "index",
+  "camelName": "Index",
+  "processedFilePath": "test-output/src/logon/js/view/index.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 164,
+    "requires": [],
+    "className": "Index",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/logon/js/view",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Index",
+    "uses_$": false,
+    "chars": 4902,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "index",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 5,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous5",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "attachVisuals",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Attach visuals.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function attachVisuals() {"
+      },
+      {
+        "lineNumber": 16,
+        "line": "setTimeout(function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous16",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "elasout",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 19,
+        "params": " * @param x\n * @param t\n * @param b\n * @param c\n * @param d",
+        "memberOf": "domManager.easing",
+        "originalJsDocDescription": {},
+        "args": [
+          "x",
+          "t",
+          "b",
+          "c",
+          "d"
+        ],
+        "description": " * Elasout.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "domManager.easing.elasout = function(x, t, b, c, d) {"
+      },
+      {
+        "ownerExpression": "domManager('.logon-toggle')",
+        "name": "click",
+        "visibility": "public",
+        "lineNumber": 53,
+        "static": false,
+        "memberOf": "domManager('.logon-toggle')",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Click.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "domManager('.logon-toggle').on('click', function() {"
+      },
+      {
+        "ownerExpression": "domManager('.scrolly-link')",
+        "name": "click",
+        "visibility": "public",
+        "lineNumber": 56,
+        "static": false,
+        "memberOf": "domManager('.scrolly-link')",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Click.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "domManager('.scrolly-link').on('click', function() {"
+      },
+      {
+        "name": "AuthView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 63,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Auth view.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function AuthView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 71,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "lineNumber": 112,
+        "line": "this.receive('authComponent/valid', function(data) {",
+        "visibility": "private",
+        "args": [
+          "data"
+        ],
+        "name": "_anonymous112",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 116,
+        "line": "this.receive('authComponent/enabled', function(data) {",
+        "visibility": "private",
+        "args": [
+          "data"
+        ],
+        "name": "_anonymous116",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 124,
+        "line": "setTimeout(function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous124",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "ownerExpression": "$('#userId')",
+        "name": "focusout",
+        "visibility": "public",
+        "lineNumber": 126,
+        "static": false,
+        "params": " * @param e",
+        "memberOf": "$('#userId')",
+        "originalJsDocDescription": {},
+        "args": [
+          "e"
+        ],
+        "description": " * Focusout.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "$('#userId').on('focusout', function(e) {"
+      },
+      {
+        "ownerExpression": "$('#login-button')",
+        "name": "click",
+        "visibility": "public",
+        "lineNumber": 129,
+        "static": false,
+        "params": " * @param e",
+        "memberOf": "$('#login-button')",
+        "originalJsDocDescription": {},
+        "args": [
+          "e"
+        ],
+        "description": " * Click.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "$('#login-button').on('click', function(e) {"
+      },
+      {
+        "name": "enableLogonButton",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 136,
+        "params": " * @param inputData",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": " * Enable logon button.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.enableLogonButton = function(inputData) {"
+      },
+      {
+        "name": "changeStyle",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 146,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Change style.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.changeStyle = function() {"
+      },
+      {
+        "name": "updateErrorMsg",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 151,
+        "params": " * @param inputData",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": " * Update error msg.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.updateErrorMsg = function(inputData) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/logon/js/view",
+    "fileName": "index.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 224
+}

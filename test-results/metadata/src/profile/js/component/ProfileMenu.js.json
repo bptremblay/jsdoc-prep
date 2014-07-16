@@ -1,0 +1,237 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "profile_menu",
+      "AMD": true,
+      "webPath": "/src/profile/js/component"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'ProfileMenuComponent'.",
+        "code": "wfJD",
+        "evidence": "return function ProfileMenuComponent(instanceName, controller, model, specLoader, handler) {",
+        "line": 1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'ProfileMenuComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'personalDetails'.",
+        "code": "wfJD",
+        "evidence": "personalDetails: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'personalDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'mySettings'.",
+        "code": "wfJD",
+        "evidence": "mySettings: function() {",
+        "line": 26,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'mySettings'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'myRelationship'.",
+        "code": "wfJD",
+        "evidence": "myRelationship: function() {",
+        "line": 46,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'myRelationship'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'myFinancial'.",
+        "code": "wfJD",
+        "evidence": "myFinancial: function() {",
+        "line": 66,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'myFinancial'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'mySecureInfo'.",
+        "code": "wfJD",
+        "evidence": "mySecureInfo: function() {",
+        "line": 84,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'mySecureInfo'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/profile/js/component/ProfileMenu.js",
+  "folderPath": "test-source/src/profile/js/component",
+  "fileName": "ProfileMenu.js",
+  "packagePath": "/src/profile/js/component",
+  "webPath": "/src/profile/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "profile_menu",
+  "name": "profile_menu",
+  "camelName": "ProfileMenu",
+  "processedFilePath": "test-output/src/profile/js/component/ProfileMenu.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 117,
+    "requires": [],
+    "className": "ProfileMenu",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/profile/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "ProfileMenu",
+    "uses_$": false,
+    "chars": 3626,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "ProfileMenu",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "ProfileMenuComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1,
+        "params": " * @param instanceName\n * @param controller\n * @param model\n * @param specLoader\n * @param handler",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "instanceName",
+          "controller",
+          "model",
+          "specLoader",
+          "handler"
+        ],
+        "description": " * Profile menu component.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function ProfileMenuComponent(instanceName, controller, model, specLoader, handler) {"
+      },
+      {
+        "name": "personalDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Personal details.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "personalDetails: function() {"
+      },
+      {
+        "name": "mySettings",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 26,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * My settings.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "mySettings: function() {"
+      },
+      {
+        "name": "myRelationship",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 46,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * My relationship.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "myRelationship: function() {"
+      },
+      {
+        "name": "myFinancial",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 66,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * My financial.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "myFinancial: function() {"
+      },
+      {
+        "name": "mySecureInfo",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 84,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * My secure info.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "mySecureInfo: function() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/profile/js/component",
+    "fileName": "ProfileMenu.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 142
+}

@@ -1,0 +1,445 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "@Templates/stores/checkout/basket/full_basket_phone_view",
+        "jm_utils",
+        "wf_view_base",
+        "wf_mobile_view_basket_items"
+      ],
+      "moduleName": "wf_mobile_view_basket",
+      "AMD": true,
+      "webPath": "/BEFORE_FIXES"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsHintProc": [
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "          b_has_event_products: this.model.get('b_has_event_products'),",
+        "line": 112,
+        "character": 0,
+        "scope": "(main)",
+        "a": "b_has_event_products",
+        "reason": "Identifier 'b_has_event_products' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "          event_reservation_string: this.model.get('event_reservation_string'),",
+        "line": 113,
+        "character": 0,
+        "scope": "(main)",
+        "a": "event_reservation_string",
+        "reason": "Identifier 'event_reservation_string' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "          basket_items: this.model.has('basketItemCollection') ? this.model.get('basketItemCollection').toJSON() : [],",
+        "line": 114,
+        "character": 0,
+        "scope": "(main)",
+        "a": "basket_items",
+        "reason": "Identifier 'basket_items' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "          subtotal_cost_string: this.model.get('subtotal_cost_string'),",
+        "line": 115,
+        "character": 0,
+        "scope": "(main)",
+        "a": "subtotal_cost_string",
+        "reason": "Identifier 'subtotal_cost_string' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "          shipping_cost_string: this.model.get('shipping_cost_string'),",
+        "line": 116,
+        "character": 0,
+        "scope": "(main)",
+        "a": "shipping_cost_string",
+        "reason": "Identifier 'shipping_cost_string' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "          tax_cost_string: this.model.get('tax_cost_string'),",
+        "line": 117,
+        "character": 0,
+        "scope": "(main)",
+        "a": "tax_cost_string",
+        "reason": "Identifier 'tax_cost_string' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "          total_cost_string: this.model.get('total_cost_string'),",
+        "line": 118,
+        "character": 0,
+        "scope": "(main)",
+        "a": "total_cost_string",
+        "reason": "Identifier 'total_cost_string' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "          total_savings_string: this.model.get('total_savings_string'),",
+        "line": 119,
+        "character": 0,
+        "scope": "(main)",
+        "a": "total_savings_string",
+        "reason": "Identifier 'total_savings_string' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "          percent_savings_string: this.model.get('percent_savings_string')",
+        "line": 120,
+        "character": 0,
+        "scope": "(main)",
+        "a": "percent_savings_string",
+        "reason": "Identifier 'percent_savings_string' is not in camel case."
+      }
+    ],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initialize'.",
+        "code": "wfJD",
+        "evidence": "initialize: function() {",
+        "line": 38,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initialize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initializeTimer'.",
+        "code": "wfJD",
+        "evidence": "initializeTimer: function() {",
+        "line": 44,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initializeTimer'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handleEditBasketClicked'.",
+        "code": "wfJD",
+        "evidence": "handleEditBasketClicked: function(e) {",
+        "line": 51,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handleEditBasketClicked'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handleSaveBasketClicked'.",
+        "code": "wfJD",
+        "evidence": "handleSaveBasketClicked: function(e) {",
+        "line": 55,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handleSaveBasketClicked'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handleCancelClicked'.",
+        "code": "wfJD",
+        "evidence": "handleCancelClicked: function(e) {",
+        "line": 78,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handleCancelClicked'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handleModelChanged'.",
+        "code": "wfJD",
+        "evidence": "handleModelChanged: function() {",
+        "line": 83,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handleModelChanged'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'toggleEditable'.",
+        "code": "wfJD",
+        "evidence": "toggleEditable: function(editable) {",
+        "line": 93,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'toggleEditable'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'serialize'.",
+        "code": "wfJD",
+        "evidence": "serialize: function() {",
+        "line": 108,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'serialize'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/BEFORE_FIXES/wf_mobile_view_basket.js",
+  "folderPath": "test-source/BEFORE_FIXES",
+  "fileName": "wf_mobile_view_basket.js",
+  "packagePath": "/BEFORE_FIXES",
+  "webPath": "/BEFORE_FIXES",
+  "libFile": false,
+  "min": false,
+  "realName": "wf_mobile_view_basket",
+  "name": "wf_mobile_view_basket",
+  "camelName": "WfMobileViewBasket",
+  "processedFilePath": "test-output/BEFORE_FIXES/wf_mobile_view_basket.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 126,
+    "requires": [
+      "$ in {@link jquery.js\"}",
+      "fullBasketPhoneViewTemplate in {@link '@Templates/stores/checkout/basket/full_basket_phone_view.js\"}",
+      "JossUtils in {@link 'jm_utils.js\"}",
+      "BaseView in {@link 'wf_view_base.js\"}",
+      "BasketItemsView in {@link 'wf_mobile_view_basket_items.js\"}"
+    ],
+    "className": "WfMobileViewBasket",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "WfMobileViewBasket",
+    "uses_$": false,
+    "chars": 4958,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "wf_mobile_view_basket",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "MobileBasketView": {
+        "lineNumber": 24,
+        "line": "var MobileBasketView = BaseView.extend({",
+        "name": "MobileBasketView",
+        "classDeclarationFlag": true,
+        "extends": "BaseView"
+      }
+    },
+    "methods": [
+      {
+        "lineNumber": 12,
+        "line": "], function($, fullBasketPhoneViewTemplate, JossUtils, BaseView, BasketItemsView) {",
+        "visibility": "private",
+        "args": [
+          "$",
+          "fullBasketPhoneViewTemplate",
+          "JossUtils",
+          "BaseView",
+          "BasketItemsView"
+        ],
+        "name": "_anonymous12",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "MobileBasketView",
+        "constructor": true,
+        "lineNumber": 24,
+        "extends": "BaseView",
+        "lends": "MobileBasketView.prototype",
+        "declaredByExtend": true,
+        "memberOf": "MobileBasketView",
+        "originalJsDocDescription": {
+          "constructor": {
+            "type": "",
+            "description": "",
+            "attribute": "constructor"
+          },
+          "description": "   * MobileBasketView\n   *\n   * This is the main Backbone view for the basket page. Handles DOM interactions and\n   * manages subviews. It is also used to render the entire basket page since every change\n   * we make to the basket requires a full re-render.\n   *",
+          "class": {
+            "name": "BasketView",
+            "type": "",
+            "description": "",
+            "attribute": "class"
+          }
+        },
+        "description": "   * MobileBasketView\n   *\n   * This is the main Backbone view for the basket page. Handles DOM interactions and\n   * manages subviews. It is also used to render the entire basket page since every change\n   * we make to the basket requires a full re-render.\n   *",
+        "classDeclarationFlag": true,
+        "line": "var MobileBasketView = BaseView.extend({"
+      },
+      {
+        "name": "initialize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 38,
+        "memberOf": "MobileBasketView",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Initialize.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "initialize: function() {"
+      },
+      {
+        "name": "initializeTimer",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 44,
+        "memberOf": "MobileBasketView",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Initialize timer.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "initializeTimer: function() {"
+      },
+      {
+        "name": "handleEditBasketClicked",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 51,
+        "params": " * @param e",
+        "memberOf": "MobileBasketView",
+        "originalJsDocDescription": {},
+        "args": [
+          "e"
+        ],
+        "description": " * Handle edit basket clicked.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "handleEditBasketClicked: function(e) {"
+      },
+      {
+        "name": "handleSaveBasketClicked",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 55,
+        "params": " * @param e",
+        "memberOf": "MobileBasketView",
+        "originalJsDocDescription": {},
+        "args": [
+          "e"
+        ],
+        "description": " * Handle save basket clicked.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "handleSaveBasketClicked: function(e) {"
+      },
+      {
+        "lineNumber": 66,
+        "line": "result.done(function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous66",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "handleCancelClicked",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 78,
+        "params": " * @param e",
+        "memberOf": "MobileBasketView",
+        "originalJsDocDescription": {},
+        "args": [
+          "e"
+        ],
+        "description": " * Handle cancel clicked.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "handleCancelClicked: function(e) {"
+      },
+      {
+        "name": "handleModelChanged",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 83,
+        "memberOf": "MobileBasketView",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Handle model changed.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "handleModelChanged: function() {"
+      },
+      {
+        "name": "toggleEditable",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 93,
+        "params": " * @param editable",
+        "memberOf": "MobileBasketView",
+        "originalJsDocDescription": {},
+        "args": [
+          "editable"
+        ],
+        "description": " * Toggle editable.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "toggleEditable: function(editable) {"
+      },
+      {
+        "name": "serialize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 108,
+        "memberOf": "MobileBasketView",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Serialize.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "serialize: function() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [
+      "$",
+      "fullBasketPhoneViewTemplate",
+      "JossUtils",
+      "BaseView",
+      "BasketItemsView"
+    ],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES",
+    "fileName": "wf_mobile_view_basket.js",
+    "strict": true
+  },
+  "possibleClassname": "MobileBasketView",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 180
+}

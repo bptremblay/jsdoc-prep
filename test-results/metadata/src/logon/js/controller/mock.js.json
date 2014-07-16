@@ -1,0 +1,251 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "mock",
+      "AMD": true,
+      "webPath": "/src/logon/js/controller"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MockController'.",
+        "code": "wfJD",
+        "evidence": "return function MockController() {",
+        "line": 1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MockController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'index'.",
+        "code": "wfJD",
+        "evidence": "this.index = function() {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'index'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'enabled'.",
+        "code": "wfJD",
+        "evidence": "this.enabled = function(params) {",
+        "line": 22,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'enabled'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setFixture'.",
+        "code": "wfJD",
+        "evidence": "this.setFixture = function(inputData) {",
+        "line": 29,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setFixture'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setScenario'.",
+        "code": "wfJD",
+        "evidence": "this.setScenario = function(inputData) {",
+        "line": 34,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setScenario'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/logon/js/controller/mock.js",
+  "folderPath": "test-source/src/logon/js/controller",
+  "fileName": "mock.js",
+  "packagePath": "/src/logon/js/controller",
+  "webPath": "/src/logon/js/controller",
+  "libFile": false,
+  "min": false,
+  "realName": "mock",
+  "name": "mock",
+  "camelName": "Mock",
+  "processedFilePath": "test-output/src/logon/js/controller/mock.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 49,
+    "requires": [],
+    "className": "Mock",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/logon/js/controller",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Mock",
+    "uses_$": false,
+    "chars": 1516,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "mock",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "MockController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Mock controller.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function MockController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "lineNumber": 6,
+        "line": "this.receive('enableMock', function(inputData) {",
+        "visibility": "private",
+        "args": [
+          "inputData"
+        ],
+        "name": "_anonymous6",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 10,
+        "line": "this.receive('scenarioEnabled', function(inputData) {",
+        "visibility": "private",
+        "args": [
+          "inputData"
+        ],
+        "name": "_anonymous10",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Index.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.index = function() {"
+      },
+      {
+        "name": "enabled",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 22,
+        "params": " * @param params",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "params"
+        ],
+        "description": " * Enabled.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.enabled = function(params) {"
+      },
+      {
+        "name": "setFixture",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 29,
+        "params": " * @param inputData",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": " * Set fixture.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.setFixture = function(inputData) {"
+      },
+      {
+        "name": "setScenario",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 34,
+        "params": " * @param inputData",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": " * Set scenario.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.setScenario = function(inputData) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/logon/js/controller",
+    "fileName": "mock.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 80
+}

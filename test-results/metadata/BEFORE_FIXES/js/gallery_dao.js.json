@@ -1,0 +1,160 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "messages",
+        "logger"
+      ],
+      "moduleName": "gallery_dao",
+      "AMD": true,
+      "webPath": "/BEFORE_FIXES/js"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsHintProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'success'.",
+        "code": "wfJD",
+        "evidence": "success: function(data, status, xhr) {",
+        "line": 28,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'success'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/BEFORE_FIXES/js/gallery_dao.js",
+  "folderPath": "test-source/BEFORE_FIXES/js",
+  "fileName": "gallery_dao.js",
+  "packagePath": "/BEFORE_FIXES/js",
+  "webPath": "/BEFORE_FIXES/js",
+  "libFile": false,
+  "min": false,
+  "realName": "gallery_dao",
+  "name": "gallery_dao",
+  "camelName": "GalleryDao",
+  "processedFilePath": "test-output/BEFORE_FIXES/js/gallery_dao.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 48,
+    "requires": [
+      "$ in {@link jquery.js\"}",
+      "Messages in {@link 'messages.js\"}",
+      "Logger in {@link 'logger.js\"}"
+    ],
+    "className": "GalleryDao",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES/js",
+    "uses_Y": false,
+    "no_lib": false,
+    "inferencedClassName": "GalleryDao",
+    "uses_$": true,
+    "chars": 876,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "[\n  jquery",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "exports": {
+        "lineNumber": 17,
+        "line": "var exports",
+        "name": "exports",
+        "classDeclarationFlag": true,
+        "nonFunction": true
+      }
+    },
+    "methods": [
+      {
+        "lineNumber": 9,
+        "line": "], function($, Messages, Logger) {",
+        "visibility": "private",
+        "args": [
+          "$",
+          "Messages",
+          "Logger"
+        ],
+        "name": "_anonymous9",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "fetch",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 23,
+        "memberOf": "exports",
+        "originalJsDocDescription": {
+          "description": "   * fetch data for this model\n"
+        },
+        "args": [],
+        "description": "   * fetch data for this model\n",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "exports.fetch = function() {"
+      },
+      {
+        "name": "success",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 28,
+        "params": " * @param data\n * @param status\n * @param xhr",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data",
+          "status",
+          "xhr"
+        ],
+        "description": " * Success.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "success: function(data, status, xhr) {"
+      },
+      {
+        "name": "update",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 43,
+        "params": " * @param  observation \n * @param  data ",
+        "memberOf": "exports",
+        "originalJsDocDescription": {
+          "description": "   * Update.\n   *"
+        },
+        "args": [
+          "observation",
+          "data"
+        ],
+        "description": "   * Update.\n   *",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "exports.update = function(observation, data) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": true,
+    "uses_y_log": false,
+    "requiresRaw": [
+      "$",
+      "Messages",
+      "Logger"
+    ],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES/js",
+    "fileName": "gallery_dao.js",
+    "strict": true
+  },
+  "possibleClassname": "exports",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 57
+}

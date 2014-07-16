@@ -1,0 +1,151 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "my_secure_info",
+      "AMD": true,
+      "webPath": "/src/profile/js/component"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MySecureInfoComponent'.",
+        "code": "wfJD",
+        "evidence": "return function MySecureInfoComponent(instanceName, controller, model, specLoader, handler) {",
+        "line": 1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MySecureInfoComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'defaultAction'.",
+        "code": "wfJD",
+        "evidence": "defaultAction: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'defaultAction'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/profile/js/component/MySecureInfo.js",
+  "folderPath": "test-source/src/profile/js/component",
+  "fileName": "MySecureInfo.js",
+  "packagePath": "/src/profile/js/component",
+  "webPath": "/src/profile/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "my_secure_info",
+  "name": "my_secure_info",
+  "camelName": "MySecureInfo",
+  "processedFilePath": "test-output/src/profile/js/component/MySecureInfo.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 34,
+    "requires": [],
+    "className": "MySecureInfo",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/profile/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "MySecureInfo",
+    "uses_$": false,
+    "chars": 888,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "MySecureInfo",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "MySecureInfoComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1,
+        "params": " * @param instanceName\n * @param controller\n * @param model\n * @param specLoader\n * @param handler",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "instanceName",
+          "controller",
+          "model",
+          "specLoader",
+          "handler"
+        ],
+        "description": " * My secure info component.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function MySecureInfoComponent(instanceName, controller, model, specLoader, handler) {"
+      },
+      {
+        "name": "defaultAction",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Default action.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "defaultAction: function() {"
+      },
+      {
+        "lineNumber": 21,
+        "line": "controller.receive('mySecureInfo/default', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous21",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/profile/js/component",
+    "fileName": "MySecureInfo.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 52
+}

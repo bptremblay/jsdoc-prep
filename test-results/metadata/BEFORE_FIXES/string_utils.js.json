@@ -1,0 +1,485 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "underscore",
+        "wayfair"
+      ],
+      "moduleName": "string_utils",
+      "AMD": true,
+      "webPath": "/BEFORE_FIXES"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsHintProc": [
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "  exports.getCurrencySymbol = function(cuy_id) {",
+        "line": 100,
+        "character": 0,
+        "scope": "(main)",
+        "a": "cuy_id",
+        "reason": "Identifier 'cuy_id' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "    switch (cuy_id.toUpperCase()) {",
+        "line": 101,
+        "character": 0,
+        "scope": "(main)",
+        "a": "cuy_id",
+        "reason": "Identifier 'cuy_id' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "  exports.formatCurrencyByCuyID = function(value, cuy_id) {",
+        "line": 164,
+        "character": 0,
+        "scope": "(main)",
+        "a": "cuy_id",
+        "reason": "Identifier 'cuy_id' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "      is_negative = Number(value) < 0,",
+        "line": 168,
+        "character": 0,
+        "scope": "(main)",
+        "a": "is_negative",
+        "reason": "Identifier 'is_negative' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "      formatted_value = '',",
+        "line": 169,
+        "character": 0,
+        "scope": "(main)",
+        "a": "formatted_value",
+        "reason": "Identifier 'formatted_value' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "      currency_symbol = exports.getCurrencySymbol(cuy_id);",
+        "line": 170,
+        "character": 0,
+        "scope": "(main)",
+        "a": "currency_symbol",
+        "reason": "Identifier 'currency_symbol' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "      currency_symbol = exports.getCurrencySymbol(cuy_id);",
+        "line": 170,
+        "character": 0,
+        "scope": "(main)",
+        "a": "cuy_id",
+        "reason": "Identifier 'cuy_id' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "    if (cuy_id.toUpperCase() === 'EUR') {",
+        "line": 172,
+        "character": 0,
+        "scope": "(main)",
+        "a": "cuy_id",
+        "reason": "Identifier 'cuy_id' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "      config.suffix = ' ' + currency_symbol;",
+        "line": 175,
+        "character": 0,
+        "scope": "(main)",
+        "a": "currency_symbol",
+        "reason": "Identifier 'currency_symbol' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "      config.prefix = currency_symbol;",
+        "line": 177,
+        "character": 0,
+        "scope": "(main)",
+        "a": "currency_symbol",
+        "reason": "Identifier 'currency_symbol' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "    formatted_value = formatNumber(value, config);",
+        "line": 179,
+        "character": 0,
+        "scope": "(main)",
+        "a": "formatted_value",
+        "reason": "Identifier 'formatted_value' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "    if (is_negative) {",
+        "line": 180,
+        "character": 0,
+        "scope": "(main)",
+        "a": "is_negative",
+        "reason": "Identifier 'is_negative' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "      formatted_value = '(' + formatted_value + ')';",
+        "line": 181,
+        "character": 0,
+        "scope": "(main)",
+        "a": "formatted_value",
+        "reason": "Identifier 'formatted_value' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "      formatted_value = '(' + formatted_value + ')';",
+        "line": 181,
+        "character": 0,
+        "scope": "(main)",
+        "a": "formatted_value",
+        "reason": "Identifier 'formatted_value' is not in camel case."
+      },
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "    return formatted_value;",
+        "line": 183,
+        "character": 0,
+        "scope": "(main)",
+        "a": "formatted_value",
+        "reason": "Identifier 'formatted_value' is not in camel case."
+      }
+    ],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'htmlDecode'.",
+        "code": "wfJD",
+        "evidence": "exports.htmlDecode = function(text) {",
+        "line": 205,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'htmlDecode'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/BEFORE_FIXES/string_utils.js",
+  "folderPath": "test-source/BEFORE_FIXES",
+  "fileName": "string_utils.js",
+  "packagePath": "/BEFORE_FIXES",
+  "webPath": "/BEFORE_FIXES",
+  "libFile": false,
+  "min": false,
+  "realName": "string_utils",
+  "name": "string_utils",
+  "camelName": "StringUtils",
+  "processedFilePath": "test-output/BEFORE_FIXES/string_utils.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 210,
+    "requires": [
+      "$ in {@link jquery.js\"}",
+      "_ in {@link 'underscore.js\"}",
+      "wf in {@link 'wayfair.js\"}"
+    ],
+    "className": "StringUtils",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "StringUtils",
+    "uses_$": false,
+    "chars": 6646,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "string_utils",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "exports": {
+        "lineNumber": 16,
+        "line": "var exports",
+        "name": "exports",
+        "classDeclarationFlag": true,
+        "nonFunction": true
+      },
+      "EnsureNumeric": {
+        "name": "EnsureNumeric",
+        "visibility": "public",
+        "constructor": true,
+        "static": false,
+        "lineNumber": 86,
+        "memberOf": "exports",
+        "args": [
+          "e"
+        ],
+        "return": "void",
+        "classDeclarationFlag": true,
+        "line": "exports.EnsureNumeric = function(e) {"
+      }
+    },
+    "methods": [
+      {
+        "lineNumber": 9,
+        "line": "], function($, _, wf) {",
+        "visibility": "private",
+        "args": [
+          "$",
+          "_",
+          "wf"
+        ],
+        "name": "_anonymous9",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "formatCurrency",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 32,
+        "params": " * @param  price ",
+        "memberOf": "exports",
+        "originalJsDocDescription": {
+          "return": {
+            "type": "{String}",
+            "description": "",
+            "attribute": "return"
+          },
+          "alias": {
+            "name": "module:",
+            "type": "",
+            "description": "string_utils",
+            "attribute": "alias"
+          },
+          "description": "   * Takes a Number value and returns the equivalent formatted currency\n   * String\n   *"
+        },
+        "args": [
+          "price"
+        ],
+        "returns": " {String} ",
+        "description": "   * Takes a Number value and returns the equivalent formatted currency\n   * String\n   *",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "exports.formatCurrency = function(price) {"
+      },
+      {
+        "name": "unformatCurrency",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 61,
+        "params": " * @param {String} currency Formatted currency string.",
+        "memberOf": "exports",
+        "originalJsDocDescription": {
+          "return": {
+            "type": "{Number}",
+            "description": "result Equivalent numeric value",
+            "attribute": "return"
+          },
+          "description": "   * Takes a formatted currency String and returns the equivalent Number\n   * value\n   *"
+        },
+        "args": [
+          "currency"
+        ],
+        "returns": " {Number} result Equivalent numeric value",
+        "description": "   * Takes a formatted currency String and returns the equivalent Number\n   * value\n   *",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "exports.unformatCurrency = function(currency) {"
+      },
+      {
+        "name": "EnsureNumeric",
+        "lineNumber": 86,
+        "lends": "EnsureNumeric.prototype",
+        "memberOf": "",
+        "originalJsDocDescription": {
+          "return": {
+            "type": "{Bool}",
+            "description": "result Value indicating if the pressed key is numeric.",
+            "attribute": "return"
+          },
+          "description": "   * Used to ensure user has entered a numeric input\n   *"
+        },
+        "returns": " {Bool} result Value indicating if the pressed key is numeric.",
+        "description": "   * Used to ensure user has entered a numeric input\n   *",
+        "classDeclarationFlag": true,
+        "line": "exports.EnsureNumeric = function(e) {"
+      },
+      {
+        "name": "getCurrencySymbol",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 99,
+        "params": " * @param {String} cuy_id Currency ID.",
+        "memberOf": "exports",
+        "originalJsDocDescription": {
+          "return": {
+            "type": "{String}",
+            "description": "result The currency symbol",
+            "attribute": "return"
+          },
+          "description": "   * Takes a currency ID and returns the related currency symbol\n   *"
+        },
+        "args": [
+          "cuy_id"
+        ],
+        "returns": " {String} result The currency symbol",
+        "description": "   * Takes a currency ID and returns the related currency symbol\n   *",
+        "return": "{}",
+        "classDeclarationFlag": false,
+        "line": "exports.getCurrencySymbol = function(cuy_id) {"
+      },
+      {
+        "name": "formatCurrencyByCuyID",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 163,
+        "params": " * @param {Number} value Number to format.\n * @param {String} cuy_id Currency ID to format the number to.",
+        "memberOf": "exports",
+        "originalJsDocDescription": {
+          "return": {
+            "type": "{String}",
+            "description": "result The formatted number",
+            "attribute": "return"
+          },
+          "description": "   * Takes a Number and formats it based on the given currency ID\n   *"
+        },
+        "args": [
+          "value",
+          "cuy_id"
+        ],
+        "returns": " {String} result The formatted number",
+        "description": "   * Takes a Number and formats it based on the given currency ID\n   *",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "exports.formatCurrencyByCuyID = function(value, cuy_id) {"
+      },
+      {
+        "name": "toTitleCase",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 191,
+        "params": " * @param  str ",
+        "memberOf": "exports",
+        "originalJsDocDescription": {
+          "return": {
+            "type": "",
+            "description": "string The input string with the first letter of each word",
+            "attribute": "return"
+          },
+          "description": "   * Capitalizes the first letter in every word (just like PHP's ucfirst()\n   * function capitalized.\n   *"
+        },
+        "args": [
+          "str"
+        ],
+        "returns": " string The input string with the first letter of each word",
+        "description": "   * Capitalizes the first letter in every word (just like PHP's ucfirst()\n   * function capitalized.\n   *",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "exports.toTitleCase = function(str) {"
+      },
+      {
+        "lineNumber": 192,
+        "line": "return str.replace(/(?:^|\\s)\\w/g, function(match) {",
+        "visibility": "private",
+        "args": [
+          "match"
+        ],
+        "name": "_anonymous192",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "encodeSearchSymbols",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 201,
+        "params": " * @param  inputString ",
+        "memberOf": "exports",
+        "originalJsDocDescription": {
+          "return": {
+            "type": "{string}",
+            "description": "The original input string with all special characters replaced with the proper encoding",
+            "attribute": "return"
+          },
+          "description": "   * Keeps  symbols within the input string"
+        },
+        "args": [
+          "inputString"
+        ],
+        "returns": " {string} The original input string with all special characters replaced with the proper encoding",
+        "description": "   * Keeps  symbols within the input string",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "exports.encodeSearchSymbols = function(inputString) {"
+      },
+      {
+        "name": "htmlDecode",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 205,
+        "params": " * @param text",
+        "memberOf": "exports",
+        "originalJsDocDescription": {},
+        "args": [
+          "text"
+        ],
+        "description": " * Html decode.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "exports.htmlDecode = function(text) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [
+      "$",
+      "_",
+      "wf"
+    ],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES",
+    "fileName": "string_utils.js",
+    "strict": true
+  },
+  "possibleClassname": "exports",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 226
+}

@@ -1,0 +1,186 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "ultimate_rewards",
+      "AMD": true,
+      "webPath": "/src/profile/js/component"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'doRedeemPoints'.",
+        "code": "wfJD",
+        "evidence": "doRedeemPoints: function() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'doRedeemPoints'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getMilestonesInfo'.",
+        "code": "wfJD",
+        "evidence": "getMilestonesInfo: function() {",
+        "line": 17,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getMilestonesInfo'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'gotoUltimateRewards'.",
+        "code": "wfJD",
+        "evidence": "gotoUltimateRewards: function(uri) {",
+        "line": 26,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'gotoUltimateRewards'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/profile/js/component/ultimate_rewards.js",
+  "folderPath": "test-source/src/profile/js/component",
+  "fileName": "ultimate_rewards.js",
+  "packagePath": "/src/profile/js/component",
+  "webPath": "/src/profile/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "ultimate_rewards",
+  "name": "ultimate_rewards",
+  "camelName": "UltimateRewards",
+  "processedFilePath": "test-output/src/profile/js/component/ultimate_rewards.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 37,
+    "requires": [],
+    "className": "UltimateRewards",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/profile/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "UltimateRewards",
+    "uses_$": false,
+    "chars": 732,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "ultimate_rewards",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "doRedeemPoints",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Do redeem points.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "doRedeemPoints: function() {"
+      },
+      {
+        "name": "getMilestonesInfo",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 17,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "returns": "{Object}",
+        "description": " * Get milestones info.",
+        "return": "{}",
+        "classDeclarationFlag": false,
+        "line": "getMilestonesInfo: function() {"
+      },
+      {
+        "name": "gotoUltimateRewards",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 26,
+        "params": " * @param uri",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "uri"
+        ],
+        "description": " * Goto ultimate rewards.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "gotoUltimateRewards: function(uri) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/profile/js/component",
+    "fileName": "ultimate_rewards.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 56
+}

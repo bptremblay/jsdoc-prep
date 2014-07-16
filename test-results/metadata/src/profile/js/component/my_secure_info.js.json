@@ -1,0 +1,122 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "my_secure_info",
+      "AMD": true,
+      "webPath": "/src/profile/js/component"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'defaultAction'.",
+        "code": "wfJD",
+        "evidence": "defaultAction: function() {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'defaultAction'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/profile/js/component/my_secure_info.js",
+  "folderPath": "test-source/src/profile/js/component",
+  "fileName": "my_secure_info.js",
+  "packagePath": "/src/profile/js/component",
+  "webPath": "/src/profile/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "my_secure_info",
+  "name": "my_secure_info",
+  "camelName": "MySecureInfo",
+  "processedFilePath": "test-output/src/profile/js/component/my_secure_info.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 14,
+    "requires": [],
+    "className": "MySecureInfo",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/profile/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "MySecureInfo",
+    "uses_$": false,
+    "chars": 236,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "my_secure_info",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "defaultAction",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Default action.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "defaultAction: function() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/profile/js/component",
+    "fileName": "my_secure_info.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 22
+}

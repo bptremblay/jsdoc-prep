@@ -1,0 +1,153 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "spec_loader",
+      "AMD": true,
+      "webPath": "/src/components/js/lib"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'SpecLoader'.",
+        "code": "wfJD",
+        "evidence": "return function SpecLoader(appName, name) {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'SpecLoader'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'success'.",
+        "code": "wfJD",
+        "evidence": "success: function(obj) {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'success'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'error'.",
+        "code": "wfJD",
+        "evidence": "error: function() {",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'error'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/components/js/lib/SpecLoader.js",
+  "folderPath": "test-source/src/components/js/lib",
+  "fileName": "SpecLoader.js",
+  "packagePath": "/src/components/js/lib",
+  "webPath": "/src/components/js/lib",
+  "libFile": false,
+  "min": false,
+  "realName": "spec_loader",
+  "name": "spec_loader",
+  "camelName": "SpecLoader",
+  "processedFilePath": "test-output/src/components/js/lib/SpecLoader.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 18,
+    "requires": [],
+    "className": "SpecLoader",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/components/js/lib",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "SpecLoader",
+    "uses_$": false,
+    "chars": 523,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "SpecLoader",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "SpecLoader",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "params": " * @param appName\n * @param name",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "appName",
+          "name"
+        ],
+        "description": " * Spec loader.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function SpecLoader(appName, name) {"
+      },
+      {
+        "name": "success",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "params": " * @param obj",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "obj"
+        ],
+        "description": " * Success.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "success: function(obj) {"
+      },
+      {
+        "name": "error",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Error.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "error: function() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": true,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/components/js/lib",
+    "fileName": "SpecLoader.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 37
+}

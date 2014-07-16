@@ -1,0 +1,139 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "request",
+      "AMD": true,
+      "webPath": "/src/logon/js/service/interceptor"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'before'.",
+        "code": "wfJD",
+        "evidence": "this.before = function(settings) {",
+        "line": 4,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'before'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'beforeSend'.",
+        "code": "wfJD",
+        "evidence": "settings.beforeSend = function(xhr) {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'beforeSend'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/logon/js/service/interceptor/request.js",
+  "folderPath": "test-source/src/logon/js/service/interceptor",
+  "fileName": "request.js",
+  "packagePath": "/src/logon/js/service/interceptor",
+  "webPath": "/src/logon/js/service/interceptor",
+  "libFile": false,
+  "min": false,
+  "realName": "request",
+  "name": "request",
+  "camelName": "Request",
+  "processedFilePath": "test-output/src/logon/js/service/interceptor/request.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 18,
+    "requires": [],
+    "className": "Request",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/logon/js/service/interceptor",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Request",
+    "uses_$": false,
+    "chars": 541,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "request",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 3,
+        "line": "return function(statusCodeMapper, storeSettings) {",
+        "visibility": "private",
+        "args": [
+          "statusCodeMapper",
+          "storeSettings"
+        ],
+        "name": "_anonymous3",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "before",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "params": " * @param settings",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "settings"
+        ],
+        "description": " * Before.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.before = function(settings) {"
+      },
+      {
+        "name": "beforeSend",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "params": " * @param xhr",
+        "memberOf": "settings",
+        "originalJsDocDescription": {},
+        "args": [
+          "xhr"
+        ],
+        "description": " * Before send.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "settings.beforeSend = function(xhr) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/logon/js/service/interceptor",
+    "fileName": "request.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 34
+}

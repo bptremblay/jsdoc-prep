@@ -1434,7 +1434,7 @@ function fixDoclets(walkerObj) {
 
 	var ast = {};
 
-	try {
+	//try {
 		ast = _esprima.parse(input, {
 			comment : true,
 			tolerant : true,
@@ -1442,9 +1442,10 @@ function fixDoclets(walkerObj) {
 			raw : true,
 			tokens : true
 		});
-	} catch (ex) {
-		console.error(ex.message);
-	}
+	//} catch (ex) {
+	//	console.error(ex.stack);
+	//	return null;
+	//}
 	// writeFile("dump.json", JSON.stringify(ast));
 	// parsed = parseDoclet(input, block, defineModuleInTopOfFile,
 	// nextLineOfCode);
@@ -1545,23 +1546,23 @@ function fixDoclets(walkerObj) {
 
 	// // console.log(newFile);
 
-	newFile = beautify(newFile, {
-		'indent_size' : 2,
-		'indent_char' : ' ',
-		'indent_level' : 0,
-		'indent_with_tabs' : false,
-		'preserve_newlines' : true,
-		'max_preserve_newlines' : 1,
-		'jslint_happy' : true,
-		'brace_style' : 'collapse',
-		'keep_array_indentation' : false,
-		'keep_function_indentation' : false,
-		'space_before_conditional' : true,
-		'break_chained_methods' : false,
-		'eval_code' : false,
-		'unescape_strings' : false,
-		'wrap_line_length' : 200
-	});
+//	newFile = beautify(newFile, {
+//		'indent_size' : 2,
+//		'indent_char' : ' ',
+//		'indent_level' : 0,
+//		'indent_with_tabs' : false,
+//		'preserve_newlines' : true,
+//		'max_preserve_newlines' : 1,
+//		'jslint_happy' : true,
+//		'brace_style' : 'collapse',
+//		'keep_array_indentation' : false,
+//		'keep_function_indentation' : false,
+//		'space_before_conditional' : true,
+//		'break_chained_methods' : false,
+//		'eval_code' : false,
+//		'unescape_strings' : false,
+//		'wrap_line_length' : 200
+//	});
 
 	// writeFile('new_' + testFileName, newFile);
 

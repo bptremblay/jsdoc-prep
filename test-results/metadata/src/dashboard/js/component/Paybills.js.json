@@ -1,0 +1,203 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "paybills",
+      "AMD": true,
+      "webPath": "/src/dashboard/js/component"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'enablePayBill'.",
+        "code": "wfJD",
+        "evidence": "enablePayBill: function(data) {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'enablePayBill'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'cancelPayBill'.",
+        "code": "wfJD",
+        "evidence": "cancelPayBill: function() {",
+        "line": 12,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'cancelPayBill'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'checkAndRender'.",
+        "code": "wfJD",
+        "evidence": "checkAndRender: function(data) {",
+        "line": 18,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'checkAndRender'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'payIt'.",
+        "code": "wfJD",
+        "evidence": "payIt: function(data) {",
+        "line": 25,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'payIt'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/dashboard/js/component/Paybills.js",
+  "folderPath": "test-source/src/dashboard/js/component",
+  "fileName": "Paybills.js",
+  "packagePath": "/src/dashboard/js/component",
+  "webPath": "/src/dashboard/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "paybills",
+  "name": "paybills",
+  "camelName": "Paybills",
+  "processedFilePath": "test-output/src/dashboard/js/component/Paybills.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 31,
+    "requires": [],
+    "className": "Paybills",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Paybills",
+    "uses_$": false,
+    "chars": 968,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "Paybills",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "enablePayBill",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "params": " * @param data",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": " * Enable pay bill.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "enablePayBill: function(data) {"
+      },
+      {
+        "name": "cancelPayBill",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 12,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Cancel pay bill.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "cancelPayBill: function() {"
+      },
+      {
+        "name": "checkAndRender",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 18,
+        "params": " * @param data",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": " * Check and render.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "checkAndRender: function(data) {"
+      },
+      {
+        "name": "payIt",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 25,
+        "params": " * @param data",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": " * Pay it.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "payIt: function(data) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "fileName": "Paybills.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 54
+}

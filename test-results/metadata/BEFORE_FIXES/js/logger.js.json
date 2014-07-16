@@ -1,0 +1,255 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "messages"
+      ],
+      "moduleName": "logger",
+      "AMD": true,
+      "webPath": "/BEFORE_FIXES/js"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsHintProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'log'.",
+        "code": "wfJD",
+        "evidence": "function log(msg) {",
+        "line": 12,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'log'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'warn'.",
+        "code": "wfJD",
+        "evidence": "function warn(msg) {",
+        "line": 22,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'warn'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'error'.",
+        "code": "wfJD",
+        "evidence": "function error(msg) {",
+        "line": 32,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'error'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'fine'.",
+        "code": "wfJD",
+        "evidence": "exports.fine = function(msg) {",
+        "line": 41,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'fine'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'warn'.",
+        "code": "wfJD",
+        "evidence": "exports.warn = function(msg) {",
+        "line": 46,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'warn'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'error'.",
+        "code": "wfJD",
+        "evidence": "exports.error = function(msg) {",
+        "line": 49,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'error'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/BEFORE_FIXES/js/logger.js",
+  "folderPath": "test-source/BEFORE_FIXES/js",
+  "fileName": "logger.js",
+  "packagePath": "/BEFORE_FIXES/js",
+  "webPath": "/BEFORE_FIXES/js",
+  "libFile": false,
+  "min": false,
+  "realName": "logger",
+  "name": "logger",
+  "camelName": "Logger",
+  "processedFilePath": "test-output/BEFORE_FIXES/js/logger.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 54,
+    "requires": [
+      "$ in {@link jquery.js\"}",
+      "Messages in {@link 'messages.js\"}"
+    ],
+    "className": "Logger",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES/js",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Logger",
+    "uses_$": false,
+    "chars": 895,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "[\n  jquery",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {
+      "exports": {
+        "lineNumber": 9,
+        "line": "var exports",
+        "name": "exports",
+        "classDeclarationFlag": true,
+        "nonFunction": true
+      }
+    },
+    "methods": [
+      {
+        "lineNumber": 6,
+        "line": "], function($, Messages) {",
+        "visibility": "private",
+        "args": [
+          "$",
+          "Messages"
+        ],
+        "name": "_anonymous6",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "log",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 12,
+        "params": " * @param msg",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "msg"
+        ],
+        "description": " * Log.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function log(msg) {"
+      },
+      {
+        "name": "warn",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 22,
+        "params": " * @param msg",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "msg"
+        ],
+        "description": " * Warn.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function warn(msg) {"
+      },
+      {
+        "name": "error",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 32,
+        "params": " * @param msg",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "msg"
+        ],
+        "description": " * Error.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function error(msg) {"
+      },
+      {
+        "name": "fine",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 41,
+        "params": " * @param msg",
+        "memberOf": "exports",
+        "originalJsDocDescription": {},
+        "args": [
+          "msg"
+        ],
+        "description": " * Fine.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "exports.fine = function(msg) {"
+      },
+      {
+        "name": "warn",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 46,
+        "params": " * @param msg",
+        "memberOf": "exports",
+        "originalJsDocDescription": {},
+        "args": [
+          "msg"
+        ],
+        "description": " * Warn.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "exports.warn = function(msg) {"
+      },
+      {
+        "name": "error",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 49,
+        "params": " * @param msg",
+        "memberOf": "exports",
+        "originalJsDocDescription": {},
+        "args": [
+          "msg"
+        ],
+        "description": " * Error.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "exports.error = function(msg) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": true,
+    "uses_y_log": false,
+    "requiresRaw": [
+      "$",
+      "Messages"
+    ],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES/js",
+    "fileName": "logger.js",
+    "strict": true
+  },
+  "possibleClassname": "exports",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 92
+}

@@ -1,0 +1,179 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "data_transform",
+      "AMD": true,
+      "webPath": "/src/logon/js/service"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'AuthDataTransform'.",
+        "code": "wfJD",
+        "evidence": "return function AuthDataTransform() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'AuthDataTransform'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isAuthErrorStatus'.",
+        "code": "wfJD",
+        "evidence": "this.isAuthErrorStatus = function(statusCode) {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isAuthErrorStatus'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'appendModelSet'.",
+        "code": "wfJD",
+        "evidence": "this.appendModelSet = function(oldModelData, newModelData) {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'appendModelSet'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'objectClone'.",
+        "code": "wfJD",
+        "evidence": "this.objectClone = function(objectVal) {",
+        "line": 26,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'objectClone'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/logon/js/service/dataTransform.js",
+  "folderPath": "test-source/src/logon/js/service",
+  "fileName": "dataTransform.js",
+  "packagePath": "/src/logon/js/service",
+  "webPath": "/src/logon/js/service",
+  "libFile": false,
+  "min": false,
+  "realName": "data_transform",
+  "name": "data_transform",
+  "camelName": "DataTransform",
+  "processedFilePath": "test-output/src/logon/js/service/dataTransform.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 32,
+    "requires": [],
+    "className": "DataTransform",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/logon/js/service",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "DataTransform",
+    "uses_$": false,
+    "chars": 995,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "dataTransform",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 5,
+        "line": "define(function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous5",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "AuthDataTransform",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Auth data transform.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function AuthDataTransform() {"
+      },
+      {
+        "name": "isAuthErrorStatus",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "params": " * @param statusCode",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "statusCode"
+        ],
+        "returns": "{Boolean}",
+        "description": " * Is auth error status.",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "this.isAuthErrorStatus = function(statusCode) {"
+      },
+      {
+        "name": "appendModelSet",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "params": " * @param oldModelData\n * @param newModelData",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "oldModelData",
+          "newModelData"
+        ],
+        "description": " * Append model set.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.appendModelSet = function(oldModelData, newModelData) {"
+      },
+      {
+        "name": "objectClone",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 26,
+        "params": " * @param objectVal",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "objectVal"
+        ],
+        "description": " * Object clone.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.objectClone = function(objectVal) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/logon/js/service",
+    "fileName": "dataTransform.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 59
+}

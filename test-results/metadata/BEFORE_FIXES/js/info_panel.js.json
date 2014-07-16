@@ -1,0 +1,359 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "messages",
+        "logger"
+      ],
+      "moduleName": "info_panel",
+      "AMD": true,
+      "webPath": "/BEFORE_FIXES/js"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsHintProc": [
+      {
+        "id": "(error)",
+        "raw": "Script URL.",
+        "code": "W107",
+        "evidence": "    goback.href = 'javascript:void(0);';",
+        "line": 28,
+        "character": 40,
+        "scope": "(main)",
+        "reason": "Script URL."
+      }
+    ],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'show'.",
+        "code": "wfJD",
+        "evidence": "InfoPanel.prototype.show = function() {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'show'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hide'.",
+        "code": "wfJD",
+        "evidence": "InfoPanel.prototype.hide = function() {",
+        "line": 16,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hide'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initialize'.",
+        "code": "wfJD",
+        "evidence": "InfoPanel.prototype.initialize = function() {",
+        "line": 19,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initialize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'click'.",
+        "code": "wfJD",
+        "evidence": "goback.on('click', function(evt) {",
+        "line": 31,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'click'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setBusy'.",
+        "code": "wfJD",
+        "evidence": "function setBusy() {}",
+        "line": 116,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setBusy'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setIdle'.",
+        "code": "wfJD",
+        "evidence": "function setIdle() {}",
+        "line": 118,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setIdle'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'renderCarousel'.",
+        "code": "wfJD",
+        "evidence": "InfoPanel.prototype.renderCarousel = function(item, slideIndex) {",
+        "line": 119,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'renderCarousel'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/BEFORE_FIXES/js/info_panel.js",
+  "folderPath": "test-source/BEFORE_FIXES/js",
+  "fileName": "info_panel.js",
+  "packagePath": "/BEFORE_FIXES/js",
+  "webPath": "/BEFORE_FIXES/js",
+  "libFile": false,
+  "min": false,
+  "realName": "info_panel",
+  "name": "info_panel",
+  "camelName": "InfoPanel",
+  "processedFilePath": "test-output/BEFORE_FIXES/js/info_panel.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 218,
+    "requires": [
+      "$ in {@link jquery.js\"}",
+      "Messages in {@link 'messages.js\"}",
+      "Logger in {@link 'logger.js\"}"
+    ],
+    "className": "InfoPanel",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES/js",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "InfoPanel",
+    "uses_$": false,
+    "chars": 8125,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "[\n  jquery",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {
+      "InfoPanel": {
+        "name": "InfoPanel",
+        "visibility": "public",
+        "constructor": true,
+        "static": false,
+        "lineNumber": 12,
+        "memberOf": "",
+        "args": [],
+        "return": "void",
+        "classDeclarationFlag": true,
+        "line": "function InfoPanel() {}"
+      }
+    },
+    "methods": [
+      {
+        "lineNumber": 7,
+        "line": "], function($, Messages, Logger) {",
+        "visibility": "private",
+        "args": [
+          "$",
+          "Messages",
+          "Logger"
+        ],
+        "name": "_anonymous7",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "InfoPanel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 12,
+        "memberOf": "InfoPanel",
+        "originalJsDocDescription": {
+          "constructor": {
+            "type": "",
+            "description": "",
+            "attribute": "constructor"
+          },
+          "description": ""
+        },
+        "args": [],
+        "description": " * Info panel.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function InfoPanel() {}"
+      },
+      {
+        "name": "show",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "InfoPanel.prototype",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Show.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "InfoPanel.prototype.show = function() {"
+      },
+      {
+        "name": "hide",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "memberOf": "InfoPanel.prototype",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Hide.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "InfoPanel.prototype.hide = function() {"
+      },
+      {
+        "name": "initialize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 19,
+        "memberOf": "InfoPanel.prototype",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Initialize.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "InfoPanel.prototype.initialize = function() {"
+      },
+      {
+        "ownerExpression": "goback",
+        "name": "click",
+        "visibility": "public",
+        "lineNumber": 31,
+        "static": false,
+        "params": " * @param evt",
+        "memberOf": "goback",
+        "originalJsDocDescription": {},
+        "args": [
+          "evt"
+        ],
+        "description": " * Click.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "goback.on('click', function(evt) {"
+      },
+      {
+        "name": "createGalleryTab",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 109,
+        "params": " * @param  id \n * @param  title \n * @param  content \n * @param  src ",
+        "memberOf": "InfoPanel",
+        "originalJsDocDescription": {
+          "private": {
+            "type": "",
+            "description": "",
+            "attribute": "private"
+          },
+          "return": {
+            "type": "{String}",
+            "description": "",
+            "attribute": "return"
+          },
+          "description": "   * Create gallery tab.\n   *"
+        },
+        "args": [
+          "id",
+          "title",
+          "content",
+          "src"
+        ],
+        "returns": " {String} ",
+        "description": "   * Create gallery tab.\n   *",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function createGalleryTab(id, title, content, src) {"
+      },
+      {
+        "name": "setBusy",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 116,
+        "memberOf": "InfoPanel",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Set busy.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function setBusy() {}"
+      },
+      {
+        "name": "setIdle",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 118,
+        "memberOf": "InfoPanel",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Set idle.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function setIdle() {}"
+      },
+      {
+        "name": "renderCarousel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 119,
+        "params": " * @param item\n * @param slideIndex",
+        "memberOf": "InfoPanel.prototype",
+        "originalJsDocDescription": {},
+        "args": [
+          "item",
+          "slideIndex"
+        ],
+        "description": " * Render carousel.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "InfoPanel.prototype.renderCarousel = function(item, slideIndex) {"
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 180,
+        "params": " * @param  item \n * @param  slideIndex ",
+        "memberOf": "InfoPanel.prototype",
+        "originalJsDocDescription": {
+          "description": "   * TODO: normalize signature"
+        },
+        "args": [
+          "item",
+          "slideIndex"
+        ],
+        "description": "   * TODO: normalize signature",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "InfoPanel.prototype.render = function(item, slideIndex) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [
+      "$",
+      "Messages",
+      "Logger"
+    ],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/BEFORE_FIXES/js",
+    "fileName": "info_panel.js",
+    "strict": true
+  },
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 266
+}

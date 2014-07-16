@@ -178,12 +178,14 @@ module.exports = function(grunt) {
 		                       // 'minFilter',
 		                       'badCharactersProc',
 		                       //'amdFilter',
-		                       'jsBeautifyProc', 'amdProc',
+		                       'jsBeautifyProc', 
+		                       //'jsHintProc',
+		                       'amdProc',
 		                       'jsDoccerProc', 
 		                       'jsBeautifyProc',
 		                       //'jsDocNameFixerProc',
 		                       //		// BPT
-		                       //'jsDoc3PrepProc', 
+		                       'jsDoc3PrepProc', 
 		                       'jsBeautifyProc',
 		                       'fixJSDocFormattingProc',
 		                       //'generateJavaProc',
@@ -365,7 +367,7 @@ module.exports = function(grunt) {
 	// grunt.registerTask('default', ['prepForJsDoc']);
 
 	//grunt.registerTask('default', [ 'prepForJsDoc', 'beautify', 'doc' ]);
-	grunt.registerTask('default', [ 'prepForJsDoc', 'beautify' ]);
+	grunt.registerTask('default', [ 'beautify', 'prepForJsDoc', 'beautify',  'doc' ]);
 	grunt.loadNpmTasks('grunt-node-inspector');
 	grunt.loadNpmTasks('grunt-fixmyjs');
 	//grunt.loadNpmTasks('grunt-githooks');

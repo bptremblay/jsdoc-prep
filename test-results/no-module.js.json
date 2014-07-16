@@ -1,0 +1,212 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "no_module",
+      "AMD": false,
+      "webPath": ""
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsHintProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'chewBakka'.",
+        "code": "wfJD",
+        "evidence": "this.chewBakka = function() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'chewBakka'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'SecondClass'.",
+        "code": "wfJD",
+        "evidence": "function SecondClass() {",
+        "line": 21,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'SecondClass'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'chonkey'.",
+        "code": "wfJD",
+        "evidence": "SecondClass.prototype.chonkey = function(toothache, tomato) {",
+        "line": 25,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'chonkey'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/no-module.js",
+  "folderPath": "test-source",
+  "fileName": "no-module.js",
+  "packagePath": "",
+  "webPath": "",
+  "libFile": false,
+  "min": false,
+  "realName": "no-module",
+  "name": "no_module",
+  "camelName": "NoModule",
+  "processedFilePath": "test-output/no-module.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 28,
+    "requires": [],
+    "className": "NoModule",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "NoModule",
+    "uses_$": false,
+    "chars": 391,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "no-module",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "SecondClass": {
+        "name": "SecondClass",
+        "visibility": "public",
+        "constructor": true,
+        "static": false,
+        "lineNumber": 21,
+        "memberOf": "",
+        "args": [],
+        "return": "void",
+        "classDeclarationFlag": true,
+        "line": "function SecondClass() {"
+      },
+      "Fronum": {
+        "name": "Fronum",
+        "visibility": "public",
+        "constructor": true,
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "args": [],
+        "return": "void",
+        "classDeclarationFlag": true,
+        "line": "function Fronum() {"
+      }
+    },
+    "methods": [
+      {
+        "name": "Fronum",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "originalJsDocDescription": {
+          "copyright": {
+            "name": "JPMorgan",
+            "type": "",
+            "description": "Chase & Co. All rights reserved.",
+            "attribute": "copyright"
+          },
+          "author": {
+            "name": "",
+            "type": "",
+            "description": "Fredrum <rf@monath.net>",
+            "attribute": "author"
+          },
+          "description": " * js_test_resources/fronum.js"
+        },
+        "args": [],
+        "description": " * Fronum.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function Fronum() {"
+      },
+      {
+        "name": "chewBakka",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Chew bakka.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.chewBakka = function() {"
+      },
+      {
+        "name": "chonkey",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 17,
+        "params": " * @param toothache\n * @param tomato",
+        "memberOf": "Fronum.prototype",
+        "originalJsDocDescription": {
+          "description": " *"
+        },
+        "args": [
+          "toothache",
+          "tomato"
+        ],
+        "description": " * Chonkey.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "Fronum.prototype.chonkey = function(toothache, tomato) {"
+      },
+      {
+        "name": "SecondClass",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 21,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Second class.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function SecondClass() {"
+      },
+      {
+        "name": "chonkey",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 25,
+        "params": " * @param toothache\n * @param tomato",
+        "memberOf": "SecondClass.prototype",
+        "originalJsDocDescription": {},
+        "args": [
+          "toothache",
+          "tomato"
+        ],
+        "description": " * Chonkey.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "SecondClass.prototype.chonkey = function(toothache, tomato) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output",
+    "fileName": "no-module.js",
+    "strict": false
+  },
+  "possibleClassname": "SecondClass",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 51
+}

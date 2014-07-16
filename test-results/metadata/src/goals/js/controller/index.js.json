@@ -1,0 +1,195 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "components/lib/ComponentInspector",
+        "components/lib/ComponentFactory",
+        "goals/component/TopMenu",
+        "goals/component/MegaMenu",
+        "goals/component/Search",
+        "goals/component/AtmPreferences",
+        "goals/component/MyNotifications",
+        "goals/component/MyInfo",
+        "goals/component/ContentSubSection",
+        "goals/component/CustomerCenter"
+      ],
+      "moduleName": "index",
+      "AMD": true,
+      "webPath": "/src/goals/js/controller"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'IndexController'.",
+        "code": "wfJD",
+        "evidence": "return function IndexController() {",
+        "line": 21,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'IndexController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 28,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/goals/js/controller/index.js",
+  "folderPath": "test-source/src/goals/js/controller",
+  "fileName": "index.js",
+  "packagePath": "/src/goals/js/controller",
+  "webPath": "/src/goals/js/controller",
+  "libFile": false,
+  "min": false,
+  "realName": "index",
+  "name": "index",
+  "camelName": "Index",
+  "processedFilePath": "test-output/src/goals/js/controller/index.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 69,
+    "requires": [
+      "inspectable in {@link / Component utils\n    'components/lib/ComponentInspector.js\"}",
+      "component in {@link 'components/lib/ComponentFactory.js\"}",
+      "//Components\nGoals/Component/TopMenu in {@link // Components\n    'goals/component/TopMenu.js\"}",
+      "Goals/Component/MegaMenu in {@link 'goals/component/MegaMenu.js\"}",
+      "Goals/Component/Search in {@link 'goals/component/Search.js\"}",
+      "Goals/Component/AtmPreferences in {@link 'goals/component/AtmPreferences.js\"}",
+      "Goals/Component/MyNotifications in {@link 'goals/component/MyNotifications.js\"}",
+      "Goals/Component/MyInfo in {@link 'goals/component/MyInfo.js\"}",
+      "Goals/Component/ContentSubSection in {@link 'goals/component/ContentSubSection.js\"}",
+      "Goals/Component/CustomerCenter in {@link 'goals/component/CustomerCenter.js\"}"
+    ],
+    "className": "Index",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/goals/js/controller",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Index",
+    "uses_$": false,
+    "chars": 2382,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "[\n    // Component utils\n    components/lib/ComponentInspector",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 19,
+        "line": "function(inspectable, component) {",
+        "visibility": "private",
+        "args": [
+          "inspectable",
+          "component"
+        ],
+        "name": "_anonymous19",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "IndexController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 21,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Index controller.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function IndexController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 28,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 46,
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "index",
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "description": "       * Function for default action",
+          "memberOf": {
+            "name": "module:IndexController",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [],
+        "description": "       * Function for default action",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.index = function() {"
+      },
+      {
+        "lineNumber": 47,
+        "line": "this.receive('searchInstance/triggerComponent', function(payload) {",
+        "visibility": "private",
+        "args": [
+          "payload"
+        ],
+        "name": "_anonymous47",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [
+      "inspectable",
+      "component",
+      "//Components\nGoals/Component/TopMenu",
+      "Goals/Component/MegaMenu",
+      "Goals/Component/Search",
+      "Goals/Component/AtmPreferences",
+      "Goals/Component/MyNotifications",
+      "Goals/Component/MyInfo",
+      "Goals/Component/ContentSubSection",
+      "Goals/Component/CustomerCenter"
+    ],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/goals/js/controller",
+    "fileName": "index.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 88
+}

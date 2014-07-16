@@ -1,0 +1,176 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "send_money",
+      "AMD": true,
+      "webPath": "/src/dashboard/js/component"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'enableSendMoney'.",
+        "code": "wfJD",
+        "evidence": "enableSendMoney: function(inputData) {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'enableSendMoney'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'cancelSendMoney'.",
+        "code": "wfJD",
+        "evidence": "cancelSendMoney: function() {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'cancelSendMoney'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'checkAndRender'.",
+        "code": "wfJD",
+        "evidence": "checkAndRender: function(data) {",
+        "line": 24,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'checkAndRender'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/dashboard/js/component/SendMoney.js",
+  "folderPath": "test-source/src/dashboard/js/component",
+  "fileName": "SendMoney.js",
+  "packagePath": "/src/dashboard/js/component",
+  "webPath": "/src/dashboard/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "send_money",
+  "name": "send_money",
+  "camelName": "SendMoney",
+  "processedFilePath": "test-output/src/dashboard/js/component/SendMoney.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 37,
+    "requires": [],
+    "className": "SendMoney",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "SendMoney",
+    "uses_$": false,
+    "chars": 970,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "SendMoney",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "enableSendMoney",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "params": " * @param inputData",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": " * Enable send money.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "enableSendMoney: function(inputData) {"
+      },
+      {
+        "name": "cancelSendMoney",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Cancel send money.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "cancelSendMoney: function() {"
+      },
+      {
+        "name": "checkAndRender",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 24,
+        "params": " * @param data",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": " * Check and render.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "checkAndRender: function(data) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "fileName": "SendMoney.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 55
+}

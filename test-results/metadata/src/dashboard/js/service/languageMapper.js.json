@@ -1,0 +1,131 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "language_mapper",
+      "AMD": true,
+      "webPath": "/src/dashboard/js/service"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'LocaleLanguageMapper'.",
+        "code": "wfJD",
+        "evidence": "return function LocaleLanguageMapper() {",
+        "line": 1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'LocaleLanguageMapper'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getLocaleMessage'.",
+        "code": "wfJD",
+        "evidence": "this.getLocaleMessage = function(name, lang) {",
+        "line": 288,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getLocaleMessage'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/dashboard/js/service/languageMapper.js",
+  "folderPath": "test-source/src/dashboard/js/service",
+  "fileName": "languageMapper.js",
+  "packagePath": "/src/dashboard/js/service",
+  "webPath": "/src/dashboard/js/service",
+  "libFile": false,
+  "min": false,
+  "realName": "language_mapper",
+  "name": "language_mapper",
+  "camelName": "LanguageMapper",
+  "processedFilePath": "test-output/src/dashboard/js/service/languageMapper.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 300,
+    "requires": [
+      "require in {@link an.js\"}"
+    ],
+    "className": "LanguageMapper",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/service",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "LanguageMapper",
+    "uses_$": false,
+    "chars": 8680,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "languageMapper",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "LocaleLanguageMapper",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Locale language mapper.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function LocaleLanguageMapper() {"
+      },
+      {
+        "name": "getLocaleMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 288,
+        "params": " * @param name\n * @param lang",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "name",
+          "lang"
+        ],
+        "returns": "{Object}",
+        "description": " * Get locale message.",
+        "return": "{}",
+        "classDeclarationFlag": false,
+        "line": "this.getLocaleMessage = function(name, lang) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [
+      "require"
+    ],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/service",
+    "fileName": "languageMapper.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 318
+}

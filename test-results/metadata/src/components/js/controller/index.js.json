@@ -1,0 +1,193 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "components/lib/ComponentInspector",
+        "components/lib/ComponentFactory",
+        "components/lib/Mocking",
+        "components/component/A",
+        "components/component/A_mock",
+        "components/component/Mock"
+      ],
+      "moduleName": "index",
+      "AMD": true,
+      "webPath": "/src/components/js/controller"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'IndexController'.",
+        "code": "wfJD",
+        "evidence": "return function IndexController() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'IndexController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'test'.",
+        "code": "wfJD",
+        "evidence": "this.test = function() {",
+        "line": 21,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'test'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'index'.",
+        "code": "wfJD",
+        "evidence": "this.index = function() {",
+        "line": 39,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'index'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/components/js/controller/index.js",
+  "folderPath": "test-source/src/components/js/controller",
+  "fileName": "index.js",
+  "packagePath": "/src/components/js/controller",
+  "webPath": "/src/components/js/controller",
+  "libFile": false,
+  "min": false,
+  "realName": "index",
+  "name": "index",
+  "camelName": "Index",
+  "processedFilePath": "test-output/src/components/js/controller/index.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 57,
+    "requires": [
+      "inspectable in {@link components/lib/ComponentInspector.js\"}",
+      "component in {@link 'components/lib/ComponentFactory.js\"}",
+      "mock in {@link 'components/lib/Mocking.js\"}",
+      "Components/Component/A in {@link 'components/component/A.js\"}",
+      "Components/Component/AMock in {@link 'components/component/A_mock.js\"}",
+      "Components/Component/Mock in {@link 'components/component/Mock.js\"}"
+    ],
+    "className": "Index",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/components/js/controller",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Index",
+    "uses_$": false,
+    "chars": 1270,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "[\n  components/lib/ComponentInspector",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 7,
+        "line": "], function(inspectable, component, mock) {",
+        "visibility": "private",
+        "args": [
+          "inspectable",
+          "component",
+          "mock"
+        ],
+        "name": "_anonymous7",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "IndexController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Index controller.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function IndexController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "test",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 21,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Test.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.test = function() {"
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 39,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Index.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.index = function() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [
+      "inspectable",
+      "component",
+      "mock",
+      "Components/Component/A",
+      "Components/Component/AMock",
+      "Components/Component/Mock"
+    ],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/components/js/controller",
+    "fileName": "index.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 80
+}

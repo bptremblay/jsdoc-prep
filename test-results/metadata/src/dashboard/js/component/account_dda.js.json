@@ -1,0 +1,152 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "account_dda",
+      "AMD": true,
+      "webPath": "/src/dashboard/js/component"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 4,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'selectAccountActivity'.",
+        "code": "wfJD",
+        "evidence": "selectAccountActivity: function(inputData) {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'selectAccountActivity'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'selectMore'.",
+        "code": "wfJD",
+        "evidence": "selectMore: function(inputData) {",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'selectMore'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/dashboard/js/component/account_dda.js",
+  "folderPath": "test-source/src/dashboard/js/component",
+  "fileName": "account_dda.js",
+  "packagePath": "/src/dashboard/js/component",
+  "webPath": "/src/dashboard/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "account_dda",
+  "name": "account_dda",
+  "camelName": "AccountDda",
+  "processedFilePath": "test-output/src/dashboard/js/component/account_dda.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 16,
+    "requires": [],
+    "className": "AccountDda",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "AccountDda",
+    "uses_$": false,
+    "chars": 455,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "account_dda",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "selectAccountActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "params": " * @param inputData",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": " * Select account activity.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "selectAccountActivity: function(inputData) {"
+      },
+      {
+        "name": "selectMore",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "params": " * @param inputData",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": " * Select more.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "selectMore: function(inputData) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "fileName": "account_dda.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 32
+}

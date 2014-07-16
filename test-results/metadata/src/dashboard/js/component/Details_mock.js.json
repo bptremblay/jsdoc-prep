@@ -1,0 +1,130 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "details_mock",
+      "AMD": true,
+      "webPath": "/src/dashboard/js/component"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'DetailsComponent'.",
+        "code": "wfJD",
+        "evidence": "return function DetailsComponent(instanceName, controller, model, specLoader, handler) {",
+        "line": 1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'DetailsComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showDetails'.",
+        "code": "wfJD",
+        "evidence": "showDetails: function(activeAccountId) {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showDetails'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/dashboard/js/component/Details_mock.js",
+  "folderPath": "test-source/src/dashboard/js/component",
+  "fileName": "Details_mock.js",
+  "packagePath": "/src/dashboard/js/component",
+  "webPath": "/src/dashboard/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "details_mock",
+  "name": "details_mock",
+  "camelName": "DetailsMock",
+  "processedFilePath": "test-output/src/dashboard/js/component/Details_mock.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 59,
+    "requires": [],
+    "className": "DetailsMock",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "DetailsMock",
+    "uses_$": false,
+    "chars": 2157,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "Details_mock",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "DetailsComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1,
+        "params": " * @param instanceName\n * @param controller\n * @param model\n * @param specLoader\n * @param handler",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "instanceName",
+          "controller",
+          "model",
+          "specLoader",
+          "handler"
+        ],
+        "description": " * Details component.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function DetailsComponent(instanceName, controller, model, specLoader, handler) {"
+      },
+      {
+        "name": "showDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "params": " * @param activeAccountId",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "activeAccountId"
+        ],
+        "description": " * Show details.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "showDetails: function(activeAccountId) {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/component",
+    "fileName": "Details_mock.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 79
+}

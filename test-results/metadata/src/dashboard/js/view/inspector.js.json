@@ -1,0 +1,172 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "inspector",
+      "AMD": true,
+      "webPath": "/src/dashboard/js/view"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'InspectorView'.",
+        "code": "wfJD",
+        "evidence": "return function InspectorView() {",
+        "line": 1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'InspectorView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 4,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hidePreloader'.",
+        "code": "wfJD",
+        "evidence": "this.hidePreloader = function() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hidePreloader'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'onDataChange'.",
+        "code": "wfJD",
+        "evidence": "this.onDataChange = function() {",
+        "line": 19,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'onDataChange'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/dashboard/js/view/inspector.js",
+  "folderPath": "test-source/src/dashboard/js/view",
+  "fileName": "inspector.js",
+  "packagePath": "/src/dashboard/js/view",
+  "webPath": "/src/dashboard/js/view",
+  "libFile": false,
+  "min": false,
+  "realName": "inspector",
+  "name": "inspector",
+  "camelName": "Inspector",
+  "processedFilePath": "test-output/src/dashboard/js/view/inspector.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 25,
+    "requires": [],
+    "className": "Inspector",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/view",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Inspector",
+    "uses_$": false,
+    "chars": 776,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "inspector",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "InspectorView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Inspector view.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function InspectorView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "hidePreloader",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Hide preloader.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.hidePreloader = function() {"
+      },
+      {
+        "name": "onDataChange",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 19,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * On data change.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.onDataChange = function() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/dashboard/js/view",
+    "fileName": "inspector.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 42
+}

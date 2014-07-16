@@ -2,7 +2,7 @@ var path = require('path');
 var fs = require('fs');
 var jswalker = require('./fileSystemProcessor');
 var rimraf = require('rimraf');
-//
+
 var outPath = 'test-output';
 var testPath = 'test-jstests';
 var docPath = 'test-jsdocs';
@@ -13,7 +13,7 @@ function jswalkerCallback(jswalkerResults) {
 	console.log('ALL DONE');
 
 	function runJsDoc(sourceDirectory) {
-		
+
 	}
 
 	runJsDoc('test-output');
@@ -22,30 +22,33 @@ function jswalkerCallback(jswalkerResults) {
 //'jsDoc3PrepProc',
 
 var processingChain = [
-// 'trimProc',
-'thirdPartyFilter', 'minFilter', 'badCharactersProc',
+//'trimProc',
+'thirdPartyFilter', 
+'minFilter', 
+'badCharactersProc',
 //'trimProc',
 //'amdFilter',
 'jsBeautifyProc',
- 'amdProc',
- 'jsDoccerProc',
+'jsHintProc',
+'amdProc',
+'jsDoccerProc',
 'fixJSDocFormattingProc',
-//  'jsDocNameFixerProc',
-//  //'fixClassDeclarationsProc',
-//  'jsDoc3PrepProc',
-//  'trimProc',
-  'jsBeautifyProc'
+//'jsDocNameFixerProc',
+////'fixClassDeclarationsProc',
+//'jsDoc3PrepProc',
+//'trimProc',
+'jsBeautifyProc'
 ];
 
 var opts = {
-	callBack : jswalkerCallback,
-	scanPath : scanPath,
-	writePath : outPath,
-	writeTestPath : testPath,
-	writeDocPath : docPath,
-	writeResultsPath : resultsPath,
-	writeEnable : true,
-	processingChain : processingChain
+		callBack : jswalkerCallback,
+		scanPath : scanPath,
+		writePath : outPath,
+		writeTestPath : testPath,
+		writeDocPath : docPath,
+		writeResultsPath : resultsPath,
+		writeEnable : true,
+		processingChain : processingChain
 };
 
 var justDoc = false;

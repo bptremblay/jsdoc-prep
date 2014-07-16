@@ -1,0 +1,153 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "mock",
+      "AMD": true,
+      "webPath": "/src/components/js/component"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MockComponent'.",
+        "code": "wfJD",
+        "evidence": "return function MockComponent(instanceName, controller, model, specLoader, handler) {",
+        "line": 1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MockComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'enable'.",
+        "code": "wfJD",
+        "evidence": "enable: function() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'enable'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'disable'.",
+        "code": "wfJD",
+        "evidence": "disable: function() {",
+        "line": 25,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'disable'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/components/js/component/Mock.js",
+  "folderPath": "test-source/src/components/js/component",
+  "fileName": "Mock.js",
+  "packagePath": "/src/components/js/component",
+  "webPath": "/src/components/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "mock",
+  "name": "mock",
+  "camelName": "Mock",
+  "processedFilePath": "test-output/src/components/js/component/Mock.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 51,
+    "requires": [],
+    "className": "Mock",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/components/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Mock",
+    "uses_$": false,
+    "chars": 1645,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "Mock",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 0,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous0",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "MockComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1,
+        "params": " * @param instanceName\n * @param controller\n * @param model\n * @param specLoader\n * @param handler",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "instanceName",
+          "controller",
+          "model",
+          "specLoader",
+          "handler"
+        ],
+        "description": " * Mock component.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function MockComponent(instanceName, controller, model, specLoader, handler) {"
+      },
+      {
+        "name": "enable",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Enable.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "enable: function() {"
+      },
+      {
+        "name": "disable",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 25,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Disable.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "disable: function() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/components/js/component",
+    "fileName": "Mock.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 70
+}

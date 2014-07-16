@@ -1,0 +1,425 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "index",
+      "AMD": true,
+      "webPath": "/src/goals/js/view"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'AuthView'.",
+        "code": "wfJD",
+        "evidence": "return function AuthView() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'AuthView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 24,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showPreferencePopup'.",
+        "code": "wfJD",
+        "evidence": "this.showPreferencePopup = function(url) {",
+        "line": 149,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showPreferencePopup'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showCustomerCenterPopup'.",
+        "code": "wfJD",
+        "evidence": "this.showCustomerCenterPopup = function(url) {",
+        "line": 154,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showCustomerCenterPopup'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showshowMortgagePayoff'.",
+        "code": "wfJD",
+        "evidence": "this.showshowMortgagePayoff = function(url) {",
+        "line": 159,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showshowMortgagePayoff'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showCCPopup'.",
+        "code": "wfJD",
+        "evidence": "this.showCCPopup = function(url) {",
+        "line": 164,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showCCPopup'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'createPopup'.",
+        "code": "wfJD",
+        "evidence": "this.createPopup = function(id, parentId) {",
+        "line": 170,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'createPopup'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showOverlay'.",
+        "code": "wfJD",
+        "evidence": "this.showOverlay = function(popUp) {",
+        "line": 175,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showOverlay'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideOverlay'.",
+        "code": "wfJD",
+        "evidence": "this.hideOverlay = function(popUp) {",
+        "line": 184,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideOverlay'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'centerPopup'.",
+        "code": "wfJD",
+        "evidence": "this.centerPopup = function(popup) {",
+        "line": 189,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'centerPopup'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'changeStyle'.",
+        "code": "wfJD",
+        "evidence": "this.changeStyle = function() {",
+        "line": 201,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'changeStyle'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/goals/js/view/index.js",
+  "folderPath": "test-source/src/goals/js/view",
+  "fileName": "index.js",
+  "packagePath": "/src/goals/js/view",
+  "webPath": "/src/goals/js/view",
+  "libFile": false,
+  "min": false,
+  "realName": "index",
+  "name": "index",
+  "camelName": "Index",
+  "processedFilePath": "test-output/src/goals/js/view/index.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 212,
+    "requires": [],
+    "className": "Index",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/goals/js/view",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Index",
+    "uses_$": false,
+    "chars": 7729,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "index",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 5,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous5",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "AuthView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Auth view.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function AuthView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 24,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "lineNumber": 26,
+        "line": "this.receive('atmPreferences/showModal', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous26",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 31,
+        "line": "this.receive('atmPreferences/hideModal', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous31",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 35,
+        "line": "this.receive('mortgagePayoff/showModal', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous35",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 40,
+        "line": "this.receive('mortgagePayoff/hideModal', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous40",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 44,
+        "line": "this.receive('customerCenter/showModal', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous44",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 49,
+        "line": "this.receive('customerCenter/hideModal', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous49",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "showPreferencePopup",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 149,
+        "params": " * @param url",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "url"
+        ],
+        "description": " * Show preference popup.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.showPreferencePopup = function(url) {"
+      },
+      {
+        "name": "showCustomerCenterPopup",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 154,
+        "params": " * @param url",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "url"
+        ],
+        "description": " * Show customer center popup.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.showCustomerCenterPopup = function(url) {"
+      },
+      {
+        "name": "showshowMortgagePayoff",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 159,
+        "params": " * @param url",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "url"
+        ],
+        "description": " * Showshow mortgage payoff.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.showshowMortgagePayoff = function(url) {"
+      },
+      {
+        "name": "showCCPopup",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 164,
+        "params": " * @param url",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "url"
+        ],
+        "description": " * Show CC popup.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.showCCPopup = function(url) {"
+      },
+      {
+        "name": "createPopup",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 170,
+        "params": " * @param id\n * @param parentId",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "id",
+          "parentId"
+        ],
+        "description": " * Create popup.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.createPopup = function(id, parentId) {"
+      },
+      {
+        "name": "showOverlay",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 175,
+        "params": " * @param popUp",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "popUp"
+        ],
+        "description": " * Show overlay.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.showOverlay = function(popUp) {"
+      },
+      {
+        "name": "hideOverlay",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 184,
+        "params": " * @param popUp",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "popUp"
+        ],
+        "description": " * Hide overlay.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.hideOverlay = function(popUp) {"
+      },
+      {
+        "name": "centerPopup",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 189,
+        "params": " * @param popup",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "popup"
+        ],
+        "description": " * Center popup.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.centerPopup = function(popup) {"
+      },
+      {
+        "name": "changeStyle",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 201,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Change style.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.changeStyle = function() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/goals/js/view",
+    "fileName": "index.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 271
+}

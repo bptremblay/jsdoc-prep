@@ -1,0 +1,345 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "index",
+      "AMD": true,
+      "webPath": "/src/profile/js/controller"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'IndexController'.",
+        "code": "wfJD",
+        "evidence": "return function IndexController() {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'IndexController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 47,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'swapComponents'.",
+        "code": "wfJD",
+        "evidence": "this.swapComponents = function(mountComponents, unMountComponents) {",
+        "line": 315,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'swapComponents'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateModel'.",
+        "code": "wfJD",
+        "evidence": "this.updateModel = function(oldModel, data) {",
+        "line": 322,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateModel'."
+      }
+    ],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/profile/js/controller/index.js",
+  "folderPath": "test-source/src/profile/js/controller",
+  "fileName": "index.js",
+  "packagePath": "/src/profile/js/controller",
+  "webPath": "/src/profile/js/controller",
+  "libFile": false,
+  "min": false,
+  "realName": "index",
+  "name": "index",
+  "camelName": "Index",
+  "processedFilePath": "test-output/src/profile/js/controller/index.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 343,
+    "requires": [],
+    "className": "Index",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/profile/js/controller",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Index",
+    "uses_$": false,
+    "chars": 13095,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "index",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "lineNumber": 4,
+        "line": "define(function(require) {",
+        "visibility": "private",
+        "args": [
+          "require"
+        ],
+        "name": "_anonymous4",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "IndexController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Index controller.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "return function IndexController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 47,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Init.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "lineNumber": 173,
+        "line": "this.receive('profileMenu/personalDetails', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous173",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 190,
+        "line": "this.receive('profileMenu/mySettings', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous190",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 207,
+        "line": "this.receive('profileMenu/myRelationship', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous207",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 222,
+        "line": "this.receive('profileMenu/myFinancial', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous222",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 238,
+        "line": "this.receive('profileMenu/mySecureInfo', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous238",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 254,
+        "line": "this.receive('show/hide display options', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous254",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 270,
+        "line": "this.receive('editPersonalDetails', function(package) {",
+        "visibility": "private",
+        "args": [
+          "package"
+        ],
+        "name": "_anonymous270",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 285,
+        "line": "this.receive('savePersonalDetails', function(package) {",
+        "visibility": "private",
+        "args": [
+          "package"
+        ],
+        "name": "_anonymous285",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 300,
+        "line": "this.receive('creditScore/help', function(uri) {",
+        "visibility": "private",
+        "args": [
+          "uri"
+        ],
+        "name": "_anonymous300",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 304,
+        "line": "this.receive('ultimateRewards/doRedeemPoints', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous304",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 307,
+        "line": "this.receive('ultimateRewards/getMilestonesInfo', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous307",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 310,
+        "line": "this.receive('ultimateRewards/gotoUltimateRewards', function(uri) {",
+        "visibility": "private",
+        "args": [
+          "uri"
+        ],
+        "name": "_anonymous310",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "swapComponents",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 315,
+        "params": " * @param mountComponents\n * @param unMountComponents",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "mountComponents",
+          "unMountComponents"
+        ],
+        "description": " * Swap components.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.swapComponents = function(mountComponents, unMountComponents) {"
+      },
+      {
+        "name": "updateModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 322,
+        "params": " * @param oldModel\n * @param data",
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "oldModel",
+          "data"
+        ],
+        "description": " * Update model.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.updateModel = function(oldModel, data) {"
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 338,
+        "memberOf": "this",
+        "originalJsDocDescription": {
+          "function": {
+            "name": "index",
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "description": "     * Function for default action",
+          "memberOf": {
+            "name": "module:IndexController",
+            "type": "",
+            "description": "",
+            "attribute": "memberOf"
+          }
+        },
+        "args": [],
+        "description": "     * Function for default action",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.index = function() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/src/profile/js/controller",
+    "fileName": "index.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 374
+}
