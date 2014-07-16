@@ -22,23 +22,16 @@ function jswalkerCallback(jswalkerResults) {
 //'jsDoc3PrepProc',
 
 var processingChain = [
-//'trimProc',
-'thirdPartyFilter', 
-'minFilter', 
-'badCharactersProc',
-//'trimProc',
-//'amdFilter',
-'jsBeautifyProc',
-'jsHintProc',
-'amdProc',
-'jsDoccerProc',
-'fixJSDocFormattingProc',
-//'jsDocNameFixerProc',
-////'fixClassDeclarationsProc',
-//'jsDoc3PrepProc',
-//'trimProc',
-'jsBeautifyProc'
-];
+                       'badCharactersProc',
+                       'jsBeautifyProc',
+                       'amdProc',
+                       'jsDoccerProc',
+                       'jsBeautifyProc',
+                       'jsDoc3PrepProc',
+                       'jsBeautifyProc',
+                       'fixJSDocFormattingProc',
+                       'jsBeautifyProc'
+                     ];
 
 var opts = {
 		callBack : jswalkerCallback,

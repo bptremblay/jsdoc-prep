@@ -1,0 +1,127 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "package_update",
+      "AMD": false,
+      "webPath": "/ours"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [],
+    "jsDoc3PrepProc": [],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/ours/package_update.js",
+  "folderPath": "test-source/ours",
+  "fileName": "package_update.js",
+  "packagePath": "/ours",
+  "webPath": "/ours",
+  "libFile": false,
+  "min": false,
+  "realName": "package_update",
+  "name": "package_update",
+  "camelName": "PackageUpdate",
+  "processedFilePath": "test-output/ours/package_update.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 50,
+    "requires": [],
+    "className": "PackageUpdate",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/ours",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "PackageUpdate",
+    "uses_$": false,
+    "chars": 1368,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "package_update",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "dump",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {
+          "description": " * Dump package info, from\n * http://stackoverflow.com/questions/9961502/is-there-a-way-to-automatically-build-the-package-json-file-for-node-js-projects"
+        },
+        "args": [],
+        "description": " * Dump.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function dump() {"
+      },
+      {
+        "lineNumber": 9,
+        "line": "fs.readdir(\"./node_modules\", function(err, dirs) {",
+        "visibility": "private",
+        "args": [
+          "err",
+          "dirs"
+        ],
+        "name": "_anonymous9",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 19,
+        "line": ".forEach(function(dir) {",
+        "visibility": "private",
+        "args": [
+          "dir"
+        ],
+        "name": "_anonymous19",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 24,
+        "line": "fs.readFile(packageJsonFile, function(err, data) {",
+        "visibility": "private",
+        "args": [
+          "err",
+          "data"
+        ],
+        "name": "_anonymous24",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/ours",
+    "fileName": "package_update.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 59
+}

@@ -1,0 +1,390 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "gruntfile",
+      "AMD": false,
+      "webPath": "/ours"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exports'.",
+        "code": "wfJD",
+        "evidence": "module.exports = function(grunt) {",
+        "line": 0,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exports'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'runJsDoc'.",
+        "code": "wfJD",
+        "evidence": "function runJsDoc(gruntInstance, sourceDirectory) {",
+        "line": 72,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'runJsDoc'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'close'.",
+        "code": "wfJD",
+        "evidence": "child.on('close', function(code) {",
+        "line": 87,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'close'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'readFile'.",
+        "code": "wfJD",
+        "evidence": "function readFile(filePathName) {",
+        "line": 142,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'readFile'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'safeCreateFileDir'.",
+        "code": "wfJD",
+        "evidence": "function safeCreateFileDir(path) {",
+        "line": 156,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'safeCreateFileDir'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'safeCreateDir'.",
+        "code": "wfJD",
+        "evidence": "function safeCreateDir(dir) {",
+        "line": 163,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'safeCreateDir'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'writeFile'.",
+        "code": "wfJD",
+        "evidence": "function writeFile(filePathName, source) {",
+        "line": 169,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'writeFile'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'trim'.",
+        "code": "wfJD",
+        "evidence": "function trim(input) {",
+        "line": 175,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'trim'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'camelize'.",
+        "code": "wfJD",
+        "evidence": "function camelize(input) {",
+        "line": 180,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'camelize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'capitalize'.",
+        "code": "wfJD",
+        "evidence": "function capitalize(input) {",
+        "line": 198,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'capitalize'."
+      }
+    ],
+    "jsDoc3PrepProc": [],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/ours/Gruntfile.js",
+  "folderPath": "test-source/ours",
+  "fileName": "Gruntfile.js",
+  "packagePath": "/ours",
+  "webPath": "/ours",
+  "libFile": false,
+  "min": false,
+  "realName": "gruntfile",
+  "name": "gruntfile",
+  "camelName": "Gruntfile",
+  "processedFilePath": "test-output/ours/Gruntfile.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 220,
+    "requires": [],
+    "className": "Gruntfile",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/ours",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Gruntfile",
+    "uses_$": false,
+    "chars": 5869,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "Gruntfile",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "exports",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 0,
+        "params": " * @param grunt",
+        "memberOf": "module",
+        "originalJsDocDescription": {},
+        "args": [
+          "grunt"
+        ],
+        "description": " * Exports.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "module.exports = function(grunt) {"
+      },
+      {
+        "lineNumber": 63,
+        "line": "grunt.registerTask('doc', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous63",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "runJsDoc",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 72,
+        "params": " * @param gruntInstance\n * @param sourceDirectory",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "gruntInstance",
+          "sourceDirectory"
+        ],
+        "description": " * Run js doc.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function runJsDoc(gruntInstance, sourceDirectory) {"
+      },
+      {
+        "lineNumber": 74,
+        "line": "rimraf(docPath, function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous74",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 84,
+        "line": "var child = exec(cmdLine, function(error, stdout, stderr) {",
+        "visibility": "private",
+        "args": [
+          "error",
+          "stdout",
+          "stderr"
+        ],
+        "name": "_anonymous84",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "ownerExpression": "child",
+        "name": "close",
+        "visibility": "public",
+        "lineNumber": 87,
+        "static": false,
+        "params": " * @param code",
+        "memberOf": "child",
+        "originalJsDocDescription": {},
+        "args": [
+          "code"
+        ],
+        "description": " * Close.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "child.on('close', function(code) {"
+      },
+      {
+        "lineNumber": 95,
+        "line": "grunt.registerTask('prepForJsDoc', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous95",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 128,
+        "line": "rimraf(outPath, function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous128",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "readFile",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 142,
+        "params": " * @param filePathName",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "filePathName"
+        ],
+        "description": " * Read file.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function readFile(filePathName) {"
+      },
+      {
+        "name": "safeCreateFileDir",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 156,
+        "params": " * @param path",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "path"
+        ],
+        "description": " * Safe create file dir.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function safeCreateFileDir(path) {"
+      },
+      {
+        "name": "safeCreateDir",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 163,
+        "params": " * @param dir",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "dir"
+        ],
+        "description": " * Safe create dir.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function safeCreateDir(dir) {"
+      },
+      {
+        "name": "writeFile",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 169,
+        "params": " * @param filePathName\n * @param source",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "filePathName",
+          "source"
+        ],
+        "description": " * Write file.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function writeFile(filePathName, source) {"
+      },
+      {
+        "name": "trim",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 175,
+        "params": " * @param input",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input"
+        ],
+        "description": " * Trim.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function trim(input) {"
+      },
+      {
+        "name": "camelize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 180,
+        "params": " * @param input",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input"
+        ],
+        "description": " * Camelize.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function camelize(input) {"
+      },
+      {
+        "name": "capitalize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 198,
+        "params": " * @param input",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input"
+        ],
+        "description": " * Capitalize.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function capitalize(input) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/ours",
+    "fileName": "Gruntfile.js",
+    "strict": true
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 281
+}

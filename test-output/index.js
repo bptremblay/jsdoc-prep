@@ -11,7 +11,6 @@ define(
    * @copyright JPMorgan Chase & Co. All rights reserved.
    * @requires jquery
    */
-
   function(require) {
 
     /**
@@ -19,7 +18,6 @@ define(
      *
      * @constructor
      */
-
     function IndexView() {
       require('dashboard/service/dataTransform').call(this);
       require('dashboard/service/languageMapper').call(this);

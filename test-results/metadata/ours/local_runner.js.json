@@ -1,0 +1,187 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "local_runner",
+      "AMD": false,
+      "webPath": "/ours"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'healthCheckCallback'.",
+        "code": "wfJD",
+        "evidence": "function healthCheckCallback(healthCheckResults) {",
+        "line": 12,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'healthCheckCallback'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'runJsDoc'.",
+        "code": "wfJD",
+        "evidence": "function runJsDoc(sourceDirectory) {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'runJsDoc'."
+      }
+    ],
+    "jsDoc3PrepProc": [],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/ours/local_runner.js",
+  "folderPath": "test-source/ours",
+  "fileName": "local_runner.js",
+  "packagePath": "/ours",
+  "webPath": "/ours",
+  "libFile": false,
+  "min": false,
+  "realName": "local_runner",
+  "name": "local_runner",
+  "camelName": "LocalRunner",
+  "processedFilePath": "test-output/ours/local_runner.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 98,
+    "requires": [],
+    "className": "LocalRunner",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/ours",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "LocalRunner",
+    "uses_$": false,
+    "chars": 2382,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "local_runner",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "healthCheckCallback",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 12,
+        "params": " * @param healthCheckResults",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "healthCheckResults"
+        ],
+        "description": " * Health check callback.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function healthCheckCallback(healthCheckResults) {"
+      },
+      {
+        "name": "runJsDoc",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "params": " * @param sourceDirectory",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "sourceDirectory"
+        ],
+        "description": " * Run js doc.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function runJsDoc(sourceDirectory) {"
+      },
+      {
+        "lineNumber": 16,
+        "line": "rimraf('/Users/f558910/workspace/jsdoc-prep/jsdocs', function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous16",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 26,
+        "line": "var child = exec(cmdLine, function(error, stdout, stderr) {",
+        "visibility": "private",
+        "args": [
+          "error",
+          "stdout",
+          "stderr"
+        ],
+        "name": "_anonymous26",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "ownerExpression": "child",
+        "name": "close",
+        "visibility": "public",
+        "lineNumber": 40,
+        "static": false,
+        "params": " * @param  code ",
+        "memberOf": "child",
+        "originalJsDocDescription": {
+          "function": {
+            "type": "",
+            "description": "",
+            "attribute": "function"
+          },
+          "name": {
+            "name": "close",
+            "type": "",
+            "description": "",
+            "attribute": "name"
+          },
+          "description": "       * Handler for close event.\n       *",
+          "method": {
+            "name": "close",
+            "type": "",
+            "description": "",
+            "attribute": "method"
+          }
+        },
+        "args": [
+          "code"
+        ],
+        "description": "       * Handler for close event.\n       *",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "child.on('close', function(code) {"
+      },
+      {
+        "lineNumber": 85,
+        "line": "rimraf(outPath, function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous85",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/ours",
+    "fileName": "local_runner.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 112
+}

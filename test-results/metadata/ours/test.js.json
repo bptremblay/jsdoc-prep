@@ -1,0 +1,139 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "test",
+      "AMD": false,
+      "webPath": "/ours"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'jswalkerCallback'.",
+        "code": "wfJD",
+        "evidence": "function jswalkerCallback(jswalkerResults) {",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'jswalkerCallback'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'runJsDoc'.",
+        "code": "wfJD",
+        "evidence": "function runJsDoc(sourceDirectory) {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'runJsDoc'."
+      }
+    ],
+    "jsDoc3PrepProc": [],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/ours/test.js",
+  "folderPath": "test-source/ours",
+  "fileName": "test.js",
+  "packagePath": "/ours",
+  "webPath": "/ours",
+  "libFile": false,
+  "min": false,
+  "realName": "test",
+  "name": "test",
+  "camelName": "Test",
+  "processedFilePath": "test-output/ours/test.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 71,
+    "requires": [],
+    "className": "Test",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/ours",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "Test",
+    "uses_$": false,
+    "chars": 1476,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "test",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "jswalkerCallback",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "params": " * @param jswalkerResults",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "jswalkerResults"
+        ],
+        "description": " * Jswalker callback.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function jswalkerCallback(jswalkerResults) {"
+      },
+      {
+        "name": "runJsDoc",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "params": " * @param sourceDirectory",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "sourceDirectory"
+        ],
+        "description": " * Run js doc.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function runJsDoc(sourceDirectory) {"
+      },
+      {
+        "lineNumber": 58,
+        "line": "rimraf(outPath, function() {",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous58",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/ours",
+    "fileName": "test.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 86
+}

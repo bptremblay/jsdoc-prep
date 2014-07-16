@@ -8,18 +8,15 @@
     }
   },
   "errors": {
-    "thirdPartyFilter": [],
-    "minFilter": [],
     "badCharactersProc": [],
     "jsBeautifyProc": [],
-    "jsHintProc": [],
     "jsDoccerProc": [
       {
         "id": "(error)",
         "raw": "No jsDoc Comments for method 'chewBakka'.",
         "code": "wfJD",
-        "evidence": "this.chewBakka = function() {",
-        "line": 7,
+        "evidence": "this.chewBakka = function() {};",
+        "line": 6,
         "character": -1,
         "scope": "(main)",
         "a": "",
@@ -29,8 +26,8 @@
         "id": "(error)",
         "raw": "No jsDoc Comments for method 'SecondClass'.",
         "code": "wfJD",
-        "evidence": "function SecondClass() {",
-        "line": 21,
+        "evidence": "function SecondClass() {}",
+        "line": 15,
         "character": -1,
         "scope": "(main)",
         "a": "",
@@ -41,13 +38,14 @@
         "raw": "No jsDoc Comments for method 'chonkey'.",
         "code": "wfJD",
         "evidence": "SecondClass.prototype.chonkey = function(toothache, tomato) {",
-        "line": 25,
+        "line": 16,
         "character": -1,
         "scope": "(main)",
         "a": "",
         "reason": "No jsDoc Comments for method 'chonkey'."
       }
     ],
+    "jsDoc3PrepProc": [],
     "fixJSDocFormattingProc": []
   },
   "outputDirectory": "test-output",
@@ -64,7 +62,7 @@
   "processedFilePath": "test-output/no-module.js",
   "couldParseOriginalSource": true,
   "jsDoccerProcData": {
-    "lines": 28,
+    "lines": 19,
     "requires": [],
     "className": "NoModule",
     "packagePath": "",
@@ -73,7 +71,7 @@
     "no_lib": true,
     "inferencedClassName": "NoModule",
     "uses_$": false,
-    "chars": 391,
+    "chars": 380,
     "uses_YUI": false,
     "fields": [],
     "moduleName": "no-module",
@@ -85,12 +83,12 @@
         "visibility": "public",
         "constructor": true,
         "static": false,
-        "lineNumber": 21,
+        "lineNumber": 15,
         "memberOf": "",
         "args": [],
         "return": "void",
         "classDeclarationFlag": true,
-        "line": "function SecondClass() {"
+        "line": "function SecondClass() {}"
       },
       "Fronum": {
         "name": "Fronum",
@@ -137,20 +135,20 @@
         "name": "chewBakka",
         "visibility": "public",
         "static": false,
-        "lineNumber": 7,
+        "lineNumber": 6,
         "memberOf": "this",
         "originalJsDocDescription": {},
         "args": [],
         "description": " * Chew bakka.",
         "return": "void",
         "classDeclarationFlag": false,
-        "line": "this.chewBakka = function() {"
+        "line": "this.chewBakka = function() {};"
       },
       {
         "name": "chonkey",
         "visibility": "public",
         "static": false,
-        "lineNumber": 17,
+        "lineNumber": 11,
         "params": " * @param toothache\n * @param tomato",
         "memberOf": "Fronum.prototype",
         "originalJsDocDescription": {
@@ -169,20 +167,20 @@
         "name": "SecondClass",
         "visibility": "public",
         "static": false,
-        "lineNumber": 21,
+        "lineNumber": 15,
         "memberOf": "",
         "originalJsDocDescription": {},
         "args": [],
         "description": " * Second class.",
         "return": "void",
         "classDeclarationFlag": false,
-        "line": "function SecondClass() {"
+        "line": "function SecondClass() {}"
       },
       {
         "name": "chonkey",
         "visibility": "public",
         "static": false,
-        "lineNumber": 25,
+        "lineNumber": 16,
         "params": " * @param toothache\n * @param tomato",
         "memberOf": "SecondClass.prototype",
         "originalJsDocDescription": {},
@@ -208,5 +206,5 @@
   "testStubs": "\n\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 51
+  "numberOfLines": 42
 }

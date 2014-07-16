@@ -12,7 +12,6 @@
  *
  * @constructor
  */
-
 function Fronum() {
 
   /** Chew bakka. */
@@ -32,7 +31,6 @@ Fronum.prototype.chonkey = function(toothache, tomato) {
  *
  * @constructor
  */
-
 function SecondClass() {}
 /**
  * Chonkey.

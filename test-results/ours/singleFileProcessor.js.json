@@ -1,0 +1,2136 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        ";\n    for (var r = 0; r < requires.length; r++",
+        "backbone",
+        "underscore"
+      ],
+      "moduleName": "single_file_processor",
+      "AMD": true,
+      "webPath": "/ours"
+    }
+  },
+  "errors": {
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 16,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 25,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 40,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'createJavaClass'.",
+        "code": "wfJD",
+        "evidence": "function createJavaClass(input, amdProcData) {",
+        "line": 56,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'createJavaClass'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 91,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 110,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'fixRequires'.",
+        "code": "wfJD",
+        "evidence": "function fixRequires(inputArray) {",
+        "line": 122,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'fixRequires'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'genDoc'.",
+        "code": "wfJD",
+        "evidence": "function genDoc(fileName, callBackDone) {",
+        "line": 144,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'genDoc'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 210,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 236,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'runYuiDocOnFile'.",
+        "code": "wfJD",
+        "evidence": "function runYuiDocOnFile(fileNameIn, sourceIn) {",
+        "line": 241,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'runYuiDocOnFile'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'readFile'.",
+        "code": "wfJD",
+        "evidence": "function readFile(filePathName) {",
+        "line": 256,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'readFile'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 314,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 326,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'addExtendsAnnotation'.",
+        "code": "wfJD",
+        "evidence": "function addExtendsAnnotation(inputObject, linesArray, whereInlines) {",
+        "line": 340,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'addExtendsAnnotation'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getLastJsDocComment'.",
+        "code": "wfJD",
+        "evidence": "function getLastJsDocComment(inputObject, linesIn, topOfBlock) {",
+        "line": 404,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getLastJsDocComment'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 463,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'checkExpression'.",
+        "code": "wfJD",
+        "evidence": "function checkExpression(inputObject, id, src, wrong, right) {",
+        "line": 468,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'checkExpression'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 509,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'checkExpression'.",
+        "code": "wfJD",
+        "evidence": "function checkExpression(inputObject, id, src, wrong, right) {",
+        "line": 514,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'checkExpression'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 590,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'scanForMinifiedLines'.",
+        "code": "wfJD",
+        "evidence": "function scanForMinifiedLines(input) {",
+        "line": 605,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'scanForMinifiedLines'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 626,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 643,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 662,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 681,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 704,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 727,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'unpacker_filter'.",
+        "code": "wfJD",
+        "evidence": "function unpacker_filter(source) {",
+        "line": 732,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'unpacker_filter'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 790,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 825,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 844,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 871,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'runGjsLint'.",
+        "code": "wfJD",
+        "evidence": "function runGjsLint(fileName) {",
+        "line": 877,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'runGjsLint'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'close'.",
+        "code": "wfJD",
+        "evidence": "child.on('close', function(code) {",
+        "line": 910,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'close'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 929,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'runJsDoccer'.",
+        "code": "wfJD",
+        "evidence": "function runJsDoccer(fileName, id) {",
+        "line": 934,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'runJsDoccer'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'close'.",
+        "code": "wfJD",
+        "evidence": "child.on('close', function(code) {",
+        "line": 997,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'close'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'test'.",
+        "code": "wfJD",
+        "evidence": "function test() {",
+        "line": 1011,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'test'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'readFile'.",
+        "code": "wfJD",
+        "evidence": "function readFile(filePathName) {",
+        "line": 1021,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'readFile'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'writeFile'.",
+        "code": "wfJD",
+        "evidence": "function writeFile(filePathName, source) {",
+        "line": 1030,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'writeFile'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setWriteEnable'.",
+        "code": "wfJD",
+        "evidence": "function setWriteEnable(val) {",
+        "line": 1038,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setWriteEnable'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'processFile'.",
+        "code": "wfJD",
+        "evidence": "function processFile(baseDirectory, filePathName, outputDirectory,",
+        "line": 1042,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'processFile'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'runNextProcessor'.",
+        "code": "wfJD",
+        "evidence": "function runNextProcessor() {",
+        "line": 1097,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'runNextProcessor'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'decamelize'.",
+        "code": "wfJD",
+        "evidence": "function decamelize(input) {",
+        "line": 1147,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'decamelize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getModuleName'.",
+        "code": "wfJD",
+        "evidence": "function getModuleName(filePathName) {",
+        "line": 1182,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getModuleName'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'capitalize'.",
+        "code": "wfJD",
+        "evidence": "function capitalize(input) {",
+        "line": 1195,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'capitalize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'trim'.",
+        "code": "wfJD",
+        "evidence": "function trim(input) {",
+        "line": 1207,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'trim'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'trimRight'.",
+        "code": "wfJD",
+        "evidence": "function trimRight(s) {",
+        "line": 1211,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'trimRight'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'camelize'.",
+        "code": "wfJD",
+        "evidence": "function camelize(input) {",
+        "line": 1215,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'camelize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'camelizeVariable'.",
+        "code": "wfJD",
+        "evidence": "function camelizeVariable(input) {",
+        "line": 1233,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'camelizeVariable'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isUpperCase'.",
+        "code": "wfJD",
+        "evidence": "function isUpperCase(aCharacter) {",
+        "line": 1256,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isUpperCase'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'normalizeName'.",
+        "code": "wfJD",
+        "evidence": "function normalizeName(input) {",
+        "line": 1260,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'normalizeName'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'safeCreateFileDir'.",
+        "code": "wfJD",
+        "evidence": "function safeCreateFileDir(path) {",
+        "line": 1264,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'safeCreateFileDir'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'safeCreateDir'.",
+        "code": "wfJD",
+        "evidence": "function safeCreateDir(dir) {",
+        "line": 1274,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'safeCreateDir'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'stripCComments'.",
+        "code": "wfJD",
+        "evidence": "function stripCComments(input) {",
+        "line": 1283,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'stripCComments'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'stripOneLineComments'.",
+        "code": "wfJD",
+        "evidence": "function stripOneLineComments(input) {",
+        "line": 1302,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'stripOneLineComments'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'canParse'.",
+        "code": "wfJD",
+        "evidence": "function canParse(moduleName, input, procId) {",
+        "line": 1312,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'canParse'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'esprimafy'.",
+        "code": "wfJD",
+        "evidence": "function esprimafy(moduleName, input) {",
+        "line": 1316,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'esprimafy'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'uglyDucklify'.",
+        "code": "wfJD",
+        "evidence": "function uglyDucklify(moduleName, input) {",
+        "line": 1343,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'uglyDucklify'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'convert'.",
+        "code": "wfJD",
+        "evidence": "function convert(input, filePathname) {",
+        "line": 1360,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'convert'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getRequiresTags'.",
+        "code": "wfJD",
+        "evidence": "function getRequiresTags(input) {",
+        "line": 1595,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getRequiresTags'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getLines'.",
+        "code": "wfJD",
+        "evidence": "function getLines(lines, x, y) {",
+        "line": 1611,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getLines'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getNextLineOfCode'.",
+        "code": "wfJD",
+        "evidence": "function getNextLineOfCode(lines, x) {",
+        "line": 1619,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getNextLineOfCode'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'concatLines'.",
+        "code": "wfJD",
+        "evidence": "function concatLines(lines, codeBlock) {",
+        "line": 1631,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'concatLines'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'replace'.",
+        "code": "wfJD",
+        "evidence": "function replace(source, original, token) {",
+        "line": 1639,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'replace'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'process'.",
+        "code": "wfJD",
+        "evidence": "process: function(input, doneCallback) {",
+        "line": 1647,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'process'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getAmdConfig'.",
+        "code": "wfJD",
+        "evidence": "function getAmdConfig() {",
+        "line": 1871,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getAmdConfig'."
+      }
+    ],
+    "jsDoc3PrepProc": [],
+    "fixJSDocFormattingProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/ours/singleFileProcessor.js",
+  "folderPath": "test-source/ours",
+  "fileName": "singleFileProcessor.js",
+  "packagePath": "/ours",
+  "webPath": "/ours",
+  "libFile": false,
+  "min": false,
+  "realName": "single_file_processor",
+  "name": "single_file_processor",
+  "camelName": "SingleFileProcessor",
+  "processedFilePath": "test-output/ours/singleFileProcessor.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 1881,
+    "requires": [],
+    "className": "SingleFileProcessor",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/ours",
+    "uses_Y": true,
+    "no_lib": false,
+    "inferencedClassName": "SingleFileProcessor",
+    "uses_$": true,
+    "chars": 59830,
+    "uses_YUI": true,
+    "fields": [],
+    "moduleName": ") !== -1;\n    var isMain = stripped.indexOf(require() !== -1;\n    if (isModule || isMain) {\n      doneCallback(input);\n    } else {\n      finishedProcessingChain();\n    }\n  }\n};\nvar thirdPartyFilter = {\n  id: thirdPartyFilter",
+    "uses_console_log": true,
+    "uses_backbone": true,
+    "classes": {},
+    "methods": [
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 25,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 40,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "createJavaClass",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 56,
+        "params": " * @param input\n * @param amdProcData",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "amdProcData"
+        ],
+        "description": " * Create java class.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function createJavaClass(input, amdProcData) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 91,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 110,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "fixRequires",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 122,
+        "params": " * @param inputArray",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputArray"
+        ],
+        "description": " * Fix requires.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function fixRequires(inputArray) {"
+      },
+      {
+        "name": "genDoc",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 144,
+        "params": " * @param fileName\n * @param callBackDone",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "fileName",
+          "callBackDone"
+        ],
+        "description": " * Gen doc.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function genDoc(fileName, callBackDone) {"
+      },
+      {
+        "lineNumber": 191,
+        "line": "jsdog.parseSourceFile(filename, parsed, function(data) {",
+        "visibility": "private",
+        "args": [
+          "data"
+        ],
+        "name": "_anonymous191",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 198,
+        "line": "jade.renderFile(templateFile, jadeOpts, function(err, html) {",
+        "visibility": "private",
+        "args": [
+          "err",
+          "html"
+        ],
+        "name": "_anonymous198",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 210,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 236,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "runYuiDocOnFile",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 241,
+        "params": " * @param fileNameIn\n * @param sourceIn",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "fileNameIn",
+          "sourceIn"
+        ],
+        "description": " * Run yui doc on file.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function runYuiDocOnFile(fileNameIn, sourceIn) {"
+      },
+      {
+        "name": "readFile",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 256,
+        "params": " * @param filePathName",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "filePathName"
+        ],
+        "description": " * Read file.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function readFile(filePathName) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 314,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 326,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "addExtendsAnnotation",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 340,
+        "params": " * @param inputObject\n * @param linesArray\n * @param whereInlines",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputObject",
+          "linesArray",
+          "whereInlines"
+        ],
+        "description": " * Add extends annotation.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function addExtendsAnnotation(inputObject, linesArray, whereInlines) {"
+      },
+      {
+        "name": "getLastJsDocComment",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 404,
+        "params": " * @param inputObject\n * @param linesIn\n * @param topOfBlock",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputObject",
+          "linesIn",
+          "topOfBlock"
+        ],
+        "returns": "{Object}",
+        "description": " * Get last js doc comment.",
+        "return": "{}",
+        "classDeclarationFlag": false,
+        "line": "function getLastJsDocComment(inputObject, linesIn, topOfBlock) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 463,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "checkExpression",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 468,
+        "params": " * @param inputObject\n * @param id\n * @param src\n * @param wrong\n * @param right",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputObject",
+          "id",
+          "src",
+          "wrong",
+          "right"
+        ],
+        "description": " * Check expression.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function checkExpression(inputObject, id, src, wrong, right) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 509,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "checkExpression",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 514,
+        "params": " * @param inputObject\n * @param id\n * @param src\n * @param wrong\n * @param right",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputObject",
+          "id",
+          "src",
+          "wrong",
+          "right"
+        ],
+        "description": " * Check expression.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function checkExpression(inputObject, id, src, wrong, right) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 590,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "scanForMinifiedLines",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 605,
+        "params": " * @param input",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input"
+        ],
+        "description": " * Scan for minified lines.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function scanForMinifiedLines(input) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 626,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 643,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 662,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 681,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 704,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 727,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "unpacker_filter",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 732,
+        "params": " * @param source",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "source"
+        ],
+        "description": " * Unpacker_filter.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function unpacker_filter(source) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 790,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 825,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 844,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 871,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "runGjsLint",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 877,
+        "params": " * @param fileName",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "fileName"
+        ],
+        "description": " * Run gjs lint.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function runGjsLint(fileName) {"
+      },
+      {
+        "lineNumber": 883,
+        "line": "var child = exec(cmdLine, function(error, stdout, stderr) {",
+        "visibility": "private",
+        "args": [
+          "error",
+          "stdout",
+          "stderr"
+        ],
+        "name": "_anonymous883",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "ownerExpression": "child",
+        "name": "close",
+        "visibility": "public",
+        "lineNumber": 910,
+        "static": false,
+        "params": " * @param code",
+        "memberOf": "child",
+        "originalJsDocDescription": {},
+        "args": [
+          "code"
+        ],
+        "description": " * Close.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "child.on('close', function(code) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 929,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "name": "runJsDoccer",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 934,
+        "params": " * @param fileName\n * @param id",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "fileName",
+          "id"
+        ],
+        "description": " * Run js doccer.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function runJsDoccer(fileName, id) {"
+      },
+      {
+        "lineNumber": 941,
+        "line": "function(error, stdout, stderr) {",
+        "visibility": "private",
+        "args": [
+          "error",
+          "stdout",
+          "stderr"
+        ],
+        "name": "_anonymous941",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "ownerExpression": "child",
+        "name": "close",
+        "visibility": "public",
+        "lineNumber": 997,
+        "static": false,
+        "params": " * @param code",
+        "memberOf": "child",
+        "originalJsDocDescription": {},
+        "args": [
+          "code"
+        ],
+        "description": " * Close.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "child.on('close', function(code) {"
+      },
+      {
+        "name": "test",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1011,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Test.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function test() {"
+      },
+      {
+        "lineNumber": 1018,
+        "line": "function(result) {});",
+        "visibility": "private",
+        "args": [
+          "result"
+        ],
+        "name": "_anonymous1018",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "readFile",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1021,
+        "params": " * @param filePathName",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "filePathName"
+        ],
+        "description": " * Read file.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function readFile(filePathName) {"
+      },
+      {
+        "name": "writeFile",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1030,
+        "params": " * @param filePathName\n * @param source",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "filePathName",
+          "source"
+        ],
+        "description": " * Write file.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function writeFile(filePathName, source) {"
+      },
+      {
+        "name": "setWriteEnable",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1038,
+        "params": " * @param val",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "val"
+        ],
+        "description": " * Set write enable.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function setWriteEnable(val) {"
+      },
+      {
+        "name": "processFile",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1042,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Process file.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function processFile(baseDirectory, filePathName, outputDirectory,"
+      },
+      {
+        "name": "runNextProcessor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1097,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Run next processor.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function runNextProcessor() {"
+      },
+      {
+        "lineNumber": 1103,
+        "line": "processor.process(output, function(result) {",
+        "visibility": "private",
+        "args": [
+          "result"
+        ],
+        "name": "_anonymous1103",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "_finishedProcessingChain",
+        "visibility": "private",
+        "static": false,
+        "lineNumber": 1117,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "description": " * Finished processing chain.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function _finishedProcessingChain() {"
+      },
+      {
+        "name": "decamelize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1147,
+        "params": " * @param input",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input"
+        ],
+        "description": " * Decamelize.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function decamelize(input) {"
+      },
+      {
+        "name": "getModuleName",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1182,
+        "params": " * @param filePathName",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "filePathName"
+        ],
+        "returns": "{Object}",
+        "description": " * Get module name.",
+        "return": "{}",
+        "classDeclarationFlag": false,
+        "line": "function getModuleName(filePathName) {"
+      },
+      {
+        "name": "capitalize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1195,
+        "params": " * @param input",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input"
+        ],
+        "description": " * Capitalize.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function capitalize(input) {"
+      },
+      {
+        "name": "trim",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1207,
+        "params": " * @param input",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input"
+        ],
+        "description": " * Trim.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function trim(input) {"
+      },
+      {
+        "name": "trimRight",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1211,
+        "params": " * @param s",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "s"
+        ],
+        "description": " * Trim right.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function trimRight(s) {"
+      },
+      {
+        "name": "camelize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1215,
+        "params": " * @param input",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input"
+        ],
+        "description": " * Camelize.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function camelize(input) {"
+      },
+      {
+        "name": "camelizeVariable",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1233,
+        "params": " * @param input",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input"
+        ],
+        "description": " * Camelize variable.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function camelizeVariable(input) {"
+      },
+      {
+        "name": "isUpperCase",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1256,
+        "params": " * @param aCharacter",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "aCharacter"
+        ],
+        "returns": "{Boolean}",
+        "description": " * Is upper case.",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "function isUpperCase(aCharacter) {"
+      },
+      {
+        "name": "normalizeName",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1260,
+        "params": " * @param input",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input"
+        ],
+        "description": " * Normalize name.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function normalizeName(input) {"
+      },
+      {
+        "name": "safeCreateFileDir",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1264,
+        "params": " * @param path",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "path"
+        ],
+        "description": " * Safe create file dir.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function safeCreateFileDir(path) {"
+      },
+      {
+        "name": "safeCreateDir",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1274,
+        "params": " * @param dir",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "dir"
+        ],
+        "description": " * Safe create dir.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function safeCreateDir(dir) {"
+      },
+      {
+        "name": "stripCComments",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1283,
+        "params": " * @param input",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input"
+        ],
+        "description": " * Strip C comments.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function stripCComments(input) {"
+      },
+      {
+        "name": "stripOneLineComments",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1302,
+        "params": " * @param input",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input"
+        ],
+        "description": " * Strip one line comments.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function stripOneLineComments(input) {"
+      },
+      {
+        "name": "canParse",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1312,
+        "params": " * @param moduleName\n * @param input\n * @param procId",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "moduleName",
+          "input",
+          "procId"
+        ],
+        "description": " * Can parse.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function canParse(moduleName, input, procId) {"
+      },
+      {
+        "name": "esprimafy",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1316,
+        "params": " * @param moduleName\n * @param input",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "moduleName",
+          "input"
+        ],
+        "description": " * Esprimafy.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function esprimafy(moduleName, input) {"
+      },
+      {
+        "name": "uglyDucklify",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1343,
+        "params": " * @param moduleName\n * @param input",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "moduleName",
+          "input"
+        ],
+        "description": " * Ugly ducklify.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function uglyDucklify(moduleName, input) {"
+      },
+      {
+        "name": "convert",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1360,
+        "params": " * @param input\n * @param filePathname",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "filePathname"
+        ],
+        "description": " * Convert.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function convert(input, filePathname) {"
+      },
+      {
+        "lineNumber": 1455,
+        "line": "requireSkeleton += '], function(';",
+        "visibility": "private",
+        "args": [],
+        "name": "_anonymous1455",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "getRequiresTags",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1595,
+        "params": " * @param input",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input"
+        ],
+        "returns": "{Object}",
+        "description": " * Get requires tags.",
+        "return": "{}",
+        "classDeclarationFlag": false,
+        "line": "function getRequiresTags(input) {"
+      },
+      {
+        "name": "getLines",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1611,
+        "params": " * @param lines\n * @param x\n * @param y",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "lines",
+          "x",
+          "y"
+        ],
+        "returns": "{Object}",
+        "description": " * Get lines.",
+        "return": "{}",
+        "classDeclarationFlag": false,
+        "line": "function getLines(lines, x, y) {"
+      },
+      {
+        "name": "getNextLineOfCode",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1619,
+        "params": " * @param lines\n * @param x",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "lines",
+          "x"
+        ],
+        "returns": "{Object}",
+        "description": " * Get next line of code.",
+        "return": "{}",
+        "classDeclarationFlag": false,
+        "line": "function getNextLineOfCode(lines, x) {"
+      },
+      {
+        "name": "concatLines",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1631,
+        "params": " * @param lines\n * @param codeBlock",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "lines",
+          "codeBlock"
+        ],
+        "description": " * Concat lines.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function concatLines(lines, codeBlock) {"
+      },
+      {
+        "name": "replace",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1639,
+        "params": " * @param source\n * @param original\n * @param token",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "source",
+          "original",
+          "token"
+        ],
+        "description": " * Replace.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "function replace(source, original, token) {"
+      },
+      {
+        "name": "process",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1647,
+        "params": " * @param input\n * @param doneCallback",
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input",
+          "doneCallback"
+        ],
+        "description": " * Process.",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "process: function(input, doneCallback) {"
+      },
+      {
+        "lineNumber": 1707,
+        "line": "var whereFunctionNoSpace = source.indexOf('function(');",
+        "visibility": "private",
+        "args": [
+          "'"
+        ],
+        "name": "_anonymous1707",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 1714,
+        "line": "splitter = source.split('function (');",
+        "visibility": "private",
+        "args": [
+          "'"
+        ],
+        "name": "_anonymous1714",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 1716,
+        "line": "splitter = source.split('function(');",
+        "visibility": "private",
+        "args": [
+          "'"
+        ],
+        "name": "_anonymous1716",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 1718,
+        "line": "splitter = source.split('function(');",
+        "visibility": "private",
+        "args": [
+          "'"
+        ],
+        "name": "_anonymous1718",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 1720,
+        "line": "splitter = source.split('function (');",
+        "visibility": "private",
+        "args": [
+          "'"
+        ],
+        "name": "_anonymous1720",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "lineNumber": 1734,
+        "line": "source = combiner.join('function(');",
+        "visibility": "private",
+        "args": [
+          "'"
+        ],
+        "name": "_anonymous1734",
+        "return": "void",
+        "static": false,
+        "memberOf": ""
+      },
+      {
+        "name": "getAmdConfig",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1871,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [],
+        "returns": "{Object}",
+        "description": " * Get amd config.",
+        "return": "{}",
+        "classDeclarationFlag": false,
+        "line": "function getAmdConfig() {"
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-output/ours",
+    "fileName": "singleFileProcessor.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 2197
+}

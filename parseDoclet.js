@@ -372,7 +372,7 @@ function writeFile(filePathName, source) {
 
 function printDoclet(docletData, defineModuleInTopOfFile) {
 	var has_description = false;
-	console.warn('>>>>>>>>>>>>>>>>>>>>>>>>>> printDoclet');
+	//console.warn('>>>>>>>>>>>>>>>>>>>>>>>>>> printDoclet');
 	var printableTags = {
 		'abstract' : 1,
 		// This member must be implemented (or overridden) by the inheritor.
@@ -795,7 +795,7 @@ var typesMap = {
 };
 
 function getType(input) {
-	console.log(input);
+	//console.log(input);
 	var lowerInput = input.toLowerCase();
 	var theType = typesMap[lowerInput];
 	if (theType != null) {
@@ -1108,7 +1108,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
 				};
 				currentTagObject = returnObject;
 				docletData['@return'] = currentTagObject;
-				console.log(currentTagObject);
+				//console.log(currentTagObject);
 
 			} else if (tag === 'requires') {
 				var paramDescription = '';
@@ -1192,7 +1192,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
 		}
 		// console.log(JSON.stringify(currentTagObject));
 	} else {
-		console.warn("COMMENTS: " + commentBuffer.trim());
+		//console.warn("COMMENTS: " + commentBuffer.trim());
 		docletData['freeText'] = commentBuffer.trim();
 	}
 
@@ -1481,7 +1481,7 @@ function fixDoclets(walkerObj) {
 			// This is bad.
 			if (commentText.indexOf('@') === -1) {
 				// continue;
-				console.log('Esprima found a comment without any @.');
+				//console.log('Esprima found a comment without any @.');
 				commentText = '@description ' + commentText;
 			}
 
