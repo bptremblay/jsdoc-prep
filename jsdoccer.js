@@ -1579,10 +1579,10 @@ function dumpNamedFunctions(input, map, ast, output) {
                     functionWrapper.name = longSplit.pop();
                     functionWrapper.memberOf = longSplit.join('.');
 
-                    if (functionWrapper.memberOf === 'this') {
+                    if (functionWrapper.memberOf !== 'this' && (functionWrapper.memberOf.indexOf('.prototype') === -1)) {
                         // is it an inner?
                         functionWrapper.todos
-                                .push('Is this method a member of a known class/object?');
+                                .push('MEMBEROF');
                     }
 
                 } else {
@@ -1599,7 +1599,7 @@ function dumpNamedFunctions(input, map, ast, output) {
 
                 if (functionWrapper.returnType === '?') {
                     functionWrapper.todos
-                            .push('Add a return tag with the right type here!');
+                            .push('RETURNWHAT');
                 }
 
                 output.methods[functionWrapper.name] = functionWrapper;
@@ -1778,7 +1778,7 @@ module.exports = {
 };
 
 if (true) {
-    var testFileName = 'test-source/no-module.js';
+    var testFileName = 'test-source/index.js';
     var testFile = readFile(testFileName);
 
     var input = {
