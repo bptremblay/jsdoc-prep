@@ -1322,10 +1322,10 @@ function walk(node, attr, val, results, parentNode) {
                 walk(child, attr, val, results, node);
             } else if (typeof child === 'string') {
                 // string?
-                //console.log(e + ': ' + child);
+                // console.log(e + ': ' + child);
             } else {
                 // string?
-                //console.log(e + ': ' + typeof child);
+                // console.log(e + ': ' + typeof child);
             }
         }
     }
@@ -1359,16 +1359,26 @@ function getNodesByType(ast, nodeType) {
                     var statement = returnStatements[0].argument;
 
                     if (statement.type === 'Literal') {
-                        returnType = (typeof statement.value);
+                        returnType = '{' + (typeof statement.value) + '}';
                     } else if (statement.type === 'Identifier') {
                         returnType = '?';
+                        if (statement.name != null) {
+                            returnType = statement.name;
+                        }
                     } else if (statement.type === 'CallExpression') {
                         returnType = '?';
+                        if (statement.name != null) {
+                            returnType = statement.name;
+                        }
                     } else if (statement.type === 'LogicalExpression') {
                         returnType = 'boolean';
                     } else {
                         // console.warn(statement);
                         returnType = '?';
+                        if (statement.name != null) {
+                            returnType = statement.name;
+
+                        }
                     }
 
                     // if (statement.name != null) {
@@ -1432,6 +1442,8 @@ function getClosestComment(input, nodeStart, ast) {
         if (nodeStart > commentEnd) {
             var corpus = (input.substring(commentEnd, nodeStart).trim());
             if (corpus.length === 0) {
+                var lineNumber = getLineNumber(input, comment);
+                comment.lineNumber = lineNumber;
                 return index;
             }
 
@@ -1443,7 +1455,7 @@ function getClosestComment(input, nodeStart, ast) {
 function getExistingComment(input, obj, ast) {
     var parentNode = getNodeByUid(obj.parentNode);
     var dump = parentNode.type;
-    //console.log('look for comment in ' + dump);
+    // console.log('look for comment in ' + dump);
 
     var range = parentNode.range;
     var rangeStart = range[0];
@@ -1454,7 +1466,7 @@ function getExistingComment(input, obj, ast) {
 
         parentNode = getNodeByUid(parentNode.parentNode);
         dump = parentNode.type;
-       //console.log('look for comment in ' + dump);
+        // console.log('look for comment in ' + dump);
 
         range = parentNode.range;
         rangeStart = range[0];
@@ -1549,8 +1561,8 @@ function dumpNamedFunctions(input, map, ast, output) {
                 functionWrapper.returnType = obj.returnType;
 
             }
-//            console.log('Looking for comment for function '
-//                    + functionWrapper.name);
+            // console.log('Looking for comment for function '
+            // + functionWrapper.name);
             functionWrapper.comment = -1;
             var comment = getExistingComment(input, obj, ast);
             if (comment != -1) {
@@ -1601,6 +1613,8 @@ function dumpNamedFunctions(input, map, ast, output) {
                     functionWrapper.todos.push('RETURNWHAT');
                 }
 
+                functionWrapper.range = obj.range;
+
                 output.methods[functionWrapper.name] = functionWrapper;
                 delete functionWrapper.name;
             }
@@ -1611,8 +1625,8 @@ function dumpNamedFunctions(input, map, ast, output) {
     return output;
 }
 
-function fixDoclets(walkerObj) {
-    console.log('fixDoclets');
+function addMissingComments(walkerObj) {
+    console.log('addMissingComments');
     // console.log(walkerObj);
     var beautify = require('js-beautify');
 
@@ -1656,18 +1670,241 @@ function fixDoclets(walkerObj) {
         }
     }
 
+    // Sort by range to ensure correct playback.
+    methodArray = methodArray.sort(function compare(a, b) {
+        if (a.range[0] < b.range[0]) {
+            return -1;
+        }
+
+        else if (a.range[0] > b.range[0]) {
+            return 1;
+        }
+
+        return 0;
+    });
+
     // todo: replace code below
 
-    console.log(JSON.stringify(methodArray, null, 2));
+    // console.log(JSON.stringify(methodArray, null, 2));
 
+    var lines = input.split('\n');
+    // method knows it's comment, so should know comment's range
+    var newFileLines = [];
+
+    for (var lineIndex = 0; lineIndex < lines.length; lineIndex++) {
+        var line = lines[lineIndex];
+        var method = getMethodOnLine(methodArray, lineIndex + 1, ast);
+        if (method != null && method.comment === -1) { 
+            newFileLines.push(generateComment(method, ast, walkerObj));
+            newFileLines.push(line);
+        } else if (method != null && method.comment !== -1) {
+            newFileLines.push(generateComment(method, ast, walkerObj));
+            // advance line counter to skip over legacy comments
+            lineIndex = method.lineNumber-1;
+            line = lines[lineIndex];
+            newFileLines.push(line);
+        } else {
+            newFileLines.push(line);
+        }
+    }
+
+    newFile = newFileLines.join('\n');
+    
+    newFile = beautify(newFile, {
+        'indent_size' : 2,
+        'indent_char' : ' ',
+        'indent_level' : 0,
+        'indent_with_tabs' : false,
+        'preserve_newlines' : true,
+        'max_preserve_newlines' : 1,
+        'jslint_happy' : true,
+        'brace_style' : 'collapse',
+        'keep_array_indentation' : false,
+        'keep_function_indentation' : false,
+        'space_before_conditional' : true,
+        'break_chained_methods' : false,
+        'eval_code' : false,
+        'unescape_strings' : false,
+        'wrap_line_length' : 200
+    });
+
+    
     console.log('done');
     return newFile;
 }
 
+function getMethodOnLine(methodArray, lineNumber, ast) {
+    for (var m = 0; m < methodArray.length; m++) {
+        var method = methodArray[m];
+        // TODO: check comment line number, too!!
+        if (method.comment !== -1) {
+            var comment = ast.comments[method.comment];
+            if (lineNumber === comment.lineNumber) {
+                console.warn('Found a comment, so stop on this line.');
+                return method;
+            }
+        }
+        if (lineNumber === method.lineNumber) {
+            return method;
+        }
+    }
+    return null;
+}
+
+function generateComment(functionWrapper, ast, walkerObj) {
+    // console.warn(functionWrapper.returnValue);
+    var doclet = null;
+    if (functionWrapper.comment !== -1) {
+        var oldComment = ast.comments[functionWrapper.comment];
+        // console.warn('Merge old comment in!');
+        // console.warn(oldComment);
+
+        var commentText = oldComment.value.trim();
+
+        if (commentText.indexOf('*') === 0) {
+            commentText = '/**\n' + commentText + '\n*/';
+        }
+
+        // This drops comments without attributes.
+        // This is bad.
+        if (commentText.indexOf('@') === -1) {
+            // continue;
+            // console.log('Esprima found a comment without any @.');
+            commentText = '@description ' + commentText;
+        }
+
+        doclet = parseDoclet(walkerObj, commentText, false, '', 0);
+
+        // Doclet schema:
+
+        // {
+        // params: [{
+        // tagName: 'param',
+        // name: 'a',
+        // type: '',
+        // description: ' '
+        // }, {
+        // tagName: 'param',
+        // name: 'b',
+        // type: '',
+        // description: ' '
+        // }, {
+        // tagName: 'param',
+        // name: 'c',
+        // type: '',
+        // description: ' '
+        // }],
+        // requiresList: [],
+        // moduleName: 'no-module',
+        // camelName: 'NoModule',
+        // freeText: '',
+        // '@private': '',
+        // '@return': {
+        // tagName: 'return',
+        // type: '{String}',
+        // description: ' ',
+        // line: '@return {String}'
+        // },
+        // nodeType: 'NONFUNCTION'
+        // }
+
+        // console.warn(doclet);
+
+    }
+
+    var commentBlock = [];
+    commentBlock.push("/**");
+
+    if (doclet != null) {
+        if (doclet.freeText != '') {
+            // console.warn(doclet.freeText);
+            commentBlock.push(' * ' + doclet.freeText);
+
+        }
+        for ( var t in doclet) {
+            if (doclet.hasOwnProperty(t)) {
+                if (t.charAt(0) === '@') {
+                    if (t !== '@return') {
+                        var tag = doclet[t];
+                        if (typeof tag === 'object') {
+                            // {
+                            // tagName: 'return',
+                            // type: '{String}',
+                            // description: ' ',
+                            // line: '@return {String}'
+                            // }
+                            // construct doclet tag
+                            commentBlock.push(' * ' + tag.line);
+                        } else {
+                            // construct doclet tag
+                            commentBlock.push(' * ' + t);
+                        }
+
+                    }
+                }
+            }
+        }
+    } else {
+        doclet = {
+            params : [],
+            returnValue : ''
+        };
+    }
+
+    var params = functionWrapper.params;
+    if (params == null) {
+        params = [];
+    }
+
+    var returnValue = functionWrapper.returnType;
+    if (returnValue == null) {
+        returnValue = '';
+    }
+    var ctor = functionWrapper.ctor;
+    if (ctor) {
+        commentBlock.push(' * @constructor');
+    }
+    // param tags
+    if (doclet.params.length > 0) {
+        for (var index = 0; index < doclet.params.length; index++) {
+            var param = doclet.params[index];
+            var paramLine = ' * @param';
+            if (param.type !== '') {
+                paramLine += ' ' + param.type;
+            }
+            // better be something!
+            if (param.name !== '') {
+                paramLine += ' ' + param.name;
+            }
+            if (param.description !== '') {
+                paramLine += ' ' + param.description;
+            }
+            commentBlock.push(paramLine);
+        }
+    } else if (params.length > 0) {
+        for (var index = 0; index < params.length; index++) {
+            commentBlock.push(' * @param ' + params[index]);
+        }
+    }
+    if (doclet['@return'] != null) {
+        commentBlock.push(' * ' + doclet['@return'].line.trim());
+    } else if (returnValue !== '') {
+        if (returnValue !== '?') {
+            commentBlock.push(' * @return ' + returnValue);
+        } else {
+            commentBlock
+                    .push(' * @todo Please describe the return type of this method.');
+        }
+    }
+    if (commentBlock.length === 1) {
+        commentBlock.push(' * @todo Add some jsDoc comments here!');
+    }
+    commentBlock.push(" */");
+    return commentBlock.join('\n');
+}
+
 module.exports = {
-    'parseDoclet' : parseDoclet,
-    'printDoclet' : printDoclet,
-    'fixDoclets' : fixDoclets
+    'addMissingComments' : addMissingComments
 };
 
 if (true) {
@@ -1691,7 +1928,7 @@ if (true) {
 
     // console.log(input);
 
-    var testResult = fixDoclets(input);
-    // console.log(testResult);
+    var testResult = addMissingComments(input);
+    console.log(testResult);
     writeFile("test-output/new_doclet.js", testResult);
 }

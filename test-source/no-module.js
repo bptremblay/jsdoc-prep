@@ -22,10 +22,10 @@ function Fronum() {
 
     /**
      * @private
-     * @param a
-     * @param b
-     * @param c
-     * @return <String>
+     * @param a A standard apple fruit.
+     * @param {Banana} b The Banana.
+     * @param {boolean} c
+     * @return {String}
      */
     var privateFunction = function(a, b, c) {
         return 'hodag zero';
