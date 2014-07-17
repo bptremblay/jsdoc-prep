@@ -1274,10 +1274,6 @@ function walk(node, attr, val, results, parentNode) {
     if (node.hasOwnProperty(attr)) {
 
         if (node[attr] === val) {
-            if (parentNode.type === 'VariableDeclarator') {
-                node.parentNode = parentNode.parentNode.uid;
-            }
-
             results.push(node);
         }
     }
@@ -1295,15 +1291,12 @@ function walk(node, attr, val, results, parentNode) {
         }
 
         if (e === 'comments') {
-            // console.warn("COMMENTS??? " + JSON.stringify(node[e]));
             continue;
         }
         if (e === 'uid') {
-            // console.warn("COMMENTS??? " + JSON.stringify(node[e]));
             continue;
         }
         if (e === 'parentNode') {
-            // console.warn("COMMENTS??? " + JSON.stringify(node[e]));
             continue;
         }
 
@@ -1329,10 +1322,10 @@ function walk(node, attr, val, results, parentNode) {
                 walk(child, attr, val, results, node);
             } else if (typeof child === 'string') {
                 // string?
-                // // console.log(e + ': ' + child);
+                //console.log(e + ': ' + child);
             } else {
                 // string?
-                // // console.log(e + ': ' + typeof child);
+                //console.log(e + ': ' + typeof child);
             }
         }
     }
@@ -1436,31 +1429,38 @@ function getClosestComment(input, nodeStart, ast) {
         var comment = ast.comments[index];
         var range = comment.range;
         var commentEnd = range[1];
-        // console.warn(nodeStart + '>' + commentEnd + "???");
         if (nodeStart > commentEnd) {
             var corpus = (input.substring(commentEnd, nodeStart).trim());
-            // console.warn('_START____________');
-            // console.log(corpus);
-            // console.warn('__END____________');
-            // it might be the right comment!
             if (corpus.length === 0) {
-                return comment;
+                return index;
             }
 
         }
     }
-    return null;
+    return -1;
 }
 
 function getExistingComment(input, obj, ast) {
-    // var dump = obj.parentNode.type;
-    // console.log('look for comment in ' + dump);
     var parentNode = getNodeByUid(obj.parentNode);
+    var dump = parentNode.type;
+    //console.log('look for comment in ' + dump);
 
     var range = parentNode.range;
     var rangeStart = range[0];
 
     var nearComment = getClosestComment(input, rangeStart, ast);
+
+    if (nearComment === -1 && parentNode.parentNode != -1) {
+
+        parentNode = getNodeByUid(parentNode.parentNode);
+        dump = parentNode.type;
+       //console.log('look for comment in ' + dump);
+
+        range = parentNode.range;
+        rangeStart = range[0];
+
+        nearComment = getClosestComment(input, rangeStart, ast);
+    }
 
     return nearComment;
 }
@@ -1549,12 +1549,12 @@ function dumpNamedFunctions(input, map, ast, output) {
                 functionWrapper.returnType = obj.returnType;
 
             }
-            // console.log('Looking for comment for function ' +
-            // functionWrapper.name);
+//            console.log('Looking for comment for function '
+//                    + functionWrapper.name);
+            functionWrapper.comment = -1;
             var comment = getExistingComment(input, obj, ast);
-            functionWrapper.comment = '';
-            if (comment != null) {
-                functionWrapper.comment = comment.value;
+            if (comment != -1) {
+                functionWrapper.comment = comment;
             }
 
             // if (functionWrapper.comment != null){
@@ -1579,10 +1579,10 @@ function dumpNamedFunctions(input, map, ast, output) {
                     functionWrapper.name = longSplit.pop();
                     functionWrapper.memberOf = longSplit.join('.');
 
-                    if (functionWrapper.memberOf !== 'this' && (functionWrapper.memberOf.indexOf('.prototype') === -1)) {
+                    if (functionWrapper.memberOf !== 'this'
+                            && (functionWrapper.memberOf.indexOf('.prototype') === -1)) {
                         // is it an inner?
-                        functionWrapper.todos
-                                .push('MEMBEROF');
+                        functionWrapper.todos.push('MEMBEROF');
                     }
 
                 } else {
@@ -1595,11 +1595,10 @@ function dumpNamedFunctions(input, map, ast, output) {
                 functionWrapper.ctor = ctor;
                 var lineNumber = getLineNumber(input, obj);
                 functionWrapper.lineNumber = lineNumber;
-                functionWrapper.line = trim(lines[lineNumber-1]);
+                functionWrapper.line = trim(lines[lineNumber - 1]);
 
                 if (functionWrapper.returnType === '?') {
-                    functionWrapper.todos
-                            .push('RETURNWHAT');
+                    functionWrapper.todos.push('RETURNWHAT');
                 }
 
                 output.methods[functionWrapper.name] = functionWrapper;
@@ -1613,7 +1612,7 @@ function dumpNamedFunctions(input, map, ast, output) {
 }
 
 function fixDoclets(walkerObj) {
-    // console.log('fixDoclets');
+    console.log('fixDoclets');
     // console.log(walkerObj);
     var beautify = require('js-beautify');
 
@@ -1625,7 +1624,6 @@ function fixDoclets(walkerObj) {
     uid = 0;
     nodes = [];
 
-    // try {
     ast = _esprima.parse(input, {
         comment : true,
         tolerant : true,
@@ -1633,13 +1631,8 @@ function fixDoclets(walkerObj) {
         raw : true,
         tokens : true
     });
-    // } catch (ex) {
-    // console.error(ex.stack);
-    // return null;
-    // }
+
     writeFile("dump.json", JSON.stringify(ast, null, 2));
-    // parsed = parseDoclet(input, block, defineModuleInTopOfFile,
-    // nextLineOfCode);
 
     var moduleAtTop = input.indexOf('@exports') === -1;
     var defineModuleInTopOfFile = moduleAtTop;
@@ -1652,121 +1645,21 @@ function fixDoclets(walkerObj) {
 
     var expressionFunctions = dumpNamedFunctions(input, functionExpressions,
             ast);
-    console.log(JSON.stringify(dumpNamedFunctions(input, functionDeclarations,
-            ast, expressionFunctions), null, 2));
-
-    if (true) {
-        return;
-    }
-    var dCount = 0;
-    if (ast.comments != null) {
-        for (var index = 0; index < ast.comments.length; index++) {
-            var comment = ast.comments[index];
-            // console.log(comment);
-
-            if (comment.type === 'Line') {
-                continue;
-            }
-            var commentText = comment.value.trim();
-
-            if (commentText.indexOf('*') === 0) {
-                commentText = '/**\n' + commentText + '\n*/';
-            }
-
-            // This drops comments without attributes.
-            // This is bad.
-            if (commentText.indexOf('@') === -1) {
-                // continue;
-                // console.log('Esprima found a comment without any @.');
-                commentText = '@description ' + commentText;
-            }
-
-            var doclet = parseDoclet(walkerObj, commentText,
-                    defineModuleInTopOfFile, '', dCount);
-            dCount++;
-            // console.warn(doclet);
-            // console.log(printDoclet(doclet) + '\n');
-            var newDoclet = printDoclet(doclet, defineModuleInTopOfFile);
-            comment.formatted = newDoclet;
-
-            for ( var t in doclet) {
-                if (t.indexOf('@') === 0) {
-                    comment[t] = doclet[t];
-                }
-            }
-
-            if (doclet.params != null) {
-                comment.params = doclet.params;
-            }
-
-            comment.doclet = doclet;
-
-            ast.comments[index] = comment;
-            defineModuleInTopOfFile = false;
-
-            // TODO: merge the new comments back in
-
-            // // console.log(comment);
-
-            // get range
-            var range = comment.range;
-            // get text range from end of last comment to beginning of this
-            // comment
-            var beforeRange = range[0] - 1;
-
-            if (beforeRange < 0) {
-                beforeRange = 0;
-            }
-            var nextChunk = input.substring(cursor, beforeRange);
-
-            // // console.log(cursor + ',' + beforeRange);
-
-            newFile += nextChunk;
-            cursor = range[1];
-
-            newFile += comment.formatted;
-
-            // offset range start
-            // offset range end
-            // insert
-            // save total offset
-
+    var allMethods = dumpNamedFunctions(input, functionDeclarations, ast,
+            expressionFunctions);
+    var methods = allMethods.methods;
+    var methodArray = [];
+    for ( var m in methods) {
+        if (methods.hasOwnProperty(m)) {
+            var method = methods[m];
+            methodArray.push(method);
         }
-    } else {
-        return input;
     }
 
-    // ??? How do we know where the last bit of code begins?
-    var nextChunk = input.substring(cursor);
-    newFile += nextChunk;
+    // todo: replace code below
 
-    // // console.log(newFile);
+    console.log(JSON.stringify(methodArray, null, 2));
 
-    newFile = beautify(newFile, {
-        'indent_size' : 2,
-        'indent_char' : ' ',
-        'indent_level' : 0,
-        'indent_with_tabs' : false,
-        'preserve_newlines' : true,
-        'max_preserve_newlines' : 1,
-        'jslint_happy' : true,
-        'brace_style' : 'collapse',
-        'keep_array_indentation' : false,
-        'keep_function_indentation' : false,
-        'space_before_conditional' : true,
-        'break_chained_methods' : false,
-        'eval_code' : false,
-        'unescape_strings' : false,
-        'wrap_line_length' : 200
-    });
-
-    // writeFile('new_' + testFileName, newFile);
-
-    // console.log(JSON.stringify(ast.comments, null, 2));
-
-    // // console.log(JSON.stringify(parseDoclet(testFile, testFile, false,
-    // '')));
-    // // console.log(printDoclet(parseDoclet(testFile, testFile, false, '')));
     console.log('done');
     return newFile;
 }
@@ -1778,7 +1671,7 @@ module.exports = {
 };
 
 if (true) {
-    var testFileName = 'test-source/index.js';
+    var testFileName = 'test-source/no-module.js';
     var testFile = readFile(testFileName);
 
     var input = {
