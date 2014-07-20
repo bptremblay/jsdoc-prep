@@ -5,16 +5,21 @@
  * @copyright JPMorgan Chase & Co. All rights reserved.
  */
 
+// one-line comment at top
+
 /* jshint eqnull: true, boss: true */
 function Fronum() {
     this.chewBakka = function() {
         return function DonutView() {
             return Fronum.prototype;
-        }
+        };
     };
 
     /*
      * This function is stupid.
+     */
+    /**
+     * The function is stupid but the comment is a valid doclet.
      */
     this["stupidFunction"] = function() {
         // some stupid line comment
@@ -25,9 +30,12 @@ function Fronum() {
 
     /**
      * @private
-     * @param a A standard apple fruit.
-     * @param {Banana} b The Banana.
-     * @param {boolean} c
+     * @param a
+     *            A standard apple fruit.
+     * @param {Banana}
+     *            b The Banana.
+     * @param {boolean}
+     *            c
      * @return {String}
      */
     var privateFunction = function(a, b, c) {

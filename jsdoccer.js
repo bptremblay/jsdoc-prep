@@ -2,6 +2,9 @@ var _fs = require('fs');
 var _path = require('path');
 var _wrench = require('wrench');
 
+var uid = 0;
+var nodes = [];
+
 /**
  * Read file.
  * 
@@ -1248,8 +1251,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
     return docletData;
 }
 
-var uid = 0;
-var nodes = [];
+
 
 function walk(node, attr, val, results, parentNode) {
     if (parentNode == null) {
@@ -1433,17 +1435,31 @@ function stripWhite(input) {
  * @param nodeStart
  * @param ast
  */
-function getClosestComment(input, nodeStart, ast) {
+function getClosestComment(input, nodeStart, ast, wrapper) {
     var endpoint = ast.comments.length - 1;
+    // todo: move to shared ref
+    // var lines = input.split('\n');
     for (var index = endpoint; index > 0; index--) {
         var comment = ast.comments[index];
         var range = comment.range;
+        var commentBody = input.substring(range[0], range[1]).trim();
+        if (commentBody.indexOf('/**') === -1) {
+            continue;
+        }
+
         var commentEnd = range[1];
         if (nodeStart > commentEnd) {
             var corpus = (input.substring(commentEnd, nodeStart).trim());
             if (corpus.length === 0) {
+                
                 var lineNumber = getLineNumber(input, comment);
                 comment.lineNumber = lineNumber;
+                
+                //console.warn('>>>>> FOUND COMMENT for ' + wrapper.name + '('+ lineNumber + ') ' +  commentBody);
+                
+                // var commentBody = input.substring(range[0], range[1]);
+                // console.warn(lines[lineNumber-1]);
+                // console.warn(commentBody);
                 return index;
             }
 
@@ -1452,7 +1468,7 @@ function getClosestComment(input, nodeStart, ast) {
     return -1;
 }
 
-function getExistingComment(input, obj, ast) {
+function getExistingComment(input, obj, ast, wrapper) {
     var parentNode = getNodeByUid(obj.parentNode);
     var dump = parentNode.type;
     // console.log('look for comment in ' + dump);
@@ -1460,18 +1476,29 @@ function getExistingComment(input, obj, ast) {
     var range = parentNode.range;
     var rangeStart = range[0];
 
-    var nearComment = getClosestComment(input, rangeStart, ast);
+    var nearComment = getClosestComment(input, rangeStart, ast, wrapper);
 
     if (nearComment === -1 && parentNode.parentNode != -1) {
-
+       // console.warn(obj);
+        //console.warn('getClosestComment could not find comment for "' + wrapper.name + '" , using grandparent');
         parentNode = getNodeByUid(parentNode.parentNode);
+        if (parentNode == null){
+            console.error("getExistingComment fatal error");
+        }
         dump = parentNode.type;
-        // console.log('look for comment in ' + dump);
+        //console.warn('look for comment in ' + dump);
+        
+        if (dump === 'FunctionExpression'){
+            return -1;
+        }
 
         range = parentNode.range;
         rangeStart = range[0];
 
-        nearComment = getClosestComment(input, rangeStart, ast);
+        nearComment = getClosestComment(input, rangeStart, ast, wrapper);
+    }
+    else{
+        //console.warn('getClosestComment found comment for "' + wrapper.name + '"');
     }
 
     return nearComment;
@@ -1487,8 +1514,9 @@ function getFunctionFullName(input, obj) {
         var range = parentNode.id.range;
         return input.substring(range[0], range[1]);
     }
-    return ""
+    return "";
 }
+
 function dumpParams(params) {
     var output = [];
     for (var index = 0; index < params.length; index++) {
@@ -1531,14 +1559,26 @@ function getParentClass(obj, classes) {
     return null;
 }
 
+/**
+ * Need to include anonymous functions too?
+ * 
+ * @param input
+ * @param map
+ * @param ast
+ * @param output
+ * @returns {___anonymous45985_45990}
+ */
 function dumpNamedFunctions(input, map, ast, output) {
     var lines = input.split('\n');
     output = output != null ? output : {};
     output.classes = output.classes != null ? output.classes : {};
     output.methods = output.methods != null ? output.methods : {};
-    for ( var f in map) {
-        if (map.hasOwnProperty(f)) {
-            var obj = map[f];
+    // for ( var f in map) {
+    for (var index = 0; index < map.length; index++) {
+        // console.warn(f);
+        // if (map.hasOwnProperty(f)) {
+        if (true) {
+            var obj = map[index];
             var functionWrapper = {
                 name : '',
                 todos : []
@@ -1563,18 +1603,19 @@ function dumpNamedFunctions(input, map, ast, output) {
             }
             // console.log('Looking for comment for function '
             // + functionWrapper.name);
-            functionWrapper.comment = -1;
-            var comment = getExistingComment(input, obj, ast);
-            if (comment != -1) {
-                functionWrapper.comment = comment;
-            }
+
 
             // if (functionWrapper.comment != null){
             // console.log('Found comment for function ' + functionWrapper.name
             // + ': ' + functionWrapper.comment);
             //
             // }
-            // console.log(functionWrapper);
+            
+            //console.log(functionWrapper);
+
+            // if (functionWrapper.name === '') {
+            // functionWrapper.name = '_' + obj.uid;
+            // }
             var ctor = false;
             functionWrapper.memberOf = '';
             if (functionWrapper.name !== '') {
@@ -1608,6 +1649,12 @@ function dumpNamedFunctions(input, map, ast, output) {
                 var lineNumber = getLineNumber(input, obj);
                 functionWrapper.lineNumber = lineNumber;
                 functionWrapper.line = trim(lines[lineNumber - 1]);
+                
+                functionWrapper.comment = -1;
+                var comment = getExistingComment(input, obj, ast, functionWrapper);
+                if (comment != -1) {
+                    functionWrapper.comment = comment;
+                }
 
                 if (functionWrapper.returnType === '?') {
                     functionWrapper.todos.push('RETURNWHAT');
@@ -1626,6 +1673,7 @@ function dumpNamedFunctions(input, map, ast, output) {
 }
 
 function addMissingComments(walkerObj) {
+
     console.log('addMissingComments');
     // console.log(walkerObj);
     var beautify = require('js-beautify');
@@ -1646,7 +1694,7 @@ function addMissingComments(walkerObj) {
         tokens : true
     });
 
-    writeFile("dump.json", JSON.stringify(ast, null, 2));
+    // writeFile("dump.json", JSON.stringify(ast, null, 2));
 
     var moduleAtTop = input.indexOf('@exports') === -1;
     var defineModuleInTopOfFile = moduleAtTop;
@@ -1662,10 +1710,12 @@ function addMissingComments(walkerObj) {
     var allMethods = dumpNamedFunctions(input, functionDeclarations, ast,
             expressionFunctions);
     var methods = allMethods.methods;
+    //console.warn(JSON.stringify(methods, null, 2));
     var methodArray = [];
     for ( var m in methods) {
         if (methods.hasOwnProperty(m)) {
             var method = methods[m];
+            method.name = m;
             methodArray.push(method);
         }
     }
@@ -1693,23 +1743,27 @@ function addMissingComments(walkerObj) {
 
     for (var lineIndex = 0; lineIndex < lines.length; lineIndex++) {
         var line = lines[lineIndex];
-        var method = getMethodOnLine(methodArray, lineIndex + 1, ast);
-        if (method != null && method.comment === -1) { 
-            newFileLines.push(generateComment(method, ast, walkerObj));
+        //console.warn(line);
+        var method = getMethodOnLine(methodArray, lineIndex + 1, ast, input);
+        if (method != null && method.comment === -1) {
+            newFileLines.push(generateComment(method, ast, walkerObj, input));
             newFileLines.push(line);
         } else if (method != null && method.comment !== -1) {
-            newFileLines.push(generateComment(method, ast, walkerObj));
+            var newComment = generateComment(method, ast, walkerObj, input);
+            //console.warn(method.name + " >>>" + newComment);
+            newFileLines.push(newComment);
             // advance line counter to skip over legacy comments
-            lineIndex = method.lineNumber-1;
+            lineIndex = method.lineNumber - 1;
             line = lines[lineIndex];
             newFileLines.push(line);
         } else {
             newFileLines.push(line);
+            
         }
     }
 
     newFile = newFileLines.join('\n');
-    
+
     newFile = beautify(newFile, {
         'indent_size' : 2,
         'indent_char' : ' ',
@@ -1728,19 +1782,124 @@ function addMissingComments(walkerObj) {
         'wrap_line_length' : 200
     });
 
-    
-    console.log('done');
-    return newFile;
+    var outputArray = [];
+
+    // TODO: build a mockup of jsDoccer data.
+
+    var builtPath = walkerObj.folderPath + _path.sep + walkerObj.fileName;
+    var fileNamePath = _fs.realpathSync(builtPath);
+    var dir = _path.dirname(fileNamePath);
+    var fileNameOnly = _path.basename(fileNamePath);
+    var fileNameMinusExt = fileNameOnly.split('.')[0];
+    // base path is full path minus local path...
+    var basePath = _path.normalize(fileNamePath.split(walkerObj.fileName)[0]);
+    var splitPath = basePath.split(_path.sep);
+    if (splitPath[splitPath.length - 1] === '') {
+        splitPath.pop();
+        basePath = splitPath.join(_path.sep);
+    }
+
+    // console.warn(dir);
+    // console.warn(fileNameOnly);
+
+    var wrappedMethods = [];
+
+    for (var meth = 0; meth < methodArray.length; meth++) {
+        var realMethod = methodArray[meth];
+
+        // {
+        // todos: ['RETURNWHAT'],
+        // returnType: '?',
+        // comment: -1,
+        // memberOf: 'this',
+        // realName: 'this.chewBakka',
+        // longName: 'this.chewBakka',
+        // ctor: false,
+        // lineNumber: 8,
+        // line: 'this.chewBakka = function() {',
+        // range: [175, 278],
+        // name: 'chewBakka'
+        // }
+        // console.log(realMethod);
+        wrappedMethods.push({
+            "name" : realMethod.name,
+            "visibility" : "public",
+            "static" : false,
+            "lineNumber" : realMethod.lineNumber,
+            "memberOf" : realMethod.memberOf,
+            "originalJsDocDescription" : {},
+            "args" : realMethod.params,
+            "description" : "",
+            "return" : realMethod.returnType,
+            "classDeclarationFlag" : realMethod.ctor,
+            "line" : realMethod.line
+        });
+    }
+
+    var jsDoccerBlob = {
+        "lines" : lines.length,
+        "requires" : [],
+        "className" : "n/a",
+        "packagePath" : "",
+        "directoryPath" : dir,
+        "uses_Y" : false,
+        "no_lib" : true,
+        "inferencedClassName" : "n/a",
+        "uses_$" : false,
+        "chars" : input.length,
+        "uses_YUI" : false,
+        "fields" : [],
+        "moduleName" : _path.dirname(walkerObj.fileName) + '/'
+                + fileNameMinusExt,
+        "uses_console_log" : false,
+        "uses_backbone" : false,
+        "classes" : allMethods.classes,
+        "methods" : wrappedMethods,
+        "is_module" : false,
+        "uses_alert" : false,
+        "uses_y_log" : false,
+        "requiresRaw" : [],
+        "basePath" : basePath,
+        "fileName" : fileNameOnly,
+        "strict" : false
+    };
+
+    outputArray.push(JSON.stringify(jsDoccerBlob, null, 2));
+    outputArray.push(newFile);
+    outputArray.push('');
+
+    // console.log('done');
+    return outputArray.join('\n/*jsdoc_prep_data*/\n');
 }
 
-function getMethodOnLine(methodArray, lineNumber, ast) {
+/**
+ * This method scans the raw list of esprima comments. Note: some comments
+ * should be ignored, so unless we use the same skip test everywhere, the
+ * comments offsets could be wrong.
+ * 
+ * @param methodArray
+ * @param lineNumber
+ * @param ast
+ * @return our own method object derived from ast method node
+ */
+function getMethodOnLine(methodArray, lineNumber, ast, input) {
     for (var m = 0; m < methodArray.length; m++) {
         var method = methodArray[m];
         // TODO: check comment line number, too!!
         if (method.comment !== -1) {
             var comment = ast.comments[method.comment];
+            var commentBody = input.substring(comment.range[0],
+                    comment.range[1]).trim();
+            if (commentBody.indexOf('/**') === -1) {
+                continue;
+            }
+            // test for line type is redundant to above test
+            // if (comment.type.toLowerCase() === 'line'){
+            // continue;
+            // }
             if (lineNumber === comment.lineNumber) {
-                console.warn('Found a comment, so stop on this line.');
+                // console.warn('Found a comment, so stop on this line: '
+                // + commentBody);
                 return method;
             }
         }
@@ -1751,64 +1910,30 @@ function getMethodOnLine(methodArray, lineNumber, ast) {
     return null;
 }
 
-function generateComment(functionWrapper, ast, walkerObj) {
+function generateComment(functionWrapper, ast, walkerObj, input) {
     // console.warn(functionWrapper.returnValue);
+    var funkyName = decamelize(functionWrapper.name);
+    funkyName = funkyName.split('_');
+    funkyName[0] = capitalize(funkyName[0]);
+    funkyName = funkyName.join(' ');
+    funkyName += '.';
+    if (functionWrapper.ctor) {
+        funkyName = 'Creates a new instance of class ' + functionWrapper.name
+                + '.';
+    }
+    // console.warn(funkyName + ' << ' + functionWrapper.name);
     var doclet = null;
     if (functionWrapper.comment !== -1) {
         var oldComment = ast.comments[functionWrapper.comment];
-        // console.warn('Merge old comment in!');
-        // console.warn(oldComment);
+        var range = oldComment.range;
+        var commentBody = input.substring(range[0], range[1]).trim();
 
-        var commentText = oldComment.value.trim();
+        if (commentBody.indexOf('/**') !== -1) {
 
-        if (commentText.indexOf('*') === 0) {
-            commentText = '/**\n' + commentText + '\n*/';
+            var commentText = commentBody;
+
+            doclet = parseDoclet(walkerObj, commentText, false, '', 0);
         }
-
-        // This drops comments without attributes.
-        // This is bad.
-        if (commentText.indexOf('@') === -1) {
-            // continue;
-            // console.log('Esprima found a comment without any @.');
-            commentText = '@description ' + commentText;
-        }
-
-        doclet = parseDoclet(walkerObj, commentText, false, '', 0);
-
-        // Doclet schema:
-
-        // {
-        // params: [{
-        // tagName: 'param',
-        // name: 'a',
-        // type: '',
-        // description: ' '
-        // }, {
-        // tagName: 'param',
-        // name: 'b',
-        // type: '',
-        // description: ' '
-        // }, {
-        // tagName: 'param',
-        // name: 'c',
-        // type: '',
-        // description: ' '
-        // }],
-        // requiresList: [],
-        // moduleName: 'no-module',
-        // camelName: 'NoModule',
-        // freeText: '',
-        // '@private': '',
-        // '@return': {
-        // tagName: 'return',
-        // type: '{String}',
-        // description: ' ',
-        // line: '@return {String}'
-        // },
-        // nodeType: 'NONFUNCTION'
-        // }
-
-        // console.warn(doclet);
 
     }
 
@@ -1849,6 +1974,8 @@ function generateComment(functionWrapper, ast, walkerObj) {
             params : [],
             returnValue : ''
         };
+
+        commentBlock.push(' * ' + funkyName);
     }
 
     var params = functionWrapper.params;
@@ -1907,14 +2034,14 @@ module.exports = {
     'addMissingComments' : addMissingComments
 };
 
-if (true) {
-    var testFileName = 'test-source/no-module.js';
-    var testFile = readFile(testFileName);
+if (false) {
+    var testFileName = 'yes-module.js';
 
     var input = {
         name : getModuleName(testFileName),
-        source : testFile,
+        source : '',
         fileName : testFileName,
+        folderPath : 'test-source',
         camelName : camelize(getModuleName(testFileName)),
         results : {
             "amdProc" : {
@@ -1926,9 +2053,13 @@ if (true) {
         }
     };
 
+    var source = readFile(input.folderPath + _path.sep + testFileName);
+    input.source = source;
+
     // console.log(input);
 
     var testResult = addMissingComments(input);
-    console.log(testResult);
-    writeFile("test-output/new_doclet.js", testResult);
+    testResult = testResult.split('/*jsdoc_prep_data*/')[1];
+    //console.log(testResult);
+    writeFile('test-output' + _path.sep + testFileName, testResult);
 }
