@@ -27,7 +27,7 @@ var processingChain = [
                        'amdProc',
                        'jsDoccerProc',
                        'jsBeautifyProc',
-                       'jsDoc3PrepProc',
+                       //'jsDoc3PrepProc',
                        'jsBeautifyProc',
                        'fixJSDocFormattingProc',
                        'jsBeautifyProc'

@@ -1,5 +1,5 @@
 /**
- * js_test_resources/fronum.js
+ * js_test_resources/Freenox.js
  * 
  * @author Fredrum <rf@monath.net>
  * @copyright JPMorgan Chase & Co. All rights reserved.
@@ -18,10 +18,10 @@ function() {
     'use strict';
     
     /* jshint eqnull: true, boss: true */
-    function Fronum() {
+    function Freenox() {
         this.chewBakka = function() {
             return function DonutView() {
-                return Fronum.prototype;
+                return Freenox.prototype;
             };
         };
 
@@ -59,13 +59,13 @@ function() {
     /**
      * 
      */
-    Fronum.prototype.worldPuzzle = function(toothache, tomato) {
+    Freenox.prototype.worldPuzzle = function(toothache, tomato) {
         var x = 0;
         return x - 100;
     };
 
     function SecondClass() {
-        this.fronum = new Fronum();
+        this.Freenox = new Freenox();
     }
     SecondClass.prototype.fixTheWorld = function(toothache, tomato) {
         return false;
