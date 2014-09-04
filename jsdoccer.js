@@ -1585,7 +1585,8 @@ function getParentClass(obj, classes) {
  * @param output
  * @returns {___anonymous45985_45990}
  */
-function dumpNamedFunctions(input, map, ast, output) {
+function dumpNamedFunctions(walkerObj, map, ast, output) {
+    var input = walkerObj.source;
     var lines = input.split('\n');
     output = output != null ? output : {};
     output.classes = output.classes != null ? output.classes : {};
@@ -1601,7 +1602,7 @@ function dumpNamedFunctions(input, map, ast, output) {
                 todos : []
             };
             if (obj.id !== null) {
-                console.warn(obj.id.name);
+                //console.warn("dumpNamedFunctions " + obj.id.name);
                 functionWrapper.name = obj.id.name;
             } else {
                 
@@ -1619,7 +1620,7 @@ function dumpNamedFunctions(input, map, ast, output) {
 
             }
             if (functionWrapper.name === '' && index === 0){
-                console.log('is this the root AMD function?');
+                //console.log('is this the root AMD function?');
                 var bodyNodes = obj.body.body;
                 var returnNode = null;
                 for (var n = 0; n<bodyNodes.length; n++){
@@ -1634,8 +1635,17 @@ function dumpNamedFunctions(input, map, ast, output) {
                 }
                 //console.warn(JSON.stringify(returnNode, null, 2));
                 //console.warn(functionWrapper);
-                console.warn('WARNING: this module has an object literal for its exports value');
-                // TODO: rewrite the source and START OVER!!!
+                if (returnNode){
+            
+                    var rrange = returnNode.range;
+                    var returnBody = input.substring(rrange[0], rrange[1])
+                    
+                    //console.warn('returnNode = ' + returnBody);
+                    
+                    console.warn('WARNING: module "' + walkerObj.fileName + '" has an object literal for its exports value');
+                    // TODO: rewrite the source and START OVER!!!
+                }
+               
             }
 //            console.log('Looking for comment for function "'
 //                    + functionWrapper.name + '"');
@@ -1653,7 +1663,7 @@ function dumpNamedFunctions(input, map, ast, output) {
             // }
             var ctor = false;
             functionWrapper.memberOf = '';
-            if (functionWrapper.name !== '') {
+            if (functionWrapper.name && functionWrapper.name !== '') {
                 var firstChar = functionWrapper.name.charAt(0);
 
                 if (functionWrapper.name.indexOf('.') !== -1
@@ -1710,7 +1720,7 @@ function dumpNamedFunctions(input, map, ast, output) {
 
 function addMissingComments(walkerObj) {
 
-    console.log('addMissingComments');
+    console.log('addMissingComments ' + walkerObj.name);
     // console.log(walkerObj);
     var beautify = require('js-beautify');
 
@@ -1741,9 +1751,9 @@ function addMissingComments(walkerObj) {
     var functionExpressions = getNodesByType(ast, 'FunctionExpression');
     var functionDeclarations = getNodesByType(ast, 'FunctionDeclaration');
 
-    var expressionFunctions = dumpNamedFunctions(input, functionExpressions,
+    var expressionFunctions = dumpNamedFunctions(walkerObj, functionExpressions,
             ast);
-    var allMethods = dumpNamedFunctions(input, functionDeclarations, ast,
+    var allMethods = dumpNamedFunctions(walkerObj, functionDeclarations, ast,
             expressionFunctions);
     var methods = allMethods.methods;
     // console.warn(JSON.stringify(methods, null, 2));
@@ -2075,7 +2085,7 @@ module.exports = {
 };
 
 if (true) {
-    var testFileName = 'accountOverdraftProtection.js';
+    var testFileName = 'index.js';
 
     var input = {
         name : getModuleName(testFileName),
