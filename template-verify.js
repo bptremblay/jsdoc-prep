@@ -1,4 +1,6 @@
 var ractive = require('ractive');
+var handlebars = require('handlebars');
+var less = require('less');
 var _fs = require('fs');
 var _path = require('path');
 var _wrench = require('wrench');
@@ -20,14 +22,14 @@ function filterFiles(files, excludes) {
         matchBase: true,
         dot: true
     };
-    excludes = excludes.map(function(val) {
+    excludes = excludes.map(function (val) {
         return _minimatch.makeRe(val, globOpts);
     });
-    files = files.map(function(filePath) {
+    files = files.map(function (filePath) {
         return _path.normalize(filePath).replace(/\\/g, '/');
     });
-    return files.filter(function(filePath) {
-        return !excludes.some(function(glob) {
+    return files.filter(function (filePath) {
+        return !excludes.some(function (glob) {
             return glob.test(filePath);
         });
     });
@@ -36,7 +38,8 @@ function filterFiles(files, excludes) {
 /**
  * Normalize name.
  *
- * @param {String} input
+ * @param {String}
+ *            input
  * @return {String}
  */
 function normalizeName(input) {
@@ -46,7 +49,8 @@ function normalizeName(input) {
 /**
  * Read file.
  *
- * @param {String} filePathName
+ * @param {String}
+ *            filePathName
  * @return {String}
  */
 function readFile(filePathName) {
@@ -61,12 +65,25 @@ function readFile(filePathName) {
 
 /**
  * Run.
+ *
  * @param options
  */
 function run(options) {
     var then = 0;
     SCAN_PATH = options.scanPath;
-    console.log('Starting Ractive template check: ' + SCAN_PATH);
+    var templateType = options.templateType;
+    var fileTypes = [];
+    if (templateType == null) {
+        templateType = 'RACTIVE';
+    }
+    if (templateType.toUpperCase() === 'HANDLEBARS' || templateType.toUpperCase() === 'HBS') {
+        templateType = "Handlebars";
+    } else if (templateType.toUpperCase() === 'RACTIVE') {
+        templateType = "Ractive";
+    } else if (templateType.toUpperCase() === 'LESS') {
+        templateType = "Less";
+    }
+    console.log('Starting ' + templateType + ' template check: ' + SCAN_PATH);
     var files = _wrench.readdirSyncRecursive(SCAN_PATH);
     files = filterFiles(files, ['.*', '.DS_Store', '{**/,}.git{/**,}',
         'node_modules/**', 'bower_components/**', 'build/**', 'css/**',
@@ -76,29 +93,83 @@ function run(options) {
     var good = 0;
     var bad = 0;
     var total = 0;
-    files.forEach(function(path) {
-        path = _path.normalize(SCAN_PATH + '/' + path);
-        stat = _fs.statSync(path);
-        if (stat.isFile() && path.indexOf('.html') !== -1) {
-            if (_path.extname(path) === '.html') {
-                total++;
-                try {
+    files
+        .forEach(function (path) {
+            path = _path.normalize(SCAN_PATH + '/' + path);
+            stat = _fs.statSync(path);
+            if (stat.isFile() && (path.indexOf('.html') !== -1 || path
+                    .indexOf('.hbs') !== -1) || path.indexOf('.oft') !== -1 || path.indexOf('.less') !== -1) {
+                if (_path.extname(path) === '.html' || _path.extname(path) === '.hbs' || _path.extname(path) === '.oft' || _path.extname(path) === '.less') {
+                    total++;
+                    var fileName = _path.basename(path);
+                    var pathName = _path.dirname(path);
                     var source = readFile(path);
-                    var parseResult = ractive.parse(source);
-                    good++;
-                } catch (parseError) {
-                    parseError.fileName = path;
-                    bad++;
-                    console.warn(parseError);
+                    var parseResult = null;
+                    if (templateType.toUpperCase() === 'RACTIVE') {
+                        try {
+                            parseResult = ractive.parse(source);
+                            good++;
+                        } catch (parseError) {
+                            parseError.fileName = path;
+                            bad++;
+                            console.warn(parseError);
+                        }
+                    } else if (templateType.toUpperCase() === 'HANDLEBARS') {
+                        // FIXME: use HBS compiler
+                        try {
+                            parseResult = handlebars.compile(source);
+                            good++;
+                        } catch (parseError) {
+                            parseError.fileName = path;
+                            bad++;
+                            console.warn(parseError);
+                        }
+                    } else if (templateType.toUpperCase() === 'LESS') {
+                        // FIXME: use LESS compiler
+                        var opts = {
+                            filename: fileName,
+                            paths: [pathName]
+                        };
+                        try {
+                            less.render(source, opts, function (parseError,
+                                css) {
+                                if (parseError != null) {
+                                    parseError.fileName = path;
+                                    bad++;
+                                    console.warn(parseError);
+                                } else {
+                                    // audit output here:
+                                    // console.log(css);
+                                    good++;
+                                }
+                            });
+                        } catch (parseError) {
+                            parseError.fileName = path;
+                            bad++;
+                            console.warn(parseError);
+                        }
+                    }
                 }
             }
-        }
-    });
-    console.log('Ractive template check of ' + total + ' template files is complete. Found ' + bad + ' templates with errors.');
+        });
+    console.log(templateType + ' template check of ' + total + ' template files is complete. Found ' + bad + ' templates with errors.');
     then = new Date().getTime();
 }
 
 run({
+    templateType: 'Ractive',
     // Supply the path to scan here.
     scanPath: 'src/dashboard/template'
+});
+
+run({
+    templateType: 'Handlebars',
+    // Supply the path to scan here.
+    scanPath: 'src/dashboard/hbs'
+});
+
+run({
+    templateType: 'LESS',
+    // Supply the path to scan here.
+    scanPath: 'src/dashboard/less'
 });
