@@ -1,0 +1,81 @@
+@import "/bower_components/blue-ui/dist/blue-ui/assets/less/variables.less";
+
+#paymentVerify {
+	p {
+		&.instruction {
+			margin-bottom: 1.65em;
+		}
+	}
+	.jpui.table.sortable {
+
+		a {
+			color: blue;
+			text-decoration: none;
+		}
+
+		>thead {
+			>tr {
+				th {
+					color: gray;
+					font-weight: normal;
+					border-bottom: none;
+					font-size: .8em;
+				}
+			}
+		}
+
+		>tbody {
+			>tr {
+				td {
+					padding-bottom: 1.65em;
+					border: none;
+					font-size: .9em;
+
+					&.currency {
+						padding-bottom: 1.55em;
+						font-size: 1em;
+						color: blue;
+					}
+				}
+			}
+			>tr:nth-child(even) {
+				border-bottom: 1px dashed gray;
+			}
+			>tr td:empty {
+				height: 0em;
+				padding: 0em;
+			}
+		}
+
+		.jpui.field {
+			@media (min-width: @screen-lg-min) {
+				dt {
+					float: left;
+					width: 40%;
+					line-height: normal;
+				}
+				dd {
+					margin-left: 40%;
+				}
+				.data-field {
+					border-top: none;
+					margin-top: 0;
+					padding-top: 0;
+				}
+			}
+		}
+
+		#payeeActivityDetailContent {
+			padding: 1em;
+			font-size: .85em;
+			background-color: #F0F0F0;
+			.jpui.field {
+				@media (min-width: @screen-lg-min) {
+					dt {
+						padding-left: 1em;
+					}
+				}
+			}
+		}
+	}
+}

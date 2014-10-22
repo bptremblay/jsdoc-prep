@@ -1,0 +1,20 @@
+<div class="jpui alert {{type}}">
+  {{#if closable}}<i class="close icon"></i>{{/if}}
+  <header>{{header}}</header>
+  <section>{{message}}</section>
+  {{#if actions}}
+  <footer>{{#actions}}{{> "button" this}}{{/actions}}</footer>
+  {{/if}}
+
+{{!
+	{
+		"header":"Alert header",
+		"message": "Alert message goes here",
+		"type": "error",
+		"closable": true,
+        "actions": [{
+          "label": "blah"
+        }]
+	}
+/}}
+</div>

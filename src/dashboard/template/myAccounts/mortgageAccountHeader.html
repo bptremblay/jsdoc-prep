@@ -1,0 +1,52 @@
+<div class="jpui active account details">
+	<div class="row">
+		<div class="col-xs-6">
+			<h3 id="accountName">{{this.accountDisplayName}}</h3>
+			<h5 id="accountMask">({{this.accountMaskNumber}})</h5>
+		</div>
+		<div class="col-xs-6">
+			<div class="col-xs-offset-2 col-xs-10" id="frameForDropDown">
+			</div>
+		</div>
+	</div>
+	<div class="row" id="acct-summary-grid">
+		<div class="col-xs-6" id="acct-summary-zone">
+			<ul>
+				<li>
+					<div class="details item-label">
+						{{account_principal_balance_label}}
+					</div><span class="details item-value text amount emphasized" >{{this.principalBalance}}</span>
+				</li>
+				<li>
+					<div class="details item-label">
+						{{next_payment_due_date_label}}
+					</div><span class="details item-value text amount emphasized">{{this.paymentDueOn}}</span>
+				</li>
+				<li>
+					<div class="details item-label">
+						{{next_payment_due_amount_label}}
+					</div><span class="details item-value text amount emphasized">{{this.nextPaymentDue}}</span>
+				</li>
+			</ul>
+		</div>
+		<div class="col-xs-6" id="overdraftSettings">
+			<ul>
+				<li id="cashBack">
+					<div class="details item-label">
+						{{{mortgage_cash_back_label}}};
+					</div><span class="details item-value text amount emphasized">{{this.mortgageCashBack}}</span>
+				</li>
+				<li>
+					<div class="details item-label">
+						{{enroll_for_automatic_payments_label}}
+					</div><span class="details item-value automatic_payment_enrollment_status">{{this.automaticPayments}}</span>
+				</li>
+				<li>
+					<div class="details item-label">
+						{{enroll_for_paperless_statements_label}}
+					</div><span class="details item-value paperless_statements_enrollment_status">{{this.paperlessStatements}}</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

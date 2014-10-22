@@ -1,0 +1,32 @@
+<div>
+    {{#if paymentMenuComponent.showBlock}}
+    <section id="pay-and-transfer" class="hidden-xs {{#if paymentMenuComponent.focused}} focused {{/if}}" style="display: block;">
+        <div class="container">
+            <section id="search-actions" class="pay-and-transfer-1 col-lg-12 lp-0" role="navigation">
+                <div id="payment-bar">
+                    <ul class="nav navbar-nav navbar navbar-static">
+                        {{#each paymentMenuComponent.navigation}}
+                        <li>
+                            <a id={{id}} href="#{{link}}" class="pay-bills top-item {{#if active}} active {{/if}} {{#if inactive}} inactive {{/if}}" data-action="{{id}}"><span class="top-item__label">{{label}}
+                                    {{#if final}}
+                                    <i class="fa fa-angle-down top-item__icon"></i>
+                                    {{/if}}
+                                </span></a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </section>
+    {{else}}
+    <section id="module-header" class="hidden-xs" style="display: block;">
+        <div class="container">
+            <section class="navbar navbar-static" role="navigation">
+                <div class="module-title">{{moduleHeaderComponent.headerLabel}}</div>
+                <button type="button" id="close-profile" class="close close-x active close-img" aria-hidden="true"></button>
+            </section>
+        </div>
+    </section>
+    {{/if}}
+</div>

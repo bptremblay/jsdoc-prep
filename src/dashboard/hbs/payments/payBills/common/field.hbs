@@ -1,0 +1,167 @@
+<dl {{#id}}id="{{.}}"{{/id}} class="jpui field{{#classes}} {{.}}{{/classes}}{{#if optional}} optional{{/if}}">
+
+	{{#if label}}
+		<dt>{{#if for}}
+			<label for="{{for}}">{{label}}{{#if optional}} <span class="optionallabel">optional</span>{{/if}}</label>
+			{{else}}{{label}}{{#if optional}} <span class="optional">{{optional}}</span>{{/if}}
+			{{/if}}
+		</dt>
+	{{/if}}
+
+	{{#inputs}}
+
+		{{#data}}<dd class="data-field"><span {{#id}}id="{{.}}"{{/id}}>{{{value}}}</span></dd>{{/data}}
+
+		{{#if text}}<dd class="text-field">
+			{{#text}}
+			<input {{#id}}id="{{.}}"{{/id}} value="{{value}}" class="text{{#classes}} {{.}}{{/classes}}" name="{{name}}" {{#placeholder}}placeholder="{{.}}"{{/placeholder}} {{#disabled}}disabled{{/disabled}}>{{/text}}
+		</dd>{{/if}}
+
+		{{#if zipcode}}<dd class="zipcode-field">
+			{{#zipcode}}
+			<input {{#id}}id="{{.}}"{{/id}} value="{{value}}" class="zip{{#classes}} {{.}}{{/classes}}" name="{{name}}" type="text" pattern="\d*" {{#placeholder}}placeholder="{{.}}"{{/placeholder}}>{{#if withExt}}<span>-</span>{{/if}}
+			{{/zipcode}}
+		</dd>{{/if}}
+
+		{{#if number}}<dd class="number-field">
+			{{#number}}
+			<input {{#id}}id="{{.}}"{{/id}} value="{{value}}" class="number{{#classes}} {{.}}{{/classes}}" name="{{name}}" type="number" {{#placeholder}}placeholder="{{.}}"{{/placeholder}} {{#disabled}}disabled{{/disabled}}>
+			{{/number}}
+		</dd>{{/if}}
+
+		{{#if money}}<dd class="money-field">
+			{{#money}}
+			<input {{#id}}id="{{.}}"{{/id}} value="{{value}}" class="money{{#classes}} {{.}}{{/classes}}" name="{{name}}" type="number" {{#placeholder}}placeholder="{{.}}"{{/placeholder}}>
+			{{/money}}
+		</dd>{{/if}}
+
+		{{#if date}}<dd class="date-field">
+			{{#date}}
+			<i class="fa fa-calendar"></i>
+			<input {{#id}}id="{{.}}"{{/id}} value="{{value}}" class="date{{#classes}} {{.}}{{/classes}}" name="{{name}}" type="date" placeholder="{{#if placeholder}}{{placeholder}}{{else}}mm/dd/yyyy{{/if}}">
+			{{/date}}
+		</dd>{{/if}}
+
+		{{#if select}}<dd class="select-field">
+			{{#select}}
+			<select {{#id}}id="{{.}}"{{/id}} class="select{{#classes}} {{.}}{{/classes}}"value="{{value}}" name="{{name}}" >
+				{{#options}}
+				{{#if group}}
+				<optgroup label="{{group.label}}">
+					{{#group.options}}
+						<option value="{{value}}" {{#selected}}selected='selected'{{/selected}}>{{label}}</option>
+					{{/group.options}}
+				</optgroup>
+				{{else}}
+				<option value="{{value}}" {{#selected}}selected='selected'{{/selected}}>{{label}}</option>
+				{{/if}}
+				{{/options}}
+			</select>{{/select}}
+		</dd>{{/if}}
+
+		{{#if radio}}<dd class="radio-field">
+			{{#radio}}
+			{{#options}}<label class="radio{{#classes}} {{.}}{{/classes}}"><input {{#id}}id="{{.}}"{{/id}} type="radio" name="{{../name}}" value="{{value}}" {{#selected}}selected='selected'{{/selected}}><span>{{label}}</span></label>{{/options}}
+			{{/radio}}
+		</dd>{{/if}}
+
+		{{#if checkbox}}<dd class="checkbox-field">
+			{{#checkbox}}
+			{{#options}}<label class="checkbox{{#classes}} {{.}}{{/classes}}"><input {{#id}}id="{{.}}"{{/id}} type="checkbox" {{#classes}} {{.}}{{/classes}}name="{{../name}}" value="{{value}}" {{#selected}}selected='selected'{{/selected}}><span>{{label}}</span></label>{{/options}}
+			{{/checkbox}}
+		</dd>{{/if}}
+
+	{{/inputs}}
+
+	{{#if prompt}}
+		<dd class="prompt">{{{prompt}}} {{#if promptoptional}}<span class="optionallabel">{{promptoptional}}</span>{{/if}}</dd>
+	{{/if}}
+
+	{{!
+		{
+			id: <uuid>,
+			classes: <string || array>,
+			optional: <string>,
+			label: <string>,
+			prompt: <html>,
+			promptoptional: <string>,
+			inputs: [{
+				data: {
+					id: <uuid>,
+					value: <alphanumeric>
+				}
+			},{
+				text: [{
+					id: <uuid>,
+					classes: <string || array>,
+					name: <string>,
+					value: <alphanumeric>,
+					placeholder: <string>,
+					disabled: <boolean>
+				}]
+			},{
+				number: [{
+					id: <uuid>,
+					classes: <string || array>,
+					name: <string>,
+					value: <alphanumeric>,
+					placeholder: <string>
+				}]
+			},{
+				date: [{
+					id: <uuid>,
+					classes: <string || array>,
+					name: <string>,
+					value: <alphanumeric>,
+					placeholder: <string>
+				}]
+			},{
+				money: [{
+					id: <uuid>,
+					classes: <string || array>,
+					name: <string>,
+					value: <alphanumeric>,
+					placeholder: <string>
+				}]
+			},{
+				radio: [{
+					name: <string>,
+					options: [{
+						id: <uuid>,
+						classes: <string || array>,
+						value: <alphanumeric>,
+						label: <string>,
+						selected: <boolean>
+					}]
+				}]
+			},{
+				checkbox: [{
+					name: <string>,
+					options: [{
+						id: <uuid>,
+						classes: <string || array>,
+						value: <alphanumeric>,
+						label: <string>,
+						selected: <boolean>
+					}]
+				}]
+			},{
+				select: [{
+					id: <uuid>,
+					name: <string>,
+					options: [{
+							value: <alphanumeric>,
+							label: <string>,
+							selected: <boolean>
+						},{
+						group:[{
+							value: <alphanumeric>,
+							label: <string>,
+							selected: <boolean>
+						}]
+					}]
+				}]
+			}]
+		}
+	/}}
+</dl>

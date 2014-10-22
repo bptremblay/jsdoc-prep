@@ -1,0 +1,40 @@
+<section id="payeeVerify" class="container">
+	<link rel="stylesheet" type="text/css" media="screen" href="dashboard/assets/payments/payBills/billpay.css">
+<div class="billpay-view verify-view">
+	<div class="col-lg-2 column-sidenav"></div>
+	<div class="col-lg-10 column-main">
+		<div class="jpui form">
+
+			{{#verifyPayeeForm}}
+				<div class="row header">
+					<section class="col-lg-8">
+						<p class="instruction col-lg-9">{{verifyModeInstruction}}</p>
+						<span class="col-lg-3">{{> "steps" workFlowStep}}</span>
+					</section>
+				</div>
+				<div class="row">
+					<section class="col-lg-8">
+						<div class="row">
+							{{> "selectablelist" payeeOptionsList}}
+						</div>
+						<div class="row">
+							{{> "field" payeeAccountNumber}}
+						</div>
+					</section>
+				</div>
+
+				<footer>
+					{{> "menu" options}}
+
+					<div class="actions">
+						{{#actions}}
+							{{> "button" this}}
+						{{/actions}}
+					</div>
+				</footer>
+			{{/verifyPayeeForm}}
+
+		</div>
+	</div>
+</div>
+</section>

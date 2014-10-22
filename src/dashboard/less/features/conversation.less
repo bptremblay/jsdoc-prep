@@ -1,0 +1,14 @@
+.conversation{
+  /*  Use the nested approach for namespacing elements/widgets that
+      have a parent container with the dashboard namespace
+  */
+  .awesomewidget{
+    color:#FF0;
+  }
+  /*  If you are using elements that have the namespace
+      as part of the main element use the ampersand to chain the selector.
+  */
+  &.someotherwidget{
+    color:blue;
+  }
+}

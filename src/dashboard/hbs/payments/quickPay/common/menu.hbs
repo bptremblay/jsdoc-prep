@@ -1,0 +1,22 @@
+<nav {{#id}}id="{{.}}"{{/id}} class="{{#classes}} {{.}}{{/classes}} menu">
+	<ul class="level main-level">
+	{{#items}}
+		{{> 'submenu' this}}
+	{{/items}}
+	</ul>
+{{!
+	{
+		id: <uuid>,
+		classes: <string | array>,
+		items:[{
+			classes: <string | array>,
+			label: <string>,
+			url: <url>,
+			items: [{
+				label: <string>,
+				url: <url>
+			}]
+		}]
+	}
+/}}
+</nav>

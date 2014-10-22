@@ -1,0 +1,46 @@
+.jpui.list.selectable {
+
+	label {
+		margin: 0px;
+		width: 100%;
+		display: table;
+
+		&> div {
+			display: table-cell;
+		}
+
+		div.input {
+			padding: 0.17em;
+			vertical-align: top;
+			width: 1.65em;
+		}
+
+		dl {
+			margin: 0;
+			padding-bottom: 1em;
+			font-size: .85em;
+			border-bottom: 1px solid gray;
+
+			dt, dd {
+				padding: 0.17em;
+			}
+
+			dt {
+				float: left;
+				width: 40%;
+				line-height: normal;
+				color: gray;
+			}
+			dd {
+				margin-left: 40%;
+			}
+		}
+	}
+
+	&.fixedHeight {
+        max-height: 20em;
+        overflow: hidden;
+        overflow-y: auto;
+	}
+
+}

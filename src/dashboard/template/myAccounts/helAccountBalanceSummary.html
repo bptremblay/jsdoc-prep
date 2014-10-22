@@ -1,0 +1,38 @@
+<div class="col-xs-12 no-padding accountdetails details-panel">
+    <div class="col-xs-12">
+        <div class="col-sm-12  action-bar no-grid-padding">
+            <h3>{{{hel_account_balance_summary_header}}}</h3>
+        </div>
+        <div class="col-xs-12 details-bar">
+            <div class="col-sm-4">{{{account_principal_balance_label}}}</div>
+            <div class="col-sm-6">
+                <div class=" split-panel">{{{this.accountPrincipalBalance}}}</div>
+            </div>
+            <div class="col-sm-4">{{{fees_and_charges_label}}}</div>
+            <div class="col-sm-6">
+                <div class=" split-panel"><i>{{{mathematical_symbol_plus_label}}}</i>{{{this.feesAndCharges}}}</div>
+            </div>
+
+            <div class="col-sm-4">{{{interest_accrued_label}}}</div>
+            <div class="col-sm-6">
+                <div class=" split-panel"><i>{{{mathematical_symbol_plus_label}}}</i>{{{this.interestAccrued}}}</div>
+                <div class="col-lg-8 text-sub">{{{interest_accrued_advisory}}}</div>
+            </div>
+            <div class="col-sm-4">{{{account_current_balance_label}}}</div>
+            <div class="col-sm-6">
+                <div class=" split-panel"><i>{{{mathematical_symbol_equal_label}}}</i>
+                    <strong>{{{this.accountCurrentBalance}}}</strong>
+                </div>
+            </div>
+
+
+            <div class="col-sm-4 ">{{{interest_amount_label}}}</div>
+            <div class="col-sm-6 ">{{{variable_interest_type_label}}}</div>
+            <div class="col-sm-4">{{{account_available_credit_balance_label}}}</div>
+            <div class="col-sm-6">{{{this.accountAvailableCreditBalance}}}</div>
+            <div class="col-sm-4">{{{account_available_lock_balance_label}}}</div>
+            <div class="col-sm-6">{{{this.accountAvailableLockBalance}}}</div>
+
+        </div>
+    </div>
+</div>

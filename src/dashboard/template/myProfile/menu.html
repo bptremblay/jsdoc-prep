@@ -1,0 +1,26 @@
+<ul>
+	{{#each items}}
+		<li class='{{cssClass}}{{#if active}} active{{/if}}{{#if divider}} divider{{/if}}{{#if items}} trigger{{/if}}'>
+			{{#if divider}}
+				<header id='{{id}}' class='header'>{{name}}</header>
+			{{/if}}
+			{{#unless divider}}
+				<a id='{{id}}' href='/{{name}}' on-click = '{{trigger}}'>{{name}}{{#if active}}<span class='accessible-text'> (current selection)</span>{{/if}}</a>
+			{{/unless}}
+			{{#if subItems}}
+				<ul>
+					{{#each subItems}}
+						<li class='{{cssClass}}{{#if active}} active{{/if}}{{#if divider}} divider{{/if}}{{#if items}} trigger{{/if}}'>
+							<a id='{{id}}' href='/{{name}}'>{{name}}
+								{{#if active}}
+									<span class='accessible-text'> (current selection)</span>
+								{{/if}}
+							</a>
+						</li>
+					{{/each}}
+				</ul>
+				<!-- {{view 'myProfile/menu' this}} -->
+			{{/if}}
+		</li>
+	{{/each}}
+</ul>

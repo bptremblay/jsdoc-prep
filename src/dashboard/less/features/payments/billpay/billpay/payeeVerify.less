@@ -1,0 +1,73 @@
+@import "/bower_components/blue-ui/dist/blue-ui/assets/less/variables.less";
+@import "/bower_components/blue-ui/dist/blue-ui/assets/less/mixins/clear.less";
+
+#payeeVerify,
+#payeeManualVerify {
+
+	.header h2,
+	.section h2 {
+		padding-bottom: .25em;
+		display: block;
+		border-bottom: 1px solid #ccc;
+		font-size: 1.5em;
+	}
+	.section h2 {
+		font-size: 1.25em;
+		color: #666;
+	}
+
+	.jpui.field {
+		@media (min-width: @screen-lg-min) {
+			dt {
+				float: left;
+				width: 40%;
+				line-height: normal;
+			}
+			dd {
+				margin-left: 40%;
+			}
+			.data-field {
+				border-top: none;
+				margin-top: 0;
+				padding-top: 0;
+			}
+			.optionallabel {
+				font-size: .9em;
+				color: gray;
+
+				&:before {
+					content:"(";
+				}
+				&:after {
+					content:")";
+				}
+			}
+		}
+	}
+
+	.inlinefield .field {
+		dt {
+			float: none;
+			width: auto;
+			margin: .5em 0em;
+		}
+		dd {
+			margin: .5em 0em;
+		}
+	}
+
+	#payeeAccountNumberField.jpui.field {
+		margin-left: 1.65em;
+
+		dt, dd {
+			font-size: .85em;
+			padding: 0.17em;
+			font-weight: normal;
+			line-height: normal;
+		}
+
+		dt {
+			color: gray;
+		}
+	}
+}

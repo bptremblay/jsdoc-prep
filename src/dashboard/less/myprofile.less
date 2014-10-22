@@ -1,0 +1,652 @@
+@import "colors.less";
+@import "shapes.less";
+@import "/bower_components/blue-ui/dist/blue-ui/assets/less/elements/customfonts.less";
+@import "/bower_components/blue-ui/dist/blue-ui/assets/less/elements/display.less";
+@import "/bower_components/blue-ui/dist/blue-ui/assets/less/elements/aligningcopy.less";
+@import "/bower_components/blue-ui/dist/blue-ui/assets/less/mixins/spacing.less";
+@import "chase-icons.less";
+@import "radiobutton.less";
+@import "checkbox.less";
+@import "readonly-checkbox.less";
+@import "datepicker.less";
+@import "select.less";
+
+
+@light: 300;
+@semibold: 600;
+@bold: 700;
+@extrabold: 900;
+@font-face {
+	#allasso > .fontface("Open Sans", "fonts/opensans");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	#allasso > .fontface("Open Sans", "fonts/opensans-light");
+	font-weight: @light;
+	font-style: normal;
+}
+@font-face {
+	#allasso > .fontface("Open Sans", "fonts/opensans-bold");
+	font-weight: @bold;
+	font-style: normal;
+}
+@font-face {
+	#allasso > .fontface("Open Sans", "fonts/opensans-semibold");
+	font-weight: @semibold;
+	font-style: normal;
+}
+@font-face {
+	#allasso > .fontface("Open Sans", "fonts/opensans-italic");
+	font-weight: normal;
+	font-style: italic;
+}
+
+
+.display {
+	#allasso > .display();
+}
+#overlay {
+	display: none;
+}
+.aligned {
+	#allasso > .alignment();
+}
+
+#pay-and-transfer{display:none!important;}
+
+#content {
+	padding: 0;
+}
+.my-profile {
+	.readonly-checkbox {
+		.readonly-checkbox();
+	}
+	.message {
+		padding: 2.5em 0;
+		.icon {
+			font-style: normal;
+			text-align: center;
+			display: inline-block;
+		}
+		.information {
+			display: inline-block;
+			margin-right: 5px;
+			line-height: 0.5em;
+		}
+		.title {
+			margin: 0 0 10px;
+			font-weight: @light;
+			font-size: 24px;
+			color: #757575;
+		}
+		.additional-information {
+			font-size: 20px;
+			color: #414042;
+		}
+		&.success {
+			color: #757575 !important;
+			background-color: #fff !important;
+			.icon {
+				.filledCircle(1px, #47a447, 36px, 36px, #47a447);
+				font-size: 35px;
+				color: #fff;
+				vertical-align: top;
+				&:before {
+					font-family: 'iconvault';
+					content: "\f117";
+					position: relative;
+					left: 1px;
+				}
+			}
+		}
+		&.error {
+
+		}
+	}
+	.generate-space-utils(padding, 1, 8, px);
+	.jpui.datepicker {
+		.datepicker();
+	}
+	input[type="checkbox"] {
+		.checkbox();
+	}
+	input[type="radio"] {
+		.radiobutton();
+	}
+	.custom-checkbox{
+		padding-top:4px;
+	}
+	.modal.delete-confirmation > .dialog{
+		text-align:center;
+		padding: 32px;
+		fieldset {
+			border: none;
+		}
+		.content {
+			height:800px;
+			margin-top: 150px;
+		}
+		.confirmation-header {
+			font-size: 24px;
+			color: @mainText;
+		}
+		.confirmation-text {
+			font-size: 16px;
+			color: @mainText;
+			margin: 64px 0;
+			p {
+				margin: 16px 0;
+				font-size: 1em;
+			}
+			.verification-address {
+				font-style: normal;
+			}
+		}
+		.action-buttons {
+			.close {
+				margin-right: 16px;
+				text-align: center;
+				color: @mainText;
+				float: none;
+				display: inline;
+				background: #cccccc;
+				text-shadow: none;
+				opacity: 1;
+				padding: 0.688em 1.5625em 0.688em;
+			}
+			.delete {
+				color: @white;
+				background: @button;
+			}
+		}
+		.verification-container > div {
+			padding: 0 27px;
+			.field-label {
+				padding-left: 7px;
+			}
+			.verification-address {
+				padding-left: 29px;
+			}
+		}
+	}
+	.left-align {
+		text-align: left;
+	}
+	.right-align {
+		text-align: right;
+	}
+	.horizontal-divider {
+		border-bottom: 1px solid #ccc;
+		margin-bottom: 4px;
+	}
+	.vertical-divider {
+		border-left: 1px solid #cccccc;
+		margin-left: 10px;
+	}
+	.action-link {
+		font-family: "Open Sans";
+		font-size: 16px;
+		color: @linkBlue;
+		text-decoration: none;
+	}
+	.jpui.modal {
+		display: none;
+		position: fixed;
+		width:100%;
+		height:100%;
+		z-index: 88888;
+		top:0;
+		left:0;
+		overflow-y:auto;
+		background: rgba(0,0,0,0.2);
+		.dialog {
+			width: 1200px;
+			min-height: 100%;
+			z-index: 99999;
+			background: #FFF;
+			opacity: 0.96;
+		}
+	}
+
+	.jpui.dropdown {
+		width: 100%;
+		font-size: 16px;
+		.button {
+			color: @secondaryTextOnWhite;
+			border-radius: 3px;
+			background: @white;
+			border: 1px solid #ccc ;
+			box-shadow: 3px 3px 6px #ccc;
+			width: 100%;
+			margin: 0 0 4px;
+			font-size: 16px;
+			padding-right: 10px;
+			&:focus {
+				outline: none;
+			}
+		}
+		.icon {
+			float: right;
+		}
+		.list-container {
+			position: relative;
+		}
+		.list {
+			display: none;
+			list-style: none;
+			border: 1px solid rgba(0, 0, 0, 0.17);
+			box-shadow: 3px 3px 6px #ccc;
+			padding: 0;
+			margin: 0;
+			background: #FFF;
+			z-index: 999;
+			text-align: left;
+			position: absolute;
+			width: 100%;
+		}
+		.option {
+			padding: 10px;
+			color: @secondaryTextOnWhite;
+			cursor: pointer;
+			&.disabled {
+				color: @lightGrayLines;
+			}
+			&:hover {
+				background: #F4F1EA;
+				color: #656565;
+				font-weight: @semibold;
+			}
+			&:focus {
+				color: #fff;
+				background: #0092FF;
+				font-weight: @semibold;
+				outline: none;
+			}
+		}
+		&.show {
+			.list {
+				display: block;
+			}
+		}
+	}
+	.flyout {
+		display: inline-block;
+		color: @mainText;
+		.trigger {
+
+		}
+		.icon{
+			color: @linkBlue;
+			background: #F0F8FF;
+			border-color: #F0F8FF;
+			font-style: normal;
+		}
+		.info-icon {
+			.filledCircle(5px, #F0F8FF, 30px, 30px, #F0F8FF);
+			text-align: center;
+			color: @linkBlue;
+			font-size: 1.25em;
+			font-style: normal;
+			margin-left: 10px;
+			display: inline-block;
+			font-weight: bold;
+			line-height: 1;
+
+		}
+		.body-container {
+			position: absolute;
+		}
+		.close {
+			display: none;
+			text-align: right;
+			text-decoration: none;
+			color: #333;
+			position: absolute;
+			top: 4px;
+			right: 4px;
+			font-size: 10px;
+		}
+		.body {
+			display: none;
+			border: 3px @mainRollover solid;
+			position: relative;
+			width: 335px;
+			z-index: 99999;
+			background: @accountsInactiveTile;
+			font-size: .625em;
+			padding: 16px;
+			top: 8px;
+			left: -10px;
+			text-align:left;
+			font-size: 14px;
+			&:before {
+				.triangleUp(12px, #e7e4de);
+				content: ' ';
+				position: absolute;
+				top: -13px;
+				left: 20px;
+			}
+			&:after {
+				.triangleUp(11px, #f9f6f3);
+				content: ' ';
+				position: absolute;
+				top: -10px;
+				left: 21px;
+			}
+		}
+		&.show {
+			.body {
+				display: block;
+			}
+		}
+		&.click-and-stick {
+			.body {
+				display: block !important;
+			}
+			.close {
+				display: block;
+			}
+		}
+	}
+	max-width: 100%;
+	width:1200px;
+	margin: auto;
+	border: @myInfoHeaderBar 1px solid;
+	background: @white;
+	#profile-container {
+
+	}
+	.row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.sidenav {
+		padding: 4px 0 0;
+		height: 100%;
+		ul {
+			font-family: "Open Sans";
+			font-size: 16px;
+			padding: 0;
+			list-style: none;
+			color: @secondaryTextOnBackground;
+			margin: 0;
+			line-height: 0.5em;
+
+			li {
+				padding: 15px 0 15px 32px;
+				ul {
+					li {
+						padding-left:16px;
+					}
+				}
+				margin: 6px 0;
+				a {
+					color: inherit !important;
+					text-decoration: none;
+					padding: 0;
+
+				}
+				&.divider {
+					font-family: "Open Sans";
+					font-weight: @semibold;
+					font-size: 14px;
+					padding-top: 6px;
+					padding-bottom: 6px;
+					margin-top:28px;
+					margin-bottom:24px;
+					background: @internalMenuSectionBarBackgroundColor;
+					text-transform: uppercase;
+					&.active {
+						border: none;
+						display: block;
+						font-weight:normal;
+					}
+				}
+				&.active {
+					font-family: "Open Sans";
+					font-weight: @semibold;
+					border-left:solid 8px #0092FF;
+					color: @mainText;
+					padding-left: 24px;
+					a{
+						color: ##414042;
+
+					}
+				}
+				&.trigger {
+					ul {
+						margin-top: 20px;
+					}
+				}
+				.header {
+					font-family: "Open Sans";
+					font-weight: @semibold;
+					color: @secondaryTextOnBackground;
+					font-size: 14px;
+					padding: 5px 0  5px 0;
+					background: @internalMenuSectionBarBackgroundColor;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+	.section-header {
+		margin: 70px 0;
+		.section-title {
+			font-family: "Open Sans";
+			font-weight: @light;
+			font-size: 32px;
+			color: #333333;
+			margin: 0 0 0 5px;
+		}
+		.button-dropdown-container{
+			float:right;
+			width: 100%;
+		}
+	}
+	.section-subheader {
+		margin: 6px 0 8px 0;
+		font-family: "Open Sans";
+		font-weight: @light;
+		font-size: 24px;
+		color: #333333;
+		display: inline-block;
+		outline:none;
+	}
+	.section-subheader-itext {
+		font-size: 20px;
+	}
+	.section-subtext {
+		font-family: "Open Sans";
+		font-weight: @light;
+		color: #666666;
+		font-size: 16px;
+		padding-top:6px;
+	}
+	.profile-section-edit {
+
+	}
+	.action-bar {
+		.action-link {
+			display: inline-block;
+			padding: 12px 0 8px 10px;
+		}
+		margin-bottom: 32px;
+		border-bottom: none;
+	}
+	.button.add {
+		color: @secondaryTextOnBackground;
+		font-size: 18px;
+	}
+	.section-body {
+		margin-bottom: 5px;
+		padding: 0 24px;
+		.edit-action-buttons  {
+			text-align: center;
+		}
+		dt {
+			 float:left;
+			 clear:left;
+			 text-align:right;
+			 color: @secondaryTextOnBackground;
+			 font-size: 16px;
+			 font-family: "Open Sans";
+			 font-weight: @semibold;
+			 margin-bottom: 42px;
+			 padding-top: 0;
+		}
+		dd {
+			 float:left;
+			 margin-left: 0px;
+			 color: @mainText;
+			 font-size: 16px;
+			 font-family: "Open Sans";
+			 margin-bottom: 42px;
+			 padding-top: 0;
+		}
+		.dd-label-from, .dd-label-to, .dd-label-year {
+			 color: @secondaryTextOnBackground;
+			 font-size: 16px;
+			 font-family: "Open Sans";
+			 font-weight: @semibold;
+		}
+		.dd-label-to{
+			padding-left: 22px;
+		}
+		.dd-label-year{
+			padding-left: 50px;
+		}
+	}
+
+	.profile-header {
+		padding:14px 0 18px 0;
+		background:#DBD5CA;
+		margin:0
+	}
+	.profile-header h1 {
+		padding:0 0 0 22px;
+		margin:0;
+		font-family: "Open Sans";
+		font-weight: @light;
+		font-size: 32px;
+		height: 32px;
+		color: #666666;
+	}
+	.profile-header .exit-profile {
+		border:0;
+		background-color:transparent;
+		float:right;
+		color:#333;
+		font-size:20px;
+		padding-top:2px;
+		margin-right:24px;
+		text-decoration: none;
+	}
+	.profile-content {
+		border-left:1px solid #ccc;
+		padding:0;
+		min-height: 650px;
+	}
+	.accounts-label{
+		padding-bottom:8px;
+	}
+	.accounts-item{
+		padding-top:4px;
+	}
+	.mailing-address-edit-form{
+		padding:0;
+		margin-bottom:16px;
+		form {
+			border: 1px solid #ccc;
+			background-color: #f7f6f4;
+			padding: 30px 24px;
+		}
+		dt, dd{
+			margin-bottom: 12px;
+		}
+		dt {
+			padding-top: 3px;
+		}
+		#date-picker-from{
+			margin-bottom: 12px;
+		}
+		.field-label{
+			padding-left: 6px;
+		}
+		select {
+			.select();
+			width:100%;
+			background: white;
+			border:1px solid #ccc;
+			border-radius: 0;
+			height:30px;
+			padding-left:12px;
+		}
+		input {
+			width:100%;
+			border:1px solid #ccc;
+			height:30px;
+			padding-left:12px;
+		}
+		fieldset{
+			border:none;
+			padding:0px;
+			margin:0px;
+			legend {
+				width:100%;
+			}
+		}
+	}
+	.brokerage-section{
+		margin-bottom:32px;
+		.action-bar{
+			margin-bottom:22px;
+		}
+		.section-subtext{
+			padding-top:22px;
+		}
+		.brokerage-accounts-table{
+			width:100%;
+			color: #414042;
+			font-size: 16px;
+			font-family: "Open Sans";
+			border-top: 1px dashed #ccc;
+			border-top: 1px solid #ccc;
+			border-bottom: 1px solid #ccc;
+			.table-row .table-cell{
+				font-weight: normal;
+				padding: 10px 0;
+				border-bottom:1px dashed #999;
+			}
+		}
+	}
+	.float-right{
+		float:right;
+	}
+	.no-grid-padding {
+	padding-right: 0;
+	padding-left: 0;
+	}
+	.button-container{
+	margin-top:20px;
+	}
+	.button {
+	font-size:14px;
+	border-radius:5px;
+	width:184px;
+	margin-right:16px;
+	margin-left:0;
+	&.primary{
+		font-family: "Open Sans";
+		font-weight: @semibold;
+		color: #ffffff;
+		background-color:#0b6eFD;
+	}
+	&.secondary{
+		font-family: "Open Sans";
+		color: #666666;
+		background-color:#ededed;
+	}
+}
+}

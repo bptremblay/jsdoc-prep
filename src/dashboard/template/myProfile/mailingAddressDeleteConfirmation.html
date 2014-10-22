@@ -1,0 +1,41 @@
+<div>
+	<div class="confirmation-header">{{delete_address_header}}</div>
+	<div class="confirmation-text">
+		<p>{{delete_address_confirmation_label}}</p>
+		<address>
+			{{#if mailing_address_line1}}
+				<div>{{mailing_address_line1}}</div>
+			{{/if}}
+
+			{{#if mailing_address_line2}}
+				<div>{{mailing_address_line2}}</div>
+			{{/if}}
+
+			{{#if mailing_address_line3}}
+				<div>{{mailing_address_line3}}</div>
+			{{/if}}
+
+			{{#if city}}
+				<div>{{city}}{{#if country == "USA"}},{{/if}} {{state}} {{zip_code}}{{#if zip_code_extension}}-{{zip_code_extension}}{{/if}}</div>
+			{{else}}
+				{{#if post_office_type}}
+					<div>{{post_office_type}} {{state}} {{zip_code}}{{#if zip_code_extension}}-{{zip_code_extension}}{{/if}}</div>
+				{{/if}}
+			{{/if}}
+
+			{{#if country != "USA"}}
+				<div>{{country}}</div>
+			{{/if}}
+		</address>
+		{{#unless isTemporary}}
+			<p>{{delete_address_advisory}}</p>
+			{{#each associatedAccounts}}
+				<div>{{mask}}</div>
+			{{/each}}
+		{{/unless}}
+	</div>
+	<div class="action-buttons">
+		<button on-click="doNotDeleteAddress" id="do-not-delete-address-button" class="jpui button secondary">Keep it</button>
+		<button on-click="deleteAddress" id="delete-address-button" class="jpui button primary">Delete it</button>
+	</div>
+</div>

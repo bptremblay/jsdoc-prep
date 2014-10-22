@@ -1,0 +1,47 @@
+<section id="payeeVerify" class="container">
+<div class="billpay-view verify-view">
+	<div class="col-lg-2 column-sidenav"></div>
+	<div class="col-lg-10 column-main">
+		<div class="jpui form">
+
+			{{#verifyPayeeForm}}
+				<div class="row header">
+					<section class="col-lg-8">
+						{{> "steps" workFlowStep}}
+						<p class="instruction">{{verifyModeInstruction}}</p>
+					</section>
+				</div>
+				<div class="row">
+					<section class="col-lg-8">
+						{{> "field" payeeName}}
+						{{> "field" postalAddress}}
+						{{#if postalAddressLine2}}
+						<dl class="jpui field">
+							<dt>&nbsp;</dt>
+							<dd class="data-field"><span>{{postalAddressLine2}}</span></dd>
+						</dl>
+						{{/if}}
+						<dl class="jpui field">
+							<dt>&nbsp;</dt>
+							<dd class="data-field"><span>{{postalAddressLine3}}</span></dd>
+						</dl>
+						{{> "field" phoneNumber}}
+						{{> "field" payeeAccountNumber}}
+					</section>
+				</div>
+
+				<footer>
+					{{> "menu" options}}
+
+					<div class="actions">
+						{{#actions}}
+							{{> "button" this}}
+						{{/actions}}
+					</div>
+				</footer>
+			{{/verifyPayeeForm}}
+
+		</div>
+	</div>
+</div>
+</section>

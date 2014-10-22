@@ -1,0 +1,57 @@
+<div class="transactions-wrapper">
+	<table class="dates active-dates">
+		{{#if pendingActivity}}
+		<tr class="header ">
+			<th colspan="4">
+				<div><i class="fa fa-angle-down"></i>On Hold</div>
+			</th>
+		</tr>
+		{{#each pendingActivity}}
+		<tr class="">
+			<td class="vendor" colspan="2">{{this.description}}</td>
+			<td class="amount" colspan="2">{{this.amount}}</td>
+		</tr>
+		<tr>
+			<td colspan="4" class="second-line">Hold placed on {{this.eDate}}</td>
+		</tr>
+		<tr class="">
+			<td class="category"></td>
+			<td></td>
+			<td class="action">
+			</td>
+		</tr>
+		{{/each}} {{/if}} {{#if postedActivity}}
+		<tr class="header active-dates">
+			<th colspan="4">
+				<div><i class="fa fa-angle-down">Posted</i>
+				</div>
+			</th>
+		</tr>
+
+		<tr class="column-headers">
+			<th on-click="sort_date">Date</th>
+			<th>Description</th>
+			<th class="text-align-right">Amount</th>
+		</tr>
+
+		{{#each postedActivity}}
+		<tr class="{{this.class}}">
+			<td class="date">{{this.eDate}}</td>
+			<td class="vendor">{{this.description}} {{#if this.possitive}}|
+				<img class="seurat-chk-img" />{{/if}}</td>
+			<td class="amount {{#if this.possitive}}deposit{{/if}}" colspan="2">{{this.amount}}</td>
+		</tr>
+		<tr class="{{this.class}}">
+			<td class="category">{{this.type}}</td>
+			<td></td>
+			<td class="action"></td>
+		</tr>
+		{{/each}} {{/if}} {{#if !nextPageId}}
+		<tr class="{{this.class}}">
+			<td colspan="3" align="center">No more data
+				<td>
+		</tr>
+		{{/if}}
+	</table>
+
+</div>

@@ -1,0 +1,29 @@
+<div class="transactions-wrapper">
+    <table class="jpui grouped table account activity">
+        <thead>
+            <tr>
+                <th>{{transaction_posted_date_label}}</th>
+                <th>{{transaction_description_label}}</th>
+                <th class="right text">{{transaction_amount_label}}</th>
+                {{#if this.showBalance}}<th class="right text">{{account_running_balance_label}}</th>{{/if}}
+            </tr>
+        </thead>
+		{{#if activityData.list}}
+			{{#each activityData.list}}
+				<tr class="{{this.class}}">
+					<td class="date">{{this.eDate}}</td>
+					<td class="{{this.cellClass}}">
+                      {{this.description}}
+                      <span class="subtitle">{{this.type}} {{#if this.card}}{{this.card}}{{/if}}</span>
+                    </td>
+					<td class="{{this.cellClass}} {{#if this.possitive}}positive {{/if}}right text amount">{{this.amount}}</td>
+					{{#if this.showBalance}}<td class="{{this.cellClass}} right text balance">{{this.balance}}</td>{{/if}}
+				</tr>
+			{{/each}}
+		{{else}}
+            <tr class="first">
+            	<td class="center aligned medium" colspan="4">{{no_activity_message}}</td>
+            </tr>
+		{{/if}}
+	</table>
+ </div>

@@ -1,0 +1,84 @@
+#transactions {
+    #details {
+        #acct-summary-grid {
+            li:before {
+                float: left;
+                width: 0;
+                white-space: nowrap;
+                content: ". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . "". . . . . . . . . . . . . . . . . . . . ";
+            }
+            li {
+                overflow: hidden;
+            }
+        }
+    }
+}
+.details.item-label {
+    display: inline;
+    background: white;
+}
+.details.item-value {
+    display: inline;
+    background: white;
+}
+#overdraftSettings {
+    h4 {
+        margin-bottom: 3px;
+        margin-top: 0;
+        padding-top: 2px;
+    }
+}
+.jpui.account.details {
+    margin: 1.1em 0;
+    h3 {
+        font-family: 'open sans';
+        font-weight: 200;
+        font-size: 1.8em;
+        margin-bottom: 0;
+    }
+    h5 {
+        font-family: 'open sans';
+        margin: 0 0 1.2em 0;
+        font-size: 1.2em;
+        font-weight: 200;
+        color: #747474;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            list-style: none;
+            font-family: 'open sans';
+            font-weight: 300;
+            color: #6E6E6E;
+            font-size: 0.9em;
+            padding: 0.2em 0;
+            span {
+                float: right;
+                font-size: 1.15em;
+                font-weight: 300;
+                line-height: 100%;
+            }
+        }
+        li:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+        }
+    }
+}
+.jpui.active.account.details {
+    border-top: 8px solid #00578C;
+    .button.medium{
+        margin-left: 0;
+padding: 0.688em 1em 0.688em;
+    }
+    .info.button.medium{
+margin-left: 0;
+margin-right: 0;
+padding: 0.688em 1em 0.688em;
+    }
+}

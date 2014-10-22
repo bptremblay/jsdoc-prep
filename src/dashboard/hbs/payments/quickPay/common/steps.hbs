@@ -1,0 +1,15 @@
+ <div class="steps">
+		 {{#progress}}
+		 <ol class="headers">
+			 {{#each steps}}
+				 <li class="{{@key}}"><header>{{title}}</header></li>
+			 {{/each}}
+		 </ol>
+
+		 <ol class="icons">
+			 {{#each steps}}
+				 <li {{#if last}}class ="fa fa-check"{{/if}}><span>{{@index}}</span></li>
+			 {{/each}}
+		 </ol>
+		 {{/progress}}
+ </div>

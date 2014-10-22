@@ -1,0 +1,58 @@
+<section id="payeeEnter" class="payments container">
+	<div class="billpay-view entry-view">
+		<div class="col-lg-2 column-sidenav">
+			<!-- Nav placeholder -->
+		</div>
+		<div class="col-lg-10 column-main">
+			{{#addPayeeForm}}
+			<section class="header row">
+				<section class="col-lg-12">
+					{{> "steps" workFlowStep}}
+					<div class="row">
+						<!-- Depreciated? -->
+						<!-- <p class="instruction col-lg-12">{{searchModeInstruction}}</p> -->
+					</div>
+				</section>
+				<h2>Add a Payee</h2>
+			</section>
+			<div class="row"></div>
+			<div class="row">
+				{{> "menu" menu}}
+			</div>
+			<div class="row">
+				<div class="jpui form">
+						<div class="row">
+							<section class="col-lg-8">
+								{{> "field" payeeName}}
+							</section>
+						</div>
+						<div class="row">
+							<section class="col-lg-12">
+								{{> "field" zipCode}}
+							</section>
+							<section class="col-lg-4">
+								{{> "field" payeeAccountNumber}}
+								{{> "field" payeeConfirmedAccountNumber}}
+							</section>
+						</div>
+
+						<footer>
+							<!--TODO: Chandresh - Commenting this section as this will be
+												implemented in a future sprint.-->
+							<!--<p class="prompt"> {{manualModeContent}} <a href="#">{{addYourPayeeManuallyLabel}}</a></p>
+
+							<a href="#">{{sendMoneyContent}}</a>-->
+
+							<div class="actions">
+								{{#actions}}
+									{{> "button" this}}
+								{{/actions}}
+							</div>
+						</footer>
+					{{/addPayeeForm}}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

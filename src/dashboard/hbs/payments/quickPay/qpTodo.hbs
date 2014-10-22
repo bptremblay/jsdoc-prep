@@ -1,0 +1,41 @@
+<section id="qpTodolist" class="container ">
+
+	<section class="view quickpay">
+		<div class="col-lg-3 column-sidenav"></div>
+			<div class="col-lg-9 column-main">
+				<div class="row todo_header">
+					<section class="todo_icons">
+						<i class="fa fa-print"></i>
+						<i class="fa fa-align-justify"></i>
+						<i class="fa fa-th"></i>
+						<i class="fa fa-times" id="close"></i>
+					</section>
+
+					<section class="todo_short">
+							{{#todolistview.toDoInputForm}}
+								<section>
+									{{> "field" showDropdown}}
+								</section>
+							{{/todolistview.toDoInputForm}}
+					</section>
+				</div>
+
+				<div>
+					{{> "table" todolistview.tabledata}}
+
+					<div class="actions">
+						{{#todolistview.seeMoreActions}}
+						{{> "button" this}}
+						{{/todolistview.seeMoreActions}}
+					</div>
+				</div>
+				<div>
+					{{{registered_quickpay_contact_list_label}}}
+					{{#todolistview.contacts}}
+					<span class="todolist_activeLabel">{{../todolist_view_currently_active_label}}</span><span class="todolist_activeResult">{{.}}</span>
+					{{/todolistview.contacts}}
+				</div>
+			</div>
+		</section>
+</section>
+

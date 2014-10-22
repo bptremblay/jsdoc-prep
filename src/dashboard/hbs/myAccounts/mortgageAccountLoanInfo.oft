@@ -1,0 +1,97 @@
+<div class="col-xs-12 no-padding accountdetails details-panel">
+    <div class="col-xs-12 ">
+        <div class="col-xs-12  action-bar no-grid-padding">
+            <h3>Loan Information</h3>
+        </div>
+        <div class="col-xs-12 details-bar">
+            <div class="col-sm-4">
+                Property address
+            </div>
+            <div class="col-sm-6">
+                {{this.addressLine1}}<br>
+                {{{this.addressLine2}}}
+                {{this.city}},
+                {{this.state}}
+                {{this.zipCode}}
+            </div>
+            <div class="col-sm-4">
+                Original appraisal amount
+            </div>
+            <div class="col-sm-6">
+                {{this.originalAppraisalAmount}}
+            </div>
+            <div class="col-sm-4">
+            	Loan type
+            </div>
+            <div class="col-sm-6">
+            	{{this.productTypeDescription}}
+            </div>
+
+			<!-- BEGIN the tricky interest rate stuff -->
+            <div class="col-sm-4">
+                Interest rate
+            </div>
+
+
+            <div class="col-sm-6 ">
+            	<span id="fixedRate">{{this.interestRate}}</span>
+            	<span class="adjustableRate">{{this.variableInterestMargin}}<i>Margin</i></span> <span class="margin-top-10 adjustableRate">+</span>
+            	<span class="adjustableRate">{{this.variableInterestIndexRate}}<i>Index rate<br>
+            	(adjustable)</i></span> <span class="adjustableRate">=</span> <span class="adjustableRate"><b>{{this.interestRate}}</b><i>Interest rate</i></span>
+            </div>
+
+            <div class="col-sm-4">
+
+            </div>
+            <div class="col-sm-8">
+            	<span class="adjustableRate bg-none">{{index_rate_advisory}}</span>
+            </div>
+
+
+
+			<div class="col-sm-4 adjustableRate">
+            	Interest rate changes on
+            </div>
+            <div class="col-sm-6 adjustableRate">
+            	{{this.interestRateChangeEffectiveDate}}
+            </div>
+            <div class="col-sm-4 adjustableRate">
+            	Payment changes on
+            </div>
+            <div class="col-sm-6 adjustableRate">
+            	{{this.paymentChangeEffectiveDate}}
+            </div>
+            <div class="col-sm-4">
+                Loan origination date
+            </div>
+            <div class="col-sm-6">
+                {{this.originalLoanDate}}
+            </div>
+            <div class="col-sm-4">
+                Original payoff date
+            </div>
+            <div class="col-sm-6">
+                {{this.originalPayOffDate}}
+            </div>
+            <div class="col-sm-4">
+                Original loan amount
+            </div>
+            <div class="col-sm-6">
+                {{this.originalLoanAmount}}
+            </div>
+            <div class="col-sm-4">
+                Monthly payments made
+            </div>
+            <div class="col-sm-6">
+                {{this.totalMonthlyPaymentsTillDate}} of
+                {{this.totalMonthlyPayments}}
+            </div>
+            <div class="col-sm-4">
+                Principal balance
+            </div>
+            <div class="col-sm-6">
+                {{this.accountPrincipalBalance}}
+            </div>
+        </div>
+    </div>
+</div>

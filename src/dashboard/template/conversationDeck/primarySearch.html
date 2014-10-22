@@ -1,0 +1,569 @@
+<div role="search" id="conversation-deck-search" class="conversation-deck-search pull-right">
+
+	<div class="conversation-deck-primary-search">
+		<i class="fa fa-search" aria-hidden="true"></i>
+		<label for="primary-search-input">
+			<span class="accessible-text">
+				{{primary_search_input_intro_ada}}
+				<span aria-live="polite">
+					{{searchOptionsCount}} {{primary_search_input_intro_suggestions_ada}}
+				</span>
+			</span>
+		</label>
+		<span class="accessible-text" id="ada-placeholder-text">{{this.search_placeholder}}</span>
+		<input aria-describedby="ada-placeholder-text primary-search-advisory" aria-autocomplete="list" aria-controls="primary-search-suggestions-container" class="conversation-deck-search-box" id="primary-search-input" type="text" placeholder="{{this.search_placeholder}}" value={{searchFor}} on-focus="requestDefaultSearchOptions" on-keyup="requestTypeAheadSearchOptions" />
+	</div>
+
+	<section role="region" aria-labelledby="ada-search-suggestions">
+		<h3 id="ada-search-suggestions" class="accessible-text">Search suggestions</h3>
+		<div class="search-suggestions dis-none" id="primary-search-suggestions-container">
+			<a href="#" id="primary-search-clear-text" on-click="clearSearchFor">
+				<span class="accessible-text">Clear Search</span>
+				<i class="fa fa-2x fa-circle pull-right"><span class="close" aria-hidden="true">×</span></i>
+			</a>
+
+			<span class="seperator"></span>
+
+			<div id="primary-search-advisory" class="search-suggestions-advisory dis-none">{{this.search_option_ask_question_advisory}}</div>
+
+			<div id="primary-search-default-options" on-click="requestDefaultSearchOptionsResult" aria-labelledby="ada-primary-search-default-options" on-keydown="hideSearchOptions">
+				<h3 id="ada-primary-search-default-options" class="accessible-text"></h3>
+				{{{defaultSearchOptions}}}
+			</div>
+
+			<div id="primary-search-options-list"></div>
+
+		</div>
+
+	<span id="ada-search-suggestions" class="accessible-text">End of search suggestions</span>
+	</section>
+
+	<div id='primary-search-result'></div>
+
+
+<!-- :: DST SFO1 - CSS :: -->
+
+	<style type="text/css">
+
+		.dis-none{
+		    display: none!important;
+		}
+		/* ::: Conversation Deck Styles ::: */
+
+		.pull-left {
+		    float: left !important;
+		}
+		.pull-right {
+		    float: right !important;
+		}
+		.clearfix {
+		    clear: both;
+		}
+		.inner-container {
+		    max-width: 1200px;
+		    margin: 0 auto;
+		    position: relative;
+		}
+		.icon-angle-left:before {
+			content: "\f104";
+		}
+		.conversation-deck-message-group::-webkit-scrollbar,
+		.conversation-deck-search-results-history::-webkit-scrollbar {
+		    width: 10px;
+		}
+
+		/* Track */
+		.conversation-deck-message-group::-webkit-scrollbar-track,
+		.conversation-deck-search-results-history::-webkit-scrollbar-track {
+		    -webkit-box-shadow: inset 0 0 0;
+		    background: rgba(204,204,204,1);
+		    -webkit-border-radius: 4px;
+		    border-radius: 4px;
+		}
+
+		/* Handle */
+		.conversation-deck-message-group::-webkit-scrollbar-thumb,
+		.conversation-deck-search-results-history::-webkit-scrollbar-thumb {
+		    -webkit-border-radius: 3px;
+		    border-radius: 3px;
+		    background: rgba(255,255,255,1);
+		    -webkit-box-shadow: inset 0 0 0 rgba(255,255,255,1);
+		}
+		.conversation-deck-message-group::-webkit-scrollbar-thumb:window-inactive,
+		.conversation-deck-search-results-history::-webkit-scrollbar-thumb:window-inactive {
+		  background: rgba(255,0,0,0.4);
+		}
+
+		.conversation-deck-message-header {
+		    margin: 45px 40px;
+		    padding: 0;
+		    top: 0;
+		    background: transparent;
+		    position: relative;
+		    color: white;
+		}
+		.conversation-deck-greeting-message {
+		    position: relative;
+		    top: -27px;
+		    left: 0;
+		    float: left;
+		    font-size: 32px;
+		    font-weight: 100;
+		}
+		.conversation-deck-greeting-message.actionable {
+		    cursor: pointer;
+		}
+		.conversation-deck-message-number {
+		    background-color: white !important;
+		    font-size: 18px;
+		    margin-right: 25px;
+		    color: black;
+		    display: inline-block;
+		    min-width: 10px;
+		    padding: 3px 7px;
+		    font-weight: bold;
+		    line-height: 1;
+		    vertical-align: baseline;
+		    white-space: nowrap;
+		    text-align: center;
+		    border-radius: 12px;
+		    cursor: pointer;
+		}
+		.conversation-deck-message-container {
+		    background: rgba(0, 0, 0, 0.5);
+		    margin: 0 0 50px 30px;
+		    padding: 10px 40px;
+		    width: 60%;
+		    border-radius: 10px;
+		    position: relative;
+		    display: inline-block;
+		}
+		.conversation-deck-message-group{
+		    margin: 0 -30px;
+		    overflow-y: auto;
+		    max-height: 260px;
+		    padding-right: 10px;
+		}
+		.conversation-deck-message-item {
+		    border-bottom: 1px dashed #797979;
+		    border-top: none;
+		    border-left: none;
+		    border-right: none;
+		    padding: 16px 0;
+		    list-style-type: none;
+		}
+		.conversation-deck-message-item:last-child {
+		    border-bottom: none;
+		}
+		.conversation-deck-message-item .close {
+		    font-weight: 100;
+		    color: white;
+		    opacity: 1;
+		    font-size: 24px;
+		    margin-top: -21px;
+		    text-decoration: none;
+		}
+		.conversation-deck-message-description {
+		    font-size: 18px;
+		    color: white;
+		    font-weight: 100;
+		    margin-right: 25px;
+		    padding-bottom: 8px;
+		}
+		.conversation-deck-message-action-text {
+		    font-size: 16px;
+		    color: white;
+		    font-weight: normal;
+		}
+		.conversation-deck-message-action {
+		    font-size: 16px;
+		    color: #87cdf9;
+		    font-weight: normal;
+		    text-decoration: none;
+		}
+		.conversation-deck-message-footer {
+		    margin: 0px -10px 14px 10px;
+			padding: 15px 0 15px;
+		    border-top: 1px #797979 solid;
+		    clear: both;
+		}
+		.conversation-deck-search {
+			min-width: 350px;
+			max-width: 60%;
+			margin: -10px 32px 20px 0;
+			position: relative;
+		}
+		.conversation-deck-primary-search {
+			position: relative;
+		}
+		.conversation-deck-primary-search a {
+			display: block;
+		}
+		.conversation-deck-search-box {
+		    font-size: 16px;
+		    font-weight: 300;
+		    padding: 8px 42px 8px 42px;
+		    color: black;
+		    background-color: white;
+		    border: 1px solid #999;
+		    border-bottom: none;
+		    border-radius: 12px;
+		    width: 100%;
+		    height: 44px;
+		    opacity: 0.5;
+		    position: relative;
+		    outline: none;
+		}
+		.conversation-deck-search input:focus,
+		.conversation-deck-search-box.is-active {
+		    opacity: 1;
+   		    border: 1px solid #999;
+		    border-bottom: none;
+		    z-index: 2;
+		    outline: none;
+		}
+		.conversation-deck-primary-search .fa-search {
+		    color: black;
+		    font-size: 24px;
+		    opacity: 0.5;
+		    position: absolute;
+		    z-index: 4;
+		}
+		.conversation-deck-search-results {
+		    background: rgba(0, 0, 0, 0.5);
+		    border-radius: 12px;
+		    padding: 10px 20px 15px;
+		    margin-top: 10px;
+			margin-bottom: 35px;
+			color: white;
+		}
+		.conversation-deck-search-results .seperator {
+			border-bottom: 1px dotted;
+			width: 100%;
+			display: inline-block;
+		}
+		.conversation-deck-search-results .answer {
+			margin-top: 15px;
+		}
+		.conversation-deck-search-results .answer .deeplink a {
+			width: 100%;
+			padding: 0.4em 1.5em;
+			font-size: 0.9rem;
+			cursor: pointer;
+			white-space: nowrap;
+			vertical-align: middle;
+			max-width: 20em;
+			overflow: hidden;
+			border: none;
+			color: #fff;
+			background-color: #666;
+			text-align: center;
+			display: inline-block;
+		}
+		.conversation-deck-search-results .related {
+			margin-top: 15px;
+			width: 55%;
+		}
+		.conversation-deck-search-results .related h4 {
+			margin: 4px 0;
+		}
+		.conversation-deck-search-results .ics {
+			margin-top: 15px;
+		}
+		.conversation-deck-search-results p,
+		.conversation-deck-search-results a {
+			font-size: 16px;
+			font-weight: normal;
+			text-decoration: none;
+		}
+		.conversation-deck-search-results p {
+			margin-top: 15px;
+		}
+		.conversation-deck-search-results a {
+			color: #87cdf9;
+			text-decoration: none;
+		}
+		.conversation-deck-search-results ul {
+			list-style: none;
+			-webkit-padding-start: 0px;
+			margin: 10px 0 0;
+			padding-left: 0;
+		}
+		.conversation-deck-search-results li {
+			margin-top: 12px;
+			margin-right: 15px;
+		}
+		.conversation-deck-search-results .related ul {
+			margin-top: 5px;
+			margin-bottom: -5px;
+		    padding-left: 0;
+		}
+		.conversation-deck-search-results-tabs ul {
+			list-style: none;
+			margin: 5px 0;
+			padding-left: 0;
+		}
+		.conversation-deck-search-results-tabs li {
+			display: inline;
+			padding-right: 50px;
+			padding-bottom: 5px;
+		}
+		.conversation-deck-search-results-tabs li a {
+			text-decoration: none;
+		}
+		.conversation-deck-search-results-tabs .active-tab {
+			color: white;
+			border-bottom: 1px white solid;
+		}
+		.conversation-deck-search-results .close {
+		    font-weight: 100;
+		    color: white;
+		    opacity: 1;
+		    font-size: 24px;
+		    margin-top: -36px;
+		    cursor: pointer;
+		}
+		.conversation-deck-search-results-history {
+			overflow-y: auto;
+		    max-height: 260px;
+		}
+		.conversation-deck-search-results-history > li {
+		 	border-bottom: 1px dotted white;
+			padding-bottom: 10px;
+		 }
+		.conversation-deck-search-results-history > li:last-child {
+		    border-bottom: none;
+		    padding-bottom: 0px;
+		}
+		.search-suggestions {
+		    position: absolute;
+		    background: white;
+		    border-bottom-right-radius:12px;
+		    border-bottom-left-radius:12px;
+		    border: 1px solid #999;
+		    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+		    border-top: none;
+		    margin-top: -10px;
+			width: 100%;
+			z-index: 3;
+		}
+		.search-suggestions .fa-circle {
+			color: #999;
+			z-index: 5;
+			position: relative;
+			top: -36px;
+			right: -20px;
+		}
+		.search-suggestions .close {
+		    font-weight: 100;
+		    color: white;
+		    opacity: 1;
+		    font-size: 30px;
+		    cursor: pointer;
+		    z-index: 6;
+		    position: relative;
+			right: 23px;
+			top: -4px;
+		}
+		.search-suggestions-advisory {
+			margin: 12px;
+		}
+		.search-suggestions .seperator {
+			border-bottom: 1px solid;
+			display: block;
+			color: black;
+			margin: 10px 14px 0 14px;
+		}
+		.conversation-deck-search.width60 {
+			width: 60%;
+		}
+		.search-suggestions ul {
+		    text-decoration: none;
+		    list-style-type: none;
+		    -webkit-padding-start: 0px;
+		    margin: 10px 0;
+		    padding-left: 0;
+		}
+		.search-suggestions ul li {
+			font-size: 16px;
+			padding: 5px 14px;
+		}
+
+		.search-suggestions h5 {
+			font-size: 16px;
+			font-weight: bold;
+			line-height: 0px;
+			padding: 0 14px;
+		}
+		.search-suggestions a {
+			text-decoration: none;
+			color: #656565;
+		}
+		.search-suggestions li:hover {
+			background-color: #F4F1EA;
+		}
+		.conversation-deck-search .fa {
+			margin: 10px !important;
+		}
+
+		/*Site Message css*/
+
+		/*Begin: Site message dependent css from proto.css. TODO: remove this once css is standardized*/
+
+		.site-message p {
+			font-family: "Open Sans", Arial, Helvetica, Sans-Serif ;
+			font-size: 13px;
+			line-height: 1.428571429;
+			margin: 0 0 9px !important;
+			padding: 0px !important;
+		}
+
+		/*End*/
+
+		.site-message-close.close{
+		    color: #FFFFFF;
+		    font-weight: 100;
+		    font-size: 32px !important;
+		    position: absolute;
+		    right: 26px;
+		    opacity: 1;
+		    padding: 0;
+			cursor: pointer;
+			background: transparent;
+			border: 0;
+			-webkit-appearance: none;
+			float: right;
+			line-height: 1;
+		}
+		.site-message-brief-block{
+		    background-color: #BF2155;
+		    width: 100%;
+		}
+		.site-message-brief{
+		    color: #FFFFFF;
+		    max-width: 1200px;
+		    margin: auto;
+		    padding: 1% 40px 1% 84px;
+		    position: relative;
+		}
+		.site-message-brief a{
+		    color: #FFFFFF;
+		}
+		.site-message-overlay{
+		    background:rgba(000, 000,000, 0.7);
+		    position:absolute;
+		    z-index:50;
+		    height: 100%;
+		    width: 100%;
+		}
+		.site-message-full-block{
+		    background-color: #FFFFFF;
+		    width: 100%;
+		}
+		.site-message-full{
+		    color: #414042;
+		    margin: auto;
+		    position: relative;
+		    z-index: 100;
+		    background: #fff;
+		    padding: 1% 40px 1% 84px;
+		    overflow: scroll;
+		    max-width: 1200px;
+		}
+		.site-message-aler-icon{
+		    position: absolute;
+		    left: 33px;
+		    background-color: white !important;
+		    font-size: 18px;
+		    margin-right: 7px;
+		    color: #BF2155;
+		    display: inline-block;
+		    min-width: 10px;
+		    padding: 2px 8px;
+		    font-weight: bold;
+		    line-height: 1;
+		    vertical-align: baseline;
+		    white-space: nowrap;
+		    text-align: center;
+		    border-radius: 10px;
+
+		}
+		.site-message-no-scroll{
+		    overflow: hidden;
+		}
+		.site-message-no-scroll #main{
+		    min-height: 1000px;
+		}
+		@media only screen and (min-width: 480px){
+		    .site-message-full{
+		        max-height: 600px;
+		    }
+		}
+
+		@media only screen and (max-width: 479px){
+		    .site-message-full{
+		        max-height: 350px;
+		    }
+		}
+
+		/* :: End of Conversation Deck Styles :: */
+
+		/* :: Styles are reserved for Site Exit Message :: */
+		.site-exit-warning-overflow-hidden{
+			overflow: hidden;
+		}
+	    .site-exit-warning-overlay {
+	        position: fixed;
+	        top: 0;
+	        left: 0;
+	        height: 100%;
+	        width: 100%;
+	        background-color: #fff;
+	        opacity: .96;
+	        z-index: 10;
+	    }
+	    .site-exit-warning-overlay-content {
+			position: relative;
+			top: 25%;
+			text-align: center;
+			color: black;
+			z-index: 11;
+			width: 60%;
+			margin: 0 auto;
+	    }
+	    .site-exit-warning-button {
+	        padding: 8px 60px;
+	        display: inline-block;
+	        font-size: 14px;
+	        line-height: 1.42857143;
+	        margin-bottom: 0;
+	        text-align: center;
+	        white-space: nowrap;
+	        vertical-align: middle;
+	        cursor: pointer;
+	        -webkit-user-select: none;
+	        -moz-user-select: none;
+	        -ms-user-select: none;
+	        user-select: none;
+	        background-image: none;
+	        border-radius: 4px;
+	        border: 1px solid transparent;
+	    }
+	    .site-exit-warning-cancel-button {
+	        background-color: #DADADA;
+	        /*border-color: #357ebd;*/
+	        margin-left: 28px;
+	        font-weight: 400;
+	    }
+	    .site-exit-warning-proceed-button {
+	        color: #fff;
+	        background-color: #428bca;
+	        border-color: #357ebd;
+	        margin-left: 28px;
+	        font-weight: 400;
+	    }
+	    /* :: End of site exit message :: */
+
+	</style>
+
+</div>

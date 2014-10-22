@@ -1,0 +1,52 @@
+<section id="qpEnrollConfirm" class="container">
+
+	<div class="view quickpay col-lg-12">
+
+		<section class="col-xs-offset-11 printFeature">
+	      <i class="fa fa-print"></i>
+	   	</section>
+
+	   	<section>
+			{{> "progressbar" this}}
+		</section>
+
+		<section class="col-lg-10">
+			<header>
+				<i class="fa fa-check-circle"></i>
+				<span>You're ready to use Chase QuickPay<sup>SM</sup>.</span>
+			</header>
+
+			{{#enrollConfirmForm}}
+				<section class="contact list">
+					{{#contactEmails}}
+						{{> "enterContactInfo" this}}
+					{{/contactEmails}}
+				</section>
+
+				{{#if moreContacts}}
+				<section class="moreContacts">
+					<h3>More contacts</h3>
+
+					<div class="contact list">
+					{{#moreContacts}}
+						{{> "enterContactInfo" this}}
+					{{/moreContacts}}
+					</div>
+				</section>
+				{{/if}}
+
+
+				<footer>
+					{{> "button" editInfoAction}}
+					<section class="actions row">
+						{{#actions}}
+							{{> "button" this}}
+						{{/actions}}
+					</section>
+				</footer>
+			{{/enrollConfirmForm}}
+		</section>
+	</div>
+</section>
+
+

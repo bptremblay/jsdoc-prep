@@ -1,0 +1,78 @@
+/*
+ * Do NOT import blue-ui directly into feature less.
+ * @import "/bower_components/blue-ui/dist/blue-ui/assets/less/framework.less";
+ * @import "/bower_components/blue-ui/dist/blue-ui/assets/less/utilities.less";
+ */
+
+.classic{
+  /*  Use the nested approach for namespacing elements/widgets that
+      have a parent container with the dashboard namespace
+      If you are using elements that have the namespace
+      as part of the main element use the ampersand to chain the selector.
+  */
+
+    &.navigation {
+      background-color: #353d47 !important;
+      height: 64px;
+
+       span {
+        font-size: 14px;
+        color: #fff;
+        padding: 1.4em 2.2em;
+        display: inline-block;
+          a {
+              text-decoration: none;
+              color: #FFF;
+            }
+          i {
+              padding-right: 5px;
+              margin:0 !important; /* need to remove it later when fa tag margins are removed from blueui */
+            }
+          }
+    }
+    &.title {
+      background-color: #e5e1da;
+      min-height:61px;
+      color: #423e3d;
+      width: 100%;
+            h1 {
+            font-size: 2em;
+            margin: 0;
+            padding: 0.4em 1em;
+            font-weight: 300;
+          }
+    }
+    &.toggle{
+      &.link{
+          padding:1.2em 1.5em;
+          font-size: 16px;
+          i {
+              padding-left: 5px;
+              margin:0 !important; /* need to remove it later when fa tag margins are removed from blueui */
+            }
+          a {
+              text-decoration: none;
+              color: #000;
+              font-weight: 400;
+            }
+        }
+        &.content {
+              background-color: #f2efe8;
+              display: none;
+              p{
+                padding:3em 10em;
+                font-size:16px;
+              }
+            }
+    }
+    &.right{
+      float:right;
+    }
+    &.active{
+      display:block!important;
+    }
+    &.fluid{
+      width:100%;
+    }
+
+}

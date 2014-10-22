@@ -1,0 +1,99 @@
+@import "/bower_components/blue-ui/dist/blue-ui/assets/less/mixins/clear.less";
+
+// styles below are to be considered for
+// as Blue UI candidate code
+.jpui {
+	&.form {
+		.actions {
+		  float: right;
+		}
+		footer {
+			.clearfix();
+		}
+	}
+	&.field {
+		dl, dd, dt {
+			margin: 0;
+		}
+	}
+	.select-field {
+		select {
+			width: 100%;
+		}
+	}
+	.text-field,
+	.number-field,
+	.date-field,
+	.money-field {
+		input {
+			width: 100%;
+		}
+	}
+	.radio-field,
+	.checkbox-field {
+		input {
+			margin-right: 0.65em;
+			vertical-align: text-top;
+		}
+		label {
+			line-height: 1.7em;
+			margin-left: 1.3em;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+	.money-field {
+		position: relative;
+		&:before {
+			content: "$";
+			display: block;
+			position: absolute;
+			top: 0.17em;
+			left: 0.37em;
+		}
+		.money {
+			text-align: right;
+			padding-left: .85em
+		}
+	}
+
+	.zipcode-field {
+		display: block;
+		float: left;
+		width: auto;
+		input {
+			display: inline;
+			width: 4em;
+			margin-right: 0.65em;
+			&:last-child{
+				width: 3em;
+			}
+		}
+	}
+	.date-field {
+		position: relative;
+		.better-dateinput-calendar {
+			margin-left: 0 !important;
+			margin-top: 1.65em !important;
+			z-index: 2 !important;
+		}
+		.better-dateinput-value {
+			margin-top: 0 !important;
+			margin-left: 0 !important;
+			z-index: 1 !important;
+			height: 100%;
+			width: 100%;
+			line-height: 1.65em !important;
+		}
+		i.fa-calendar {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			margin: 0 !important;
+			border-left: 1px solid #bbb;
+			padding: .35em;
+			height: 100%;
+		}
+	}
+}

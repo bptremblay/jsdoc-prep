@@ -1,0 +1,58 @@
+<section id="qpSendInput" class="container">
+
+	<div class="view quickpay col-lg-12">
+		<section class="qp_header row">
+			<div class="col-lg-6">
+				<ul class="menu horiz">
+					<li class="selected" id="qp_Sendmoney">{{send_money_label}}</li>
+					<li id="qp_Requestmoney"><a id="qp_request_money_link">{{request_money_label}}</a></li>
+				</ul>
+			</div>
+			<p class="col-lg-6">{{{request_quickpay_info_label}}}</p>
+		</section>
+
+		<div class="form">
+			{{#sendInputForm}}
+				<div class="row qpcolumn_one">
+					<section class="col-lg-4">
+					{{> "field" recipientDropdown}}
+					</section>
+
+					<section class="col-lg-4">
+					{{> "field" tokenDropdown}}
+					</section>
+
+					<section class="col-lg-4">
+					{{> "field" accountDropdown}}
+					</section>
+				</div>
+				<div class="row">
+					<section class="col-lg-4">
+					{{> "field" isRepeatingCheckbox}}
+					</section>
+
+					<section class="col-lg-2">
+					{{> "field" amountTextbox}}
+					</section>
+
+					<section class="col-lg-2">
+					{{> "field" sendOnTextbox}}
+					</section>
+
+					<section class="col-lg-4">
+					{{> "field" memoTextbox}}
+					</section>
+				</div>
+				<footer>
+					{{> "menu" formlinks}}
+
+					<div class="actions">
+						{{#actions}}
+						{{> "button" this}}
+						{{/actions}}
+					</div>
+				</footer>
+			{{/sendInputForm}}
+		</div>
+	</div>
+</section>

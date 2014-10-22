@@ -1,0 +1,65 @@
+<div class="rcvContainer">
+<div class="table msg">
+   <div class="row">
+      <div class="cell cellConfirmCheckBox">
+		<div id="confirmCheckBox"></div>
+      </div>
+      <div class="cell cellMsg">
+      	<span>{{svcErrorMsg}} </span>
+			<span class="msgTitle">{{accept_confirm_message_1}}
+			   </span><br/><br/>
+			   <span class="msgContent">
+			  {{accept_confirm_message_2}} {{profile.creditAccountName}} {{accept_confirm_message_3}}
+			   </span>
+
+      </div>
+   </div>
+</div>
+<div class="todo-list2">
+        <ul class="rowlist top">
+           <li class="cellSelected">
+
+            </li>
+            <li class="date">
+               <label class="confirm">{{notification_received_date_header}}</label>
+            </li>
+            <li class="sender">
+               <label class="confirm">{{notification_sender_header}}</label>
+            </li>
+            <li class="amount2">
+               <label class="amount confirm">{{transaction_amount_header}}</label>
+            </li>
+         </ul>
+
+ 			{{#each list}}
+
+	       <ul class="rowlist">
+	         <li class="cellSelected">
+	         	{{#if isSelected}}
+               	<p class="rowSelected"></p>
+               {{else}}
+               	<p class="rowNotSelected"></p>
+               {{/if}}
+            </li>
+            <li class="date">
+               {{notificationReceivedDate}}
+            </li>
+            <li class="sender">
+               <strong>{{notificationSender}}</strong> &nbsp;|&nbsp; <a href="#" class="disabled see_details">{{../view_details_label}}</a>
+
+					{{#ifCond quickpayStatus "===" "CANCELED"}}
+					    <em>{{../../canceled_money_message}}</em>
+					{{else}}
+					    <em>{{../../in_process_message}}</em>
+					{{/ifCond}}
+
+               <span>{{quickpayMemo}}</span>
+            </li>
+            <li class="amount2">
+              ${{paymentAmount}}
+            </li>
+         </ul>
+
+			{{/each}}
+</div>
+</div>

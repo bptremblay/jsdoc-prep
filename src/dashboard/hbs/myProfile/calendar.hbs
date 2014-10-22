@@ -1,0 +1,35 @@
+<div class="jpui calendars">
+	{{#each calendars}}
+		<table class="jpui calendar">
+			<caption>
+				<h6 tabindex="-1" class="hidden-header accessible-text">Hidden Header</h6>
+				{{#if @first}}
+					<a tabindex="0" id="prev" title="Go to {{previousMonthName}} {{year}}"class="jpui jpjs nav-button prev icon-left-expansion" data-monthsToMove="-1">
+					</a>
+				{{/if}}
+				<span class="jpui month">{{monthName}}</span>&nbsp;<span class="jpui year" style="display: none">{{year}}</span>
+				{{#if @last}}
+					<a tabindex="0" id="next" title="Go to {{nextMonthName}} {{year}}" class="jpui jpjs nav-button next icon-right-expansion" data-monthsToMove="1">
+					</a>
+				{{/if}}
+			</caption>
+			<thead>
+				<tr>
+					{{#each ../daysOfWeek}}
+						<th><span>{{name}}</span></th>
+					{{/each}}
+				</tr>
+			</thead>
+			<tbody>
+				{{#each weeks}}
+					<tr>
+						{{#each days}}
+							<td class="jpjs {{className}}" tabindex="{{tabIndex}}"
+								data-date="{{dataAttr}}" data-index={{index}}>{{day}}</td>
+						{{/each}}
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	{{/each}}
+</div>

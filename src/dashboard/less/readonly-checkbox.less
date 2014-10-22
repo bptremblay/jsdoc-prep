@@ -1,0 +1,30 @@
+.readonly-checkbox {
+	vertical-align: middle;
+	div:first-child {
+		width: 16px;
+		height: 16px;
+		padding: 1px;
+		line-height: 12px;
+		border: 1px solid #bfbfbf;
+		box-shadow: 0 0 2px 0 rgba(102, 102, 102, 0.3);
+		display: inline-block;
+		position: relative;
+		top: 2px;
+		background: #0b6efd;
+		outline: none;
+		&:after {
+			font-family: "iconvault";
+			content: "\f117";
+			color: white;
+			font-size: 12px;
+			bottom: 0px;
+			left: 2px;
+			position: absolute;
+		}
+	}
+	.text-label {
+		font-weight: normal;
+		font-size: 16px;
+		color: #414042;
+	}
+}

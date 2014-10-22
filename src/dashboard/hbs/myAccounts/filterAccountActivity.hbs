@@ -1,0 +1,130 @@
+<div class="activity-filter-panel">
+	<h4 id="filter-by-header">{{filter_by_header}}</h4>
+	<div class="activity-filter-grid">
+		<div class="row">
+			<div class="col-lg-3 activity-filter-label">
+			 {{transaction_type_label}}
+			</div>
+			<div   class="col-lg-8 select-container">
+				<select id="filterTransactionType" class="transaction-select">
+					{{#each this.dropdownOptions}}
+						<option value={{this.value}} id={{this.value}}>{{this.name}}</option>
+					{{/each}}
+				</select>
+			</div>
+            </div>
+		 <div class="row">
+                <div class="col-lg-3 activity-filter-label">
+                    {{transaction_date_range_label}}<a class="tooltip" href="#">[i]</a>
+                </div>
+                <div class="col-lg-8 ">
+                    <div class="col-lg-6 ">
+                        <div class="col-lg-3 activity-filter-label">
+                            <span class="">{{transaction_from_date_label}}</span>
+                        </div>
+
+                        <div class="input medium col-lg-9">
+                            <input type="text" id="dateFrom" class="date" name="from-transactions-date">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 ">
+                        <div class="col-lg-3 activity-filter-label range-to">
+                        <span class="">{{transaction_to_date_label}}</span>
+                        </div>
+                        <div class="input medium col-lg-9 ">
+                            <input type="text" id="dateTo" class="date" name="to-transactions-date">
+                        </div>
+                   </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-3 select-container">
+
+                    <div class="col-lg-5  text-right padding-right-27 activity-filter-label">{{transaction_date_range_advisory}}</div>
+                   <select id="dataRangeDropdown" class="col-lg-7">
+					<option value="" id="selectTimeframe" selected>Select a timeframe</option>
+					<option value="CURRENT_DAY" id="CURRENT_DAY">Current day</option>
+					<option value="PREVIOUS_DAY" id="PREVIOUS_DAY">Previous day</option>
+					<option value="LAST_7_DAYS" id="LAST_7_DAYS">Last 7 days</option>
+					<option value="LAST_14_DAYS" id="LAST_14_DAYS">Last 14 days</option>
+					<option value="LAST_1_MONTH" id="LAST_1_MONTH">Last 1 month</option>
+					<option value="LAST_2_MONTHS" id="LAST_2_MONTHS">Last 2 months</option>
+					<option value="LAST_3_MONTHS" id="LAST_3_MONTHS">Last 3 months</option>
+					<option value="LAST_4_MONTHS" id="LAST_4_MONTHS">Last 4 months</option>
+					<option value="LAST_6_MONTHS" id="LAST_6_MONTHS" >Last 6 months</option>
+					<option value="LAST_12_MONTHS" id="LAST_12_MONTHS" >Last 12 months</option>
+					<option value="LAST_24_MONTHS" id="LAST_24_MONTHS">Last 24 months</option>
+				</select>
+                </div>
+            </div>
+            <div class="row" id="amountRange">
+                <div class="col-lg-3 activity-filter-label">
+                   {{transaction_amount_range_label}}
+                </div>
+                <div class="col-lg-8 ">
+                    <div class="col-lg-6  ">
+                        <div class="col-lg-3  activity-filter-label">
+                           {{transaction_from_amount_label}}
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="col-lg-2 dollar activity-filter-label">$</div>
+                            <div class="input medium col-lg-10 dollar-input">
+                                <input type="text" id="fromAmount" class="text" name="amount-range-from">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ">
+                        <div class="col-lg-3 activity-filter-label range-to">
+                        {{transaction_to_amount_label}}
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="col-lg-2 dollar activity-filter-label">$</div>
+                            <div class="input medium dollar-input col-lg-10 ">
+                                <input type="text" id="toAmount" class="text" name="amount-range-to">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+           {{#if this.showCheckFilter}}
+            <div class="row">
+                <div class="col-lg-3 activity-filter-label">
+                  {{check_number_range_label}}
+                </div>
+                <div class="col-lg-8   ">
+                    <div class="col-lg-6 ">
+                        <div class="col-lg-3 activity-filter-label">
+                           {{check_number_range_from_label}}
+                        </div>
+                        <div class="input medium  col-lg-9">
+                         <input type="text" id="checkNumFrom" class="text" name="check-number-from">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ">
+                        <div class="col-lg-3 activity-filter-label range-to">
+                        {{check_number_range_to_label}}
+                        </div>
+                        <div class="input medium col-lg-9 ">
+                            <input type="text" id="checkNumTo" class="text" name="check-number-to">
+                        </div>
+                   </div>
+                </div>
+           </div>
+           {{/if}}
+            <div class="row aligned right">
+                <div class="col-lg-3">
+                    &nbsp;
+                </div>
+                <div class="col-lg-8">
+                    <button class="button medium" type="submit"id="cancelFilterBtn" adatext="cancel-button">
+                    Cancel
+                    </button>
+                    <button class="info button medium" type="submit" id="applyFilterBtn" adatext="filter-button">
+                    Filter
+                    </button>
+                </div>
+            </div>
+
+    </div>
+</div>

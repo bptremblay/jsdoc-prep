@@ -1,0 +1,45 @@
+<div>
+	{{#if messageInfo}}
+		<div class="jpui message {{messageInfo.type}} row">
+			<div class="col-lg-12">
+				<i class="icon"></i>
+				<div class="information">
+					{{#if messageInfo.isAddressDeleted}}
+						<h4 class="title">{{delete_mailing_address_confirmation_label}} {{messageInfo.address}}.</h4>
+						{{#unless messageInfo.isTemporary}}
+							<span class="additional-information">{{delete_mailing_address_advisory}}</span>
+						{{/unless}}
+					{{else}}
+						{{#if messageInfo.isAddressAdded}}
+							<h4 class="title">{{add_mailing_address_confirmation_label}} {{messageInfo.address}}.</h4>
+							<span class="additional-information">{{add_mailing_address_advisory}}</span>
+						{{else}}
+							<h4 class="title">{{messageInfo.title}}</h4>
+							<span class="additional-information">{{messageInfo.details}}</span>
+						{{/if}}
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	{{/if}}
+
+	<div class="row section-header">
+    	<div class="col-lg-9 no-grid-padding"><h2 class="section-title" id="profile-subtitle">{{mailing_address_section_header}}</h2></div>
+	    <div class="col-lg-3">
+	    	<div id="button-dropdown1" class="button-dropdown-container"></div>
+	 	</div>
+    </div>
+
+	{{#if hasWarnings}}
+ 		<div class="jpui message warning">
+ 			<h4>
+ 				{{#if isInvalidMortgageAcct}}<div>{{warning_message_INVALID_MORTGAGE_ACCT}}</div><br/>{{/if}}
+ 				{{#if isDisabledMortgageAcct}}<div>{{warning_message_DISABLED_MORTGAGE_ACCT}}</div><br/>{{/if}}
+ 				{{#if isExternalStudentLoanAcct}}<div>{{warning_message_EXTERNAL_STUDENTLOAN_ACCT}}</div><br/>{{/if}}
+ 			</h4>
+ 		</div>
+ 	{{/if}}
+ 	{{#if noAddress}}
+ 		<div class="section-subtext">{{info_message_no_address}}</div>
+ 	{{/if}}
+</div>

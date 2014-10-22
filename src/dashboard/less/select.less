@@ -1,0 +1,31 @@
+.select() {
+	-webkit-appearance: none;
+	z-index: 1;
+	outline: none;
+	margin-top:0;
+	padding-left:0.15em;
+	padding-top:0;
+	padding-right:0;
+	height:auto;
+	&:-moz-focusring{
+		color: transparent;
+		text-shadow: 0 0 0 #0D5885;
+	}
+	+ .arrow {
+		position: relative;
+		i {
+			position: absolute;
+			color: #757575;
+			background: #ffffff;
+			right: 1px;
+			bottom: 5px;
+			padding: 2px 5px 0 0;
+			margin-right:0;
+			font-weight: bold;
+			font-size: 20px;
+			z-index: 0;
+			pointer-events: none;
+			height:24px;
+		}
+	}
+}

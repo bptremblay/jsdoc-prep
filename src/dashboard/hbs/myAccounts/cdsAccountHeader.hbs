@@ -1,0 +1,50 @@
+<div class="jpui active account details">
+	<div class="row">
+		<div class="col-xs-6">
+			<h3 id="accountName"></h3>
+			<h5 id="accountMask"></h5>
+		</div>
+		<div class="col-xs-6">
+			<div class="col-xs-offset-2 col-xs-10">
+		        <div id="things-you-can-do" class="jpui fluid inverted dropdown closed">
+		          	Things you can do<i class="fa right fa-angle-down"></i>
+		          	<div class="menu">
+			            <div class="item" id="statements-first-level"><a _href="/#">{{request_account_statements_label}}</a></div>
+			            <div class="item" id="details-first-level"><a _href="/#">{{request_account_details_label}}</a></div>
+			            <div class="item" id=forms-first-level""><a _href="/#">{{update_settings_label}}</a>
+			            	<ul id="forms-next-level">
+							<li id="banking-next-level"><a _href="">{{update_statement_settings_label}}</a></li>
+							<li id="tax-next-level"><a _href="">{{update_alerts_settings_label}}</a></li>
+						</ul>
+			            </div>
+			            <div class="item" id="services-first-level"><a _href="/#"><strong>{{account_services_label}}</strong></a>
+			            	<ul id="forms-second-level">
+								<li id="banking-next-level"><a _href="">{{setup_direct_deposit_label}}</a></li>
+							</ul>
+			            </div>
+			            <div class="item"><a _href="/#"><strong>{{get_forms_label}}</strong></a>
+			            	<ul id="forms-third-level">
+								<li id="tax-next-level"><a _href="">{{request_tax_forms_label}}</a></li>
+								<li id="banking-next-level"><a _href="">{{request_banking_forms_label}}</a></li>
+							</ul>
+			            </div>
+		          	</div>
+        		</div>
+      		</div>
+		</div>
+	</div>
+	<div class="row" id="acct-summary-grid">
+		<div class="col-xs-6" id="acct-summary-zone">
+      		<ul>
+      			<li><div class="details item-label">{{account_available_balance_label}}</div><span id="availableBalance" class="details item-value"></span></li>
+        		<li><div class="details item-label">{{account_balance_label}}</div><span id="presentBalance" class="details item-value"></span></li>
+				<li><div class="details item-label">{{interest_accrued_label}}</div><span id="interestAccrued" class="details item-value"></span></li>
+				<li><div class="details item-label">{{interest_earned_YTD_label}}</div><span id="ytdInterest" class="details item-value"></span></li>
+				<li><div class="details item-label">{{annual_percentage_yield_label}}</div><span id="percentageYield" class="details item-value"></span></li>
+				<li><div class="details item-label">{{issue_date_label}}</div><span id="issueDate" class="details item-value"></span></li>
+				<li><div class="details item-label">{{maturity_date_label}}</div><span id="maturityDate" class="details item-value"></span></li>
+				<li><div class="details item-label">{{interest_rate_label}}</div><span id="interestRate" class="details item-value"></span></li>
+      		</ul>
+    	</div>
+   	</div>
+</div>

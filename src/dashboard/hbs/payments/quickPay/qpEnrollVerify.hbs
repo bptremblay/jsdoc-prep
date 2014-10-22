@@ -1,0 +1,52 @@
+<section id="qpEnrollVerify" class="container">
+	<div class="view quickpay col-lg-12">
+
+		<section>
+		{{> "progressbar" this}}
+		</section>
+
+		<section class="col-lg-10">
+				<header>
+					Let's Verify Your Contact Information
+				</header>
+
+				<p class="information">
+					We've sent a code to each of your contacts. Find the code and enter each one in the box next to that contact. It's best to verify all of your contacts, but you only need to verify your primary email address to move on.
+				</p>
+
+				{{#enrollVerifyForm}}
+					{{#if contactEmails}}
+						<section class="contact list">
+							{{#contactEmails}}
+								{{> "enterContactInfo" this}}
+							{{/contactEmails}}
+						</section>
+					{{/if}}
+
+				{{#if moreContacts}}
+					<section class="moreContacts">
+						<h3>More contacts (optional)</h3>
+
+						<div class="contact list">
+						{{#moreContacts}}
+							{{> "enterContactInfo" this}}
+						{{/moreContacts}}
+						</div>
+					</section>
+				{{/if}}
+
+				<footer>
+				{{> "button" editInfoAction}}
+					<section class="actions">
+						{{#actions}}
+							{{> "button" this}}
+						{{/actions}}
+					</section>
+				</footer>
+			{{/enrollVerifyForm}}
+		</section>
+	</div>
+</section>
+
+
+

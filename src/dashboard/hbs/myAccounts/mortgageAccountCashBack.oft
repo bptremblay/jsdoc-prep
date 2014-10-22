@@ -1,0 +1,22 @@
+<div class="col-xs-12 no-padding accountdetails details-panel">
+    <div class="col-xs-12 ">
+        <div class="col-xs-12  action-bar no-grid-padding" id="cashBackLabel">
+            <h3>{{{cash_back_header}}}</h3>
+        </div>
+        <div class="col-xs-12 details-bar" id="balanceLabel">
+            <div class="col-sm-4" id="cashBbackBalanceLabel">
+                {{cash_back_balance_label}}
+            </div>
+            <div class="col-sm-6" id="cashBackBalance">
+                {{this.cashBackBalance}}
+            </div>
+        </div>
+        <div class="col-xs-12 details-bar" id="cancalledLabel">
+             <div class="col-sm-4" id="cashBackCancelledPriorityImage">
+            </div>
+           <div id="cashBackCancelledLabel">
+                {{{cash_back_cancelled_label}}}
+            </div>
+        </div>
+    </div>
+</div>

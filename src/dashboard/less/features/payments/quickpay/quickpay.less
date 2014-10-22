@@ -1,0 +1,122 @@
+@import "/bower_components/blue-ui/dist/blue-ui/assets/less/variables.less";
+@import "/bower_components/blue-ui/dist/blue-ui/assets/less/elements/buttons.less";
+@import "/bower_components/blue-ui/dist/blue-ui/assets/less/elements/menu.less";
+@import "/bower_components/blue-ui/dist/blue-ui/assets/less/elements/table.less";
+@import "common/form.less";
+@import "dashboard/qpSendConfirm.less";
+@import "dashboard/qpSendVerify.less";
+@import "dashboard/qpSendInput.less";
+@import "dashboard/qpRequestInput.less";
+@import "dashboard/qpRequestVerify.less";
+@import "dashboard/qpRequestConfirm.less";
+@import "dashboard/qpSentActivity.less";
+@import "dashboard/qpReceivedActivity.less";
+@import "dashboard/qpTodoList.less";
+@import "dashboard/qpEnrollConfirm.less";
+@import "dashboard/qpEnrollVerify.less";
+@import "dashboard/qpEnrollSetup.less";
+@import "dashboard/qpEnrollInput.less";
+
+.view.quickpay {
+	.clearfix();
+	background: #fff;
+	position: relative;
+	clear: both;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 1em;
+
+	.table {
+		#allasso.table();
+	}
+
+	.menu {
+		#allasso.menu();
+	}
+
+	.column-main {
+		padding-left: 2em;
+		padding-bottom: 1em;
+		border-left: 1px solid #ddd;
+	}
+
+
+	.qp_header {
+		.clearfix();
+		padding: 0;
+		font-size: 1.5em;
+		font-weight: normal;
+
+		p {
+		    color: #0092FF;
+		    font-weight: 600;
+		    font-size: 15px;
+		    margin-top: 1.75em;
+		    padding-left: 13em;
+		}
+
+		.menu {
+			margin: 0;
+		    li {
+		    	margin-right: 1.5em;
+		    	margin-left: 0.7em;
+				padding-top: .5em;
+				color: #757575;
+				float: left;
+
+				&.selected {
+					padding-top: .25em;
+					border-top: .5em solid #CCCCCC;
+					color: #333;
+				}
+			}
+		}
+	}
+
+	.progressbar {
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		right: 0;
+		list-style-type: none;
+		margin: 0;
+
+		li {
+			display: inline-block;
+			width: 1.8em;
+			height: 1.8em;
+			border: 1px solid gray;
+			padding: .15em .5em;
+			border-radius: 2em;
+			font-size: .65em;
+			margin-left: .5em;
+
+			&.active {
+				background-color: #000000;
+				color: #fff;
+			}
+		}
+
+		li:last-of-type {
+			span {
+				display: none;
+			}
+			&:after {
+				content: "\2713";
+				width: 1.8em;
+				height: 1.8em;
+			}
+		}
+	}
+
+
+	.button {
+		&.primary {
+			#allasso.button(
+				@primary-font-color:rgb(238, 238, 238);
+				@primary-bg-color:rgb(22, 149, 244);
+			);
+		}
+		font-size: 1em !important;
+	}
+}

@@ -1,0 +1,24 @@
+<div class='row section-body brokerage-section'>
+	<div class='col-lg-12 action-bar'>
+		<div class='horizontal-divider'>
+			<h4 class='section-subheader'>{{my_profile_brokerage_address_header}}</h4>
+		</div>
+		<div class='section-subtext'>{{my_profile_brokerage_address_message}}</div>
+	</div>
+	<div class='col-lg-12'>
+		<table class="brokerage-accounts-table">
+		{{#each investmentAccounts}}
+			<tr class="table-row">
+				<th class="table-cell" align="left" scope="row">{{mask}}</th>
+				<td class="table-cell" align="right"><a href='#' class="action-link" on-click='edit'>{{change_mailing_address_label}}Change address 
+				<!-- todo: to check on this requirement for HAT vs headers -->
+				<span class="accessible-text">&npbs;for {{mask}}</span>
+				</a></td>
+			</tr>
+			<tr class="brokerage-accounts-table-row-edit display none" aria-hidden="true">
+				<td colspan="2"></td>
+			</tr>
+		{{/each}}
+		</table>
+	</div>
+</div>

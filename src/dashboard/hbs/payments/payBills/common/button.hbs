@@ -1,0 +1,12 @@
+<button class="jpui button{{#classes}} {{.}}{{/classes}}" {{#if id}}id="{{id}}"{{/if}} {{#if type}}type="{{type}}"{{/if}} {{#if disabled}}disabled="{{disabled}}"{{/if}}>{{label}}{{#if adatext}}<span class="accessible-text">&nbsp;{{adatext}}</span>{{/if}}
+{{!
+	{
+		'id': <uuid>,
+		'classes': <string || array>,
+		'type': 'button' || 'submit' || 'reset',
+		'label': <string>,
+		'disabled': <boolean>,
+		'adatext': <string>
+	}
+/}}
+</button>

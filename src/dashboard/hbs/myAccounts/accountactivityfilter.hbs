@@ -1,0 +1,147 @@
+<div class="col-lg-8">
+    <div class="activity-filter-panel">
+        <!-- <h4 id="filter-by-header">Filter by any of these transaction details</h4> -->
+        <h4 id="filter-by-header">Filtered by: All Transactions, 6/21/2014 to 8/27/2014, $70 to $5,000, Checks 2051 to 2058  <span class="clear-filter">Clear Filter </span></h4>
+        <div class="activity-filter-grid">
+            <div class="row">
+                <div class="col-lg-3 activity-filter-label">
+                     Transaction type
+                </div>
+                <div class="col-lg-7 select-container" id="filter-transactions">
+                    <select id="" class="transaction-select" name="transactions-select">
+                        <option value="1" selected='selected'>All Transactions</option>
+                        <option value="2">All Credit</option>
+                        <option value="3">All Debit</option>
+                        <option value="4">Account Transfer</option>
+                        <option value="5">ACH Credit</option>
+                        <option value="6">Adjustment/Reversal</option>
+                        <option value="7">ATM Transaction</option>
+                        <option value="8">Debit Card Transaction</option>
+                        <option value="9">Deposit</option>
+                        <option value="10">Fee</option>
+                        <option value="11">Incoming Wire Transfer</option>
+                        <option value="12">Misc.Credit</option>
+                        <option value="13">Misc.Debit   </option>
+                        <option value="14">Outgoing Wire Transfer</option>
+                        <option value="15">Refund</option>
+                        <option value="16">Returned Deposit Item</option>
+                        <option value="17">All Debit</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 activity-filter-label">
+                    Date range <a class="tooltip" href="#">[i]</a>
+                </div>
+                <div class="col-lg-7 ">
+                    <div class="col-lg-6 ">
+                        <div class="col-lg-3 activity-filter-label">
+                            <span class="">From</span>
+                        </div>
+                        
+                        <div class="input medium col-lg-9">
+                            <input type="date" class="date" name="from-transactions-date">
+                        </div>
+                    </div>
+                
+                    <div class="col-lg-6 ">
+                        <div class="col-lg-3 activity-filter-label range-to">
+                        <span class="">to</span>
+                        </div>
+                        <div class="input medium col-lg-9 ">
+                            <input type="date" class="date" name="to-transactions-date">
+                        </div>
+                   </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    &nbsp;
+                </div>
+                <div class="col-lg-7 select-container">
+                    <div class="col-lg-5  text-right padding-right-27 activity-filter-label">Or</div>
+                    <select id="select1" class="col-lg-7">
+                        <option value="1" selected='selected'>Choose a time period</option>
+                        <option value="2">Previous Day</option>
+                        <option value="3">Last 7 days</option>
+                        <option value="4">Last 14 days</option>
+                        <option value="5">Last 1 month</option>
+                        <option value="6">Last 2 months</option>
+                        <option value="7">Last 3 months</option>
+                        <option value="8">Last 4 months</option>
+                        <option value="9">Last 5 months</option>
+                        <option value="10">Last 6 months</option>
+                        <option value="11">Last 12 months</option>
+                        <option value="12">Last 24 months</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 activity-filter-label">
+                    Amount range
+                </div>
+                <div class="col-lg-7 ">
+                    <div class="col-lg-6  ">
+                        <div class="col-lg-3  activity-filter-label">
+                            From 
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="col-lg-2 dollar activity-filter-label">$</div>
+                            <div class="input medium col-lg-10 dollar-input">
+                                <input type="text" class="text" name="amount-range-from">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ">
+                        <div class="col-lg-3 activity-filter-label range-to">
+                        to
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="col-lg-2 dollar activity-filter-label">$</div>
+                            <div class="input medium dollar-input col-lg-10 ">
+                                <input type="text" class="text" name="amount-range-to">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+            <div class="row">
+                <div class="col-lg-3 activity-filter-label">
+                    Check Number
+                </div>
+                <div class="col-lg-7   ">
+                    <div class="col-lg-6 ">
+                        <div class="col-lg-3 activity-filter-label">
+                             From
+                        </div>
+                        <div class="input medium  col-lg-9">
+                         <input type="text" class="text" name="check-number-from">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ">
+                        <div class="col-lg-3 activity-filter-label range-to">
+                        to
+                        </div>
+                        <div class="input medium col-lg-9 ">
+                            <input type="text" class="text" name="check-number-to">
+                        </div>
+                   </div>
+                </div>
+           </div>
+            <div class="row aligned right">
+                <div class="col-lg-3">
+                    &nbsp;
+                </div>
+                <div class="col-lg-7">
+                    <button class="button medium" type="submit" id="" adatext="cancel-button">
+                    Cancel
+                    </button>
+                    <button class="info button medium" type="submit" id="" adatext="filter-button">
+                    Filter
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+       

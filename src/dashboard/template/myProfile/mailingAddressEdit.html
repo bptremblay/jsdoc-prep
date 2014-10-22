@@ -1,0 +1,258 @@
+<div class="mailing-address-edit-form row section-body no-grid-padding">
+<form name="mailing-address-form">
+	<div class="row">
+		<div class="col-lg-12 action-bar">
+			<div class="col-lg-12 horizontal-divider no-grid-padding">
+				<div class="col-lg-9 no-grid-padding">
+					<h3 class="section-subheader" tabindex="-1" id="address-form-header{{id}}" >
+						{{#if !id}}
+							{{mailing_address_type_label}}
+						{{else}}
+							{{ mailing_address_category === 'TEMPORARY' ? 'Temporary ' : ''}} {{ mailing_address_header }} {{ mailing_address_category === 'PRIMARY' ? '(Primary)' : counterLabel}}
+						{{/if}}
+					</h3>
+				</div>
+			</div>
+			{{#if mailing_address_category == "PRIMARY"}}
+				<div class="col-lg-12 section-subtext no-grid-padding">{{mailing_address_instructions}}</div>
+			{{/if}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<dl class="row">
+				<dt class="col-lg-5"><label for="mailing-address-type">{{mailing_address_category_label}}<span class="accessible-text">, changing selection updates the form below</span></label></dt>
+				<dd class="col-lg-4">
+					<select id="mailing-address-type" class="mailing-address-location-type" value="{{mailing_address_type}}" on-change="requestMailingAddressTypeDetails">
+					<option value="USA">United States</option>
+					<option value="CANADA">Canada</option>
+					<option value="INTERNATIONAL">International</option>
+					<option value="MILITARY">Military</option>
+				</select>
+				<div class="arrow">
+					<i class="icon-down-expansion"></i>
+				</div>
+				</dd>
+
+				<dt class="col-lg-5"><label for="mailing-address-line1">{{mailing_address_line1_label}}</label></dt>
+				<dd class="col-lg-4">
+					<input id="mailing-address-line1" class="mailing-address-line1" value="{{mailing_address_line1}}"/>
+				</dd>
+
+				<dt class="col-lg-5"><label for="mailing-address-line2">{{mailing_address_line2_label}}</label></dt>
+				<dd class="col-lg-4">
+					<input id="mailing-address-line2" class="mailing-address-line2" value="{{mailing_address_line2}}"/>
+				</dd>
+
+				<dt class="col-lg-5"><label for="mailing-address-line3">{{mailing_address_line3_label}}</label></dt>
+				<dd class="col-lg-4">
+					<input id="mailing-address-line3" class="mailing-address-line3" value="{{mailing_address_line3}}"/>
+				</dd>
+
+				{{#if mailing_address_type == "MILITARY" }}
+					<dt class="col-lg-5"></dt>
+
+					<dd class="col-lg-4">
+						<fieldset>
+							<legend class="accessible-text">Post office type</legend>
+							<div class="jpui custom-radiobutton display inline-block col-lg-4 no-grid-padding">
+								<input type="radio" class="jpui radio accessible-text" value="APO" name="{{post_office_type}}" id="APO" checked>
+								<label for="APO">
+									<div>
+										<div>
+										</div>
+									</div>
+									<span class="accessible-text"></span>
+									<span class="field-label">{{post_office_type_APO_label}}</span>
+								</label>
+							</div>
+
+							<div class="jpui custom-radiobutton display inline-block col-lg-4 no-grid-padding">
+								<input type="radio" class="jpui radio accessible-text" value="FPO" name="{{post_office_type}}" id="FPO">
+								<label for="FPO">
+									<div>
+										<div>
+										</div>
+									</div>
+									<span class="accessible-text"></span>
+									<span class="field-label">{{post_office_type_FPO_label}}</span>
+								</label>
+							</div>
+						</fieldset>
+					</dd>
+
+				{{else}}
+					<dt class="col-lg-5"><label for="city">{{city_label}}</label></dt>
+					<dd class="col-lg-4">
+						<input id="city" class="city" value="{{city}}" />
+					</dd>
+				{{/if}}
+
+
+				{{#if mailing_address_type == "CANADA" }}
+					<dt class="col-lg-5"><label for="province">{{province_label}}</label></dt>
+					<dd class="col-lg-4"><select id="province" class="province" value="{{state}}">
+						<option></option>
+						{{#each states}}
+							<option value="{{stateCode}}">{{stateDescription}}</option>
+						{{/each}}</select>
+						<div class="arrow">
+							<i class="icon-down-expansion"></i>
+						</div>
+					</dd>
+
+					<dt class="col-lg-5"><label for="postal_code">{{postal_code_label}}</label></dt>
+					<dd class="col-lg-3"><input id="postal_code" class="postal_code" value="{{postal_code}}"/></dd>
+				{{else}}
+					{{#unless mailing_address_type == "INTERNATIONAL" }}
+						<dt class="col-lg-5"><label for="state">{{state_label}}</label></dt>
+						<dd class="col-lg-4"><select id="state" class="state" value="{{state}}">
+							<option></option>
+							{{#each states}}
+								<option value="{{stateCode}}">{{stateDescription}}</option>
+							{{/each}}
+						</select>
+						<div class="arrow">
+							<i class="icon-down-expansion"></i>
+						</div>
+						</dd>
+					{{/unless}}
+				{{/if}}
+
+				{{#unless mailing_address_type == "CANADA"}}
+					{{#if mailing_address_type == "INTERNATIONAL"}}
+						<dt class="col-lg-5"><label for="postal_code">{{postal_code_label}}</label></dt>
+						<dd class="col-lg-2"><input id="postal_code" name="postal_code" value="{{zip_code}}" /></dd>
+					{{else}}
+						<dt class="col-lg-5"><label for="zip-code">{{zip_code_label}}</label></dt>
+						<dd class="col-lg-4">
+							<span class="col-lg-6 no-grid-padding">
+							<input id="zip-code" name="zip-code" class="zip-code" value="{{zip_code}}"/>
+							</span>
+							<span class="col-lg-1 no-grid-padding aligned center">
+							-<label for="zip-code-extension" class="accessible-text">ZIP 4 digit extension</label>
+							</span>
+							<span class="col-lg-5 no-grid-padding">
+							<input id="zip-code-extension" class="zip-code-extension" value="{{zip_code_extension}}"/>
+							</span>
+						</dd>
+					{{/if}}
+				{{/unless}}
+
+				{{#if mailing_address_type == "INTERNATIONAL" }}
+					<dt class="col-lg-5"><label for="country">{{country_label}}</label></dt>
+					<dd class="col-lg-4">
+						<select id="country" class="country" value="{{country}}">
+							<option></option>
+							{{#each countries}}
+								<option value="{{countryCode}}">{{countryDescription}}</option>
+							{{/each}}
+						</select>
+						<div class="arrow">
+							<i class="icon-down-expansion"></i>
+						</div>
+					</dd>
+				{{/if}}
+
+				{{#if mailing_address_category !== 'TEMPORARY'}}
+					<dt class="col-lg-5"></dt>
+					<dd class="col-lg-5">
+						<div class="jpui custom-checkbox">
+							{{#if mailing_address_category === 'PRIMARY'}}
+								<input type="checkbox" class="jpui checkbox accessible-text" checked="true" id="isPrimary" disabled>
+							{{else}}
+								{{#if addressOptions.isPrimaryAllowed}}
+									<input type="checkbox" class="jpui checkbox accessible-text" checked="{{isPrimary}}" id="isPrimary">
+								{{/if}}
+							{{/if}}	
+							<label for="isPrimary">
+								<div></div>
+								<span class="accessible-text"></span>
+								<span class="field-label">{{make_this_address_primary_label}}</span>
+							</label>
+						</div>
+					</dd>
+				{{else}}
+					<dt class="col-lg-5">{{mailing_address_date_range_frequency_label}}</dt>
+					<dd class="col-lg-7">
+					<fieldset>
+							<legend class="accessible-text">{{mailing_address_date_range_frequency_label}}</legend>
+						<div class="col-lg-12 no-grid-padding">
+							<span class="col-lg-5 no-grid-padding">
+							<span class="dd-label-from col-lg-3 no-grid-padding paddingtop-3px">From<span class="accessible-text">&nbsp; Date</span></span>
+							<div id="date-picker-from{{id}}" class="inline-block col-lg-9 no-grid-padding"></div>
+							<!-- <input type="date"  name="mailing-address-effective-date" class="mailing-address-effective-date"> -->
+							</span>
+							<span class="col-lg-5 no-grid-padding">
+							<span class="dd-label-to col-lg-3 no-grid-padding paddingtop-3px">To<span class="accessible-text">&nbsp; Date</span></span>
+							<div id="date-picker-to{{id}}" class="inline-block col-lg-9 no-grid-padding"></div>
+							<!-- <input type="date" name="mailing-address-end-date" class="mailing-address-end-date" > -->
+							</span>
+						</div>
+
+						<div class="jpui custom-checkbox">
+							<input type="checkbox" class="jpui checkbox accessible-text" checked="{{mailing_address_date_range_frequency}}" name="mailing-address-date-range-frequency" id="recurring">
+							<label for="recurring">
+								<div></div>
+								<span class="accessible-text"></span>
+								<span class="field-label">Use it every year</span>
+							</label>
+						</div>
+						</fieldset>
+					</dd>
+				{{/if}}
+
+				{{#if addressOptions.associatedAccounts || addressOptions.eligibleAccounts}}
+					<dt class="col-lg-5">{{mailing_address_linked_accounts_label}}<div id="contextual-help-container-for-form{{id}}" class="display inline-block"></div>
+					</dt>
+					<dd class="col-lg-7 paddingright-0px paddingtop-7px">
+						<fieldset>
+							<legend>
+							<div class="section-subtext horizontal-divider accounts-label">{{account_display_name_header}}</div>
+							</legend>
+
+							{{#if mailing_address_category === 'TEMPORARY'}}
+							<div class="section-subtext">{{temporary_mailing_address_linked_accounts_advisory}}</div>
+							{{/if}}
+
+							<div class="accounts-item">
+
+								{{#each addressOptions.associatedAccounts}}
+									<div class="jpui custom-checkbox">
+										<input type="checkbox" class="" checked="true" id="{{id}}" disabled>
+										<label for="{{id}}">
+											<div></div>
+											<span class="accessible-text"></span>
+											<span class="field-label">{{mask}}</span>
+										</label>
+									</div>
+								{{/each}}
+
+								{{#each addressOptions.eligibleAccounts}}
+									<div class="jpui custom-checkbox">
+										<input type="checkbox" class="" checked="{{checked}}" id="{{id}}">
+										<label for="{{id}}">
+											<div></div>
+											<span class="accessible-text"></span>
+											<span class="field-label">{{mask}}</span>
+										</label>
+									</div>
+								{{/each}}
+							</div>
+						</fieldset>
+					</dd>
+				{{/if}}
+
+				<dt class="col-lg-5">
+
+				</dt>
+				<dd class="col-lg-7 button-container grid-no-padding">
+					<button id="cancel-address-button" class="jpui button secondary close" on-click="cancelMailingAddressChanges">{{cancel_mailing_address_changes_label}}</button>
+					<button id="save-address-button" class="jpui button primary save" on-click="saveMailingAddressChanges">{{save_mailing_address_changes_label}}</button>
+				</dd>
+			</dl>
+		</div>
+	</div>
+</form>
+</div>
