@@ -3,25 +3,25 @@ var fs = require('fs');
 var healthCheck = require('./fileSystemProcessor');
 var rimraf = require('rimraf');
 //
-var outPath = 'processed';
-var testPath = 'jstests';
-var docPath = 'jsdocs';
-var resultsPath = 'results';
-var scanPath = 'test';
+var outPath = 'test-output';
+var testPath = 'test-jstests';
+var docPath = 'test-jsdocs';
+var resultsPath = 'test-results';
+var scanPath = 'test-source';
 
 
 function healthCheckCallback(healthCheckResults) {
   console.log('ALL DONE');
 
   function runJsDoc(sourceDirectory) {
-    rimraf('/Users/f558910/workspace/jsdoc-prep/jsdocs', function() {
+      rimraf('/Users/f558910/Documents/Projects/jsdoc-prep/jsdocs', function() {
       // sourceDirectory = path.normalize(sourceDirectory);
       var exePath = path.normalize('jsdoc');
       // console.warn('runJsDoc: ' + exePath + ' <> ' + sourceDirectory);
       // $ jsdoc -r -l -d ~/workspace/jsdoc-prep/out
       // ~/workspace/jsdoc-prep/processed/framework
       var exec = require('child_process').exec;
-      var cmdLine = exePath + ' -r -l -d /Users/f558910/workspace/jsdoc-prep/jsdocs '
+      var cmdLine = exePath + ' -r -l -d /Users/f558910/Documents/Projects/jsdoc-prep/jsdocs '
           + sourceDirectory + '';
       console.log(cmdLine);
 
@@ -45,7 +45,7 @@ function healthCheckCallback(healthCheckResults) {
     });
   }
 
-  runJsDoc('/Users/f558910/workspace/jsdoc-prep/processed');
+  runJsDoc('/Users/f558910/Documents/Projects/jsdoc-prep/processed');
 }
 
 

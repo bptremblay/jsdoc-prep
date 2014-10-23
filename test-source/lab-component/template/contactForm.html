@@ -1,0 +1,35 @@
+<section>
+    <div class="full-logo" data-0="opacity:1;" data-100="opacity:0;">
+                <img src="common/assets/img/chasse_white_logo.png" />
+            </div>
+
+            <div id="contact-form" class="login-container" style="height:262px;color:black;"><B>DETAILS FORM</B>
+                <form id="login-form">
+                <table>
+                    <tr>
+                        <td>Check Box :</td>
+                        <td align="left"><input style="width:15px;" type="checkbox" name="chkBox" id="chkBox" checked="{{chkBox}}"></td>
+                    </tr>
+                    <tr>
+                        <td>Select Dropdown :</td>
+                        <td>
+                            <select name="dropDown" id="dropDown" value="{{dropDown}}" style="float:left;">
+                                <option value="" selected>-Select-</option>
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="fiat">Fiat</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Text Box : </td>
+                        <td><input name="txtBox" id="txtBox" value="{{txtBox}}" placeholder="Text Value"></td>
+                    </tr>
+                 </table>
+                    <button id="submit-details" type="button" on-click="submit_details">Submit Details</button>
+                </form>
+            </div>
+
+            <div class="scrolly-link" data-position="600"></div>
+</section>
