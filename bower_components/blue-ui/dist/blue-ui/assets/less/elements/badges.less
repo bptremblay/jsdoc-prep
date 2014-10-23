@@ -1,0 +1,51 @@
+// Badges
+//
+// Highlight new or unread items by adding a <span class="badge"> to links.
+//
+// Markup:
+// <span class="jpui badge">100</span>
+//
+//
+//
+// Styleguide 2.14
+
+// Badges within Button
+//
+// Built-in styles are included for placing badges
+//
+// Markup:
+// <a href="#">Inbox <span class="jpui badge marginleft-5px">15</span></a>
+// <br/><br/>
+// <button class="jpui secondary button">Messages<span class="jpui badge invert marginleft-10px">100</span></button>
+// <br/>
+// <br/><br/>
+// <button class="jpui secondary button">Messages<span class="jpui badge invert marginleft-10px">100<i class="jpui medium icon envelope marginleft-10px"></i></span></button>
+// <br/>
+//
+//
+//
+// Styleguide 2.14.1
+
+// ------------------------------------------------------------------------------
+//   Badges
+// ------------------------------------------------------------------------------
+
+@font: 'Open Sans',sans-serif;
+@fontsize:1em;
+
+#allasso{
+  .badge(){
+    font-family: @font;
+    font-size: @fontsize;
+    display: inline-block;
+    //min-width: 0.625em;
+    padding: 0.313em 0.625em;
+    color: #fff;
+    line-height: 1;
+    vertical-align: baseline;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #999;
+    border-radius: 0.813em;
+  }
+}

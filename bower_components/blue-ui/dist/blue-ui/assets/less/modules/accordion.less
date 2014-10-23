@@ -1,0 +1,74 @@
+// Accordion
+//
+// Accordians should contain pannels that collapse and expand.
+//
+//Markup:
+// <div class="jpui expandable panels">
+//   <div class="active">
+//     <a href="#panel1">Group Item #1</a>
+//   </div>
+//   <div id="panel1" class="jpui panel body">
+//     Item #1 content
+//   </div>
+//   <div>
+//     <a href="#panel2">Group Item #2</a>
+//   </div>
+//   <div id="panel2" class="jpui panel body">
+//     Item #2 content
+//   </div>
+//   <div>
+//     <a href="#panel3">Group Item #3</a>
+//   </div>
+//   <div id="panel3" class="jpui panel body">
+//     Item #3 content
+//   </div>
+// </div>
+//
+//
+//
+//Styleguide 3.3
+
+//demo theme
+@active-acrdnBackground-color: #0A96E0;
+@active-link-color: #FFF;
+@default-panel-color: #bdbdbd;
+
+//variables
+@border-top-left-radius:0.3em;
+@border-top-right-radius:0.3em;
+
+#allasso{
+  .accordion(){
+    div:nth-child(odd) {
+      margin-top:0.250em;
+      border-top-left-radius:@border-top-left-radius;
+      border-top-right-radius:@border-top-right-radius;
+    }
+    div {
+      &.active {
+        background: @active-acrdnBackground-color;
+        border: 0.063em solid @active-acrdnBackground-color;
+        a {
+          color: @active-link-color;
+        }
+      }
+      &:not(.active) a{
+        border-color: @default-panel-color;
+        border-style:solid;
+        border-width:0.063em 0.063em 0.063em 0.063em;
+        color:@active-acrdnBackground-color;
+        display:block;
+      }
+      &:hover a {
+        border:0.063em solid @active-acrdnBackground-color;
+      }
+      a {
+        text-decoration: none;
+        padding-left:1em;
+      }
+    }
+    .body {
+      border-color:@active-acrdnBackground-color;
+    }
+  }
+}

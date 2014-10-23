@@ -1,0 +1,47 @@
+// List
+//
+// Markup:
+// <div class="jpui list">
+//   <ul>
+//     <li>
+//       <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+//       <span class="jpui close icon listarrow"></span></a>
+//     </li>
+//     <li>
+//       <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit<span class="jpui close icon listarrow"></span></a>
+//     </li>
+//     <li>
+//       <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+//       <span class="jpui close icon listarrow"></span></a>
+//     </li>
+//   </ul>
+// </div>
+//
+//
+//
+// Styleguide 2.4.2
+
+#allasso{
+  .list(){
+    > ul {
+      margin:0;
+      padding:0;
+      list-style: none;
+      li {
+        display:block;
+        line-height: 23px;
+        border-bottom: 1px solid #e5e5e5;
+        padding: 0.625em 1.6em 0.625em 0;
+        position: relative;
+        .close.icon {
+          position: absolute;
+          top:1em;
+          right:0;
+        }
+      }
+      :last-child {
+        border: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+<div class="container mfa">
+
+	<div class="row">
+		<div class="col-xs-offset-2 col-xs-8">
+			<div class="progress row">
+				<div class="col-xs-3 small centered text">{{identify_customer_progress_label}}</div>
+				<div class="col-xs-3 small centered text">{{locate_user_id_progress_label}}</div>
+				<div class="col-xs-3 small centered text">{{request_identification_code_progress_label}}</div>
+				<div class="col-xs-3 small centered text">{{create_new_password_progress_label}}</div>
+			</div>
+			<div class="row">
+				<div class="jpui progress">
+					<div id="progressBar" class="bar" role="percentage" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" style="width:50%;"><span class="accessible-text">{{request_identification_code_progress_bar_label}}</span></div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="jpui primary panel">
+					<header class="jpui panel header">
+						<h2>{{locate_user_id_header}}</h2>
+					</header>
+
+					<div class="jpui panel body">
+						<div class="row">
+							<div class="col-xs-offset-1 col-xs-10">
+								{{{locate_user_id_instructional_message}}}
+								{{{locate_user_id_advisory}}}
+								<div class="input-row">
+									<label class="jpui inline label" for="user_ids">{{locate_user_id_label}}</label>
+									{{#if this.authUserIds }}
+									<select class="jpui inline dropdown" name="user_ids" id="user_ids">
+										{{#each this.authUserIds}}
+										<option value="{{this}}">{{this}}</option>
+										{{/each}}
+									</select>
+									{{/if}}
+								</div>
+
+								<div class="input-row">
+									<input class="jpui inline radio" type="radio" name="passwordoption" id="create_password" value="create_password" checked="checked" />
+									<label class="jpui inline radio label" for="create_password">{{new_password_label}}</label>
+								</div>
+
+								<div class="input-row">
+									<input class="jpui inline radio" type="radio" name="passwordoption" id="know_password" value="know_password" />
+									<label class="jpui inline radio label" for="know_password">{{know_my_password_label}}</label>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="row workflow-button-container">
+							<div class="col-xs-12">
+								<button class="jpui right info button" id="request_identification_code">{{next_label}}</button>
+								<button class="jpui right button" id="exit_identification">{{cancel_label}}</button>
+							 </div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+		</div> <!-- last 2 divs may have to be on bottom. -->
+	</div>

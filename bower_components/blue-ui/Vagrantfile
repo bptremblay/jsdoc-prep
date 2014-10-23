@@ -1,0 +1,69 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+## Defines a VM for testing site building and packaging
+
+VAGRANTFILE_API_VERSION = "2"
+DEVOPS_REPO = 'http://10.181.203.148/seurat'
+BOX_NAME = 'centos_65_x64_puppet'
+
+def configure_virtualbox(machine, config)
+  # FIXME: Vagrant is unable to download from this url on some environments, even through curl and a browser can
+  # workaround: run devops/scripts/get_vagrant_box.rb
+  config.vm.box = BOX_NAME
+  config.vm.box_url = "#{DEVOPS_REPO}/vagrant/centos-65-x64-virtualbox-puppet.box"
+
+  machine.memory = 3 * 1024
+  machine.cpus   = 1
+
+  config.vm.box = BOX_NAME
+end
+
+def update_etc_hosts(config)
+  config.vm.provision :shell,
+    path: "devops/provisioning/scripts/add_to_etc_hosts.sh",
+    args: File.readlines('/etc/hosts').select { |line|
+      line.match(/\.jpmchase\./) && !line.match(/^#/)
+    }
+end
+
+def prepare_user_shell(config)
+  config.vm.provision :shell,
+    :inline => "cd /home/vagrant && /bin/ln -sf /vagrant/devops/provisioning/scripts/aliases .aliases"
+
+  config.vm.provision :shell,
+    :inline => "cd /home/vagrant && /bin/ln -sf /vagrant/devops/provisioning/scripts/bashrc .bashrc"
+end
+
+def define_primary(config)
+  config.vm.network "private_network", ip: "192.168.150.101" # pod1.jpmchase.dev
+
+  prepare_user_shell(config)
+
+  config.vm.provision "puppet" do |puppet|
+    puppet_root = "devops/provisioning/puppet"
+    puppet.module_path = "#{puppet_root}/modules"
+    puppet.manifests_path = "#{puppet_root}/manifests"
+
+    puppet.facter = {
+      "repository" => "#{DEVOPS_REPO}/rpm/x86_64",
+    }
+  end
+end
+
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  if Vagrant.has_plugin?("vagrant-proxyconf")
+    config.proxy.http     = "http://http1.oh.bankone.net:8080/"
+    config.proxy.https    = "http://http1.oh.bankone.net:8080/"
+    config.proxy.no_proxy = "localhost,127.0.0.1,.example.com"
+  end
+  # Set up the machine provider with desired image and resources
+  config.vm.provider "virtualbox" do |vb, override| configure_virtualbox(vb, override) end
+
+  # Refresh any /etc/hosts entries that relate to jpmchase.
+  update_etc_hosts(config) if File.exists?('/etc/hosts')
+
+  # Define a machine named 'blueui'
+  config.vm.define "blueui", primary: true do |config| define_primary(config) end
+end

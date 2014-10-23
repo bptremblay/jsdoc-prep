@@ -1,0 +1,96 @@
+// Tabs
+//
+// Tabs should contain the title at the top of one container then when you click yyy on the others it flips between each.
+//
+// Markup:
+// <div class="jpui tabs">
+//   <ul>
+//     <li class="active">
+//       <a href="#tab1">Tab 1</a>
+//     </li>
+//     <li>
+//       <a href="#tab2">Tab 2</a>
+//     </li>
+//     <li>
+//       <a href="#tab3">Tab 3</a>
+//     </li>
+//   </ul>
+//   <div id="tab1" class="jpui panel body"> Tab 1 content</div>
+//   <div id="tab2" class="jpui panel body"> Tab 2 content</div>
+//   <div id="tab3" class="jpui panel body"> Tab 3 content</div>
+// </div>
+//
+//
+//
+// Styleguide 3.2
+
+
+
+//demo theme
+@active-tabBackground-color: #0A96E0;
+@active-link-color: #fff;
+@default-tab-color: #bdbdbd;
+
+//variables
+@border-top-left-radius:0.3em;
+@border-top-right-radius:0.3em;
+@border-top-right-radius: 0.3em;
+@padding: 0.375em;
+@margin-right: 0.250em;
+@margin-top: 0.3em;
+
+//styling the component
+#allasso{
+  .tabs(){
+
+    ul {
+      display: table-row;
+      list-style: none;
+
+      li {
+        display:inline;
+        padding: @padding;
+        margin-right: @margin-right;
+        border-bottom: none;
+        border-top-left-radius: @border-top-left-radius;
+        border-top-right-radius:@border-top-right-radius;
+
+        &.active {
+          background: @active-tabBackground-color;
+          border: 0.063em solid @active-tabBackground-color;
+          a {
+          color: @active-link-color;
+          }
+        }
+
+        &:not(.active) {
+           border-color: @default-tab-color;
+           border-style:solid;
+           border-width: 0.063em 0.063em 0em 0.063em;
+           border-bottom: none;
+
+           a {
+            color:@active-tabBackground-color;
+           }
+        }
+
+        &:hover {
+          border:0.063em solid @active-tabBackground-color;
+          border-bottom: none;
+        }
+
+
+       a {
+          text-decoration: none;
+          padding: @padding;
+        }
+      }
+    }
+
+    .jpui.panel.body {
+      margin-top: @margin-top;
+      border:0.063em solid @active-tabBackground-color;
+      border-top-right-radius:@border-top-right-radius;
+    }
+  }
+}

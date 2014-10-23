@@ -1,0 +1,63 @@
+// Pagination
+//
+// Description Here
+//
+// Markup:
+//<div class="jpui pagination">
+//<span class="disabled">Prev</span>
+//  <span class="active">1</span>
+//    <a href="#" rel="next">2</a>
+//    <a href="#">3</a>
+//    <a href="#">4</a>
+//    <span class="gap"> . . . </span>
+//    <a href="#">11</a>
+//    <a href="#">12</a>
+//    <a href="#" rel="next" class="jpui-next_page">Next</a>
+//</div>
+//
+//
+//
+// Styleguide 2.3
+
+
+
+
+
+#allasso{
+  .pagination(
+    @color-activebg: #2e6ab1;
+    @color-activefont: #fff;
+    @color-disabledfont: #999999;
+    ){
+    font-size: .8em;
+    width: 42em;
+    height: 1em;
+    margin: 1em 0;
+    cursor: default;
+    a, span {
+      padding: .01em 0.8em .01em 0.6em;
+      display: block;
+      float: left;
+      margin-right: .5em;
+      &.disabled { /* for disabled text */
+        color: @color-disabledfont;
+        border: 1px solid #dddddd;
+      }
+      &.active { /* for active button */
+        font-style: normal;
+        background: @color-activebg;
+        color: @color-activefont;
+        border: 1px solid @color-activebg;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: #105cb6;
+      border: 1px solid #9aafe5;
+      &:hover, &:active { /* active button border lines */
+          border-color: #000033;
+      }
+    }
+  }
+}
+// -----------------------------------------------

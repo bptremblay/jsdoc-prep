@@ -1,0 +1,56 @@
+// Content Table
+//
+// Markup:
+//<div class="jpui primary panel">
+// <header class="jpui panel header">
+//  CONTENT HEADER
+// </header>
+// <div class="jpui panel body bodyspace">
+//  <table class="jpui table">
+//   <thead>
+//     <tr>
+//       <th scope="col">Date</th>
+//       <th scope="col">Type</th>
+//       <th scope="col">Description</th>
+//       <th scope="col">Debit</th>
+//       <th scope="col">Credit</th>
+//       <th scope="col">Balance</th>
+//     </tr>
+//   </thead>
+//   <tbody>
+//     <tr>
+//       <td scope="row">02/20/2014</td>
+//       <td>Deposit</td>
+//       <td>DEPOSTI ID NUMBER 11111</td>
+//       <td>&nbsp;</td>
+//       <td>$2.00</td>
+//       <td>$22.39</td>
+//     </tr>
+//     <tr>
+//       <td scope="row">02/02/2014</td>
+//       <td>Check</td>
+//       <td>CHECK #100</td>
+//       <td>$89,950.00</td>
+//       <td>&nbsp;</td>
+//       <td>$744.00</td>
+//     </tr>
+//   </tbody>
+// </table>
+// </div>
+//</div>
+//
+//
+//
+// Styleguide 2.4.1
+
+
+#allasso{
+	.panel(){
+		&.bodyspace { /* Here over righting the body padding class */
+	  	padding: 0;
+	  }
+		.table > tbody > tr:nth-child(even) { /* for adding row color */
+			background-color: #f8f8f8;
+		}
+	}
+}

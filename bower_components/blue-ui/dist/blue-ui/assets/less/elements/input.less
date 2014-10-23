@@ -1,0 +1,50 @@
+// Text input
+
+@import "../mixins/clear.less";
+
+#allasso{
+    .input(){
+        @font-family: 'Open Sans Regular',sans-serif;
+        font-size:1em;
+        padding: 0.625em 1em;
+        width: 100%;
+        border: 1px solid @input-border-inactive-color;
+        // get rid of native browser focus effects
+        -webkit-appearance:none;
+        &:focus{
+            border-color: @input-border-active-color;
+        }
+    }
+    .wrap(){
+        position: relative;
+        display: inline-table;
+        vertical-align: middle;
+        width:100%;
+        span{
+            position: absolute;
+            top:0;
+            width: auto;
+            font-size:1em;
+            padding: 0.625em 1em;
+        }
+        .input{
+            display: inline-block;
+        }
+        &.left{
+            span{
+                left:0;
+            }
+            .input{
+                padding-left:2.275em;
+            }
+        }
+        &.right{
+            span{
+                right:0;
+            }
+            .input{
+                padding-right:2.275em;
+            }
+        }
+    }
+}

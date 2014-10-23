@@ -1,0 +1,69 @@
+// Basic Menu
+//
+// Basic Menu should be horizontal and allow for at least secondary level items.
+//
+// Markup:
+// <nav class="jpui menu">
+//   <ul>
+//     <li class="active">
+//       <a href="#">Home</a>
+//     </li>
+//     <li>
+//       <a href="#">About Us</a>
+//     </li>
+//     <li>
+//       <a href="#">Contact Us</a>
+//     </li>
+//   </ul>
+// </nav>
+//
+//
+//
+// Styleguide 2.1
+
+#allasso{
+  .menu(
+    @color_A1: #0A96E0;
+    @color_A2: #FFF;
+    @active_bkgd_color: @color_A1;
+    @active_link_color: @color_A2;
+    @hover_bkgd_color:  lighten(@color_A1, 20%);
+    @hover_link_color:  @color_A2;
+    ){
+    padding: 0;
+    border: 0;
+    display: table;
+
+    ul {
+        list-style: none;
+        display: table-row;
+    }
+
+    li {
+        list-style: none;
+        display: table-cell;
+    }
+
+    a {
+        display: block;
+        white-space: nowrap;
+    }
+    li {
+        a:hover {
+            background: @hover_bkgd_color;
+            color: @hover_link_color;
+        }
+        &.active a {
+            background: @active_bkgd_color;
+            color: @active_link_color;
+        }
+    }
+    a {
+        text-decoration: none;
+        padding: .25em 1em;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+  }
+}

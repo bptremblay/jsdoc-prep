@@ -1,0 +1,59 @@
+// Spin Loading
+//
+// Markup:
+//<div class="jpui spin-loader" style="display: block;"></div>
+//
+//
+//
+// Styleguide 2.15
+
+
+
+
+#allasso{
+	.spin-loader(){
+		display: none;
+		width: 30px;
+		height: 30px;
+		left: 50%;
+		top: 15%;
+		border: 4px solid #3A1A1A;
+		border-right-color: transparent;
+		border-radius: 60%;
+		@-webkit-keyframes spin
+		{
+			from { -webkit-transform: rotate(0deg); opacity: 0.4; }
+			50%  { -webkit-transform: rotate(180deg); opacity: 0.8; }
+			to   { -webkit-transform: rotate(360deg); opacity: 0.4; }
+		}
+
+		@-moz-keyframes spin
+		{
+			from { -moz-transform: rotate(0deg); opacity: 0.4; }
+			50%  { -moz-transform: rotate(180deg); opacity: 0.8; }
+			to   { -moz-transform: rotate(360deg); opacity: 0.4; }
+		}
+
+		@-ms-keyframes spin
+		{
+			from { -ms-transform: rotate(0deg); opacity: 0.4; }
+			50%  { -ms-transform: rotate(180deg); opacity: 0.8; }
+			to   { -ms-transform: rotate(360deg); opacity: 0.4; }
+		}
+
+		@-o-keyframes spin
+		{
+			from { -o-transform: rotate(0deg); opacity: 0.4; }
+			50%  { -o-transform: rotate(180deg); opacity: 0.8; }
+			to   { -o-transform: rotate(360deg); opacity: 0.4; }
+		}
+
+		@keyframes spin
+		{
+			from { transform: rotate(0deg); opacity: 0.4; }
+			50%  { transform: rotate(180deg); opacity: 0.8; }
+			to   { transform: rotate(360deg); opacity: 0.4; }
+		}
+		-webkit-animation: spin 3s linear infinite;
+	}
+}

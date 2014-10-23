@@ -1,0 +1,70 @@
+// Forms
+//
+// Individual form controls automatically receive some global styling. All textual `<input>`, `<textarea>`, and `<select>`.
+// Basic Example
+//
+// Markup:
+// <form role="form">
+//   <div class="jpui input">
+//     <label for="exampleInputEmail1">Email address</label>
+//     <input type="email" id="exampleInputEmail1" placeholder="Enter email">
+//    </div>
+//    <div class="jpui input">
+//     <label for="exampleInputPassword1">Password</label>
+//     <input type="password" id="exampleInputPassword1" placeholder="Password">
+//    </div>
+//    <div class="jpui input">
+//     <label for="exampleInputFile">File input</label>
+//     <input type="file" id="exampleInputFile">
+//    </div>
+//    <button type="submit" class="jpui success button">Submit</button>
+// </form>
+//
+// Styleguide 1.6
+
+// ------------------------------------------------------------------------------
+//   Table Styling
+// ------------------------------------------------------------------------------
+
+@import "../mixins/forms.less";
+
+#allasso{
+  // Normalize non-controls
+  //
+  // Restyle and baseline non-control form elements.
+
+  fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    // Chrome and Firefox set a `min-width: min-content;` on fieldsets,
+    // so we reset that to ensure it behaves more like a standard block element.
+    // See https://github.com/twbs/bootstrap/issues/12359.
+    min-width: 0;
+  }
+
+  legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    line-height: inherit;
+    border: 0;
+  }
+
+  label {
+    display: inline-block;
+    max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .form(){
+    button{
+      margin-left:1.1em;
+      margin-bottom:1em;
+    }
+  }
+}
+// ------------------------------------------------------------------------------
+//   End Table Styling
+// ------------------------------------------------------------------------------

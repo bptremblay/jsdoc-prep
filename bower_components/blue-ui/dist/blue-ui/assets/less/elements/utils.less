@@ -1,0 +1,60 @@
+.generate-space-utils(@name, @multiplier:5, @n:5) when (@n >= 0) {
+	@val: @multiplier * @n;
+	@css: ~"@{val}px !important";
+	.@{name}-top-@{val}{
+		@{name}-top:@css;
+	}
+	.@{name}-right-@{val}{
+		@{name}-right:@css;
+	}
+	.@{name}-bottom-@{val}{
+		@{name}-bottom:@css;
+	}
+	.@{name}-top-@{val}{
+		@{name}-left:@css;
+	}
+	.@{name}-@{val}{
+		@{name}:@css;
+	}
+	.generate-space-utils(@name, @multiplier, (@n - 1));
+}
+
+.jputil-hidevisual,legend,.u-accessible-text {font-size:0; width:0; height:1px; position:absolute; overflow:hidden; z-index:-1000;}
+.browser-ie-7 .jputil-hidevisual {display:inline-block;}
+
+.jputil-textsm {font-size:.92em;}
+.jputil-font-bold {font-weight:bold !important;}
+.jputil-font-normal {font-weight:normal !important;}
+
+.jputil-nowrap {white-space:nowrap;}
+.jputil-cursor-pointer {cursor:pointer;}
+.jputil-cursor-text {cursor:text !important;}
+
+.jputil-display-block {display:block !important;}
+.jputil-display-inline {display:inline !important;}
+.jputil-display-inlineblock{display:inline-block !important;}
+
+.jputil-clear {clear:both;}
+.jputil-no-background {background:none !important;}
+
+.generate-space-utils(margin);
+.generate-space-utils(padding);
+
+.jputil-border-none {border:none !important;}
+.jputil-bordertop-none {border-top:none !important;}
+.jputil-borderbottom-none{border-bottom:none !important;}
+.jputil-borderleft-none{border-left:none !important;}
+.jputil-borderright-none{border-right:none !important;}
+
+// TODO: border width and border style classes?
+
+.jputil-hide {display:none !important; visibility:hidden !important;}
+.jputil-show {display:block !important; visibility:visible !important;}
+
+.jputil-outline-none {outline:none;}
+.jputil-height-0{height:0px}
+.jputil-width-auto{width:auto!important}
+
+@media screen,interactive {
+	.jputil-showforprint {display:none;}
+}

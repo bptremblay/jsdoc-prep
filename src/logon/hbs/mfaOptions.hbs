@@ -1,0 +1,107 @@
+<div class="mfa container">
+    <div class="row">
+      <div class="col-xs-offset-2 col-xs-8">
+        <div class="progress row">
+          <div class="col-xs-4 small centered text"><span class="accessible-text">{{!-- Step_1_of_3 --}}</span> {{instructions_workflow_progress_initiate_identification_label}}</div>
+          <div class="col-xs-4 small centered text"><span class="accessible-text">{{!-- Step_2_of_3 --}}</span> {{request_identification_code_progress_label}}{{!--current_step--}}</div>
+          <div class="col-xs-4 small centered text"><span class="accessible-text">{{!-- Step_3_of_3 --}}</span> {{submit_identification_code_progress_label}}</div>
+        </div>
+        <div class="row">
+          <div class="jpui progress">
+            <div id="someIDtoattachJSto" class="bar" role="percentage" aria-valuemin="0" aria-valuemax="100" aria-valuenow="66" style="width:66%;"><span class="accessible-text">{{request_identification_code_progress_bar_label}}</span></div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="jpui primary panel">
+            <h1 class="header">{{request_identification_code_header}}</h1>
+            <div class="jpui panel body">
+              <div class="col-xs-offset-1 col-xs-10">
+                <h2>{{request_identification_code_message_header}}</h2>
+                {{{request_identification_code_message}}}
+                <div id="identification-code-error-msg" class="jpui error alert inverted dce hidden" tabindex="0"></div>
+                <div class="col-xs-12">
+                  <h3 class="heading">{{request_identification_code_delivery_method_header}}</h3>
+                  <div class="jpui flyout" tabindex="0">
+                    <div class="trigger">
+                      <span class="accessible-text">{{!-- Open_information_dialog__topic --}}</span>
+                      <i class="fa fa-info-circle"></i>
+                    </div>
+                    <div class="content">
+                      <a href="#" class="close"><i class="fa fa-times" tabindex="-1"><span class="accessible-text">{{!-- Close_information_dialog --}}</span></i></a>
+
+                      {{instructions_delivery_method_help_message}}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-6">
+                  {{#if this.otpPhoneList }}
+
+                    <fieldset>
+                      <span class="legend wrap"><legend class="heading">{{request_identification_code_phone_label}}</legend></span>
+                      <div class="jpui flyout" tabindex="0">
+                        <div class="trigger">
+                          <span class="accessible-text">{{!-- Open_information_dialog__topic --}}</span>
+                          <i class="fa fa-info-circle"></i>
+                        </div>
+                        <div class="content">
+                          <span class="accessible-text">{{!-- Close_information_dialog --}}</span>
+                          <a href="#" class="close"><i class="fa fa-times" tabindex="-1"><span class="accessible-text">{{!-- Close_information_dialog --}}</span></i></a>
+                          {{instructions_phone_help_message}}
+                        </div>
+                      </div>
+
+                      <div>
+	                      {{#each this.otpPhoneList}}
+	                        <span aria-hidden="true"><label class="inline radio label">{{mask}}</label></span>
+	                        <input class="inline radio input" type="radio" name="deviceoption" id="deviceoptionS{{id}}" value="S{{id}}"/>
+	                        <label class="inline radio label" for="deviceoptionS{{id}}">{{../request_identification_code_text_label}}<span class="accessible-text">&nbsp;{{mask}}</span></label>
+	                        <input class="inline radio input" type="radio" name="deviceoption" id="deviceoptionV{{id}}" value="V{{id}}"/>
+	                        <label class="inline radio label" for="deviceoptionV{{id}}">{{../request_identification_code_voice_label}}<span class="accessible-text">&nbsp;{{mask}}</span></label><br/>
+	                      {{/each}}
+	                    </div>
+
+                    </fieldset>
+
+                  {{/if}}
+                </div>
+
+                <div class="col-xs-6">
+                  {{#if this.otpEmailList }}
+
+                    <fieldset>
+                      <span class="legend wrap"><legend class="heading">{{request_identification_code_email_label}}</legend></span>
+                      <div>
+                        {{#each this.otpEmailList}}
+                          <input class="inline radio input" type="radio" name="deviceoption" id="deviceoptionT{{id}}" value="T{{id}}"/>
+                          <label class="inline radio label" for="deviceoptionT{{id}}">{{mask}}</label><br/>
+                        {{/each}}
+                      </div>
+                    </fieldset>
+
+                  {{/if}}
+                </div>
+
+                <div class="col-xs-12">
+                  <p class="linked-label">{{request_identification_code_linked_label}}</p>
+
+                  <input class="inline radio input" type="radio" name="deviceoption" id="deviceoptioncall" value="0"/>
+                  <label class="inline radio label" for="deviceoptioncall">{{request_identification_code_by_call_label}}</label>
+                  <span id="contactInfo" class="inline text hidden">{{{request_identification_code_by_call_advisory}}}</span>
+                </div>
+
+              </div>
+
+              <div class="col-xs-12">
+                <button class="jpui button info right" id="request_identification_code" tabindex="0">{{proceed_workflow_label}}</button>
+                <button class="jpui button cancel right" id="exit_identification" tabindex="0">{{exit_workflow_label}}</button>
+              </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

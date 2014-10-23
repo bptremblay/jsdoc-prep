@@ -1,0 +1,83 @@
+// ------------------------------------------------------------------------------
+//   Alert messages
+// ------------------------------------------------------------------------------
+@import "../mixins/clear.less";
+
+#allasso{
+  .alert(){
+	   position:relative;
+	   padding: 1em;
+	   border: 0.063em solid transparent;
+     margin: 0.5em 0;
+     opacity: 0.9;
+     border-radius: 0.2em;
+    .header {
+    	display: inline-block;
+    	margin: 1em 0 0 0;
+    }
+    .message {
+    	font-size: 0.938em;
+      margin-right:2em;
+    	display: block;
+    }
+    .button{
+      margin: 1em 1em 0 0;
+    }
+    .actions {
+    	.clearfix();
+    	margin-top:1em;
+      .button {
+      	margin-right:1em;
+      }
+    }
+    .icon.close {
+    	position:absolute;
+    	top:1em;
+    	right:1em;
+    	line-height: 1;
+    	cursor: pointer;
+    	background:0;
+    	border: 0;
+    	&:hover {
+    		opacity: .6;
+    	}
+    }
+    &.info{
+      color:#FFFFFF !important;
+      background-color:@jpc-dark-blue !important;
+      &.inverted{
+        border:1px solid @jpc-dark-blue !important;
+        color:@jpc-dark-blue !important;
+        background-color:#FFFFFF !important;
+      }
+    }
+    &.success{
+      color:#FFFFFF !important;
+      background-color:@jpc-dark-green !important;
+      &.inverted{
+        border:1px solid @jpc-dark-green !important;
+        color:@jpc-dark-green !important;
+        background-color:#FFFFFF !important;
+      }
+    }
+    &.warning{
+      color:#FFFFFF !important;
+      background-color:@jpc-orange !important;
+      &.inverted{
+        border:1px solid @jpc-orange !important;
+        color:@jpc-orange !important;
+        background-color:#FFFFFF !important;
+      }
+    }
+    &.error{
+      color:#FFFFFF !important;
+      background-color:@jpc-red !important;
+      &.inverted{
+        border:1px solid @jpc-red !important;
+        color:@jpc-red !important;
+        background-color:#FFFFFF !important;
+      }
+    }
+  }
+}
+// @end

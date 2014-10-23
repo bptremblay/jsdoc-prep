@@ -1,0 +1,137 @@
+
+@import "../less/variables.less";
+
+.show-xs{
+  display:inherit !important;
+}
+.hide-xs{
+  display:none !important;
+}
+
+
+@media (min-width: @screen-sm-min) {
+  .show-sm{
+    display:inherit !important;
+  }
+  .hide-sm{
+    display:none !important;
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  .show-md{
+    display:inherit !important;
+  }
+  .hide-md{
+    display:none !important;
+  }
+}
+@media (min-width: @screen-lg-min) {
+  .show-lg{
+    display:inherit !important;
+  }
+  .hide-lg{
+    display:none !important;
+  }
+}
+
+.small{
+  font-size:0.5em !important;
+}
+.medium{
+  font-size:1em !important;
+}
+.large{
+  font-size:1.5em !important;
+}
+.xlarge{
+  font-size:2em !important;
+}
+#allasso{
+  .colors(
+    @primary,@success,@info,@warning,@error
+  ){
+    .inverted{
+      color: @primary !important;
+      background-color: #FFF !important;
+      border:1px solid @primary !important;
+    }
+    .success{
+       color: #FFF!important;
+       background-color: @success !important;
+       &.inverted{
+         color: @success !important;
+         background-color: #FFF !important;
+         border:1px solid @success !important;
+       }
+    }
+    .info{
+       color: #FFF!important;
+       background-color: @info !important;
+       &.inverted{
+         color: @info !important;
+         background-color: #FFF !important;
+         border:1px solid @info !important;
+       }
+    }
+    .warning{
+      color: #FFF!important;
+      background-color: @warning !important;
+      &.inverted{
+        color: @warning !important;
+        background-color: #FFF !important;
+        border:1px solid @warning !important;
+      }
+    }
+    .error{
+      color: #FFF!important;
+      background-color: @error !important;
+      &.inverted{
+        color: @error !important;
+        background-color: #FFF !important;
+        border:1px solid @error !important;
+      }
+    }
+  }
+}
+.right.align{
+  float:right;
+}
+.jumbo.text{
+  font-size:2em;
+}
+.small.text{
+  font-size:0.75em;
+}
+
+.accessible-text,
+.accessible-text a,
+.accessible-text a:link,
+.accessible-text a:visited,
+.accessible-text a:hover,
+.accessible-text a:active,
+.accessible-text a:focus{
+  font-size:0 !important;
+  width:0;
+  height:1px !important;
+  position:absolute !important;
+  overflow:hidden !important;
+  z-index:-1000 !important;
+  left:-20000px !important
+}
+
+.u-accessible-text,
+.u-accessible-text a,
+.u-accessible-text a:link,
+.u-accessible-text a:visited,
+.u-accessible-text a:hover,
+.u-accessible-text a:active,
+.u-accessible-text a:focus{
+  font-size:0 !important;
+  width:0;
+  height:1px !important;
+  position:absolute !important;
+  overflow:hidden !important;
+  z-index:-1000 !important;
+  left:-20000px !important
+}

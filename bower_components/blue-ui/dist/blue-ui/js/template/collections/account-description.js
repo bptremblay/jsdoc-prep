@@ -1,0 +1,8 @@
+define(["handlebars"], function(Handlebars) { return Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<div class=\"jpui active account details\">\n  <div class=\"row\">\n    <div class=\"col-xs-6\">\n      <h3>Chase Premier Checking</h3>\n      <h5>(...1234)</h5>\n    </div>\n    <div class=\"col-xs-6\">\n      <div class=\"col-xs-offset-4 col-xs-8\">\n        <div class=\"jpui simple inverted dropdown\">\n          Things you can do<i class=\"fa right fa-caret-down\"></i>\n          <div class=\"menu\">\n            <div class=\"item\"><a href=\"/#\">See statements</a></div>\n            <div class=\"item\"><a href=\"/#\">See account details</a></div>\n            <div class=\"item\"><a href=\"/#\">See features and benefits</a></div>\n            <div class=\"item\"><a href=\"/#\"><strong>Update Settings</strong></a></div>\n            <div class=\"item\"><a href=\"/#\"><strong>Account Services</strong></a></div>\n            <div class=\"item\"><a href=\"/#\"><strong>Forms</strong></a></div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"col-xs-6\">\n      <ul>\n        <li>Present Balance<span>$6,500.00</span></li>\n      </ul>\n    </div>\n    <div class=\"col-xs-6\">\n      <h4>Overdraft Protection</h4>\n      <ul>\n        <li>Account<span>Savings Plus (...1234)</span></li>\n      </ul>\n    </div>\n  </div>\n</div>\n";
+  }); });

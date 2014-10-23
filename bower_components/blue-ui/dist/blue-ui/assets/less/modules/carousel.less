@@ -1,0 +1,57 @@
+// Carousel
+//
+//
+// Markup:
+//<div id="carousel1" class="jpui carousel">
+//	<a href="#" class="jpui button prev"> &lt;</a>
+//	<div class="viewport">
+//		<ul class="items">
+//			<li class="item">item1</li>
+//			<li class="item">item2</li>
+//			<li class="item">item3</li>
+//			<li class="item">item4</li>
+//			<li class="item">item5</li>
+//			<li class="item">item6</li>
+//		</ul>
+//	</div>
+//	<a href="#" class="jpui button next"> &gt;</a>
+//</div>
+//
+//
+//
+// Styleguide 3.8
+
+#allasso{
+	.carousel(){
+		overflow: hidden;
+		float: left;
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+		.viewport {
+			width: 245px;
+			position: relative;
+			overflow: hidden;
+			float: inherit;
+		}
+		ul {
+			padding: 0;
+			margin: 0;
+			position: relative;
+			width: auto;
+			list-style: none;
+			left:0;
+			float: inherit;
+			li {
+				overflow: hidden;
+				padding: 0 10px;
+				float: inherit;
+			}
+		}
+		.button {
+			float: inherit;
+		}
+	}
+}

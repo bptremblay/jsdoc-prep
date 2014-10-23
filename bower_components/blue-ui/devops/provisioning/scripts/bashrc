@@ -1,0 +1,13 @@
+if [ -f /etc/bashrc ]; then
+  . /etc/bashrc
+fi
+
+if [ -s $HOME/.aliases ]; then
+  . $HOME/.aliases
+fi
+
+# set prompt to show current directory (in bold)
+export PS1='(\u)\[\e[1m\]> \W \$ \[\e[m\]'
+
+# We almost always want to be in /vagrant, so go there.
+cd /vagrant

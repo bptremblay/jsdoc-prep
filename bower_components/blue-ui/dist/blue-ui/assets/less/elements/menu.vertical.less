@@ -1,0 +1,133 @@
+// Vertical Menu
+//
+// The same as the basic menu but vertical.
+//
+// Markup:
+//<br/><strong>Vertical Menu</strong><br/><br/>
+//<nav class="jpui vertical menu">
+//   <ul>
+//    <li class="no-bottomborder">
+//      <a href="#">Alerts Settings</a>
+//     </li>
+//     <li>
+//       <a href="#">My Documents</a>
+//     </li>
+//     <li>
+//       <a href="#">Find Branch/ATM</a>
+//     </li>
+//     <li class="active">
+//       <a href="#">Privacy Policy</a>
+//     </li>
+//     <li>
+//       <a href="#">Legal Terms &amp; Conditions</a>
+//     </li>
+//     <li class="no-bottomborder">
+//       <a href="#">Logoff</a>
+//     </li>
+//   </ul>
+// </nav>
+// <br/> <br/><strong>Vertical Menu - Inverted</strong><br/><br/>
+//<nav class="jpui vertical menu inverted">
+//   <ul>
+//    <li class="no-bottomborder">
+//      <a href="#">Alerts Settings</a>
+//     </li>
+//     <li>
+//       <a href="#">My Documents</a>
+//     </li>
+//     <li>
+//       <a href="#">Find Branch/ATM</a>
+//     </li>
+//     <li class="active">
+//       <a href="#">Privacy Policy</a>
+//     </li>
+//     <li>
+//       <a href="#">Legal Terms &amp; Conditions</a>
+//     </li>
+//     <li class="no-bottomborder">
+//       <a href="#">Logoff</a>
+//     </li>
+//   </ul>
+// </nav>
+//
+//
+//
+// Styleguide 2.1.1
+// ------------------------------------------------------------------------------
+//   Start Vertical Menu Styling
+// ------------------------------------------------------------------------------
+@vmenu-color-primary-font:#666666;
+@vmenu-color-primary-bg:#26201C;
+@vmenu-color-primary-border:#3D3734;
+
+@vmenu-color-inverted:#FFF;
+@vmenu-color-white:#FFF;
+@vmenu-color-gray:#FFF;
+
+#allasso{
+	.vertical-menu(){
+		font-size: 1rem;
+		font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+		ul{
+			padding:0;
+			margin:0;
+			-webkit-transition: height 1s ease;
+     -moz-transition: height 1s ease;
+       -o-transition: height 1s ease;
+      -ms-transition: height 1s ease;
+          transition: height 1s ease;
+			li {
+				display: block;
+				font-size:0.875em;
+				color: @vmenu-color-primary-font;
+				background-color:@vmenu-color-primary-bg;
+				cursor: pointer;
+				border-bottom:1px @vmenu-color-primary-border solid;
+				overflow:hidden;
+				a{
+					display:block;
+					text-decoration:none;
+					color:#CCC;
+					padding:15px 0px 16px 26px;
+					border-left:4px solid #26201C;
+				}
+				ul{
+					display:none;
+					ul{
+						display:none;
+						ul{
+							display:none;
+						}
+					}
+				}
+				&.active{
+					ul{
+						display:block;
+						li{
+							a{
+								color: #666666;
+								background-color: #26201c;
+							}
+						}
+						ul{
+							display:none;
+						}
+					}
+				}
+				&:hover{
+					background-color:@vmenu-color-primary-border;
+					a{
+						border-left:4px solid @vmenu-color-primary-border;
+					}
+				}
+			}
+		}
+		.no-bottomborder{
+			border-bottom:none!important;
+
+		}
+	}
+}
+// ------------------------------------------------------------------------------
+//   End Vertical Menu Styling
+// ------------------------------------------------------------------------------

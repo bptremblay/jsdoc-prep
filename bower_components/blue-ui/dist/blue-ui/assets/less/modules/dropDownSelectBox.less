@@ -1,0 +1,82 @@
+ // dropdown Menu
+//
+// Markup:
+//<div class="jpui selectbox-listitem small-tweleve">
+//	<div><label>Drop Down Select Box</label><p class="jpui icon unsorted large"></p></div>
+//	<div>
+//		<ul>
+//			<li><a>Account Summary</a></li>
+//			<li><a>Saving Account</a></li>
+//			<li><a>Checking Account</a></li>
+//			<li><a>Credit Card</a></li>
+//			<li><a>Debit Card Info</a></li>
+//		</ul>
+//	</div>
+//</div>
+//
+//
+//
+// Styleguide 3.9
+
+@color:#abc;
+@colorlabel:lighten(@color, 5%);
+
+#allasso{
+  .selectbox-listitem(){
+	  div:first-child{
+  		border: 1px solid;
+  		padding: .6% .8% .5% 1%;
+  		width: 98%;
+  		float: left;
+  		background: @colorlabel;
+  		box-shadow: .02% .02%;
+  		border-radius: 8px;
+		  p{
+  			margin-right: 1%;
+  			float:right;
+		  }
+		  label{
+  			width:90%;
+  			height: auto;
+  			float:left;
+  			background: @colorlabel;
+		  }
+	  }
+	  div:last-child{
+  		border: 1px solid;
+  		width: 100%;
+  		height: auto;
+  		float: left;
+  		background: @color;
+  		box-shadow: .01% .01%;
+  		border-radius: 10px;
+		  ul{
+  			margin: 0px;
+  			padding: 0px;
+  			display: block;
+  			width: 100%;
+			  li{
+  				list-style: none;
+  				width: 100%;
+  				height: 25px;
+  				border-bottom: 1px solid;
+  				cursor: pointer;
+				  &:hover a{
+						color:#fff;
+					}
+          :last-child{
+					  border-bottom: none;
+				  }
+				  a{
+  					text-decoration: none;
+  					margin: 5px 5px 5px 15px;
+  					color:blue;
+					  &:hover{
+						   color:#fff;
+					  }
+				  }
+		 	 } 
+		  }
+	  }
+  }
+}

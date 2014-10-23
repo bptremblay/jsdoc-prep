@@ -1,0 +1,179 @@
+@dark:    #3d3734;
+@darker:  #26201C;
+@light:   #F4F1EA;
+@default: #EEEEEE;
+@primary: #0F5BA7;
+@success: #47A447;
+@info:    #1695F4;
+@warning: #f15a24;
+@error:   #D2322D;
+
+@import "../less/framework.less";
+@import "../less/utilities.less";
+
+a .jpui.icon{
+  text-decoration:none;
+}
+
+.jpui.inverted.dropdown {
+  display: inline-block;
+  color: #403F41 !important;
+  background-color:#EEE !important;
+  border-radius:5px;
+  width:100%;
+  font-size: 0.8em;
+  cursor: pointer;
+  border:none !important;
+}
+.jpui.dropdown.right {
+  float: right;
+}
+.jpui.dropdown.simple .menu {
+  display: none;
+}
+.jpui.dropdown.simple:hover .menu {
+  display: block;
+}
+.jpui.dropdown.closed .menu {
+  display: none;
+}
+.jpui.dropdown.open .menu {
+  display: block;
+}
+.jpui.dropdown .menu {
+  display: block;
+  position: absolute;
+  background-color: #FFF;
+  width: 95%;
+  z-index: 200;
+}
+.jpui.dropdown .menu .item {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  width: 100%;
+  padding:0.3em 0.7em;
+  &:first-child{
+    border-top:1px solid #ccc;
+  }
+  &:last-child{
+    border-bottom:1px solid #ccc;
+  }
+}
+.jpui.dropdown .menu .item a {
+  color: #747474;
+  margin-left: 0.5em;
+  text-decoration: none;
+}
+.jpui.dropdown .menu .item a:hover {
+
+}
+.jpui.dropdown .menu .item .fa {
+  position: absolute;
+  margin: 0.2em 0 0 -1em !important;
+}
+
+.aligned{
+  #allasso > .alignment();
+}
+
+.jpui.menu{
+  #allasso > .menu();
+}
+
+.jpui.button{
+  #allasso > .button();
+  margin:0.5em;
+}
+
+.jpui.table{
+  #allasso > .table();
+}
+.jpui.grouped.table{
+  #allasso > .grouped-table();
+}
+.small.account.segment{
+  #allasso > .segment();
+}
+.jpui.account.details{
+  #allasso > .account-details();
+}
+.jpui.progress{
+  #allasso > .progress();
+}
+.jpui.panel{
+  #allasso > .panel();
+}
+.jpui.vertical.menu{
+  #allasso > .vertical-menu();
+}
+.jpui.list{
+  #allasso > .list();
+}
+
+.alert{
+  #allasso > .alert();
+}
+
+.pagination{
+  #allasso > .pagination();
+}
+
+.jpui.label{
+  #allasso > .labels();
+}
+
+.jpui.vertical.menu{
+  display:block;
+  border:none;
+  width:320px;
+}
+.jpui.vertical.menu ul{
+  display:block;
+  padding:0;
+}
+
+.fa{
+  margin:10px !important;
+}
+
+.icon{
+	#allasso > .icon();
+  .input>.icon {
+    cursor: default;
+    position: absolute;
+    opacity: .5;
+    top: 0;
+    right: 0;
+    margin: 0;
+    width: 2.6em;
+    height: 100%;
+    padding-top: .82em;
+    text-align: center;
+    border-radius: 0 .3125em .3125em 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: opacity .3s ease-out;
+    -moz-transition: opacity .3s ease-out;
+    transition: opacity .3s ease-out;
+  }
+}
+
+// General input formatting
+.jpui.input{
+  #allasso > .input();
+  // documentation only stylings
+  margin-bottom:1em;
+}
+// Currency type holder
+.jpui.wrap{
+    #allasso > .wrap();
+}
+
+.styled-select {
+    .styledselect();
+}
+.jpui.datepicker {
+    .datepicker();
+}

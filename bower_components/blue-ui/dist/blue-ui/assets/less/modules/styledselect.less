@@ -1,0 +1,25 @@
+.styledselect() {
+     .dropdown();
+     select {
+        font-size: 0 !important;
+        width: 0;
+        height: 1px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        z-index: -1000 !important;
+        left: -20000px !important;
+     }
+     .field {
+        cursor: pointer;
+        border: 1px solid #ccc;
+        height: 30px;
+        padding: 5px;
+        &:after {
+            font-family: "dcefont";
+            content: "\f108";
+            padding-top: 5px;
+            position: absolute;
+            right: 20px;
+        }
+    }
+}

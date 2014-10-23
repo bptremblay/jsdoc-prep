@@ -1,0 +1,148 @@
+// Flyout
+//
+// Markup:
+//<div class="jpui flyout-demo">
+//  <div class="jpui panel body">
+//      <strong>Chase Premier Checking</strong>
+//      <button class="jpui small button"><strong>. . .</strong></button>
+//      <div>6543216789</div>
+//      <h1>$3,450.00<h1>
+//      <h6>Available balance</h6>
+//  </div>
+//</div>
+//</br>
+//<div class="jpui inActive flyout">
+//  <div class="arrow-wrapper">
+//  <span class="flyout-arrow1"></span>
+//  <span class="flyout-arrow2"></span>
+//  </div>
+//  <div class="flyout-content"><i class="jpui large close icon remove"></i><h2>Chase Premier Checking</h2>
+//    <div class="jpui three column grid">
+//      <div class="column"><h5>Account 6543216789</h5></div>
+//      <div class="column"><h5>Routing 95587411</h5></div>
+//      <div class="column"><h5>Opened Jan 15, 2006</h5></div>
+//    </div>
+//    <div class="jpui panel body">
+//      <h1>[ Data Visuallization fpo ]</h1>
+//    </div>
+//    <footer>
+//      <section class="footer-links">
+//        <a href="#"><strong>View Activity</strong></a>
+//        <a href="#"><strong>Online Statements</strong></a>
+//        <a href="#"><strong>Order Checks</strong></a>
+//        </br>
+//        <a href="#"><strong>Request Stop Payment</strong></a>
+//        <a href="#"><strong>Report lost/stolen debit card</strong></a>
+//        </br>
+//        <a href="#"><strong>Alert Settings</strong></a>
+//        <a href="#"><strong>Account Preferences</strong></a>
+//      </section>
+//    </footer>
+//  </div>
+//</div>
+//
+//
+//
+// Styleguide 3.7
+
+// ------------------------------------------------------------------------------
+//   Progress Styling
+// ------------------------------------------------------------------------------
+
+@color_Flyout_White: #FFFFFF;
+@color_Flyout_LightGrey: #999;
+@color_Flyout_LinkBlue: #4183c4;
+
+#allasso{
+  .flyout(){
+    &.inAcitve {
+      display: none;
+    }
+    opacity: 0.9;
+    .arrow-wrapper {
+      position:relative;
+      width:0;
+      margin:0 auto;
+      .flyout-arrow1, .flyout-arrow2 {
+        border-style: dashed;
+        border-color: transparent;
+        border-width: 16px;
+        display: -moz-inline-box;
+        display: inline-block;
+        font-size: 17px;
+      }
+      .flyout-arrow1 {
+        border-bottom-width: 1em;
+        border-bottom-style: solid;
+        border-bottom-color: @color_Flyout_LightGrey;
+        position:absolute;
+        bottom:-1px; left:3px;
+      }
+      .flyout-arrow2 {
+        border-bottom-width: 1em;
+        border-bottom-style: solid;
+        border-bottom-color: @color_Flyout_White;
+        bottom:-1px; left:4px;
+        position:absolute;
+        border-width: 15px;
+      }
+    }
+    .flyout-content {
+      background-color: @color_Flyout_White;
+      padding: 20px;
+      border:1px solid @color_Flyout_LightGrey;
+      border-radius:5px;
+      .icon.remove {
+        margin-right: -15px;
+        margin-top: -20px;
+        float: right;
+        cursor: pointer;
+      }
+      > h2 {
+        margin-bottom: 0px;
+        text-align: left;
+      }
+      .three.column.grid .column {
+        background-color: @color_Flyout_White;
+        text-align: left;
+      }
+      .panel.body {
+        background-color: lighten(@color_Flyout_LinkBlue, 35%);
+        border: 2px solid lighten(@color_Flyout_LinkBlue, 25%);
+        text-align: left;
+        margin-bottom: 20px;
+        > h1 {
+          text-align: center;
+          color: lighten(@color_Flyout_LinkBlue, 10%);
+          margin-top: 0px;
+          margin-bottom: 0px;
+        }
+      }
+      > footer .footer-links >a {
+        color: @color_Flyout_LinkBlue;
+        text-aligh: left;
+      }
+    }
+  }
+}
+#allasso{
+  .flyout-demo(){
+    margin-left: 40%;
+    .jpui.panel.body {
+        button {
+            float: right;
+        }
+        h1, h6 {
+            margin: 0em;
+            text-align: right;
+        }
+        div {
+            float: left;
+            clear: both;
+        }
+        strong {
+            float: left;
+        }
+    }
+  }
+}

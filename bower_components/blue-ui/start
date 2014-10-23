@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Reflect any removal or renaming of files
+gulp clean;
+
+# Get the applications built and into dist
+#gulp dist-clean --app=mockups;
+
+gulp dist-clean --app=blue-ui;
+
+
+# Fire up the server
+gulp server

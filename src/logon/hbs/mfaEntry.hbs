@@ -1,0 +1,40 @@
+<div class="mfa container">
+    <div class="row">
+      <div class="col-xs-offset-2 col-xs-8">
+        <div class="progress row">
+          <div class="col-xs-4 small centered text"><span class="accessible-text">{{!-- Step_1_of_3 --}}</span> {{instructions_workflow_progress_initiate_identification_label}}</div>
+			    <div class="col-xs-4 small centered text"><span class="accessible-text">{{!-- Step_2_of_3 --}}</span> {{request_identification_code_progress_label}}</div>
+			    <div class="col-xs-4 small centered text"><span class="accessible-text">{{!-- Step_3_of_3 --}}</span> {{submit_identification_code_progress_label}}</div>
+        </div>
+        <div class="row">
+          <div class="jpui progress">
+            <div id="someIDtoattachJSto" class="bar" role="percentage" aria-valuemin="0" aria-valuemax="100" aria-valuenow="33" style="width:33%;"><span class="accessible-text">{{instructions_workflow_progress_bar_initiate_identification_label}}</span></div>
+          </div>
+        </div>
+        <div class="row">
+          <div id="mainpanel" class="jpui primary panel">
+            <h1 class="header">{{instructions_workflow_initiate_identification_header}}</h1>
+            <div class="jpui panel body">
+              <div class="col-xs-12">
+                <h2>{{instructions_workflow_message_computer_header}}</h2>
+                <p>{{instructions_workflow_message}}</p>
+                <p><a href="#" id="request_identification_advisory_message">{{instructions_workflow_message_advisory_link}}</a></p>
+              </div>
+              <div class="col-xs-12">
+                <button class="jpui button info right" id="request_delivery_devices" tabindex="0">{{proceed_workflow_label}}</button>
+                <button class="jpui button cancel right" id="exit_identification" tabindex="0">{{exit_workflow_label}}</button>
+              </div>
+            </div>
+          </div>
+          <div id="modalpanel" class="jpui primary hidden panel modal">
+            <div class="jpui panel body">
+            	<a href="#" class="close"><i id="close_identification_advisory" class="fa fa-times" tabindex="0"></i></a>
+              <div class="col-xs-offset-1 col-xs-10">
+               	<p>{{{instructions_workflow_advisory_message}}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

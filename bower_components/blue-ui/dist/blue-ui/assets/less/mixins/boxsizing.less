@@ -1,0 +1,17 @@
+/**
+ *
+ *  box sizing mixin
+ *  @param:  sizingtype
+ *  @values: content-box | padding-box | border-box
+ *  @default: border-box
+ *
+ **/
+
+.boxsizing(@sizingtype: border-box){
+    // Safari/Chrome, other WebKit
+    -webkit-box-sizing: @sizingtype;
+    // Firefox, other Gecko
+    -moz-box-sizing: @sizingtype;
+    // Everybody else
+    box-sizing: @sizingtype;
+}
