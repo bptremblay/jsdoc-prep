@@ -70,6 +70,56 @@ function() {
     SecondClass.prototype.fixTheWorld = function(toothache, tomato) {
         return false;
     };
+    
+    
+    /**
+     * @description Subscribe to events on the component's local Channel. Events on the
+     *              local channel are not visible to other components or the main
+     *              ComponentChannel.
+     * @function
+     * @param {String|PlainObject} [eventType] The type of event.
+     * @param {Function} [callback] The callback to execute when the event is published.
+     * @example
+     * // Execute callback for ALL events on the component (no eventType given)
+     * myComponent.on(function(event){
+     *     // Analyze, log, etc the event
+     * });
+     *
+     * // Execute callback for a component-generated event
+     * // Format of eventType is ACTION/VALUE
+     * // ACTION - function call, state change, etc on the component
+     * // VALUE - name of action, property name, etc.
+     *
+     * // Note: TARGET is automatically prepended to the eventType and
+     * //       is equal to the name of the component as defined in the spec
+     * myComponent.on('action/submit', function(event){
+     *     // Execute logic for the submit action on the component
+     * });
+     *
+     * // Subscribe to multiple events
+     * myComponent.on( {
+     *     'action/submit': function(submitEvent){
+     *         // Business Logic
+     *     },
+     *     'state/enabled': function(enabledEvent){
+     *         // Business Logic
+     *     },
+     *     'action/requestBalance': function(requestEvent){
+     *         // Business Logic
+     *     },
+     *     'state/valid': function(validEvent){
+     *         // Business Logic
+     *     }
+     * } );
+     *
+     * // Can use wildcards
+     * myComponent.on('action/*', function(actionEvent){
+     *     // Logic for all actions on the component
+     * } );
+     */
+    Freenox.prototype.on = function( eventType, callback ){
+    
+    };
 
     return SecondClass;
 });

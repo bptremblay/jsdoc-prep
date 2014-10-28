@@ -14,14 +14,14 @@ function healthCheckCallback(healthCheckResults) {
   console.log('ALL DONE');
 
   function runJsDoc(sourceDirectory) {
-      rimraf('/Users/f558910/Documents/Projects/jsdoc-prep/jsdocs', function() {
+      rimraf('/Users/f558910/Documents/Projects/jsdoc-prep/test-jsdocs', function() {
       // sourceDirectory = path.normalize(sourceDirectory);
-      var exePath = path.normalize('jsdoc');
+      var exePath = path.normalize('/Users/f558910/Documents/Projects/jsdoc-prep/node_modules/.bin/jsdoc');
       // console.warn('runJsDoc: ' + exePath + ' <> ' + sourceDirectory);
       // $ jsdoc -r -l -d ~/workspace/jsdoc-prep/out
       // ~/workspace/jsdoc-prep/processed/framework
       var exec = require('child_process').exec;
-      var cmdLine = exePath + ' -r -l -d /Users/f558910/Documents/Projects/jsdoc-prep/jsdocs '
+      var cmdLine = exePath + ' -r -l -d /Users/f558910/Documents/Projects/jsdoc-prep/test-jsdocs '
           + sourceDirectory + '';
       console.log(cmdLine);
 
@@ -45,7 +45,7 @@ function healthCheckCallback(healthCheckResults) {
     });
   }
 
-  runJsDoc('/Users/f558910/Documents/Projects/jsdoc-prep/processed');
+  runJsDoc('/Users/f558910/Documents/Projects/jsdoc-prep/test-output');
 }
 
 
@@ -67,6 +67,19 @@ var processingChain = [
   'trimProc',
   'jsBeautifyProc'
   ];
+
+//var processingChain = [
+//                       // 'trimProc',
+//                       'thirdPartyFilter',
+//                       'minFilter',
+//                       'badCharactersProc',
+//                       //'trimProc',
+//                       'amdFilter',
+//                       'jsBeautifyProc',
+//                       'amdProc',
+//                       'jsDoccerProc',
+//                       'jsBeautifyProc'
+//                       ];
 
 var opts = {
   callBack: healthCheckCallback,

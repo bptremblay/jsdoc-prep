@@ -1146,6 +1146,29 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                 // continue;
                 // }
                 // }
+                
+                /*
+                if (tagData.length === 0){
+                    //docletData['@' + tag] = new String();
+                    docletData['@' + tag] = {};
+                    currentTagObject = docletData['@' + tag];
+                    currentTagObject.tagName = tag;
+                    //console.warn("TAG DATA is EMPTY----->");
+                    //console.warn(currentTagObject);
+                }
+                else{
+                    //docletData['@' + tag] = tagData.join(' ').trim();
+                    docletData['@' + tag] = {};
+                    currentTagObject = docletData['@' + tag];
+                    currentTagObject.tagName = tag;
+                    currentTagObject.description = tagData.join(' ').trim();
+                    //console.warn("TAG DATA is _NOT_ EMPTY----->");
+                    console.warn(docletData['@' + tag]);
+                    //console.warn(currentTagObject);
+                }
+                */
+                
+                
                 docletData['@' + tag] = tagData.join(' ').trim();
                 currentTagObject = docletData['@' + tag];
                 currentTagObject.tagName = tag;
@@ -1191,7 +1214,10 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             currentTagObject.description += (' ' + commentBuffer.trim());
             commentBuffer = '';
         } else {
-            // console.warn("COMMENTS: " + commentBuffer.trim());
+                if (commentBuffer.trim().length > 0){
+                currentTagObject.description = commentBuffer.trim();
+                commentBuffer = '';
+                }
         }
         // console.log(JSON.stringify(currentTagObject));
     } else {
@@ -1626,7 +1652,9 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                 for (var n = 0; n<bodyNodes.length; n++){
                     var node = bodyNodes[n];
                     if (node.type === 'ReturnStatement'){
-                        if (node.argument.type === 'ObjectExpression'){
+                        //console.warn(node);
+                        if (node.argument && node.argument.type === 'ObjectExpression'){
+                            
                             // it's returning a blob of crap instead of exports
                             returnNode = node;
                             break;
@@ -2084,7 +2112,7 @@ module.exports = {
     'addMissingComments' : addMissingComments
 };
 
-if (true) {
+if (false) {
     var testFileName = 'index.js';
 
     var input = {

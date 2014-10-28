@@ -1,3 +1,29 @@
+
+        /**
+         * @function
+         * @param {String} [type="data"] The event type.
+         * @param {*} [properties] Properties that will get applied to the event instance.
+         * @description Emit an event on the stream. Note that if `data` is a string, `type` must be specified.
+         * @example
+         * var target = {},
+         *  world = 'world',
+         *  props = { data: world };
+         *
+         * withStreamEvents.call( target );
+         *
+         * // Emits an event of type "hello"
+         * target.emit( 'hello' );
+         *
+         * // Emits an event of type "hello" with `world` as event data
+         * target.emit( 'hello', { data: world } );
+         *
+         * // Emits an event of type "data" with `props` as event properties
+         * target.emit( props );
+         */
+
+
+
+
 line 1492
 
 if (dump === 'FunctionExpression'){
@@ -6,3 +32,21 @@ if (dump === 'FunctionExpression'){
         }
         
 returning -1 causes us to make a new comment
+
+
+addMissingComments url_regex
+
+/Users/f558910/Documents/Projects/jsdoc-prep/jsdoccer.js:1629
+                        if (node.argument.type === 'ObjectExpression'){
+                                         ^
+TypeError: Cannot read property 'type' of null
+    at dumpNamedFunctions (/Users/f558910/Documents/Projects/jsdoc-prep/jsdoccer.js:1629:42)
+    at addMissingComments (/Users/f558910/Documents/Projects/jsdoc-prep/jsdoccer.js:1754:31)
+    at runJsDoccer (/Users/f558910/Documents/Projects/jsdoc-prep/singleFileProcessor.js:951:26)
+    at Object.jsDoccerProc.process (/Users/f558910/Documents/Projects/jsdoc-prep/singleFileProcessor.js:1018:9)
+    at runNextProcessor (/Users/f558910/Documents/Projects/jsdoc-prep/singleFileProcessor.js:1116:19)
+    at /Users/f558910/Documents/Projects/jsdoc-prep/singleFileProcessor.js:1119:17
+    at Object.amdProc.process (/Users/f558910/Documents/Projects/jsdoc-prep/singleFileProcessor.js:144:9)
+    at runNextProcessor (/Users/f558910/Documents/Projects/jsdoc-prep/singleFileProcessor.js:1116:19)
+    at /Users/f558910/Documents/Projects/jsdoc-prep/singleFileProcessor.js:1119:17
+    at Object.jsBeautifyProc.process (/Users/f558910/Documents/Projects/jsdoc-prep/singleFileProcessor.js:792:9)

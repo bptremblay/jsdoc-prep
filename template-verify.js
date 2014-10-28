@@ -1,3 +1,5 @@
+/* temlate-verify.js */
+
 var ractive = require('ractive');
 var handlebars = require('handlebars');
 var less = require('less');
@@ -9,6 +11,8 @@ var sys = require('sys');
 var FILE_ENCODING = 'utf8';
 var SCAN_PATH = '';
 var stat;
+var queue = [];
+var saveOptions = [];
 
 /**
  * Filter files.
@@ -36,17 +40,6 @@ function filterFiles(files, excludes) {
 }
 
 /**
- * Normalize name.
- * 
- * @param {String}
- *            input
- * @return {String}
- */
-function normalizeName(input) {
-    return input.split('_').join('-');
-}
-
-/**
  * Read file.
  * 
  * @param {String}
@@ -60,8 +53,21 @@ function readFile(filePathName) {
     try {
         source = _fs.readFileSync(filePathName, FILE_ENCODING);
     } catch (er) {
+        reportWarning(options, er);
     }
     return source;
+}
+
+/**
+ * Appends the warning to the verifier scan options object.
+ * @param options
+ * @param warning
+ */
+function reportWarning(options, warning){
+    if (options.warnings == null){
+        options.warnings = [];
+    }
+    options.warnings.push(warning);
 }
 
 /**
@@ -85,9 +91,10 @@ function run(options) {
             // console.log(total + ',' + good + ',' + bad);
             if (total === (good + bad)) {
                 console.log(templateType + ' source check of ' + total
-                        + ' files is complete. Found ' + bad
+                        + ' files in /' + options.app + ' is complete. Found ' + bad
                         + ' files with errors.');
                 then = new Date().getTime();
+                nextInQueue();
             }
         }
 
@@ -104,9 +111,10 @@ function run(options) {
     } else if (templateType.toUpperCase() === 'LESS') {
         templateType = "Less";
     }
-    console.log('Starting ' + templateType + ' template check: ' + SCAN_PATH);
-    if (!_fs.existsSync(SCAN_PATH)){
-        console.warn('No such directory "' + SCAN_PATH + '". Oh well.');
+    //console.log('Starting ' + templateType + ' template check: ' + SCAN_PATH);
+    if (!_fs.existsSync(SCAN_PATH)) {
+        reportWarning(options, 'No such directory "' + SCAN_PATH + '". Oh well.');
+        whenDone();
         return;
     }
     var files = _wrench.readdirSyncRecursive(SCAN_PATH);
@@ -141,7 +149,7 @@ function run(options) {
                             } catch (parseError) {
                                 parseError.fileName = path;
                                 bad++;
-                                console.warn(parseError);
+                                reportWarning(options, parseError);
                             }
                             whenDone();
                         } else if (templateType.toUpperCase() === 'HANDLEBARS') {
@@ -152,7 +160,7 @@ function run(options) {
                             } catch (parseError) {
                                 parseError.fileName = path;
                                 bad++;
-                                console.warn(parseError);
+                                reportWarning(options, parseError);
                             }
                             whenDone();
                         } else if (templateType.toUpperCase() === 'LESS') {
@@ -167,7 +175,7 @@ function run(options) {
                                     if (parseError != null) {
                                         parseError.fileName = path;
                                         bad++;
-                                        console.warn(parseError);
+                                        reportWarning(options, parseError);
                                     } else {
                                         // audit output here:
                                         // console.log(css);
@@ -178,7 +186,7 @@ function run(options) {
                             } catch (parseError) {
                                 parseError.fileName = path;
                                 bad++;
-                                console.warn(parseError);
+                                reportWarning(options, parseError);
                                 whenDone();
                             }
                         }
@@ -190,52 +198,108 @@ function run(options) {
 
 }
 
-// auth
-run({
+/**
+ * Get the next scan target and run the verification.
+ */
+function nextInQueue(){
+    if (queue.length === 0){
+        console.log("ALL DONE");
+        showWarnings();
+    }
+    else{
+        var options = queue.shift();
+        run(options); 
+    }
+}
+
+/**
+ * Report any warnings found in any of the targets verified.
+ */
+function showWarnings(){
+    for (var index = 0; index<saveOptions.length; index++){
+        var option = saveOptions[index];
+        if (option.warnings && option.warnings.length > 0){
+            console.warn('Warning: ' + JSON.stringify(option, null, 2));
+        }
+    }
+}
+
+/**
+ * Verify a list of target paths.
+ * @param {Array<Object>} optionsList 
+ */
+function verify(optionsList) {
+    queue = []; 
+    saveOptions = optionsList;
+    for (var index = 0; index<optionsList.length; index++){
+        var option = optionsList[index];
+        queue.push(option);
+    }
+    setTimeout(function(){
+        nextInQueue();
+    }, 1);
+}
+
+
+verify([{
+    templateType : 'Ractive',
+    // Supply app name:
+    app : 'common',
+    // NOTE IRREGULARITY OF PATH NAME HERE:
+    scanPath : 'templates'
+},{
+    templateType : 'Handlebars',
+    // Supply app name:
+    app : 'common',
+    // Supply the path to scan here.
+    scanPath : 'hbs'
+},{
+    templateType : 'LESS',
+    // Supply app name:
+    app : 'common',
+    // Supply the path to scan here.
+    scanPath : 'less'
+},
+// No such path exists at the time of this writing.
+/*{
     templateType : 'Ractive',
     // Supply app name:
     app : 'logon',
     // Supply the path to scan here.
     scanPath : 'template'
-});
-
-run({
+},*/
+{
     templateType : 'Handlebars',
     // Supply app name:
     app : 'logon',
     // Supply the path to scan here.
     scanPath : 'hbs'
-});
-
-run({
+},{
     templateType : 'LESS',
     // Supply app name:
     app : 'logon',
     // Supply the path to scan here.
     scanPath : 'less'
-});
-
-// accounts
-run({
+},{
     templateType : 'Ractive',
     // Supply app name:
     app : 'dashboard',
     // Supply the path to scan here.
     scanPath : 'template'
-});
-
-run({
+},{
     templateType : 'Handlebars',
     // Supply app name:
     app : 'dashboard',
     // Supply the path to scan here.
     scanPath : 'hbs'
-});
-
-run({
+},{
     templateType : 'LESS',
     // Supply app name:
     app : 'dashboard',
     // Supply the path to scan here.
     scanPath : 'less'
-});
+}]);
+
+module.exports = {
+    'verify' : verify
+};
