@@ -101,6 +101,72 @@
         "scope": "(main)",
         "a": "",
         "reason": "No jsDoc Comments for method 'fixTheWorld'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'preambleTest'.",
+        "code": "wfJD",
+        "evidence": "SecondClass.prototype.preambleTest = function(toothache, tomato) {",
+        "line": 79,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'preambleTest'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'ThirdClass'.",
+        "code": "wfJD",
+        "evidence": "function ThirdClass() {",
+        "line": 87,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'ThirdClass'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'FourthClass'.",
+        "code": "wfJD",
+        "evidence": "function FourthClass() {",
+        "line": 117,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'FourthClass'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'someFunction'.",
+        "code": "wfJD",
+        "evidence": "FourthClass.prototype.someFunction = function() {",
+        "line": 125,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'someFunction'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'anotherFunction'.",
+        "code": "wfJD",
+        "evidence": "FourthClass.prototype.anotherFunction = function() {",
+        "line": 133,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'anotherFunction'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'on'.",
+        "code": "wfJD",
+        "evidence": "Freenox.prototype.on = function(eventType, callback) {",
+        "line": 183,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'on'."
       }
     ],
     "jsDocNameFixerProc": [],
@@ -121,7 +187,7 @@
   "processedFilePath": "test-output/yes-module.js",
   "couldParseOriginalSource": true,
   "jsDoccerProcData": {
-    "lines": 75,
+    "lines": 188,
     "requires": [],
     "className": "n/a",
     "packagePath": "",
@@ -130,16 +196,18 @@
     "no_lib": true,
     "inferencedClassName": "n/a",
     "uses_$": false,
-    "chars": 1573,
+    "chars": 4783,
     "uses_YUI": false,
     "fields": [],
     "moduleName": "./yes-module",
     "uses_console_log": false,
     "uses_backbone": false,
     "classes": {
-      "DonutView": 654,
-      "Freenox": 402,
-      "SecondClass": 465
+      "DonutView": 1080,
+      "Freenox": 654,
+      "SecondClass": 717,
+      "ThirdClass": 753,
+      "FourthClass": 773
     },
     "methods": [
       {
@@ -250,6 +318,83 @@
         "return": "{boolean}",
         "classDeclarationFlag": false,
         "line": "SecondClass.prototype.fixTheWorld = function(toothache, tomato) {"
+      },
+      {
+        "name": "preambleTest",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 79,
+        "memberOf": "SecondClass.prototype",
+        "originalJsDocDescription": {},
+        "args": [
+          "toothache",
+          "tomato"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "SecondClass.prototype.preambleTest = function(toothache, tomato) {"
+      },
+      {
+        "name": "ThirdClass",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 87,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function ThirdClass() {"
+      },
+      {
+        "name": "FourthClass",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 117,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function FourthClass() {"
+      },
+      {
+        "name": "someFunction",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 125,
+        "memberOf": "FourthClass.prototype",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "FourthClass.prototype.someFunction = function() {"
+      },
+      {
+        "name": "anotherFunction",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 133,
+        "memberOf": "FourthClass.prototype",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "FourthClass.prototype.anotherFunction = function() {"
+      },
+      {
+        "name": "on",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 183,
+        "memberOf": "Freenox.prototype",
+        "originalJsDocDescription": {},
+        "args": [
+          "eventType",
+          "callback"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "Freenox.prototype.on = function(eventType, callback) {"
       }
     ],
     "is_module": false,
@@ -263,5 +408,5 @@
   "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 92
+  "numberOfLines": 157
 }

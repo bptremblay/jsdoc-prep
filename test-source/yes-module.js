@@ -71,6 +71,69 @@ function() {
         return false;
     };
     
+    /**
+     * This is a preamble to a doclet.
+     * It might have more than one line.
+     * @return {boolean}
+     */
+    SecondClass.prototype.preambleTest = function(toothache, tomato) {
+        return false;
+    };
+    
+    /**
+    * @constructor
+    * @description A description tag.
+    */
+    function ThirdClass() {
+        this.Freenox = new Freenox();
+    }
+    
+    /**
+     * Some text without a description.
+     * @constructor
+     * @description A description tag with more than 
+     * one line of stuff
+     * and some of it could be very very long
+     * 
+     * and some of it could be after a BLANK line.
+     */
+     function FourthClass() {
+         this.Freenox = new Freenox();
+     }
+    
+     
+     /**
+      * @constructor
+      * @description A description tag with more than 
+      * one line of stuff
+      * and some of it could be very very long
+      * 
+      * and some of it could be after a BLANK line.
+      * @example
+      * //This is sample code!
+      * var ft = new FourthClass();
+      * //Note we are using a zero-arg constructor.
+      */
+      function FourthClass() {
+          this.Freenox = new Freenox();
+      }
+      
+      /*
+       * Redundant 'function' tag.
+       * @function
+       */
+      FourthClass.prototype.someFunction = function(){
+          
+      };
+      
+      /*
+       * Redundant 'method' tag. Used more by YUIDoc.
+       * @method
+       */
+      FourthClass.prototype.anotherFunction = function(){
+          
+      };
+    
     
     /**
      * @description Subscribe to events on the component's local Channel. Events on the

@@ -45,7 +45,7 @@ function healthCheckCallback(healthCheckResults) {
     });
   }
 
-  runJsDoc('/Users/f558910/Documents/Projects/jsdoc-prep/test-output');
+  //runJsDoc('/Users/f558910/Documents/Projects/jsdoc-prep/test-output');
 }
 
 
