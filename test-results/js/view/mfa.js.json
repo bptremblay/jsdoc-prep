@@ -1,0 +1,162 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "mfa",
+      "AMD": true,
+      "webPath": "/js/view"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MfaView'.",
+        "code": "wfJD",
+        "evidence": "return function MfaView() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MfaView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 26,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showInstructionsWorkflowMessage'.",
+        "code": "wfJD",
+        "evidence": "this.showInstructionsWorkflowMessage = function(data) {",
+        "line": 32,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showInstructionsWorkflowMessage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'onDataChange'.",
+        "code": "wfJD",
+        "evidence": "this.onDataChange = function onDataChange() {",
+        "line": 44,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'onDataChange'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/mfa.js",
+  "folderPath": "test-source/js/view",
+  "fileName": "mfa.js",
+  "packagePath": "/js/view",
+  "webPath": "/js/view",
+  "libFile": false,
+  "min": false,
+  "realName": "mfa",
+  "name": "mfa",
+  "camelName": "Mfa",
+  "processedFilePath": "test-output/js/view/mfa.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 48,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1384,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mfa",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "MfaView": 735
+    },
+    "methods": [
+      {
+        "name": "MfaView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function MfaView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 26,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "showInstructionsWorkflowMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 32,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.showInstructionsWorkflowMessage = function(data) {"
+      },
+      {
+        "name": "onDataChange",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 44,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.onDataChange = function onDataChange() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view",
+    "fileName": "mfa.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 60
+}

@@ -1,0 +1,171 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "scenario",
+      "AMD": true,
+      "webPath": "/js/view"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MockView'.",
+        "code": "wfJD",
+        "evidence": "return function MockView() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MockView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {};",
+        "line": 149,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'defaultEnableMock'.",
+        "code": "wfJD",
+        "evidence": "this.defaultEnableMock = function() {",
+        "line": 151,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'defaultEnableMock'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'onDataChange'.",
+        "code": "wfJD",
+        "evidence": "this.onDataChange = function onDataChange() {",
+        "line": 156,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'onDataChange'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/scenario.js",
+  "folderPath": "test-source/js/view",
+  "fileName": "scenario.js",
+  "packagePath": "/js/view",
+  "webPath": "/js/view",
+  "libFile": false,
+  "min": false,
+  "realName": "scenario",
+  "name": "scenario",
+  "camelName": "Scenario",
+  "processedFilePath": "test-output/js/view/scenario.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 160,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 5029,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./scenario",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "MockView": 3186
+    },
+    "methods": [
+      {
+        "name": "MockView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function MockView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 149,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {};"
+      },
+      {
+        "name": "defaultEnableMock",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 151,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.defaultEnableMock = function() {"
+      },
+      {
+        "name": "onDataChange",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 156,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.onDataChange = function onDataChange() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view",
+    "fileName": "scenario.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 163
+}

@@ -1,0 +1,203 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "logon",
+      "AMD": true,
+      "webPath": "/js/controller"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'LogonController'.",
+        "code": "wfJD",
+        "evidence": "return function LogonController() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'LogonController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'lookupService'.",
+        "code": "wfJD",
+        "evidence": "lookupService = function(name) {",
+        "line": 12,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'lookupService'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 27,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'index'.",
+        "code": "wfJD",
+        "evidence": "this.index = function(args) {",
+        "line": 33,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'index'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'success'.",
+        "code": "wfJD",
+        "evidence": "this.success = function(args) {",
+        "line": 77,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'success'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/logon.js",
+  "folderPath": "test-source/js/controller",
+  "fileName": "logon.js",
+  "packagePath": "/js/controller",
+  "webPath": "/js/controller",
+  "libFile": false,
+  "min": false,
+  "realName": "logon",
+  "name": "logon",
+  "camelName": "Logon",
+  "processedFilePath": "test-output/js/controller/logon.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 86,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 2413,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./logon",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "LogonController": 1444
+    },
+    "methods": [
+      {
+        "name": "LogonController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function LogonController() {"
+      },
+      {
+        "name": "lookupService",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 12,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "name"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "lookupService = function(name) {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 27,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 33,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "args"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "this.index = function(args) {"
+      },
+      {
+        "name": "success",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 77,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "args"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "this.success = function(args) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller",
+    "fileName": "logon.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 97
+}

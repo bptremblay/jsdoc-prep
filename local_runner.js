@@ -92,7 +92,7 @@ var opts = {
   processingChain: processingChain
 };
 
-var justDoc = true;
+var justDoc = false;
 
 if (justDoc) {
   healthCheckCallback({});

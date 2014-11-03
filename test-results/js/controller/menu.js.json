@@ -1,0 +1,136 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "menu",
+      "AMD": true,
+      "webPath": "/js/controller"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MenuController'.",
+        "code": "wfJD",
+        "evidence": "return function MenuController() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MenuController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'index'.",
+        "code": "wfJD",
+        "evidence": "this.index = function() {",
+        "line": 27,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'index'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/menu.js",
+  "folderPath": "test-source/js/controller",
+  "fileName": "menu.js",
+  "packagePath": "/js/controller",
+  "webPath": "/js/controller",
+  "libFile": false,
+  "min": false,
+  "realName": "menu",
+  "name": "menu",
+  "camelName": "Menu",
+  "processedFilePath": "test-output/js/controller/menu.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 47,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1464,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./menu",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "MenuController": 440
+    },
+    "methods": [
+      {
+        "name": "MenuController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function MenuController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 27,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "this.index = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller",
+    "fileName": "menu.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 55
+}

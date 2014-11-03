@@ -10,31 +10,87 @@
   "errors": {
     "thirdPartyFilter": [],
     "minFilter": [],
-    "badCharactersProc": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
     "amdFilter": [],
     "jsBeautifyProc": [],
     "jsDoccerProc": [
       {
         "id": "(error)",
-        "raw": "No jsDoc Comments for method 'ScenarioController'.",
+        "raw": "No jsDoc Comments for method 'MockController'.",
         "code": "wfJD",
-        "evidence": "return function ScenarioController() {",
-        "line": 3,
+        "evidence": "return function MockController() {",
+        "line": 2,
         "character": -1,
         "scope": "(main)",
         "a": "",
-        "reason": "No jsDoc Comments for method 'ScenarioController'."
+        "reason": "No jsDoc Comments for method 'MockController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
       },
       {
         "id": "(error)",
         "raw": "No jsDoc Comments for method 'index'.",
         "code": "wfJD",
-        "evidence": "this.index = function(params) {",
-        "line": 9,
+        "evidence": "this.index = function() {",
+        "line": 18,
         "character": -1,
         "scope": "(main)",
         "a": "",
         "reason": "No jsDoc Comments for method 'index'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'enabled'.",
+        "code": "wfJD",
+        "evidence": "this.enabled = function(params) {",
+        "line": 31,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'enabled'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setFixture'.",
+        "code": "wfJD",
+        "evidence": "this.setFixture = function(inputData) {",
+        "line": 38,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setFixture'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setScenario'.",
+        "code": "wfJD",
+        "evidence": "this.setScenario = function(inputData) {",
+        "line": 44,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setScenario'."
       }
     ],
     "jsDocNameFixerProc": [],
@@ -55,7 +111,7 @@
   "processedFilePath": "test-output/js/controller/scenario.js",
   "couldParseOriginalSource": true,
   "jsDoccerProcData": {
-    "lines": 19,
+    "lines": 64,
     "requires": [],
     "className": "n/a",
     "packagePath": "",
@@ -64,33 +120,56 @@
     "no_lib": true,
     "inferencedClassName": "n/a",
     "uses_$": false,
-    "chars": 527,
+    "chars": 2396,
     "uses_YUI": false,
     "fields": [],
     "moduleName": "./scenario",
     "uses_console_log": false,
     "uses_backbone": false,
     "classes": {
-      "ScenarioController": 332
+      "MockController": 1875
     },
     "methods": [
       {
-        "name": "ScenarioController",
+        "name": "MockController",
         "visibility": "public",
         "static": false,
-        "lineNumber": 3,
+        "lineNumber": 2,
         "memberOf": "",
         "originalJsDocDescription": {},
         "description": "",
         "return": "",
         "classDeclarationFlag": true,
-        "line": "return function ScenarioController() {"
+        "line": "return function MockController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
       },
       {
         "name": "index",
         "visibility": "public",
         "static": false,
-        "lineNumber": 9,
+        "lineNumber": 18,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "this.index = function() {"
+      },
+      {
+        "name": "enabled",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 31,
         "memberOf": "this",
         "originalJsDocDescription": {},
         "args": [
@@ -98,7 +177,35 @@
         ],
         "description": "",
         "classDeclarationFlag": false,
-        "line": "this.index = function(params) {"
+        "line": "this.enabled = function(params) {"
+      },
+      {
+        "name": "setFixture",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 38,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.setFixture = function(inputData) {"
+      },
+      {
+        "name": "setScenario",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 44,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.setScenario = function(inputData) {"
       }
     ],
     "is_module": false,
@@ -112,5 +219,5 @@
   "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 30
+  "numberOfLines": 85
 }

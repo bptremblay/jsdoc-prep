@@ -1,8 +1,34 @@
 {
-  "results": {},
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "settings",
+      "AMD": true,
+      "webPath": "/js"
+    }
+  },
   "errors": {
     "thirdPartyFilter": [],
-    "minFilter": []
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
   },
   "outputDirectory": "test-output",
   "path": "test-source/js/settings.js",
@@ -17,7 +43,35 @@
   "camelName": "Settings",
   "processedFilePath": "test-output/js/settings.js",
   "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 13,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 445,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./settings",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "fileName": "settings.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 539
+  "numberOfLines": 17
 }

@@ -1,0 +1,130 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "request",
+      "AMD": true,
+      "webPath": "/js/service/interceptor"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'before'.",
+        "code": "wfJD",
+        "evidence": "this.before = function(settings) {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'before'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'beforeSend'.",
+        "code": "wfJD",
+        "evidence": "settings.beforeSend = function(xhr) {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'beforeSend'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/service/interceptor/request.js",
+  "folderPath": "test-source/js/service/interceptor",
+  "fileName": "request.js",
+  "packagePath": "/js/service/interceptor",
+  "webPath": "/js/service/interceptor",
+  "libFile": false,
+  "min": false,
+  "realName": "request",
+  "name": "request",
+  "camelName": "Request",
+  "processedFilePath": "test-output/js/service/interceptor/request.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 17,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/interceptor",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 678,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./request",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "before",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "settings"
+        ],
+        "description": "",
+        "return": "settings",
+        "classDeclarationFlag": false,
+        "line": "this.before = function(settings) {"
+      },
+      {
+        "name": "beforeSend",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "settings",
+        "originalJsDocDescription": {},
+        "args": [
+          "xhr"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "settings.beforeSend = function(xhr) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/interceptor",
+    "fileName": "request.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 28
+}

@@ -1,0 +1,305 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "logon",
+      "AMD": true,
+      "webPath": "/js/component"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'logonToLandingPage'.",
+        "code": "wfJD",
+        "evidence": "logonToLandingPage: function() {",
+        "line": 26,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'logonToLandingPage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'selectRememberMyUserId'.",
+        "code": "wfJD",
+        "evidence": "selectRememberMyUserId: function() {",
+        "line": 48,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'selectRememberMyUserId'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'resetForm'.",
+        "code": "wfJD",
+        "evidence": "resetForm: function() {",
+        "line": 53,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'resetForm'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setStatus'.",
+        "code": "wfJD",
+        "evidence": "setStatus: function(code) {",
+        "line": 69,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setStatus'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'validate'.",
+        "code": "wfJD",
+        "evidence": "validate: function(id) {",
+        "line": 91,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'validate'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'forgotPassword'.",
+        "code": "wfJD",
+        "evidence": "forgotPassword: function() {",
+        "line": 95,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'forgotPassword'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSetting'.",
+        "code": "wfJD",
+        "evidence": "getSetting: function(name) {",
+        "line": 100,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSetting'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getErrorMessage'.",
+        "code": "wfJD",
+        "evidence": "getErrorMessage: function(errorCode) {",
+        "line": 104,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getErrorMessage'."
+      }
+    ],
+    "jsDocNameFixerProc": [
+      {
+        "id": "(error)",
+        "raw": "jsDoc tag error.",
+        "code": "wfJD",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "jsDoc tag error: found '@return void'."
+      }
+    ],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/logon.js",
+  "folderPath": "test-source/js/component",
+  "fileName": "logon.js",
+  "packagePath": "/js/component",
+  "webPath": "/js/component",
+  "libFile": false,
+  "min": false,
+  "realName": "logon",
+  "name": "logon",
+  "camelName": "Logon",
+  "processedFilePath": "test-output/js/component/logon.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 120,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 3845,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./logon",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "logonToLandingPage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 26,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "logonToLandingPage: function() {"
+      },
+      {
+        "name": "selectRememberMyUserId",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 48,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "selectRememberMyUserId: function() {"
+      },
+      {
+        "name": "resetForm",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 53,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "resetForm: function() {"
+      },
+      {
+        "name": "setStatus",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 69,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "code"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setStatus: function(code) {"
+      },
+      {
+        "name": "validate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 91,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "id"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "validate: function(id) {"
+      },
+      {
+        "name": "forgotPassword",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 95,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "forgotPassword: function() {"
+      },
+      {
+        "name": "getSetting",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 100,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "name"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getSetting: function(name) {"
+      },
+      {
+        "name": "getErrorMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 104,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "errorCode"
+        ],
+        "description": "",
+        "return": "msg",
+        "classDeclarationFlag": false,
+        "line": "getErrorMessage: function(errorCode) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component",
+    "fileName": "logon.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 137
+}
