@@ -758,7 +758,7 @@ function getTagLines(lines, tag, buffer, getPreamble) {
         end = lines.length - 1;
         // console.warn('Reading to the end of the doclet.');
     }
-
+    tag.textStartsOnSameLine = false;
     getLines(lines, start, end, buffer);
     if ((!getPreamble) && (buffer.length > 0)) {
         var firstLine = buffer[0];
@@ -766,6 +766,9 @@ function getTagLines(lines, tag, buffer, getPreamble) {
         var where = firstLine.indexOf(realTag);
         firstLine = firstLine.substring(where+realTag.length);
         //console.log(buffer[0] + '>>>>>' + firstLine);
+        if (firstLine.trim().length > 0){
+            tag.textStartsOnSameLine = true;
+        }
         buffer[0] = firstLine;
     }
 
@@ -955,13 +958,53 @@ function fixTypes(input, dontCuddle) {
  * @return {String}
  */
 function stripStars(input) {
-    input = input.trim();
-    if (input.indexOf('*') === 0) {
+    if (input.trim().indexOf('*') === 0) {
         input = input.split('');
         input.shift();
         input = input.join('');
     }
-    return input.trim();
+    return input;
+}
+
+/**
+ * Add * to a line in a doclet.
+ * @param input
+ * @returns
+ */
+function addStars(input) {
+    if (input.trim().indexOf('*') !== 0) {
+        input = input.split('');
+        input.unshift(' * ');
+        input = input.join('');
+    }
+    return input;
+}
+
+/**
+ * Add * to each line in a block of doclet text.
+ * @param lines
+ * @returns
+ */
+function addStarLines(lines, tag) {
+    lines = lines.split('\n');
+    var linesLength = lines.length;
+    for (index = 0; index < linesLength; index++) {
+        if (index === 0){
+            if (!tag.textStartsOnSameLine){
+                var line = lines[index];
+                line = addStars(line);
+                lines[index] = line;
+            }
+            // else don't do it
+        }
+        else{
+            var line = lines[index];
+            line = addStars(line);
+            lines[index] = line;
+        }
+    }
+    lines = lines.join('\n');
+    return lines;
 }
 
 /**
@@ -1304,6 +1347,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             }
             getTagLines(lines, tag, textBuffer, false);
             textBuffer = stripStarLines(textBuffer);
+            //console.log(textBuffer);
             tag.text = textBuffer.join('\n');
         }
     } else {
@@ -2088,6 +2132,15 @@ function getMethodOnLine(methodArray, lineNumber, ast, input) {
     return null;
 }
 
+/**
+ * Generate a new comment, or fix an existing one.
+ * 
+ * @param functionWrapper
+ * @param ast
+ * @param walkerObj
+ * @param input
+ * @returns
+ */
 function generateComment(functionWrapper, ast, walkerObj, input) {
     // // console.warn(functionWrapper.returnValue);
     var funkyName = decamelize(functionWrapper.name);
@@ -2114,17 +2167,27 @@ function generateComment(functionWrapper, ast, walkerObj, input) {
         }
 
     }
+    
+    var tags = [];
+    if (doclet != null && doclet.tags){
+        //console.warn(doclet.tags);
+        tags = doclet.tags;
+    }
+    
+    // TODO: Rewrite this to dump the tags in the original order they were declared.
 
     var commentBlock = [];
     commentBlock.push("/**");
 
     if (doclet != null) {
-        if (doclet.freeText != '') {
-            // // console.warn(doclet.freeText);
+        if (doclet.freeText && doclet.freeText != '') {
+            //console.warn(doclet.freeText);
             commentBlock.push(' * ' + doclet.freeText);
 
         }
-        for ( var t in doclet) {
+        for ( var tIndex = 0; tIndex<tags.length; tIndex++) {
+            var newTag = tags[tIndex];
+            var t = '@' + newTag.tag;
             if (doclet.hasOwnProperty(t)) {
                 if (t.charAt(0) === '@') {
                     if (t !== '@return') {
@@ -2137,10 +2200,12 @@ function generateComment(functionWrapper, ast, walkerObj, input) {
                             // line: '@return {String}'
                             // }
                             // construct doclet tag
+                            console.warn(tag);
                             commentBlock.push(' * ' + tag.line);
                         } else {
                             // construct doclet tag
-                            commentBlock.push(' * ' + t + ' ' + tag);
+                            //console.warn('JUST TEXT >>> ' + addStarLines(newTag.text, newTag));
+                            commentBlock.push(' * ' + t + ' ' + addStarLines(newTag.text, newTag));
                         }
 
                     }
@@ -2152,7 +2217,7 @@ function generateComment(functionWrapper, ast, walkerObj, input) {
             params : [],
             returnValue : ''
         };
-
+        console.warn(funkyName);
         commentBlock.push(' * ' + funkyName);
     }
 
