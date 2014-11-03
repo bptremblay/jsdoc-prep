@@ -1,0 +1,136 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "mega_menu",
+      "AMD": true,
+      "webPath": "/js/controller/sideMenu"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MegaMenuController'.",
+        "code": "wfJD",
+        "evidence": "return function MegaMenuController() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MegaMenuController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'index'.",
+        "code": "wfJD",
+        "evidence": "this.index = function() {",
+        "line": 88,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'index'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/sideMenu/megaMenu.js",
+  "folderPath": "test-source/js/controller/sideMenu",
+  "fileName": "megaMenu.js",
+  "packagePath": "/js/controller/sideMenu",
+  "webPath": "/js/controller/sideMenu",
+  "libFile": false,
+  "min": false,
+  "realName": "mega_menu",
+  "name": "megaMenu",
+  "camelName": "MegaMenu",
+  "processedFilePath": "test-output/js/controller/sideMenu/megaMenu.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 95,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/sideMenu",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 2971,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./megaMenu",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "MegaMenuController": 1411
+    },
+    "methods": [
+      {
+        "name": "MegaMenuController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function MegaMenuController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 88,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "this.index = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/sideMenu",
+    "fileName": "megaMenu.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 99
+}

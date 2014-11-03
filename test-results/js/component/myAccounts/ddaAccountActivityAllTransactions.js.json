@@ -1,0 +1,280 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "dda_account_activity_all_transactions",
+      "AMD": true,
+      "webPath": "/js/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 4,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountActivity'.",
+        "code": "wfJD",
+        "evidence": "requestAccountActivity: function(inputData) {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountActivity'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestImage'.",
+        "code": "wfJD",
+        "evidence": "requestImage: function() {},",
+        "line": 26,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestImage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'printImage'.",
+        "code": "wfJD",
+        "evidence": "printImage: function() {},",
+        "line": 27,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'printImage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'enlargeImage'.",
+        "code": "wfJD",
+        "evidence": "enlargeImage: function() {},",
+        "line": 28,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'enlargeImage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'downloadImage'.",
+        "code": "wfJD",
+        "evidence": "downloadImage: function() {},",
+        "line": 29,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'downloadImage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'createPdfOfImage'.",
+        "code": "wfJD",
+        "evidence": "createPdfOfImage: function() {},",
+        "line": 30,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'createPdfOfImage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'seeTransactionDetails'.",
+        "code": "wfJD",
+        "evidence": "seeTransactionDetails: function() {},",
+        "line": 31,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'seeTransactionDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'sortTransactions'.",
+        "code": "wfJD",
+        "evidence": "sortTransactions: function() {}",
+        "line": 32,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'sortTransactions'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/myAccounts/ddaAccountActivityAllTransactions.js",
+  "folderPath": "test-source/js/component/myAccounts",
+  "fileName": "ddaAccountActivityAllTransactions.js",
+  "packagePath": "/js/component/myAccounts",
+  "webPath": "/js/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "dda_account_activity_all_transactions",
+  "name": "ddaAccountActivityAllTransactions",
+  "camelName": "DdaAccountActivityAllTransactions",
+  "processedFilePath": "test-output/js/component/myAccounts/ddaAccountActivityAllTransactions.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 34,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1153,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./ddaAccountActivityAllTransactions",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "requestAccountActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountActivity: function(inputData) {"
+      },
+      {
+        "name": "requestImage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 26,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestImage: function() {},"
+      },
+      {
+        "name": "printImage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 27,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "printImage: function() {},"
+      },
+      {
+        "name": "enlargeImage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 28,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "enlargeImage: function() {},"
+      },
+      {
+        "name": "downloadImage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 29,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "downloadImage: function() {},"
+      },
+      {
+        "name": "createPdfOfImage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 30,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "createPdfOfImage: function() {},"
+      },
+      {
+        "name": "seeTransactionDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 31,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "seeTransactionDetails: function() {},"
+      },
+      {
+        "name": "sortTransactions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 32,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "sortTransactions: function() {}"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
+    "fileName": "ddaAccountActivityAllTransactions.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 66
+}

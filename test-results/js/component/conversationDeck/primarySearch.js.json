@@ -1,0 +1,594 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "primary_search",
+      "AMD": true,
+      "webPath": "/js/component/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 22,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateInputText'.",
+        "code": "wfJD",
+        "evidence": "updateInputText: function(data) {",
+        "line": 39,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateInputText'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideTypeAheadSearchSuggestions'.",
+        "code": "wfJD",
+        "evidence": "hideTypeAheadSearchSuggestions: function(data) {",
+        "line": 49,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideTypeAheadSearchSuggestions'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideSearchOptions'.",
+        "code": "wfJD",
+        "evidence": "hideSearchOptions: function(data) {",
+        "line": 65,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideSearchOptions'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setDefaultState'.",
+        "code": "wfJD",
+        "evidence": "setDefaultState: function() {",
+        "line": 83,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setDefaultState'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestDefaultSearchOptionsResult'.",
+        "code": "wfJD",
+        "evidence": "requestDefaultSearchOptionsResult: function(event) {",
+        "line": 96,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestDefaultSearchOptionsResult'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestDefaultSearchOptions'.",
+        "code": "wfJD",
+        "evidence": "requestDefaultSearchOptions: function() {",
+        "line": 108,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestDefaultSearchOptions'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestSearchResults'.",
+        "code": "wfJD",
+        "evidence": "requestSearchResults: function() {",
+        "line": 129,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestSearchResults'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestTypeAheadSearchOptions'.",
+        "code": "wfJD",
+        "evidence": "requestTypeAheadSearchOptions: function(data) {",
+        "line": 139,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestTypeAheadSearchOptions'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'clearSearchFor'.",
+        "code": "wfJD",
+        "evidence": "clearSearchFor: function() {",
+        "line": 236,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'clearSearchFor'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideSearchOptionsContainer'.",
+        "code": "wfJD",
+        "evidence": "hideSearchOptionsContainer: function() {",
+        "line": 253,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideSearchOptionsContainer'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showSearchOptions'.",
+        "code": "wfJD",
+        "evidence": "showSearchOptions: function() {",
+        "line": 265,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showSearchOptions'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideDefaultSearchOptions'.",
+        "code": "wfJD",
+        "evidence": "hideDefaultSearchOptions: function() {",
+        "line": 276,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideDefaultSearchOptions'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showDefaultSearchOptions'.",
+        "code": "wfJD",
+        "evidence": "showDefaultSearchOptions: function() {",
+        "line": 286,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showDefaultSearchOptions'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'expandSearchComponent'.",
+        "code": "wfJD",
+        "evidence": "expandSearchComponent: function() {",
+        "line": 321,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'expandSearchComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'shrinkSearchComponent'.",
+        "code": "wfJD",
+        "evidence": "shrinkSearchComponent: function() {",
+        "line": 332,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'shrinkSearchComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showSearchAdvisory'.",
+        "code": "wfJD",
+        "evidence": "showSearchAdvisory: function(isSearchException) {",
+        "line": 345,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showSearchAdvisory'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideSearchAdvisory'.",
+        "code": "wfJD",
+        "evidence": "hideSearchAdvisory: function() {",
+        "line": 376,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideSearchAdvisory'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handleSearchInputException'.",
+        "code": "wfJD",
+        "evidence": "handleSearchInputException: function() {",
+        "line": 387,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handleSearchInputException'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setFocus'.",
+        "code": "wfJD",
+        "evidence": "setFocus: function(item) {",
+        "line": 397,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setFocus'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'invokeCVInitService'.",
+        "code": "wfJD",
+        "evidence": "invokeCVInitService: function(showDefaultSearchOptions) {",
+        "line": 411,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'invokeCVInitService'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideDefaultSearchOptionsIfOpen'.",
+        "code": "wfJD",
+        "evidence": "hideDefaultSearchOptionsIfOpen: function(data) {",
+        "line": 450,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideDefaultSearchOptionsIfOpen'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/conversationDeck/primarySearch.js",
+  "folderPath": "test-source/js/component/conversationDeck",
+  "fileName": "primarySearch.js",
+  "packagePath": "/js/component/conversationDeck",
+  "webPath": "/js/component/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "primary_search",
+  "name": "primarySearch",
+  "camelName": "PrimarySearch",
+  "processedFilePath": "test-output/js/component/conversationDeck/primarySearch.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 460,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 16246,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./primarySearch",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 22,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "updateInputText",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 39,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "updateInputText: function(data) {"
+      },
+      {
+        "name": "hideTypeAheadSearchSuggestions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 49,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "hideTypeAheadSearchSuggestions: function(data) {"
+      },
+      {
+        "name": "hideSearchOptions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 65,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "hideSearchOptions: function(data) {"
+      },
+      {
+        "name": "setDefaultState",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 83,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setDefaultState: function() {"
+      },
+      {
+        "name": "requestDefaultSearchOptionsResult",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 96,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "event"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestDefaultSearchOptionsResult: function(event) {"
+      },
+      {
+        "name": "requestDefaultSearchOptions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 108,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestDefaultSearchOptions: function() {"
+      },
+      {
+        "name": "requestSearchResults",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 129,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestSearchResults: function() {"
+      },
+      {
+        "name": "requestTypeAheadSearchOptions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 139,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "requestTypeAheadSearchOptions: function(data) {"
+      },
+      {
+        "name": "clearSearchFor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 236,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "clearSearchFor: function() {"
+      },
+      {
+        "name": "hideSearchOptionsContainer",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 253,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "hideSearchOptionsContainer: function() {"
+      },
+      {
+        "name": "showSearchOptions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 265,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "showSearchOptions: function() {"
+      },
+      {
+        "name": "hideDefaultSearchOptions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 276,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "hideDefaultSearchOptions: function() {"
+      },
+      {
+        "name": "showDefaultSearchOptions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 286,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "showDefaultSearchOptions: function() {"
+      },
+      {
+        "name": "expandSearchComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 321,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "expandSearchComponent: function() {"
+      },
+      {
+        "name": "shrinkSearchComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 332,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "shrinkSearchComponent: function() {"
+      },
+      {
+        "name": "showSearchAdvisory",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 345,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "isSearchException"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "showSearchAdvisory: function(isSearchException) {"
+      },
+      {
+        "name": "hideSearchAdvisory",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 376,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "hideSearchAdvisory: function() {"
+      },
+      {
+        "name": "handleSearchInputException",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 387,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "handleSearchInputException: function() {"
+      },
+      {
+        "name": "setFocus",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 397,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "item"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setFocus: function(item) {"
+      },
+      {
+        "name": "invokeCVInitService",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 411,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "showDefaultSearchOptions"
+        ],
+        "description": "",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "invokeCVInitService: function(showDefaultSearchOptions) {"
+      },
+      {
+        "name": "hideDefaultSearchOptionsIfOpen",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 450,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "hideDefaultSearchOptionsIfOpen: function(data) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/conversationDeck",
+    "fileName": "primarySearch.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 395
+}

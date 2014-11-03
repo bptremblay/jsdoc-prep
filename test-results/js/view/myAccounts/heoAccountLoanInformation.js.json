@@ -1,0 +1,113 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "heo_account_loan_information",
+      "AMD": true,
+      "webPath": "/js/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'heoAccountLoanInformationView'.",
+        "code": "wfJD",
+        "evidence": "return function heoAccountLoanInformationView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'heoAccountLoanInformationView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/myAccounts/heoAccountLoanInformation.js",
+  "folderPath": "test-source/js/view/myAccounts",
+  "fileName": "heoAccountLoanInformation.js",
+  "packagePath": "/js/view/myAccounts",
+  "webPath": "/js/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "heo_account_loan_information",
+  "name": "heoAccountLoanInformation",
+  "camelName": "HeoAccountLoanInformation",
+  "processedFilePath": "test-output/js/view/myAccounts/heoAccountLoanInformation.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 16,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 436,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./heoAccountLoanInformation",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "heoAccountLoanInformationView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function heoAccountLoanInformationView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/myAccounts",
+    "fileName": "heoAccountLoanInformation.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 17
+}

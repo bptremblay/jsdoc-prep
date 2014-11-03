@@ -1,0 +1,89 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "manage_funding_accounts_menu",
+      "AMD": true,
+      "webPath": "/js/spec/payments/manageFundingAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [
+      {
+        "id": "(error)",
+        "raw": "jsDoc tag error.",
+        "code": "wfJD",
+        "evidence": "/*define([], function() { return {",
+        "line": 0,
+        "character": 0,
+        "scope": "(main)",
+        "a": "",
+        "reason": "jsDoc tag error: Comment at top of file begins with /*, not /**."
+      }
+    ],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/spec/payments/manageFundingAccounts/manage_funding_accounts_menu.js",
+  "folderPath": "test-source/js/spec/payments/manageFundingAccounts",
+  "fileName": "manage_funding_accounts_menu.js",
+  "packagePath": "/js/spec/payments/manageFundingAccounts",
+  "webPath": "/js/spec/payments/manageFundingAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "manage_funding_accounts_menu",
+  "name": "manage_funding_accounts_menu",
+  "camelName": "ManageFundingAccountsMenu",
+  "processedFilePath": "test-output/js/spec/payments/manageFundingAccounts/manage_funding_accounts_menu.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 37,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/spec/payments/manageFundingAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 738,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./manage_funding_accounts_menu",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/spec/payments/manageFundingAccounts",
+    "fileName": "manage_funding_accounts_menu.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 35
+}

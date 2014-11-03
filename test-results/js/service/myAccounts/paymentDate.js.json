@@ -1,0 +1,101 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "payment_date",
+      "AMD": true,
+      "webPath": "/js/service/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'paymentDateService'.",
+        "code": "wfJD",
+        "evidence": "return function paymentDateService() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'paymentDateService'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/service/myAccounts/paymentDate.js",
+  "folderPath": "test-source/js/service/myAccounts",
+  "fileName": "paymentDate.js",
+  "packagePath": "/js/service/myAccounts",
+  "webPath": "/js/service/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "payment_date",
+  "name": "paymentDate",
+  "camelName": "PaymentDate",
+  "processedFilePath": "test-output/js/service/myAccounts/paymentDate.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 18,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 367,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./paymentDate",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "paymentDateService",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function paymentDateService() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/myAccounts",
+    "fileName": "paymentDate.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 24
+}

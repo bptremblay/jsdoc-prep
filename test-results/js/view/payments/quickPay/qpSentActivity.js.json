@@ -1,0 +1,122 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "qp_sent_activity",
+      "AMD": true,
+      "webPath": "/js/view/payments/quickPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'SentActivityView'.",
+        "code": "wfJD",
+        "evidence": "return function SentActivityView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'SentActivityView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {};",
+        "line": 24,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/payments/quickPay/qpSentActivity.js",
+  "folderPath": "test-source/js/view/payments/quickPay",
+  "fileName": "qpSentActivity.js",
+  "packagePath": "/js/view/payments/quickPay",
+  "webPath": "/js/view/payments/quickPay",
+  "libFile": false,
+  "min": false,
+  "realName": "qp_sent_activity",
+  "name": "qp_sent_activity",
+  "camelName": "QpSentActivity",
+  "processedFilePath": "test-output/js/view/payments/quickPay/qpSentActivity.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 26,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/quickPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 888,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./qpSentActivity",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "SentActivityView": 393
+    },
+    "methods": [
+      {
+        "name": "SentActivityView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function SentActivityView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 24,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {};"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/quickPay",
+    "fileName": "qpSentActivity.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 28
+}

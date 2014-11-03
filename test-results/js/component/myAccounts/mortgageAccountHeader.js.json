@@ -1,0 +1,203 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "mortgage_account_header",
+      "AMD": true,
+      "webPath": "/js/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAutomaticPaymentsDetails'.",
+        "code": "wfJD",
+        "evidence": "requestAutomaticPaymentsDetails: function() {},",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAutomaticPaymentsDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestPaperlessStatementsDetails'.",
+        "code": "wfJD",
+        "evidence": "requestPaperlessStatementsDetails: function() {},",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestPaperlessStatementsDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'enrollForAutomaticPayments'.",
+        "code": "wfJD",
+        "evidence": "enrollForAutomaticPayments: function() {},",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'enrollForAutomaticPayments'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'enrollForPaperlessStatements'.",
+        "code": "wfJD",
+        "evidence": "enrollForPaperlessStatements: function() {},",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'enrollForPaperlessStatements'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountHeaderDetails'.",
+        "code": "wfJD",
+        "evidence": "requestAccountHeaderDetails: function(inputData, detailsData) {",
+        "line": 12,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountHeaderDetails'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/myAccounts/mortgageAccountHeader.js",
+  "folderPath": "test-source/js/component/myAccounts",
+  "fileName": "mortgageAccountHeader.js",
+  "packagePath": "/js/component/myAccounts",
+  "webPath": "/js/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "mortgage_account_header",
+  "name": "mortgageAccountHeader",
+  "camelName": "MortgageAccountHeader",
+  "processedFilePath": "test-output/js/component/myAccounts/mortgageAccountHeader.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 62,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 2513,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mortgageAccountHeader",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "requestAutomaticPaymentsDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAutomaticPaymentsDetails: function() {},"
+      },
+      {
+        "name": "requestPaperlessStatementsDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestPaperlessStatementsDetails: function() {},"
+      },
+      {
+        "name": "enrollForAutomaticPayments",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "enrollForAutomaticPayments: function() {},"
+      },
+      {
+        "name": "enrollForPaperlessStatements",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "enrollForPaperlessStatements: function() {},"
+      },
+      {
+        "name": "requestAccountHeaderDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 12,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData",
+          "detailsData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountHeaderDetails: function(inputData, detailsData) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
+    "fileName": "mortgageAccountHeader.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 83
+}

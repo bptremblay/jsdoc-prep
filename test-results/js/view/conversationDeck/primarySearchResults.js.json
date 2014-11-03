@@ -1,0 +1,152 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "primary_search_results",
+      "AMD": true,
+      "webPath": "/js/view/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'PrimarySearchResultsView'.",
+        "code": "wfJD",
+        "evidence": "return function PrimarySearchResultsView() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'PrimarySearchResultsView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setFocus'.",
+        "code": "wfJD",
+        "evidence": "this.setFocus = function(data) {",
+        "line": 47,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setFocus'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/conversationDeck/primarySearchResults.js",
+  "folderPath": "test-source/js/view/conversationDeck",
+  "fileName": "primarySearchResults.js",
+  "packagePath": "/js/view/conversationDeck",
+  "webPath": "/js/view/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "primary_search_results",
+  "name": "primarySearchResults",
+  "camelName": "PrimarySearchResults",
+  "processedFilePath": "test-output/js/view/conversationDeck/primarySearchResults.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 60,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 2092,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./primarySearchResults",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "PrimarySearchResultsView": 1349
+    },
+    "methods": [
+      {
+        "name": "PrimarySearchResultsView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function PrimarySearchResultsView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "setFocus",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 47,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.setFocus = function(data) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/conversationDeck",
+    "fileName": "primarySearchResults.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 60
+}

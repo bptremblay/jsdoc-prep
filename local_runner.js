@@ -45,7 +45,7 @@ function healthCheckCallback(healthCheckResults) {
     });
   }
 
-  //runJsDoc('/Users/f558910/Documents/Projects/jsdoc-prep/test-output');
+  runJsDoc('/Users/f558910/Documents/Projects/jsdoc-prep/test-output');
 }
 
 
@@ -61,9 +61,9 @@ var processingChain = [
   'jsBeautifyProc',
   'amdProc',
   'jsDoccerProc',
-  //'jsDocNameFixerProc',
-  //'fixClassDeclarationsProc',
-  //'jsDoc3PrepProc',
+  'jsDocNameFixerProc',
+  'fixClassDeclarationsProc',
+  'jsDoc3PrepProc',
   //'trimProc',
   'jsBeautifyProc'
   ];
@@ -92,7 +92,7 @@ var opts = {
   processingChain: processingChain
 };
 
-var justDoc = false;
+var justDoc = true;
 
 if (justDoc) {
   healthCheckCallback({});

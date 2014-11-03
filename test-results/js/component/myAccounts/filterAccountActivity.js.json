@@ -1,0 +1,194 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "filter_account_activity",
+      "AMD": true,
+      "webPath": "/js/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 4,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'applyFilter'.",
+        "code": "wfJD",
+        "evidence": "applyFilter: function() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'applyFilter'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exitFilter'.",
+        "code": "wfJD",
+        "evidence": "exitFilter: function() {",
+        "line": 27,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exitFilter'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'closeTransactionDateRangeAdvisory'.",
+        "code": "wfJD",
+        "evidence": "closeTransactionDateRangeAdvisory: function() {",
+        "line": 30,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'closeTransactionDateRangeAdvisory'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateTransactionFilterDateBasedOnSelectedTimeframe'.",
+        "code": "wfJD",
+        "evidence": "updateTransactionFilterDateBasedOnSelectedTimeframe: function(event) {",
+        "line": 37,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateTransactionFilterDateBasedOnSelectedTimeframe'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/myAccounts/filterAccountActivity.js",
+  "folderPath": "test-source/js/component/myAccounts",
+  "fileName": "filterAccountActivity.js",
+  "packagePath": "/js/component/myAccounts",
+  "webPath": "/js/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "filter_account_activity",
+  "name": "filterAccountActivity",
+  "camelName": "FilterAccountActivity",
+  "processedFilePath": "test-output/js/component/myAccounts/filterAccountActivity.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 47,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1699,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./filterAccountActivity",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "applyFilter",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "applyFilter: function() {"
+      },
+      {
+        "name": "exitFilter",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 27,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exitFilter: function() {"
+      },
+      {
+        "name": "closeTransactionDateRangeAdvisory",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 30,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "closeTransactionDateRangeAdvisory: function() {"
+      },
+      {
+        "name": "updateTransactionFilterDateBasedOnSelectedTimeframe",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 37,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "event"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "updateTransactionFilterDateBasedOnSelectedTimeframe: function(event) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
+    "fileName": "filterAccountActivity.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 65
+}

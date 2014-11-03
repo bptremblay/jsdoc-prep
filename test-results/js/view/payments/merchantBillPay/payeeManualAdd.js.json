@@ -1,0 +1,148 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "payee_manual_add",
+      "AMD": true,
+      "webPath": "/js/view/payments/merchantBillPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'payeeManualAdd'.",
+        "code": "wfJD",
+        "evidence": "return function payeeManualAdd() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'payeeManualAdd'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 43,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setAccountNumberOptions'.",
+        "code": "wfJD",
+        "evidence": "this.setAccountNumberOptions = function(accountNumberAvailable) {",
+        "line": 55,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setAccountNumberOptions'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/payments/merchantBillPay/payeeManualAdd.js",
+  "folderPath": "test-source/js/view/payments/merchantBillPay",
+  "fileName": "payeeManualAdd.js",
+  "packagePath": "/js/view/payments/merchantBillPay",
+  "webPath": "/js/view/payments/merchantBillPay",
+  "libFile": false,
+  "min": false,
+  "realName": "payee_manual_add",
+  "name": "payee_manual_add",
+  "camelName": "PayeeManualAdd",
+  "processedFilePath": "test-output/js/view/payments/merchantBillPay/payeeManualAdd.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 82,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/merchantBillPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 3096,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./payeeManualAdd",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "payeeManualAdd",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "return function payeeManualAdd() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 43,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "setAccountNumberOptions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 55,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "accountNumberAvailable"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.setAccountNumberOptions = function(accountNumberAvailable) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/merchantBillPay",
+    "fileName": "payeeManualAdd.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 79
+}

@@ -1,0 +1,224 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "mailing_address_addition_verification",
+      "AMD": true,
+      "webPath": "/js/component/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {},",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'addAddress'.",
+        "code": "wfJD",
+        "evidence": "addAddress: function(eventData) {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'addAddress'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'doNotAddAddress'.",
+        "code": "wfJD",
+        "evidence": "doNotAddAddress: function() {",
+        "line": 32,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'doNotAddAddress'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_addAddressSuccessCallback'.",
+        "code": "wfJD",
+        "evidence": "_addAddressSuccessCallback: function(data, isEdit) {",
+        "line": 40,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_addAddressSuccessCallback'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_addAddressFailureCallback'.",
+        "code": "wfJD",
+        "evidence": "_addAddressFailureCallback: function() {",
+        "line": 52,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_addAddressFailureCallback'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_addAddressErrorCallback'.",
+        "code": "wfJD",
+        "evidence": "_addAddressErrorCallback: function() {",
+        "line": 61,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_addAddressErrorCallback'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/myProfile/mailingAddressAdditionVerification.js",
+  "folderPath": "test-source/js/component/myProfile",
+  "fileName": "mailingAddressAdditionVerification.js",
+  "packagePath": "/js/component/myProfile",
+  "webPath": "/js/component/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "mailing_address_addition_verification",
+  "name": "mailingAddressAdditionVerification",
+  "camelName": "MailingAddressAdditionVerification",
+  "processedFilePath": "test-output/js/component/myProfile/mailingAddressAdditionVerification.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 66,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 2448,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mailingAddressAdditionVerification",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "_addAddressSuccessCallback": 882,
+      "_addAddressFailureCallback": 920,
+      "_addAddressErrorCallback": 930
+    },
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {},"
+      },
+      {
+        "name": "addAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "eventData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "addAddress: function(eventData) {"
+      },
+      {
+        "name": "doNotAddAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 32,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "doNotAddAddress: function() {"
+      },
+      {
+        "name": "_addAddressSuccessCallback",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 40,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data",
+          "isEdit"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "_addAddressSuccessCallback: function(data, isEdit) {"
+      },
+      {
+        "name": "_addAddressFailureCallback",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 52,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "_addAddressFailureCallback: function() {"
+      },
+      {
+        "name": "_addAddressErrorCallback",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 61,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "_addAddressErrorCallback: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myProfile",
+    "fileName": "mailingAddressAdditionVerification.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 84
+}

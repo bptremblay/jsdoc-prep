@@ -1,0 +1,175 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "accounts",
+      "AMD": true,
+      "webPath": "/js/controller/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'AccountsController'.",
+        "code": "wfJD",
+        "evidence": "return function AccountsController() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'AccountsController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'index'.",
+        "code": "wfJD",
+        "evidence": "this.index = function(params) {",
+        "line": 67,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'index'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountSummaryInfo'.",
+        "code": "wfJD",
+        "evidence": "this.requestAccountSummaryInfo = function(account) {",
+        "line": 168,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountSummaryInfo'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/myAccounts/accounts.js",
+  "folderPath": "test-source/js/controller/myAccounts",
+  "fileName": "accounts.js",
+  "packagePath": "/js/controller/myAccounts",
+  "webPath": "/js/controller/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "accounts",
+  "name": "accounts",
+  "camelName": "Accounts",
+  "processedFilePath": "test-output/js/controller/myAccounts/accounts.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 187,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 6994,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./accounts",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "AccountsController": 3977
+    },
+    "methods": [
+      {
+        "name": "AccountsController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function AccountsController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 67,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "params"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.index = function(params) {"
+      },
+      {
+        "name": "requestAccountSummaryInfo",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 168,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "account"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.requestAccountSummaryInfo = function(account) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myAccounts",
+    "fileName": "accounts.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 174
+}

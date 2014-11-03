@@ -1,0 +1,106 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "status_code_mapper",
+      "AMD": true,
+      "webPath": "/js/service"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getAccountsMessage'.",
+        "code": "wfJD",
+        "evidence": "getAccountsMessage: function(name, lang) {",
+        "line": 117,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getAccountsMessage'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/service/statusCodeMapper.js",
+  "folderPath": "test-source/js/service",
+  "fileName": "statusCodeMapper.js",
+  "packagePath": "/js/service",
+  "webPath": "/js/service",
+  "libFile": false,
+  "min": false,
+  "realName": "status_code_mapper",
+  "name": "statusCodeMapper",
+  "camelName": "StatusCodeMapper",
+  "processedFilePath": "test-output/js/service/statusCodeMapper.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 128,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 5718,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./statusCodeMapper",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "getAccountsMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 117,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "name",
+          "lang"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getAccountsMessage: function(name, lang) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service",
+    "fileName": "statusCodeMapper.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 133
+}

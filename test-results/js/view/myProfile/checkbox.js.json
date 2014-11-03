@@ -1,0 +1,100 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "checkbox",
+      "AMD": true,
+      "webPath": "/js/view/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'CheckBoxView'.",
+        "code": "wfJD",
+        "evidence": "return function CheckBoxView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'CheckBoxView'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/myProfile/checkbox.js",
+  "folderPath": "test-source/js/view/myProfile",
+  "fileName": "checkbox.js",
+  "packagePath": "/js/view/myProfile",
+  "webPath": "/js/view/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "checkbox",
+  "name": "checkbox",
+  "camelName": "Checkbox",
+  "processedFilePath": "test-output/js/view/myProfile/checkbox.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 5,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 139,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./checkbox",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "CheckBoxView": 75
+    },
+    "methods": [
+      {
+        "name": "CheckBoxView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function CheckBoxView() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/myProfile",
+    "fileName": "checkbox.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 9
+}

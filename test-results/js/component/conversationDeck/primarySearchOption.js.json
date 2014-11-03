@@ -1,0 +1,151 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "primary_search_option",
+      "AMD": true,
+      "webPath": "/js/component/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'selectSearchOption'.",
+        "code": "wfJD",
+        "evidence": "selectSearchOption: function(data) {",
+        "line": 22,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'selectSearchOption'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideSearchOptions'.",
+        "code": "wfJD",
+        "evidence": "hideSearchOptions: function(data) {",
+        "line": 39,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideSearchOptions'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/conversationDeck/primarySearchOption.js",
+  "folderPath": "test-source/js/component/conversationDeck",
+  "fileName": "primarySearchOption.js",
+  "packagePath": "/js/component/conversationDeck",
+  "webPath": "/js/component/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "primary_search_option",
+  "name": "primarySearchOption",
+  "camelName": "PrimarySearchOption",
+  "processedFilePath": "test-output/js/component/conversationDeck/primarySearchOption.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 61,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1836,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./primarySearchOption",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "selectSearchOption",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 22,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "selectSearchOption: function(data) {"
+      },
+      {
+        "name": "hideSearchOptions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 39,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "hideSearchOptions: function(data) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/conversationDeck",
+    "fileName": "primarySearchOption.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 62
+}

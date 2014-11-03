@@ -1,0 +1,268 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "server_validation_status_interceptor",
+      "AMD": true,
+      "webPath": "/js/controller/interceptor"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'serverValidationStatusInterceptor'.",
+        "code": "wfJD",
+        "evidence": "around: function serverValidationStatusInterceptor(joinpoint) {",
+        "line": 52,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'serverValidationStatusInterceptor'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isRedirectStatus'.",
+        "code": "wfJD",
+        "evidence": "function isRedirectStatus(status) {",
+        "line": 107,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isRedirectStatus'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handleRedirect'.",
+        "code": "wfJD",
+        "evidence": "function handleRedirect(resolve, reject, settings, response) {",
+        "line": 118,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handleRedirect'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handleSuccess'.",
+        "code": "wfJD",
+        "evidence": "function handleSuccess(resolve, reject, settings, response, data) {",
+        "line": 160,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handleSuccess'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handleError'.",
+        "code": "wfJD",
+        "evidence": "function handleError(resolve, reject, settings, response) {",
+        "line": 174,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handleError'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'toNumber'.",
+        "code": "wfJD",
+        "evidence": "function toNumber(val) {",
+        "line": 189,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'toNumber'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'toString'.",
+        "code": "wfJD",
+        "evidence": "function toString(val) {",
+        "line": 193,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'toString'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/interceptor/serverValidationStatusInterceptor.js",
+  "folderPath": "test-source/js/controller/interceptor",
+  "fileName": "serverValidationStatusInterceptor.js",
+  "packagePath": "/js/controller/interceptor",
+  "webPath": "/js/controller/interceptor",
+  "libFile": false,
+  "min": false,
+  "realName": "server_validation_status_interceptor",
+  "name": "serverValidationStatusInterceptor",
+  "camelName": "ServerValidationStatusInterceptor",
+  "processedFilePath": "test-output/js/controller/interceptor/serverValidationStatusInterceptor.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 197,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/interceptor",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 7660,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./serverValidationStatusInterceptor",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "serverValidationStatusInterceptor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 52,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "joinpoint"
+        ],
+        "description": "",
+        "return": "resultPromise",
+        "classDeclarationFlag": false,
+        "line": "around: function serverValidationStatusInterceptor(joinpoint) {"
+      },
+      {
+        "name": "isRedirectStatus",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 107,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "status"
+        ],
+        "description": "",
+        "return": "boolean",
+        "classDeclarationFlag": false,
+        "line": "function isRedirectStatus(status) {"
+      },
+      {
+        "name": "handleRedirect",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 118,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "resolve",
+          "reject",
+          "settings",
+          "response"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function handleRedirect(resolve, reject, settings, response) {"
+      },
+      {
+        "name": "handleSuccess",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 160,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "resolve",
+          "reject",
+          "settings",
+          "response",
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function handleSuccess(resolve, reject, settings, response, data) {"
+      },
+      {
+        "name": "handleError",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 174,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "resolve",
+          "reject",
+          "settings",
+          "response"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function handleError(resolve, reject, settings, response) {"
+      },
+      {
+        "name": "toNumber",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 189,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "val"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function toNumber(val) {"
+      },
+      {
+        "name": "toString",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 193,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "val"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function toString(val) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/interceptor",
+    "fileName": "serverValidationStatusInterceptor.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 221
+}

@@ -1,0 +1,197 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "qp_enroll_verify",
+      "AMD": true,
+      "webPath": "/js/view/payments/quickPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'EnrollVerifyView'.",
+        "code": "wfJD",
+        "evidence": "return function EnrollVerifyView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'EnrollVerifyView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 32,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getElementData'.",
+        "code": "wfJD",
+        "evidence": "this.getElementData = function(fieldValue) {",
+        "line": 50,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getElementData'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'displayVerify'.",
+        "code": "wfJD",
+        "evidence": "this.displayVerify = function(data) {",
+        "line": 66,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'displayVerify'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideOverlay'.",
+        "code": "wfJD",
+        "evidence": "this.hideOverlay = function() {",
+        "line": 90,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideOverlay'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/payments/quickPay/qpEnrollVerify.js",
+  "folderPath": "test-source/js/view/payments/quickPay",
+  "fileName": "qpEnrollVerify.js",
+  "packagePath": "/js/view/payments/quickPay",
+  "webPath": "/js/view/payments/quickPay",
+  "libFile": false,
+  "min": false,
+  "realName": "qp_enroll_verify",
+  "name": "qp_enroll_verify",
+  "camelName": "QpEnrollVerify",
+  "processedFilePath": "test-output/js/view/payments/quickPay/qpEnrollVerify.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 95,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/quickPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 3351,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./qpEnrollVerify",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "EnrollVerifyView": 2155
+    },
+    "methods": [
+      {
+        "name": "EnrollVerifyView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function EnrollVerifyView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 32,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "getElementData",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 50,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "fieldValue"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "this.getElementData = function(fieldValue) {"
+      },
+      {
+        "name": "displayVerify",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 66,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.displayVerify = function(data) {"
+      },
+      {
+        "name": "hideOverlay",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 90,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.hideOverlay = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/quickPay",
+    "fileName": "qpEnrollVerify.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 100
+}

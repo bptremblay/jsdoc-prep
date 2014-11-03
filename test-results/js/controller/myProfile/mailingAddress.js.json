@@ -1,0 +1,491 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "mailing_address",
+      "AMD": true,
+      "webPath": "/js/controller/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MailingAddressController'.",
+        "code": "wfJD",
+        "evidence": "return function MailingAddressController() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MailingAddressController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 82,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'listAddress'.",
+        "code": "wfJD",
+        "evidence": "this.listAddress = function(additionalInfo) {",
+        "line": 137,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'listAddress'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'createAddressContainer'.",
+        "code": "wfJD",
+        "evidence": "this.createAddressContainer = function(data) {",
+        "line": 167,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'createAddressContainer'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'insertAddressListContainerComponent'.",
+        "code": "wfJD",
+        "evidence": "this.insertAddressListContainerComponent = function(data) {",
+        "line": 187,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'insertAddressListContainerComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'insertAddressHeaderComponent'.",
+        "code": "wfJD",
+        "evidence": "this.insertAddressHeaderComponent = function(data) {",
+        "line": 207,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'insertAddressHeaderComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'insertAddressComponents'.",
+        "code": "wfJD",
+        "evidence": "this.insertAddressComponents = function(data) {",
+        "line": 268,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'insertAddressComponents'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideConfirmationModal'.",
+        "code": "wfJD",
+        "evidence": "this.hideConfirmationModal = function() {",
+        "line": 373,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideConfirmationModal'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'registerConfirmationModal'.",
+        "code": "wfJD",
+        "evidence": "this.registerConfirmationModal = function() {",
+        "line": 377,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'registerConfirmationModal'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'insertConfirmationModal'.",
+        "code": "wfJD",
+        "evidence": "this.insertConfirmationModal = function() {",
+        "line": 395,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'insertConfirmationModal'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'insertContentIntoModal'.",
+        "code": "wfJD",
+        "evidence": "this.insertContentIntoModal = function(options) {",
+        "line": 411,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'insertContentIntoModal'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showDeleteAddressConfirmation'.",
+        "code": "wfJD",
+        "evidence": "this.showDeleteAddressConfirmation = function(data) {",
+        "line": 425,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showDeleteAddressConfirmation'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showAddressAdditionVerificationModal'.",
+        "code": "wfJD",
+        "evidence": "this.showAddressAdditionVerificationModal = function(data) {",
+        "line": 462,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showAddressAdditionVerificationModal'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideAddressAdditionVerificationModal'.",
+        "code": "wfJD",
+        "evidence": "this.hideAddressAdditionVerificationModal = function(data) {",
+        "line": 488,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideAddressAdditionVerificationModal'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showMailingAddressForm'.",
+        "code": "wfJD",
+        "evidence": "this.showMailingAddressForm = function(data) {",
+        "line": 493,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showMailingAddressForm'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'changeMailingAddress'.",
+        "code": "wfJD",
+        "evidence": "this.changeMailingAddress = function(addressData) {",
+        "line": 546,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'changeMailingAddress'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'insertDatePickerComponent'.",
+        "code": "wfJD",
+        "evidence": "this.insertDatePickerComponent = function(options) {",
+        "line": 563,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'insertDatePickerComponent'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/myProfile/mailingAddress.js",
+  "folderPath": "test-source/js/controller/myProfile",
+  "fileName": "mailingAddress.js",
+  "packagePath": "/js/controller/myProfile",
+  "webPath": "/js/controller/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "mailing_address",
+  "name": "mailingAddress",
+  "camelName": "MailingAddress",
+  "processedFilePath": "test-output/js/controller/myProfile/mailingAddress.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 584,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 23887,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mailingAddress",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "MailingAddressController": 11885
+    },
+    "methods": [
+      {
+        "name": "MailingAddressController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function MailingAddressController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 82,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "listAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 137,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "additionalInfo"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.listAddress = function(additionalInfo) {"
+      },
+      {
+        "name": "createAddressContainer",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 167,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.createAddressContainer = function(data) {"
+      },
+      {
+        "name": "insertAddressListContainerComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 187,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.insertAddressListContainerComponent = function(data) {"
+      },
+      {
+        "name": "insertAddressHeaderComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 207,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.insertAddressHeaderComponent = function(data) {"
+      },
+      {
+        "name": "insertAddressComponents",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 268,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.insertAddressComponents = function(data) {"
+      },
+      {
+        "name": "hideConfirmationModal",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 373,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.hideConfirmationModal = function() {"
+      },
+      {
+        "name": "registerConfirmationModal",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 377,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.registerConfirmationModal = function() {"
+      },
+      {
+        "name": "insertConfirmationModal",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 395,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.insertConfirmationModal = function() {"
+      },
+      {
+        "name": "insertContentIntoModal",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 411,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "options"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.insertContentIntoModal = function(options) {"
+      },
+      {
+        "name": "showDeleteAddressConfirmation",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 425,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.showDeleteAddressConfirmation = function(data) {"
+      },
+      {
+        "name": "showAddressAdditionVerificationModal",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 462,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.showAddressAdditionVerificationModal = function(data) {"
+      },
+      {
+        "name": "hideAddressAdditionVerificationModal",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 488,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.hideAddressAdditionVerificationModal = function(data) {"
+      },
+      {
+        "name": "showMailingAddressForm",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 493,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.showMailingAddressForm = function(data) {"
+      },
+      {
+        "name": "changeMailingAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 546,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "addressData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.changeMailingAddress = function(addressData) {"
+      },
+      {
+        "name": "insertDatePickerComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 563,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "options"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.insertDatePickerComponent = function(options) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myProfile",
+    "fileName": "mailingAddress.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 552
+}

@@ -1,0 +1,123 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "prepaid_account_things_you_can_do",
+      "AMD": true,
+      "webPath": "/js/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'prepaidAccountThingsYouCanDoView'.",
+        "code": "wfJD",
+        "evidence": "return function prepaidAccountThingsYouCanDoView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'prepaidAccountThingsYouCanDoView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {};",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/myAccounts/prepaidAccountThingsYouCanDo.js",
+  "folderPath": "test-source/js/view/myAccounts",
+  "fileName": "prepaidAccountThingsYouCanDo.js",
+  "packagePath": "/js/view/myAccounts",
+  "webPath": "/js/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "prepaid_account_things_you_can_do",
+  "name": "prepaidAccountThingsYouCanDo",
+  "camelName": "PrepaidAccountThingsYouCanDo",
+  "processedFilePath": "test-output/js/view/myAccounts/prepaidAccountThingsYouCanDo.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 10,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 327,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./prepaidAccountThingsYouCanDo",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "prepaidAccountThingsYouCanDoView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function prepaidAccountThingsYouCanDoView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {};"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/myAccounts",
+    "fileName": "prepaidAccountThingsYouCanDo.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 13
+}

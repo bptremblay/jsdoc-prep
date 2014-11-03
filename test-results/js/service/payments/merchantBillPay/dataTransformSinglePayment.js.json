@@ -1,0 +1,342 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "data_transform_single_payment",
+      "AMD": true,
+      "webPath": "/js/service/payments/merchantBillPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'SinglePaymentDataTransform'.",
+        "code": "wfJD",
+        "evidence": "return function SinglePaymentDataTransform() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'SinglePaymentDataTransform'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSPPayeeListDataModel'.",
+        "code": "wfJD",
+        "evidence": "this.getSPPayeeListDataModel = function(model, responseData) {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSPPayeeListDataModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSPPaymentOptionsDataModel'.",
+        "code": "wfJD",
+        "evidence": "this.getSPPaymentOptionsDataModel = function(model, responseData) {",
+        "line": 27,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSPPaymentOptionsDataModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSPEnterDataModel'.",
+        "code": "wfJD",
+        "evidence": "this.getSPEnterDataModel = function(model, responseData) {",
+        "line": 53,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSPEnterDataModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSPVerifyDataModel'.",
+        "code": "wfJD",
+        "evidence": "this.getSPVerifyDataModel = function(model, responseData) {",
+        "line": 64,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSPVerifyDataModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSPConfirmDataModel'.",
+        "code": "wfJD",
+        "evidence": "this.getSPConfirmDataModel = function(model, responseData) {",
+        "line": 74,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSPConfirmDataModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSPEnterViewFundAccountModel'.",
+        "code": "wfJD",
+        "evidence": "this.getSPEnterViewFundAccountModel = function(modelRef) {",
+        "line": 85,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSPEnterViewFundAccountModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSPEnterViewModel'.",
+        "code": "wfJD",
+        "evidence": "this.getSPEnterViewModel = function(modelRef) {",
+        "line": 100,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSPEnterViewModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSPVerifyViewModel'.",
+        "code": "wfJD",
+        "evidence": "this.getSPVerifyViewModel = function(modelRef) {",
+        "line": 192,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSPVerifyViewModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSPConfirmViewModel'.",
+        "code": "wfJD",
+        "evidence": "this.getSPConfirmViewModel = function(modelRef) {",
+        "line": 257,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSPConfirmViewModel'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/service/payments/merchantBillPay/dataTransformSinglePayment.js",
+  "folderPath": "test-source/js/service/payments/merchantBillPay",
+  "fileName": "dataTransformSinglePayment.js",
+  "packagePath": "/js/service/payments/merchantBillPay",
+  "webPath": "/js/service/payments/merchantBillPay",
+  "libFile": false,
+  "min": false,
+  "realName": "data_transform_single_payment",
+  "name": "dataTransformSinglePayment",
+  "camelName": "DataTransformSinglePayment",
+  "processedFilePath": "test-output/js/service/payments/merchantBillPay/dataTransformSinglePayment.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 326,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/payments/merchantBillPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 10778,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./dataTransformSinglePayment",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "SinglePaymentDataTransform": 5848
+    },
+    "methods": [
+      {
+        "name": "SinglePaymentDataTransform",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function SinglePaymentDataTransform() {"
+      },
+      {
+        "name": "getSPPayeeListDataModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "model",
+          "responseData"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getSPPayeeListDataModel = function(model, responseData) {"
+      },
+      {
+        "name": "getSPPaymentOptionsDataModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 27,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "model",
+          "responseData"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getSPPaymentOptionsDataModel = function(model, responseData) {"
+      },
+      {
+        "name": "getSPEnterDataModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 53,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "model",
+          "responseData"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getSPEnterDataModel = function(model, responseData) {"
+      },
+      {
+        "name": "getSPVerifyDataModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 64,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "model",
+          "responseData"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getSPVerifyDataModel = function(model, responseData) {"
+      },
+      {
+        "name": "getSPConfirmDataModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 74,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "model",
+          "responseData"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getSPConfirmDataModel = function(model, responseData) {"
+      },
+      {
+        "name": "getSPEnterViewFundAccountModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 85,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "modelRef"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getSPEnterViewFundAccountModel = function(modelRef) {"
+      },
+      {
+        "name": "getSPEnterViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 100,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "modelRef"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getSPEnterViewModel = function(modelRef) {"
+      },
+      {
+        "name": "getSPVerifyViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 192,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "modelRef"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getSPVerifyViewModel = function(modelRef) {"
+      },
+      {
+        "name": "getSPConfirmViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 257,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "modelRef"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getSPConfirmViewModel = function(modelRef) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/payments/merchantBillPay",
+    "fileName": "dataTransformSinglePayment.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 380
+}

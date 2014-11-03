@@ -1,0 +1,299 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "edit_transaction",
+      "AMD": true,
+      "webPath": "/js/component/payments/payeeActivity"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showMerchantBillPayment'.",
+        "code": "wfJD",
+        "evidence": "showMerchantBillPayment: function(data) {",
+        "line": 20,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showMerchantBillPayment'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initiateUpdateMerchantBillPayment'.",
+        "code": "wfJD",
+        "evidence": "initiateUpdateMerchantBillPayment: function(data) {",
+        "line": 76,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initiateUpdateMerchantBillPayment'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'verifyUpdateMerchantBillPayment'.",
+        "code": "wfJD",
+        "evidence": "verifyUpdateMerchantBillPayment: function(data) {",
+        "line": 91,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'verifyUpdateMerchantBillPayment'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'confirmUpdateMerchantBillPayment'.",
+        "code": "wfJD",
+        "evidence": "confirmUpdateMerchantBillPayment: function() {",
+        "line": 130,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'confirmUpdateMerchantBillPayment'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'cancelUpdateMerchantBillPayment'.",
+        "code": "wfJD",
+        "evidence": "cancelUpdateMerchantBillPayment: function() {",
+        "line": 172,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'cancelUpdateMerchantBillPayment'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getValueFromResource'.",
+        "code": "wfJD",
+        "evidence": "getValueFromResource: function(key) {",
+        "line": 188,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getValueFromResource'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'sanitize'.",
+        "code": "wfJD",
+        "evidence": "sanitize: function(str, newStrResourceKey) {",
+        "line": 204,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'sanitize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'convertDateToServiceFormat'.",
+        "code": "wfJD",
+        "evidence": "convertDateToServiceFormat: function(date) {",
+        "line": 218,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'convertDateToServiceFormat'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/payments/payeeActivity/editTransaction.js",
+  "folderPath": "test-source/js/component/payments/payeeActivity",
+  "fileName": "editTransaction.js",
+  "packagePath": "/js/component/payments/payeeActivity",
+  "webPath": "/js/component/payments/payeeActivity",
+  "libFile": false,
+  "min": false,
+  "realName": "edit_transaction",
+  "name": "editTransaction",
+  "camelName": "EditTransaction",
+  "processedFilePath": "test-output/js/component/payments/payeeActivity/editTransaction.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 230,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/payeeActivity",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 9067,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./editTransaction",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "showMerchantBillPayment",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 20,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "showMerchantBillPayment: function(data) {"
+      },
+      {
+        "name": "initiateUpdateMerchantBillPayment",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 76,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "initiateUpdateMerchantBillPayment: function(data) {"
+      },
+      {
+        "name": "verifyUpdateMerchantBillPayment",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 91,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "verifyUpdateMerchantBillPayment: function(data) {"
+      },
+      {
+        "name": "confirmUpdateMerchantBillPayment",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 130,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "confirmUpdateMerchantBillPayment: function() {"
+      },
+      {
+        "name": "cancelUpdateMerchantBillPayment",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 172,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "cancelUpdateMerchantBillPayment: function() {"
+      },
+      {
+        "name": "getValueFromResource",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 188,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "key"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getValueFromResource: function(key) {"
+      },
+      {
+        "name": "sanitize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 204,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "str",
+          "newStrResourceKey"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "sanitize: function(str, newStrResourceKey) {"
+      },
+      {
+        "name": "convertDateToServiceFormat",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 218,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "date"
+        ],
+        "description": "",
+        "return": "requestDate",
+        "classDeclarationFlag": false,
+        "line": "convertDateToServiceFormat: function(date) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/payeeActivity",
+    "fileName": "editTransaction.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 236
+}

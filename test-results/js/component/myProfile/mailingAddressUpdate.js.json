@@ -1,0 +1,422 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "blue/event/channel/controller",
+        "when/when"
+      ],
+      "moduleName": "mailing_address_update",
+      "AMD": true,
+      "webPath": "/js/component/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'saveMailingAddressChanges'.",
+        "code": "wfJD",
+        "evidence": "saveMailingAddressChanges: function(eventData) {",
+        "line": 22,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'saveMailingAddressChanges'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'cancelMailingAddressChanges'.",
+        "code": "wfJD",
+        "evidence": "cancelMailingAddressChanges: function(eventData) {",
+        "line": 64,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'cancelMailingAddressChanges'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestMailingAddressTypeDetails'.",
+        "code": "wfJD",
+        "evidence": "requestMailingAddressTypeDetails: function(eventData) {",
+        "line": 73,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestMailingAddressTypeDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_render'.",
+        "code": "wfJD",
+        "evidence": "_render: function(options) {",
+        "line": 101,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_render'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_populateAddressData'.",
+        "code": "wfJD",
+        "evidence": "_populateAddressData: function(callbackFunction) {",
+        "line": 116,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_populateAddressData'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getCountriesOrStates'.",
+        "code": "wfJD",
+        "evidence": "_getCountriesOrStates: function(addressType) {",
+        "line": 129,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getCountriesOrStates'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_setCountriesOrStates'.",
+        "code": "wfJD",
+        "evidence": "_setCountriesOrStates: function(list, addressType) {",
+        "line": 143,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_setCountriesOrStates'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getCountries'.",
+        "code": "wfJD",
+        "evidence": "_getCountries: function() {",
+        "line": 163,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getCountries'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_setCountries'.",
+        "code": "wfJD",
+        "evidence": "_setCountries: function(list) {",
+        "line": 179,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_setCountries'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getStates'.",
+        "code": "wfJD",
+        "evidence": "_getStates: function(addressType) {",
+        "line": 191,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getStates'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_setStates'.",
+        "code": "wfJD",
+        "evidence": "_setStates: function(list, addressType) {",
+        "line": 210,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_setStates'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_sortList'.",
+        "code": "wfJD",
+        "evidence": "_sortList: function(list, sortOn) {",
+        "line": 223,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_sortList'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/myProfile/mailingAddressUpdate.js",
+  "folderPath": "test-source/js/component/myProfile",
+  "fileName": "mailingAddressUpdate.js",
+  "packagePath": "/js/component/myProfile",
+  "webPath": "/js/component/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "mailing_address_update",
+  "name": "mailingAddressUpdate",
+  "camelName": "MailingAddressUpdate",
+  "processedFilePath": "test-output/js/component/myProfile/mailingAddressUpdate.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 231,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 7672,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mailingAddressUpdate",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "_render": 3249,
+      "_populateAddressData": 3292,
+      "_getCountriesOrStates": 3335,
+      "_setCountriesOrStates": 3357,
+      "_getCountries": 3400,
+      "_setCountries": 3443,
+      "_getStates": 3490,
+      "_setStates": 3539,
+      "_sortList": 3589
+    },
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "saveMailingAddressChanges",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 22,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "eventData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "saveMailingAddressChanges: function(eventData) {"
+      },
+      {
+        "name": "cancelMailingAddressChanges",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 64,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "eventData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "cancelMailingAddressChanges: function(eventData) {"
+      },
+      {
+        "name": "requestMailingAddressTypeDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 73,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "eventData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestMailingAddressTypeDetails: function(eventData) {"
+      },
+      {
+        "name": "_render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 101,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "options"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "_render: function(options) {"
+      },
+      {
+        "name": "_populateAddressData",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 116,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "callbackFunction"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "_populateAddressData: function(callbackFunction) {"
+      },
+      {
+        "name": "_getCountriesOrStates",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 129,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "addressType"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "_getCountriesOrStates: function(addressType) {"
+      },
+      {
+        "name": "_setCountriesOrStates",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 143,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "list",
+          "addressType"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "_setCountriesOrStates: function(list, addressType) {"
+      },
+      {
+        "name": "_getCountries",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 163,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "_getCountries: function() {"
+      },
+      {
+        "name": "_setCountries",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 179,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "list"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "_setCountries: function(list) {"
+      },
+      {
+        "name": "_getStates",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 191,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "addressType"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "_getStates: function(addressType) {"
+      },
+      {
+        "name": "_setStates",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 210,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "list",
+          "addressType"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "_setStates: function(list, addressType) {"
+      },
+      {
+        "name": "_sortList",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 223,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "list",
+          "sortOn"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "_sortList: function(list, sortOn) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myProfile",
+    "fileName": "mailingAddressUpdate.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 222
+}

@@ -1,0 +1,501 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "data_transform",
+      "AMD": true,
+      "webPath": "/js/service/payments/merchantBillPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'PayeeDataTransform'.",
+        "code": "wfJD",
+        "evidence": "return function PayeeDataTransform() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'PayeeDataTransform'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getEnterDataModel'.",
+        "code": "wfJD",
+        "evidence": "this.getEnterDataModel = function(model, responseData) {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getEnterDataModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getVerifyDataModel'.",
+        "code": "wfJD",
+        "evidence": "this.getVerifyDataModel = function(model, responseData) {",
+        "line": 19,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getVerifyDataModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getConfirmDataModel'.",
+        "code": "wfJD",
+        "evidence": "this.getConfirmDataModel = function(model, responseData) {",
+        "line": 85,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getConfirmDataModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getManualEnterDataModel'.",
+        "code": "wfJD",
+        "evidence": "this.getManualEnterDataModel = function(model, responseData) {",
+        "line": 103,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getManualEnterDataModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getManualVerifyDataModel'.",
+        "code": "wfJD",
+        "evidence": "this.getManualVerifyDataModel = function(model, responseData) {",
+        "line": 122,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getManualVerifyDataModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getManualConfirmDataModel'.",
+        "code": "wfJD",
+        "evidence": "this.getManualConfirmDataModel = function(model, responseData) {",
+        "line": 177,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getManualConfirmDataModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getEnterViewModel'.",
+        "code": "wfJD",
+        "evidence": "this.getEnterViewModel = function(modelRef) {",
+        "line": 201,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getEnterViewModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getVerifyAddressViewModel'.",
+        "code": "wfJD",
+        "evidence": "this.getVerifyAddressViewModel = function(modelRef) {",
+        "line": 298,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getVerifyAddressViewModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getVerifyListViewModel'.",
+        "code": "wfJD",
+        "evidence": "this.getVerifyListViewModel = function(modelRef) {",
+        "line": 370,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getVerifyListViewModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getConfirmViewModel'.",
+        "code": "wfJD",
+        "evidence": "this.getConfirmViewModel = function(modelRef) {",
+        "line": 505,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getConfirmViewModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getStateListInputObj'.",
+        "code": "wfJD",
+        "evidence": "this.getStateListInputObj = function(stateList, model) {",
+        "line": 609,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getStateListInputObj'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getManualEnterViewModel'.",
+        "code": "wfJD",
+        "evidence": "this.getManualEnterViewModel = function(modelRef) {",
+        "line": 642,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getManualEnterViewModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getManualVerifyViewModel'.",
+        "code": "wfJD",
+        "evidence": "this.getManualVerifyViewModel = function(modelRef) {",
+        "line": 819,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getManualVerifyViewModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getManualConfirmViewModel'.",
+        "code": "wfJD",
+        "evidence": "this.getManualConfirmViewModel = function(modelRef) {",
+        "line": 935,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getManualConfirmViewModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getWorkFlowActive'.",
+        "code": "wfJD",
+        "evidence": "this.getWorkFlowActive = function(i, workFlow) {",
+        "line": 1045,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getWorkFlowActive'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/service/payments/merchantBillPay/dataTransform.js",
+  "folderPath": "test-source/js/service/payments/merchantBillPay",
+  "fileName": "dataTransform.js",
+  "packagePath": "/js/service/payments/merchantBillPay",
+  "webPath": "/js/service/payments/merchantBillPay",
+  "libFile": false,
+  "min": false,
+  "realName": "data_transform",
+  "name": "dataTransform",
+  "camelName": "DataTransform",
+  "processedFilePath": "test-output/js/service/payments/merchantBillPay/dataTransform.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 1060,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/payments/merchantBillPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 42195,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./dataTransform",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "PayeeDataTransform": 26612
+    },
+    "methods": [
+      {
+        "name": "PayeeDataTransform",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function PayeeDataTransform() {"
+      },
+      {
+        "name": "getEnterDataModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "model",
+          "responseData"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getEnterDataModel = function(model, responseData) {"
+      },
+      {
+        "name": "getVerifyDataModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 19,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "model",
+          "responseData"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getVerifyDataModel = function(model, responseData) {"
+      },
+      {
+        "name": "getConfirmDataModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 85,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "model",
+          "responseData"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getConfirmDataModel = function(model, responseData) {"
+      },
+      {
+        "name": "getManualEnterDataModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 103,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "model",
+          "responseData"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getManualEnterDataModel = function(model, responseData) {"
+      },
+      {
+        "name": "getManualVerifyDataModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 122,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "model",
+          "responseData"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getManualVerifyDataModel = function(model, responseData) {"
+      },
+      {
+        "name": "getManualConfirmDataModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 177,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "model",
+          "responseData"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getManualConfirmDataModel = function(model, responseData) {"
+      },
+      {
+        "name": "getEnterViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 201,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "modelRef"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getEnterViewModel = function(modelRef) {"
+      },
+      {
+        "name": "getVerifyAddressViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 298,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "modelRef"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getVerifyAddressViewModel = function(modelRef) {"
+      },
+      {
+        "name": "getVerifyListViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 370,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "modelRef"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getVerifyListViewModel = function(modelRef) {"
+      },
+      {
+        "name": "getConfirmViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 505,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "modelRef"
+        ],
+        "description": "",
+        "return": "modelData",
+        "classDeclarationFlag": false,
+        "line": "this.getConfirmViewModel = function(modelRef) {"
+      },
+      {
+        "name": "getStateListInputObj",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 609,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "stateList",
+          "model"
+        ],
+        "description": "",
+        "return": "stateInputObj",
+        "classDeclarationFlag": false,
+        "line": "this.getStateListInputObj = function(stateList, model) {"
+      },
+      {
+        "name": "getManualEnterViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 642,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "modelRef"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getManualEnterViewModel = function(modelRef) {"
+      },
+      {
+        "name": "getManualVerifyViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 819,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "modelRef"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getManualVerifyViewModel = function(modelRef) {"
+      },
+      {
+        "name": "getManualConfirmViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 935,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "modelRef"
+        ],
+        "description": "",
+        "return": "model",
+        "classDeclarationFlag": false,
+        "line": "this.getManualConfirmViewModel = function(modelRef) {"
+      },
+      {
+        "name": "getWorkFlowActive",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 1045,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "i",
+          "workFlow"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "this.getWorkFlowActive = function(i, workFlow) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/payments/merchantBillPay",
+    "fileName": "dataTransform.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 1126
+}

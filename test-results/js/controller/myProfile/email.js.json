@@ -1,0 +1,176 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "email",
+      "AMD": true,
+      "webPath": "/js/controller/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'EmailController'.",
+        "code": "wfJD",
+        "evidence": "return function EmailController() {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'EmailController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 30,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'list'.",
+        "code": "wfJD",
+        "evidence": "this.list = function(messageInfo) {",
+        "line": 50,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'list'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'insertEmailComponents'.",
+        "code": "wfJD",
+        "evidence": "this.insertEmailComponents = function(data, messageInfo) {",
+        "line": 71,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'insertEmailComponents'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/myProfile/email.js",
+  "folderPath": "test-source/js/controller/myProfile",
+  "fileName": "email.js",
+  "packagePath": "/js/controller/myProfile",
+  "webPath": "/js/controller/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "email",
+  "name": "email",
+  "camelName": "Email",
+  "processedFilePath": "test-output/js/controller/myProfile/email.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 120,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 4125,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./email",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "EmailController": 2388
+    },
+    "methods": [
+      {
+        "name": "EmailController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function EmailController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 30,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "list",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 50,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "messageInfo"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.list = function(messageInfo) {"
+      },
+      {
+        "name": "insertEmailComponents",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 71,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data",
+          "messageInfo"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.insertEmailComponents = function(data, messageInfo) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myProfile",
+    "fileName": "email.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 120
+}

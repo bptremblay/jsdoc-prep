@@ -1,0 +1,196 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "qp_request_input",
+      "AMD": true,
+      "webPath": "/js/view/payments/quickPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'RequestInputView'.",
+        "code": "wfJD",
+        "evidence": "return function RequestInputView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'RequestInputView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 34,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'populateTokens'.",
+        "code": "wfJD",
+        "evidence": "this.populateTokens = function(tokenData) {",
+        "line": 45,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'populateTokens'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'enableDisableAmount'.",
+        "code": "wfJD",
+        "evidence": "this.enableDisableAmount = function(amountOption) {",
+        "line": 57,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'enableDisableAmount'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideOverlay'.",
+        "code": "wfJD",
+        "evidence": "this.hideOverlay = function() {",
+        "line": 67,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideOverlay'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/payments/quickPay/qpRequestInput.js",
+  "folderPath": "test-source/js/view/payments/quickPay",
+  "fileName": "qpRequestInput.js",
+  "packagePath": "/js/view/payments/quickPay",
+  "webPath": "/js/view/payments/quickPay",
+  "libFile": false,
+  "min": false,
+  "realName": "qp_request_input",
+  "name": "qp_request_input",
+  "camelName": "QpRequestInput",
+  "processedFilePath": "test-output/js/view/payments/quickPay/qpRequestInput.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 72,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/quickPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 2779,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./qpRequestInput",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "RequestInputView": 1668
+    },
+    "methods": [
+      {
+        "name": "RequestInputView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function RequestInputView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 34,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "populateTokens",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 45,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "tokenData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.populateTokens = function(tokenData) {"
+      },
+      {
+        "name": "enableDisableAmount",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 57,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "amountOption"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.enableDisableAmount = function(amountOption) {"
+      },
+      {
+        "name": "hideOverlay",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 67,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.hideOverlay = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/quickPay",
+    "fileName": "qpRequestInput.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 80
+}

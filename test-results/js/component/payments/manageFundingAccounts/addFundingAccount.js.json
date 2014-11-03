@@ -1,0 +1,528 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "add_funding_account",
+      "AMD": true,
+      "webPath": "/js/component/payments/manageFundingAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updatePayeeId'.",
+        "code": "wfJD",
+        "evidence": "updatePayeeId: function(data) {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updatePayeeId'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isValidRoutingNumber'.",
+        "code": "wfJD",
+        "evidence": "isValidRoutingNumber: function(routingNumber) {",
+        "line": 18,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isValidRoutingNumber'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isValidAccountNumber'.",
+        "code": "wfJD",
+        "evidence": "isValidAccountNumber: function(accountNumber) {",
+        "line": 33,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isValidAccountNumber'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isValidAccountNickname'.",
+        "code": "wfJD",
+        "evidence": "isValidAccountNickname: function(accountNickname) {",
+        "line": 48,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isValidAccountNickname'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'validateRoutingNumberFocusOut'.",
+        "code": "wfJD",
+        "evidence": "validateRoutingNumberFocusOut: function(routingNumber) {",
+        "line": 70,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'validateRoutingNumberFocusOut'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'validateRoutingNumberFocus'.",
+        "code": "wfJD",
+        "evidence": "validateRoutingNumberFocus: function(routingNumber) {",
+        "line": 183,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'validateRoutingNumberFocus'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'validateAccountNumberFocusOut'.",
+        "code": "wfJD",
+        "evidence": "validateAccountNumberFocusOut: function(accountNumber) {",
+        "line": 197,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'validateAccountNumberFocusOut'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'validateAccountNumberFocus'.",
+        "code": "wfJD",
+        "evidence": "validateAccountNumberFocus: function(accountNumber) {",
+        "line": 225,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'validateAccountNumberFocus'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'validateConfirmedAccountNumberFocusOut'.",
+        "code": "wfJD",
+        "evidence": "validateConfirmedAccountNumberFocusOut: function(confirmedAccountNumber) {",
+        "line": 238,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'validateConfirmedAccountNumberFocusOut'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'validateConfirmedAccountNumberFocus'.",
+        "code": "wfJD",
+        "evidence": "validateConfirmedAccountNumberFocus: function(confirmedAccountNumber) {",
+        "line": 270,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'validateConfirmedAccountNumberFocus'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'validateAccountNicknameFocusOut'.",
+        "code": "wfJD",
+        "evidence": "validateAccountNicknameFocusOut: function() {",
+        "line": 289,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'validateAccountNicknameFocusOut'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'validateAccountNicknameFocus'.",
+        "code": "wfJD",
+        "evidence": "validateAccountNicknameFocus: function(accountNickname) {",
+        "line": 308,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'validateAccountNicknameFocus'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestRoutingNumberHelpMessage'.",
+        "code": "wfJD",
+        "evidence": "requestRoutingNumberHelpMessage: function() {",
+        "line": 325,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestRoutingNumberHelpMessage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exitRoutingNumberHelpMessage'.",
+        "code": "wfJD",
+        "evidence": "exitRoutingNumberHelpMessage: function() {",
+        "line": 331,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exitRoutingNumberHelpMessage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'addFundingAccount'.",
+        "code": "wfJD",
+        "evidence": "addFundingAccount: function() {",
+        "line": 338,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'addFundingAccount'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'cancelAddFundingAccount'.",
+        "code": "wfJD",
+        "evidence": "cancelAddFundingAccount: function() {",
+        "line": 408,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'cancelAddFundingAccount'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'validateFormFields'.",
+        "code": "wfJD",
+        "evidence": "validateFormFields: function() {",
+        "line": 414,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'validateFormFields'."
+      }
+    ],
+    "jsDocNameFixerProc": [
+      {
+        "id": "(error)",
+        "raw": "jsDoc tag error.",
+        "code": "wfJD",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "jsDoc tag error: found '@return void'."
+      }
+    ],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/payments/manageFundingAccounts/addFundingAccount.js",
+  "folderPath": "test-source/js/component/payments/manageFundingAccounts",
+  "fileName": "addFundingAccount.js",
+  "packagePath": "/js/component/payments/manageFundingAccounts",
+  "webPath": "/js/component/payments/manageFundingAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "add_funding_account",
+  "name": "addFundingAccount",
+  "camelName": "AddFundingAccount",
+  "processedFilePath": "test-output/js/component/payments/manageFundingAccounts/addFundingAccount.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 424,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/manageFundingAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 11896,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./addFundingAccount",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "updatePayeeId",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "updatePayeeId: function(data) {"
+      },
+      {
+        "name": "isValidRoutingNumber",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 18,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "routingNumber"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "isValidRoutingNumber: function(routingNumber) {"
+      },
+      {
+        "name": "isValidAccountNumber",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 33,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "accountNumber"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "isValidAccountNumber: function(accountNumber) {"
+      },
+      {
+        "name": "isValidAccountNickname",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 48,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "accountNickname"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "isValidAccountNickname: function(accountNickname) {"
+      },
+      {
+        "name": "validateRoutingNumberFocusOut",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 70,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "routingNumber"
+        ],
+        "description": "",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "validateRoutingNumberFocusOut: function(routingNumber) {"
+      },
+      {
+        "name": "validateRoutingNumberFocus",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 183,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "routingNumber"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "validateRoutingNumberFocus: function(routingNumber) {"
+      },
+      {
+        "name": "validateAccountNumberFocusOut",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 197,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "accountNumber"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "validateAccountNumberFocusOut: function(accountNumber) {"
+      },
+      {
+        "name": "validateAccountNumberFocus",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 225,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "accountNumber"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "validateAccountNumberFocus: function(accountNumber) {"
+      },
+      {
+        "name": "validateConfirmedAccountNumberFocusOut",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 238,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "confirmedAccountNumber"
+        ],
+        "description": "",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "validateConfirmedAccountNumberFocusOut: function(confirmedAccountNumber) {"
+      },
+      {
+        "name": "validateConfirmedAccountNumberFocus",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 270,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "confirmedAccountNumber"
+        ],
+        "description": "",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "validateConfirmedAccountNumberFocus: function(confirmedAccountNumber) {"
+      },
+      {
+        "name": "validateAccountNicknameFocusOut",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 289,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "validateAccountNicknameFocusOut: function() {"
+      },
+      {
+        "name": "validateAccountNicknameFocus",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 308,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "accountNickname"
+        ],
+        "description": "",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "validateAccountNicknameFocus: function(accountNickname) {"
+      },
+      {
+        "name": "requestRoutingNumberHelpMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 325,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestRoutingNumberHelpMessage: function() {"
+      },
+      {
+        "name": "exitRoutingNumberHelpMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 331,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exitRoutingNumberHelpMessage: function() {"
+      },
+      {
+        "name": "addFundingAccount",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 338,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "addFundingAccount: function() {"
+      },
+      {
+        "name": "cancelAddFundingAccount",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 408,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "cancelAddFundingAccount: function() {"
+      },
+      {
+        "name": "validateFormFields",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 414,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "validateFormFields: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/manageFundingAccounts",
+    "fileName": "addFundingAccount.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 382
+}

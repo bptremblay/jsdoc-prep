@@ -1,0 +1,159 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "rca_header",
+      "AMD": true,
+      "webPath": "/js/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountHeaderDetails'.",
+        "code": "wfJD",
+        "evidence": "requestAccountHeaderDetails: function(inputData, detailsData) {",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountHeaderDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountCurrentBalanceHelpMessage'.",
+        "code": "wfJD",
+        "evidence": "requestAccountCurrentBalanceHelpMessage: function() {",
+        "line": 32,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountCurrentBalanceHelpMessage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exitAccountCurrentBalanceHelpMessage'.",
+        "code": "wfJD",
+        "evidence": "exitAccountCurrentBalanceHelpMessage: function() {}",
+        "line": 45,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exitAccountCurrentBalanceHelpMessage'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/myAccounts/rcaHeader.js",
+  "folderPath": "test-source/js/component/myAccounts",
+  "fileName": "rcaHeader.js",
+  "packagePath": "/js/component/myAccounts",
+  "webPath": "/js/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "rca_header",
+  "name": "rcaHeader",
+  "camelName": "RcaHeader",
+  "processedFilePath": "test-output/js/component/myAccounts/rcaHeader.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 47,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1808,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./rcaHeader",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "requestAccountHeaderDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData",
+          "detailsData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountHeaderDetails: function(inputData, detailsData) {"
+      },
+      {
+        "name": "requestAccountCurrentBalanceHelpMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 32,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountCurrentBalanceHelpMessage: function() {"
+      },
+      {
+        "name": "exitAccountCurrentBalanceHelpMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 45,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exitAccountCurrentBalanceHelpMessage: function() {}"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
+    "fileName": "rcaHeader.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 59
+}

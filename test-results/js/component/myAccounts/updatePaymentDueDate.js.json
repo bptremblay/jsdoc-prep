@@ -1,0 +1,214 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "update_payment_due_date",
+      "AMD": true,
+      "webPath": "/js/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initiateUpdatePaymentDueDate'.",
+        "code": "wfJD",
+        "evidence": "initiateUpdatePaymentDueDate: function() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initiateUpdatePaymentDueDate'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'verifyUpdatePaymentDueDate'.",
+        "code": "wfJD",
+        "evidence": "verifyUpdatePaymentDueDate: function(paymentData) {",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'verifyUpdatePaymentDueDate'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'confirmUpdatePaymentDueDate'.",
+        "code": "wfJD",
+        "evidence": "confirmUpdatePaymentDueDate: function() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'confirmUpdatePaymentDueDate'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'cancelUpdatePaymentDueDate'.",
+        "code": "wfJD",
+        "evidence": "cancelUpdatePaymentDueDate: function() {",
+        "line": 17,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'cancelUpdatePaymentDueDate'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exitUpdatePaymentDueDate'.",
+        "code": "wfJD",
+        "evidence": "exitUpdatePaymentDueDate: function() {",
+        "line": 20,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exitUpdatePaymentDueDate'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/myAccounts/updatePaymentDueDate.js",
+  "folderPath": "test-source/js/component/myAccounts",
+  "fileName": "updatePaymentDueDate.js",
+  "packagePath": "/js/component/myAccounts",
+  "webPath": "/js/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "update_payment_due_date",
+  "name": "updatePaymentDueDate",
+  "camelName": "UpdatePaymentDueDate",
+  "processedFilePath": "test-output/js/component/myAccounts/updatePaymentDueDate.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 29,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 862,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./updatePaymentDueDate",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "initiateUpdatePaymentDueDate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "initiateUpdatePaymentDueDate: function() {"
+      },
+      {
+        "name": "verifyUpdatePaymentDueDate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "paymentData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "verifyUpdatePaymentDueDate: function(paymentData) {"
+      },
+      {
+        "name": "confirmUpdatePaymentDueDate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "confirmUpdatePaymentDueDate: function() {"
+      },
+      {
+        "name": "cancelUpdatePaymentDueDate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 17,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "cancelUpdatePaymentDueDate: function() {"
+      },
+      {
+        "name": "exitUpdatePaymentDueDate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 20,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exitUpdatePaymentDueDate: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
+    "fileName": "updatePaymentDueDate.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 51
+}

@@ -1,0 +1,191 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "payments_menu",
+      "AMD": true,
+      "webPath": "/js/controller/header"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'PaymentsMenuController'.",
+        "code": "wfJD",
+        "evidence": "return function PaymentsMenuController() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'PaymentsMenuController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 18,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showMenu'.",
+        "code": "wfJD",
+        "evidence": "this.showMenu = function() {",
+        "line": 66,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showMenu'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'index'.",
+        "code": "wfJD",
+        "evidence": "this.index = function() {",
+        "line": 82,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'index'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'ignore'.",
+        "code": "wfJD",
+        "evidence": "this.ignore = function() {",
+        "line": 90,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'ignore'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/header/paymentsMenu.js",
+  "folderPath": "test-source/js/controller/header",
+  "fileName": "paymentsMenu.js",
+  "packagePath": "/js/controller/header",
+  "webPath": "/js/controller/header",
+  "libFile": false,
+  "min": false,
+  "realName": "payments_menu",
+  "name": "paymentsMenu",
+  "camelName": "PaymentsMenu",
+  "processedFilePath": "test-output/js/controller/header/paymentsMenu.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 105,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/header",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 3013,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./paymentsMenu",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "PaymentsMenuController": 1713
+    },
+    "methods": [
+      {
+        "name": "PaymentsMenuController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function PaymentsMenuController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 18,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "showMenu",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 66,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.showMenu = function() {"
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 82,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.index = function() {"
+      },
+      {
+        "name": "ignore",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 90,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.ignore = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/header",
+    "fileName": "paymentsMenu.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 103
+}

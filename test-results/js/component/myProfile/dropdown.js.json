@@ -1,0 +1,244 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "dropdown",
+      "AMD": true,
+      "webPath": "/js/component/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'show'.",
+        "code": "wfJD",
+        "evidence": "show: function() {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'show'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hide'.",
+        "code": "wfJD",
+        "evidence": "hide: function() {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hide'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'toggle'.",
+        "code": "wfJD",
+        "evidence": "toggle: function() {",
+        "line": 16,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'toggle'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'optionClick'.",
+        "code": "wfJD",
+        "evidence": "optionClick: function(eventData) {",
+        "line": 23,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'optionClick'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'optionKeydown'.",
+        "code": "wfJD",
+        "evidence": "optionKeydown: function(eventData) {",
+        "line": 31,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'optionKeydown'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'triggerKeydown'.",
+        "code": "wfJD",
+        "evidence": "triggerKeydown: function(eventData) {",
+        "line": 73,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'triggerKeydown'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/myProfile/dropdown.js",
+  "folderPath": "test-source/js/component/myProfile",
+  "fileName": "dropdown.js",
+  "packagePath": "/js/component/myProfile",
+  "webPath": "/js/component/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "dropdown",
+  "name": "dropdown",
+  "camelName": "Dropdown",
+  "processedFilePath": "test-output/js/component/myProfile/dropdown.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 92,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 2841,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./dropdown",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "show",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "show: function() {"
+      },
+      {
+        "name": "hide",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "hide: function() {"
+      },
+      {
+        "name": "toggle",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "toggle: function() {"
+      },
+      {
+        "name": "optionClick",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 23,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "eventData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "optionClick: function(eventData) {"
+      },
+      {
+        "name": "optionKeydown",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 31,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "eventData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "optionKeydown: function(eventData) {"
+      },
+      {
+        "name": "triggerKeydown",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 73,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "eventData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "triggerKeydown: function(eventData) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myProfile",
+    "fileName": "dropdown.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 118
+}

@@ -1,0 +1,93 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "shell",
+      "AMD": true,
+      "webPath": "/js/controller/interceptor"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'afterReturning'.",
+        "code": "wfJD",
+        "evidence": "afterReturning: function(controllers) {",
+        "line": 22,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'afterReturning'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/interceptor/shell.js",
+  "folderPath": "test-source/js/controller/interceptor",
+  "fileName": "shell.js",
+  "packagePath": "/js/controller/interceptor",
+  "webPath": "/js/controller/interceptor",
+  "libFile": false,
+  "min": false,
+  "realName": "shell",
+  "name": "shell",
+  "camelName": "Shell",
+  "processedFilePath": "test-output/js/controller/interceptor/shell.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 34,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/interceptor",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 753,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./shell",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "afterReturning",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 22,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "controllers"
+        ],
+        "description": "",
+        "return": "controllers",
+        "classDeclarationFlag": false,
+        "line": "afterReturning: function(controllers) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/interceptor",
+    "fileName": "shell.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 38
+}

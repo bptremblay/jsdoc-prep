@@ -1,0 +1,101 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "messages",
+      "AMD": true,
+      "webPath": "/js/service/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'messagesService'.",
+        "code": "wfJD",
+        "evidence": "return function messagesService() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'messagesService'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/service/conversationDeck/messages.js",
+  "folderPath": "test-source/js/service/conversationDeck",
+  "fileName": "messages.js",
+  "packagePath": "/js/service/conversationDeck",
+  "webPath": "/js/service/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "messages",
+  "name": "messages",
+  "camelName": "Messages",
+  "processedFilePath": "test-output/js/service/conversationDeck/messages.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 26,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 536,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./messages",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "messagesService",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function messagesService() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/conversationDeck",
+    "fileName": "messages.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 27
+}

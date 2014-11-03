@@ -1,0 +1,127 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "dda_account_header",
+      "AMD": true,
+      "webPath": "/js/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'DdaAccountHeaderView'.",
+        "code": "wfJD",
+        "evidence": "return function DdaAccountHeaderView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'DdaAccountHeaderView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/myAccounts/ddaAccountHeader.js",
+  "folderPath": "test-source/js/view/myAccounts",
+  "fileName": "ddaAccountHeader.js",
+  "packagePath": "/js/view/myAccounts",
+  "webPath": "/js/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "dda_account_header",
+  "name": "ddaAccountHeader",
+  "camelName": "DdaAccountHeader",
+  "processedFilePath": "test-output/js/view/myAccounts/ddaAccountHeader.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 23,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 666,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./ddaAccountHeader",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "DdaAccountHeaderView": 502
+    },
+    "methods": [
+      {
+        "name": "DdaAccountHeaderView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function DdaAccountHeaderView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/myAccounts",
+    "fileName": "ddaAccountHeader.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 25
+}

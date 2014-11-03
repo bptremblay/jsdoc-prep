@@ -1,0 +1,202 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "site_message",
+      "AMD": true,
+      "webPath": "/js/view/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'SiteMessageView'.",
+        "code": "wfJD",
+        "evidence": "return function SiteMessageView() {",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'SiteMessageView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 20,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'expandMsg'.",
+        "code": "wfJD",
+        "evidence": "this.expandMsg = function(data) {",
+        "line": 55,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'expandMsg'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'collapseMsg'.",
+        "code": "wfJD",
+        "evidence": "this.collapseMsg = function(data) {",
+        "line": 66,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'collapseMsg'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'dismissMsg'.",
+        "code": "wfJD",
+        "evidence": "this.dismissMsg = function(data) {",
+        "line": 77,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'dismissMsg'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/conversationDeck/siteMessage.js",
+  "folderPath": "test-source/js/view/conversationDeck",
+  "fileName": "siteMessage.js",
+  "packagePath": "/js/view/conversationDeck",
+  "webPath": "/js/view/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "site_message",
+  "name": "siteMessage",
+  "camelName": "SiteMessage",
+  "processedFilePath": "test-output/js/view/conversationDeck/siteMessage.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 84,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 3225,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./siteMessage",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "SiteMessageView": 1259
+    },
+    "methods": [
+      {
+        "name": "SiteMessageView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function SiteMessageView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 20,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "expandMsg",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 55,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.expandMsg = function(data) {"
+      },
+      {
+        "name": "collapseMsg",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 66,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.collapseMsg = function(data) {"
+      },
+      {
+        "name": "dismissMsg",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 77,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.dismissMsg = function(data) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/conversationDeck",
+    "fileName": "siteMessage.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 103
+}

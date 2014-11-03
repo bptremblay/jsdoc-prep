@@ -1,0 +1,111 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "heo_account_interest_analysis",
+      "AMD": true,
+      "webPath": "/js/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'heoAccountInterestAnalysisView'.",
+        "code": "wfJD",
+        "evidence": "return function heoAccountInterestAnalysisView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'heoAccountInterestAnalysisView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/myAccounts/heoAccountInterestAnalysis.js",
+  "folderPath": "test-source/js/myAccounts",
+  "fileName": "heoAccountInterestAnalysis.js",
+  "packagePath": "/js/myAccounts",
+  "webPath": "/js/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "heo_account_interest_analysis",
+  "name": "heoAccountInterestAnalysis",
+  "camelName": "HeoAccountInterestAnalysis",
+  "processedFilePath": "test-output/js/myAccounts/heoAccountInterestAnalysis.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 13,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 328,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./heoAccountInterestAnalysis",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "heoAccountInterestAnalysisView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function heoAccountInterestAnalysisView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/myAccounts",
+    "fileName": "heoAccountInterestAnalysis.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 13
+}

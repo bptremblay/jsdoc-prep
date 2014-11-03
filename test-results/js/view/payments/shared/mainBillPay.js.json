@@ -1,0 +1,122 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "main_bill_pay",
+      "AMD": true,
+      "webPath": "/js/view/payments/shared"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MainBillPayView'.",
+        "code": "wfJD",
+        "evidence": "return function MainBillPayView() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MainBillPayView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/payments/shared/mainBillPay.js",
+  "folderPath": "test-source/js/view/payments/shared",
+  "fileName": "mainBillPay.js",
+  "packagePath": "/js/view/payments/shared",
+  "webPath": "/js/view/payments/shared",
+  "libFile": false,
+  "min": false,
+  "realName": "main_bill_pay",
+  "name": "main_bill_pay",
+  "camelName": "MainBillPay",
+  "processedFilePath": "test-output/js/view/payments/shared/mainBillPay.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 19,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/shared",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 461,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mainBillPay",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "MainBillPayView": 182
+    },
+    "methods": [
+      {
+        "name": "MainBillPayView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function MainBillPayView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/shared",
+    "fileName": "mainBillPay.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 20
+}

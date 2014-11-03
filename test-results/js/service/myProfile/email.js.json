@@ -1,0 +1,177 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "email",
+      "AMD": true,
+      "webPath": "/js/service/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'EmailService'.",
+        "code": "wfJD",
+        "evidence": "return function EmailService() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'EmailService'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSettings'.",
+        "code": "wfJD",
+        "evidence": "function getSettings(serviceName) {",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSettings'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handleSuccess'.",
+        "code": "wfJD",
+        "evidence": "handleSuccess: function(data) {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handleSuccess'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handleError'.",
+        "code": "wfJD",
+        "evidence": "handleError: function() {}",
+        "line": 23,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handleError'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/service/myProfile/email.js",
+  "folderPath": "test-source/js/service/myProfile",
+  "fileName": "email.js",
+  "packagePath": "/js/service/myProfile",
+  "webPath": "/js/service/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "email",
+  "name": "email",
+  "camelName": "Email",
+  "processedFilePath": "test-output/js/service/myProfile/email.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 32,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 807,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./email",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "EmailService": 298
+    },
+    "methods": [
+      {
+        "name": "EmailService",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function EmailService() {"
+      },
+      {
+        "name": "getSettings",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "serviceName"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function getSettings(serviceName) {"
+      },
+      {
+        "name": "handleSuccess",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "handleSuccess: function(data) {"
+      },
+      {
+        "name": "handleError",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 23,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "handleError: function() {}"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/myProfile",
+    "fileName": "email.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 51
+}

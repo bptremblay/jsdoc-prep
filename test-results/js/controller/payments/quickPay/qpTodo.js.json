@@ -1,0 +1,220 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "qp_todo",
+      "AMD": true,
+      "webPath": "/js/controller/payments/quickPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'SendController'.",
+        "code": "wfJD",
+        "evidence": "return function SendController() {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'SendController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 20,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getNum'.",
+        "code": "wfJD",
+        "evidence": "var getNum = function(transactionIdData) {",
+        "line": 66,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getNum'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'index'.",
+        "code": "wfJD",
+        "evidence": "this.index = function(data) {",
+        "line": 78,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'index'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'renderToDoList'.",
+        "code": "wfJD",
+        "evidence": "this.renderToDoList = function() {",
+        "line": 120,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'renderToDoList'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'entry'.",
+        "code": "wfJD",
+        "evidence": "this.entry = function() {",
+        "line": 141,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'entry'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/payments/quickPay/qpTodo.js",
+  "folderPath": "test-source/js/controller/payments/quickPay",
+  "fileName": "qpTodo.js",
+  "packagePath": "/js/controller/payments/quickPay",
+  "webPath": "/js/controller/payments/quickPay",
+  "libFile": false,
+  "min": false,
+  "realName": "qp_todo",
+  "name": "qpTodo",
+  "camelName": "QpTodo",
+  "processedFilePath": "test-output/js/controller/payments/quickPay/qpTodo.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 158,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/payments/quickPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 4354,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./qpTodo",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "SendController": 2425
+    },
+    "methods": [
+      {
+        "name": "SendController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function SendController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 20,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "getNum",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 66,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "transactionIdData"
+        ],
+        "description": "",
+        "return": "transactionId",
+        "classDeclarationFlag": false,
+        "line": "var getNum = function(transactionIdData) {"
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 78,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.index = function(data) {"
+      },
+      {
+        "name": "renderToDoList",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 120,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.renderToDoList = function() {"
+      },
+      {
+        "name": "entry",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 141,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.entry = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/payments/quickPay",
+    "fileName": "qpTodo.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 152
+}

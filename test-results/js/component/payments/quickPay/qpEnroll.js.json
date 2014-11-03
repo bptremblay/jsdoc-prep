@@ -1,0 +1,965 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "qp_enroll",
+      "AMD": true,
+      "webPath": "/js/component/payments/quickPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getEnrollmentAddServiceInput'.",
+        "code": "wfJD",
+        "evidence": "var getEnrollmentAddServiceInput = function(emailList, phoneList) {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getEnrollmentAddServiceInput'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showTcpaDisclosure'.",
+        "code": "wfJD",
+        "evidence": "var showTcpaDisclosure = function(showHide) {",
+        "line": 41,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showTcpaDisclosure'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getEmailHeading'.",
+        "code": "wfJD",
+        "evidence": "var getEmailHeading = function(num, isPrimary) {",
+        "line": 51,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getEmailHeading'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateEmailHeadings'.",
+        "code": "wfJD",
+        "evidence": "var updateEmailHeadings = function(emailList) {",
+        "line": 59,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateEmailHeadings'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getPrimarySelectedEmail'.",
+        "code": "wfJD",
+        "evidence": "var getPrimarySelectedEmail = function(emailList) {",
+        "line": 79,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getPrimarySelectedEmail'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'populatePhoneNumber'.",
+        "code": "wfJD",
+        "evidence": "var populatePhoneNumber = function() {",
+        "line": 96,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'populatePhoneNumber'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isOtherEmailsAddedButNotEntered'.",
+        "code": "wfJD",
+        "evidence": "var isOtherEmailsAddedButNotEntered = function(emailAddresses) {",
+        "line": 108,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isOtherEmailsAddedButNotEntered'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isEmailAddressValid'.",
+        "code": "wfJD",
+        "evidence": "var isEmailAddressValid = function(primaryEmailAddress) {",
+        "line": 121,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isEmailAddressValid'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'triggerVerifyService'.",
+        "code": "wfJD",
+        "evidence": "var triggerVerifyService = function(data) {",
+        "line": 129,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'triggerVerifyService'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setProgressSteps'.",
+        "code": "wfJD",
+        "evidence": "var setProgressSteps = function(totalSteps, currentStep) {",
+        "line": 146,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setProgressSteps'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 158,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'loadSetup'.",
+        "code": "wfJD",
+        "evidence": "loadSetup: function(data) {",
+        "line": 168,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'loadSetup'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initiateQuickpayEnrollment'.",
+        "code": "wfJD",
+        "evidence": "initiateQuickpayEnrollment: function() {",
+        "line": 174,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initiateQuickpayEnrollment'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'loadEntry'.",
+        "code": "wfJD",
+        "evidence": "loadEntry: function(data) {",
+        "line": 181,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'loadEntry'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'verifyQuickpayEnrollment'.",
+        "code": "wfJD",
+        "evidence": "verifyQuickpayEnrollment: function() {",
+        "line": 198,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'verifyQuickpayEnrollment'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'loadVerify'.",
+        "code": "wfJD",
+        "evidence": "loadVerify: function(data) {",
+        "line": 210,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'loadVerify'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'confirmQuickpayEnrollment'.",
+        "code": "wfJD",
+        "evidence": "confirmQuickpayEnrollment: function() {",
+        "line": 216,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'confirmQuickpayEnrollment'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'loadConfirm'.",
+        "code": "wfJD",
+        "evidence": "loadConfirm: function(data) {",
+        "line": 223,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'loadConfirm'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'cancelQuickpayEnrollment'.",
+        "code": "wfJD",
+        "evidence": "cancelQuickpayEnrollment: function() {",
+        "line": 230,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'cancelQuickpayEnrollment'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exitQuickpayEnrollment'.",
+        "code": "wfJD",
+        "evidence": "exitQuickpayEnrollment: function() {",
+        "line": 234,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exitQuickpayEnrollment'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'sendMoney'.",
+        "code": "wfJD",
+        "evidence": "sendMoney: function() {",
+        "line": 238,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'sendMoney'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestMoney'.",
+        "code": "wfJD",
+        "evidence": "requestMoney: function() {",
+        "line": 244,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestMoney'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'deleteEmailAddress'.",
+        "code": "wfJD",
+        "evidence": "deleteEmailAddress: function(inputData) {",
+        "line": 250,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'deleteEmailAddress'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'addMoneyTransferProfileEmailAddress'.",
+        "code": "wfJD",
+        "evidence": "addMoneyTransferProfileEmailAddress: function() {",
+        "line": 263,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'addMoneyTransferProfileEmailAddress'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setupAnotherEmailHandler'.",
+        "code": "wfJD",
+        "evidence": "setupAnotherEmailHandler: function() {",
+        "line": 300,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setupAnotherEmailHandler'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'agreementCheckboxClicked'.",
+        "code": "wfJD",
+        "evidence": "agreementCheckboxClicked: function(inputData) {",
+        "line": 311,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'agreementCheckboxClicked'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'designatePrimaryEmailAddress'.",
+        "code": "wfJD",
+        "evidence": "designatePrimaryEmailAddress: function(inputData) {",
+        "line": 324,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'designatePrimaryEmailAddress'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'emailDropdownSelected'.",
+        "code": "wfJD",
+        "evidence": "emailDropdownSelected: function(inputData) {",
+        "line": 334,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'emailDropdownSelected'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'mobileDropdownSelected'.",
+        "code": "wfJD",
+        "evidence": "mobileDropdownSelected: function(inputData) {",
+        "line": 366,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'mobileDropdownSelected'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'mobilePhoneEntered'.",
+        "code": "wfJD",
+        "evidence": "mobilePhoneEntered: function(inputData) {",
+        "line": 399,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'mobilePhoneEntered'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'validateInputForm'.",
+        "code": "wfJD",
+        "evidence": "validateInputForm: function() {",
+        "line": 421,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'validateInputForm'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateMoneyTransferProfileEmailAddress'.",
+        "code": "wfJD",
+        "evidence": "updateMoneyTransferProfileEmailAddress: function() {",
+        "line": 475,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateMoneyTransferProfileEmailAddress'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'addPhoneNumber'.",
+        "code": "wfJD",
+        "evidence": "addPhoneNumber: function() {",
+        "line": 479,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'addPhoneNumber'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateEmailAddress'.",
+        "code": "wfJD",
+        "evidence": "updateEmailAddress: function() {",
+        "line": 483,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateEmailAddress'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'resendVerificationCode'.",
+        "code": "wfJD",
+        "evidence": "resendVerificationCode: function() {",
+        "line": 487,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'resendVerificationCode'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'validateVerificationCode'.",
+        "code": "wfJD",
+        "evidence": "validateVerificationCode: function(inputValue) {",
+        "line": 495,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'validateVerificationCode'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'manageMyMoneyTransferProfile'.",
+        "code": "wfJD",
+        "evidence": "manageMyMoneyTransferProfile: function() {",
+        "line": 501,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'manageMyMoneyTransferProfile'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/payments/quickPay/qpEnroll.js",
+  "folderPath": "test-source/js/component/payments/quickPay",
+  "fileName": "qpEnroll.js",
+  "packagePath": "/js/component/payments/quickPay",
+  "webPath": "/js/component/payments/quickPay",
+  "libFile": false,
+  "min": false,
+  "realName": "qp_enroll",
+  "name": "qpEnroll",
+  "camelName": "QpEnroll",
+  "processedFilePath": "test-output/js/component/payments/quickPay/qpEnroll.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 505,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/quickPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 17060,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./qpEnroll",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "getEnrollmentAddServiceInput",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "emailList",
+          "phoneList"
+        ],
+        "description": "",
+        "return": "input",
+        "classDeclarationFlag": false,
+        "line": "var getEnrollmentAddServiceInput = function(emailList, phoneList) {"
+      },
+      {
+        "name": "showTcpaDisclosure",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 41,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "showHide"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "var showTcpaDisclosure = function(showHide) {"
+      },
+      {
+        "name": "getEmailHeading",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 51,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "num",
+          "isPrimary"
+        ],
+        "description": "",
+        "return": "emailHeading",
+        "classDeclarationFlag": false,
+        "line": "var getEmailHeading = function(num, isPrimary) {"
+      },
+      {
+        "name": "updateEmailHeadings",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 59,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "emailList"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "var updateEmailHeadings = function(emailList) {"
+      },
+      {
+        "name": "getPrimarySelectedEmail",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 79,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "emailList"
+        ],
+        "description": "",
+        "return": "emailAddress",
+        "classDeclarationFlag": false,
+        "line": "var getPrimarySelectedEmail = function(emailList) {"
+      },
+      {
+        "name": "populatePhoneNumber",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 96,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "var populatePhoneNumber = function() {"
+      },
+      {
+        "name": "isOtherEmailsAddedButNotEntered",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 108,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "emailAddresses"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "var isOtherEmailsAddedButNotEntered = function(emailAddresses) {"
+      },
+      {
+        "name": "isEmailAddressValid",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 121,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "primaryEmailAddress"
+        ],
+        "description": "",
+        "return": "boolean",
+        "classDeclarationFlag": false,
+        "line": "var isEmailAddressValid = function(primaryEmailAddress) {"
+      },
+      {
+        "name": "triggerVerifyService",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 129,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "var triggerVerifyService = function(data) {"
+      },
+      {
+        "name": "setProgressSteps",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 146,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "totalSteps",
+          "currentStep"
+        ],
+        "description": "",
+        "return": "steps",
+        "classDeclarationFlag": false,
+        "line": "var setProgressSteps = function(totalSteps, currentStep) {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 158,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "loadSetup",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 168,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "loadSetup: function(data) {"
+      },
+      {
+        "name": "initiateQuickpayEnrollment",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 174,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "initiateQuickpayEnrollment: function() {"
+      },
+      {
+        "name": "loadEntry",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 181,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "loadEntry: function(data) {"
+      },
+      {
+        "name": "verifyQuickpayEnrollment",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 198,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "verifyQuickpayEnrollment: function() {"
+      },
+      {
+        "name": "loadVerify",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 210,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "loadVerify: function(data) {"
+      },
+      {
+        "name": "confirmQuickpayEnrollment",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 216,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "confirmQuickpayEnrollment: function() {"
+      },
+      {
+        "name": "loadConfirm",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 223,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "loadConfirm: function(data) {"
+      },
+      {
+        "name": "cancelQuickpayEnrollment",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 230,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "cancelQuickpayEnrollment: function() {"
+      },
+      {
+        "name": "exitQuickpayEnrollment",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 234,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exitQuickpayEnrollment: function() {"
+      },
+      {
+        "name": "sendMoney",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 238,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "sendMoney: function() {"
+      },
+      {
+        "name": "requestMoney",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 244,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestMoney: function() {"
+      },
+      {
+        "name": "deleteEmailAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 250,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "deleteEmailAddress: function(inputData) {"
+      },
+      {
+        "name": "addMoneyTransferProfileEmailAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 263,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "addMoneyTransferProfileEmailAddress: function() {"
+      },
+      {
+        "name": "setupAnotherEmailHandler",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 300,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setupAnotherEmailHandler: function() {"
+      },
+      {
+        "name": "agreementCheckboxClicked",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 311,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "agreementCheckboxClicked: function(inputData) {"
+      },
+      {
+        "name": "designatePrimaryEmailAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 324,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "designatePrimaryEmailAddress: function(inputData) {"
+      },
+      {
+        "name": "emailDropdownSelected",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 334,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "emailDropdownSelected: function(inputData) {"
+      },
+      {
+        "name": "mobileDropdownSelected",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 366,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "mobileDropdownSelected: function(inputData) {"
+      },
+      {
+        "name": "mobilePhoneEntered",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 399,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "mobilePhoneEntered: function(inputData) {"
+      },
+      {
+        "name": "validateInputForm",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 421,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "validateInputForm: function() {"
+      },
+      {
+        "name": "updateMoneyTransferProfileEmailAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 475,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "updateMoneyTransferProfileEmailAddress: function() {"
+      },
+      {
+        "name": "addPhoneNumber",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 479,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "addPhoneNumber: function() {"
+      },
+      {
+        "name": "updateEmailAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 483,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "updateEmailAddress: function() {"
+      },
+      {
+        "name": "resendVerificationCode",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 487,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "resendVerificationCode: function() {"
+      },
+      {
+        "name": "validateVerificationCode",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 495,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputValue"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "validateVerificationCode: function(inputValue) {"
+      },
+      {
+        "name": "manageMyMoneyTransferProfile",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 501,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "manageMyMoneyTransferProfile: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/quickPay",
+    "fileName": "qpEnroll.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 557
+}

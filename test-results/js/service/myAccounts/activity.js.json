@@ -1,0 +1,101 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "activity",
+      "AMD": true,
+      "webPath": "/js/service/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'activityService'.",
+        "code": "wfJD",
+        "evidence": "return function activityService() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'activityService'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/service/myAccounts/activity.js",
+  "folderPath": "test-source/js/service/myAccounts",
+  "fileName": "activity.js",
+  "packagePath": "/js/service/myAccounts",
+  "webPath": "/js/service/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "activity",
+  "name": "activity",
+  "camelName": "Activity",
+  "processedFilePath": "test-output/js/service/myAccounts/activity.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 24,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 595,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./activity",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "activityService",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function activityService() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/myAccounts",
+    "fileName": "activity.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 30
+}

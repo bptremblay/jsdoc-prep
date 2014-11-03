@@ -1,0 +1,122 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "email_header",
+      "AMD": true,
+      "webPath": "/js/view/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'EmailHeaderView'.",
+        "code": "wfJD",
+        "evidence": "return function EmailHeaderView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'EmailHeaderView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/myProfile/emailHeader.js",
+  "folderPath": "test-source/js/view/myProfile",
+  "fileName": "emailHeader.js",
+  "packagePath": "/js/view/myProfile",
+  "webPath": "/js/view/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "email_header",
+  "name": "email_header",
+  "camelName": "EmailHeader",
+  "processedFilePath": "test-output/js/view/myProfile/emailHeader.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 8,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 277,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./emailHeader",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "EmailHeaderView": 169
+    },
+    "methods": [
+      {
+        "name": "EmailHeaderView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function EmailHeaderView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/myProfile",
+    "fileName": "emailHeader.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 15
+}

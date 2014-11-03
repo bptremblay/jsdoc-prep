@@ -1,0 +1,150 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "the_basics",
+      "AMD": true,
+      "webPath": "/js/controller/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'TheBasicsController'.",
+        "code": "wfJD",
+        "evidence": "return function TheBasicsController() {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'TheBasicsController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'theBasics'.",
+        "code": "wfJD",
+        "evidence": "this.theBasics = function(data) {",
+        "line": 23,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'theBasics'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/myProfile/theBasics.js",
+  "folderPath": "test-source/js/controller/myProfile",
+  "fileName": "theBasics.js",
+  "packagePath": "/js/controller/myProfile",
+  "webPath": "/js/controller/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "the_basics",
+  "name": "theBasics",
+  "camelName": "TheBasics",
+  "processedFilePath": "test-output/js/controller/myProfile/theBasics.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 35,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1033,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./theBasics",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "TheBasicsController": 574
+    },
+    "methods": [
+      {
+        "name": "TheBasicsController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function TheBasicsController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "theBasics",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 23,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.theBasics = function(data) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myProfile",
+    "fileName": "theBasics.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 46
+}

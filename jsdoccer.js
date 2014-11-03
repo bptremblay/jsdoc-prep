@@ -756,7 +756,7 @@ function getTagLines(lines, tag, buffer, getPreamble) {
     }
     if (end === -1) {
         end = lines.length - 1;
-        // console.warn('Reading to the end of the doclet.');
+        //console.warn('Reading to the end of the doclet.');
     }
     tag.textStartsOnSameLine = false;
     getLines(lines, start, end, buffer);
@@ -764,11 +764,18 @@ function getTagLines(lines, tag, buffer, getPreamble) {
         var firstLine = buffer[0];
         var realTag = '@' + tag.tag;
         var where = firstLine.indexOf(realTag);
-        firstLine = firstLine.substring(where+realTag.length);
-        //console.log(buffer[0] + '>>>>>' + firstLine);
-        if (firstLine.trim().length > 0){
+        firstLine = firstLine.substring(where + realTag.length);
+        // console.log(buffer[0] + '>>>>>' + firstLine);
+        if (firstLine.length > 0) {
+           // console.warn(buffer[0] + '>>>>>' + firstLine);
             tag.textStartsOnSameLine = true;
         }
+        if (buffer.length > 0) {
+            tag.textStartsOnSameLine = true;
+        }
+//        } else {
+//            console.warn(buffer[0] + '>>>>>' + firstLine);
+//        }
         buffer[0] = firstLine;
     }
 
@@ -968,6 +975,7 @@ function stripStars(input) {
 
 /**
  * Add * to a line in a doclet.
+ * 
  * @param input
  * @returns
  */
@@ -982,6 +990,7 @@ function addStars(input) {
 
 /**
  * Add * to each line in a block of doclet text.
+ * 
  * @param lines
  * @returns
  */
@@ -989,15 +998,14 @@ function addStarLines(lines, tag) {
     lines = lines.split('\n');
     var linesLength = lines.length;
     for (index = 0; index < linesLength; index++) {
-        if (index === 0){
-            if (!tag.textStartsOnSameLine){
+        if (index === 0) {
+            if (!tag.textStartsOnSameLine) {
                 var line = lines[index];
                 line = addStars(line);
                 lines[index] = line;
             }
             // else don't do it
-        }
-        else{
+        } else {
             var line = lines[index];
             line = addStars(line);
             lines[index] = line;
@@ -1351,10 +1359,10 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             tag.text = textBuffer.join('\n');
         }
     } else {
-        // console.warn('doclet with no tags');
+        //console.warn('doclet with no tags');
         if (!linesAreEmpty(lines)) {
             preamble = stripStarLines(lines);
-            // console.warn('doclet with no tags HAS PREAMBLE');
+            //console.warn('doclet with no tags HAS PREAMBLE:\n' + preamble);
         }
     }
 
@@ -1363,11 +1371,9 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
         preamble = [];
         docletData.preamble = '';
     }
-    else{
-        docletData['freeText'] = docletData.preamble;
-    }
-
-
+    
+    docletData['freeText'] = docletData.preamble;
+    //console.warn(docletData['freeText']);
 
     var nodeType = 'NONFUNCTION';
 
@@ -1407,18 +1413,18 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
     docletData.nodeType = nodeType;
 
     if ((docletData['freeText'] != null) && docletData['freeText'].length > 0) {
-        if (docletData['freeText'].charAt(docletData['freeText'].length - 1) !== '.') {
-            if (docletData['freeText'].indexOf('</pre>') === -1) {
+        if (docletData['freeText'].trim().charAt(docletData['freeText'].trim().length - 1) !== '.') {
+            if (docletData['freeText'].trim().indexOf('</pre>') === -1) {
                 docletData['freeText'] += '.';
             }
 
-            // // console.warn("freeText>>> " + docletData['freeText']);
+            //console.warn("freeText>>> " + docletData['freeText']);
         }
         docletData['freeText'] = docletData['freeText'].split('<br />').join(
                 '<br />\r\n * ');
     }
     // // console.warn(doclet);
-    //console.warn(JSON.stringify(docletData));
+    // console.warn(JSON.stringify(docletData));
     return docletData;
 }
 
@@ -2167,31 +2173,37 @@ function generateComment(functionWrapper, ast, walkerObj, input) {
         }
 
     }
-    
+
     var tags = [];
-    if (doclet != null && doclet.tags){
-        //console.warn(doclet.tags);
+    if (doclet != null && doclet.tags) {
+        // console.warn(doclet.tags);
         tags = doclet.tags;
     }
-    
-    // TODO: Rewrite this to dump the tags in the original order they were declared.
+
+    // TODO: Rewrite this to dump the tags in the original order they were
+    // declared.
 
     var commentBlock = [];
     commentBlock.push("/**");
 
     if (doclet != null) {
         if (doclet.freeText && doclet.freeText != '') {
-            //console.warn(doclet.freeText);
-            commentBlock.push(' * ' + doclet.freeText);
-
+            // console.warn(doclet.freeText);
+           // commentBlock.push(' * ' + doclet.freeText);
+            
+            var freeText = doclet.freeText.trim();
+            freeText = addStarLines(freeText, {});
+            
+            commentBlock.push(freeText);
         }
-        for ( var tIndex = 0; tIndex<tags.length; tIndex++) {
+        for (var tIndex = 0; tIndex < tags.length; tIndex++) {
             var newTag = tags[tIndex];
             var t = '@' + newTag.tag;
             if (doclet.hasOwnProperty(t)) {
                 if (t.charAt(0) === '@') {
                     if (t !== '@return') {
                         var tag = doclet[t];
+                        //console.log(tag);
                         if (typeof tag === 'object') {
                             // {
                             // tagName: 'return',
@@ -2200,12 +2212,16 @@ function generateComment(functionWrapper, ast, walkerObj, input) {
                             // line: '@return {String}'
                             // }
                             // construct doclet tag
-                            console.warn(tag);
+                            //console.warn(tag);
                             commentBlock.push(' * ' + tag.line);
                         } else {
                             // construct doclet tag
-                            //console.warn('JUST TEXT >>> ' + addStarLines(newTag.text, newTag));
-                            commentBlock.push(' * ' + t + ' ' + addStarLines(newTag.text, newTag));
+                            //console.warn('JUST TEXT >>> ' + JSON.stringify(newTag));
+                            // addStarLines(newTag.text, newTag));
+                            if (newTag.text.trim().length > 0) {
+                                commentBlock.push(' * ' + t + ' '
+                                        + addStarLines(newTag.text, newTag));
+                            }
                         }
 
                     }
@@ -2217,7 +2233,7 @@ function generateComment(functionWrapper, ast, walkerObj, input) {
             params : [],
             returnValue : ''
         };
-        console.warn(funkyName);
+        // console.warn(funkyName + '\n' + );
         commentBlock.push(' * ' + funkyName);
     }
 

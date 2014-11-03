@@ -1,0 +1,129 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "index",
+      "AMD": true,
+      "webPath": "/js/controller/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'IndexController'.",
+        "code": "wfJD",
+        "evidence": "return function IndexController() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'IndexController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'index'.",
+        "code": "wfJD",
+        "evidence": "this.index = function(params) {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'index'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/myAccounts/index.js",
+  "folderPath": "test-source/js/controller/myAccounts",
+  "fileName": "index.js",
+  "packagePath": "/js/controller/myAccounts",
+  "webPath": "/js/controller/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "index",
+  "name": "index",
+  "camelName": "Index",
+  "processedFilePath": "test-output/js/controller/myAccounts/index.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 30,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 840,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./index",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "IndexController": 416
+    },
+    "methods": [
+      {
+        "name": "IndexController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function IndexController() {"
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "params"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "this.index = function(params) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myAccounts",
+    "fileName": "index.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 39
+}

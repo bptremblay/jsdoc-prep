@@ -1,0 +1,307 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "messages_header",
+      "AMD": true,
+      "webPath": "/js/view/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MessagesHeaderView'.",
+        "code": "wfJD",
+        "evidence": "return function MessagesHeaderView() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MessagesHeaderView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 17,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getConvoDeckMessagesContainer'.",
+        "code": "wfJD",
+        "evidence": "this.getConvoDeckMessagesContainer = function() {",
+        "line": 43,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getConvoDeckMessagesContainer'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'receiveConvoDeckMessageActionTaken'.",
+        "code": "wfJD",
+        "evidence": "this.receiveConvoDeckMessageActionTaken = function() {",
+        "line": 58,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'receiveConvoDeckMessageActionTaken'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'receiveConvoDeckToggleMessagesView'.",
+        "code": "wfJD",
+        "evidence": "this.receiveConvoDeckToggleMessagesView = function(data) {",
+        "line": 68,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'receiveConvoDeckToggleMessagesView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'stateHandlerHeaderDisplayed'.",
+        "code": "wfJD",
+        "evidence": "this.stateHandlerHeaderDisplayed = function() {",
+        "line": 84,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'stateHandlerHeaderDisplayed'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'stateHandlerAllMessagesDismissed'.",
+        "code": "wfJD",
+        "evidence": "this.stateHandlerAllMessagesDismissed = function() {",
+        "line": 93,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'stateHandlerAllMessagesDismissed'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'stateHandlerHeaderMinimized'.",
+        "code": "wfJD",
+        "evidence": "this.stateHandlerHeaderMinimized = function() {",
+        "line": 108,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'stateHandlerHeaderMinimized'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'stateHandlerHeaderMaximized'.",
+        "code": "wfJD",
+        "evidence": "this.stateHandlerHeaderMaximized = function() {",
+        "line": 125,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'stateHandlerHeaderMaximized'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'stateHandlerHeaderIconErrorState'.",
+        "code": "wfJD",
+        "evidence": "this.stateHandlerHeaderIconErrorState = function() {",
+        "line": 139,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'stateHandlerHeaderIconErrorState'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/conversationDeck/messagesHeader.js",
+  "folderPath": "test-source/js/view/conversationDeck",
+  "fileName": "messagesHeader.js",
+  "packagePath": "/js/view/conversationDeck",
+  "webPath": "/js/view/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "messages_header",
+  "name": "messagesHeader",
+  "camelName": "MessagesHeader",
+  "processedFilePath": "test-output/js/view/conversationDeck/messagesHeader.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 145,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 5209,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./messagesHeader",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "MessagesHeaderView": 1925
+    },
+    "methods": [
+      {
+        "name": "MessagesHeaderView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function MessagesHeaderView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 17,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "getConvoDeckMessagesContainer",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 43,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "$convoDeckMessagesContainer",
+        "classDeclarationFlag": false,
+        "line": "this.getConvoDeckMessagesContainer = function() {"
+      },
+      {
+        "name": "receiveConvoDeckMessageActionTaken",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 58,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.receiveConvoDeckMessageActionTaken = function() {"
+      },
+      {
+        "name": "receiveConvoDeckToggleMessagesView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 68,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.receiveConvoDeckToggleMessagesView = function(data) {"
+      },
+      {
+        "name": "stateHandlerHeaderDisplayed",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 84,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.stateHandlerHeaderDisplayed = function() {"
+      },
+      {
+        "name": "stateHandlerAllMessagesDismissed",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 93,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.stateHandlerAllMessagesDismissed = function() {"
+      },
+      {
+        "name": "stateHandlerHeaderMinimized",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 108,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.stateHandlerHeaderMinimized = function() {"
+      },
+      {
+        "name": "stateHandlerHeaderMaximized",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 125,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.stateHandlerHeaderMaximized = function() {"
+      },
+      {
+        "name": "stateHandlerHeaderIconErrorState",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 139,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.stateHandlerHeaderIconErrorState = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/conversationDeck",
+    "fileName": "messagesHeader.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 131
+}

@@ -1,0 +1,101 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "expanded",
+      "AMD": true,
+      "webPath": "/js/service/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'expandedService'.",
+        "code": "wfJD",
+        "evidence": "return function expandedService() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'expandedService'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/service/myAccounts/expanded.js",
+  "folderPath": "test-source/js/service/myAccounts",
+  "fileName": "expanded.js",
+  "packagePath": "/js/service/myAccounts",
+  "webPath": "/js/service/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "expanded",
+  "name": "expanded",
+  "camelName": "Expanded",
+  "processedFilePath": "test-output/js/service/myAccounts/expanded.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 24,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 650,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./expanded",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "expandedService",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function expandedService() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/myAccounts",
+    "fileName": "expanded.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 30
+}

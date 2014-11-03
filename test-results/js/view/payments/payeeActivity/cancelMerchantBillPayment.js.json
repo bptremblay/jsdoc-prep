@@ -1,0 +1,122 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "cancel_merchant_bill_payment",
+      "AMD": true,
+      "webPath": "/js/view/payments/payeeActivity"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'CancelMerchantBillPaymentView'.",
+        "code": "wfJD",
+        "evidence": "return function CancelMerchantBillPaymentView() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'CancelMerchantBillPaymentView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/payments/payeeActivity/cancelMerchantBillPayment.js",
+  "folderPath": "test-source/js/view/payments/payeeActivity",
+  "fileName": "cancelMerchantBillPayment.js",
+  "packagePath": "/js/view/payments/payeeActivity",
+  "webPath": "/js/view/payments/payeeActivity",
+  "libFile": false,
+  "min": false,
+  "realName": "cancel_merchant_bill_payment",
+  "name": "cancel_merchant_bill_payment",
+  "camelName": "CancelMerchantBillPayment",
+  "processedFilePath": "test-output/js/view/payments/payeeActivity/cancelMerchantBillPayment.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 24,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/payeeActivity",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 772,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./cancelMerchantBillPayment",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "CancelMerchantBillPaymentView": 370
+    },
+    "methods": [
+      {
+        "name": "CancelMerchantBillPaymentView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function CancelMerchantBillPaymentView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/payeeActivity",
+    "fileName": "cancelMerchantBillPayment.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 29
+}

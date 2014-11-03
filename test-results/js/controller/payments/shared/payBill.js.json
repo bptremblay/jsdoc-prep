@@ -1,0 +1,176 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "pay_bill",
+      "AMD": true,
+      "webPath": "/js/controller/payments/shared"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'PayBillController'.",
+        "code": "wfJD",
+        "evidence": "return function PayBillController() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'PayBillController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'index'.",
+        "code": "wfJD",
+        "evidence": "this.index = function(args) {",
+        "line": 26,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'index'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handlePayeeSelect'.",
+        "code": "wfJD",
+        "evidence": "this.handlePayeeSelect = function(payeeId) {",
+        "line": 46,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handlePayeeSelect'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/payments/shared/payBill.js",
+  "folderPath": "test-source/js/controller/payments/shared",
+  "fileName": "payBill.js",
+  "packagePath": "/js/controller/payments/shared",
+  "webPath": "/js/controller/payments/shared",
+  "libFile": false,
+  "min": false,
+  "realName": "pay_bill",
+  "name": "payBill",
+  "camelName": "PayBill",
+  "processedFilePath": "test-output/js/controller/payments/shared/payBill.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 100,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/payments/shared",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 3654,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./payBill",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "PayBillController": 1797
+    },
+    "methods": [
+      {
+        "name": "PayBillController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function PayBillController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 26,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "args"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "this.index = function(args) {"
+      },
+      {
+        "name": "handlePayeeSelect",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 46,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "payeeId"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.handlePayeeSelect = function(payeeId) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/payments/shared",
+    "fileName": "payBill.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 104
+}

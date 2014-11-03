@@ -1,0 +1,488 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "card_payment_list_data_transform",
+      "AMD": true,
+      "webPath": "/js/service/payments/manageFundingAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'cardPaymentListDataTransform'.",
+        "code": "wfJD",
+        "evidence": "return function cardPaymentListDataTransform() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'cardPaymentListDataTransform'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getTransformedPayeeData'.",
+        "code": "wfJD",
+        "evidence": "this.getTransformedPayeeData = function(data, selectedPayee) {",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getTransformedPayeeData'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getTransformedAccountsData'.",
+        "code": "wfJD",
+        "evidence": "this.getTransformedAccountsData = function(data, specName, payeeId) {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getTransformedAccountsData'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getPayees'.",
+        "code": "wfJD",
+        "evidence": "this.getPayees = function(data, fa, selectedPayee) {",
+        "line": 22,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getPayees'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getMultiplePayees'.",
+        "code": "wfJD",
+        "evidence": "this.getMultiplePayees = function(payees) {",
+        "line": 35,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getMultiplePayees'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getHasFundingAccounts'.",
+        "code": "wfJD",
+        "evidence": "this.getHasFundingAccounts = function(data) {",
+        "line": 42,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getHasFundingAccounts'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getPayeesOptions'.",
+        "code": "wfJD",
+        "evidence": "this.getPayeesOptions = function(payees, selectedPayee) {",
+        "line": 48,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getPayeesOptions'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'formLinks'.",
+        "code": "wfJD",
+        "evidence": "this.formLinks = function(deleteAllowed, updateAllowed, defaultAllowed, iid) {",
+        "line": 73,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'formLinks'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getFundingAccounts'.",
+        "code": "wfJD",
+        "evidence": "this.getFundingAccounts = function(fundingAccounts, payeeId) {",
+        "line": 112,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getFundingAccounts'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'formLinksObj'.",
+        "code": "wfJD",
+        "evidence": "this.formLinksObj = function(href, id, className, label) {",
+        "line": 161,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'formLinksObj'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getHeaders'.",
+        "code": "wfJD",
+        "evidence": "this.getHeaders = function(specName) {",
+        "line": 171,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getHeaders'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'formCardFundingUpdateFields'.",
+        "code": "wfJD",
+        "evidence": "this.formCardFundingUpdateFields = function(cardFundingUpdateListJSON, ePayAccountRefId, payeeId) {",
+        "line": 190,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'formCardFundingUpdateFields'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'buildInputBoxObj'.",
+        "code": "wfJD",
+        "evidence": "this.buildInputBoxObj = function(inputId, inputLabel, inputName, inputValue, inputClasses, inputMaxLength) {",
+        "line": 217,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'buildInputBoxObj'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'buildActionObj'.",
+        "code": "wfJD",
+        "evidence": "this.buildActionObj = function(id, classes, type, label, ePayAccountRefId, isDisabled, adatext) {",
+        "line": 238,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'buildActionObj'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/service/payments/manageFundingAccounts/CardPaymentListDataTransform.js",
+  "folderPath": "test-source/js/service/payments/manageFundingAccounts",
+  "fileName": "CardPaymentListDataTransform.js",
+  "packagePath": "/js/service/payments/manageFundingAccounts",
+  "webPath": "/js/service/payments/manageFundingAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "card_payment_list_data_transform",
+  "name": "CardPaymentListDataTransform",
+  "camelName": "CardPaymentListDataTransform",
+  "processedFilePath": "test-output/js/service/payments/manageFundingAccounts/CardPaymentListDataTransform.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 252,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/payments/manageFundingAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 7313,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./CardPaymentListDataTransform",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "cardPaymentListDataTransform",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "payees",
+        "classDeclarationFlag": false,
+        "line": "return function cardPaymentListDataTransform() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "getTransformedPayeeData",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data",
+          "selectedPayee"
+        ],
+        "description": "",
+        "return": "payees",
+        "classDeclarationFlag": false,
+        "line": "this.getTransformedPayeeData = function(data, selectedPayee) {"
+      },
+      {
+        "name": "getTransformedAccountsData",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data",
+          "specName",
+          "payeeId"
+        ],
+        "description": "",
+        "return": "theData",
+        "classDeclarationFlag": false,
+        "line": "this.getTransformedAccountsData = function(data, specName, payeeId) {"
+      },
+      {
+        "name": "getPayees",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 22,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data",
+          "fa",
+          "selectedPayee"
+        ],
+        "description": "",
+        "return": "theData",
+        "classDeclarationFlag": false,
+        "line": "this.getPayees = function(data, fa, selectedPayee) {"
+      },
+      {
+        "name": "getMultiplePayees",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 35,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "payees"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "this.getMultiplePayees = function(payees) {"
+      },
+      {
+        "name": "getHasFundingAccounts",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 42,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "this.getHasFundingAccounts = function(data) {"
+      },
+      {
+        "name": "getPayeesOptions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 48,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "payees",
+          "selectedPayee"
+        ],
+        "description": "",
+        "return": "out",
+        "classDeclarationFlag": false,
+        "line": "this.getPayeesOptions = function(payees, selectedPayee) {"
+      },
+      {
+        "name": "formLinks",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 73,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "deleteAllowed",
+          "updateAllowed",
+          "defaultAllowed",
+          "iid"
+        ],
+        "description": "",
+        "return": "linksArr",
+        "classDeclarationFlag": false,
+        "line": "this.formLinks = function(deleteAllowed, updateAllowed, defaultAllowed, iid) {"
+      },
+      {
+        "name": "getFundingAccounts",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 112,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "fundingAccounts",
+          "payeeId"
+        ],
+        "description": "",
+        "return": "out",
+        "classDeclarationFlag": false,
+        "line": "this.getFundingAccounts = function(fundingAccounts, payeeId) {"
+      },
+      {
+        "name": "formLinksObj",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 161,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "href",
+          "id",
+          "className",
+          "label"
+        ],
+        "description": "",
+        "return": "link",
+        "classDeclarationFlag": false,
+        "line": "this.formLinksObj = function(href, id, className, label) {"
+      },
+      {
+        "name": "getHeaders",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 171,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "specName"
+        ],
+        "description": "",
+        "return": "headers",
+        "classDeclarationFlag": false,
+        "line": "this.getHeaders = function(specName) {"
+      },
+      {
+        "name": "formCardFundingUpdateFields",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 190,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "cardFundingUpdateListJSON",
+          "ePayAccountRefId",
+          "payeeId"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "this.formCardFundingUpdateFields = function(cardFundingUpdateListJSON, ePayAccountRefId, payeeId) {"
+      },
+      {
+        "name": "buildInputBoxObj",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 217,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputId",
+          "inputLabel",
+          "inputName",
+          "inputValue",
+          "inputClasses",
+          "inputMaxLength"
+        ],
+        "description": "",
+        "return": "inputBoxObj",
+        "classDeclarationFlag": false,
+        "line": "this.buildInputBoxObj = function(inputId, inputLabel, inputName, inputValue, inputClasses, inputMaxLength) {"
+      },
+      {
+        "name": "buildActionObj",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 238,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "id",
+          "classes",
+          "type",
+          "label",
+          "ePayAccountRefId",
+          "isDisabled",
+          "adatext"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "this.buildActionObj = function(id, classes, type, label, ePayAccountRefId, isDisabled, adatext) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/payments/manageFundingAccounts",
+    "fileName": "CardPaymentListDataTransform.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 303
+}

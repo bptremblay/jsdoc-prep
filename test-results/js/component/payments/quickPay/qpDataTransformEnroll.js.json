@@ -1,0 +1,388 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "qp_data_transform_enroll",
+      "AMD": true,
+      "webPath": "/js/component/payments/quickPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setContext'.",
+        "code": "wfJD",
+        "evidence": "var setContext = function(context) {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setContext'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getContext'.",
+        "code": "wfJD",
+        "evidence": "var getContext = function() {",
+        "line": 12,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getContext'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'copyOptions'.",
+        "code": "wfJD",
+        "evidence": "var copyOptions = function(emailOptions) {",
+        "line": 16,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'copyOptions'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function(context) {",
+        "line": 31,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isMobileAdded'.",
+        "code": "wfJD",
+        "evidence": "isMobileAdded: function(phoneNumbers) {",
+        "line": 34,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isMobileAdded'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getEnrollSetupViewModel'.",
+        "code": "wfJD",
+        "evidence": "getEnrollSetupViewModel: function() {",
+        "line": 49,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getEnrollSetupViewModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateEmailOptionsDropdownSelectedById'.",
+        "code": "wfJD",
+        "evidence": "updateEmailOptionsDropdownSelectedById: function(emailOptions, selectedOptionId) {",
+        "line": 58,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateEmailOptionsDropdownSelectedById'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getEnrollEntryViewModel'.",
+        "code": "wfJD",
+        "evidence": "getEnrollEntryViewModel: function(data) {",
+        "line": 71,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getEnrollEntryViewModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getEnrollVerifyViewModel'.",
+        "code": "wfJD",
+        "evidence": "getEnrollVerifyViewModel: function(qpEnrollmentAddResults) {",
+        "line": 159,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getEnrollVerifyViewModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getEnrollConfirmViewModel'.",
+        "code": "wfJD",
+        "evidence": "getEnrollConfirmViewModel: function(qpEnrollmentConfirmResults) {",
+        "line": 175,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getEnrollConfirmViewModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getEnrollEnding'.",
+        "code": "wfJD",
+        "evidence": "getEnrollEnding: function(resultSet, isVerify) {",
+        "line": 187,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getEnrollEnding'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getEnrollGetRow'.",
+        "code": "wfJD",
+        "evidence": "getEnrollGetRow: function(isMobile, isPrimary, isVerify, emailObj, label) {",
+        "line": 221,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getEnrollGetRow'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/payments/quickPay/qpDataTransformEnroll.js",
+  "folderPath": "test-source/js/component/payments/quickPay",
+  "fileName": "qpDataTransformEnroll.js",
+  "packagePath": "/js/component/payments/quickPay",
+  "webPath": "/js/component/payments/quickPay",
+  "libFile": false,
+  "min": false,
+  "realName": "qp_data_transform_enroll",
+  "name": "qpDataTransformEnroll",
+  "camelName": "QpDataTransformEnroll",
+  "processedFilePath": "test-output/js/component/payments/quickPay/qpDataTransformEnroll.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 259,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/quickPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 8950,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./qpDataTransformEnroll",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "setContext",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "context"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "var setContext = function(context) {"
+      },
+      {
+        "name": "getContext",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 12,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "var getContext = function() {"
+      },
+      {
+        "name": "copyOptions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "emailOptions"
+        ],
+        "description": "",
+        "return": "copyEmailOpts",
+        "classDeclarationFlag": false,
+        "line": "var copyOptions = function(emailOptions) {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 31,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "context"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function(context) {"
+      },
+      {
+        "name": "isMobileAdded",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 34,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "phoneNumbers"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "isMobileAdded: function(phoneNumbers) {"
+      },
+      {
+        "name": "getEnrollSetupViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 49,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "viewModel",
+        "classDeclarationFlag": false,
+        "line": "getEnrollSetupViewModel: function() {"
+      },
+      {
+        "name": "updateEmailOptionsDropdownSelectedById",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 58,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "emailOptions",
+          "selectedOptionId"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "updateEmailOptionsDropdownSelectedById: function(emailOptions, selectedOptionId) {"
+      },
+      {
+        "name": "getEnrollEntryViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 71,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "return": "viewModel",
+        "classDeclarationFlag": false,
+        "line": "getEnrollEntryViewModel: function(data) {"
+      },
+      {
+        "name": "getEnrollVerifyViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 159,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "qpEnrollmentAddResults"
+        ],
+        "description": "",
+        "return": "viewModel",
+        "classDeclarationFlag": false,
+        "line": "getEnrollVerifyViewModel: function(qpEnrollmentAddResults) {"
+      },
+      {
+        "name": "getEnrollConfirmViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 175,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "qpEnrollmentConfirmResults"
+        ],
+        "description": "",
+        "return": "viewModel",
+        "classDeclarationFlag": false,
+        "line": "getEnrollConfirmViewModel: function(qpEnrollmentConfirmResults) {"
+      },
+      {
+        "name": "getEnrollEnding",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 187,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "resultSet",
+          "isVerify"
+        ],
+        "description": "",
+        "return": "viewModel",
+        "classDeclarationFlag": false,
+        "line": "getEnrollEnding: function(resultSet, isVerify) {"
+      },
+      {
+        "name": "getEnrollGetRow",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 221,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "isMobile",
+          "isPrimary",
+          "isVerify",
+          "emailObj",
+          "label"
+        ],
+        "description": "",
+        "return": "tmpEmail",
+        "classDeclarationFlag": false,
+        "line": "getEnrollGetRow: function(isMobile, isPrimary, isVerify, emailObj, label) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/quickPay",
+    "fileName": "qpDataTransformEnroll.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 290
+}

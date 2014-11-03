@@ -1,0 +1,407 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "qp_send",
+      "AMD": true,
+      "webPath": "/js/controller/payments/quickPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'SendController'.",
+        "code": "wfJD",
+        "evidence": "return function SendController() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'SendController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'index'.",
+        "code": "wfJD",
+        "evidence": "this.index = function() {",
+        "line": 98,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'index'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'registerComponent'.",
+        "code": "wfJD",
+        "evidence": "this.registerComponent = function() {",
+        "line": 104,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'registerComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showEntry'.",
+        "code": "wfJD",
+        "evidence": "this.showEntry = function(data) {",
+        "line": 132,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showEntry'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showVerify'.",
+        "code": "wfJD",
+        "evidence": "this.showVerify = function(data) {",
+        "line": 149,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showVerify'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showConfirm'.",
+        "code": "wfJD",
+        "evidence": "this.showConfirm = function(data) {",
+        "line": 158,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showConfirm'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateNotificationSchedule'.",
+        "code": "wfJD",
+        "evidence": "this.updateNotificationSchedule = function(data) {",
+        "line": 166,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateNotificationSchedule'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'renderEntry'.",
+        "code": "wfJD",
+        "evidence": "this.renderEntry = function() {",
+        "line": 172,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'renderEntry'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'renderVerify'.",
+        "code": "wfJD",
+        "evidence": "this.renderVerify = function() {",
+        "line": 196,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'renderVerify'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'renderConfirm'.",
+        "code": "wfJD",
+        "evidence": "this.renderConfirm = function() {",
+        "line": 215,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'renderConfirm'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'renderRepeatingPaymentOptions'.",
+        "code": "wfJD",
+        "evidence": "this.renderRepeatingPaymentOptions = function(inputData) {",
+        "line": 230,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'renderRepeatingPaymentOptions'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'renderOverlay'.",
+        "code": "wfJD",
+        "evidence": "this.renderOverlay = function() {",
+        "line": 249,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'renderOverlay'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'renderServerErrorMessage'.",
+        "code": "wfJD",
+        "evidence": "this.renderServerErrorMessage = function(targetId) {",
+        "line": 257,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'renderServerErrorMessage'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/payments/quickPay/qpSend.js",
+  "folderPath": "test-source/js/controller/payments/quickPay",
+  "fileName": "qpSend.js",
+  "packagePath": "/js/controller/payments/quickPay",
+  "webPath": "/js/controller/payments/quickPay",
+  "libFile": false,
+  "min": false,
+  "realName": "qp_send",
+  "name": "qpSend",
+  "camelName": "QpSend",
+  "processedFilePath": "test-output/js/controller/payments/quickPay/qpSend.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 264,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/payments/quickPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 9004,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./qpSend",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "SendController": 4731
+    },
+    "methods": [
+      {
+        "name": "SendController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function SendController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 98,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.index = function() {"
+      },
+      {
+        "name": "registerComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 104,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.registerComponent = function() {"
+      },
+      {
+        "name": "showEntry",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 132,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.showEntry = function(data) {"
+      },
+      {
+        "name": "showVerify",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 149,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.showVerify = function(data) {"
+      },
+      {
+        "name": "showConfirm",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 158,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.showConfirm = function(data) {"
+      },
+      {
+        "name": "updateNotificationSchedule",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 166,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.updateNotificationSchedule = function(data) {"
+      },
+      {
+        "name": "renderEntry",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 172,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.renderEntry = function() {"
+      },
+      {
+        "name": "renderVerify",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 196,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.renderVerify = function() {"
+      },
+      {
+        "name": "renderConfirm",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 215,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.renderConfirm = function() {"
+      },
+      {
+        "name": "renderRepeatingPaymentOptions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 230,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.renderRepeatingPaymentOptions = function(inputData) {"
+      },
+      {
+        "name": "renderOverlay",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 249,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.renderOverlay = function() {"
+      },
+      {
+        "name": "renderServerErrorMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 257,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "targetId"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.renderServerErrorMessage = function(targetId) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/payments/quickPay",
+    "fileName": "qpSend.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 257
+}

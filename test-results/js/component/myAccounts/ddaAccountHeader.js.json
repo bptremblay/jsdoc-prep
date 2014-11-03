@@ -1,0 +1,281 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "dda_account_header",
+      "AMD": true,
+      "webPath": "/js/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountHeaderDetails'.",
+        "code": "wfJD",
+        "evidence": "requestAccountHeaderDetails: function(inputData, detailsData) {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountHeaderDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountSummary'.",
+        "code": "wfJD",
+        "evidence": "requestAccountSummary: function() {},",
+        "line": 38,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountSummary'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setupOverdraftProtectionPreferences'.",
+        "code": "wfJD",
+        "evidence": "setupOverdraftProtectionPreferences: function() {},",
+        "line": 39,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setupOverdraftProtectionPreferences'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setupDebitCardCoveragePreferences'.",
+        "code": "wfJD",
+        "evidence": "setupDebitCardCoveragePreferences: function() {},",
+        "line": 40,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setupDebitCardCoveragePreferences'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setupPaperlessStatementsPreferences'.",
+        "code": "wfJD",
+        "evidence": "setupPaperlessStatementsPreferences: function() {},",
+        "line": 41,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setupPaperlessStatementsPreferences'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestOverdraftProtectionDetails'.",
+        "code": "wfJD",
+        "evidence": "requestOverdraftProtectionDetails: function() {},",
+        "line": 42,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestOverdraftProtectionDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestDebitCardCoverageDetails'.",
+        "code": "wfJD",
+        "evidence": "requestDebitCardCoverageDetails: function() {},",
+        "line": 43,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestDebitCardCoverageDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestPaperlessStatementsDetails'.",
+        "code": "wfJD",
+        "evidence": "requestPaperlessStatementsDetails: function() {}",
+        "line": 44,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestPaperlessStatementsDetails'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/myAccounts/ddaAccountHeader.js",
+  "folderPath": "test-source/js/component/myAccounts",
+  "fileName": "ddaAccountHeader.js",
+  "packagePath": "/js/component/myAccounts",
+  "webPath": "/js/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "dda_account_header",
+  "name": "ddaAccountHeader",
+  "camelName": "DdaAccountHeader",
+  "processedFilePath": "test-output/js/component/myAccounts/ddaAccountHeader.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 46,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1616,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./ddaAccountHeader",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "requestAccountHeaderDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData",
+          "detailsData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountHeaderDetails: function(inputData, detailsData) {"
+      },
+      {
+        "name": "requestAccountSummary",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 38,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountSummary: function() {},"
+      },
+      {
+        "name": "setupOverdraftProtectionPreferences",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 39,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setupOverdraftProtectionPreferences: function() {},"
+      },
+      {
+        "name": "setupDebitCardCoveragePreferences",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 40,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setupDebitCardCoveragePreferences: function() {},"
+      },
+      {
+        "name": "setupPaperlessStatementsPreferences",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 41,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setupPaperlessStatementsPreferences: function() {},"
+      },
+      {
+        "name": "requestOverdraftProtectionDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 42,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestOverdraftProtectionDetails: function() {},"
+      },
+      {
+        "name": "requestDebitCardCoverageDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 43,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestDebitCardCoverageDetails: function() {},"
+      },
+      {
+        "name": "requestPaperlessStatementsDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 44,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestPaperlessStatementsDetails: function() {}"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
+    "fileName": "ddaAccountHeader.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 76
+}

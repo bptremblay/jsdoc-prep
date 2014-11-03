@@ -1,0 +1,327 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "activity",
+      "AMD": true,
+      "webPath": "/js/controller/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'ActivityController'.",
+        "code": "wfJD",
+        "evidence": "return function ActivityController() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'ActivityController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setAccountActivity'.",
+        "code": "wfJD",
+        "evidence": "this.setAccountActivity = function(inputData) {",
+        "line": 89,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setAccountActivity'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setDDAAccountActivity'.",
+        "code": "wfJD",
+        "evidence": "this.setDDAAccountActivity = function(inputData) {",
+        "line": 107,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setDDAAccountActivity'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'makeActivityCall'.",
+        "code": "wfJD",
+        "evidence": "this.makeActivityCall = function(inputData) {",
+        "line": 227,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'makeActivityCall'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setCardAccountActivity'.",
+        "code": "wfJD",
+        "evidence": "this.setCardAccountActivity = function(inputData) {",
+        "line": 285,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setCardAccountActivity'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setAccountActivity_Mortgage'.",
+        "code": "wfJD",
+        "evidence": "this.setAccountActivity_Mortgage = function(inputData) {",
+        "line": 394,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setAccountActivity_Mortgage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'filterByActivity'.",
+        "code": "wfJD",
+        "evidence": "this.filterByActivity = function(Data) {",
+        "line": 407,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'filterByActivity'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'creditFilterByActivity'.",
+        "code": "wfJD",
+        "evidence": "this.creditFilterByActivity = function(Data) {",
+        "line": 443,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'creditFilterByActivity'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'executeCAV_SharedMortgageAndLoanActivity'.",
+        "code": "wfJD",
+        "evidence": "this.executeCAV_SharedMortgageAndLoanActivity = function(inputData) {",
+        "line": 490,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'executeCAV_SharedMortgageAndLoanActivity'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/myAccounts/activity.js",
+  "folderPath": "test-source/js/controller/myAccounts",
+  "fileName": "activity.js",
+  "packagePath": "/js/controller/myAccounts",
+  "webPath": "/js/controller/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "activity",
+  "name": "activity",
+  "camelName": "Activity",
+  "processedFilePath": "test-output/js/controller/myAccounts/activity.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 500,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 24454,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./activity",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "ActivityController": 16265
+    },
+    "methods": [
+      {
+        "name": "ActivityController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function ActivityController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "setAccountActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 89,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.setAccountActivity = function(inputData) {"
+      },
+      {
+        "name": "setDDAAccountActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 107,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.setDDAAccountActivity = function(inputData) {"
+      },
+      {
+        "name": "makeActivityCall",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 227,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.makeActivityCall = function(inputData) {"
+      },
+      {
+        "name": "setCardAccountActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 285,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.setCardAccountActivity = function(inputData) {"
+      },
+      {
+        "name": "setAccountActivity_Mortgage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 394,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.setAccountActivity_Mortgage = function(inputData) {"
+      },
+      {
+        "name": "filterByActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 407,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "Data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.filterByActivity = function(Data) {"
+      },
+      {
+        "name": "creditFilterByActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 443,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "Data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.creditFilterByActivity = function(Data) {"
+      },
+      {
+        "name": "executeCAV_SharedMortgageAndLoanActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 490,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.executeCAV_SharedMortgageAndLoanActivity = function(inputData) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myAccounts",
+    "fileName": "activity.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 480
+}

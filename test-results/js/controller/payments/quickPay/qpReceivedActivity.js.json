@@ -1,0 +1,191 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "qp_received_activity",
+      "AMD": true,
+      "webPath": "/js/controller/payments/quickPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'SendController'.",
+        "code": "wfJD",
+        "evidence": "return function SendController() {",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'SendController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 16,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'index'.",
+        "code": "wfJD",
+        "evidence": "this.index = function() {",
+        "line": 53,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'index'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'entry'.",
+        "code": "wfJD",
+        "evidence": "this.entry = function() {",
+        "line": 61,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'entry'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'renderReceivedList'.",
+        "code": "wfJD",
+        "evidence": "this.renderReceivedList = function() {",
+        "line": 91,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'renderReceivedList'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/payments/quickPay/qpReceivedActivity.js",
+  "folderPath": "test-source/js/controller/payments/quickPay",
+  "fileName": "qpReceivedActivity.js",
+  "packagePath": "/js/controller/payments/quickPay",
+  "webPath": "/js/controller/payments/quickPay",
+  "libFile": false,
+  "min": false,
+  "realName": "qp_received_activity",
+  "name": "qpReceivedActivity",
+  "camelName": "QpReceivedActivity",
+  "processedFilePath": "test-output/js/controller/payments/quickPay/qpReceivedActivity.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 97,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/payments/quickPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 2833,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./qpReceivedActivity",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "SendController": 1484
+    },
+    "methods": [
+      {
+        "name": "SendController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function SendController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 53,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.index = function() {"
+      },
+      {
+        "name": "entry",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 61,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.entry = function() {"
+      },
+      {
+        "name": "renderReceivedList",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 91,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.renderReceivedList = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/payments/quickPay",
+    "fileName": "qpReceivedActivity.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 98
+}

@@ -1,0 +1,660 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "messages",
+      "AMD": true,
+      "webPath": "/js/controller/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MessagesController'.",
+        "code": "wfJD",
+        "evidence": "return function MessagesController() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MessagesController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 31,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setDefault'.",
+        "code": "wfJD",
+        "evidence": "this.setDefault = function() {",
+        "line": 51,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setDefault'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'index'.",
+        "code": "wfJD",
+        "evidence": "this.index = function() {",
+        "line": 67,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'index'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'retrieveConvoDeckMessages'.",
+        "code": "wfJD",
+        "evidence": "this.retrieveConvoDeckMessages = function() {",
+        "line": 82,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'retrieveConvoDeckMessages'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'retrieveAdMessages'.",
+        "code": "wfJD",
+        "evidence": "this.retrieveAdMessages = function() {",
+        "line": 104,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'retrieveAdMessages'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'registerConvoDeckMessagesIfReady'.",
+        "code": "wfJD",
+        "evidence": "this.registerConvoDeckMessagesIfReady = function(convoDeckMessagesResponseData, adMessageResponseDataList) {",
+        "line": 223,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'registerConvoDeckMessagesIfReady'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'registerConvoDeckMessagesError'.",
+        "code": "wfJD",
+        "evidence": "this.registerConvoDeckMessagesError = function() {",
+        "line": 267,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'registerConvoDeckMessagesError'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'mergeConvoDeckAndAdMessagesResponses'.",
+        "code": "wfJD",
+        "evidence": "this.mergeConvoDeckAndAdMessagesResponses = function(convoDeckMessagesResponseData, adMessageResponseDataList) {",
+        "line": 292,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'mergeConvoDeckAndAdMessagesResponses'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'addMessagesHeaderModelAndComponent'.",
+        "code": "wfJD",
+        "evidence": "this.addMessagesHeaderModelAndComponent = function(totalConversationMessages) {",
+        "line": 323,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'addMessagesHeaderModelAndComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'addMessagesModelsAndComponents'.",
+        "code": "wfJD",
+        "evidence": "this.addMessagesModelsAndComponents = function(messages) {",
+        "line": 384,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'addMessagesModelsAndComponents'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'addMessagesErrorModelsAndComponents'.",
+        "code": "wfJD",
+        "evidence": "this.addMessagesErrorModelsAndComponents = function() {",
+        "line": 470,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'addMessagesErrorModelsAndComponents'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'addMessagesFooterModelAndComponent'.",
+        "code": "wfJD",
+        "evidence": "this.addMessagesFooterModelAndComponent = function(totalConversationMessages) {",
+        "line": 501,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'addMessagesFooterModelAndComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setConvoDeckMessageTextAndActions'.",
+        "code": "wfJD",
+        "evidence": "this.setConvoDeckMessageTextAndActions = function(messageComponent, textId, textIdData, actionIds) {",
+        "line": 541,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setConvoDeckMessageTextAndActions'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setAdMessageTextAndActions'.",
+        "code": "wfJD",
+        "evidence": "this.setAdMessageTextAndActions = function(messageComponent, message, actions) {",
+        "line": 599,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setAdMessageTextAndActions'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'displayConvoDeckMessagesIfReady'.",
+        "code": "wfJD",
+        "evidence": "this.displayConvoDeckMessagesIfReady = function() {",
+        "line": 633,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'displayConvoDeckMessagesIfReady'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'emitConvoDeckMessagesRemaining'.",
+        "code": "wfJD",
+        "evidence": "this.emitConvoDeckMessagesRemaining = function(count) {",
+        "line": 646,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'emitConvoDeckMessagesRemaining'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'receiveConvoDeckGreetingHideReady'.",
+        "code": "wfJD",
+        "evidence": "this.receiveConvoDeckGreetingHideReady = function() {",
+        "line": 657,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'receiveConvoDeckGreetingHideReady'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'receiveConvoDeckMessageDismissed'.",
+        "code": "wfJD",
+        "evidence": "this.receiveConvoDeckMessageDismissed = function(data) {",
+        "line": 667,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'receiveConvoDeckMessageDismissed'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'receiveConvoDeckDismissAllMessages'.",
+        "code": "wfJD",
+        "evidence": "this.receiveConvoDeckDismissAllMessages = function() {",
+        "line": 696,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'receiveConvoDeckDismissAllMessages'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'receiveConvoDeckSearchResults'.",
+        "code": "wfJD",
+        "evidence": "this.receiveConvoDeckSearchResults = function(maximized) {",
+        "line": 760,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'receiveConvoDeckSearchResults'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'receiveConvoDeckToggleMessages'.",
+        "code": "wfJD",
+        "evidence": "this.receiveConvoDeckToggleMessages = function() {",
+        "line": 769,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'receiveConvoDeckToggleMessages'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'registerConvoDeckMessagesWithoutAds'.",
+        "code": "wfJD",
+        "evidence": "this.registerConvoDeckMessagesWithoutAds = function() {",
+        "line": 791,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'registerConvoDeckMessagesWithoutAds'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'receiveRetryConversationMessagesRequest'.",
+        "code": "wfJD",
+        "evidence": "this.receiveRetryConversationMessagesRequest = function() {",
+        "line": 799,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'receiveRetryConversationMessagesRequest'."
+      }
+    ],
+    "jsDocNameFixerProc": [
+      {
+        "id": "(error)",
+        "raw": "jsDoc tag error.",
+        "code": "wfJD",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "jsDoc tag error: found '@return void'."
+      }
+    ],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/conversationDeck/messages.js",
+  "folderPath": "test-source/js/controller/conversationDeck",
+  "fileName": "messages.js",
+  "packagePath": "/js/controller/conversationDeck",
+  "webPath": "/js/controller/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "messages",
+  "name": "messages",
+  "camelName": "Messages",
+  "processedFilePath": "test-output/js/controller/conversationDeck/messages.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 807,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 30245,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./messages",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "MessagesController": 10384
+    },
+    "methods": [
+      {
+        "name": "MessagesController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function MessagesController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 31,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "setDefault",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 51,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.setDefault = function() {"
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 67,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.index = function() {"
+      },
+      {
+        "name": "retrieveConvoDeckMessages",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 82,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.retrieveConvoDeckMessages = function() {"
+      },
+      {
+        "name": "retrieveAdMessages",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 104,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.retrieveAdMessages = function() {"
+      },
+      {
+        "name": "registerConvoDeckMessagesIfReady",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 223,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "convoDeckMessagesResponseData",
+          "adMessageResponseDataList"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.registerConvoDeckMessagesIfReady = function(convoDeckMessagesResponseData, adMessageResponseDataList) {"
+      },
+      {
+        "name": "registerConvoDeckMessagesError",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 267,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.registerConvoDeckMessagesError = function() {"
+      },
+      {
+        "name": "mergeConvoDeckAndAdMessagesResponses",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 292,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "convoDeckMessagesResponseData",
+          "adMessageResponseDataList"
+        ],
+        "description": "",
+        "return": "allMessagesList",
+        "classDeclarationFlag": false,
+        "line": "this.mergeConvoDeckAndAdMessagesResponses = function(convoDeckMessagesResponseData, adMessageResponseDataList) {"
+      },
+      {
+        "name": "addMessagesHeaderModelAndComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 323,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "totalConversationMessages"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.addMessagesHeaderModelAndComponent = function(totalConversationMessages) {"
+      },
+      {
+        "name": "addMessagesModelsAndComponents",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 384,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "messages"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.addMessagesModelsAndComponents = function(messages) {"
+      },
+      {
+        "name": "addMessagesErrorModelsAndComponents",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 470,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.addMessagesErrorModelsAndComponents = function() {"
+      },
+      {
+        "name": "addMessagesFooterModelAndComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 501,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "totalConversationMessages"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.addMessagesFooterModelAndComponent = function(totalConversationMessages) {"
+      },
+      {
+        "name": "setConvoDeckMessageTextAndActions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 541,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "messageComponent",
+          "textId",
+          "textIdData",
+          "actionIds"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.setConvoDeckMessageTextAndActions = function(messageComponent, textId, textIdData, actionIds) {"
+      },
+      {
+        "name": "setAdMessageTextAndActions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 599,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "messageComponent",
+          "message",
+          "actions"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.setAdMessageTextAndActions = function(messageComponent, message, actions) {"
+      },
+      {
+        "name": "displayConvoDeckMessagesIfReady",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 633,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.displayConvoDeckMessagesIfReady = function() {"
+      },
+      {
+        "name": "emitConvoDeckMessagesRemaining",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 646,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "count"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.emitConvoDeckMessagesRemaining = function(count) {"
+      },
+      {
+        "name": "receiveConvoDeckGreetingHideReady",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 657,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.receiveConvoDeckGreetingHideReady = function() {"
+      },
+      {
+        "name": "receiveConvoDeckMessageDismissed",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 667,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.receiveConvoDeckMessageDismissed = function(data) {"
+      },
+      {
+        "name": "receiveConvoDeckDismissAllMessages",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 696,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.receiveConvoDeckDismissAllMessages = function() {"
+      },
+      {
+        "name": "receiveConvoDeckSearchResults",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 760,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "maximized"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.receiveConvoDeckSearchResults = function(maximized) {"
+      },
+      {
+        "name": "receiveConvoDeckToggleMessages",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 769,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.receiveConvoDeckToggleMessages = function() {"
+      },
+      {
+        "name": "registerConvoDeckMessagesWithoutAds",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 791,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.registerConvoDeckMessagesWithoutAds = function() {"
+      },
+      {
+        "name": "receiveRetryConversationMessagesRequest",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 799,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.receiveRetryConversationMessagesRequest = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/conversationDeck",
+    "fileName": "messages.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 613
+}

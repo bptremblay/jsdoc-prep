@@ -1,0 +1,111 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "rca_account_balance_summary",
+      "AMD": true,
+      "webPath": "/js/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'rcaAccountBalanceSummaryView'.",
+        "code": "wfJD",
+        "evidence": "return function rcaAccountBalanceSummaryView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'rcaAccountBalanceSummaryView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {};",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/myAccounts/rcaAccountBalanceSummary.js",
+  "folderPath": "test-source/js/view/myAccounts",
+  "fileName": "rcaAccountBalanceSummary.js",
+  "packagePath": "/js/view/myAccounts",
+  "webPath": "/js/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "rca_account_balance_summary",
+  "name": "rcaAccountBalanceSummary",
+  "camelName": "RcaAccountBalanceSummary",
+  "processedFilePath": "test-output/js/view/myAccounts/rcaAccountBalanceSummary.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 10,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 315,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./rcaAccountBalanceSummary",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "rcaAccountBalanceSummaryView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function rcaAccountBalanceSummaryView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {};"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/myAccounts",
+    "fileName": "rcaAccountBalanceSummary.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 13
+}

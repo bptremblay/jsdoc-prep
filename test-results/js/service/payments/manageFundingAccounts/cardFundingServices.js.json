@@ -1,0 +1,101 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "card_funding_services",
+      "AMD": true,
+      "webPath": "/js/service/payments/manageFundingAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'cardFundingServices'.",
+        "code": "wfJD",
+        "evidence": "return function cardFundingServices() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'cardFundingServices'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/service/payments/manageFundingAccounts/cardFundingServices.js",
+  "folderPath": "test-source/js/service/payments/manageFundingAccounts",
+  "fileName": "cardFundingServices.js",
+  "packagePath": "/js/service/payments/manageFundingAccounts",
+  "webPath": "/js/service/payments/manageFundingAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "card_funding_services",
+  "name": "cardFundingServices",
+  "camelName": "CardFundingServices",
+  "processedFilePath": "test-output/js/service/payments/manageFundingAccounts/cardFundingServices.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 33,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/payments/manageFundingAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 657,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./cardFundingServices",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "cardFundingServices",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function cardFundingServices() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/payments/manageFundingAccounts",
+    "fileName": "cardFundingServices.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 37
+}

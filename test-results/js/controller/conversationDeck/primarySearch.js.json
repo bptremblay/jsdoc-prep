@@ -1,0 +1,414 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "primary_search",
+      "AMD": true,
+      "webPath": "/js/controller/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'PrimarySearchController'.",
+        "code": "wfJD",
+        "evidence": "return function PrimarySearchController() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'PrimarySearchController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 16,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'renderSearchList'.",
+        "code": "wfJD",
+        "evidence": "this.renderSearchList = function(typeaheadData) {",
+        "line": 89,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'renderSearchList'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'refreshSearchList'.",
+        "code": "wfJD",
+        "evidence": "this.refreshSearchList = function(data) {",
+        "line": 127,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'refreshSearchList'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'removeSearchList'.",
+        "code": "wfJD",
+        "evidence": "this.removeSearchList = function() {",
+        "line": 137,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'removeSearchList'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'index'.",
+        "code": "wfJD",
+        "evidence": "this.index = function() {",
+        "line": 147,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'index'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showSearchResults'.",
+        "code": "wfJD",
+        "evidence": "this.showSearchResults = function(data, searchQueryString, disambiguationOption) {",
+        "line": 164,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showSearchResults'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'pushPrimarySearchResultsComponent'.",
+        "code": "wfJD",
+        "evidence": "this.pushPrimarySearchResultsComponent = function(componentsCollection, data, isSearchResultsException) {",
+        "line": 227,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'pushPrimarySearchResultsComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'pushSearchHistoryComponent'.",
+        "code": "wfJD",
+        "evidence": "this.pushSearchHistoryComponent = function(componentsCollection, data) {",
+        "line": 276,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'pushSearchHistoryComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'pushSearchRelatedQuestionsComponent'.",
+        "code": "wfJD",
+        "evidence": "this.pushSearchRelatedQuestionsComponent = function(componentsCollection, data) {",
+        "line": 308,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'pushSearchRelatedQuestionsComponent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showSiteExitWarning'.",
+        "code": "wfJD",
+        "evidence": "this.showSiteExitWarning = function(target) {",
+        "line": 354,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showSiteExitWarning'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handleSearchResultsException'.",
+        "code": "wfJD",
+        "evidence": "this.handleSearchResultsException = function() {",
+        "line": 379,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handleSearchResultsException'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isSearchResponseError'.",
+        "code": "wfJD",
+        "evidence": "this.isSearchResponseError = function(data) {",
+        "line": 399,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isSearchResponseError'."
+      }
+    ],
+    "jsDocNameFixerProc": [
+      {
+        "id": "(error)",
+        "raw": "jsDoc tag error.",
+        "code": "wfJD",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "jsDoc tag error: found '@return void'."
+      }
+    ],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/conversationDeck/primarySearch.js",
+  "folderPath": "test-source/js/controller/conversationDeck",
+  "fileName": "primarySearch.js",
+  "packagePath": "/js/controller/conversationDeck",
+  "webPath": "/js/controller/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "primary_search",
+  "name": "primarySearch",
+  "camelName": "PrimarySearch",
+  "processedFilePath": "test-output/js/controller/conversationDeck/primarySearch.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 408,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 15124,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./primarySearch",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "PrimarySearchController": 7156
+    },
+    "methods": [
+      {
+        "name": "PrimarySearchController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function PrimarySearchController() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "renderSearchList",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 89,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "typeaheadData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.renderSearchList = function(typeaheadData) {"
+      },
+      {
+        "name": "refreshSearchList",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 127,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.refreshSearchList = function(data) {"
+      },
+      {
+        "name": "removeSearchList",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 137,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.removeSearchList = function() {"
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 147,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.index = function() {"
+      },
+      {
+        "name": "showSearchResults",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 164,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data",
+          "searchQueryString",
+          "disambiguationOption"
+        ],
+        "description": "",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "this.showSearchResults = function(data, searchQueryString, disambiguationOption) {"
+      },
+      {
+        "name": "pushPrimarySearchResultsComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 227,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "componentsCollection",
+          "data",
+          "isSearchResultsException"
+        ],
+        "description": "",
+        "return": "componentsCollection",
+        "classDeclarationFlag": false,
+        "line": "this.pushPrimarySearchResultsComponent = function(componentsCollection, data, isSearchResultsException) {"
+      },
+      {
+        "name": "pushSearchHistoryComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 276,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "componentsCollection",
+          "data"
+        ],
+        "description": "",
+        "return": "componentsCollection",
+        "classDeclarationFlag": false,
+        "line": "this.pushSearchHistoryComponent = function(componentsCollection, data) {"
+      },
+      {
+        "name": "pushSearchRelatedQuestionsComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 308,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "componentsCollection",
+          "data"
+        ],
+        "description": "",
+        "return": "componentsCollection",
+        "classDeclarationFlag": false,
+        "line": "this.pushSearchRelatedQuestionsComponent = function(componentsCollection, data) {"
+      },
+      {
+        "name": "showSiteExitWarning",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 354,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "target"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.showSiteExitWarning = function(target) {"
+      },
+      {
+        "name": "handleSearchResultsException",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 379,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.handleSearchResultsException = function() {"
+      },
+      {
+        "name": "isSearchResponseError",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 399,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "this.isSearchResponseError = function(data) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/conversationDeck",
+    "fileName": "primarySearch.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 370
+}

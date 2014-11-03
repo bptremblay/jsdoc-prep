@@ -1,0 +1,235 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "customer_greetings",
+      "AMD": true,
+      "webPath": "/js/view/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'customeGreetingsView'.",
+        "code": "wfJD",
+        "evidence": "return function customeGreetingsView() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'customeGreetingsView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'receieveConvoDeckMessagesDisplay'.",
+        "code": "wfJD",
+        "evidence": "this.receieveConvoDeckMessagesDisplay = function() {",
+        "line": 39,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'receieveConvoDeckMessagesDisplay'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'receiveConvoDeckMessageHeaderRemoved'.",
+        "code": "wfJD",
+        "evidence": "this.receiveConvoDeckMessageHeaderRemoved = function() {",
+        "line": 48,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'receiveConvoDeckMessageHeaderRemoved'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'stateHandlerGreetingMinimized'.",
+        "code": "wfJD",
+        "evidence": "this.stateHandlerGreetingMinimized = function() {",
+        "line": 57,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'stateHandlerGreetingMinimized'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'stateHandlerGreetingMaximized'.",
+        "code": "wfJD",
+        "evidence": "this.stateHandlerGreetingMaximized = function() {",
+        "line": 69,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'stateHandlerGreetingMaximized'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setGreetingHideTimer'.",
+        "code": "wfJD",
+        "evidence": "this.setGreetingHideTimer = function() {",
+        "line": 81,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setGreetingHideTimer'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/conversationDeck/customerGreetings.js",
+  "folderPath": "test-source/js/view/conversationDeck",
+  "fileName": "customerGreetings.js",
+  "packagePath": "/js/view/conversationDeck",
+  "webPath": "/js/view/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "customer_greetings",
+  "name": "customerGreetings",
+  "camelName": "CustomerGreetings",
+  "processedFilePath": "test-output/js/view/conversationDeck/customerGreetings.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 88,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 2992,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./customerGreetings",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "customeGreetingsView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function customeGreetingsView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "receieveConvoDeckMessagesDisplay",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 39,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.receieveConvoDeckMessagesDisplay = function() {"
+      },
+      {
+        "name": "receiveConvoDeckMessageHeaderRemoved",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 48,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.receiveConvoDeckMessageHeaderRemoved = function() {"
+      },
+      {
+        "name": "stateHandlerGreetingMinimized",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 57,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.stateHandlerGreetingMinimized = function() {"
+      },
+      {
+        "name": "stateHandlerGreetingMaximized",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 69,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.stateHandlerGreetingMaximized = function() {"
+      },
+      {
+        "name": "setGreetingHideTimer",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 81,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.setGreetingHideTimer = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/conversationDeck",
+    "fileName": "customerGreetings.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 79
+}

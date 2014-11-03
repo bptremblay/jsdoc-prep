@@ -1,0 +1,262 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "qp_received_activity",
+      "AMD": true,
+      "webPath": "/js/component/payments/quickPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'loadActivities'.",
+        "code": "wfJD",
+        "evidence": "var loadActivities = function(reqObj, appendToList) {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'loadActivities'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 39,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'seeMore'.",
+        "code": "wfJD",
+        "evidence": "seeMore: function() {",
+        "line": 47,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'seeMore'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestMoneyTransferActivity'.",
+        "code": "wfJD",
+        "evidence": "requestMoneyTransferActivity: function() {",
+        "line": 57,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestMoneyTransferActivity'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestTransactionDetails'.",
+        "code": "wfJD",
+        "evidence": "requestTransactionDetails: function() {",
+        "line": 63,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestTransactionDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'printTransactionDetails'.",
+        "code": "wfJD",
+        "evidence": "printTransactionDetails: function() {",
+        "line": 69,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'printTransactionDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exitReceivedMoneyActivity'.",
+        "code": "wfJD",
+        "evidence": "exitReceivedMoneyActivity: function() {",
+        "line": 75,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exitReceivedMoneyActivity'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'load'.",
+        "code": "wfJD",
+        "evidence": "load: function(reqObj) {",
+        "line": 83,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'load'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/payments/quickPay/qpReceivedActivity.js",
+  "folderPath": "test-source/js/component/payments/quickPay",
+  "fileName": "qpReceivedActivity.js",
+  "packagePath": "/js/component/payments/quickPay",
+  "webPath": "/js/component/payments/quickPay",
+  "libFile": false,
+  "min": false,
+  "realName": "qp_received_activity",
+  "name": "qpReceivedActivity",
+  "camelName": "QpReceivedActivity",
+  "processedFilePath": "test-output/js/component/payments/quickPay/qpReceivedActivity.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 93,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/quickPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 3383,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./qpReceivedActivity",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "loadActivities",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "reqObj",
+          "appendToList"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "var loadActivities = function(reqObj, appendToList) {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 39,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "seeMore",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 47,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "seeMore: function() {"
+      },
+      {
+        "name": "requestMoneyTransferActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 57,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestMoneyTransferActivity: function() {"
+      },
+      {
+        "name": "requestTransactionDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 63,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestTransactionDetails: function() {"
+      },
+      {
+        "name": "printTransactionDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 69,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "printTransactionDetails: function() {"
+      },
+      {
+        "name": "exitReceivedMoneyActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 75,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exitReceivedMoneyActivity: function() {"
+      },
+      {
+        "name": "load",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 83,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "reqObj"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "load: function(reqObj) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/quickPay",
+    "fileName": "qpReceivedActivity.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 95
+}

@@ -1,0 +1,122 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "payee_activity",
+      "AMD": true,
+      "webPath": "/js/view/payments/payeeActivity"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'PayeeActivityView'.",
+        "code": "wfJD",
+        "evidence": "return function PayeeActivityView() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'PayeeActivityView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/payments/payeeActivity/payeeActivity.js",
+  "folderPath": "test-source/js/view/payments/payeeActivity",
+  "fileName": "payeeActivity.js",
+  "packagePath": "/js/view/payments/payeeActivity",
+  "webPath": "/js/view/payments/payeeActivity",
+  "libFile": false,
+  "min": false,
+  "realName": "payee_activity",
+  "name": "payee_activity",
+  "camelName": "PayeeActivity",
+  "processedFilePath": "test-output/js/view/payments/payeeActivity/payeeActivity.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 21,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/payeeActivity",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 558,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./payeeActivity",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "PayeeActivityView": 226
+    },
+    "methods": [
+      {
+        "name": "PayeeActivityView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function PayeeActivityView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/payeeActivity",
+    "fileName": "payeeActivity.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 22
+}

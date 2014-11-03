@@ -1,0 +1,185 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "email",
+      "AMD": true,
+      "webPath": "/js/service/myProfile/dataTransform"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'EmailDataTransform'.",
+        "code": "wfJD",
+        "evidence": "return function EmailDataTransform(settings) {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'EmailDataTransform'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'transformEmailListService'.",
+        "code": "wfJD",
+        "evidence": "transformEmailListService: function(dataIn) {",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'transformEmailListService'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'transformEmail'.",
+        "code": "wfJD",
+        "evidence": "transformEmail: function(dataIn, emailCategory) {",
+        "line": 29,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'transformEmail'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'transformAssociatedAccounts'.",
+        "code": "wfJD",
+        "evidence": "transformAssociatedAccounts: function(dataIn) {",
+        "line": 39,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'transformAssociatedAccounts'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/service/myProfile/dataTransform/email.js",
+  "folderPath": "test-source/js/service/myProfile/dataTransform",
+  "fileName": "email.js",
+  "packagePath": "/js/service/myProfile/dataTransform",
+  "webPath": "/js/service/myProfile/dataTransform",
+  "libFile": false,
+  "min": false,
+  "realName": "email",
+  "name": "email",
+  "camelName": "Email",
+  "processedFilePath": "test-output/js/service/myProfile/dataTransform/email.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 51,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/myProfile/dataTransform",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1566,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./email",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "EmailDataTransform": 983
+    },
+    "methods": [
+      {
+        "name": "EmailDataTransform",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "settings"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function EmailDataTransform(settings) {"
+      },
+      {
+        "name": "transformEmailListService",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "dataIn"
+        ],
+        "description": "",
+        "return": "dataOut",
+        "classDeclarationFlag": false,
+        "line": "transformEmailListService: function(dataIn) {"
+      },
+      {
+        "name": "transformEmail",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 29,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "dataIn",
+          "emailCategory"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "transformEmail: function(dataIn, emailCategory) {"
+      },
+      {
+        "name": "transformAssociatedAccounts",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 39,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "dataIn"
+        ],
+        "description": "",
+        "return": "dataOut",
+        "classDeclarationFlag": false,
+        "line": "transformAssociatedAccounts: function(dataIn) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/service/myProfile/dataTransform",
+    "fileName": "email.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 72
+}

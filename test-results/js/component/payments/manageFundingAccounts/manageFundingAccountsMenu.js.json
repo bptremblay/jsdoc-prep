@@ -1,0 +1,170 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "manage_funding_accounts_menu",
+      "AMD": true,
+      "webPath": "/js/component/payments/manageFundingAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'addFundingAccount'.",
+        "code": "wfJD",
+        "evidence": "addFundingAccount: function() {",
+        "line": 17,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'addFundingAccount'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateFundingAccounts'.",
+        "code": "wfJD",
+        "evidence": "updateFundingAccounts: function() {",
+        "line": 25,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateFundingAccounts'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'selectMenuItem'.",
+        "code": "wfJD",
+        "evidence": "selectMenuItem: function(itemId) {",
+        "line": 34,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'selectMenuItem'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/payments/manageFundingAccounts/manageFundingAccountsMenu.js",
+  "folderPath": "test-source/js/component/payments/manageFundingAccounts",
+  "fileName": "manageFundingAccountsMenu.js",
+  "packagePath": "/js/component/payments/manageFundingAccounts",
+  "webPath": "/js/component/payments/manageFundingAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "manage_funding_accounts_menu",
+  "name": "manageFundingAccountsMenu",
+  "camelName": "ManageFundingAccountsMenu",
+  "processedFilePath": "test-output/js/component/payments/manageFundingAccounts/manageFundingAccountsMenu.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 43,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/manageFundingAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 847,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./manageFundingAccountsMenu",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "addFundingAccount",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 17,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "addFundingAccount: function() {"
+      },
+      {
+        "name": "updateFundingAccounts",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 25,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "updateFundingAccounts: function() {"
+      },
+      {
+        "name": "selectMenuItem",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 34,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "itemId"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "selectMenuItem: function(itemId) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/manageFundingAccounts",
+    "fileName": "manageFundingAccountsMenu.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 50
+}

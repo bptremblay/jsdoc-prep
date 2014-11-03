@@ -1,0 +1,122 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "payee_manual_confirm",
+      "AMD": true,
+      "webPath": "/js/view/payments/merchantBillPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'PayeeManualConfirmView'.",
+        "code": "wfJD",
+        "evidence": "return function PayeeManualConfirmView() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'PayeeManualConfirmView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 38,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/view/payments/merchantBillPay/payeeManualConfirm.js",
+  "folderPath": "test-source/js/view/payments/merchantBillPay",
+  "fileName": "payeeManualConfirm.js",
+  "packagePath": "/js/view/payments/merchantBillPay",
+  "webPath": "/js/view/payments/merchantBillPay",
+  "libFile": false,
+  "min": false,
+  "realName": "payee_manual_confirm",
+  "name": "payee_manual_confirm",
+  "camelName": "PayeeManualConfirm",
+  "processedFilePath": "test-output/js/view/payments/merchantBillPay/payeeManualConfirm.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 42,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/merchantBillPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1482,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./payeeManualConfirm",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "PayeeManualConfirmView": 521
+    },
+    "methods": [
+      {
+        "name": "PayeeManualConfirmView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function PayeeManualConfirmView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 38,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/view/payments/merchantBillPay",
+    "fileName": "payeeManualConfirm.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 41
+}

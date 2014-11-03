@@ -1,0 +1,178 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "blue/event/channel/controller"
+      ],
+      "moduleName": "mailing_address_brokerage_accounts",
+      "AMD": true,
+      "webPath": "/js/component/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'changeMailingAddress'.",
+        "code": "wfJD",
+        "evidence": "changeMailingAddress: function(eventData) {",
+        "line": 21,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'changeMailingAddress'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestBrokerageAccounts'.",
+        "code": "wfJD",
+        "evidence": "requestBrokerageAccounts: function() {",
+        "line": 29,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestBrokerageAccounts'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_render'.",
+        "code": "wfJD",
+        "evidence": "_render: function(options, data) {",
+        "line": 37,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_render'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/myProfile/mailingAddressBrokerageAccounts.js",
+  "folderPath": "test-source/js/component/myProfile",
+  "fileName": "mailingAddressBrokerageAccounts.js",
+  "packagePath": "/js/component/myProfile",
+  "webPath": "/js/component/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "mailing_address_brokerage_accounts",
+  "name": "mailingAddressBrokerageAccounts",
+  "camelName": "MailingAddressBrokerageAccounts",
+  "processedFilePath": "test-output/js/component/myProfile/mailingAddressBrokerageAccounts.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 48,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1166,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mailingAddressBrokerageAccounts",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "_render": 440
+    },
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "changeMailingAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 21,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "eventData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "changeMailingAddress: function(eventData) {"
+      },
+      {
+        "name": "requestBrokerageAccounts",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 29,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestBrokerageAccounts: function() {"
+      },
+      {
+        "name": "_render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 37,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "options",
+          "data"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "_render: function(options, data) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myProfile",
+    "fileName": "mailingAddressBrokerageAccounts.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 57
+}

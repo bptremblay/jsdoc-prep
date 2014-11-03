@@ -1,0 +1,195 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "manage_funding_accounts_header",
+      "AMD": true,
+      "webPath": "/js/component/payments/manageFundingAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestFundingAccounts'.",
+        "code": "wfJD",
+        "evidence": "requestFundingAccounts: function(payeeId) {",
+        "line": 18,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestFundingAccounts'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exitManageFundingAccounts'.",
+        "code": "wfJD",
+        "evidence": "exitManageFundingAccounts: function() {",
+        "line": 29,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exitManageFundingAccounts'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountDisplayName'.",
+        "code": "wfJD",
+        "evidence": "requestAccountDisplayName: function() {",
+        "line": 32,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountDisplayName'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showFundingAccountMessage'.",
+        "code": "wfJD",
+        "evidence": "showFundingAccountMessage: function(data) {",
+        "line": 35,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showFundingAccountMessage'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/payments/manageFundingAccounts/manageFundingAccountsHeader.js",
+  "folderPath": "test-source/js/component/payments/manageFundingAccounts",
+  "fileName": "manageFundingAccountsHeader.js",
+  "packagePath": "/js/component/payments/manageFundingAccounts",
+  "webPath": "/js/component/payments/manageFundingAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "manage_funding_accounts_header",
+  "name": "manageFundingAccountsHeader",
+  "camelName": "ManageFundingAccountsHeader",
+  "processedFilePath": "test-output/js/component/payments/manageFundingAccounts/manageFundingAccountsHeader.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 76,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/manageFundingAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 2073,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./manageFundingAccountsHeader",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "requestFundingAccounts",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 18,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "payeeId"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestFundingAccounts: function(payeeId) {"
+      },
+      {
+        "name": "exitManageFundingAccounts",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 29,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exitManageFundingAccounts: function() {"
+      },
+      {
+        "name": "requestAccountDisplayName",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 32,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountDisplayName: function() {"
+      },
+      {
+        "name": "showFundingAccountMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 35,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "showFundingAccountMessage: function(data) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/manageFundingAccounts",
+    "fileName": "manageFundingAccountsHeader.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 78
+}

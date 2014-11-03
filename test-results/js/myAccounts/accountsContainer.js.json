@@ -1,0 +1,113 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "accounts_container",
+      "AMD": true,
+      "webPath": "/js/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'AccountsContainerView'.",
+        "code": "wfJD",
+        "evidence": "return function AccountsContainerView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'AccountsContainerView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {};",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/myAccounts/accountsContainer.js",
+  "folderPath": "test-source/js/myAccounts",
+  "fileName": "accountsContainer.js",
+  "packagePath": "/js/myAccounts",
+  "webPath": "/js/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "accounts_container",
+  "name": "accountsContainer",
+  "camelName": "AccountsContainer",
+  "processedFilePath": "test-output/js/myAccounts/accountsContainer.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 12,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 300,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./accountsContainer",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "AccountsContainerView": 164
+    },
+    "methods": [
+      {
+        "name": "AccountsContainerView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function AccountsContainerView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {};"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/myAccounts",
+    "fileName": "accountsContainer.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 14
+}

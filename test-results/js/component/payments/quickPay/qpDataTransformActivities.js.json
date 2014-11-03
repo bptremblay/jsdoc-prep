@@ -1,0 +1,481 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "qp_data_transform_activities",
+      "AMD": true,
+      "webPath": "/js/component/payments/quickPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setContext'.",
+        "code": "wfJD",
+        "evidence": "var setContext = function(context) {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setContext'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getContext'.",
+        "code": "wfJD",
+        "evidence": "var getContext = function() {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getContext'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSettings'.",
+        "code": "wfJD",
+        "evidence": "var getSettings = function() {",
+        "line": 16,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSettings'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getLinksPerStatus'.",
+        "code": "wfJD",
+        "evidence": "var getLinksPerStatus = function(componentName, id, statusId) {",
+        "line": 26,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getLinksPerStatus'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getTodoListHeaders'.",
+        "code": "wfJD",
+        "evidence": "var getTodoListHeaders = function() {",
+        "line": 78,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getTodoListHeaders'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSentActivityListHeaders'.",
+        "code": "wfJD",
+        "evidence": "var getSentActivityListHeaders = function() {",
+        "line": 96,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSentActivityListHeaders'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getReceivedActivityListHeaders'.",
+        "code": "wfJD",
+        "evidence": "var getReceivedActivityListHeaders = function() {",
+        "line": 114,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getReceivedActivityListHeaders'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'contactsToString'.",
+        "code": "wfJD",
+        "evidence": "var contactsToString = function(contacts) {",
+        "line": 133,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'contactsToString'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getToDoInputForm'.",
+        "code": "wfJD",
+        "evidence": "var getToDoInputForm = function(selectedShowValue) {",
+        "line": 148,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getToDoInputForm'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function(context) {",
+        "line": 179,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSentActivityListModel'.",
+        "code": "wfJD",
+        "evidence": "getSentActivityListModel: function(qpSentActivityListServiceResult, appendToList) {",
+        "line": 183,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSentActivityListModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getReceivedActivityListModel'.",
+        "code": "wfJD",
+        "evidence": "getReceivedActivityListModel: function(qpReceivedActivityListServiceResult, appendToList) {",
+        "line": 263,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getReceivedActivityListModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getToDoListViewModel'.",
+        "code": "wfJD",
+        "evidence": "getToDoListViewModel: function(todoResults, selectedShowValue, currentTableDataRows) {",
+        "line": 348,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getToDoListViewModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSuccessMessage'.",
+        "code": "wfJD",
+        "evidence": "getSuccessMessage: function(data) {",
+        "line": 474,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSuccessMessage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'parseCompany'.",
+        "code": "wfJD",
+        "evidence": "parseCompany: function(args) {",
+        "line": 507,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'parseCompany'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getEnrollSetupViewModel'.",
+        "code": "wfJD",
+        "evidence": "getEnrollSetupViewModel: function() {",
+        "line": 515,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getEnrollSetupViewModel'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/payments/quickPay/qpDataTransformActivities.js",
+  "folderPath": "test-source/js/component/payments/quickPay",
+  "fileName": "qpDataTransformActivities.js",
+  "packagePath": "/js/component/payments/quickPay",
+  "webPath": "/js/component/payments/quickPay",
+  "libFile": false,
+  "min": false,
+  "realName": "qp_data_transform_activities",
+  "name": "qpDataTransformActivities",
+  "camelName": "QpDataTransformActivities",
+  "processedFilePath": "test-output/js/component/payments/quickPay/qpDataTransformActivities.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 523,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/quickPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 20036,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./qpDataTransformActivities",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "setContext",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "context"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "var setContext = function(context) {"
+      },
+      {
+        "name": "getContext",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "var getContext = function() {"
+      },
+      {
+        "name": "getSettings",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "var getSettings = function() {"
+      },
+      {
+        "name": "getLinksPerStatus",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 26,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "componentName",
+          "id",
+          "statusId"
+        ],
+        "description": "",
+        "return": "links",
+        "classDeclarationFlag": false,
+        "line": "var getLinksPerStatus = function(componentName, id, statusId) {"
+      },
+      {
+        "name": "getTodoListHeaders",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 78,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "var getTodoListHeaders = function() {"
+      },
+      {
+        "name": "getSentActivityListHeaders",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 96,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "var getSentActivityListHeaders = function() {"
+      },
+      {
+        "name": "getReceivedActivityListHeaders",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 114,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "var getReceivedActivityListHeaders = function() {"
+      },
+      {
+        "name": "contactsToString",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 133,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "contacts"
+        ],
+        "description": "",
+        "return": "strContacts",
+        "classDeclarationFlag": false,
+        "line": "var contactsToString = function(contacts) {"
+      },
+      {
+        "name": "getToDoInputForm",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 148,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "selectedShowValue"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "var getToDoInputForm = function(selectedShowValue) {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 179,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "context"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function(context) {"
+      },
+      {
+        "name": "getSentActivityListModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 183,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "qpSentActivityListServiceResult",
+          "appendToList"
+        ],
+        "description": "",
+        "return": "viewModel",
+        "classDeclarationFlag": false,
+        "line": "getSentActivityListModel: function(qpSentActivityListServiceResult, appendToList) {"
+      },
+      {
+        "name": "getReceivedActivityListModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 263,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "qpReceivedActivityListServiceResult",
+          "appendToList"
+        ],
+        "description": "",
+        "return": "viewModel",
+        "classDeclarationFlag": false,
+        "line": "getReceivedActivityListModel: function(qpReceivedActivityListServiceResult, appendToList) {"
+      },
+      {
+        "name": "getToDoListViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 348,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "todoResults",
+          "selectedShowValue",
+          "currentTableDataRows"
+        ],
+        "description": "",
+        "return": "viewModel",
+        "classDeclarationFlag": false,
+        "line": "getToDoListViewModel: function(todoResults, selectedShowValue, currentTableDataRows) {"
+      },
+      {
+        "name": "getSuccessMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 474,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "return": "messageFinal",
+        "classDeclarationFlag": false,
+        "line": "getSuccessMessage: function(data) {"
+      },
+      {
+        "name": "parseCompany",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 507,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "args"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "parseCompany: function(args) {"
+      },
+      {
+        "name": "getEnrollSetupViewModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 515,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "viewModel",
+        "classDeclarationFlag": false,
+        "line": "getEnrollSetupViewModel: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/quickPay",
+    "fileName": "qpDataTransformActivities.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 519
+}

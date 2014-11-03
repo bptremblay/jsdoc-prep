@@ -1,0 +1,111 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "update_payment_due_date_begin",
+      "AMD": true,
+      "webPath": "/js/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updatePaymentDueDateBeginView'.",
+        "code": "wfJD",
+        "evidence": "return function updatePaymentDueDateBeginView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updatePaymentDueDateBeginView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {};",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/myAccounts/updatePaymentDueDateBegin.js",
+  "folderPath": "test-source/js/myAccounts",
+  "fileName": "updatePaymentDueDateBegin.js",
+  "packagePath": "/js/myAccounts",
+  "webPath": "/js/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "update_payment_due_date_begin",
+  "name": "updatePaymentDueDateBegin",
+  "camelName": "UpdatePaymentDueDateBegin",
+  "processedFilePath": "test-output/js/myAccounts/updatePaymentDueDateBegin.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 9,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 317,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./updatePaymentDueDateBegin",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "updatePaymentDueDateBeginView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function updatePaymentDueDateBeginView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {};"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/myAccounts",
+    "fileName": "updatePaymentDueDateBegin.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 13
+}

@@ -1,0 +1,170 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "delete_funding_account_confirmation",
+      "AMD": true,
+      "webPath": "/js/component/payments/manageFundingAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'deleteFundingAccount'.",
+        "code": "wfJD",
+        "evidence": "deleteFundingAccount: function() {",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'deleteFundingAccount'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'doNotDeleteFundingAccount'.",
+        "code": "wfJD",
+        "evidence": "doNotDeleteFundingAccount: function() {",
+        "line": 35,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'doNotDeleteFundingAccount'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showDeleteFundingAccountConfirmation'.",
+        "code": "wfJD",
+        "evidence": "showDeleteFundingAccountConfirmation: function(data) {",
+        "line": 42,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showDeleteFundingAccountConfirmation'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/payments/manageFundingAccounts/deleteFundingAccountConfirmation.js",
+  "folderPath": "test-source/js/component/payments/manageFundingAccounts",
+  "fileName": "deleteFundingAccountConfirmation.js",
+  "packagePath": "/js/component/payments/manageFundingAccounts",
+  "webPath": "/js/component/payments/manageFundingAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "delete_funding_account_confirmation",
+  "name": "deleteFundingAccountConfirmation",
+  "camelName": "DeleteFundingAccountConfirmation",
+  "processedFilePath": "test-output/js/component/payments/manageFundingAccounts/deleteFundingAccountConfirmation.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 61,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/manageFundingAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1894,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./deleteFundingAccountConfirmation",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "deleteFundingAccount",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "deleteFundingAccount: function() {"
+      },
+      {
+        "name": "doNotDeleteFundingAccount",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 35,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "doNotDeleteFundingAccount: function() {"
+      },
+      {
+        "name": "showDeleteFundingAccountConfirmation",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 42,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "showDeleteFundingAccountConfirmation: function(data) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/manageFundingAccounts",
+    "fileName": "deleteFundingAccountConfirmation.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 69
+}

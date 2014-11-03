@@ -1,0 +1,420 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "qp_request",
+      "AMD": true,
+      "webPath": "/js/component/payments/quickPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initializeEntryForm'.",
+        "code": "wfJD",
+        "evidence": "initializeEntryForm: function() {",
+        "line": 16,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initializeEntryForm'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setUserSelection'.",
+        "code": "wfJD",
+        "evidence": "setUserSelection: function() {",
+        "line": 25,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setUserSelection'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'loadEntry'.",
+        "code": "wfJD",
+        "evidence": "loadEntry: function(data) {",
+        "line": 35,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'loadEntry'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'verifyRequestMoney'.",
+        "code": "wfJD",
+        "evidence": "verifyRequestMoney: function() {",
+        "line": 46,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'verifyRequestMoney'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'loadVerify'.",
+        "code": "wfJD",
+        "evidence": "loadVerify: function(data) {",
+        "line": 67,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'loadVerify'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'confirmRequestMoney'.",
+        "code": "wfJD",
+        "evidence": "confirmRequestMoney: function() {",
+        "line": 78,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'confirmRequestMoney'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'loadConfirm'.",
+        "code": "wfJD",
+        "evidence": "loadConfirm: function(data) {",
+        "line": 92,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'loadConfirm'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'intiateRequestMoney'.",
+        "code": "wfJD",
+        "evidence": "intiateRequestMoney: function() {",
+        "line": 102,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'intiateRequestMoney'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exitRequestMoney'.",
+        "code": "wfJD",
+        "evidence": "exitRequestMoney: function() {",
+        "line": 106,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exitRequestMoney'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'cancelRequestMoney'.",
+        "code": "wfJD",
+        "evidence": "cancelRequestMoney: function() {",
+        "line": 110,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'cancelRequestMoney'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestMoreMoney'.",
+        "code": "wfJD",
+        "evidence": "requestMoreMoney: function() {",
+        "line": 114,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestMoreMoney'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'sendMoney'.",
+        "code": "wfJD",
+        "evidence": "sendMoney: function() {",
+        "line": 120,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'sendMoney'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestMoneyTransferContactInfo'.",
+        "code": "wfJD",
+        "evidence": "requestMoneyTransferContactInfo: function() {",
+        "line": 126,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestMoneyTransferContactInfo'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'toggleTransactionAmountDecisionMaker'.",
+        "code": "wfJD",
+        "evidence": "toggleTransactionAmountDecisionMaker: function() {",
+        "line": 215,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'toggleTransactionAmountDecisionMaker'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/payments/quickPay/qpRequest.js",
+  "folderPath": "test-source/js/component/payments/quickPay",
+  "fileName": "qpRequest.js",
+  "packagePath": "/js/component/payments/quickPay",
+  "webPath": "/js/component/payments/quickPay",
+  "libFile": false,
+  "min": false,
+  "realName": "qp_request",
+  "name": "qpRequest",
+  "camelName": "QpRequest",
+  "processedFilePath": "test-output/js/component/payments/quickPay/qpRequest.js",
+  "couldParseOriginalSource": true,
+  "jsDoccerProcData": {
+    "lines": 226,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/quickPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 8314,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./qpRequest",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "initializeEntryForm",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "initializeEntryForm: function() {"
+      },
+      {
+        "name": "setUserSelection",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 25,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setUserSelection: function() {"
+      },
+      {
+        "name": "loadEntry",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 35,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "loadEntry: function(data) {"
+      },
+      {
+        "name": "verifyRequestMoney",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 46,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "verifyRequestMoney: function() {"
+      },
+      {
+        "name": "loadVerify",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 67,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "loadVerify: function(data) {"
+      },
+      {
+        "name": "confirmRequestMoney",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 78,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "confirmRequestMoney: function() {"
+      },
+      {
+        "name": "loadConfirm",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 92,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "loadConfirm: function(data) {"
+      },
+      {
+        "name": "intiateRequestMoney",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 102,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "intiateRequestMoney: function() {"
+      },
+      {
+        "name": "exitRequestMoney",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 106,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exitRequestMoney: function() {"
+      },
+      {
+        "name": "cancelRequestMoney",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 110,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "cancelRequestMoney: function() {"
+      },
+      {
+        "name": "requestMoreMoney",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 114,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestMoreMoney: function() {"
+      },
+      {
+        "name": "sendMoney",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 120,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "sendMoney: function() {"
+      },
+      {
+        "name": "requestMoneyTransferContactInfo",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 126,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestMoneyTransferContactInfo: function() {"
+      },
+      {
+        "name": "toggleTransactionAmountDecisionMaker",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 215,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "toggleTransactionAmountDecisionMaker: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/payments/quickPay",
+    "fileName": "qpRequest.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 231
+}
