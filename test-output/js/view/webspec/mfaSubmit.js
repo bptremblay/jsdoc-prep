@@ -1,3 +1,6 @@
+/**
+ * @module js/view/webspec/mfaSubmit
+ */
 define({
   name: 'LOGON_IDENTIFICATION',
   bindings: {

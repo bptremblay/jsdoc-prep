@@ -1,13 +1,3 @@
-/**
- * js_test_resources/Freenox.js
- *
- * @author Fredrum <rf@monath.net>
- * @copyright JPMorgan Chase & Co. All rights reserved.
- */
-(function() {
-  // do something jqueryish
-}());
-// one-line comment at top
 define('yes-module', [],
   /**
    * comment for anonymous require callback

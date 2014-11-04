@@ -1,10 +1,3 @@
-/**
- * @module otpClient
- *
- * Submits login form without using alogin.jsp / auth parameter randomization (APR)
- * Delete or replace in November after APR OTP goes live or is cancelled.
- * Use verify a one time password (otp)
- */
 define(
   /**
    * @exports js/shared/otpClient

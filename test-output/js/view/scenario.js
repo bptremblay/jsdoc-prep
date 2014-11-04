@@ -1,8 +1,3 @@
-/**
- * @copyright &copy; JPMorgan Chase & Co. All rights reserved.
- * @module MockView
-
- */
 define(
   /**
    * @exports js/view/scenario

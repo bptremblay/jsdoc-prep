@@ -1,3 +1,6 @@
+/**
+ * @module js/view/webspec/logonUserIdFound
+ */
 define({
   name: 'LOGON_USERID_FOUND',
   bindings: {

@@ -1,3 +1,6 @@
+/**
+ * @module js/view/webspec/logonIdentification
+ */
 define({
   name: 'LOGON_IDENTIFICATION',
   bindings: {},

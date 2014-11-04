@@ -1,3 +1,6 @@
+/**
+ * @module js/main
+ */
 define({
   target: 'body',
   appName: 'logon',

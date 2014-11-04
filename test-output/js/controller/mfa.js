@@ -3,11 +3,13 @@ define(
    * @exports js/controller/mfa
    */
   function(require) {
+  
+    return   
     /**
      * Creates a new instance of class MfaController.
      * @constructor
      */
-    return function MfaController() {
+    function MfaController() {
       var observable = require('blue/observable'),
         logonIdSpec = require('bluespec/logon_identification'),
         logonIdMethods = require('logon/component/logonIdentification'),

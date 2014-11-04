@@ -1,3 +1,6 @@
+/**
+ * @module js/view/webspec/logon
+ */
 define({
   name: 'LOGON',
   bindings: {

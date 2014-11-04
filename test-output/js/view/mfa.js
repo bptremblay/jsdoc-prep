@@ -1,7 +1,3 @@
-/**
- * @copyright &copy; JPMorgan Chase & Co. All rights reserved.
- * @module MFAView
- */
 define(
   /**
    * @exports js/view/mfa

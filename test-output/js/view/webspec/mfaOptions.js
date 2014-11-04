@@ -1,3 +1,6 @@
+/**
+ * @module js/view/webspec/mfaOptions
+ */
 define({
   name: 'LOGON_IDENTIFICATION',
   bindings: {

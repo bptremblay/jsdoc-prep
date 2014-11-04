@@ -1,3 +1,6 @@
+/**
+ * @module js/view/webspec/topMenu
+ */
 define({
   name: 'TOP_MENU',
   bindings: {},

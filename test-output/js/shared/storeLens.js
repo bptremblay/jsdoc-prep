@@ -1,6 +1,3 @@
-/*
- * Model lens that mirrors values into a blue store/enumerable
- */
 define(
   /**
    * @exports js/shared/storeLens

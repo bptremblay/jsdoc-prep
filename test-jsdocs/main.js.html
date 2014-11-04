@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: js/main.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: js/main.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module js/main
+ */
+define({
+  target: 'body',
+  appName: 'logon',
+  appTemplate: {
+    module: 'logon/template/app'
+  },
+  settingsUtil: {
+    module: 'blue/settings/util'
+  },
+  //Defining controller for app
+  controllers: {
+    create: 'blue/registry/controller',
+    properties: {
+      logon: {
+        create: {
+          module: 'blue/controller',
+          args: {
+            module: 'logon/controller/logon'
+          }
+        },
+        properties: {
+          services: {
+            $ref: 'services'
+          },
+          settings: {
+            $ref: 'settings'
+          },
+          sessionStore: {
+            $ref: 'sessionStore'
+          },
+          dynamicContentUtil: {
+            $ref: 'dynamicContentUtil'
+          }
+        }
+      },
+      menu: {
+        create: {
+          module: 'blue/controller',
+          args: {
+            module: 'logon/controller/menu'
+          }
+        },
+        properties: {
+          settings: {
+            $ref: 'settings'
+          }
+        }
+      },
+      mfa: {
+        create: {
+          module: 'blue/controller',
+          args: {
+            module: 'logon/controller/mfa'
+          }
+        },
+        ready: 'ready',
+        properties: {
+          services: {
+            $ref: 'services'
+          },
+          settings: {
+            $ref: 'settings'
+          },
+          sessionStore: {
+            $ref: 'sessionStore'
+          },
+          dynamicContentUtil: {
+            $ref: 'dynamicContentUtil'
+          }
+        }
+      },
+      passwordreset: {
+        create: {
+          module: 'blue/controller',
+          args: {
+            module: 'logon/controller/passwordReset'
+          }
+        },
+        ready: 'ready',
+        properties: {
+          services: {
+            $ref: 'services'
+          },
+          settings: {
+            $ref: 'settings'
+          },
+          logger: {
+            $ref: 'logger'
+          },
+          sessionStore: {
+            $ref: 'sessionStore'
+          }
+        }
+      },
+      scenario: {
+        create: {
+          module: 'blue/controller',
+          args: {
+            module: 'logon/controller/scenario'
+          }
+        },
+        properties: {
+          settings: {
+            $ref: 'settings'
+          }
+        }
+      }
+    }
+  },
+  services: {
+    otp: {
+      create: {
+        module: 'blue/service',
+        args: [{
+          module: 'logon/service/otp'
+        }, {
+          interceptors: [{
+            $ref: 'requestInterceptor'
+          }]
+        }]
+      }
+    },
+    auth: {
+      create: {
+        module: 'blue/service',
+        args: [{
+          module: 'logon/service/auth'
+        }, {
+          interceptors: [{
+            $ref: 'requestInterceptor'
+          }]
+        }]
+      }
+    }
+  },
+  requestInterceptor: {
+    create: {
+      module: 'logon/service/interceptor/request',
+      args: [{
+        $ref: 'settings'
+      }]
+    }
+  },
+  //Defining view resolver for framework
+  viewResolver: {
+    create: 'blue/resolver/module',
+    properties: {
+      prefix: 'logon/view/'
+    }
+  },
+  //Defining urlmapping for multiple controller load
+  simpleUrlMapping: {
+    create: {
+      module: 'blue/mvc/mapper/mapping/simplePattern',
+      args: {
+        index: 'logon.index,menu.index,scenario.index',
+        success: 'logon.success,menu.index',
+        secauth: 'mfa.index,menu.index',
+        'forgot-password': 'passwordreset.index,menu.index',
+        deliveryoptions: 'menu.index,mfa.options',
+        validatecode: 'menu.index,mfa.submit'
+      }
+    }
+  },
+  //Defining view mapping for framework
+  simpleSelectorMapping: {
+    create: {
+      module: 'blue/mvc/mapper/mapping/simplePattern',
+      args: {
+        'logon.index': '#logon-content',
+        'menu.index': '#login-nav',
+        'scenario.index': '#scenario',
+        'mfa.index': '#logon-content',
+        'mfa.options': '#logon-content',
+        'mfa.submit': '#logon-content',
+        'passwordreset.index': '#logon-content',
+        'passwordreset.found': '#logon-content',
+        'logon.success': '#logon-content' /* temporary */
+      }
+    }
+  },
+  //Defining settings module for app
+  settings: {
+    module: 'blue/settings',
+    init: {
+      set: [{
+        module: 'logon/settings'
+      }, 'APP']
+    }
+  },
+  //Defining logger message module for app
+  logger: {
+    create: {
+      module: 'blue/log',
+      args: '[logon]'
+    }
+  },
+  sessionStore: {
+    create: {
+      module: 'blue/store/enumerable/session',
+      args: ['logonSession']
+    }
+  },
+  dynamicContentUtil: {
+    create: {
+      module: 'common/utility/dynamicContentUtil'
+    }
+  },
+  //////////////////////BOILERPLATE///////////////////////////////////
+  //Defining controller mapping with shell interceptor for framework
+  controllerNameMapping: {
+    create: 'blue/mvc/handler/mapping/controllerName'
+  },
+  handler: {
+    create: {
+      module: 'blue/mvc/handler',
+      args: []
+    },
+    properties: {
+      mappings: [{
+        $ref: 'simpleUrlMapping'
+      }, {
+        $ref: 'controllerNameMapping'
+      }]
+    }
+  },
+  viewNameMapping: {
+    create: 'blue/mvc/targeter/mapping/viewName'
+  },
+  targeter: {
+    create: 'blue/mvc/targeter',
+    properties: {
+      mappings: [{
+        $ref: 'simpleSelectorMapping'
+      }, {
+        $ref: 'viewNameMapping'
+      }]
+    }
+  },
+  //Defining wire log module for app
+  $plugins: [{
+    module: 'blue/wire/log',
+    trace: false
+  }]
+});</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-accountDetailsHeader.html">accountDetailsHeader</a></li><li><a href="module-depositAccounts.html">depositAccounts</a></li><li><a href="logon.html">js/component/logon</a></li><li><a href="logonIdentification.html">js/component/logonIdentification</a></li><li><a href="logonPasswordReset.html">js/component/logonPasswordReset</a></li><li><a href="topMenu.html">js/component/topMenu</a></li><li><a href="logon_.html">js/controller/logon</a></li><li><a href="menu.html">js/controller/menu</a></li><li><a href="mfa.html">js/controller/mfa</a></li><li><a href="passwordReset.html">js/controller/passwordReset</a></li><li><a href="scenario.html">js/controller/scenario</a></li><li><a href="main.html">js/main</a></li><li><a href="auth.html">js/service/auth</a></li><li><a href="request.html">js/service/interceptor/request</a></li><li><a href="otp.html">js/service/otp</a></li><li><a href="settings.html">js/settings</a></li><li><a href="authClientApi.html">js/shared/authClientApi</a></li><li><a href="cookieManager.html">js/shared/cookieManager</a></li><li><a href="otpClient.html">js/shared/otpClient</a></li><li><a href="storeLens.html">js/shared/storeLens</a></li><li><a href="topMenu_.html">js/spec/topMenu</a></li><li><a href="logon__.html">js/view/logon</a></li><li><a href="logonPasswordReset_.html">js/view/logonPasswordReset</a></li><li><a href="logonUserIdFound.html">js/view/logonUserIdFound</a></li><li><a href="menu_.html">js/view/menu</a></li><li><a href="mfa_.html">js/view/mfa</a></li><li><a href="mfaOptions.html">js/view/mfaOptions</a></li><li><a href="mfaSubmit.html">js/view/mfaSubmit</a></li><li><a href="scenario_.html">js/view/scenario</a></li><li><a href="success.html">js/view/success</a></li><li><a href="logon___.html">js/view/webspec/logon</a></li><li><a href="logonIdentification_.html">js/view/webspec/logonIdentification</a></li><li><a href="logonPasswordReset__.html">js/view/webspec/logonPasswordReset</a></li><li><a href="logonUserIdFound_.html">js/view/webspec/logonUserIdFound</a></li><li><a href="mfaOptions_.html">js/view/webspec/mfaOptions</a></li><li><a href="mfaSubmit_.html">js/view/webspec/mfaSubmit</a></li><li><a href="topMenu__.html">js/view/webspec/topMenu</a></li><li><a href="module-test.html">test</a></li></ul><h3>Classes</h3><ul><li><a href="module-test.html#FourthClass">FourthClass</a></li><li><a href="module-test-Freenox.html">Freenox</a></li><li><a href="module-test-SecondClass.html">SecondClass</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha9</a> on Mon Nov 03 2014 21:09:04 GMT-0500 (EST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

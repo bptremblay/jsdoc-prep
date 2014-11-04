@@ -1741,14 +1741,15 @@ var jsDoc3PrepProc = {
             var whereVar = source.indexOf('var ');
             var whereFunctionNoSpace = source.indexOf('function(');
             var whereFunction = source.indexOf('function ');
+            var whereDefine = source.indexOf('define(');
             // Loosen out test here?
             // if (source.indexOf('@exports ' + input.name) === -1) {
             // define(function(require) {
             if (source.indexOf('@exports ') === -1) {
                 if (whereVar > 0
                        || (whereFunction > 0 || whereFunctionNoSpace > 0)) {
-                    if (whereFunctionNoSpace === -1 && whereFunction === -1) {
-                        console.warn('jsDoc3PrepProc: could not find a function in the module?');
+                    if (whereFunctionNoSpace === -1 && whereFunction === -1 && whereDefine === -1) {
+                        console.warn('jsDoc3PrepProc: could not find a function or define() in the module?');
                     } else {
                         var splitter = [];
                         if (whereFunctionNoSpace === -1) {
@@ -1780,7 +1781,21 @@ var jsDoc3PrepProc = {
 
                         source = combiner.join('function(');
                     }
-                } else {
+                } else if( whereDefine !== -1 && source.indexOf('@module') === -1){
+                    var combiner = [];
+                    // console.warn(JSON.stringify(input,null,2));
+
+                    var packagePath = input.path.split('/');
+                    packagePath.shift();
+                    packagePath = packagePath.join('/');
+                    packagePath = packagePath.split('.js')[0];
+
+                    // console.warn(packagePath);
+
+                    source = ('/**\n * @module '
+                            + packagePath + '\n' + getRequiresTags(input)
+                            + ' */\n') + source;
+                }else {
                     console.warn('jsDoc3PrepProc: whereVar??: ' + whereVar + ','
                             + whereFunction + ',' + whereFunctionNoSpace);
                 }

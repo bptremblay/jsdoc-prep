@@ -1,7 +1,3 @@
-/**
- * @copyright &copy; JPMorgan Chase & Co. All rights reserved.
- * @module IndexController
- */
 define(
   /**
    * @exports js/controller/menu

@@ -1,3 +1,6 @@
+/**
+ * @module js/view/webspec/logonPasswordReset
+ */
 define({
   name: 'LOGON_PASSWORD_RESET',
   bindings: {

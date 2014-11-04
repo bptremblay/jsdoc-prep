@@ -1,9 +1,3 @@
-/**
- * @module authClientApi
- *
- * login bridge using alogin.jsp which implements auth parameter randomization (APR)
- * Can both login and verify a one time password (otp)
- */
 define(
   /**
    * @exports js/shared/authClientApi

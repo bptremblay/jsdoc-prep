@@ -1901,8 +1901,7 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
 }
 
 function addMissingComments(walkerObj) {
-
-    console.log('addMissingComments ' + walkerObj.name);
+    console.log('addMissingComments ' + walkerObj.path);
     // console.log(walkerObj);
     var beautify = require('js-beautify');
 
