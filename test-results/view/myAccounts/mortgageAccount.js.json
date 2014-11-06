@@ -1,0 +1,760 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "mortgage_account",
+      "AMD": true,
+      "webPath": "/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'mortgageAccountTileView'.",
+        "code": "wfJD",
+        "evidence": "return function mortgageAccountTileView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'mortgageAccountTileView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myAccounts/mortgageAccount.js",
+  "folderPath": "test-source/view/myAccounts",
+  "fileName": "mortgageAccount.js",
+  "packagePath": "/view/myAccounts",
+  "webPath": "/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "mortgage_account",
+  "name": "mortgageAccount",
+  "camelName": "MortgageAccount",
+  "processedFilePath": "test-output/view/myAccounts/mortgageAccount.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction MortgageAccountTileView() {\n    this.template = require('dashboard/template/myAccounts/mortgageAccount');\n    this.bridge = this.createBridge(require('dashboard/view/webspec/myAccounts/mortgageAccount'));\n    /**\n     * Init.\n     */\n    this.init = function () {\n      this.bridge.on('state/makeAsActive', function (data) {\n        $('.account-summary-tab').removeClass('active');\n        $('.acc' + data.accountId).addClass('active');\n      });\n    };\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "mortgageAccountTileView",
+        "range": [
+          91,
+          114
+        ],
+        "parentNode": 838,
+        "uid": 839
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    123,
+                    127
+                  ],
+                  "parentNode": 843,
+                  "uid": 844
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    128,
+                    136
+                  ],
+                  "parentNode": 843,
+                  "uid": 845
+                },
+                "range": [
+                  123,
+                  136
+                ],
+                "parentNode": 842,
+                "uid": 843
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    139,
+                    146
+                  ],
+                  "parentNode": 846,
+                  "uid": 847
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myAccounts/mortgageAccount",
+                    "raw": "'dashboard/template/myAccounts/mortgageAccount'",
+                    "range": [
+                      147,
+                      194
+                    ],
+                    "parentNode": 846,
+                    "uid": 848
+                  }
+                ],
+                "range": [
+                  139,
+                  195
+                ],
+                "parentNode": 842,
+                "uid": 846
+              },
+              "range": [
+                123,
+                195
+              ],
+              "parentNode": 841,
+              "uid": 842
+            },
+            "range": [
+              123,
+              196
+            ],
+            "parentNode": 840,
+            "uid": 841
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    201,
+                    205
+                  ],
+                  "parentNode": 851,
+                  "uid": 852
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    206,
+                    212
+                  ],
+                  "parentNode": 851,
+                  "uid": 853
+                },
+                "range": [
+                  201,
+                  212
+                ],
+                "parentNode": 850,
+                "uid": 851
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression",
+                    "range": [
+                      215,
+                      219
+                    ],
+                    "parentNode": 855,
+                    "uid": 856
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createBridge",
+                    "range": [
+                      220,
+                      232
+                    ],
+                    "parentNode": 855,
+                    "uid": 857
+                  },
+                  "range": [
+                    215,
+                    232
+                  ],
+                  "parentNode": 854,
+                  "uid": 855
+                },
+                "arguments": [
+                  {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        233,
+                        240
+                      ],
+                      "parentNode": 858,
+                      "uid": 859
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "dashboard/view/webspec/myAccounts/mortgageAccount",
+                        "raw": "'dashboard/view/webspec/myAccounts/mortgageAccount'",
+                        "range": [
+                          241,
+                          292
+                        ],
+                        "parentNode": 858,
+                        "uid": 860
+                      }
+                    ],
+                    "range": [
+                      233,
+                      293
+                    ],
+                    "parentNode": 854,
+                    "uid": 858
+                  }
+                ],
+                "range": [
+                  215,
+                  294
+                ],
+                "parentNode": 850,
+                "uid": 854
+              },
+              "range": [
+                201,
+                294
+              ],
+              "parentNode": 849,
+              "uid": 850
+            },
+            "range": [
+              201,
+              295
+            ],
+            "parentNode": 840,
+            "uid": 849
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    329,
+                    333
+                  ],
+                  "parentNode": 863,
+                  "uid": 864
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    334,
+                    338
+                  ],
+                  "parentNode": 863,
+                  "uid": 865
+                },
+                "range": [
+                  329,
+                  338
+                ],
+                "parentNode": 862,
+                "uid": 863
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                361,
+                                365
+                              ],
+                              "parentNode": 871,
+                              "uid": 872
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "bridge",
+                              "range": [
+                                366,
+                                372
+                              ],
+                              "parentNode": 871,
+                              "uid": 873
+                            },
+                            "range": [
+                              361,
+                              372
+                            ],
+                            "parentNode": 870,
+                            "uid": 871
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "on",
+                            "range": [
+                              373,
+                              375
+                            ],
+                            "parentNode": 870,
+                            "uid": 874
+                          },
+                          "range": [
+                            361,
+                            375
+                          ],
+                          "parentNode": 869,
+                          "uid": 870
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "state/makeAsActive",
+                            "raw": "'state/makeAsActive'",
+                            "range": [
+                              376,
+                              396
+                            ],
+                            "parentNode": 869,
+                            "uid": 875
+                          },
+                          {
+                            "type": "FunctionExpression",
+                            "id": null,
+                            "params": [
+                              {
+                                "type": "Identifier",
+                                "name": "data",
+                                "range": [
+                                  408,
+                                  412
+                                ],
+                                "parentNode": 876,
+                                "uid": 877
+                              }
+                            ],
+                            "defaults": [],
+                            "body": {
+                              "type": "BlockStatement",
+                              "body": [
+                                {
+                                  "type": "ExpressionStatement",
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "Identifier",
+                                          "name": "$",
+                                          "range": [
+                                            424,
+                                            425
+                                          ],
+                                          "parentNode": 882,
+                                          "uid": 883
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": ".account-summary-tab",
+                                            "raw": "'.account-summary-tab'",
+                                            "range": [
+                                              426,
+                                              448
+                                            ],
+                                            "parentNode": 882,
+                                            "uid": 884
+                                          }
+                                        ],
+                                        "range": [
+                                          424,
+                                          449
+                                        ],
+                                        "parentNode": 881,
+                                        "uid": 882
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "removeClass",
+                                        "range": [
+                                          450,
+                                          461
+                                        ],
+                                        "parentNode": 881,
+                                        "uid": 885
+                                      },
+                                      "range": [
+                                        424,
+                                        461
+                                      ],
+                                      "parentNode": 880,
+                                      "uid": 881
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "Literal",
+                                        "value": "active",
+                                        "raw": "'active'",
+                                        "range": [
+                                          462,
+                                          470
+                                        ],
+                                        "parentNode": 880,
+                                        "uid": 886
+                                      }
+                                    ],
+                                    "range": [
+                                      424,
+                                      471
+                                    ],
+                                    "parentNode": 879,
+                                    "uid": 880
+                                  },
+                                  "range": [
+                                    424,
+                                    472
+                                  ],
+                                  "parentNode": 878,
+                                  "uid": 879
+                                },
+                                {
+                                  "type": "ExpressionStatement",
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "Identifier",
+                                          "name": "$",
+                                          "range": [
+                                            481,
+                                            482
+                                          ],
+                                          "parentNode": 890,
+                                          "uid": 891
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "BinaryExpression",
+                                            "operator": "+",
+                                            "left": {
+                                              "type": "Literal",
+                                              "value": ".acc",
+                                              "raw": "'.acc'",
+                                              "range": [
+                                                483,
+                                                489
+                                              ],
+                                              "parentNode": 892,
+                                              "uid": 893
+                                            },
+                                            "right": {
+                                              "type": "MemberExpression",
+                                              "computed": false,
+                                              "object": {
+                                                "type": "Identifier",
+                                                "name": "data",
+                                                "range": [
+                                                  492,
+                                                  496
+                                                ],
+                                                "parentNode": 894,
+                                                "uid": 895
+                                              },
+                                              "property": {
+                                                "type": "Identifier",
+                                                "name": "accountId",
+                                                "range": [
+                                                  497,
+                                                  506
+                                                ],
+                                                "parentNode": 894,
+                                                "uid": 896
+                                              },
+                                              "range": [
+                                                492,
+                                                506
+                                              ],
+                                              "parentNode": 892,
+                                              "uid": 894
+                                            },
+                                            "range": [
+                                              483,
+                                              506
+                                            ],
+                                            "parentNode": 890,
+                                            "uid": 892
+                                          }
+                                        ],
+                                        "range": [
+                                          481,
+                                          507
+                                        ],
+                                        "parentNode": 889,
+                                        "uid": 890
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "addClass",
+                                        "range": [
+                                          508,
+                                          516
+                                        ],
+                                        "parentNode": 889,
+                                        "uid": 897
+                                      },
+                                      "range": [
+                                        481,
+                                        516
+                                      ],
+                                      "parentNode": 888,
+                                      "uid": 889
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "Literal",
+                                        "value": "active",
+                                        "raw": "'active'",
+                                        "range": [
+                                          517,
+                                          525
+                                        ],
+                                        "parentNode": 888,
+                                        "uid": 898
+                                      }
+                                    ],
+                                    "range": [
+                                      481,
+                                      526
+                                    ],
+                                    "parentNode": 887,
+                                    "uid": 888
+                                  },
+                                  "range": [
+                                    481,
+                                    527
+                                  ],
+                                  "parentNode": 878,
+                                  "uid": 887
+                                }
+                              ],
+                              "range": [
+                                414,
+                                535
+                              ],
+                              "parentNode": 876,
+                              "uid": 878
+                            },
+                            "rest": null,
+                            "generator": false,
+                            "expression": false,
+                            "range": [
+                              398,
+                              535
+                            ],
+                            "parentNode": 869,
+                            "uid": 876,
+                            "returnType": ""
+                          }
+                        ],
+                        "range": [
+                          361,
+                          536
+                        ],
+                        "parentNode": 868,
+                        "uid": 869
+                      },
+                      "range": [
+                        361,
+                        537
+                      ],
+                      "parentNode": 867,
+                      "uid": 868
+                    }
+                  ],
+                  "range": [
+                    353,
+                    543
+                  ],
+                  "parentNode": 866,
+                  "uid": 867
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  341,
+                  543
+                ],
+                "parentNode": 862,
+                "uid": 866,
+                "returnType": ""
+              },
+              "range": [
+                329,
+                543
+              ],
+              "parentNode": 861,
+              "uid": 862
+            },
+            "range": [
+              329,
+              544
+            ],
+            "parentNode": 840,
+            "uid": 861
+          }
+        ],
+        "range": [
+          117,
+          548
+        ],
+        "parentNode": 838,
+        "uid": 840
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        82,
+        548
+      ],
+      "parentNode": 837,
+      "uid": 838,
+      "returnType": ""
+    },
+    "range": [
+      75,
+      549
+    ],
+    "parentNode": 836,
+    "uid": 837,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 14,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 478,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mortgageAccount",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "mortgageAccountTileView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function mortgageAccountTileView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "fileName": "mortgageAccount.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 24
+}

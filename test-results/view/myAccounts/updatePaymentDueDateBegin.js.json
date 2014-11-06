@@ -1,0 +1,433 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "update_payment_due_date_begin",
+      "AMD": true,
+      "webPath": "/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updatePaymentDueDateBeginView'.",
+        "code": "wfJD",
+        "evidence": "return function updatePaymentDueDateBeginView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updatePaymentDueDateBeginView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {};",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myAccounts/updatePaymentDueDateBegin.js",
+  "folderPath": "test-source/view/myAccounts",
+  "fileName": "updatePaymentDueDateBegin.js",
+  "packagePath": "/view/myAccounts",
+  "webPath": "/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "update_payment_due_date_begin",
+  "name": "updatePaymentDueDateBegin",
+  "camelName": "UpdatePaymentDueDateBegin",
+  "processedFilePath": "test-output/view/myAccounts/updatePaymentDueDateBegin.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction UpdatePaymentDueDateBeginView() {\n    this.template = require('dashboard/template/myAccounts/updatePaymentDueDateBegin');\n    this.bridge = this.createBridge(require('dashboard/view/webspec/myAccounts/updatePaymentDueDateBegin'));\n    /**\n     * Init.\n     */\n    this.init = function () {};\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "updatePaymentDueDateBeginView",
+        "range": [
+          99,
+          128
+        ],
+        "parentNode": 397,
+        "uid": 398
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    137,
+                    141
+                  ],
+                  "parentNode": 402,
+                  "uid": 403
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    142,
+                    150
+                  ],
+                  "parentNode": 402,
+                  "uid": 404
+                },
+                "range": [
+                  137,
+                  150
+                ],
+                "parentNode": 401,
+                "uid": 402
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    153,
+                    160
+                  ],
+                  "parentNode": 405,
+                  "uid": 406
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myAccounts/updatePaymentDueDateBegin",
+                    "raw": "'dashboard/template/myAccounts/updatePaymentDueDateBegin'",
+                    "range": [
+                      161,
+                      218
+                    ],
+                    "parentNode": 405,
+                    "uid": 407
+                  }
+                ],
+                "range": [
+                  153,
+                  219
+                ],
+                "parentNode": 401,
+                "uid": 405
+              },
+              "range": [
+                137,
+                219
+              ],
+              "parentNode": 400,
+              "uid": 401
+            },
+            "range": [
+              137,
+              220
+            ],
+            "parentNode": 399,
+            "uid": 400
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    225,
+                    229
+                  ],
+                  "parentNode": 410,
+                  "uid": 411
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    230,
+                    236
+                  ],
+                  "parentNode": 410,
+                  "uid": 412
+                },
+                "range": [
+                  225,
+                  236
+                ],
+                "parentNode": 409,
+                "uid": 410
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression",
+                    "range": [
+                      239,
+                      243
+                    ],
+                    "parentNode": 414,
+                    "uid": 415
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createBridge",
+                    "range": [
+                      244,
+                      256
+                    ],
+                    "parentNode": 414,
+                    "uid": 416
+                  },
+                  "range": [
+                    239,
+                    256
+                  ],
+                  "parentNode": 413,
+                  "uid": 414
+                },
+                "arguments": [
+                  {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        257,
+                        264
+                      ],
+                      "parentNode": 417,
+                      "uid": 418
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "dashboard/view/webspec/myAccounts/updatePaymentDueDateBegin",
+                        "raw": "'dashboard/view/webspec/myAccounts/updatePaymentDueDateBegin'",
+                        "range": [
+                          265,
+                          326
+                        ],
+                        "parentNode": 417,
+                        "uid": 419
+                      }
+                    ],
+                    "range": [
+                      257,
+                      327
+                    ],
+                    "parentNode": 413,
+                    "uid": 417
+                  }
+                ],
+                "range": [
+                  239,
+                  328
+                ],
+                "parentNode": 409,
+                "uid": 413
+              },
+              "range": [
+                225,
+                328
+              ],
+              "parentNode": 408,
+              "uid": 409
+            },
+            "range": [
+              225,
+              329
+            ],
+            "parentNode": 399,
+            "uid": 408
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    363,
+                    367
+                  ],
+                  "parentNode": 422,
+                  "uid": 423
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    368,
+                    372
+                  ],
+                  "parentNode": 422,
+                  "uid": 424
+                },
+                "range": [
+                  363,
+                  372
+                ],
+                "parentNode": 421,
+                "uid": 422
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    387,
+                    389
+                  ],
+                  "parentNode": 425,
+                  "uid": 426
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  375,
+                  389
+                ],
+                "parentNode": 421,
+                "uid": 425,
+                "returnType": ""
+              },
+              "range": [
+                363,
+                389
+              ],
+              "parentNode": 420,
+              "uid": 421
+            },
+            "range": [
+              363,
+              390
+            ],
+            "parentNode": 399,
+            "uid": 420
+          }
+        ],
+        "range": [
+          131,
+          394
+        ],
+        "parentNode": 397,
+        "uid": 399
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        90,
+        394
+      ],
+      "parentNode": 396,
+      "uid": 397,
+      "returnType": ""
+    },
+    "range": [
+      83,
+      395
+    ],
+    "parentNode": 395,
+    "uid": 396,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 9,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 317,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./updatePaymentDueDateBegin",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "updatePaymentDueDateBeginView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function updatePaymentDueDateBeginView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {};"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "fileName": "updatePaymentDueDateBegin.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 18
+}

@@ -1,0 +1,226 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "primary_search_history",
+      "AMD": true,
+      "webPath": "/component/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'closeRecentSearchResults'.",
+        "code": "wfJD",
+        "evidence": "closeRecentSearchResults: function() {}",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'closeRecentSearchResults'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/conversationDeck/primarySearchHistory.js",
+  "folderPath": "test-source/component/conversationDeck",
+  "fileName": "primarySearchHistory.js",
+  "packagePath": "/component/conversationDeck",
+  "webPath": "/component/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "primary_search_history",
+  "name": "primarySearchHistory",
+  "camelName": "PrimarySearchHistory",
+  "processedFilePath": "test-output/component/conversationDeck/primarySearchHistory.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/conversationDeck/primarySearchHistory */ {\n    /**\n     * Init.\n     */\n    init: function () {},\n    /**\n     * Close recent search results.\n     */\n    closeRecentSearchResults: function () {}\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              120,
+              124
+            ],
+            "parentNode": 166,
+            "uid": 167
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                138,
+                140
+              ],
+              "parentNode": 168,
+              "uid": 169
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              126,
+              140
+            ],
+            "parentNode": 166,
+            "uid": 168,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            120,
+            140
+          ],
+          "parentNode": 165,
+          "uid": 166
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "closeRecentSearchResults",
+            "range": [
+              198,
+              222
+            ],
+            "parentNode": 170,
+            "uid": 171
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                236,
+                238
+              ],
+              "parentNode": 172,
+              "uid": 173
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              224,
+              238
+            ],
+            "parentNode": 170,
+            "uid": 172,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            198,
+            238
+          ],
+          "parentNode": 165,
+          "uid": 170
+        }
+      ],
+      "range": [
+        85,
+        242
+      ],
+      "parentNode": 164,
+      "uid": 165
+    },
+    "range": [
+      78,
+      243
+    ],
+    "parentNode": 163,
+    "uid": 164,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 15,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 173,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./primarySearchHistory",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "closeRecentSearchResults",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "closeRecentSearchResults: function() {}"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/conversationDeck",
+    "fileName": "primarySearchHistory.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 16
+}

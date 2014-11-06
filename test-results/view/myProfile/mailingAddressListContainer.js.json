@@ -1,0 +1,448 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "mailing_address_list_container",
+      "AMD": true,
+      "webPath": "/view/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MailingAddressListContainerView'.",
+        "code": "wfJD",
+        "evidence": "return function MailingAddressListContainerView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MailingAddressListContainerView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 4,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myProfile/mailingAddressListContainer.js",
+  "folderPath": "test-source/view/myProfile",
+  "fileName": "mailingAddressListContainer.js",
+  "packagePath": "/view/myProfile",
+  "webPath": "/view/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "mailing_address_list_container",
+  "name": "mailingAddressListContainer",
+  "camelName": "MailingAddressListContainer",
+  "processedFilePath": "test-output/view/myProfile/mailingAddressListContainer.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction MailingAddressListContainerView() {\n    /**\n     * Init.\n     */\n    this.init = function () {\n      this.bridge = this.createBridge(require('dashboard/view/webspec/myProfile/mailingAddressListContainer'));\n    }\n    this.template = require('dashboard/template/myProfile/mailingAddressListContainer');\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "MailingAddressListContainerView",
+        "range": [
+          146,
+          177
+        ],
+        "parentNode": 415,
+        "uid": 416
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    215,
+                    219
+                  ],
+                  "parentNode": 420,
+                  "uid": 421
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    220,
+                    224
+                  ],
+                  "parentNode": 420,
+                  "uid": 422
+                },
+                "range": [
+                  215,
+                  224
+                ],
+                "parentNode": 419,
+                "uid": 420
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              247,
+                              251
+                            ],
+                            "parentNode": 427,
+                            "uid": 428
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "bridge",
+                            "range": [
+                              252,
+                              258
+                            ],
+                            "parentNode": 427,
+                            "uid": 429
+                          },
+                          "range": [
+                            247,
+                            258
+                          ],
+                          "parentNode": 426,
+                          "uid": 427
+                        },
+                        "right": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                261,
+                                265
+                              ],
+                              "parentNode": 431,
+                              "uid": 432
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "createBridge",
+                              "range": [
+                                266,
+                                278
+                              ],
+                              "parentNode": 431,
+                              "uid": 433
+                            },
+                            "range": [
+                              261,
+                              278
+                            ],
+                            "parentNode": 430,
+                            "uid": 431
+                          },
+                          "arguments": [
+                            {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "Identifier",
+                                "name": "require",
+                                "range": [
+                                  279,
+                                  286
+                                ],
+                                "parentNode": 434,
+                                "uid": 435
+                              },
+                              "arguments": [
+                                {
+                                  "type": "Literal",
+                                  "value": "dashboard/view/webspec/myProfile/mailingAddressListContainer",
+                                  "raw": "'dashboard/view/webspec/myProfile/mailingAddressListContainer'",
+                                  "range": [
+                                    287,
+                                    349
+                                  ],
+                                  "parentNode": 434,
+                                  "uid": 436
+                                }
+                              ],
+                              "range": [
+                                279,
+                                350
+                              ],
+                              "parentNode": 430,
+                              "uid": 434
+                            }
+                          ],
+                          "range": [
+                            261,
+                            351
+                          ],
+                          "parentNode": 426,
+                          "uid": 430
+                        },
+                        "range": [
+                          247,
+                          351
+                        ],
+                        "parentNode": 425,
+                        "uid": 426
+                      },
+                      "range": [
+                        247,
+                        352
+                      ],
+                      "parentNode": 424,
+                      "uid": 425
+                    }
+                  ],
+                  "range": [
+                    239,
+                    358
+                  ],
+                  "parentNode": 423,
+                  "uid": 424
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  227,
+                  358
+                ],
+                "parentNode": 419,
+                "uid": 423,
+                "returnType": ""
+              },
+              "range": [
+                215,
+                358
+              ],
+              "parentNode": 418,
+              "uid": 419
+            },
+            "range": [
+              215,
+              363
+            ],
+            "parentNode": 417,
+            "uid": 418
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    363,
+                    367
+                  ],
+                  "parentNode": 439,
+                  "uid": 440
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    368,
+                    376
+                  ],
+                  "parentNode": 439,
+                  "uid": 441
+                },
+                "range": [
+                  363,
+                  376
+                ],
+                "parentNode": 438,
+                "uid": 439
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    379,
+                    386
+                  ],
+                  "parentNode": 442,
+                  "uid": 443
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myProfile/mailingAddressListContainer",
+                    "raw": "'dashboard/template/myProfile/mailingAddressListContainer'",
+                    "range": [
+                      387,
+                      445
+                    ],
+                    "parentNode": 442,
+                    "uid": 444
+                  }
+                ],
+                "range": [
+                  379,
+                  446
+                ],
+                "parentNode": 438,
+                "uid": 442
+              },
+              "range": [
+                363,
+                446
+              ],
+              "parentNode": 437,
+              "uid": 438
+            },
+            "range": [
+              363,
+              447
+            ],
+            "parentNode": 417,
+            "uid": 437
+          }
+        ],
+        "range": [
+          180,
+          451
+        ],
+        "parentNode": 415,
+        "uid": 417
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        137,
+        451
+      ],
+      "parentNode": 414,
+      "uid": 415,
+      "returnType": ""
+    },
+    "range": [
+      130,
+      452
+    ],
+    "parentNode": 413,
+    "uid": 414,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 10,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 326,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mailingAddressListContainer",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "MailingAddressListContainerView": 168
+    },
+    "methods": [
+      {
+        "name": "MailingAddressListContainerView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function MailingAddressListContainerView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "fileName": "mailingAddressListContainer.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 20
+}

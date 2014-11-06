@@ -1,0 +1,488 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "account_overdraft_protection",
+      "AMD": true,
+      "webPath": "/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestOverdraftLimit'.",
+        "code": "wfJD",
+        "evidence": "requestOverdraftLimit: function(inputData) {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestOverdraftLimit'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myAccounts/accountOverdraftProtection.js",
+  "folderPath": "test-source/component/myAccounts",
+  "fileName": "accountOverdraftProtection.js",
+  "packagePath": "/component/myAccounts",
+  "webPath": "/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "account_overdraft_protection",
+  "name": "accountOverdraftProtection",
+  "camelName": "AccountOverdraftProtection",
+  "processedFilePath": "test-output/component/myAccounts/accountOverdraftProtection.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myAccounts/accountOverdraftProtection */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Request overdraft limit.\n     * @param inputData\n     */\n    requestOverdraftLimit: function (inputData) {\n      this.accountDisplayName = inputData.fundingAccount;\n      this.overdraftProtectionLimit = inputData.fundingAccountLimit;\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              94,
+              98
+            ],
+            "parentNode": 460,
+            "uid": 461
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        120,
+                        127
+                      ],
+                      "parentNode": 465,
+                      "uid": 466
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            130,
+                            134
+                          ],
+                          "parentNode": 468,
+                          "uid": 469
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            135,
+                            143
+                          ],
+                          "parentNode": 468,
+                          "uid": 470
+                        },
+                        "range": [
+                          130,
+                          143
+                        ],
+                        "parentNode": 467,
+                        "uid": 468
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          144,
+                          151
+                        ],
+                        "parentNode": 467,
+                        "uid": 471
+                      },
+                      "range": [
+                        130,
+                        151
+                      ],
+                      "parentNode": 465,
+                      "uid": 467
+                    },
+                    "range": [
+                      120,
+                      151
+                    ],
+                    "parentNode": 464,
+                    "uid": 465
+                  },
+                  "range": [
+                    120,
+                    152
+                  ],
+                  "parentNode": 463,
+                  "uid": 464
+                }
+              ],
+              "range": [
+                112,
+                158
+              ],
+              "parentNode": 462,
+              "uid": 463
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              100,
+              158
+            ],
+            "parentNode": 460,
+            "uid": 462,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            94,
+            158
+          ],
+          "parentNode": 459,
+          "uid": 460
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestOverdraftLimit",
+            "range": [
+              236,
+              257
+            ],
+            "parentNode": 472,
+            "uid": 473
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "inputData",
+                "range": [
+                  269,
+                  278
+                ],
+                "parentNode": 474,
+                "uid": 475
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          288,
+                          292
+                        ],
+                        "parentNode": 479,
+                        "uid": 480
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "accountDisplayName",
+                        "range": [
+                          293,
+                          311
+                        ],
+                        "parentNode": 479,
+                        "uid": 481
+                      },
+                      "range": [
+                        288,
+                        311
+                      ],
+                      "parentNode": 478,
+                      "uid": 479
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "inputData",
+                        "range": [
+                          314,
+                          323
+                        ],
+                        "parentNode": 482,
+                        "uid": 483
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "fundingAccount",
+                        "range": [
+                          324,
+                          338
+                        ],
+                        "parentNode": 482,
+                        "uid": 484
+                      },
+                      "range": [
+                        314,
+                        338
+                      ],
+                      "parentNode": 478,
+                      "uid": 482
+                    },
+                    "range": [
+                      288,
+                      338
+                    ],
+                    "parentNode": 477,
+                    "uid": 478
+                  },
+                  "range": [
+                    288,
+                    339
+                  ],
+                  "parentNode": 476,
+                  "uid": 477
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          346,
+                          350
+                        ],
+                        "parentNode": 487,
+                        "uid": 488
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "overdraftProtectionLimit",
+                        "range": [
+                          351,
+                          375
+                        ],
+                        "parentNode": 487,
+                        "uid": 489
+                      },
+                      "range": [
+                        346,
+                        375
+                      ],
+                      "parentNode": 486,
+                      "uid": 487
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "inputData",
+                        "range": [
+                          378,
+                          387
+                        ],
+                        "parentNode": 490,
+                        "uid": 491
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "fundingAccountLimit",
+                        "range": [
+                          388,
+                          407
+                        ],
+                        "parentNode": 490,
+                        "uid": 492
+                      },
+                      "range": [
+                        378,
+                        407
+                      ],
+                      "parentNode": 486,
+                      "uid": 490
+                    },
+                    "range": [
+                      346,
+                      407
+                    ],
+                    "parentNode": 485,
+                    "uid": 486
+                  },
+                  "range": [
+                    346,
+                    408
+                  ],
+                  "parentNode": 476,
+                  "uid": 485
+                }
+              ],
+              "range": [
+                280,
+                414
+              ],
+              "parentNode": 474,
+              "uid": 476
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              259,
+              414
+            ],
+            "parentNode": 472,
+            "uid": 474,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            236,
+            414
+          ],
+          "parentNode": 459,
+          "uid": 472
+        }
+      ],
+      "range": [
+        59,
+        418
+      ],
+      "parentNode": 458,
+      "uid": 459
+    },
+    "range": [
+      52,
+      419
+    ],
+    "parentNode": 453,
+    "uid": 458,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 14,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 321,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./accountOverdraftProtection",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "requestOverdraftLimit",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestOverdraftLimit: function(inputData) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "fileName": "accountOverdraftProtection.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 23
+}

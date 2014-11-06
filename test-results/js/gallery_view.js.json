@@ -1,0 +1,614 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "gallery_model",
+        "messages",
+        "logger",
+        "contextual_carousel"
+      ],
+      "moduleName": "gallery_view",
+      "AMD": true,
+      "webPath": "/js"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'createCategoryControl'.",
+        "code": "wfJD",
+        "evidence": "function createCategoryControl(category, active) {",
+        "line": 36,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'createCategoryControl'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'createTabButton'.",
+        "code": "wfJD",
+        "evidence": "function createTabButton(category, active) {",
+        "line": 52,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'createTabButton'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'render'.",
+        "code": "wfJD",
+        "evidence": "exports.render = function(data) {",
+        "line": 69,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'render'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handlerIn'.",
+        "code": "wfJD",
+        "evidence": "$('.gallery-item').hover(function handlerIn(eventObject) {",
+        "line": 124,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handlerIn'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handlerOut'.",
+        "code": "wfJD",
+        "evidence": "}, function handlerOut(eventObject) {",
+        "line": 129,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handlerOut'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'padTitle'.",
+        "code": "wfJD",
+        "evidence": "function padTitle(input) {",
+        "line": 154,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'padTitle'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'createGenrePanel'.",
+        "code": "wfJD",
+        "evidence": "function createGenrePanel(genreTitle, genreItems) {",
+        "line": 164,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'createGenrePanel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'createGalleryItem'.",
+        "code": "wfJD",
+        "evidence": "function createGalleryItem(item, index) {",
+        "line": 192,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'createGalleryItem'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'createGallerySlide'.",
+        "code": "wfJD",
+        "evidence": "function createGallerySlide(item, index) {",
+        "line": 216,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'createGallerySlide'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'displayGenrePanels'.",
+        "code": "wfJD",
+        "evidence": "function displayGenrePanels() {",
+        "line": 248,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'displayGenrePanels'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'filterGenrePanels'.",
+        "code": "wfJD",
+        "evidence": "function filterGenrePanels() {",
+        "line": 261,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'filterGenrePanels'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'filterItems'.",
+        "code": "wfJD",
+        "evidence": "function filterItems(date, industry, tabCategory, genre) {",
+        "line": 300,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'filterItems'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showPopup'.",
+        "code": "wfJD",
+        "evidence": "exports.showPopup = function(item, slideIndex) {",
+        "line": 382,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showPopup'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'cacheAllImages'.",
+        "code": "wfJD",
+        "evidence": "function cacheAllImages() {",
+        "line": 390,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'cacheAllImages'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'busyCursor'.",
+        "code": "wfJD",
+        "evidence": "function busyCursor() {",
+        "line": 407,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'busyCursor'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'normalCursor'.",
+        "code": "wfJD",
+        "evidence": "function normalCursor() {",
+        "line": 419,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'normalCursor'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setCategory'.",
+        "code": "wfJD",
+        "evidence": "exports.setCategory = function(value) {",
+        "line": 435,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setCategory'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'goBack'.",
+        "code": "wfJD",
+        "evidence": "exports.goBack = function() {",
+        "line": 454,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'goBack'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showItem'.",
+        "code": "wfJD",
+        "evidence": "exports.showItem = function(itemJQElement) {",
+        "line": 465,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showItem'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showFossils'.",
+        "code": "wfJD",
+        "evidence": "exports.showFossils = function() {",
+        "line": 475,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showFossils'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'loadBigSlide'.",
+        "code": "wfJD",
+        "evidence": "exports.loadBigSlide = function(bigSrc) {",
+        "line": 492,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'loadBigSlide'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'update'.",
+        "code": "wfJD",
+        "evidence": "exports.update = function(observation, data) {",
+        "line": 507,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'update'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/gallery_view.js",
+  "folderPath": "test-source/js",
+  "fileName": "gallery_view.js",
+  "packagePath": "/js",
+  "webPath": "/js",
+  "libFile": false,
+  "min": false,
+  "realName": "gallery_view",
+  "name": "gallery_view",
+  "camelName": "GalleryView",
+  "processedFilePath": "test-output/js/gallery_view.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "jsDoccerProcData": {
+    "lines": 534,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 15623,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./gallery_view",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "createCategoryControl",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 36,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "category",
+          "active"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function createCategoryControl(category, active) {"
+      },
+      {
+        "name": "createTabButton",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 52,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "category",
+          "active"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function createTabButton(category, active) {"
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 69,
+        "memberOf": "exports",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exports.render = function(data) {"
+      },
+      {
+        "name": "handlerIn",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 124,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "eventObject"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "$('.gallery-item').hover(function handlerIn(eventObject) {"
+      },
+      {
+        "name": "handlerOut",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 129,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "eventObject"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "}, function handlerOut(eventObject) {"
+      },
+      {
+        "name": "padTitle",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 154,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "input"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function padTitle(input) {"
+      },
+      {
+        "name": "createGenrePanel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 164,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "genreTitle",
+          "genreItems"
+        ],
+        "description": "",
+        "return": "panelContainer",
+        "classDeclarationFlag": false,
+        "line": "function createGenrePanel(genreTitle, genreItems) {"
+      },
+      {
+        "name": "createGalleryItem",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 192,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "item",
+          "index"
+        ],
+        "description": "",
+        "return": "item",
+        "classDeclarationFlag": false,
+        "line": "function createGalleryItem(item, index) {"
+      },
+      {
+        "name": "createGallerySlide",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 216,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "item",
+          "index"
+        ],
+        "description": "",
+        "return": "wrapper",
+        "classDeclarationFlag": false,
+        "line": "function createGallerySlide(item, index) {"
+      },
+      {
+        "name": "displayGenrePanels",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 248,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function displayGenrePanels() {"
+      },
+      {
+        "name": "filterGenrePanels",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 261,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function filterGenrePanels() {"
+      },
+      {
+        "name": "filterItems",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 300,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "date",
+          "industry",
+          "tabCategory",
+          "genre"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function filterItems(date, industry, tabCategory, genre) {"
+      },
+      {
+        "name": "showPopup",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 382,
+        "memberOf": "exports",
+        "originalJsDocDescription": {},
+        "args": [
+          "item",
+          "slideIndex"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exports.showPopup = function(item, slideIndex) {"
+      },
+      {
+        "name": "cacheAllImages",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 390,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function cacheAllImages() {"
+      },
+      {
+        "name": "busyCursor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 407,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function busyCursor() {"
+      },
+      {
+        "name": "normalCursor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 419,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function normalCursor() {"
+      },
+      {
+        "name": "setCategory",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 435,
+        "memberOf": "exports",
+        "originalJsDocDescription": {},
+        "args": [
+          "value"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exports.setCategory = function(value) {"
+      },
+      {
+        "name": "goBack",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 454,
+        "memberOf": "exports",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exports.goBack = function() {"
+      },
+      {
+        "name": "showItem",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 465,
+        "memberOf": "exports",
+        "originalJsDocDescription": {},
+        "args": [
+          "itemJQElement"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exports.showItem = function(itemJQElement) {"
+      },
+      {
+        "name": "showFossils",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 475,
+        "memberOf": "exports",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exports.showFossils = function() {"
+      },
+      {
+        "name": "loadBigSlide",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 492,
+        "memberOf": "exports",
+        "originalJsDocDescription": {},
+        "args": [
+          "bigSrc"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exports.loadBigSlide = function(bigSrc) {"
+      },
+      {
+        "name": "update",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 507,
+        "memberOf": "exports",
+        "originalJsDocDescription": {},
+        "args": [
+          "observation",
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exports.update = function(observation, data) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "fileName": "gallery_view.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 492
+}

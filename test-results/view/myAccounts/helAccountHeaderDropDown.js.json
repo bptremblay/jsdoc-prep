@@ -1,0 +1,433 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "hel_account_header_drop_down",
+      "AMD": true,
+      "webPath": "/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'helAccountsHeaderDropDownView'.",
+        "code": "wfJD",
+        "evidence": "return function helAccountsHeaderDropDownView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'helAccountsHeaderDropDownView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {};",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myAccounts/helAccountHeaderDropDown.js",
+  "folderPath": "test-source/view/myAccounts",
+  "fileName": "helAccountHeaderDropDown.js",
+  "packagePath": "/view/myAccounts",
+  "webPath": "/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "hel_account_header_drop_down",
+  "name": "helAccountHeaderDropDown",
+  "camelName": "HelAccountHeaderDropDown",
+  "processedFilePath": "test-output/view/myAccounts/helAccountHeaderDropDown.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction HelAccountsHeaderDropDownView() {\n    this.bridge = this.createBridge(require('dashboard/view/webspec/myAccounts/helAccountThingsYouCanDo'));\n    this.template = require('dashboard/template/myAccounts/helHeaderDropDown');\n    /**\n     * Init.\n     */\n    this.init = function () {};\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "helAccountsHeaderDropDownView",
+        "range": [
+          99,
+          128
+        ],
+        "parentNode": 397,
+        "uid": 398
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    137,
+                    141
+                  ],
+                  "parentNode": 402,
+                  "uid": 403
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    142,
+                    148
+                  ],
+                  "parentNode": 402,
+                  "uid": 404
+                },
+                "range": [
+                  137,
+                  148
+                ],
+                "parentNode": 401,
+                "uid": 402
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression",
+                    "range": [
+                      151,
+                      155
+                    ],
+                    "parentNode": 406,
+                    "uid": 407
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createBridge",
+                    "range": [
+                      156,
+                      168
+                    ],
+                    "parentNode": 406,
+                    "uid": 408
+                  },
+                  "range": [
+                    151,
+                    168
+                  ],
+                  "parentNode": 405,
+                  "uid": 406
+                },
+                "arguments": [
+                  {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        169,
+                        176
+                      ],
+                      "parentNode": 409,
+                      "uid": 410
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "dashboard/view/webspec/myAccounts/helAccountThingsYouCanDo",
+                        "raw": "'dashboard/view/webspec/myAccounts/helAccountThingsYouCanDo'",
+                        "range": [
+                          177,
+                          237
+                        ],
+                        "parentNode": 409,
+                        "uid": 411
+                      }
+                    ],
+                    "range": [
+                      169,
+                      238
+                    ],
+                    "parentNode": 405,
+                    "uid": 409
+                  }
+                ],
+                "range": [
+                  151,
+                  239
+                ],
+                "parentNode": 401,
+                "uid": 405
+              },
+              "range": [
+                137,
+                239
+              ],
+              "parentNode": 400,
+              "uid": 401
+            },
+            "range": [
+              137,
+              240
+            ],
+            "parentNode": 399,
+            "uid": 400
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    245,
+                    249
+                  ],
+                  "parentNode": 414,
+                  "uid": 415
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    250,
+                    258
+                  ],
+                  "parentNode": 414,
+                  "uid": 416
+                },
+                "range": [
+                  245,
+                  258
+                ],
+                "parentNode": 413,
+                "uid": 414
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    261,
+                    268
+                  ],
+                  "parentNode": 417,
+                  "uid": 418
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myAccounts/helHeaderDropDown",
+                    "raw": "'dashboard/template/myAccounts/helHeaderDropDown'",
+                    "range": [
+                      269,
+                      318
+                    ],
+                    "parentNode": 417,
+                    "uid": 419
+                  }
+                ],
+                "range": [
+                  261,
+                  319
+                ],
+                "parentNode": 413,
+                "uid": 417
+              },
+              "range": [
+                245,
+                319
+              ],
+              "parentNode": 412,
+              "uid": 413
+            },
+            "range": [
+              245,
+              320
+            ],
+            "parentNode": 399,
+            "uid": 412
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    354,
+                    358
+                  ],
+                  "parentNode": 422,
+                  "uid": 423
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    359,
+                    363
+                  ],
+                  "parentNode": 422,
+                  "uid": 424
+                },
+                "range": [
+                  354,
+                  363
+                ],
+                "parentNode": 421,
+                "uid": 422
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    378,
+                    380
+                  ],
+                  "parentNode": 425,
+                  "uid": 426
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  366,
+                  380
+                ],
+                "parentNode": 421,
+                "uid": 425,
+                "returnType": ""
+              },
+              "range": [
+                354,
+                380
+              ],
+              "parentNode": 420,
+              "uid": 421
+            },
+            "range": [
+              354,
+              381
+            ],
+            "parentNode": 399,
+            "uid": 420
+          }
+        ],
+        "range": [
+          131,
+          385
+        ],
+        "parentNode": 397,
+        "uid": 399
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        90,
+        385
+      ],
+      "parentNode": 396,
+      "uid": 397,
+      "returnType": ""
+    },
+    "range": [
+      83,
+      386
+    ],
+    "parentNode": 395,
+    "uid": 396,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 10,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 309,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./helAccountHeaderDropDown",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "helAccountsHeaderDropDownView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function helAccountsHeaderDropDownView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {};"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "fileName": "helAccountHeaderDropDown.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 18
+}

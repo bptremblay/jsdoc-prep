@@ -1,0 +1,947 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "site_exit_warning",
+      "AMD": true,
+      "webPath": "/component/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'proceedToExternalSite'.",
+        "code": "wfJD",
+        "evidence": "proceedToExternalSite: function() {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'proceedToExternalSite'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'doNotProceedToExternalSite'.",
+        "code": "wfJD",
+        "evidence": "doNotProceedToExternalSite: function() {",
+        "line": 19,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'doNotProceedToExternalSite'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'destroySiteExitWarning'.",
+        "code": "wfJD",
+        "evidence": "destroySiteExitWarning: function() {",
+        "line": 22,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'destroySiteExitWarning'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/conversationDeck/siteExitWarning.js",
+  "folderPath": "test-source/component/conversationDeck",
+  "fileName": "siteExitWarning.js",
+  "packagePath": "/component/conversationDeck",
+  "webPath": "/component/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "site_exit_warning",
+  "name": "siteExitWarning",
+  "camelName": "SiteExitWarning",
+  "processedFilePath": "test-output/component/conversationDeck/siteExitWarning.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/conversationDeck/siteExitWarning */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      this.output.emit('state', {\n        value: 'showSiteExitMessage'\n      });\n    },\n    /**\n     * Proceed to external site.\n     */\n    proceedToExternalSite: function () {\n      var model = this.model.get();\n      window.open(model.externalURL, \"_blank\");\n      this.destroySiteExitWarning();\n    },\n    /**\n     * Do not proceed to external site.\n     */\n    doNotProceedToExternalSite: function () {\n      this.destroySiteExitWarning();\n    },\n    /**\n     * Destroy site exit warning.\n     */\n    destroySiteExitWarning: function () {\n      this.output.emit('state', {\n        value: 'hideSiteExitMessage'\n      });\n      this.destroy();\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              121,
+              125
+            ],
+            "parentNode": 867,
+            "uid": 868
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            147,
+                            151
+                          ],
+                          "parentNode": 874,
+                          "uid": 875
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "output",
+                          "range": [
+                            152,
+                            158
+                          ],
+                          "parentNode": 874,
+                          "uid": 876
+                        },
+                        "range": [
+                          147,
+                          158
+                        ],
+                        "parentNode": 873,
+                        "uid": 874
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          159,
+                          163
+                        ],
+                        "parentNode": 873,
+                        "uid": 877
+                      },
+                      "range": [
+                        147,
+                        163
+                      ],
+                      "parentNode": 872,
+                      "uid": 873
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "state",
+                        "raw": "'state'",
+                        "range": [
+                          164,
+                          171
+                        ],
+                        "parentNode": 872,
+                        "uid": 878
+                      },
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "value",
+                              "range": [
+                                183,
+                                188
+                              ],
+                              "parentNode": 880,
+                              "uid": 881
+                            },
+                            "value": {
+                              "type": "Literal",
+                              "value": "showSiteExitMessage",
+                              "raw": "'showSiteExitMessage'",
+                              "range": [
+                                190,
+                                211
+                              ],
+                              "parentNode": 880,
+                              "uid": 882
+                            },
+                            "kind": "init",
+                            "range": [
+                              183,
+                              211
+                            ],
+                            "parentNode": 879,
+                            "uid": 880
+                          }
+                        ],
+                        "range": [
+                          173,
+                          219
+                        ],
+                        "parentNode": 872,
+                        "uid": 879
+                      }
+                    ],
+                    "range": [
+                      147,
+                      220
+                    ],
+                    "parentNode": 871,
+                    "uid": 872
+                  },
+                  "range": [
+                    147,
+                    221
+                  ],
+                  "parentNode": 870,
+                  "uid": 871
+                }
+              ],
+              "range": [
+                139,
+                227
+              ],
+              "parentNode": 869,
+              "uid": 870
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              127,
+              227
+            ],
+            "parentNode": 867,
+            "uid": 869,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            121,
+            227
+          ],
+          "parentNode": 866,
+          "uid": 867
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "proceedToExternalSite",
+            "range": [
+              282,
+              303
+            ],
+            "parentNode": 883,
+            "uid": 884
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "model",
+                        "range": [
+                          329,
+                          334
+                        ],
+                        "parentNode": 888,
+                        "uid": 889
+                      },
+                      "init": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                337,
+                                341
+                              ],
+                              "parentNode": 892,
+                              "uid": 893
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                342,
+                                347
+                              ],
+                              "parentNode": 892,
+                              "uid": 894
+                            },
+                            "range": [
+                              337,
+                              347
+                            ],
+                            "parentNode": 891,
+                            "uid": 892
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "get",
+                            "range": [
+                              348,
+                              351
+                            ],
+                            "parentNode": 891,
+                            "uid": 895
+                          },
+                          "range": [
+                            337,
+                            351
+                          ],
+                          "parentNode": 890,
+                          "uid": 891
+                        },
+                        "arguments": [],
+                        "range": [
+                          337,
+                          353
+                        ],
+                        "parentNode": 888,
+                        "uid": 890
+                      },
+                      "range": [
+                        329,
+                        353
+                      ],
+                      "parentNode": 887,
+                      "uid": 888
+                    }
+                  ],
+                  "kind": "var",
+                  "range": [
+                    325,
+                    354
+                  ],
+                  "parentNode": 886,
+                  "uid": 887
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "window",
+                        "range": [
+                          361,
+                          367
+                        ],
+                        "parentNode": 898,
+                        "uid": 899
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "open",
+                        "range": [
+                          368,
+                          372
+                        ],
+                        "parentNode": 898,
+                        "uid": 900
+                      },
+                      "range": [
+                        361,
+                        372
+                      ],
+                      "parentNode": 897,
+                      "uid": 898
+                    },
+                    "arguments": [
+                      {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "model",
+                          "range": [
+                            373,
+                            378
+                          ],
+                          "parentNode": 901,
+                          "uid": 902
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "externalURL",
+                          "range": [
+                            379,
+                            390
+                          ],
+                          "parentNode": 901,
+                          "uid": 903
+                        },
+                        "range": [
+                          373,
+                          390
+                        ],
+                        "parentNode": 897,
+                        "uid": 901
+                      },
+                      {
+                        "type": "Literal",
+                        "value": "_blank",
+                        "raw": "\"_blank\"",
+                        "range": [
+                          392,
+                          400
+                        ],
+                        "parentNode": 897,
+                        "uid": 904
+                      }
+                    ],
+                    "range": [
+                      361,
+                      401
+                    ],
+                    "parentNode": 896,
+                    "uid": 897
+                  },
+                  "range": [
+                    361,
+                    402
+                  ],
+                  "parentNode": 886,
+                  "uid": 896
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          409,
+                          413
+                        ],
+                        "parentNode": 907,
+                        "uid": 908
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "destroySiteExitWarning",
+                        "range": [
+                          414,
+                          436
+                        ],
+                        "parentNode": 907,
+                        "uid": 909
+                      },
+                      "range": [
+                        409,
+                        436
+                      ],
+                      "parentNode": 906,
+                      "uid": 907
+                    },
+                    "arguments": [],
+                    "range": [
+                      409,
+                      438
+                    ],
+                    "parentNode": 905,
+                    "uid": 906
+                  },
+                  "range": [
+                    409,
+                    439
+                  ],
+                  "parentNode": 886,
+                  "uid": 905
+                }
+              ],
+              "range": [
+                317,
+                445
+              ],
+              "parentNode": 885,
+              "uid": 886
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              305,
+              445
+            ],
+            "parentNode": 883,
+            "uid": 885,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            282,
+            445
+          ],
+          "parentNode": 866,
+          "uid": 883
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "doNotProceedToExternalSite",
+            "range": [
+              507,
+              533
+            ],
+            "parentNode": 910,
+            "uid": 911
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          555,
+                          559
+                        ],
+                        "parentNode": 916,
+                        "uid": 917
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "destroySiteExitWarning",
+                        "range": [
+                          560,
+                          582
+                        ],
+                        "parentNode": 916,
+                        "uid": 918
+                      },
+                      "range": [
+                        555,
+                        582
+                      ],
+                      "parentNode": 915,
+                      "uid": 916
+                    },
+                    "arguments": [],
+                    "range": [
+                      555,
+                      584
+                    ],
+                    "parentNode": 914,
+                    "uid": 915
+                  },
+                  "range": [
+                    555,
+                    585
+                  ],
+                  "parentNode": 913,
+                  "uid": 914
+                }
+              ],
+              "range": [
+                547,
+                591
+              ],
+              "parentNode": 912,
+              "uid": 913
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              535,
+              591
+            ],
+            "parentNode": 910,
+            "uid": 912,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            507,
+            591
+          ],
+          "parentNode": 866,
+          "uid": 910
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "destroySiteExitWarning",
+            "range": [
+              647,
+              669
+            ],
+            "parentNode": 919,
+            "uid": 920
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            691,
+                            695
+                          ],
+                          "parentNode": 926,
+                          "uid": 927
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "output",
+                          "range": [
+                            696,
+                            702
+                          ],
+                          "parentNode": 926,
+                          "uid": 928
+                        },
+                        "range": [
+                          691,
+                          702
+                        ],
+                        "parentNode": 925,
+                        "uid": 926
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          703,
+                          707
+                        ],
+                        "parentNode": 925,
+                        "uid": 929
+                      },
+                      "range": [
+                        691,
+                        707
+                      ],
+                      "parentNode": 924,
+                      "uid": 925
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "state",
+                        "raw": "'state'",
+                        "range": [
+                          708,
+                          715
+                        ],
+                        "parentNode": 924,
+                        "uid": 930
+                      },
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "value",
+                              "range": [
+                                727,
+                                732
+                              ],
+                              "parentNode": 932,
+                              "uid": 933
+                            },
+                            "value": {
+                              "type": "Literal",
+                              "value": "hideSiteExitMessage",
+                              "raw": "'hideSiteExitMessage'",
+                              "range": [
+                                734,
+                                755
+                              ],
+                              "parentNode": 932,
+                              "uid": 934
+                            },
+                            "kind": "init",
+                            "range": [
+                              727,
+                              755
+                            ],
+                            "parentNode": 931,
+                            "uid": 932
+                          }
+                        ],
+                        "range": [
+                          717,
+                          763
+                        ],
+                        "parentNode": 924,
+                        "uid": 931
+                      }
+                    ],
+                    "range": [
+                      691,
+                      764
+                    ],
+                    "parentNode": 923,
+                    "uid": 924
+                  },
+                  "range": [
+                    691,
+                    765
+                  ],
+                  "parentNode": 922,
+                  "uid": 923
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          772,
+                          776
+                        ],
+                        "parentNode": 937,
+                        "uid": 938
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "destroy",
+                        "range": [
+                          777,
+                          784
+                        ],
+                        "parentNode": 937,
+                        "uid": 939
+                      },
+                      "range": [
+                        772,
+                        784
+                      ],
+                      "parentNode": 936,
+                      "uid": 937
+                    },
+                    "arguments": [],
+                    "range": [
+                      772,
+                      786
+                    ],
+                    "parentNode": 935,
+                    "uid": 936
+                  },
+                  "range": [
+                    772,
+                    787
+                  ],
+                  "parentNode": 922,
+                  "uid": 935
+                }
+              ],
+              "range": [
+                683,
+                793
+              ],
+              "parentNode": 921,
+              "uid": 922
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              671,
+              793
+            ],
+            "parentNode": 919,
+            "uid": 921,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            647,
+            793
+          ],
+          "parentNode": 866,
+          "uid": 919
+        }
+      ],
+      "range": [
+        86,
+        797
+      ],
+      "parentNode": 865,
+      "uid": 866
+    },
+    "range": [
+      79,
+      798
+    ],
+    "parentNode": 864,
+    "uid": 865,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 29,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 616,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./siteExitWarning",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "proceedToExternalSite",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "proceedToExternalSite: function() {"
+      },
+      {
+        "name": "doNotProceedToExternalSite",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 19,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "doNotProceedToExternalSite: function() {"
+      },
+      {
+        "name": "destroySiteExitWarning",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 22,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "destroySiteExitWarning: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/conversationDeck",
+    "fileName": "siteExitWarning.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 39
+}

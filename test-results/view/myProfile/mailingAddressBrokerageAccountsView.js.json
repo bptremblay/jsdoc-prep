@@ -1,0 +1,351 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "mailing_address_brokerage_accounts_view",
+      "AMD": true,
+      "webPath": "/view/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MailingAddressBrokerageAccountsView'.",
+        "code": "wfJD",
+        "evidence": "return function MailingAddressBrokerageAccountsView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MailingAddressBrokerageAccountsView'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myProfile/mailingAddressBrokerageAccountsView.js",
+  "folderPath": "test-source/view/myProfile",
+  "fileName": "mailingAddressBrokerageAccountsView.js",
+  "packagePath": "/view/myProfile",
+  "webPath": "/view/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "mailing_address_brokerage_accounts_view",
+  "name": "mailingAddressBrokerageAccountsView",
+  "camelName": "MailingAddressBrokerageAccountsView",
+  "processedFilePath": "test-output/view/myProfile/mailingAddressBrokerageAccountsView.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction MailingAddressBrokerageAccountsView() {\n    this.bridge = this.createBridge(require('dashboard/view/webspec/myProfile/mailingAddressBrokerageAccountsView'));\n    this.template = require('dashboard/template/myProfile/mailingAddressBrokerageAccountsView');\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "MailingAddressBrokerageAccountsView",
+        "range": [
+          150,
+          185
+        ],
+        "parentNode": 313,
+        "uid": 314
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    194,
+                    198
+                  ],
+                  "parentNode": 318,
+                  "uid": 319
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    199,
+                    205
+                  ],
+                  "parentNode": 318,
+                  "uid": 320
+                },
+                "range": [
+                  194,
+                  205
+                ],
+                "parentNode": 317,
+                "uid": 318
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression",
+                    "range": [
+                      208,
+                      212
+                    ],
+                    "parentNode": 322,
+                    "uid": 323
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createBridge",
+                    "range": [
+                      213,
+                      225
+                    ],
+                    "parentNode": 322,
+                    "uid": 324
+                  },
+                  "range": [
+                    208,
+                    225
+                  ],
+                  "parentNode": 321,
+                  "uid": 322
+                },
+                "arguments": [
+                  {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        226,
+                        233
+                      ],
+                      "parentNode": 325,
+                      "uid": 326
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "dashboard/view/webspec/myProfile/mailingAddressBrokerageAccountsView",
+                        "raw": "'dashboard/view/webspec/myProfile/mailingAddressBrokerageAccountsView'",
+                        "range": [
+                          234,
+                          304
+                        ],
+                        "parentNode": 325,
+                        "uid": 327
+                      }
+                    ],
+                    "range": [
+                      226,
+                      305
+                    ],
+                    "parentNode": 321,
+                    "uid": 325
+                  }
+                ],
+                "range": [
+                  208,
+                  306
+                ],
+                "parentNode": 317,
+                "uid": 321
+              },
+              "range": [
+                194,
+                306
+              ],
+              "parentNode": 316,
+              "uid": 317
+            },
+            "range": [
+              194,
+              307
+            ],
+            "parentNode": 315,
+            "uid": 316
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    312,
+                    316
+                  ],
+                  "parentNode": 330,
+                  "uid": 331
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    317,
+                    325
+                  ],
+                  "parentNode": 330,
+                  "uid": 332
+                },
+                "range": [
+                  312,
+                  325
+                ],
+                "parentNode": 329,
+                "uid": 330
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    328,
+                    335
+                  ],
+                  "parentNode": 333,
+                  "uid": 334
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myProfile/mailingAddressBrokerageAccountsView",
+                    "raw": "'dashboard/template/myProfile/mailingAddressBrokerageAccountsView'",
+                    "range": [
+                      336,
+                      402
+                    ],
+                    "parentNode": 333,
+                    "uid": 335
+                  }
+                ],
+                "range": [
+                  328,
+                  403
+                ],
+                "parentNode": 329,
+                "uid": 333
+              },
+              "range": [
+                312,
+                403
+              ],
+              "parentNode": 328,
+              "uid": 329
+            },
+            "range": [
+              312,
+              404
+            ],
+            "parentNode": 315,
+            "uid": 328
+          }
+        ],
+        "range": [
+          188,
+          408
+        ],
+        "parentNode": 313,
+        "uid": 315
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        141,
+        408
+      ],
+      "parentNode": 312,
+      "uid": 313,
+      "returnType": ""
+    },
+    "range": [
+      134,
+      409
+    ],
+    "parentNode": 311,
+    "uid": 312,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 9,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 310,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mailingAddressBrokerageAccountsView",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "MailingAddressBrokerageAccountsView": 125
+    },
+    "methods": [
+      {
+        "name": "MailingAddressBrokerageAccountsView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function MailingAddressBrokerageAccountsView() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "fileName": "mailingAddressBrokerageAccountsView.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 15
+}

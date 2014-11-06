@@ -1,0 +1,889 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "customer_greetings",
+      "AMD": true,
+      "webPath": "/component/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'toggleGreetingState'.",
+        "code": "wfJD",
+        "evidence": "toggleGreetingState: function(minimize) {",
+        "line": 32,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'toggleGreetingState'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/conversationDeck/customerGreetings.js",
+  "folderPath": "test-source/component/conversationDeck",
+  "fileName": "customerGreetings.js",
+  "packagePath": "/component/conversationDeck",
+  "webPath": "/component/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "customer_greetings",
+  "name": "customerGreetings",
+  "camelName": "CustomerGreetings",
+  "processedFilePath": "test-output/component/conversationDeck/customerGreetings.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/conversationDeck/customerGreetings */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      // Register controller channel event handlers.\n      controllerChannel.on({\n        convoDeckSearchResultsClosed: this.toggleGreetingState.bind(this, false)\n      });\n      controllerChannel.on({\n        convoDeckSearchResultsRequested: this.toggleGreetingState.bind(this, true)\n      });\n      controllerChannel.on({\n        convoDeckMessagesFocus: this.toggleGreetingState.bind(this, false)\n      });\n    },\n    /**\n     * Toggles the greeting state to be either minimized or maximized (i.e. when search maximizes or minimizes).\n     * @param {Boolean} minimize true if the greeting should be the minimized state, false if it should be the maximized state\n     */\n    toggleGreetingState: function (minimize) {\n      // Emit the proper state event for if the greeting is to be minimized or maximized.\n      this.output.emit('state', {\n        value: minimize ? 'greetingMinimizedState' : 'greetingMaximizedState'\n      });\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              274,
+              278
+            ],
+            "parentNode": 919,
+            "uid": 920
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "controllerChannel",
+                        "range": [
+                          353,
+                          370
+                        ],
+                        "parentNode": 925,
+                        "uid": 926
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "on",
+                        "range": [
+                          371,
+                          373
+                        ],
+                        "parentNode": 925,
+                        "uid": 927
+                      },
+                      "range": [
+                        353,
+                        373
+                      ],
+                      "parentNode": 924,
+                      "uid": 925
+                    },
+                    "arguments": [
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "convoDeckSearchResultsClosed",
+                              "range": [
+                                384,
+                                412
+                              ],
+                              "parentNode": 929,
+                              "uid": 930
+                            },
+                            "value": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "ThisExpression",
+                                    "range": [
+                                      414,
+                                      418
+                                    ],
+                                    "parentNode": 933,
+                                    "uid": 934
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "toggleGreetingState",
+                                    "range": [
+                                      419,
+                                      438
+                                    ],
+                                    "parentNode": 933,
+                                    "uid": 935
+                                  },
+                                  "range": [
+                                    414,
+                                    438
+                                  ],
+                                  "parentNode": 932,
+                                  "uid": 933
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "bind",
+                                  "range": [
+                                    439,
+                                    443
+                                  ],
+                                  "parentNode": 932,
+                                  "uid": 936
+                                },
+                                "range": [
+                                  414,
+                                  443
+                                ],
+                                "parentNode": 931,
+                                "uid": 932
+                              },
+                              "arguments": [
+                                {
+                                  "type": "ThisExpression",
+                                  "range": [
+                                    444,
+                                    448
+                                  ],
+                                  "parentNode": 931,
+                                  "uid": 937
+                                },
+                                {
+                                  "type": "Literal",
+                                  "value": false,
+                                  "raw": "false",
+                                  "range": [
+                                    450,
+                                    455
+                                  ],
+                                  "parentNode": 931,
+                                  "uid": 938
+                                }
+                              ],
+                              "range": [
+                                414,
+                                456
+                              ],
+                              "parentNode": 929,
+                              "uid": 931
+                            },
+                            "kind": "init",
+                            "range": [
+                              384,
+                              456
+                            ],
+                            "parentNode": 928,
+                            "uid": 929
+                          }
+                        ],
+                        "range": [
+                          374,
+                          464
+                        ],
+                        "parentNode": 924,
+                        "uid": 928
+                      }
+                    ],
+                    "range": [
+                      353,
+                      465
+                    ],
+                    "parentNode": 923,
+                    "uid": 924
+                  },
+                  "range": [
+                    353,
+                    466
+                  ],
+                  "parentNode": 922,
+                  "uid": 923
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "controllerChannel",
+                        "range": [
+                          473,
+                          490
+                        ],
+                        "parentNode": 941,
+                        "uid": 942
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "on",
+                        "range": [
+                          491,
+                          493
+                        ],
+                        "parentNode": 941,
+                        "uid": 943
+                      },
+                      "range": [
+                        473,
+                        493
+                      ],
+                      "parentNode": 940,
+                      "uid": 941
+                    },
+                    "arguments": [
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "convoDeckSearchResultsRequested",
+                              "range": [
+                                504,
+                                535
+                              ],
+                              "parentNode": 945,
+                              "uid": 946
+                            },
+                            "value": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "ThisExpression",
+                                    "range": [
+                                      537,
+                                      541
+                                    ],
+                                    "parentNode": 949,
+                                    "uid": 950
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "toggleGreetingState",
+                                    "range": [
+                                      542,
+                                      561
+                                    ],
+                                    "parentNode": 949,
+                                    "uid": 951
+                                  },
+                                  "range": [
+                                    537,
+                                    561
+                                  ],
+                                  "parentNode": 948,
+                                  "uid": 949
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "bind",
+                                  "range": [
+                                    562,
+                                    566
+                                  ],
+                                  "parentNode": 948,
+                                  "uid": 952
+                                },
+                                "range": [
+                                  537,
+                                  566
+                                ],
+                                "parentNode": 947,
+                                "uid": 948
+                              },
+                              "arguments": [
+                                {
+                                  "type": "ThisExpression",
+                                  "range": [
+                                    567,
+                                    571
+                                  ],
+                                  "parentNode": 947,
+                                  "uid": 953
+                                },
+                                {
+                                  "type": "Literal",
+                                  "value": true,
+                                  "raw": "true",
+                                  "range": [
+                                    573,
+                                    577
+                                  ],
+                                  "parentNode": 947,
+                                  "uid": 954
+                                }
+                              ],
+                              "range": [
+                                537,
+                                578
+                              ],
+                              "parentNode": 945,
+                              "uid": 947
+                            },
+                            "kind": "init",
+                            "range": [
+                              504,
+                              578
+                            ],
+                            "parentNode": 944,
+                            "uid": 945
+                          }
+                        ],
+                        "range": [
+                          494,
+                          586
+                        ],
+                        "parentNode": 940,
+                        "uid": 944
+                      }
+                    ],
+                    "range": [
+                      473,
+                      587
+                    ],
+                    "parentNode": 939,
+                    "uid": 940
+                  },
+                  "range": [
+                    473,
+                    588
+                  ],
+                  "parentNode": 922,
+                  "uid": 939
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "controllerChannel",
+                        "range": [
+                          595,
+                          612
+                        ],
+                        "parentNode": 957,
+                        "uid": 958
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "on",
+                        "range": [
+                          613,
+                          615
+                        ],
+                        "parentNode": 957,
+                        "uid": 959
+                      },
+                      "range": [
+                        595,
+                        615
+                      ],
+                      "parentNode": 956,
+                      "uid": 957
+                    },
+                    "arguments": [
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "convoDeckMessagesFocus",
+                              "range": [
+                                626,
+                                648
+                              ],
+                              "parentNode": 961,
+                              "uid": 962
+                            },
+                            "value": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "ThisExpression",
+                                    "range": [
+                                      650,
+                                      654
+                                    ],
+                                    "parentNode": 965,
+                                    "uid": 966
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "toggleGreetingState",
+                                    "range": [
+                                      655,
+                                      674
+                                    ],
+                                    "parentNode": 965,
+                                    "uid": 967
+                                  },
+                                  "range": [
+                                    650,
+                                    674
+                                  ],
+                                  "parentNode": 964,
+                                  "uid": 965
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "bind",
+                                  "range": [
+                                    675,
+                                    679
+                                  ],
+                                  "parentNode": 964,
+                                  "uid": 968
+                                },
+                                "range": [
+                                  650,
+                                  679
+                                ],
+                                "parentNode": 963,
+                                "uid": 964
+                              },
+                              "arguments": [
+                                {
+                                  "type": "ThisExpression",
+                                  "range": [
+                                    680,
+                                    684
+                                  ],
+                                  "parentNode": 963,
+                                  "uid": 969
+                                },
+                                {
+                                  "type": "Literal",
+                                  "value": false,
+                                  "raw": "false",
+                                  "range": [
+                                    686,
+                                    691
+                                  ],
+                                  "parentNode": 963,
+                                  "uid": 970
+                                }
+                              ],
+                              "range": [
+                                650,
+                                692
+                              ],
+                              "parentNode": 961,
+                              "uid": 963
+                            },
+                            "kind": "init",
+                            "range": [
+                              626,
+                              692
+                            ],
+                            "parentNode": 960,
+                            "uid": 961
+                          }
+                        ],
+                        "range": [
+                          616,
+                          700
+                        ],
+                        "parentNode": 956,
+                        "uid": 960
+                      }
+                    ],
+                    "range": [
+                      595,
+                      701
+                    ],
+                    "parentNode": 955,
+                    "uid": 956
+                  },
+                  "range": [
+                    595,
+                    702
+                  ],
+                  "parentNode": 922,
+                  "uid": 955
+                }
+              ],
+              "range": [
+                292,
+                708
+              ],
+              "parentNode": 921,
+              "uid": 922
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              280,
+              708
+            ],
+            "parentNode": 919,
+            "uid": 921,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            274,
+            708
+          ],
+          "parentNode": 918,
+          "uid": 919
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "toggleGreetingState",
+            "range": [
+              970,
+              989
+            ],
+            "parentNode": 971,
+            "uid": 972
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "minimize",
+                "range": [
+                  1001,
+                  1009
+                ],
+                "parentNode": 973,
+                "uid": 974
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            1109,
+                            1113
+                          ],
+                          "parentNode": 979,
+                          "uid": 980
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "output",
+                          "range": [
+                            1114,
+                            1120
+                          ],
+                          "parentNode": 979,
+                          "uid": 981
+                        },
+                        "range": [
+                          1109,
+                          1120
+                        ],
+                        "parentNode": 978,
+                        "uid": 979
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          1121,
+                          1125
+                        ],
+                        "parentNode": 978,
+                        "uid": 982
+                      },
+                      "range": [
+                        1109,
+                        1125
+                      ],
+                      "parentNode": 977,
+                      "uid": 978
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "state",
+                        "raw": "'state'",
+                        "range": [
+                          1126,
+                          1133
+                        ],
+                        "parentNode": 977,
+                        "uid": 983
+                      },
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "value",
+                              "range": [
+                                1145,
+                                1150
+                              ],
+                              "parentNode": 985,
+                              "uid": 986
+                            },
+                            "value": {
+                              "type": "ConditionalExpression",
+                              "test": {
+                                "type": "Identifier",
+                                "name": "minimize",
+                                "range": [
+                                  1152,
+                                  1160
+                                ],
+                                "parentNode": 987,
+                                "uid": 988
+                              },
+                              "consequent": {
+                                "type": "Literal",
+                                "value": "greetingMinimizedState",
+                                "raw": "'greetingMinimizedState'",
+                                "range": [
+                                  1163,
+                                  1187
+                                ],
+                                "parentNode": 987,
+                                "uid": 989
+                              },
+                              "alternate": {
+                                "type": "Literal",
+                                "value": "greetingMaximizedState",
+                                "raw": "'greetingMaximizedState'",
+                                "range": [
+                                  1190,
+                                  1214
+                                ],
+                                "parentNode": 987,
+                                "uid": 990
+                              },
+                              "range": [
+                                1152,
+                                1214
+                              ],
+                              "parentNode": 985,
+                              "uid": 987
+                            },
+                            "kind": "init",
+                            "range": [
+                              1145,
+                              1214
+                            ],
+                            "parentNode": 984,
+                            "uid": 985
+                          }
+                        ],
+                        "range": [
+                          1135,
+                          1222
+                        ],
+                        "parentNode": 977,
+                        "uid": 984
+                      }
+                    ],
+                    "range": [
+                      1109,
+                      1223
+                    ],
+                    "parentNode": 976,
+                    "uid": 977
+                  },
+                  "range": [
+                    1109,
+                    1224
+                  ],
+                  "parentNode": 975,
+                  "uid": 976
+                }
+              ],
+              "range": [
+                1011,
+                1230
+              ],
+              "parentNode": 973,
+              "uid": 975
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              991,
+              1230
+            ],
+            "parentNode": 971,
+            "uid": 973,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            970,
+            1230
+          ],
+          "parentNode": 918,
+          "uid": 971
+        }
+      ],
+      "range": [
+        239,
+        1234
+      ],
+      "parentNode": 917,
+      "uid": 918
+    },
+    "range": [
+      232,
+      1235
+    ],
+    "parentNode": 910,
+    "uid": 917,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 42,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1234,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./customerGreetings",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "toggleGreetingState",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 32,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "minimize"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "toggleGreetingState: function(minimize) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/conversationDeck",
+    "fileName": "customerGreetings.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 34
+}

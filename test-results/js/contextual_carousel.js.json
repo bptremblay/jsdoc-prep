@@ -1,0 +1,222 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "messages",
+        "logger",
+        "info_panel"
+      ],
+      "moduleName": "contextual_carousel",
+      "AMD": true,
+      "webPath": "/js"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'ContextualCarousel'.",
+        "code": "wfJD",
+        "evidence": "function ContextualCarousel() {",
+        "line": 17,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'ContextualCarousel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'show'.",
+        "code": "wfJD",
+        "evidence": "ContextualCarousel.prototype.show = function() {",
+        "line": 21,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'show'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hide'.",
+        "code": "wfJD",
+        "evidence": "ContextualCarousel.prototype.hide = function() {",
+        "line": 25,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hide'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initialize'.",
+        "code": "wfJD",
+        "evidence": "ContextualCarousel.prototype.initialize = function() {",
+        "line": 29,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initialize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'renderGeneral'.",
+        "code": "wfJD",
+        "evidence": "ContextualCarousel.prototype.renderGeneral = function(data) {",
+        "line": 51,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'renderGeneral'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'render'.",
+        "code": "wfJD",
+        "evidence": "ContextualCarousel.prototype.render = function(data) {",
+        "line": 146,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'render'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/contextual_carousel.js",
+  "folderPath": "test-source/js",
+  "fileName": "contextual_carousel.js",
+  "packagePath": "/js",
+  "webPath": "/js",
+  "libFile": false,
+  "min": false,
+  "realName": "contextual_carousel",
+  "name": "contextual_carousel",
+  "camelName": "ContextualCarousel",
+  "processedFilePath": "test-output/js/contextual_carousel.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "jsDoccerProcData": {
+    "lines": 157,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 4508,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./contextual_carousel",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "ContextualCarousel": 2180
+    },
+    "methods": [
+      {
+        "name": "ContextualCarousel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 17,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function ContextualCarousel() {"
+      },
+      {
+        "name": "show",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 21,
+        "memberOf": "ContextualCarousel.prototype",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "ContextualCarousel.prototype.show = function() {"
+      },
+      {
+        "name": "hide",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 25,
+        "memberOf": "ContextualCarousel.prototype",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "ContextualCarousel.prototype.hide = function() {"
+      },
+      {
+        "name": "initialize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 29,
+        "memberOf": "ContextualCarousel.prototype",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "ContextualCarousel.prototype.initialize = function() {"
+      },
+      {
+        "name": "renderGeneral",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 51,
+        "memberOf": "ContextualCarousel.prototype",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "ContextualCarousel.prototype.renderGeneral = function(data) {"
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 146,
+        "memberOf": "ContextualCarousel.prototype",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "ContextualCarousel.prototype.render = function(data) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "fileName": "contextual_carousel.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 142
+}

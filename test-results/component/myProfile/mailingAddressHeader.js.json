@@ -1,0 +1,430 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "mailing_address_header",
+      "AMD": true,
+      "webPath": "/component/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {},",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'addPermanentMailingAddress'.",
+        "code": "wfJD",
+        "evidence": "addPermanentMailingAddress: function() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'addPermanentMailingAddress'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'addTemporaryMailingAddress'.",
+        "code": "wfJD",
+        "evidence": "addTemporaryMailingAddress: function() {",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'addTemporaryMailingAddress'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myProfile/mailingAddressHeader.js",
+  "folderPath": "test-source/component/myProfile",
+  "fileName": "mailingAddressHeader.js",
+  "packagePath": "/component/myProfile",
+  "webPath": "/component/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "mailing_address_header",
+  "name": "mailingAddressHeader",
+  "camelName": "MailingAddressHeader",
+  "processedFilePath": "test-output/component/myProfile/mailingAddressHeader.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myProfile/mailingAddressHeader */ {\n    /**\n     * Init.\n     */\n    init: function () {},\n    /**\n     * Add permanent mailing address.\n     */\n    addPermanentMailingAddress: function () {\n      controllerChannel.emit('addMailingAddressPermanent');\n    },\n    /**\n     * Add temporary mailing address.\n     */\n    addTemporaryMailingAddress: function () {\n      controllerChannel.emit('addMailingAddressTemporary');\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              153,
+              157
+            ],
+            "parentNode": 428,
+            "uid": 429
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                171,
+                173
+              ],
+              "parentNode": 430,
+              "uid": 431
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              159,
+              173
+            ],
+            "parentNode": 428,
+            "uid": 430,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            153,
+            173
+          ],
+          "parentNode": 427,
+          "uid": 428
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "addPermanentMailingAddress",
+            "range": [
+              233,
+              259
+            ],
+            "parentNode": 432,
+            "uid": 433
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "controllerChannel",
+                        "range": [
+                          281,
+                          298
+                        ],
+                        "parentNode": 438,
+                        "uid": 439
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          299,
+                          303
+                        ],
+                        "parentNode": 438,
+                        "uid": 440
+                      },
+                      "range": [
+                        281,
+                        303
+                      ],
+                      "parentNode": 437,
+                      "uid": 438
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "addMailingAddressPermanent",
+                        "raw": "'addMailingAddressPermanent'",
+                        "range": [
+                          304,
+                          332
+                        ],
+                        "parentNode": 437,
+                        "uid": 441
+                      }
+                    ],
+                    "range": [
+                      281,
+                      333
+                    ],
+                    "parentNode": 436,
+                    "uid": 437
+                  },
+                  "range": [
+                    281,
+                    334
+                  ],
+                  "parentNode": 435,
+                  "uid": 436
+                }
+              ],
+              "range": [
+                273,
+                340
+              ],
+              "parentNode": 434,
+              "uid": 435
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              261,
+              340
+            ],
+            "parentNode": 432,
+            "uid": 434,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            233,
+            340
+          ],
+          "parentNode": 427,
+          "uid": 432
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "addTemporaryMailingAddress",
+            "range": [
+              400,
+              426
+            ],
+            "parentNode": 442,
+            "uid": 443
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "controllerChannel",
+                        "range": [
+                          448,
+                          465
+                        ],
+                        "parentNode": 448,
+                        "uid": 449
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          466,
+                          470
+                        ],
+                        "parentNode": 448,
+                        "uid": 450
+                      },
+                      "range": [
+                        448,
+                        470
+                      ],
+                      "parentNode": 447,
+                      "uid": 448
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "addMailingAddressTemporary",
+                        "raw": "'addMailingAddressTemporary'",
+                        "range": [
+                          471,
+                          499
+                        ],
+                        "parentNode": 447,
+                        "uid": 451
+                      }
+                    ],
+                    "range": [
+                      448,
+                      500
+                    ],
+                    "parentNode": 446,
+                    "uid": 447
+                  },
+                  "range": [
+                    448,
+                    501
+                  ],
+                  "parentNode": 445,
+                  "uid": 446
+                }
+              ],
+              "range": [
+                440,
+                507
+              ],
+              "parentNode": 444,
+              "uid": 445
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              428,
+              507
+            ],
+            "parentNode": 442,
+            "uid": 444,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            400,
+            507
+          ],
+          "parentNode": 427,
+          "uid": 442
+        }
+      ],
+      "range": [
+        118,
+        511
+      ],
+      "parentNode": 426,
+      "uid": 427
+    },
+    "range": [
+      111,
+      512
+    ],
+    "parentNode": 416,
+    "uid": 426,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 14,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 376,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mailingAddressHeader",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {},"
+      },
+      {
+        "name": "addPermanentMailingAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "addPermanentMailingAddress: function() {"
+      },
+      {
+        "name": "addTemporaryMailingAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "addTemporaryMailingAddress: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myProfile",
+    "fileName": "mailingAddressHeader.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 26
+}

@@ -1,0 +1,626 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "dda_account_activity_hold_transactions",
+      "AMD": true,
+      "webPath": "/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountActivity'.",
+        "code": "wfJD",
+        "evidence": "requestAccountActivity: function(inputData) {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountActivity'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myAccounts/ddaAccountActivityHoldTransactions.js",
+  "folderPath": "test-source/component/myAccounts",
+  "fileName": "ddaAccountActivityHoldTransactions.js",
+  "packagePath": "/component/myAccounts",
+  "webPath": "/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "dda_account_activity_hold_transactions",
+  "name": "ddaAccountActivityHoldTransactions",
+  "camelName": "DdaAccountActivityHoldTransactions",
+  "processedFilePath": "test-output/component/myAccounts/ddaAccountActivityHoldTransactions.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myAccounts/ddaAccountActivityHoldTransactions */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Request account activity.\n     * @param inputData\n     */\n    requestAccountActivity: function (inputData) {\n      this.transactions = inputData.data.list;\n      this.totalTransactionsOnHold = inputData.data.totalTransactionsOnHold;\n      this.totalValueOfHolds = inputData.data.totalValueOfHolds;\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              94,
+              98
+            ],
+            "parentNode": 600,
+            "uid": 601
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        120,
+                        127
+                      ],
+                      "parentNode": 605,
+                      "uid": 606
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            130,
+                            134
+                          ],
+                          "parentNode": 608,
+                          "uid": 609
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            135,
+                            143
+                          ],
+                          "parentNode": 608,
+                          "uid": 610
+                        },
+                        "range": [
+                          130,
+                          143
+                        ],
+                        "parentNode": 607,
+                        "uid": 608
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          144,
+                          151
+                        ],
+                        "parentNode": 607,
+                        "uid": 611
+                      },
+                      "range": [
+                        130,
+                        151
+                      ],
+                      "parentNode": 605,
+                      "uid": 607
+                    },
+                    "range": [
+                      120,
+                      151
+                    ],
+                    "parentNode": 604,
+                    "uid": 605
+                  },
+                  "range": [
+                    120,
+                    152
+                  ],
+                  "parentNode": 603,
+                  "uid": 604
+                }
+              ],
+              "range": [
+                112,
+                158
+              ],
+              "parentNode": 602,
+              "uid": 603
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              100,
+              158
+            ],
+            "parentNode": 600,
+            "uid": 602,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            94,
+            158
+          ],
+          "parentNode": 599,
+          "uid": 600
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestAccountActivity",
+            "range": [
+              237,
+              259
+            ],
+            "parentNode": 612,
+            "uid": 613
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "inputData",
+                "range": [
+                  271,
+                  280
+                ],
+                "parentNode": 614,
+                "uid": 615
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          290,
+                          294
+                        ],
+                        "parentNode": 619,
+                        "uid": 620
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "transactions",
+                        "range": [
+                          295,
+                          307
+                        ],
+                        "parentNode": 619,
+                        "uid": 621
+                      },
+                      "range": [
+                        290,
+                        307
+                      ],
+                      "parentNode": 618,
+                      "uid": 619
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "inputData",
+                          "range": [
+                            310,
+                            319
+                          ],
+                          "parentNode": 623,
+                          "uid": 624
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "data",
+                          "range": [
+                            320,
+                            324
+                          ],
+                          "parentNode": 623,
+                          "uid": 625
+                        },
+                        "range": [
+                          310,
+                          324
+                        ],
+                        "parentNode": 622,
+                        "uid": 623
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "list",
+                        "range": [
+                          325,
+                          329
+                        ],
+                        "parentNode": 622,
+                        "uid": 626
+                      },
+                      "range": [
+                        310,
+                        329
+                      ],
+                      "parentNode": 618,
+                      "uid": 622
+                    },
+                    "range": [
+                      290,
+                      329
+                    ],
+                    "parentNode": 617,
+                    "uid": 618
+                  },
+                  "range": [
+                    290,
+                    330
+                  ],
+                  "parentNode": 616,
+                  "uid": 617
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          337,
+                          341
+                        ],
+                        "parentNode": 629,
+                        "uid": 630
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "totalTransactionsOnHold",
+                        "range": [
+                          342,
+                          365
+                        ],
+                        "parentNode": 629,
+                        "uid": 631
+                      },
+                      "range": [
+                        337,
+                        365
+                      ],
+                      "parentNode": 628,
+                      "uid": 629
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "inputData",
+                          "range": [
+                            368,
+                            377
+                          ],
+                          "parentNode": 633,
+                          "uid": 634
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "data",
+                          "range": [
+                            378,
+                            382
+                          ],
+                          "parentNode": 633,
+                          "uid": 635
+                        },
+                        "range": [
+                          368,
+                          382
+                        ],
+                        "parentNode": 632,
+                        "uid": 633
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "totalTransactionsOnHold",
+                        "range": [
+                          383,
+                          406
+                        ],
+                        "parentNode": 632,
+                        "uid": 636
+                      },
+                      "range": [
+                        368,
+                        406
+                      ],
+                      "parentNode": 628,
+                      "uid": 632
+                    },
+                    "range": [
+                      337,
+                      406
+                    ],
+                    "parentNode": 627,
+                    "uid": 628
+                  },
+                  "range": [
+                    337,
+                    407
+                  ],
+                  "parentNode": 616,
+                  "uid": 627
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          414,
+                          418
+                        ],
+                        "parentNode": 639,
+                        "uid": 640
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "totalValueOfHolds",
+                        "range": [
+                          419,
+                          436
+                        ],
+                        "parentNode": 639,
+                        "uid": 641
+                      },
+                      "range": [
+                        414,
+                        436
+                      ],
+                      "parentNode": 638,
+                      "uid": 639
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "inputData",
+                          "range": [
+                            439,
+                            448
+                          ],
+                          "parentNode": 643,
+                          "uid": 644
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "data",
+                          "range": [
+                            449,
+                            453
+                          ],
+                          "parentNode": 643,
+                          "uid": 645
+                        },
+                        "range": [
+                          439,
+                          453
+                        ],
+                        "parentNode": 642,
+                        "uid": 643
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "totalValueOfHolds",
+                        "range": [
+                          454,
+                          471
+                        ],
+                        "parentNode": 642,
+                        "uid": 646
+                      },
+                      "range": [
+                        439,
+                        471
+                      ],
+                      "parentNode": 638,
+                      "uid": 642
+                    },
+                    "range": [
+                      414,
+                      471
+                    ],
+                    "parentNode": 637,
+                    "uid": 638
+                  },
+                  "range": [
+                    414,
+                    472
+                  ],
+                  "parentNode": 616,
+                  "uid": 637
+                }
+              ],
+              "range": [
+                282,
+                478
+              ],
+              "parentNode": 614,
+              "uid": 616
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              261,
+              478
+            ],
+            "parentNode": 612,
+            "uid": 614,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            237,
+            478
+          ],
+          "parentNode": 599,
+          "uid": 612
+        }
+      ],
+      "range": [
+        59,
+        482
+      ],
+      "parentNode": 598,
+      "uid": 599
+    },
+    "range": [
+      52,
+      483
+    ],
+    "parentNode": 593,
+    "uid": 598,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 14,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 383,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./ddaAccountActivityHoldTransactions",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "requestAccountActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountActivity: function(inputData) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "fileName": "ddaAccountActivityHoldTransactions.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 24
+}

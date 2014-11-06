@@ -4,7 +4,7 @@ define(
    */
   function(require) {
     var context = null;
-    return {
+    return /**@alias module:depositAccounts */ {
       /**
        * Init.
        */

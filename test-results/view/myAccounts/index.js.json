@@ -1,0 +1,615 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "index",
+      "AMD": true,
+      "webPath": "/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'AccountsView'.",
+        "code": "wfJD",
+        "evidence": "return function AccountsView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'AccountsView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'onDataChange'.",
+        "code": "wfJD",
+        "evidence": "this.onDataChange = function onDataChange() {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'onDataChange'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myAccounts/index.js",
+  "folderPath": "test-source/view/myAccounts",
+  "fileName": "index.js",
+  "packagePath": "/view/myAccounts",
+  "webPath": "/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "index",
+  "name": "index",
+  "camelName": "Index",
+  "processedFilePath": "test-output/view/myAccounts/index.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction AccountsView() {\n    var LayoutBridge = this.createBridgePrototype(require('dashboard/view/webspec/myAccounts/expandedContainer')),\n      self = this;\n    self.bridge = new LayoutBridge({\n      targets: {}\n    });\n    this.template = require('dashboard/template/myAccounts/accounts');\n    /**\n     * On data change.\n     */\n    this.onDataChange = function onDataChange() {\n      this.rerender();\n    };\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "AccountsView",
+        "range": [
+          127,
+          139
+        ],
+        "parentNode": 608,
+        "uid": 609
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "LayoutBridge",
+                  "range": [
+                    152,
+                    164
+                  ],
+                  "parentNode": 612,
+                  "uid": 613
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "ThisExpression",
+                      "range": [
+                        167,
+                        171
+                      ],
+                      "parentNode": 615,
+                      "uid": 616
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "createBridgePrototype",
+                      "range": [
+                        172,
+                        193
+                      ],
+                      "parentNode": 615,
+                      "uid": 617
+                    },
+                    "range": [
+                      167,
+                      193
+                    ],
+                    "parentNode": 614,
+                    "uid": 615
+                  },
+                  "arguments": [
+                    {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "Identifier",
+                        "name": "require",
+                        "range": [
+                          194,
+                          201
+                        ],
+                        "parentNode": 618,
+                        "uid": 619
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": "dashboard/view/webspec/myAccounts/expandedContainer",
+                          "raw": "'dashboard/view/webspec/myAccounts/expandedContainer'",
+                          "range": [
+                            202,
+                            255
+                          ],
+                          "parentNode": 618,
+                          "uid": 620
+                        }
+                      ],
+                      "range": [
+                        194,
+                        256
+                      ],
+                      "parentNode": 614,
+                      "uid": 618
+                    }
+                  ],
+                  "range": [
+                    167,
+                    257
+                  ],
+                  "parentNode": 612,
+                  "uid": 614
+                },
+                "range": [
+                  152,
+                  257
+                ],
+                "parentNode": 611,
+                "uid": 612
+              },
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "self",
+                  "range": [
+                    265,
+                    269
+                  ],
+                  "parentNode": 621,
+                  "uid": 622
+                },
+                "init": {
+                  "type": "ThisExpression",
+                  "range": [
+                    272,
+                    276
+                  ],
+                  "parentNode": 621,
+                  "uid": 623
+                },
+                "range": [
+                  265,
+                  276
+                ],
+                "parentNode": 611,
+                "uid": 621
+              }
+            ],
+            "kind": "var",
+            "range": [
+              148,
+              277
+            ],
+            "parentNode": 610,
+            "uid": 611
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "self",
+                  "range": [
+                    282,
+                    286
+                  ],
+                  "parentNode": 626,
+                  "uid": 627
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    287,
+                    293
+                  ],
+                  "parentNode": 626,
+                  "uid": 628
+                },
+                "range": [
+                  282,
+                  293
+                ],
+                "parentNode": 625,
+                "uid": 626
+              },
+              "right": {
+                "type": "NewExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "LayoutBridge",
+                  "range": [
+                    300,
+                    312
+                  ],
+                  "parentNode": 629,
+                  "uid": 630
+                },
+                "arguments": [
+                  {
+                    "type": "ObjectExpression",
+                    "properties": [
+                      {
+                        "type": "Property",
+                        "key": {
+                          "type": "Identifier",
+                          "name": "targets",
+                          "range": [
+                            321,
+                            328
+                          ],
+                          "parentNode": 632,
+                          "uid": 633
+                        },
+                        "value": {
+                          "type": "ObjectExpression",
+                          "properties": [],
+                          "range": [
+                            330,
+                            332
+                          ],
+                          "parentNode": 632,
+                          "uid": 634
+                        },
+                        "kind": "init",
+                        "range": [
+                          321,
+                          332
+                        ],
+                        "parentNode": 631,
+                        "uid": 632
+                      }
+                    ],
+                    "range": [
+                      313,
+                      338
+                    ],
+                    "parentNode": 629,
+                    "uid": 631
+                  }
+                ],
+                "range": [
+                  296,
+                  339
+                ],
+                "parentNode": 625,
+                "uid": 629
+              },
+              "range": [
+                282,
+                339
+              ],
+              "parentNode": 624,
+              "uid": 625
+            },
+            "range": [
+              282,
+              340
+            ],
+            "parentNode": 610,
+            "uid": 624
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    345,
+                    349
+                  ],
+                  "parentNode": 637,
+                  "uid": 638
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    350,
+                    358
+                  ],
+                  "parentNode": 637,
+                  "uid": 639
+                },
+                "range": [
+                  345,
+                  358
+                ],
+                "parentNode": 636,
+                "uid": 637
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    361,
+                    368
+                  ],
+                  "parentNode": 640,
+                  "uid": 641
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myAccounts/accounts",
+                    "raw": "'dashboard/template/myAccounts/accounts'",
+                    "range": [
+                      369,
+                      409
+                    ],
+                    "parentNode": 640,
+                    "uid": 642
+                  }
+                ],
+                "range": [
+                  361,
+                  410
+                ],
+                "parentNode": 636,
+                "uid": 640
+              },
+              "range": [
+                345,
+                410
+              ],
+              "parentNode": 635,
+              "uid": 636
+            },
+            "range": [
+              345,
+              411
+            ],
+            "parentNode": 610,
+            "uid": 635
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    455,
+                    459
+                  ],
+                  "parentNode": 645,
+                  "uid": 646
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "onDataChange",
+                  "range": [
+                    460,
+                    472
+                  ],
+                  "parentNode": 645,
+                  "uid": 647
+                },
+                "range": [
+                  455,
+                  472
+                ],
+                "parentNode": 644,
+                "uid": 645
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": {
+                  "type": "Identifier",
+                  "name": "onDataChange",
+                  "range": [
+                    484,
+                    496
+                  ],
+                  "parentNode": 648,
+                  "uid": 649
+                },
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              507,
+                              511
+                            ],
+                            "parentNode": 653,
+                            "uid": 654
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "rerender",
+                            "range": [
+                              512,
+                              520
+                            ],
+                            "parentNode": 653,
+                            "uid": 655
+                          },
+                          "range": [
+                            507,
+                            520
+                          ],
+                          "parentNode": 652,
+                          "uid": 653
+                        },
+                        "arguments": [],
+                        "range": [
+                          507,
+                          522
+                        ],
+                        "parentNode": 651,
+                        "uid": 652
+                      },
+                      "range": [
+                        507,
+                        523
+                      ],
+                      "parentNode": 650,
+                      "uid": 651
+                    }
+                  ],
+                  "range": [
+                    499,
+                    529
+                  ],
+                  "parentNode": 648,
+                  "uid": 650
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  475,
+                  529
+                ],
+                "parentNode": 644,
+                "uid": 648,
+                "returnType": ""
+              },
+              "range": [
+                455,
+                529
+              ],
+              "parentNode": 643,
+              "uid": 644
+            },
+            "range": [
+              455,
+              530
+            ],
+            "parentNode": 610,
+            "uid": 643
+          }
+        ],
+        "range": [
+          142,
+          534
+        ],
+        "parentNode": 608,
+        "uid": 610
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        118,
+        534
+      ],
+      "parentNode": 607,
+      "uid": 608,
+      "returnType": ""
+    },
+    "range": [
+      111,
+      535
+    ],
+    "parentNode": 606,
+    "uid": 607,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 17,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 422,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./index",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "AccountsView": 242
+    },
+    "methods": [
+      {
+        "name": "AccountsView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function AccountsView() {"
+      },
+      {
+        "name": "onDataChange",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.onDataChange = function onDataChange() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "fileName": "index.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 25
+}

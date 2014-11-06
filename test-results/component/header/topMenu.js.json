@@ -1,0 +1,819 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "top_menu",
+      "AMD": true,
+      "webPath": "/component/header"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'topMenuNavigation'.",
+        "code": "wfJD",
+        "evidence": "topMenuNavigation: function() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'topMenuNavigation'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'everydayLivingClick'.",
+        "code": "wfJD",
+        "evidence": "everydayLivingClick: function() {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'everydayLivingClick'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'investmentsClick'.",
+        "code": "wfJD",
+        "evidence": "investmentsClick: function() {",
+        "line": 18,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'investmentsClick'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'goalsClick'.",
+        "code": "wfJD",
+        "evidence": "goalsClick: function() {",
+        "line": 21,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'goalsClick'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/header/topMenu.js",
+  "folderPath": "test-source/component/header",
+  "fileName": "topMenu.js",
+  "packagePath": "/component/header",
+  "webPath": "/component/header",
+  "libFile": false,
+  "min": false,
+  "realName": "top_menu",
+  "name": "topMenu",
+  "camelName": "TopMenu",
+  "processedFilePath": "test-output/component/header/topMenu.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/header/topMenu */ {\n    /**\n     * Init.\n     */\n    init: function () {},\n    /**\n     * Top menu navigation.\n     */\n    topMenuNavigation: function () {\n      //emit does not work when we go anf come back from classic.\n      // this.output.emit('state', {\n      //     value: 'showMegaMenu'\n      // });\n      $('body').toggleClass('hidden-menu');\n    },\n    /**\n     * Everyday living click.\n     */\n    everydayLivingClick: function () {\n      this.context.controller.state('/dashboard');\n    },\n    /**\n     * Investments click.\n     */\n    investmentsClick: function () {\n      this.context.controller.state('/dashboard/classicInvestments/index/investmenttab');\n    },\n    /**\n     * Goals click.\n     */\n    goalsClick: function () {\n      this.context.controller.state('/goals');\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              72,
+              76
+            ],
+            "parentNode": 706,
+            "uid": 707
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                90,
+                92
+              ],
+              "parentNode": 708,
+              "uid": 709
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              78,
+              92
+            ],
+            "parentNode": 706,
+            "uid": 708,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            72,
+            92
+          ],
+          "parentNode": 705,
+          "uid": 706
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "topMenuNavigation",
+            "range": [
+              142,
+              159
+            ],
+            "parentNode": 710,
+            "uid": 711
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "$",
+                          "range": [
+                            332,
+                            333
+                          ],
+                          "parentNode": 717,
+                          "uid": 718
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "body",
+                            "raw": "'body'",
+                            "range": [
+                              334,
+                              340
+                            ],
+                            "parentNode": 717,
+                            "uid": 719
+                          }
+                        ],
+                        "range": [
+                          332,
+                          341
+                        ],
+                        "parentNode": 716,
+                        "uid": 717
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "toggleClass",
+                        "range": [
+                          342,
+                          353
+                        ],
+                        "parentNode": 716,
+                        "uid": 720
+                      },
+                      "range": [
+                        332,
+                        353
+                      ],
+                      "parentNode": 715,
+                      "uid": 716
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "hidden-menu",
+                        "raw": "'hidden-menu'",
+                        "range": [
+                          354,
+                          367
+                        ],
+                        "parentNode": 715,
+                        "uid": 721
+                      }
+                    ],
+                    "range": [
+                      332,
+                      368
+                    ],
+                    "parentNode": 714,
+                    "uid": 715
+                  },
+                  "range": [
+                    332,
+                    369
+                  ],
+                  "parentNode": 713,
+                  "uid": 714
+                }
+              ],
+              "range": [
+                173,
+                375
+              ],
+              "parentNode": 712,
+              "uid": 713
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              161,
+              375
+            ],
+            "parentNode": 710,
+            "uid": 712,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            142,
+            375
+          ],
+          "parentNode": 705,
+          "uid": 710
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "everydayLivingClick",
+            "range": [
+              427,
+              446
+            ],
+            "parentNode": 722,
+            "uid": 723
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              468,
+                              472
+                            ],
+                            "parentNode": 730,
+                            "uid": 731
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "context",
+                            "range": [
+                              473,
+                              480
+                            ],
+                            "parentNode": 730,
+                            "uid": 732
+                          },
+                          "range": [
+                            468,
+                            480
+                          ],
+                          "parentNode": 729,
+                          "uid": 730
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "controller",
+                          "range": [
+                            481,
+                            491
+                          ],
+                          "parentNode": 729,
+                          "uid": 733
+                        },
+                        "range": [
+                          468,
+                          491
+                        ],
+                        "parentNode": 728,
+                        "uid": 729
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "state",
+                        "range": [
+                          492,
+                          497
+                        ],
+                        "parentNode": 728,
+                        "uid": 734
+                      },
+                      "range": [
+                        468,
+                        497
+                      ],
+                      "parentNode": 727,
+                      "uid": 728
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "/dashboard",
+                        "raw": "'/dashboard'",
+                        "range": [
+                          498,
+                          510
+                        ],
+                        "parentNode": 727,
+                        "uid": 735
+                      }
+                    ],
+                    "range": [
+                      468,
+                      511
+                    ],
+                    "parentNode": 726,
+                    "uid": 727
+                  },
+                  "range": [
+                    468,
+                    512
+                  ],
+                  "parentNode": 725,
+                  "uid": 726
+                }
+              ],
+              "range": [
+                460,
+                518
+              ],
+              "parentNode": 724,
+              "uid": 725
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              448,
+              518
+            ],
+            "parentNode": 722,
+            "uid": 724,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            427,
+            518
+          ],
+          "parentNode": 705,
+          "uid": 722
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "investmentsClick",
+            "range": [
+              566,
+              582
+            ],
+            "parentNode": 736,
+            "uid": 737
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              604,
+                              608
+                            ],
+                            "parentNode": 744,
+                            "uid": 745
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "context",
+                            "range": [
+                              609,
+                              616
+                            ],
+                            "parentNode": 744,
+                            "uid": 746
+                          },
+                          "range": [
+                            604,
+                            616
+                          ],
+                          "parentNode": 743,
+                          "uid": 744
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "controller",
+                          "range": [
+                            617,
+                            627
+                          ],
+                          "parentNode": 743,
+                          "uid": 747
+                        },
+                        "range": [
+                          604,
+                          627
+                        ],
+                        "parentNode": 742,
+                        "uid": 743
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "state",
+                        "range": [
+                          628,
+                          633
+                        ],
+                        "parentNode": 742,
+                        "uid": 748
+                      },
+                      "range": [
+                        604,
+                        633
+                      ],
+                      "parentNode": 741,
+                      "uid": 742
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "/dashboard/classicInvestments/index/investmenttab",
+                        "raw": "'/dashboard/classicInvestments/index/investmenttab'",
+                        "range": [
+                          634,
+                          685
+                        ],
+                        "parentNode": 741,
+                        "uid": 749
+                      }
+                    ],
+                    "range": [
+                      604,
+                      686
+                    ],
+                    "parentNode": 740,
+                    "uid": 741
+                  },
+                  "range": [
+                    604,
+                    687
+                  ],
+                  "parentNode": 739,
+                  "uid": 740
+                }
+              ],
+              "range": [
+                596,
+                693
+              ],
+              "parentNode": 738,
+              "uid": 739
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              584,
+              693
+            ],
+            "parentNode": 736,
+            "uid": 738,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            566,
+            693
+          ],
+          "parentNode": 705,
+          "uid": 736
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "goalsClick",
+            "range": [
+              735,
+              745
+            ],
+            "parentNode": 750,
+            "uid": 751
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              767,
+                              771
+                            ],
+                            "parentNode": 758,
+                            "uid": 759
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "context",
+                            "range": [
+                              772,
+                              779
+                            ],
+                            "parentNode": 758,
+                            "uid": 760
+                          },
+                          "range": [
+                            767,
+                            779
+                          ],
+                          "parentNode": 757,
+                          "uid": 758
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "controller",
+                          "range": [
+                            780,
+                            790
+                          ],
+                          "parentNode": 757,
+                          "uid": 761
+                        },
+                        "range": [
+                          767,
+                          790
+                        ],
+                        "parentNode": 756,
+                        "uid": 757
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "state",
+                        "range": [
+                          791,
+                          796
+                        ],
+                        "parentNode": 756,
+                        "uid": 762
+                      },
+                      "range": [
+                        767,
+                        796
+                      ],
+                      "parentNode": 755,
+                      "uid": 756
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "/goals",
+                        "raw": "'/goals'",
+                        "range": [
+                          797,
+                          805
+                        ],
+                        "parentNode": 755,
+                        "uid": 763
+                      }
+                    ],
+                    "range": [
+                      767,
+                      806
+                    ],
+                    "parentNode": 754,
+                    "uid": 755
+                  },
+                  "range": [
+                    767,
+                    807
+                  ],
+                  "parentNode": 753,
+                  "uid": 754
+                }
+              ],
+              "range": [
+                759,
+                813
+              ],
+              "parentNode": 752,
+              "uid": 753
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              747,
+              813
+            ],
+            "parentNode": 750,
+            "uid": 752,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            735,
+            813
+          ],
+          "parentNode": 705,
+          "uid": 750
+        }
+      ],
+      "range": [
+        37,
+        817
+      ],
+      "parentNode": 704,
+      "uid": 705
+    },
+    "range": [
+      30,
+      818
+    ],
+    "parentNode": 703,
+    "uid": 704,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 25,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/header",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 627,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./topMenu",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "topMenuNavigation",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "topMenuNavigation: function() {"
+      },
+      {
+        "name": "everydayLivingClick",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "everydayLivingClick: function() {"
+      },
+      {
+        "name": "investmentsClick",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 18,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "investmentsClick: function() {"
+      },
+      {
+        "name": "goalsClick",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 21,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "goalsClick: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/header",
+    "fileName": "topMenu.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 41
+}

@@ -1,0 +1,854 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "heo_account_things_you_can_do",
+      "AMD": true,
+      "webPath": "/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountStatements'.",
+        "code": "wfJD",
+        "evidence": "requestAccountStatements: function() {},",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountStatements'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestEscrowDetails'.",
+        "code": "wfJD",
+        "evidence": "requestEscrowDetails: function() {},",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestEscrowDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestForms'.",
+        "code": "wfJD",
+        "evidence": "requestForms: function() {},",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestForms'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountDetails'.",
+        "code": "wfJD",
+        "evidence": "requestAccountDetails: function() {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestThingsYouCanDo'.",
+        "code": "wfJD",
+        "evidence": "requestThingsYouCanDo: function() {},",
+        "line": 16,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestThingsYouCanDo'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exitThingsYouCanDo'.",
+        "code": "wfJD",
+        "evidence": "exitThingsYouCanDo: function() {},",
+        "line": 17,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exitThingsYouCanDo'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updatePaymentDueDate'.",
+        "code": "wfJD",
+        "evidence": "updatePaymentDueDate: function() {}",
+        "line": 18,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updatePaymentDueDate'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myAccounts/heoAccountThingsYouCanDo.js",
+  "folderPath": "test-source/component/myAccounts",
+  "fileName": "heoAccountThingsYouCanDo.js",
+  "packagePath": "/component/myAccounts",
+  "webPath": "/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "heo_account_things_you_can_do",
+  "name": "heoAccountThingsYouCanDo",
+  "camelName": "HeoAccountThingsYouCanDo",
+  "processedFilePath": "test-output/component/myAccounts/heoAccountThingsYouCanDo.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myAccounts/heoAccountThingsYouCanDo */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Request account statements.\n     */\n    requestAccountStatements: function () {},\n    /**\n     * Request escrow details.\n     */\n    requestEscrowDetails: function () {},\n    /**\n     * Request forms.\n     */\n    requestForms: function () {},\n    //need to redo emit function based on new detail page for HEO account.\n    /**\n     * Request account details.\n     */\n    requestAccountDetails: function () {\n      context.appChannel.emit('getExpandedHeo', this.model.get());\n    },\n    /**\n     * Request things you can do.\n     */\n    requestThingsYouCanDo: function () {},\n    /**\n     * Exit things you can do.\n     */\n    exitThingsYouCanDo: function () {},\n    /**\n     * Update payment due date.\n     */\n    updatePaymentDueDate: function () {}\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              160,
+              164
+            ],
+            "parentNode": 717,
+            "uid": 718
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        186,
+                        193
+                      ],
+                      "parentNode": 722,
+                      "uid": 723
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            196,
+                            200
+                          ],
+                          "parentNode": 725,
+                          "uid": 726
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            201,
+                            209
+                          ],
+                          "parentNode": 725,
+                          "uid": 727
+                        },
+                        "range": [
+                          196,
+                          209
+                        ],
+                        "parentNode": 724,
+                        "uid": 725
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          210,
+                          217
+                        ],
+                        "parentNode": 724,
+                        "uid": 728
+                      },
+                      "range": [
+                        196,
+                        217
+                      ],
+                      "parentNode": 722,
+                      "uid": 724
+                    },
+                    "range": [
+                      186,
+                      217
+                    ],
+                    "parentNode": 721,
+                    "uid": 722
+                  },
+                  "range": [
+                    186,
+                    218
+                  ],
+                  "parentNode": 720,
+                  "uid": 721
+                }
+              ],
+              "range": [
+                178,
+                224
+              ],
+              "parentNode": 719,
+              "uid": 720
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              166,
+              224
+            ],
+            "parentNode": 717,
+            "uid": 719,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            160,
+            224
+          ],
+          "parentNode": 716,
+          "uid": 717
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestAccountStatements",
+            "range": [
+              281,
+              305
+            ],
+            "parentNode": 729,
+            "uid": 730
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                319,
+                321
+              ],
+              "parentNode": 731,
+              "uid": 732
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              307,
+              321
+            ],
+            "parentNode": 729,
+            "uid": 731,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            281,
+            321
+          ],
+          "parentNode": 716,
+          "uid": 729
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestEscrowDetails",
+            "range": [
+              374,
+              394
+            ],
+            "parentNode": 733,
+            "uid": 734
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                408,
+                410
+              ],
+              "parentNode": 735,
+              "uid": 736
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              396,
+              410
+            ],
+            "parentNode": 733,
+            "uid": 735,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            374,
+            410
+          ],
+          "parentNode": 716,
+          "uid": 733
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestForms",
+            "range": [
+              454,
+              466
+            ],
+            "parentNode": 737,
+            "uid": 738
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                480,
+                482
+              ],
+              "parentNode": 739,
+              "uid": 740
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              468,
+              482
+            ],
+            "parentNode": 737,
+            "uid": 739,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            454,
+            482
+          ],
+          "parentNode": 716,
+          "uid": 737
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestAccountDetails",
+            "range": [
+              611,
+              632
+            ],
+            "parentNode": 741,
+            "uid": 742
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "context",
+                          "range": [
+                            654,
+                            661
+                          ],
+                          "parentNode": 748,
+                          "uid": 749
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "appChannel",
+                          "range": [
+                            662,
+                            672
+                          ],
+                          "parentNode": 748,
+                          "uid": 750
+                        },
+                        "range": [
+                          654,
+                          672
+                        ],
+                        "parentNode": 747,
+                        "uid": 748
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          673,
+                          677
+                        ],
+                        "parentNode": 747,
+                        "uid": 751
+                      },
+                      "range": [
+                        654,
+                        677
+                      ],
+                      "parentNode": 746,
+                      "uid": 747
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "getExpandedHeo",
+                        "raw": "'getExpandedHeo'",
+                        "range": [
+                          678,
+                          694
+                        ],
+                        "parentNode": 746,
+                        "uid": 752
+                      },
+                      {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                696,
+                                700
+                              ],
+                              "parentNode": 755,
+                              "uid": 756
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                701,
+                                706
+                              ],
+                              "parentNode": 755,
+                              "uid": 757
+                            },
+                            "range": [
+                              696,
+                              706
+                            ],
+                            "parentNode": 754,
+                            "uid": 755
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "get",
+                            "range": [
+                              707,
+                              710
+                            ],
+                            "parentNode": 754,
+                            "uid": 758
+                          },
+                          "range": [
+                            696,
+                            710
+                          ],
+                          "parentNode": 753,
+                          "uid": 754
+                        },
+                        "arguments": [],
+                        "range": [
+                          696,
+                          712
+                        ],
+                        "parentNode": 746,
+                        "uid": 753
+                      }
+                    ],
+                    "range": [
+                      654,
+                      713
+                    ],
+                    "parentNode": 745,
+                    "uid": 746
+                  },
+                  "range": [
+                    654,
+                    714
+                  ],
+                  "parentNode": 744,
+                  "uid": 745
+                }
+              ],
+              "range": [
+                646,
+                720
+              ],
+              "parentNode": 743,
+              "uid": 744
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              634,
+              720
+            ],
+            "parentNode": 741,
+            "uid": 743,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            611,
+            720
+          ],
+          "parentNode": 716,
+          "uid": 741
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestThingsYouCanDo",
+            "range": [
+              776,
+              797
+            ],
+            "parentNode": 759,
+            "uid": 760
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                811,
+                813
+              ],
+              "parentNode": 761,
+              "uid": 762
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              799,
+              813
+            ],
+            "parentNode": 759,
+            "uid": 761,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            776,
+            813
+          ],
+          "parentNode": 716,
+          "uid": 759
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "exitThingsYouCanDo",
+            "range": [
+              866,
+              884
+            ],
+            "parentNode": 763,
+            "uid": 764
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                898,
+                900
+              ],
+              "parentNode": 765,
+              "uid": 766
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              886,
+              900
+            ],
+            "parentNode": 763,
+            "uid": 765,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            866,
+            900
+          ],
+          "parentNode": 716,
+          "uid": 763
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "updatePaymentDueDate",
+            "range": [
+              954,
+              974
+            ],
+            "parentNode": 767,
+            "uid": 768
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                988,
+                990
+              ],
+              "parentNode": 769,
+              "uid": 770
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              976,
+              990
+            ],
+            "parentNode": 767,
+            "uid": 769,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            954,
+            990
+          ],
+          "parentNode": 716,
+          "uid": 767
+        }
+      ],
+      "range": [
+        125,
+        994
+      ],
+      "parentNode": 715,
+      "uid": 716
+    },
+    "range": [
+      118,
+      995
+    ],
+    "parentNode": 710,
+    "uid": 715,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 20,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 633,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./heoAccountThingsYouCanDo",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "requestAccountStatements",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountStatements: function() {},"
+      },
+      {
+        "name": "requestEscrowDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestEscrowDetails: function() {},"
+      },
+      {
+        "name": "requestForms",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestForms: function() {},"
+      },
+      {
+        "name": "requestAccountDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountDetails: function() {"
+      },
+      {
+        "name": "requestThingsYouCanDo",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestThingsYouCanDo: function() {},"
+      },
+      {
+        "name": "exitThingsYouCanDo",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 17,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exitThingsYouCanDo: function() {},"
+      },
+      {
+        "name": "updatePaymentDueDate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 18,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "updatePaymentDueDate: function() {}"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "fileName": "heoAccountThingsYouCanDo.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 47
+}

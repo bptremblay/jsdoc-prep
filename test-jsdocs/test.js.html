@@ -68,6 +68,7 @@
         return output;
       };
       /**
+       * @private
        * @param a
        * @param {Banana}
        * @param {Boolean}
@@ -115,6 +116,7 @@
       return false;
     };
     /**
+     * @constructor
      * @description A description tag.
      *
      */
@@ -134,6 +136,7 @@
       this.Freenox = new Freenox();
     }
     /**
+     * @constructor
      * @description A description tag with more than
      *  one line of stuff
      *  and some of it could be very very long
@@ -149,58 +152,61 @@
       this.Freenox = new Freenox();
     }
     /**
-     * Redundant 'function' tag.
-     */
+* Redundant 'function' tag.
+
+*/
     FourthClass.prototype.someFunction = function() {};
     /**
-     * Redundant 'method' tag. Used more by YUIDoc.
-     */
+* Redundant 'method' tag. Used more by YUIDoc.
+
+*/
     FourthClass.prototype.anotherFunction = function() {};
     /**
-     * @description Subscribe to events on the component's local Channel. Events on the
-     *               local channel are not visible to other components or the main
-     *               ComponentChannel.
-     * @example
-     *  // Execute callback for ALL events on the component (no eventType given)
-     *  myComponent.on(function(event){
-     *      // Analyze, log, etc the event
-     *  });
-     *
-     *  // Execute callback for a component-generated event
-     *  // Format of eventType is ACTION/VALUE
-     *  // ACTION - function call, state change, etc on the component
-     *  // VALUE - name of action, property name, etc.
-     *
-     *  // Note: TARGET is automatically prepended to the eventType and
-     *  //       is equal to the name of the component as defined in the spec
-     *  myComponent.on('action/submit', function(event){
-     *      // Execute logic for the submit action on the component
-     *  });
-     *
-     *  // Subscribe to multiple events
-     *  myComponent.on( {
-     *      'action/submit': function(submitEvent){
-     *          // Business Logic
-     *      },
-     *      'state/enabled': function(enabledEvent){
-     *          // Business Logic
-     *      },
-     *      'action/requestBalance': function(requestEvent){
-     *          // Business Logic
-     *      },
-     *      'state/valid': function(validEvent){
-     *          // Business Logic
-     *      }
-     *  } );
-     *
-     *  // Can use wildcards
-     *  myComponent.on('action/*', function(actionEvent){
-     *      // Logic for all actions on the component
-     *  } );
-     *
-     * @param {String|PlainObject} [eventType] The type of event.
-     * @param {Function} [callback] The callback to execute when the event is published.
-     */
+* @description Subscribe to events on the component's local Channel. Events on the
+*               local channel are not visible to other components or the main
+*               ComponentChannel.
+
+* @example
+*  // Execute callback for ALL events on the component (no eventType given)
+*  myComponent.on(function(event){
+*      // Analyze, log, etc the event
+*  });
+*
+*  // Execute callback for a component-generated event
+*  // Format of eventType is ACTION/VALUE
+*  // ACTION - function call, state change, etc on the component
+*  // VALUE - name of action, property name, etc.
+*
+*  // Note: TARGET is automatically prepended to the eventType and
+*  //       is equal to the name of the component as defined in the spec
+*  myComponent.on('action/submit', function(event){
+*      // Execute logic for the submit action on the component
+*  });
+*
+*  // Subscribe to multiple events
+*  myComponent.on( {
+*      'action/submit': function(submitEvent){
+*          // Business Logic
+*      },
+*      'state/enabled': function(enabledEvent){
+*          // Business Logic
+*      },
+*      'action/requestBalance': function(requestEvent){
+*          // Business Logic
+*      },
+*      'state/valid': function(validEvent){
+*          // Business Logic
+*      }
+*  } );
+*
+*  // Can use wildcards
+*  myComponent.on('action/*', function(actionEvent){
+*      // Logic for all actions on the component
+*  } );
+*
+* @param {String|PlainObject} [eventType] The type of event.
+* @param {Function} [callback] The callback to execute when the event is published.
+*/
     Freenox.prototype.on = function(eventType, callback) {};
     return SecondClass;
   });</code></pre>
@@ -213,13 +219,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-accountDetailsHeader.html">accountDetailsHeader</a></li><li><a href="module-depositAccounts.html">depositAccounts</a></li><li><a href="logon.html">js/component/logon</a></li><li><a href="logonIdentification.html">js/component/logonIdentification</a></li><li><a href="logonPasswordReset.html">js/component/logonPasswordReset</a></li><li><a href="topMenu.html">js/component/topMenu</a></li><li><a href="logon_.html">js/controller/logon</a></li><li><a href="menu.html">js/controller/menu</a></li><li><a href="mfa.html">js/controller/mfa</a></li><li><a href="passwordReset.html">js/controller/passwordReset</a></li><li><a href="scenario.html">js/controller/scenario</a></li><li><a href="main.html">js/main</a></li><li><a href="auth.html">js/service/auth</a></li><li><a href="request.html">js/service/interceptor/request</a></li><li><a href="otp.html">js/service/otp</a></li><li><a href="settings.html">js/settings</a></li><li><a href="authClientApi.html">js/shared/authClientApi</a></li><li><a href="cookieManager.html">js/shared/cookieManager</a></li><li><a href="otpClient.html">js/shared/otpClient</a></li><li><a href="storeLens.html">js/shared/storeLens</a></li><li><a href="topMenu_.html">js/spec/topMenu</a></li><li><a href="logon__.html">js/view/logon</a></li><li><a href="logonPasswordReset_.html">js/view/logonPasswordReset</a></li><li><a href="logonUserIdFound.html">js/view/logonUserIdFound</a></li><li><a href="menu_.html">js/view/menu</a></li><li><a href="mfa_.html">js/view/mfa</a></li><li><a href="mfaOptions.html">js/view/mfaOptions</a></li><li><a href="mfaSubmit.html">js/view/mfaSubmit</a></li><li><a href="scenario_.html">js/view/scenario</a></li><li><a href="success.html">js/view/success</a></li><li><a href="logon___.html">js/view/webspec/logon</a></li><li><a href="logonIdentification_.html">js/view/webspec/logonIdentification</a></li><li><a href="logonPasswordReset__.html">js/view/webspec/logonPasswordReset</a></li><li><a href="logonUserIdFound_.html">js/view/webspec/logonUserIdFound</a></li><li><a href="mfaOptions_.html">js/view/webspec/mfaOptions</a></li><li><a href="mfaSubmit_.html">js/view/webspec/mfaSubmit</a></li><li><a href="topMenu__.html">js/view/webspec/topMenu</a></li><li><a href="module-test.html">test</a></li></ul><h3>Classes</h3><ul><li><a href="module-test.html#FourthClass">FourthClass</a></li><li><a href="module-test-Freenox.html">Freenox</a></li><li><a href="module-test-SecondClass.html">SecondClass</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-accountDetailsHeader.html">accountDetailsHeader</a></li><li><a href="module-depositAccounts.html">depositAccounts</a></li><li><a href="module-tab_panel.html">tab_panel</a></li><li><a href="module-test.html">test</a></li></ul><h3>Classes</h3><ul><li><a href="module-accountDetailsHeader-AccountDetailsHeaderView.html">AccountDetailsHeaderView</a></li><li><a href="module-tab_panel-TabPanel.html">TabPanel</a></li><li><a href="module-test-FourthClass.html">FourthClass</a></li><li><a href="module-test-Freenox.html">Freenox</a></li><li><a href="module-test-SecondClass.html">SecondClass</a></li><li><a href="module-test-ThirdClass.html">ThirdClass</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha9</a> on Mon Nov 03 2014 21:09:04 GMT-0500 (EST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha9</a> on Thu Nov 06 2014 07:50:21 GMT-0500 (EST)
 </footer>
 
 <script> prettyPrint(); </script>

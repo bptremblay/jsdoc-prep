@@ -1,0 +1,430 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "credit_account_activity_pending_transaction",
+      "AMD": true,
+      "webPath": "/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountActivity'.",
+        "code": "wfJD",
+        "evidence": "requestAccountActivity: function(inputData) {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountActivity'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myAccounts/creditAccountActivityPendingTransaction.js",
+  "folderPath": "test-source/component/myAccounts",
+  "fileName": "creditAccountActivityPendingTransaction.js",
+  "packagePath": "/component/myAccounts",
+  "webPath": "/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "credit_account_activity_pending_transaction",
+  "name": "creditAccountActivityPendingTransaction",
+  "camelName": "CreditAccountActivityPendingTransaction",
+  "processedFilePath": "test-output/component/myAccounts/creditAccountActivityPendingTransaction.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myAccounts/creditAccountActivityPendingTransaction */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Request account activity.\n     * @param inputData\n     */\n    requestAccountActivity: function (inputData) {\n      this.transactions = inputData.data.list;\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              94,
+              98
+            ],
+            "parentNode": 400,
+            "uid": 401
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        120,
+                        127
+                      ],
+                      "parentNode": 405,
+                      "uid": 406
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            130,
+                            134
+                          ],
+                          "parentNode": 408,
+                          "uid": 409
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            135,
+                            143
+                          ],
+                          "parentNode": 408,
+                          "uid": 410
+                        },
+                        "range": [
+                          130,
+                          143
+                        ],
+                        "parentNode": 407,
+                        "uid": 408
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          144,
+                          151
+                        ],
+                        "parentNode": 407,
+                        "uid": 411
+                      },
+                      "range": [
+                        130,
+                        151
+                      ],
+                      "parentNode": 405,
+                      "uid": 407
+                    },
+                    "range": [
+                      120,
+                      151
+                    ],
+                    "parentNode": 404,
+                    "uid": 405
+                  },
+                  "range": [
+                    120,
+                    152
+                  ],
+                  "parentNode": 403,
+                  "uid": 404
+                }
+              ],
+              "range": [
+                112,
+                158
+              ],
+              "parentNode": 402,
+              "uid": 403
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              100,
+              158
+            ],
+            "parentNode": 400,
+            "uid": 402,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            94,
+            158
+          ],
+          "parentNode": 399,
+          "uid": 400
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestAccountActivity",
+            "range": [
+              237,
+              259
+            ],
+            "parentNode": 412,
+            "uid": 413
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "inputData",
+                "range": [
+                  271,
+                  280
+                ],
+                "parentNode": 414,
+                "uid": 415
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          290,
+                          294
+                        ],
+                        "parentNode": 419,
+                        "uid": 420
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "transactions",
+                        "range": [
+                          295,
+                          307
+                        ],
+                        "parentNode": 419,
+                        "uid": 421
+                      },
+                      "range": [
+                        290,
+                        307
+                      ],
+                      "parentNode": 418,
+                      "uid": 419
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "inputData",
+                          "range": [
+                            310,
+                            319
+                          ],
+                          "parentNode": 423,
+                          "uid": 424
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "data",
+                          "range": [
+                            320,
+                            324
+                          ],
+                          "parentNode": 423,
+                          "uid": 425
+                        },
+                        "range": [
+                          310,
+                          324
+                        ],
+                        "parentNode": 422,
+                        "uid": 423
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "list",
+                        "range": [
+                          325,
+                          329
+                        ],
+                        "parentNode": 422,
+                        "uid": 426
+                      },
+                      "range": [
+                        310,
+                        329
+                      ],
+                      "parentNode": 418,
+                      "uid": 422
+                    },
+                    "range": [
+                      290,
+                      329
+                    ],
+                    "parentNode": 417,
+                    "uid": 418
+                  },
+                  "range": [
+                    290,
+                    330
+                  ],
+                  "parentNode": 416,
+                  "uid": 417
+                }
+              ],
+              "range": [
+                282,
+                336
+              ],
+              "parentNode": 414,
+              "uid": 416
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              261,
+              336
+            ],
+            "parentNode": 412,
+            "uid": 414,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            237,
+            336
+          ],
+          "parentNode": 399,
+          "uid": 412
+        }
+      ],
+      "range": [
+        59,
+        340
+      ],
+      "parentNode": 398,
+      "uid": 399
+    },
+    "range": [
+      52,
+      341
+    ],
+    "parentNode": 393,
+    "uid": 398,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 13,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 242,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./creditAccountActivityPendingTransaction",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "requestAccountActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountActivity: function(inputData) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "fileName": "creditAccountActivityPendingTransaction.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 22
+}

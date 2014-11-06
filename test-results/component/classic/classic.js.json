@@ -1,0 +1,585 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "classic",
+      "AMD": true,
+      "webPath": "/component/classic"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateContent'.",
+        "code": "wfJD",
+        "evidence": "updateContent: function(data) {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateContent'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/classic/classic.js",
+  "folderPath": "test-source/component/classic",
+  "fileName": "classic.js",
+  "packagePath": "/component/classic",
+  "webPath": "/component/classic",
+  "libFile": false,
+  "min": false,
+  "realName": "classic",
+  "name": "classic",
+  "camelName": "Classic",
+  "processedFilePath": "test-output/component/classic/classic.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/classic/classic */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Update content.\n     * @param data\n     * @todo Please describe the return type of this method.\n     */\n    updateContent: function (data) {\n      context.model.lens('classicComponent.iframeElement').set(data);\n      context.model.lens('classicComponent.titleElement').set(data);\n      return {};\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              87,
+              91
+            ],
+            "parentNode": 571,
+            "uid": 572
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        113,
+                        120
+                      ],
+                      "parentNode": 576,
+                      "uid": 577
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            123,
+                            127
+                          ],
+                          "parentNode": 579,
+                          "uid": 580
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            128,
+                            136
+                          ],
+                          "parentNode": 579,
+                          "uid": 581
+                        },
+                        "range": [
+                          123,
+                          136
+                        ],
+                        "parentNode": 578,
+                        "uid": 579
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          137,
+                          144
+                        ],
+                        "parentNode": 578,
+                        "uid": 582
+                      },
+                      "range": [
+                        123,
+                        144
+                      ],
+                      "parentNode": 576,
+                      "uid": 578
+                    },
+                    "range": [
+                      113,
+                      144
+                    ],
+                    "parentNode": 575,
+                    "uid": 576
+                  },
+                  "range": [
+                    113,
+                    145
+                  ],
+                  "parentNode": 574,
+                  "uid": 575
+                }
+              ],
+              "range": [
+                105,
+                151
+              ],
+              "parentNode": 573,
+              "uid": 574
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              93,
+              151
+            ],
+            "parentNode": 571,
+            "uid": 573,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            87,
+            151
+          ],
+          "parentNode": 570,
+          "uid": 571
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "updateContent",
+            "range": [
+              276,
+              289
+            ],
+            "parentNode": 583,
+            "uid": 584
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "data",
+                "range": [
+                  301,
+                  305
+                ],
+                "parentNode": 585,
+                "uid": 586
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "context",
+                              "range": [
+                                315,
+                                322
+                              ],
+                              "parentNode": 593,
+                              "uid": 594
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                323,
+                                328
+                              ],
+                              "parentNode": 593,
+                              "uid": 595
+                            },
+                            "range": [
+                              315,
+                              328
+                            ],
+                            "parentNode": 592,
+                            "uid": 593
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "lens",
+                            "range": [
+                              329,
+                              333
+                            ],
+                            "parentNode": 592,
+                            "uid": 596
+                          },
+                          "range": [
+                            315,
+                            333
+                          ],
+                          "parentNode": 591,
+                          "uid": 592
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "classicComponent.iframeElement",
+                            "raw": "'classicComponent.iframeElement'",
+                            "range": [
+                              334,
+                              366
+                            ],
+                            "parentNode": 591,
+                            "uid": 597
+                          }
+                        ],
+                        "range": [
+                          315,
+                          367
+                        ],
+                        "parentNode": 590,
+                        "uid": 591
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "set",
+                        "range": [
+                          368,
+                          371
+                        ],
+                        "parentNode": 590,
+                        "uid": 598
+                      },
+                      "range": [
+                        315,
+                        371
+                      ],
+                      "parentNode": 589,
+                      "uid": 590
+                    },
+                    "arguments": [
+                      {
+                        "type": "Identifier",
+                        "name": "data",
+                        "range": [
+                          372,
+                          376
+                        ],
+                        "parentNode": 589,
+                        "uid": 599
+                      }
+                    ],
+                    "range": [
+                      315,
+                      377
+                    ],
+                    "parentNode": 588,
+                    "uid": 589
+                  },
+                  "range": [
+                    315,
+                    378
+                  ],
+                  "parentNode": 587,
+                  "uid": 588
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "context",
+                              "range": [
+                                385,
+                                392
+                              ],
+                              "parentNode": 605,
+                              "uid": 606
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                393,
+                                398
+                              ],
+                              "parentNode": 605,
+                              "uid": 607
+                            },
+                            "range": [
+                              385,
+                              398
+                            ],
+                            "parentNode": 604,
+                            "uid": 605
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "lens",
+                            "range": [
+                              399,
+                              403
+                            ],
+                            "parentNode": 604,
+                            "uid": 608
+                          },
+                          "range": [
+                            385,
+                            403
+                          ],
+                          "parentNode": 603,
+                          "uid": 604
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "classicComponent.titleElement",
+                            "raw": "'classicComponent.titleElement'",
+                            "range": [
+                              404,
+                              435
+                            ],
+                            "parentNode": 603,
+                            "uid": 609
+                          }
+                        ],
+                        "range": [
+                          385,
+                          436
+                        ],
+                        "parentNode": 602,
+                        "uid": 603
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "set",
+                        "range": [
+                          437,
+                          440
+                        ],
+                        "parentNode": 602,
+                        "uid": 610
+                      },
+                      "range": [
+                        385,
+                        440
+                      ],
+                      "parentNode": 601,
+                      "uid": 602
+                    },
+                    "arguments": [
+                      {
+                        "type": "Identifier",
+                        "name": "data",
+                        "range": [
+                          441,
+                          445
+                        ],
+                        "parentNode": 601,
+                        "uid": 611
+                      }
+                    ],
+                    "range": [
+                      385,
+                      446
+                    ],
+                    "parentNode": 600,
+                    "uid": 601
+                  },
+                  "range": [
+                    385,
+                    447
+                  ],
+                  "parentNode": 587,
+                  "uid": 600
+                },
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "ObjectExpression",
+                    "properties": [],
+                    "range": [
+                      461,
+                      463
+                    ],
+                    "parentNode": 612,
+                    "uid": 613
+                  },
+                  "range": [
+                    454,
+                    464
+                  ],
+                  "parentNode": 587,
+                  "uid": 612,
+                  "returnType": ""
+                }
+              ],
+              "range": [
+                307,
+                470
+              ],
+              "parentNode": 585,
+              "uid": 587
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              291,
+              470
+            ],
+            "parentNode": 583,
+            "uid": 585,
+            "returnType": "?"
+          },
+          "kind": "init",
+          "range": [
+            276,
+            470
+          ],
+          "parentNode": 570,
+          "uid": 583
+        }
+      ],
+      "range": [
+        52,
+        474
+      ],
+      "parentNode": 569,
+      "uid": 570
+    },
+    "range": [
+      45,
+      475
+    ],
+    "parentNode": 564,
+    "uid": 569,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 14,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/classic",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 329,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./classic",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "updateContent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "updateContent: function(data) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/classic",
+    "fileName": "classic.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 25
+}

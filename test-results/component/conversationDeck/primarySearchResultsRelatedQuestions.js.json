@@ -1,0 +1,677 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "primary_search_results_related_questions",
+      "AMD": true,
+      "webPath": "/component/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'selectSearchRelatedQuestion'.",
+        "code": "wfJD",
+        "evidence": "selectSearchRelatedQuestion: function(data) {",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'selectSearchRelatedQuestion'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/conversationDeck/primarySearchResultsRelatedQuestions.js",
+  "folderPath": "test-source/component/conversationDeck",
+  "fileName": "primarySearchResultsRelatedQuestions.js",
+  "packagePath": "/component/conversationDeck",
+  "webPath": "/component/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "primary_search_results_related_questions",
+  "name": "primarySearchResultsRelatedQuestions",
+  "camelName": "PrimarySearchResultsRelatedQuestions",
+  "processedFilePath": "test-output/component/conversationDeck/primarySearchResultsRelatedQuestions.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/conversationDeck/primarySearchResultsRelatedQuestions */ {\n    /**\n     * Init.\n     */\n    init: function () {},\n    /**\n     * Select search related question.\n     * @param data\n     */\n    selectSearchRelatedQuestion: function (data) {\n      var searchOptionData = {\n        searchOption: data.context.searchOption,\n        searchOptionRecognitionID: data.context.searchOptionRecognitionID,\n        searchOptionAnswerID: data.context.searchOptionAnswerID,\n        searchOptionData: data.context.searchOptionData\n      };\n      controllerChannel.emit('selectSearchOption', {\n        searchOptionData: searchOptionData\n      });\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              205,
+              209
+            ],
+            "parentNode": 685,
+            "uid": 686
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                223,
+                225
+              ],
+              "parentNode": 687,
+              "uid": 688
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              211,
+              225
+            ],
+            "parentNode": 685,
+            "uid": 687,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            205,
+            225
+          ],
+          "parentNode": 684,
+          "uid": 685
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "selectSearchRelatedQuestion",
+            "range": [
+              305,
+              332
+            ],
+            "parentNode": 689,
+            "uid": 690
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "data",
+                "range": [
+                  344,
+                  348
+                ],
+                "parentNode": 691,
+                "uid": 692
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "searchOptionData",
+                        "range": [
+                          362,
+                          378
+                        ],
+                        "parentNode": 695,
+                        "uid": 696
+                      },
+                      "init": {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "searchOption",
+                              "range": [
+                                391,
+                                403
+                              ],
+                              "parentNode": 698,
+                              "uid": 699
+                            },
+                            "value": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "data",
+                                  "range": [
+                                    405,
+                                    409
+                                  ],
+                                  "parentNode": 701,
+                                  "uid": 702
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "context",
+                                  "range": [
+                                    410,
+                                    417
+                                  ],
+                                  "parentNode": 701,
+                                  "uid": 703
+                                },
+                                "range": [
+                                  405,
+                                  417
+                                ],
+                                "parentNode": 700,
+                                "uid": 701
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "searchOption",
+                                "range": [
+                                  418,
+                                  430
+                                ],
+                                "parentNode": 700,
+                                "uid": 704
+                              },
+                              "range": [
+                                405,
+                                430
+                              ],
+                              "parentNode": 698,
+                              "uid": 700
+                            },
+                            "kind": "init",
+                            "range": [
+                              391,
+                              430
+                            ],
+                            "parentNode": 697,
+                            "uid": 698
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "searchOptionRecognitionID",
+                              "range": [
+                                440,
+                                465
+                              ],
+                              "parentNode": 705,
+                              "uid": 706
+                            },
+                            "value": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "data",
+                                  "range": [
+                                    467,
+                                    471
+                                  ],
+                                  "parentNode": 708,
+                                  "uid": 709
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "context",
+                                  "range": [
+                                    472,
+                                    479
+                                  ],
+                                  "parentNode": 708,
+                                  "uid": 710
+                                },
+                                "range": [
+                                  467,
+                                  479
+                                ],
+                                "parentNode": 707,
+                                "uid": 708
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "searchOptionRecognitionID",
+                                "range": [
+                                  480,
+                                  505
+                                ],
+                                "parentNode": 707,
+                                "uid": 711
+                              },
+                              "range": [
+                                467,
+                                505
+                              ],
+                              "parentNode": 705,
+                              "uid": 707
+                            },
+                            "kind": "init",
+                            "range": [
+                              440,
+                              505
+                            ],
+                            "parentNode": 697,
+                            "uid": 705
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "searchOptionAnswerID",
+                              "range": [
+                                515,
+                                535
+                              ],
+                              "parentNode": 712,
+                              "uid": 713
+                            },
+                            "value": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "data",
+                                  "range": [
+                                    537,
+                                    541
+                                  ],
+                                  "parentNode": 715,
+                                  "uid": 716
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "context",
+                                  "range": [
+                                    542,
+                                    549
+                                  ],
+                                  "parentNode": 715,
+                                  "uid": 717
+                                },
+                                "range": [
+                                  537,
+                                  549
+                                ],
+                                "parentNode": 714,
+                                "uid": 715
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "searchOptionAnswerID",
+                                "range": [
+                                  550,
+                                  570
+                                ],
+                                "parentNode": 714,
+                                "uid": 718
+                              },
+                              "range": [
+                                537,
+                                570
+                              ],
+                              "parentNode": 712,
+                              "uid": 714
+                            },
+                            "kind": "init",
+                            "range": [
+                              515,
+                              570
+                            ],
+                            "parentNode": 697,
+                            "uid": 712
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "searchOptionData",
+                              "range": [
+                                580,
+                                596
+                              ],
+                              "parentNode": 719,
+                              "uid": 720
+                            },
+                            "value": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "data",
+                                  "range": [
+                                    598,
+                                    602
+                                  ],
+                                  "parentNode": 722,
+                                  "uid": 723
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "context",
+                                  "range": [
+                                    603,
+                                    610
+                                  ],
+                                  "parentNode": 722,
+                                  "uid": 724
+                                },
+                                "range": [
+                                  598,
+                                  610
+                                ],
+                                "parentNode": 721,
+                                "uid": 722
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "searchOptionData",
+                                "range": [
+                                  611,
+                                  627
+                                ],
+                                "parentNode": 721,
+                                "uid": 725
+                              },
+                              "range": [
+                                598,
+                                627
+                              ],
+                              "parentNode": 719,
+                              "uid": 721
+                            },
+                            "kind": "init",
+                            "range": [
+                              580,
+                              627
+                            ],
+                            "parentNode": 697,
+                            "uid": 719
+                          }
+                        ],
+                        "range": [
+                          381,
+                          635
+                        ],
+                        "parentNode": 695,
+                        "uid": 697
+                      },
+                      "range": [
+                        362,
+                        635
+                      ],
+                      "parentNode": 694,
+                      "uid": 695
+                    }
+                  ],
+                  "kind": "var",
+                  "range": [
+                    358,
+                    636
+                  ],
+                  "parentNode": 693,
+                  "uid": 694
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "controllerChannel",
+                        "range": [
+                          643,
+                          660
+                        ],
+                        "parentNode": 728,
+                        "uid": 729
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          661,
+                          665
+                        ],
+                        "parentNode": 728,
+                        "uid": 730
+                      },
+                      "range": [
+                        643,
+                        665
+                      ],
+                      "parentNode": 727,
+                      "uid": 728
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "selectSearchOption",
+                        "raw": "'selectSearchOption'",
+                        "range": [
+                          666,
+                          686
+                        ],
+                        "parentNode": 727,
+                        "uid": 731
+                      },
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "searchOptionData",
+                              "range": [
+                                698,
+                                714
+                              ],
+                              "parentNode": 733,
+                              "uid": 734
+                            },
+                            "value": {
+                              "type": "Identifier",
+                              "name": "searchOptionData",
+                              "range": [
+                                716,
+                                732
+                              ],
+                              "parentNode": 733,
+                              "uid": 735
+                            },
+                            "kind": "init",
+                            "range": [
+                              698,
+                              732
+                            ],
+                            "parentNode": 732,
+                            "uid": 733
+                          }
+                        ],
+                        "range": [
+                          688,
+                          740
+                        ],
+                        "parentNode": 727,
+                        "uid": 732
+                      }
+                    ],
+                    "range": [
+                      643,
+                      741
+                    ],
+                    "parentNode": 726,
+                    "uid": 727
+                  },
+                  "range": [
+                    643,
+                    742
+                  ],
+                  "parentNode": 693,
+                  "uid": 726
+                }
+              ],
+              "range": [
+                350,
+                748
+              ],
+              "parentNode": 691,
+              "uid": 693
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              334,
+              748
+            ],
+            "parentNode": 689,
+            "uid": 691,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            305,
+            748
+          ],
+          "parentNode": 684,
+          "uid": 689
+        }
+      ],
+      "range": [
+        170,
+        752
+      ],
+      "parentNode": 683,
+      "uid": 684
+    },
+    "range": [
+      163,
+      753
+    ],
+    "parentNode": 676,
+    "uid": 683,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 23,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 658,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./primarySearchResultsRelatedQuestions",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "selectSearchRelatedQuestion",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "selectSearchRelatedQuestion: function(data) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/conversationDeck",
+    "fileName": "primarySearchResultsRelatedQuestions.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 28
+}

@@ -1,0 +1,231 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "radiobutton",
+      "AMD": true,
+      "webPath": "/view/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'RadioButtonView'.",
+        "code": "wfJD",
+        "evidence": "return function RadioButtonView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'RadioButtonView'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myProfile/radiobutton.js",
+  "folderPath": "test-source/view/myProfile",
+  "fileName": "radiobutton.js",
+  "packagePath": "/view/myProfile",
+  "webPath": "/view/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "radiobutton",
+  "name": "radiobutton",
+  "camelName": "Radiobutton",
+  "processedFilePath": "test-output/view/myProfile/radiobutton.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction RadioButtonView() {\n    this.template = require('dashboard/template/myProfile/radiobutton');\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "RadioButtonView",
+        "range": [
+          130,
+          145
+        ],
+        "parentNode": 187,
+        "uid": 188
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    154,
+                    158
+                  ],
+                  "parentNode": 192,
+                  "uid": 193
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    159,
+                    167
+                  ],
+                  "parentNode": 192,
+                  "uid": 194
+                },
+                "range": [
+                  154,
+                  167
+                ],
+                "parentNode": 191,
+                "uid": 192
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    170,
+                    177
+                  ],
+                  "parentNode": 195,
+                  "uid": 196
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myProfile/radiobutton",
+                    "raw": "'dashboard/template/myProfile/radiobutton'",
+                    "range": [
+                      178,
+                      220
+                    ],
+                    "parentNode": 195,
+                    "uid": 197
+                  }
+                ],
+                "range": [
+                  170,
+                  221
+                ],
+                "parentNode": 191,
+                "uid": 195
+              },
+              "range": [
+                154,
+                221
+              ],
+              "parentNode": 190,
+              "uid": 191
+            },
+            "range": [
+              154,
+              222
+            ],
+            "parentNode": 189,
+            "uid": 190
+          }
+        ],
+        "range": [
+          148,
+          226
+        ],
+        "parentNode": 187,
+        "uid": 189
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        121,
+        226
+      ],
+      "parentNode": 186,
+      "uid": 187,
+      "returnType": ""
+    },
+    "range": [
+      114,
+      227
+    ],
+    "parentNode": 185,
+    "uid": 186,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 5,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 145,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./radiobutton",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "RadioButtonView": 75
+    },
+    "methods": [
+      {
+        "name": "RadioButtonView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function RadioButtonView() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "fileName": "radiobutton.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 14
+}

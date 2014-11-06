@@ -1,0 +1,1431 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "credit_card_account_header",
+      "AMD": true,
+      "webPath": "/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountHeaderDetails'.",
+        "code": "wfJD",
+        "evidence": "requestAccountHeaderDetails: function(inputData, detailsData) {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountHeaderDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestCurrentStatements'.",
+        "code": "wfJD",
+        "evidence": "requestCurrentStatements: function() {},",
+        "line": 20,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestCurrentStatements'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestCardPayment'.",
+        "code": "wfJD",
+        "evidence": "requestCardPayment: function() {},",
+        "line": 21,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestCardPayment'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setupPaperlessStatements'.",
+        "code": "wfJD",
+        "evidence": "setupPaperlessStatements: function() {},",
+        "line": 22,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setupPaperlessStatements'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestDetailsOfAutomaticPayments'.",
+        "code": "wfJD",
+        "evidence": "requestDetailsOfAutomaticPayments: function() {}",
+        "line": 23,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestDetailsOfAutomaticPayments'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myAccounts/creditCardAccountHeader.js",
+  "folderPath": "test-source/component/myAccounts",
+  "fileName": "creditCardAccountHeader.js",
+  "packagePath": "/component/myAccounts",
+  "webPath": "/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "credit_card_account_header",
+  "name": "creditCardAccountHeader",
+  "camelName": "CreditCardAccountHeader",
+  "processedFilePath": "test-output/component/myAccounts/creditCardAccountHeader.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myAccounts/creditCardAccountHeader */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Request account header details.\n     * @param inputData\n     * @param detailsData\n     */\n    requestAccountHeaderDetails: function (inputData, detailsData) {\n      this.accountName = inputData.accountName;\n      this.accountMaskNumber = inputData.accountMask;\n      this.accountCurrentBalance = detailsData.currentBalance;\n      this.paymentDueDate = detailsData.nextPaymentDate;\n      this.minimumAmountDue = detailsData.nextPaymentAmount;\n      this.blueprintAmountDue = detailsData.blueprintNextPaymentAmount;\n      this.accountAvailableCreditBalance = detailsData.availableCredit;\n      this.model.lens('showBluePrint').set(detailsData.showBluePrint);\n      this.model.lens('payment_due_date_label').set(inputData.paymentDueDateLabel);\n    },\n    /**\n     * Request current statements.\n     */\n    requestCurrentStatements: function () {},\n    /**\n     * Request card payment.\n     */\n    requestCardPayment: function () {},\n    /**\n     * Setup paperless statements.\n     */\n    setupPaperlessStatements: function () {},\n    /**\n     * Request details of automatic payments.\n     */\n    requestDetailsOfAutomaticPayments: function () {}\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              87,
+              91
+            ],
+            "parentNode": 1340,
+            "uid": 1341
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        113,
+                        120
+                      ],
+                      "parentNode": 1345,
+                      "uid": 1346
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            123,
+                            127
+                          ],
+                          "parentNode": 1348,
+                          "uid": 1349
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            128,
+                            136
+                          ],
+                          "parentNode": 1348,
+                          "uid": 1350
+                        },
+                        "range": [
+                          123,
+                          136
+                        ],
+                        "parentNode": 1347,
+                        "uid": 1348
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          137,
+                          144
+                        ],
+                        "parentNode": 1347,
+                        "uid": 1351
+                      },
+                      "range": [
+                        123,
+                        144
+                      ],
+                      "parentNode": 1345,
+                      "uid": 1347
+                    },
+                    "range": [
+                      113,
+                      144
+                    ],
+                    "parentNode": 1344,
+                    "uid": 1345
+                  },
+                  "range": [
+                    113,
+                    145
+                  ],
+                  "parentNode": 1343,
+                  "uid": 1344
+                }
+              ],
+              "range": [
+                105,
+                151
+              ],
+              "parentNode": 1342,
+              "uid": 1343
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              93,
+              151
+            ],
+            "parentNode": 1340,
+            "uid": 1342,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            87,
+            151
+          ],
+          "parentNode": 1339,
+          "uid": 1340
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestAccountHeaderDetails",
+            "range": [
+              262,
+              289
+            ],
+            "parentNode": 1352,
+            "uid": 1353
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "inputData",
+                "range": [
+                  301,
+                  310
+                ],
+                "parentNode": 1354,
+                "uid": 1355
+              },
+              {
+                "type": "Identifier",
+                "name": "detailsData",
+                "range": [
+                  312,
+                  323
+                ],
+                "parentNode": 1354,
+                "uid": 1356
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          333,
+                          337
+                        ],
+                        "parentNode": 1360,
+                        "uid": 1361
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "accountName",
+                        "range": [
+                          338,
+                          349
+                        ],
+                        "parentNode": 1360,
+                        "uid": 1362
+                      },
+                      "range": [
+                        333,
+                        349
+                      ],
+                      "parentNode": 1359,
+                      "uid": 1360
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "inputData",
+                        "range": [
+                          352,
+                          361
+                        ],
+                        "parentNode": 1363,
+                        "uid": 1364
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "accountName",
+                        "range": [
+                          362,
+                          373
+                        ],
+                        "parentNode": 1363,
+                        "uid": 1365
+                      },
+                      "range": [
+                        352,
+                        373
+                      ],
+                      "parentNode": 1359,
+                      "uid": 1363
+                    },
+                    "range": [
+                      333,
+                      373
+                    ],
+                    "parentNode": 1358,
+                    "uid": 1359
+                  },
+                  "range": [
+                    333,
+                    374
+                  ],
+                  "parentNode": 1357,
+                  "uid": 1358
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          381,
+                          385
+                        ],
+                        "parentNode": 1368,
+                        "uid": 1369
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "accountMaskNumber",
+                        "range": [
+                          386,
+                          403
+                        ],
+                        "parentNode": 1368,
+                        "uid": 1370
+                      },
+                      "range": [
+                        381,
+                        403
+                      ],
+                      "parentNode": 1367,
+                      "uid": 1368
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "inputData",
+                        "range": [
+                          406,
+                          415
+                        ],
+                        "parentNode": 1371,
+                        "uid": 1372
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "accountMask",
+                        "range": [
+                          416,
+                          427
+                        ],
+                        "parentNode": 1371,
+                        "uid": 1373
+                      },
+                      "range": [
+                        406,
+                        427
+                      ],
+                      "parentNode": 1367,
+                      "uid": 1371
+                    },
+                    "range": [
+                      381,
+                      427
+                    ],
+                    "parentNode": 1366,
+                    "uid": 1367
+                  },
+                  "range": [
+                    381,
+                    428
+                  ],
+                  "parentNode": 1357,
+                  "uid": 1366
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          435,
+                          439
+                        ],
+                        "parentNode": 1376,
+                        "uid": 1377
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "accountCurrentBalance",
+                        "range": [
+                          440,
+                          461
+                        ],
+                        "parentNode": 1376,
+                        "uid": 1378
+                      },
+                      "range": [
+                        435,
+                        461
+                      ],
+                      "parentNode": 1375,
+                      "uid": 1376
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "detailsData",
+                        "range": [
+                          464,
+                          475
+                        ],
+                        "parentNode": 1379,
+                        "uid": 1380
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "currentBalance",
+                        "range": [
+                          476,
+                          490
+                        ],
+                        "parentNode": 1379,
+                        "uid": 1381
+                      },
+                      "range": [
+                        464,
+                        490
+                      ],
+                      "parentNode": 1375,
+                      "uid": 1379
+                    },
+                    "range": [
+                      435,
+                      490
+                    ],
+                    "parentNode": 1374,
+                    "uid": 1375
+                  },
+                  "range": [
+                    435,
+                    491
+                  ],
+                  "parentNode": 1357,
+                  "uid": 1374
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          498,
+                          502
+                        ],
+                        "parentNode": 1384,
+                        "uid": 1385
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "paymentDueDate",
+                        "range": [
+                          503,
+                          517
+                        ],
+                        "parentNode": 1384,
+                        "uid": 1386
+                      },
+                      "range": [
+                        498,
+                        517
+                      ],
+                      "parentNode": 1383,
+                      "uid": 1384
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "detailsData",
+                        "range": [
+                          520,
+                          531
+                        ],
+                        "parentNode": 1387,
+                        "uid": 1388
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "nextPaymentDate",
+                        "range": [
+                          532,
+                          547
+                        ],
+                        "parentNode": 1387,
+                        "uid": 1389
+                      },
+                      "range": [
+                        520,
+                        547
+                      ],
+                      "parentNode": 1383,
+                      "uid": 1387
+                    },
+                    "range": [
+                      498,
+                      547
+                    ],
+                    "parentNode": 1382,
+                    "uid": 1383
+                  },
+                  "range": [
+                    498,
+                    548
+                  ],
+                  "parentNode": 1357,
+                  "uid": 1382
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          555,
+                          559
+                        ],
+                        "parentNode": 1392,
+                        "uid": 1393
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "minimumAmountDue",
+                        "range": [
+                          560,
+                          576
+                        ],
+                        "parentNode": 1392,
+                        "uid": 1394
+                      },
+                      "range": [
+                        555,
+                        576
+                      ],
+                      "parentNode": 1391,
+                      "uid": 1392
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "detailsData",
+                        "range": [
+                          579,
+                          590
+                        ],
+                        "parentNode": 1395,
+                        "uid": 1396
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "nextPaymentAmount",
+                        "range": [
+                          591,
+                          608
+                        ],
+                        "parentNode": 1395,
+                        "uid": 1397
+                      },
+                      "range": [
+                        579,
+                        608
+                      ],
+                      "parentNode": 1391,
+                      "uid": 1395
+                    },
+                    "range": [
+                      555,
+                      608
+                    ],
+                    "parentNode": 1390,
+                    "uid": 1391
+                  },
+                  "range": [
+                    555,
+                    609
+                  ],
+                  "parentNode": 1357,
+                  "uid": 1390
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          616,
+                          620
+                        ],
+                        "parentNode": 1400,
+                        "uid": 1401
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "blueprintAmountDue",
+                        "range": [
+                          621,
+                          639
+                        ],
+                        "parentNode": 1400,
+                        "uid": 1402
+                      },
+                      "range": [
+                        616,
+                        639
+                      ],
+                      "parentNode": 1399,
+                      "uid": 1400
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "detailsData",
+                        "range": [
+                          642,
+                          653
+                        ],
+                        "parentNode": 1403,
+                        "uid": 1404
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "blueprintNextPaymentAmount",
+                        "range": [
+                          654,
+                          680
+                        ],
+                        "parentNode": 1403,
+                        "uid": 1405
+                      },
+                      "range": [
+                        642,
+                        680
+                      ],
+                      "parentNode": 1399,
+                      "uid": 1403
+                    },
+                    "range": [
+                      616,
+                      680
+                    ],
+                    "parentNode": 1398,
+                    "uid": 1399
+                  },
+                  "range": [
+                    616,
+                    681
+                  ],
+                  "parentNode": 1357,
+                  "uid": 1398
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          688,
+                          692
+                        ],
+                        "parentNode": 1408,
+                        "uid": 1409
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "accountAvailableCreditBalance",
+                        "range": [
+                          693,
+                          722
+                        ],
+                        "parentNode": 1408,
+                        "uid": 1410
+                      },
+                      "range": [
+                        688,
+                        722
+                      ],
+                      "parentNode": 1407,
+                      "uid": 1408
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "detailsData",
+                        "range": [
+                          725,
+                          736
+                        ],
+                        "parentNode": 1411,
+                        "uid": 1412
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "availableCredit",
+                        "range": [
+                          737,
+                          752
+                        ],
+                        "parentNode": 1411,
+                        "uid": 1413
+                      },
+                      "range": [
+                        725,
+                        752
+                      ],
+                      "parentNode": 1407,
+                      "uid": 1411
+                    },
+                    "range": [
+                      688,
+                      752
+                    ],
+                    "parentNode": 1406,
+                    "uid": 1407
+                  },
+                  "range": [
+                    688,
+                    753
+                  ],
+                  "parentNode": 1357,
+                  "uid": 1406
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                760,
+                                764
+                              ],
+                              "parentNode": 1419,
+                              "uid": 1420
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                765,
+                                770
+                              ],
+                              "parentNode": 1419,
+                              "uid": 1421
+                            },
+                            "range": [
+                              760,
+                              770
+                            ],
+                            "parentNode": 1418,
+                            "uid": 1419
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "lens",
+                            "range": [
+                              771,
+                              775
+                            ],
+                            "parentNode": 1418,
+                            "uid": 1422
+                          },
+                          "range": [
+                            760,
+                            775
+                          ],
+                          "parentNode": 1417,
+                          "uid": 1418
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "showBluePrint",
+                            "raw": "'showBluePrint'",
+                            "range": [
+                              776,
+                              791
+                            ],
+                            "parentNode": 1417,
+                            "uid": 1423
+                          }
+                        ],
+                        "range": [
+                          760,
+                          792
+                        ],
+                        "parentNode": 1416,
+                        "uid": 1417
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "set",
+                        "range": [
+                          793,
+                          796
+                        ],
+                        "parentNode": 1416,
+                        "uid": 1424
+                      },
+                      "range": [
+                        760,
+                        796
+                      ],
+                      "parentNode": 1415,
+                      "uid": 1416
+                    },
+                    "arguments": [
+                      {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "detailsData",
+                          "range": [
+                            797,
+                            808
+                          ],
+                          "parentNode": 1425,
+                          "uid": 1426
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "showBluePrint",
+                          "range": [
+                            809,
+                            822
+                          ],
+                          "parentNode": 1425,
+                          "uid": 1427
+                        },
+                        "range": [
+                          797,
+                          822
+                        ],
+                        "parentNode": 1415,
+                        "uid": 1425
+                      }
+                    ],
+                    "range": [
+                      760,
+                      823
+                    ],
+                    "parentNode": 1414,
+                    "uid": 1415
+                  },
+                  "range": [
+                    760,
+                    824
+                  ],
+                  "parentNode": 1357,
+                  "uid": 1414
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                831,
+                                835
+                              ],
+                              "parentNode": 1433,
+                              "uid": 1434
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                836,
+                                841
+                              ],
+                              "parentNode": 1433,
+                              "uid": 1435
+                            },
+                            "range": [
+                              831,
+                              841
+                            ],
+                            "parentNode": 1432,
+                            "uid": 1433
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "lens",
+                            "range": [
+                              842,
+                              846
+                            ],
+                            "parentNode": 1432,
+                            "uid": 1436
+                          },
+                          "range": [
+                            831,
+                            846
+                          ],
+                          "parentNode": 1431,
+                          "uid": 1432
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "payment_due_date_label",
+                            "raw": "'payment_due_date_label'",
+                            "range": [
+                              847,
+                              871
+                            ],
+                            "parentNode": 1431,
+                            "uid": 1437
+                          }
+                        ],
+                        "range": [
+                          831,
+                          872
+                        ],
+                        "parentNode": 1430,
+                        "uid": 1431
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "set",
+                        "range": [
+                          873,
+                          876
+                        ],
+                        "parentNode": 1430,
+                        "uid": 1438
+                      },
+                      "range": [
+                        831,
+                        876
+                      ],
+                      "parentNode": 1429,
+                      "uid": 1430
+                    },
+                    "arguments": [
+                      {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "inputData",
+                          "range": [
+                            877,
+                            886
+                          ],
+                          "parentNode": 1439,
+                          "uid": 1440
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "paymentDueDateLabel",
+                          "range": [
+                            887,
+                            906
+                          ],
+                          "parentNode": 1439,
+                          "uid": 1441
+                        },
+                        "range": [
+                          877,
+                          906
+                        ],
+                        "parentNode": 1429,
+                        "uid": 1439
+                      }
+                    ],
+                    "range": [
+                      831,
+                      907
+                    ],
+                    "parentNode": 1428,
+                    "uid": 1429
+                  },
+                  "range": [
+                    831,
+                    908
+                  ],
+                  "parentNode": 1357,
+                  "uid": 1428
+                }
+              ],
+              "range": [
+                325,
+                914
+              ],
+              "parentNode": 1354,
+              "uid": 1357
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              291,
+              914
+            ],
+            "parentNode": 1352,
+            "uid": 1354,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            262,
+            914
+          ],
+          "parentNode": 1339,
+          "uid": 1352
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestCurrentStatements",
+            "range": [
+              971,
+              995
+            ],
+            "parentNode": 1442,
+            "uid": 1443
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                1009,
+                1011
+              ],
+              "parentNode": 1444,
+              "uid": 1445
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              997,
+              1011
+            ],
+            "parentNode": 1442,
+            "uid": 1444,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            971,
+            1011
+          ],
+          "parentNode": 1339,
+          "uid": 1442
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestCardPayment",
+            "range": [
+              1062,
+              1080
+            ],
+            "parentNode": 1446,
+            "uid": 1447
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                1094,
+                1096
+              ],
+              "parentNode": 1448,
+              "uid": 1449
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              1082,
+              1096
+            ],
+            "parentNode": 1446,
+            "uid": 1448,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            1062,
+            1096
+          ],
+          "parentNode": 1339,
+          "uid": 1446
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "setupPaperlessStatements",
+            "range": [
+              1153,
+              1177
+            ],
+            "parentNode": 1450,
+            "uid": 1451
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                1191,
+                1193
+              ],
+              "parentNode": 1452,
+              "uid": 1453
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              1179,
+              1193
+            ],
+            "parentNode": 1450,
+            "uid": 1452,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            1153,
+            1193
+          ],
+          "parentNode": 1339,
+          "uid": 1450
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestDetailsOfAutomaticPayments",
+            "range": [
+              1261,
+              1294
+            ],
+            "parentNode": 1454,
+            "uid": 1455
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                1308,
+                1310
+              ],
+              "parentNode": 1456,
+              "uid": 1457
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              1296,
+              1310
+            ],
+            "parentNode": 1454,
+            "uid": 1456,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            1261,
+            1310
+          ],
+          "parentNode": 1339,
+          "uid": 1454
+        }
+      ],
+      "range": [
+        52,
+        1314
+      ],
+      "parentNode": 1338,
+      "uid": 1339
+    },
+    "range": [
+      45,
+      1315
+    ],
+    "parentNode": 1333,
+    "uid": 1338,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 25,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 971,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./creditCardAccountHeader",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "requestAccountHeaderDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData",
+          "detailsData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountHeaderDetails: function(inputData, detailsData) {"
+      },
+      {
+        "name": "requestCurrentStatements",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 20,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestCurrentStatements: function() {},"
+      },
+      {
+        "name": "requestCardPayment",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 21,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestCardPayment: function() {},"
+      },
+      {
+        "name": "setupPaperlessStatements",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 22,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setupPaperlessStatements: function() {},"
+      },
+      {
+        "name": "requestDetailsOfAutomaticPayments",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 23,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestDetailsOfAutomaticPayments: function() {}"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "fileName": "creditCardAccountHeader.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 47
+}

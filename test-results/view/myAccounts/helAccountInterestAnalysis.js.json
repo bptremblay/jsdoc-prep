@@ -1,0 +1,433 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "hel_account_interest_analysis",
+      "AMD": true,
+      "webPath": "/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'helAccountInterestAnalysisView'.",
+        "code": "wfJD",
+        "evidence": "return function helAccountInterestAnalysisView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'helAccountInterestAnalysisView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myAccounts/helAccountInterestAnalysis.js",
+  "folderPath": "test-source/view/myAccounts",
+  "fileName": "helAccountInterestAnalysis.js",
+  "packagePath": "/view/myAccounts",
+  "webPath": "/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "hel_account_interest_analysis",
+  "name": "helAccountInterestAnalysis",
+  "camelName": "HelAccountInterestAnalysis",
+  "processedFilePath": "test-output/view/myAccounts/helAccountInterestAnalysis.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction HelAccountInterestAnalysisView() {\n    this.bridge = this.createBridge(require('dashboard/view/webspec/myAccounts/helAccountInterestAnalysis'));\n    this.template = require('dashboard/template/myAccounts/helAccountInterestAnalysis');\n    /**\n     * Init.\n     */\n    this.init = function () {};\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "helAccountInterestAnalysisView",
+        "range": [
+          99,
+          129
+        ],
+        "parentNode": 397,
+        "uid": 398
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    138,
+                    142
+                  ],
+                  "parentNode": 402,
+                  "uid": 403
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    143,
+                    149
+                  ],
+                  "parentNode": 402,
+                  "uid": 404
+                },
+                "range": [
+                  138,
+                  149
+                ],
+                "parentNode": 401,
+                "uid": 402
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression",
+                    "range": [
+                      152,
+                      156
+                    ],
+                    "parentNode": 406,
+                    "uid": 407
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createBridge",
+                    "range": [
+                      157,
+                      169
+                    ],
+                    "parentNode": 406,
+                    "uid": 408
+                  },
+                  "range": [
+                    152,
+                    169
+                  ],
+                  "parentNode": 405,
+                  "uid": 406
+                },
+                "arguments": [
+                  {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        170,
+                        177
+                      ],
+                      "parentNode": 409,
+                      "uid": 410
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "dashboard/view/webspec/myAccounts/helAccountInterestAnalysis",
+                        "raw": "'dashboard/view/webspec/myAccounts/helAccountInterestAnalysis'",
+                        "range": [
+                          178,
+                          240
+                        ],
+                        "parentNode": 409,
+                        "uid": 411
+                      }
+                    ],
+                    "range": [
+                      170,
+                      241
+                    ],
+                    "parentNode": 405,
+                    "uid": 409
+                  }
+                ],
+                "range": [
+                  152,
+                  242
+                ],
+                "parentNode": 401,
+                "uid": 405
+              },
+              "range": [
+                138,
+                242
+              ],
+              "parentNode": 400,
+              "uid": 401
+            },
+            "range": [
+              138,
+              243
+            ],
+            "parentNode": 399,
+            "uid": 400
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    248,
+                    252
+                  ],
+                  "parentNode": 414,
+                  "uid": 415
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    253,
+                    261
+                  ],
+                  "parentNode": 414,
+                  "uid": 416
+                },
+                "range": [
+                  248,
+                  261
+                ],
+                "parentNode": 413,
+                "uid": 414
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    264,
+                    271
+                  ],
+                  "parentNode": 417,
+                  "uid": 418
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myAccounts/helAccountInterestAnalysis",
+                    "raw": "'dashboard/template/myAccounts/helAccountInterestAnalysis'",
+                    "range": [
+                      272,
+                      330
+                    ],
+                    "parentNode": 417,
+                    "uid": 419
+                  }
+                ],
+                "range": [
+                  264,
+                  331
+                ],
+                "parentNode": 413,
+                "uid": 417
+              },
+              "range": [
+                248,
+                331
+              ],
+              "parentNode": 412,
+              "uid": 413
+            },
+            "range": [
+              248,
+              332
+            ],
+            "parentNode": 399,
+            "uid": 412
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    366,
+                    370
+                  ],
+                  "parentNode": 422,
+                  "uid": 423
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    371,
+                    375
+                  ],
+                  "parentNode": 422,
+                  "uid": 424
+                },
+                "range": [
+                  366,
+                  375
+                ],
+                "parentNode": 421,
+                "uid": 422
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    390,
+                    392
+                  ],
+                  "parentNode": 425,
+                  "uid": 426
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  378,
+                  392
+                ],
+                "parentNode": 421,
+                "uid": 425,
+                "returnType": ""
+              },
+              "range": [
+                366,
+                392
+              ],
+              "parentNode": 420,
+              "uid": 421
+            },
+            "range": [
+              366,
+              393
+            ],
+            "parentNode": 399,
+            "uid": 420
+          }
+        ],
+        "range": [
+          132,
+          397
+        ],
+        "parentNode": 397,
+        "uid": 399
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        90,
+        397
+      ],
+      "parentNode": 396,
+      "uid": 397,
+      "returnType": ""
+    },
+    "range": [
+      83,
+      398
+    ],
+    "parentNode": 395,
+    "uid": 396,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 13,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 328,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./helAccountInterestAnalysis",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "helAccountInterestAnalysisView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function helAccountInterestAnalysisView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "fileName": "helAccountInterestAnalysis.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 18
+}

@@ -41,6 +41,7 @@ define('yes-module', [],
         return output;
       };
       /**
+       * @private
        * @param a
        * @param {Banana}
        * @param {Boolean}
@@ -88,6 +89,7 @@ define('yes-module', [],
       return false;
     };
     /**
+     * @constructor
      * @description A description tag.
      *
      */
@@ -107,6 +109,7 @@ define('yes-module', [],
       this.Freenox = new Freenox();
     }
     /**
+     * @constructor
      * @description A description tag with more than
      *  one line of stuff
      *  and some of it could be very very long
@@ -122,58 +125,61 @@ define('yes-module', [],
       this.Freenox = new Freenox();
     }
     /**
-     * Redundant 'function' tag.
-     */
+* Redundant 'function' tag.
+
+*/
     FourthClass.prototype.someFunction = function() {};
     /**
-     * Redundant 'method' tag. Used more by YUIDoc.
-     */
+* Redundant 'method' tag. Used more by YUIDoc.
+
+*/
     FourthClass.prototype.anotherFunction = function() {};
     /**
-     * @description Subscribe to events on the component's local Channel. Events on the
-     *               local channel are not visible to other components or the main
-     *               ComponentChannel.
-     * @example
-     *  // Execute callback for ALL events on the component (no eventType given)
-     *  myComponent.on(function(event){
-     *      // Analyze, log, etc the event
-     *  });
-     *
-     *  // Execute callback for a component-generated event
-     *  // Format of eventType is ACTION/VALUE
-     *  // ACTION - function call, state change, etc on the component
-     *  // VALUE - name of action, property name, etc.
-     *
-     *  // Note: TARGET is automatically prepended to the eventType and
-     *  //       is equal to the name of the component as defined in the spec
-     *  myComponent.on('action/submit', function(event){
-     *      // Execute logic for the submit action on the component
-     *  });
-     *
-     *  // Subscribe to multiple events
-     *  myComponent.on( {
-     *      'action/submit': function(submitEvent){
-     *          // Business Logic
-     *      },
-     *      'state/enabled': function(enabledEvent){
-     *          // Business Logic
-     *      },
-     *      'action/requestBalance': function(requestEvent){
-     *          // Business Logic
-     *      },
-     *      'state/valid': function(validEvent){
-     *          // Business Logic
-     *      }
-     *  } );
-     *
-     *  // Can use wildcards
-     *  myComponent.on('action/*', function(actionEvent){
-     *      // Logic for all actions on the component
-     *  } );
-     *
-     * @param {String|PlainObject} [eventType] The type of event.
-     * @param {Function} [callback] The callback to execute when the event is published.
-     */
+* @description Subscribe to events on the component's local Channel. Events on the
+*               local channel are not visible to other components or the main
+*               ComponentChannel.
+
+* @example
+*  // Execute callback for ALL events on the component (no eventType given)
+*  myComponent.on(function(event){
+*      // Analyze, log, etc the event
+*  });
+*
+*  // Execute callback for a component-generated event
+*  // Format of eventType is ACTION/VALUE
+*  // ACTION - function call, state change, etc on the component
+*  // VALUE - name of action, property name, etc.
+*
+*  // Note: TARGET is automatically prepended to the eventType and
+*  //       is equal to the name of the component as defined in the spec
+*  myComponent.on('action/submit', function(event){
+*      // Execute logic for the submit action on the component
+*  });
+*
+*  // Subscribe to multiple events
+*  myComponent.on( {
+*      'action/submit': function(submitEvent){
+*          // Business Logic
+*      },
+*      'state/enabled': function(enabledEvent){
+*          // Business Logic
+*      },
+*      'action/requestBalance': function(requestEvent){
+*          // Business Logic
+*      },
+*      'state/valid': function(validEvent){
+*          // Business Logic
+*      }
+*  } );
+*
+*  // Can use wildcards
+*  myComponent.on('action/*', function(actionEvent){
+*      // Logic for all actions on the component
+*  } );
+*
+* @param {String|PlainObject} [eventType] The type of event.
+* @param {Function} [callback] The callback to execute when the event is published.
+*/
     Freenox.prototype.on = function(eventType, callback) {};
     return SecondClass;
   });

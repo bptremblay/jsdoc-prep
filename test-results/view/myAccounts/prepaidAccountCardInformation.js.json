@@ -1,0 +1,445 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "prepaid_account_card_information",
+      "AMD": true,
+      "webPath": "/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'prepaidAccountCardInformationView'.",
+        "code": "wfJD",
+        "evidence": "return function prepaidAccountCardInformationView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'prepaidAccountCardInformationView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {};",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myAccounts/prepaidAccountCardInformation.js",
+  "folderPath": "test-source/view/myAccounts",
+  "fileName": "prepaidAccountCardInformation.js",
+  "packagePath": "/view/myAccounts",
+  "webPath": "/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "prepaid_account_card_information",
+  "name": "prepaidAccountCardInformation",
+  "camelName": "PrepaidAccountCardInformation",
+  "processedFilePath": "test-output/view/myAccounts/prepaidAccountCardInformation.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction PrepaidAccountCardInformationView() {\n    this.bridge = this.createBridge(require('dashboard/view/webspec/myAccounts/prepaidAccountCardInformation'));\n    //render the default view\n    this.template = require('dashboard/template/myAccounts/prepaidAccountCardInformation');\n    /**\n     * Init.\n     */\n    this.init = function () {};\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "prepaidAccountCardInformationView",
+        "range": [
+          102,
+          135
+        ],
+        "parentNode": 397,
+        "uid": 398
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    144,
+                    148
+                  ],
+                  "parentNode": 402,
+                  "uid": 403
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    149,
+                    155
+                  ],
+                  "parentNode": 402,
+                  "uid": 404
+                },
+                "range": [
+                  144,
+                  155
+                ],
+                "parentNode": 401,
+                "uid": 402
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression",
+                    "range": [
+                      158,
+                      162
+                    ],
+                    "parentNode": 406,
+                    "uid": 407
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createBridge",
+                    "range": [
+                      163,
+                      175
+                    ],
+                    "parentNode": 406,
+                    "uid": 408
+                  },
+                  "range": [
+                    158,
+                    175
+                  ],
+                  "parentNode": 405,
+                  "uid": 406
+                },
+                "arguments": [
+                  {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        176,
+                        183
+                      ],
+                      "parentNode": 409,
+                      "uid": 410
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "dashboard/view/webspec/myAccounts/prepaidAccountCardInformation",
+                        "raw": "'dashboard/view/webspec/myAccounts/prepaidAccountCardInformation'",
+                        "range": [
+                          184,
+                          249
+                        ],
+                        "parentNode": 409,
+                        "uid": 411
+                      }
+                    ],
+                    "range": [
+                      176,
+                      250
+                    ],
+                    "parentNode": 405,
+                    "uid": 409
+                  }
+                ],
+                "range": [
+                  158,
+                  251
+                ],
+                "parentNode": 401,
+                "uid": 405
+              },
+              "range": [
+                144,
+                251
+              ],
+              "parentNode": 400,
+              "uid": 401
+            },
+            "range": [
+              144,
+              252
+            ],
+            "parentNode": 399,
+            "uid": 400
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    287,
+                    291
+                  ],
+                  "parentNode": 414,
+                  "uid": 415
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    292,
+                    300
+                  ],
+                  "parentNode": 414,
+                  "uid": 416
+                },
+                "range": [
+                  287,
+                  300
+                ],
+                "parentNode": 413,
+                "uid": 414
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    303,
+                    310
+                  ],
+                  "parentNode": 417,
+                  "uid": 418
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myAccounts/prepaidAccountCardInformation",
+                    "raw": "'dashboard/template/myAccounts/prepaidAccountCardInformation'",
+                    "range": [
+                      311,
+                      372
+                    ],
+                    "parentNode": 417,
+                    "uid": 419
+                  }
+                ],
+                "range": [
+                  303,
+                  373
+                ],
+                "parentNode": 413,
+                "uid": 417
+              },
+              "range": [
+                287,
+                373
+              ],
+              "parentNode": 412,
+              "uid": 413
+            },
+            "range": [
+              287,
+              374
+            ],
+            "parentNode": 399,
+            "uid": 412
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    408,
+                    412
+                  ],
+                  "parentNode": 422,
+                  "uid": 423
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    413,
+                    417
+                  ],
+                  "parentNode": 422,
+                  "uid": 424
+                },
+                "range": [
+                  408,
+                  417
+                ],
+                "parentNode": 421,
+                "uid": 422
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    432,
+                    434
+                  ],
+                  "parentNode": 425,
+                  "uid": 426
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  420,
+                  434
+                ],
+                "parentNode": 421,
+                "uid": 425,
+                "returnType": ""
+              },
+              "range": [
+                408,
+                434
+              ],
+              "parentNode": 420,
+              "uid": 421
+            },
+            "range": [
+              408,
+              435
+            ],
+            "parentNode": 399,
+            "uid": 420
+          }
+        ],
+        "range": [
+          138,
+          439
+        ],
+        "parentNode": 397,
+        "uid": 399
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        93,
+        439
+      ],
+      "parentNode": 396,
+      "uid": 397,
+      "returnType": ""
+    },
+    "range": [
+      86,
+      440
+    ],
+    "parentNode": 395,
+    "uid": 396,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 12,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 361,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./prepaidAccountCardInformation",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "prepaidAccountCardInformationView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function prepaidAccountCardInformationView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {};"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "fileName": "prepaidAccountCardInformation.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 19
+}

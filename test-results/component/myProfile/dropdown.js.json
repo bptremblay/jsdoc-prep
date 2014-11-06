@@ -1,0 +1,4564 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "dropdown",
+      "AMD": true,
+      "webPath": "/component/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'show'.",
+        "code": "wfJD",
+        "evidence": "show: function() {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'show'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hide'.",
+        "code": "wfJD",
+        "evidence": "hide: function() {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hide'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'toggle'.",
+        "code": "wfJD",
+        "evidence": "toggle: function() {",
+        "line": 16,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'toggle'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'optionClick'.",
+        "code": "wfJD",
+        "evidence": "optionClick: function(eventData) {",
+        "line": 23,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'optionClick'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'optionKeydown'.",
+        "code": "wfJD",
+        "evidence": "optionKeydown: function(eventData) {",
+        "line": 31,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'optionKeydown'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'triggerKeydown'.",
+        "code": "wfJD",
+        "evidence": "triggerKeydown: function(eventData) {",
+        "line": 73,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'triggerKeydown'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myProfile/dropdown.js",
+  "folderPath": "test-source/component/myProfile",
+  "fileName": "dropdown.js",
+  "packagePath": "/component/myProfile",
+  "webPath": "/component/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "dropdown",
+  "name": "dropdown",
+  "camelName": "Dropdown",
+  "processedFilePath": "test-output/component/myProfile/dropdown.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myProfile/dropdown */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Show.\n     */\n    show: function () {\n      var $container = $('#' + this.model.lens('dropdownId').get());\n      $container.addClass('show').find('.option').first().addClass('has-focus').focus();\n    },\n    /**\n     * Hide.\n     */\n    hide: function () {\n      $('#' + this.model.lens('dropdownId').get()).removeClass('show').find('.has-focus').removeClass('has-focus');\n    },\n    /**\n     * Toggle.\n     */\n    toggle: function () {\n      if ($('#' + this.model.lens('dropdownId').get()).find('.list').is(':visible')) {\n        this.hide();\n      } else {\n        this.show();\n      }\n    },\n    /**\n     * Option click.\n     * @param eventData\n     */\n    optionClick: function (eventData) {\n      this.hide();\n      controllerChannel.emit('showAddMailingAddressForm', {\n        address: {\n          mailingAddressCategory: eventData.context.name\n        }\n      });\n    },\n    /**\n     * Option keydown.\n     * @param eventData\n     */\n    optionKeydown: function (eventData) {\n      var $container = $('#' + this.model.lens('dropdownId').get()),\n        event = eventData.domEvent,\n        $focusedItem = $container.find('.has-focus'),\n        $itemsList = $container.find('.option');\n      switch (event.keyCode) {\n      case 40: //down arrow key\n        event.preventDefault();\n        if ($focusedItem[0] !== $itemsList[$itemsList.length - 1]) {\n          $focusedItem.removeClass('has-focus').next().addClass('has-focus').focus();\n        } else {\n          this.hide();\n          $container.find('.js-trigger').focus();\n        }\n        break;\n      case 38: // up arrow key\n        event.preventDefault();\n        if ($focusedItem[0] !== $itemsList[0]) {\n          $focusedItem.removeClass('has-focus').prev().addClass('has-focus').focus();\n        } else {\n          this.hide();\n          $container.find('.js-trigger').focus();\n        }\n        break;\n      case 9: // tab\n        event.preventDefault();\n        this.hide();\n        $container.find('.js-trigger').focus();\n        break;\n      case 27: // escape\n        event.preventDefault();\n        this.hide();\n        $container.find('.js-trigger').focus();\n        break;\n      case 13: // enter key\n        event.preventDefault();\n        this.optionClick(eventData);\n      default:\n        break;\n      }\n    },\n    /**\n     * Trigger keydown.\n     * @param eventData\n     */\n    triggerKeydown: function (eventData) {\n      var event = eventData.domEvent,\n        $container = $('#' + this.model.lens('dropdownId').get()),\n        $itemsList = $container.find('.option');\n      switch (event.keyCode) {\n      case 13: // enter key\n        event.preventDefault();\n        this.show();\n        break;\n      case 32: // space bar\n        event.preventDefault();\n        this.show();\n        break;\n      default:\n        break;\n      }\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              160,
+              164
+            ],
+            "parentNode": 4758,
+            "uid": 4759
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        186,
+                        193
+                      ],
+                      "parentNode": 4763,
+                      "uid": 4764
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            196,
+                            200
+                          ],
+                          "parentNode": 4766,
+                          "uid": 4767
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            201,
+                            209
+                          ],
+                          "parentNode": 4766,
+                          "uid": 4768
+                        },
+                        "range": [
+                          196,
+                          209
+                        ],
+                        "parentNode": 4765,
+                        "uid": 4766
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          210,
+                          217
+                        ],
+                        "parentNode": 4765,
+                        "uid": 4769
+                      },
+                      "range": [
+                        196,
+                        217
+                      ],
+                      "parentNode": 4763,
+                      "uid": 4765
+                    },
+                    "range": [
+                      186,
+                      217
+                    ],
+                    "parentNode": 4762,
+                    "uid": 4763
+                  },
+                  "range": [
+                    186,
+                    218
+                  ],
+                  "parentNode": 4761,
+                  "uid": 4762
+                }
+              ],
+              "range": [
+                178,
+                224
+              ],
+              "parentNode": 4760,
+              "uid": 4761
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              166,
+              224
+            ],
+            "parentNode": 4758,
+            "uid": 4760,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            160,
+            224
+          ],
+          "parentNode": 4757,
+          "uid": 4758
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "show",
+            "range": [
+              259,
+              263
+            ],
+            "parentNode": 4770,
+            "uid": 4771
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "$container",
+                        "range": [
+                          289,
+                          299
+                        ],
+                        "parentNode": 4775,
+                        "uid": 4776
+                      },
+                      "init": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "$",
+                          "range": [
+                            302,
+                            303
+                          ],
+                          "parentNode": 4777,
+                          "uid": 4778
+                        },
+                        "arguments": [
+                          {
+                            "type": "BinaryExpression",
+                            "operator": "+",
+                            "left": {
+                              "type": "Literal",
+                              "value": "#",
+                              "raw": "'#'",
+                              "range": [
+                                304,
+                                307
+                              ],
+                              "parentNode": 4779,
+                              "uid": 4780
+                            },
+                            "right": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "ThisExpression",
+                                        "range": [
+                                          310,
+                                          314
+                                        ],
+                                        "parentNode": 4785,
+                                        "uid": 4786
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "model",
+                                        "range": [
+                                          315,
+                                          320
+                                        ],
+                                        "parentNode": 4785,
+                                        "uid": 4787
+                                      },
+                                      "range": [
+                                        310,
+                                        320
+                                      ],
+                                      "parentNode": 4784,
+                                      "uid": 4785
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "lens",
+                                      "range": [
+                                        321,
+                                        325
+                                      ],
+                                      "parentNode": 4784,
+                                      "uid": 4788
+                                    },
+                                    "range": [
+                                      310,
+                                      325
+                                    ],
+                                    "parentNode": 4783,
+                                    "uid": 4784
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": "dropdownId",
+                                      "raw": "'dropdownId'",
+                                      "range": [
+                                        326,
+                                        338
+                                      ],
+                                      "parentNode": 4783,
+                                      "uid": 4789
+                                    }
+                                  ],
+                                  "range": [
+                                    310,
+                                    339
+                                  ],
+                                  "parentNode": 4782,
+                                  "uid": 4783
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "get",
+                                  "range": [
+                                    340,
+                                    343
+                                  ],
+                                  "parentNode": 4782,
+                                  "uid": 4790
+                                },
+                                "range": [
+                                  310,
+                                  343
+                                ],
+                                "parentNode": 4781,
+                                "uid": 4782
+                              },
+                              "arguments": [],
+                              "range": [
+                                310,
+                                345
+                              ],
+                              "parentNode": 4779,
+                              "uid": 4781
+                            },
+                            "range": [
+                              304,
+                              345
+                            ],
+                            "parentNode": 4777,
+                            "uid": 4779
+                          }
+                        ],
+                        "range": [
+                          302,
+                          346
+                        ],
+                        "parentNode": 4775,
+                        "uid": 4777
+                      },
+                      "range": [
+                        289,
+                        346
+                      ],
+                      "parentNode": 4774,
+                      "uid": 4775
+                    }
+                  ],
+                  "kind": "var",
+                  "range": [
+                    285,
+                    347
+                  ],
+                  "parentNode": 4773,
+                  "uid": 4774
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "CallExpression",
+                                "callee": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "Identifier",
+                                        "name": "$container",
+                                        "range": [
+                                          354,
+                                          364
+                                        ],
+                                        "parentNode": 4801,
+                                        "uid": 4802
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "addClass",
+                                        "range": [
+                                          365,
+                                          373
+                                        ],
+                                        "parentNode": 4801,
+                                        "uid": 4803
+                                      },
+                                      "range": [
+                                        354,
+                                        373
+                                      ],
+                                      "parentNode": 4800,
+                                      "uid": 4801
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "Literal",
+                                        "value": "show",
+                                        "raw": "'show'",
+                                        "range": [
+                                          374,
+                                          380
+                                        ],
+                                        "parentNode": 4800,
+                                        "uid": 4804
+                                      }
+                                    ],
+                                    "range": [
+                                      354,
+                                      381
+                                    ],
+                                    "parentNode": 4799,
+                                    "uid": 4800
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "find",
+                                    "range": [
+                                      382,
+                                      386
+                                    ],
+                                    "parentNode": 4799,
+                                    "uid": 4805
+                                  },
+                                  "range": [
+                                    354,
+                                    386
+                                  ],
+                                  "parentNode": 4798,
+                                  "uid": 4799
+                                },
+                                "arguments": [
+                                  {
+                                    "type": "Literal",
+                                    "value": ".option",
+                                    "raw": "'.option'",
+                                    "range": [
+                                      387,
+                                      396
+                                    ],
+                                    "parentNode": 4798,
+                                    "uid": 4806
+                                  }
+                                ],
+                                "range": [
+                                  354,
+                                  397
+                                ],
+                                "parentNode": 4797,
+                                "uid": 4798
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "first",
+                                "range": [
+                                  398,
+                                  403
+                                ],
+                                "parentNode": 4797,
+                                "uid": 4807
+                              },
+                              "range": [
+                                354,
+                                403
+                              ],
+                              "parentNode": 4796,
+                              "uid": 4797
+                            },
+                            "arguments": [],
+                            "range": [
+                              354,
+                              405
+                            ],
+                            "parentNode": 4795,
+                            "uid": 4796
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "addClass",
+                            "range": [
+                              406,
+                              414
+                            ],
+                            "parentNode": 4795,
+                            "uid": 4808
+                          },
+                          "range": [
+                            354,
+                            414
+                          ],
+                          "parentNode": 4794,
+                          "uid": 4795
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "has-focus",
+                            "raw": "'has-focus'",
+                            "range": [
+                              415,
+                              426
+                            ],
+                            "parentNode": 4794,
+                            "uid": 4809
+                          }
+                        ],
+                        "range": [
+                          354,
+                          427
+                        ],
+                        "parentNode": 4793,
+                        "uid": 4794
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "focus",
+                        "range": [
+                          428,
+                          433
+                        ],
+                        "parentNode": 4793,
+                        "uid": 4810
+                      },
+                      "range": [
+                        354,
+                        433
+                      ],
+                      "parentNode": 4792,
+                      "uid": 4793
+                    },
+                    "arguments": [],
+                    "range": [
+                      354,
+                      435
+                    ],
+                    "parentNode": 4791,
+                    "uid": 4792
+                  },
+                  "range": [
+                    354,
+                    436
+                  ],
+                  "parentNode": 4773,
+                  "uid": 4791
+                }
+              ],
+              "range": [
+                277,
+                442
+              ],
+              "parentNode": 4772,
+              "uid": 4773
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              265,
+              442
+            ],
+            "parentNode": 4770,
+            "uid": 4772,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            259,
+            442
+          ],
+          "parentNode": 4757,
+          "uid": 4770
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "hide",
+            "range": [
+              477,
+              481
+            ],
+            "parentNode": 4811,
+            "uid": 4812
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "CallExpression",
+                                "callee": {
+                                  "type": "Identifier",
+                                  "name": "$",
+                                  "range": [
+                                    503,
+                                    504
+                                  ],
+                                  "parentNode": 4822,
+                                  "uid": 4823
+                                },
+                                "arguments": [
+                                  {
+                                    "type": "BinaryExpression",
+                                    "operator": "+",
+                                    "left": {
+                                      "type": "Literal",
+                                      "value": "#",
+                                      "raw": "'#'",
+                                      "range": [
+                                        505,
+                                        508
+                                      ],
+                                      "parentNode": 4824,
+                                      "uid": 4825
+                                    },
+                                    "right": {
+                                      "type": "CallExpression",
+                                      "callee": {
+                                        "type": "MemberExpression",
+                                        "computed": false,
+                                        "object": {
+                                          "type": "CallExpression",
+                                          "callee": {
+                                            "type": "MemberExpression",
+                                            "computed": false,
+                                            "object": {
+                                              "type": "MemberExpression",
+                                              "computed": false,
+                                              "object": {
+                                                "type": "ThisExpression",
+                                                "range": [
+                                                  511,
+                                                  515
+                                                ],
+                                                "parentNode": 4830,
+                                                "uid": 4831
+                                              },
+                                              "property": {
+                                                "type": "Identifier",
+                                                "name": "model",
+                                                "range": [
+                                                  516,
+                                                  521
+                                                ],
+                                                "parentNode": 4830,
+                                                "uid": 4832
+                                              },
+                                              "range": [
+                                                511,
+                                                521
+                                              ],
+                                              "parentNode": 4829,
+                                              "uid": 4830
+                                            },
+                                            "property": {
+                                              "type": "Identifier",
+                                              "name": "lens",
+                                              "range": [
+                                                522,
+                                                526
+                                              ],
+                                              "parentNode": 4829,
+                                              "uid": 4833
+                                            },
+                                            "range": [
+                                              511,
+                                              526
+                                            ],
+                                            "parentNode": 4828,
+                                            "uid": 4829
+                                          },
+                                          "arguments": [
+                                            {
+                                              "type": "Literal",
+                                              "value": "dropdownId",
+                                              "raw": "'dropdownId'",
+                                              "range": [
+                                                527,
+                                                539
+                                              ],
+                                              "parentNode": 4828,
+                                              "uid": 4834
+                                            }
+                                          ],
+                                          "range": [
+                                            511,
+                                            540
+                                          ],
+                                          "parentNode": 4827,
+                                          "uid": 4828
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "get",
+                                          "range": [
+                                            541,
+                                            544
+                                          ],
+                                          "parentNode": 4827,
+                                          "uid": 4835
+                                        },
+                                        "range": [
+                                          511,
+                                          544
+                                        ],
+                                        "parentNode": 4826,
+                                        "uid": 4827
+                                      },
+                                      "arguments": [],
+                                      "range": [
+                                        511,
+                                        546
+                                      ],
+                                      "parentNode": 4824,
+                                      "uid": 4826
+                                    },
+                                    "range": [
+                                      505,
+                                      546
+                                    ],
+                                    "parentNode": 4822,
+                                    "uid": 4824
+                                  }
+                                ],
+                                "range": [
+                                  503,
+                                  547
+                                ],
+                                "parentNode": 4821,
+                                "uid": 4822
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "removeClass",
+                                "range": [
+                                  548,
+                                  559
+                                ],
+                                "parentNode": 4821,
+                                "uid": 4836
+                              },
+                              "range": [
+                                503,
+                                559
+                              ],
+                              "parentNode": 4820,
+                              "uid": 4821
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "show",
+                                "raw": "'show'",
+                                "range": [
+                                  560,
+                                  566
+                                ],
+                                "parentNode": 4820,
+                                "uid": 4837
+                              }
+                            ],
+                            "range": [
+                              503,
+                              567
+                            ],
+                            "parentNode": 4819,
+                            "uid": 4820
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "find",
+                            "range": [
+                              568,
+                              572
+                            ],
+                            "parentNode": 4819,
+                            "uid": 4838
+                          },
+                          "range": [
+                            503,
+                            572
+                          ],
+                          "parentNode": 4818,
+                          "uid": 4819
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": ".has-focus",
+                            "raw": "'.has-focus'",
+                            "range": [
+                              573,
+                              585
+                            ],
+                            "parentNode": 4818,
+                            "uid": 4839
+                          }
+                        ],
+                        "range": [
+                          503,
+                          586
+                        ],
+                        "parentNode": 4817,
+                        "uid": 4818
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "removeClass",
+                        "range": [
+                          587,
+                          598
+                        ],
+                        "parentNode": 4817,
+                        "uid": 4840
+                      },
+                      "range": [
+                        503,
+                        598
+                      ],
+                      "parentNode": 4816,
+                      "uid": 4817
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "has-focus",
+                        "raw": "'has-focus'",
+                        "range": [
+                          599,
+                          610
+                        ],
+                        "parentNode": 4816,
+                        "uid": 4841
+                      }
+                    ],
+                    "range": [
+                      503,
+                      611
+                    ],
+                    "parentNode": 4815,
+                    "uid": 4816
+                  },
+                  "range": [
+                    503,
+                    612
+                  ],
+                  "parentNode": 4814,
+                  "uid": 4815
+                }
+              ],
+              "range": [
+                495,
+                618
+              ],
+              "parentNode": 4813,
+              "uid": 4814
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              483,
+              618
+            ],
+            "parentNode": 4811,
+            "uid": 4813,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            477,
+            618
+          ],
+          "parentNode": 4757,
+          "uid": 4811
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "toggle",
+            "range": [
+              655,
+              661
+            ],
+            "parentNode": 4842,
+            "uid": 4843
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "IfStatement",
+                  "test": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                687,
+                                688
+                              ],
+                              "parentNode": 4851,
+                              "uid": 4852
+                            },
+                            "arguments": [
+                              {
+                                "type": "BinaryExpression",
+                                "operator": "+",
+                                "left": {
+                                  "type": "Literal",
+                                  "value": "#",
+                                  "raw": "'#'",
+                                  "range": [
+                                    689,
+                                    692
+                                  ],
+                                  "parentNode": 4853,
+                                  "uid": 4854
+                                },
+                                "right": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "CallExpression",
+                                      "callee": {
+                                        "type": "MemberExpression",
+                                        "computed": false,
+                                        "object": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "ThisExpression",
+                                            "range": [
+                                              695,
+                                              699
+                                            ],
+                                            "parentNode": 4859,
+                                            "uid": 4860
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "model",
+                                            "range": [
+                                              700,
+                                              705
+                                            ],
+                                            "parentNode": 4859,
+                                            "uid": 4861
+                                          },
+                                          "range": [
+                                            695,
+                                            705
+                                          ],
+                                          "parentNode": 4858,
+                                          "uid": 4859
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "lens",
+                                          "range": [
+                                            706,
+                                            710
+                                          ],
+                                          "parentNode": 4858,
+                                          "uid": 4862
+                                        },
+                                        "range": [
+                                          695,
+                                          710
+                                        ],
+                                        "parentNode": 4857,
+                                        "uid": 4858
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "Literal",
+                                          "value": "dropdownId",
+                                          "raw": "'dropdownId'",
+                                          "range": [
+                                            711,
+                                            723
+                                          ],
+                                          "parentNode": 4857,
+                                          "uid": 4863
+                                        }
+                                      ],
+                                      "range": [
+                                        695,
+                                        724
+                                      ],
+                                      "parentNode": 4856,
+                                      "uid": 4857
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "get",
+                                      "range": [
+                                        725,
+                                        728
+                                      ],
+                                      "parentNode": 4856,
+                                      "uid": 4864
+                                    },
+                                    "range": [
+                                      695,
+                                      728
+                                    ],
+                                    "parentNode": 4855,
+                                    "uid": 4856
+                                  },
+                                  "arguments": [],
+                                  "range": [
+                                    695,
+                                    730
+                                  ],
+                                  "parentNode": 4853,
+                                  "uid": 4855
+                                },
+                                "range": [
+                                  689,
+                                  730
+                                ],
+                                "parentNode": 4851,
+                                "uid": 4853
+                              }
+                            ],
+                            "range": [
+                              687,
+                              731
+                            ],
+                            "parentNode": 4850,
+                            "uid": 4851
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "find",
+                            "range": [
+                              732,
+                              736
+                            ],
+                            "parentNode": 4850,
+                            "uid": 4865
+                          },
+                          "range": [
+                            687,
+                            736
+                          ],
+                          "parentNode": 4849,
+                          "uid": 4850
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": ".list",
+                            "raw": "'.list'",
+                            "range": [
+                              737,
+                              744
+                            ],
+                            "parentNode": 4849,
+                            "uid": 4866
+                          }
+                        ],
+                        "range": [
+                          687,
+                          745
+                        ],
+                        "parentNode": 4848,
+                        "uid": 4849
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "is",
+                        "range": [
+                          746,
+                          748
+                        ],
+                        "parentNode": 4848,
+                        "uid": 4867
+                      },
+                      "range": [
+                        687,
+                        748
+                      ],
+                      "parentNode": 4847,
+                      "uid": 4848
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": ":visible",
+                        "raw": "':visible'",
+                        "range": [
+                          749,
+                          759
+                        ],
+                        "parentNode": 4847,
+                        "uid": 4868
+                      }
+                    ],
+                    "range": [
+                      687,
+                      760
+                    ],
+                    "parentNode": 4846,
+                    "uid": 4847
+                  },
+                  "consequent": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ExpressionStatement",
+                        "expression": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                772,
+                                776
+                              ],
+                              "parentNode": 4872,
+                              "uid": 4873
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "hide",
+                              "range": [
+                                777,
+                                781
+                              ],
+                              "parentNode": 4872,
+                              "uid": 4874
+                            },
+                            "range": [
+                              772,
+                              781
+                            ],
+                            "parentNode": 4871,
+                            "uid": 4872
+                          },
+                          "arguments": [],
+                          "range": [
+                            772,
+                            783
+                          ],
+                          "parentNode": 4870,
+                          "uid": 4871
+                        },
+                        "range": [
+                          772,
+                          784
+                        ],
+                        "parentNode": 4869,
+                        "uid": 4870
+                      }
+                    ],
+                    "range": [
+                      762,
+                      792
+                    ],
+                    "parentNode": 4846,
+                    "uid": 4869
+                  },
+                  "alternate": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ExpressionStatement",
+                        "expression": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                808,
+                                812
+                              ],
+                              "parentNode": 4878,
+                              "uid": 4879
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "show",
+                              "range": [
+                                813,
+                                817
+                              ],
+                              "parentNode": 4878,
+                              "uid": 4880
+                            },
+                            "range": [
+                              808,
+                              817
+                            ],
+                            "parentNode": 4877,
+                            "uid": 4878
+                          },
+                          "arguments": [],
+                          "range": [
+                            808,
+                            819
+                          ],
+                          "parentNode": 4876,
+                          "uid": 4877
+                        },
+                        "range": [
+                          808,
+                          820
+                        ],
+                        "parentNode": 4875,
+                        "uid": 4876
+                      }
+                    ],
+                    "range": [
+                      798,
+                      828
+                    ],
+                    "parentNode": 4846,
+                    "uid": 4875
+                  },
+                  "range": [
+                    683,
+                    828
+                  ],
+                  "parentNode": 4845,
+                  "uid": 4846
+                }
+              ],
+              "range": [
+                675,
+                834
+              ],
+              "parentNode": 4844,
+              "uid": 4845
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              663,
+              834
+            ],
+            "parentNode": 4842,
+            "uid": 4844,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            655,
+            834
+          ],
+          "parentNode": 4757,
+          "uid": 4842
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "optionClick",
+            "range": [
+              901,
+              912
+            ],
+            "parentNode": 4881,
+            "uid": 4882
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "eventData",
+                "range": [
+                  924,
+                  933
+                ],
+                "parentNode": 4883,
+                "uid": 4884
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          943,
+                          947
+                        ],
+                        "parentNode": 4888,
+                        "uid": 4889
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "hide",
+                        "range": [
+                          948,
+                          952
+                        ],
+                        "parentNode": 4888,
+                        "uid": 4890
+                      },
+                      "range": [
+                        943,
+                        952
+                      ],
+                      "parentNode": 4887,
+                      "uid": 4888
+                    },
+                    "arguments": [],
+                    "range": [
+                      943,
+                      954
+                    ],
+                    "parentNode": 4886,
+                    "uid": 4887
+                  },
+                  "range": [
+                    943,
+                    955
+                  ],
+                  "parentNode": 4885,
+                  "uid": 4886
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "controllerChannel",
+                        "range": [
+                          962,
+                          979
+                        ],
+                        "parentNode": 4893,
+                        "uid": 4894
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          980,
+                          984
+                        ],
+                        "parentNode": 4893,
+                        "uid": 4895
+                      },
+                      "range": [
+                        962,
+                        984
+                      ],
+                      "parentNode": 4892,
+                      "uid": 4893
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "showAddMailingAddressForm",
+                        "raw": "'showAddMailingAddressForm'",
+                        "range": [
+                          985,
+                          1012
+                        ],
+                        "parentNode": 4892,
+                        "uid": 4896
+                      },
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "address",
+                              "range": [
+                                1024,
+                                1031
+                              ],
+                              "parentNode": 4898,
+                              "uid": 4899
+                            },
+                            "value": {
+                              "type": "ObjectExpression",
+                              "properties": [
+                                {
+                                  "type": "Property",
+                                  "key": {
+                                    "type": "Identifier",
+                                    "name": "mailingAddressCategory",
+                                    "range": [
+                                      1045,
+                                      1067
+                                    ],
+                                    "parentNode": 4901,
+                                    "uid": 4902
+                                  },
+                                  "value": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "Identifier",
+                                        "name": "eventData",
+                                        "range": [
+                                          1069,
+                                          1078
+                                        ],
+                                        "parentNode": 4904,
+                                        "uid": 4905
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "context",
+                                        "range": [
+                                          1079,
+                                          1086
+                                        ],
+                                        "parentNode": 4904,
+                                        "uid": 4906
+                                      },
+                                      "range": [
+                                        1069,
+                                        1086
+                                      ],
+                                      "parentNode": 4903,
+                                      "uid": 4904
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "name",
+                                      "range": [
+                                        1087,
+                                        1091
+                                      ],
+                                      "parentNode": 4903,
+                                      "uid": 4907
+                                    },
+                                    "range": [
+                                      1069,
+                                      1091
+                                    ],
+                                    "parentNode": 4901,
+                                    "uid": 4903
+                                  },
+                                  "kind": "init",
+                                  "range": [
+                                    1045,
+                                    1091
+                                  ],
+                                  "parentNode": 4900,
+                                  "uid": 4901
+                                }
+                              ],
+                              "range": [
+                                1033,
+                                1101
+                              ],
+                              "parentNode": 4898,
+                              "uid": 4900
+                            },
+                            "kind": "init",
+                            "range": [
+                              1024,
+                              1101
+                            ],
+                            "parentNode": 4897,
+                            "uid": 4898
+                          }
+                        ],
+                        "range": [
+                          1014,
+                          1109
+                        ],
+                        "parentNode": 4892,
+                        "uid": 4897
+                      }
+                    ],
+                    "range": [
+                      962,
+                      1110
+                    ],
+                    "parentNode": 4891,
+                    "uid": 4892
+                  },
+                  "range": [
+                    962,
+                    1111
+                  ],
+                  "parentNode": 4885,
+                  "uid": 4891
+                }
+              ],
+              "range": [
+                935,
+                1117
+              ],
+              "parentNode": 4883,
+              "uid": 4885
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              914,
+              1117
+            ],
+            "parentNode": 4881,
+            "uid": 4883,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            901,
+            1117
+          ],
+          "parentNode": 4757,
+          "uid": 4881
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "optionKeydown",
+            "range": [
+              1186,
+              1199
+            ],
+            "parentNode": 4908,
+            "uid": 4909
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "eventData",
+                "range": [
+                  1211,
+                  1220
+                ],
+                "parentNode": 4910,
+                "uid": 4911
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "$container",
+                        "range": [
+                          1234,
+                          1244
+                        ],
+                        "parentNode": 4914,
+                        "uid": 4915
+                      },
+                      "init": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "$",
+                          "range": [
+                            1247,
+                            1248
+                          ],
+                          "parentNode": 4916,
+                          "uid": 4917
+                        },
+                        "arguments": [
+                          {
+                            "type": "BinaryExpression",
+                            "operator": "+",
+                            "left": {
+                              "type": "Literal",
+                              "value": "#",
+                              "raw": "'#'",
+                              "range": [
+                                1249,
+                                1252
+                              ],
+                              "parentNode": 4918,
+                              "uid": 4919
+                            },
+                            "right": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "ThisExpression",
+                                        "range": [
+                                          1255,
+                                          1259
+                                        ],
+                                        "parentNode": 4924,
+                                        "uid": 4925
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "model",
+                                        "range": [
+                                          1260,
+                                          1265
+                                        ],
+                                        "parentNode": 4924,
+                                        "uid": 4926
+                                      },
+                                      "range": [
+                                        1255,
+                                        1265
+                                      ],
+                                      "parentNode": 4923,
+                                      "uid": 4924
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "lens",
+                                      "range": [
+                                        1266,
+                                        1270
+                                      ],
+                                      "parentNode": 4923,
+                                      "uid": 4927
+                                    },
+                                    "range": [
+                                      1255,
+                                      1270
+                                    ],
+                                    "parentNode": 4922,
+                                    "uid": 4923
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": "dropdownId",
+                                      "raw": "'dropdownId'",
+                                      "range": [
+                                        1271,
+                                        1283
+                                      ],
+                                      "parentNode": 4922,
+                                      "uid": 4928
+                                    }
+                                  ],
+                                  "range": [
+                                    1255,
+                                    1284
+                                  ],
+                                  "parentNode": 4921,
+                                  "uid": 4922
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "get",
+                                  "range": [
+                                    1285,
+                                    1288
+                                  ],
+                                  "parentNode": 4921,
+                                  "uid": 4929
+                                },
+                                "range": [
+                                  1255,
+                                  1288
+                                ],
+                                "parentNode": 4920,
+                                "uid": 4921
+                              },
+                              "arguments": [],
+                              "range": [
+                                1255,
+                                1290
+                              ],
+                              "parentNode": 4918,
+                              "uid": 4920
+                            },
+                            "range": [
+                              1249,
+                              1290
+                            ],
+                            "parentNode": 4916,
+                            "uid": 4918
+                          }
+                        ],
+                        "range": [
+                          1247,
+                          1291
+                        ],
+                        "parentNode": 4914,
+                        "uid": 4916
+                      },
+                      "range": [
+                        1234,
+                        1291
+                      ],
+                      "parentNode": 4913,
+                      "uid": 4914
+                    },
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "event",
+                        "range": [
+                          1301,
+                          1306
+                        ],
+                        "parentNode": 4930,
+                        "uid": 4931
+                      },
+                      "init": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "eventData",
+                          "range": [
+                            1309,
+                            1318
+                          ],
+                          "parentNode": 4932,
+                          "uid": 4933
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "domEvent",
+                          "range": [
+                            1319,
+                            1327
+                          ],
+                          "parentNode": 4932,
+                          "uid": 4934
+                        },
+                        "range": [
+                          1309,
+                          1327
+                        ],
+                        "parentNode": 4930,
+                        "uid": 4932
+                      },
+                      "range": [
+                        1301,
+                        1327
+                      ],
+                      "parentNode": 4913,
+                      "uid": 4930
+                    },
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "$focusedItem",
+                        "range": [
+                          1337,
+                          1349
+                        ],
+                        "parentNode": 4935,
+                        "uid": 4936
+                      },
+                      "init": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "$container",
+                            "range": [
+                              1352,
+                              1362
+                            ],
+                            "parentNode": 4938,
+                            "uid": 4939
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "find",
+                            "range": [
+                              1363,
+                              1367
+                            ],
+                            "parentNode": 4938,
+                            "uid": 4940
+                          },
+                          "range": [
+                            1352,
+                            1367
+                          ],
+                          "parentNode": 4937,
+                          "uid": 4938
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": ".has-focus",
+                            "raw": "'.has-focus'",
+                            "range": [
+                              1368,
+                              1380
+                            ],
+                            "parentNode": 4937,
+                            "uid": 4941
+                          }
+                        ],
+                        "range": [
+                          1352,
+                          1381
+                        ],
+                        "parentNode": 4935,
+                        "uid": 4937
+                      },
+                      "range": [
+                        1337,
+                        1381
+                      ],
+                      "parentNode": 4913,
+                      "uid": 4935
+                    },
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "$itemsList",
+                        "range": [
+                          1391,
+                          1401
+                        ],
+                        "parentNode": 4942,
+                        "uid": 4943
+                      },
+                      "init": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "$container",
+                            "range": [
+                              1404,
+                              1414
+                            ],
+                            "parentNode": 4945,
+                            "uid": 4946
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "find",
+                            "range": [
+                              1415,
+                              1419
+                            ],
+                            "parentNode": 4945,
+                            "uid": 4947
+                          },
+                          "range": [
+                            1404,
+                            1419
+                          ],
+                          "parentNode": 4944,
+                          "uid": 4945
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": ".option",
+                            "raw": "'.option'",
+                            "range": [
+                              1420,
+                              1429
+                            ],
+                            "parentNode": 4944,
+                            "uid": 4948
+                          }
+                        ],
+                        "range": [
+                          1404,
+                          1430
+                        ],
+                        "parentNode": 4942,
+                        "uid": 4944
+                      },
+                      "range": [
+                        1391,
+                        1430
+                      ],
+                      "parentNode": 4913,
+                      "uid": 4942
+                    }
+                  ],
+                  "kind": "var",
+                  "range": [
+                    1230,
+                    1431
+                  ],
+                  "parentNode": 4912,
+                  "uid": 4913
+                },
+                {
+                  "type": "SwitchStatement",
+                  "discriminant": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "event",
+                      "range": [
+                        1446,
+                        1451
+                      ],
+                      "parentNode": 4950,
+                      "uid": 4951
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "keyCode",
+                      "range": [
+                        1452,
+                        1459
+                      ],
+                      "parentNode": 4950,
+                      "uid": 4952
+                    },
+                    "range": [
+                      1446,
+                      1459
+                    ],
+                    "parentNode": 4949,
+                    "uid": 4950
+                  },
+                  "cases": [
+                    {
+                      "type": "SwitchCase",
+                      "test": {
+                        "type": "Literal",
+                        "value": 40,
+                        "raw": "40",
+                        "range": [
+                          1474,
+                          1476
+                        ],
+                        "parentNode": 4953,
+                        "uid": 4954
+                      },
+                      "consequent": [
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "event",
+                                "range": [
+                                  1503,
+                                  1508
+                                ],
+                                "parentNode": 4957,
+                                "uid": 4958
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "preventDefault",
+                                "range": [
+                                  1509,
+                                  1523
+                                ],
+                                "parentNode": 4957,
+                                "uid": 4959
+                              },
+                              "range": [
+                                1503,
+                                1523
+                              ],
+                              "parentNode": 4956,
+                              "uid": 4957
+                            },
+                            "arguments": [],
+                            "range": [
+                              1503,
+                              1525
+                            ],
+                            "parentNode": 4955,
+                            "uid": 4956
+                          },
+                          "range": [
+                            1503,
+                            1526
+                          ],
+                          "parentNode": 4953,
+                          "uid": 4955
+                        },
+                        {
+                          "type": "IfStatement",
+                          "test": {
+                            "type": "BinaryExpression",
+                            "operator": "!==",
+                            "left": {
+                              "type": "MemberExpression",
+                              "computed": true,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "$focusedItem",
+                                "range": [
+                                  1539,
+                                  1551
+                                ],
+                                "parentNode": 4962,
+                                "uid": 4963
+                              },
+                              "property": {
+                                "type": "Literal",
+                                "value": 0,
+                                "raw": "0",
+                                "range": [
+                                  1552,
+                                  1553
+                                ],
+                                "parentNode": 4962,
+                                "uid": 4964
+                              },
+                              "range": [
+                                1539,
+                                1554
+                              ],
+                              "parentNode": 4961,
+                              "uid": 4962
+                            },
+                            "right": {
+                              "type": "MemberExpression",
+                              "computed": true,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "$itemsList",
+                                "range": [
+                                  1559,
+                                  1569
+                                ],
+                                "parentNode": 4965,
+                                "uid": 4966
+                              },
+                              "property": {
+                                "type": "BinaryExpression",
+                                "operator": "-",
+                                "left": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "Identifier",
+                                    "name": "$itemsList",
+                                    "range": [
+                                      1570,
+                                      1580
+                                    ],
+                                    "parentNode": 4968,
+                                    "uid": 4969
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "length",
+                                    "range": [
+                                      1581,
+                                      1587
+                                    ],
+                                    "parentNode": 4968,
+                                    "uid": 4970
+                                  },
+                                  "range": [
+                                    1570,
+                                    1587
+                                  ],
+                                  "parentNode": 4967,
+                                  "uid": 4968
+                                },
+                                "right": {
+                                  "type": "Literal",
+                                  "value": 1,
+                                  "raw": "1",
+                                  "range": [
+                                    1590,
+                                    1591
+                                  ],
+                                  "parentNode": 4967,
+                                  "uid": 4971
+                                },
+                                "range": [
+                                  1570,
+                                  1591
+                                ],
+                                "parentNode": 4965,
+                                "uid": 4967
+                              },
+                              "range": [
+                                1559,
+                                1592
+                              ],
+                              "parentNode": 4961,
+                              "uid": 4965
+                            },
+                            "range": [
+                              1539,
+                              1592
+                            ],
+                            "parentNode": 4960,
+                            "uid": 4961
+                          },
+                          "consequent": {
+                            "type": "BlockStatement",
+                            "body": [
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "CallExpression",
+                                      "callee": {
+                                        "type": "MemberExpression",
+                                        "computed": false,
+                                        "object": {
+                                          "type": "CallExpression",
+                                          "callee": {
+                                            "type": "MemberExpression",
+                                            "computed": false,
+                                            "object": {
+                                              "type": "CallExpression",
+                                              "callee": {
+                                                "type": "MemberExpression",
+                                                "computed": false,
+                                                "object": {
+                                                  "type": "Identifier",
+                                                  "name": "$focusedItem",
+                                                  "range": [
+                                                    1606,
+                                                    1618
+                                                  ],
+                                                  "parentNode": 4981,
+                                                  "uid": 4982
+                                                },
+                                                "property": {
+                                                  "type": "Identifier",
+                                                  "name": "removeClass",
+                                                  "range": [
+                                                    1619,
+                                                    1630
+                                                  ],
+                                                  "parentNode": 4981,
+                                                  "uid": 4983
+                                                },
+                                                "range": [
+                                                  1606,
+                                                  1630
+                                                ],
+                                                "parentNode": 4980,
+                                                "uid": 4981
+                                              },
+                                              "arguments": [
+                                                {
+                                                  "type": "Literal",
+                                                  "value": "has-focus",
+                                                  "raw": "'has-focus'",
+                                                  "range": [
+                                                    1631,
+                                                    1642
+                                                  ],
+                                                  "parentNode": 4980,
+                                                  "uid": 4984
+                                                }
+                                              ],
+                                              "range": [
+                                                1606,
+                                                1643
+                                              ],
+                                              "parentNode": 4979,
+                                              "uid": 4980
+                                            },
+                                            "property": {
+                                              "type": "Identifier",
+                                              "name": "next",
+                                              "range": [
+                                                1644,
+                                                1648
+                                              ],
+                                              "parentNode": 4979,
+                                              "uid": 4985
+                                            },
+                                            "range": [
+                                              1606,
+                                              1648
+                                            ],
+                                            "parentNode": 4978,
+                                            "uid": 4979
+                                          },
+                                          "arguments": [],
+                                          "range": [
+                                            1606,
+                                            1650
+                                          ],
+                                          "parentNode": 4977,
+                                          "uid": 4978
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "addClass",
+                                          "range": [
+                                            1651,
+                                            1659
+                                          ],
+                                          "parentNode": 4977,
+                                          "uid": 4986
+                                        },
+                                        "range": [
+                                          1606,
+                                          1659
+                                        ],
+                                        "parentNode": 4976,
+                                        "uid": 4977
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "Literal",
+                                          "value": "has-focus",
+                                          "raw": "'has-focus'",
+                                          "range": [
+                                            1660,
+                                            1671
+                                          ],
+                                          "parentNode": 4976,
+                                          "uid": 4987
+                                        }
+                                      ],
+                                      "range": [
+                                        1606,
+                                        1672
+                                      ],
+                                      "parentNode": 4975,
+                                      "uid": 4976
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "focus",
+                                      "range": [
+                                        1673,
+                                        1678
+                                      ],
+                                      "parentNode": 4975,
+                                      "uid": 4988
+                                    },
+                                    "range": [
+                                      1606,
+                                      1678
+                                    ],
+                                    "parentNode": 4974,
+                                    "uid": 4975
+                                  },
+                                  "arguments": [],
+                                  "range": [
+                                    1606,
+                                    1680
+                                  ],
+                                  "parentNode": 4973,
+                                  "uid": 4974
+                                },
+                                "range": [
+                                  1606,
+                                  1681
+                                ],
+                                "parentNode": 4972,
+                                "uid": 4973
+                              }
+                            ],
+                            "range": [
+                              1594,
+                              1691
+                            ],
+                            "parentNode": 4960,
+                            "uid": 4972
+                          },
+                          "alternate": {
+                            "type": "BlockStatement",
+                            "body": [
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "ThisExpression",
+                                      "range": [
+                                        1709,
+                                        1713
+                                      ],
+                                      "parentNode": 4992,
+                                      "uid": 4993
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "hide",
+                                      "range": [
+                                        1714,
+                                        1718
+                                      ],
+                                      "parentNode": 4992,
+                                      "uid": 4994
+                                    },
+                                    "range": [
+                                      1709,
+                                      1718
+                                    ],
+                                    "parentNode": 4991,
+                                    "uid": 4992
+                                  },
+                                  "arguments": [],
+                                  "range": [
+                                    1709,
+                                    1720
+                                  ],
+                                  "parentNode": 4990,
+                                  "uid": 4991
+                                },
+                                "range": [
+                                  1709,
+                                  1721
+                                ],
+                                "parentNode": 4989,
+                                "uid": 4990
+                              },
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "CallExpression",
+                                      "callee": {
+                                        "type": "MemberExpression",
+                                        "computed": false,
+                                        "object": {
+                                          "type": "Identifier",
+                                          "name": "$container",
+                                          "range": [
+                                            1732,
+                                            1742
+                                          ],
+                                          "parentNode": 4999,
+                                          "uid": 5000
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "find",
+                                          "range": [
+                                            1743,
+                                            1747
+                                          ],
+                                          "parentNode": 4999,
+                                          "uid": 5001
+                                        },
+                                        "range": [
+                                          1732,
+                                          1747
+                                        ],
+                                        "parentNode": 4998,
+                                        "uid": 4999
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "Literal",
+                                          "value": ".js-trigger",
+                                          "raw": "'.js-trigger'",
+                                          "range": [
+                                            1748,
+                                            1761
+                                          ],
+                                          "parentNode": 4998,
+                                          "uid": 5002
+                                        }
+                                      ],
+                                      "range": [
+                                        1732,
+                                        1762
+                                      ],
+                                      "parentNode": 4997,
+                                      "uid": 4998
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "focus",
+                                      "range": [
+                                        1763,
+                                        1768
+                                      ],
+                                      "parentNode": 4997,
+                                      "uid": 5003
+                                    },
+                                    "range": [
+                                      1732,
+                                      1768
+                                    ],
+                                    "parentNode": 4996,
+                                    "uid": 4997
+                                  },
+                                  "arguments": [],
+                                  "range": [
+                                    1732,
+                                    1770
+                                  ],
+                                  "parentNode": 4995,
+                                  "uid": 4996
+                                },
+                                "range": [
+                                  1732,
+                                  1771
+                                ],
+                                "parentNode": 4989,
+                                "uid": 4995
+                              }
+                            ],
+                            "range": [
+                              1697,
+                              1781
+                            ],
+                            "parentNode": 4960,
+                            "uid": 4989
+                          },
+                          "range": [
+                            1535,
+                            1781
+                          ],
+                          "parentNode": 4953,
+                          "uid": 4960
+                        },
+                        {
+                          "type": "BreakStatement",
+                          "label": null,
+                          "range": [
+                            1790,
+                            1796
+                          ],
+                          "parentNode": 4953,
+                          "uid": 5004
+                        }
+                      ],
+                      "range": [
+                        1469,
+                        1796
+                      ],
+                      "parentNode": 4949,
+                      "uid": 4953
+                    },
+                    {
+                      "type": "SwitchCase",
+                      "test": {
+                        "type": "Literal",
+                        "value": 38,
+                        "raw": "38",
+                        "range": [
+                          1808,
+                          1810
+                        ],
+                        "parentNode": 5005,
+                        "uid": 5006
+                      },
+                      "consequent": [
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "event",
+                                "range": [
+                                  1836,
+                                  1841
+                                ],
+                                "parentNode": 5009,
+                                "uid": 5010
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "preventDefault",
+                                "range": [
+                                  1842,
+                                  1856
+                                ],
+                                "parentNode": 5009,
+                                "uid": 5011
+                              },
+                              "range": [
+                                1836,
+                                1856
+                              ],
+                              "parentNode": 5008,
+                              "uid": 5009
+                            },
+                            "arguments": [],
+                            "range": [
+                              1836,
+                              1858
+                            ],
+                            "parentNode": 5007,
+                            "uid": 5008
+                          },
+                          "range": [
+                            1836,
+                            1859
+                          ],
+                          "parentNode": 5005,
+                          "uid": 5007
+                        },
+                        {
+                          "type": "IfStatement",
+                          "test": {
+                            "type": "BinaryExpression",
+                            "operator": "!==",
+                            "left": {
+                              "type": "MemberExpression",
+                              "computed": true,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "$focusedItem",
+                                "range": [
+                                  1872,
+                                  1884
+                                ],
+                                "parentNode": 5014,
+                                "uid": 5015
+                              },
+                              "property": {
+                                "type": "Literal",
+                                "value": 0,
+                                "raw": "0",
+                                "range": [
+                                  1885,
+                                  1886
+                                ],
+                                "parentNode": 5014,
+                                "uid": 5016
+                              },
+                              "range": [
+                                1872,
+                                1887
+                              ],
+                              "parentNode": 5013,
+                              "uid": 5014
+                            },
+                            "right": {
+                              "type": "MemberExpression",
+                              "computed": true,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "$itemsList",
+                                "range": [
+                                  1892,
+                                  1902
+                                ],
+                                "parentNode": 5017,
+                                "uid": 5018
+                              },
+                              "property": {
+                                "type": "Literal",
+                                "value": 0,
+                                "raw": "0",
+                                "range": [
+                                  1903,
+                                  1904
+                                ],
+                                "parentNode": 5017,
+                                "uid": 5019
+                              },
+                              "range": [
+                                1892,
+                                1905
+                              ],
+                              "parentNode": 5013,
+                              "uid": 5017
+                            },
+                            "range": [
+                              1872,
+                              1905
+                            ],
+                            "parentNode": 5012,
+                            "uid": 5013
+                          },
+                          "consequent": {
+                            "type": "BlockStatement",
+                            "body": [
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "CallExpression",
+                                      "callee": {
+                                        "type": "MemberExpression",
+                                        "computed": false,
+                                        "object": {
+                                          "type": "CallExpression",
+                                          "callee": {
+                                            "type": "MemberExpression",
+                                            "computed": false,
+                                            "object": {
+                                              "type": "CallExpression",
+                                              "callee": {
+                                                "type": "MemberExpression",
+                                                "computed": false,
+                                                "object": {
+                                                  "type": "Identifier",
+                                                  "name": "$focusedItem",
+                                                  "range": [
+                                                    1919,
+                                                    1931
+                                                  ],
+                                                  "parentNode": 5029,
+                                                  "uid": 5030
+                                                },
+                                                "property": {
+                                                  "type": "Identifier",
+                                                  "name": "removeClass",
+                                                  "range": [
+                                                    1932,
+                                                    1943
+                                                  ],
+                                                  "parentNode": 5029,
+                                                  "uid": 5031
+                                                },
+                                                "range": [
+                                                  1919,
+                                                  1943
+                                                ],
+                                                "parentNode": 5028,
+                                                "uid": 5029
+                                              },
+                                              "arguments": [
+                                                {
+                                                  "type": "Literal",
+                                                  "value": "has-focus",
+                                                  "raw": "'has-focus'",
+                                                  "range": [
+                                                    1944,
+                                                    1955
+                                                  ],
+                                                  "parentNode": 5028,
+                                                  "uid": 5032
+                                                }
+                                              ],
+                                              "range": [
+                                                1919,
+                                                1956
+                                              ],
+                                              "parentNode": 5027,
+                                              "uid": 5028
+                                            },
+                                            "property": {
+                                              "type": "Identifier",
+                                              "name": "prev",
+                                              "range": [
+                                                1957,
+                                                1961
+                                              ],
+                                              "parentNode": 5027,
+                                              "uid": 5033
+                                            },
+                                            "range": [
+                                              1919,
+                                              1961
+                                            ],
+                                            "parentNode": 5026,
+                                            "uid": 5027
+                                          },
+                                          "arguments": [],
+                                          "range": [
+                                            1919,
+                                            1963
+                                          ],
+                                          "parentNode": 5025,
+                                          "uid": 5026
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "addClass",
+                                          "range": [
+                                            1964,
+                                            1972
+                                          ],
+                                          "parentNode": 5025,
+                                          "uid": 5034
+                                        },
+                                        "range": [
+                                          1919,
+                                          1972
+                                        ],
+                                        "parentNode": 5024,
+                                        "uid": 5025
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "Literal",
+                                          "value": "has-focus",
+                                          "raw": "'has-focus'",
+                                          "range": [
+                                            1973,
+                                            1984
+                                          ],
+                                          "parentNode": 5024,
+                                          "uid": 5035
+                                        }
+                                      ],
+                                      "range": [
+                                        1919,
+                                        1985
+                                      ],
+                                      "parentNode": 5023,
+                                      "uid": 5024
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "focus",
+                                      "range": [
+                                        1986,
+                                        1991
+                                      ],
+                                      "parentNode": 5023,
+                                      "uid": 5036
+                                    },
+                                    "range": [
+                                      1919,
+                                      1991
+                                    ],
+                                    "parentNode": 5022,
+                                    "uid": 5023
+                                  },
+                                  "arguments": [],
+                                  "range": [
+                                    1919,
+                                    1993
+                                  ],
+                                  "parentNode": 5021,
+                                  "uid": 5022
+                                },
+                                "range": [
+                                  1919,
+                                  1994
+                                ],
+                                "parentNode": 5020,
+                                "uid": 5021
+                              }
+                            ],
+                            "range": [
+                              1907,
+                              2004
+                            ],
+                            "parentNode": 5012,
+                            "uid": 5020
+                          },
+                          "alternate": {
+                            "type": "BlockStatement",
+                            "body": [
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "ThisExpression",
+                                      "range": [
+                                        2022,
+                                        2026
+                                      ],
+                                      "parentNode": 5040,
+                                      "uid": 5041
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "hide",
+                                      "range": [
+                                        2027,
+                                        2031
+                                      ],
+                                      "parentNode": 5040,
+                                      "uid": 5042
+                                    },
+                                    "range": [
+                                      2022,
+                                      2031
+                                    ],
+                                    "parentNode": 5039,
+                                    "uid": 5040
+                                  },
+                                  "arguments": [],
+                                  "range": [
+                                    2022,
+                                    2033
+                                  ],
+                                  "parentNode": 5038,
+                                  "uid": 5039
+                                },
+                                "range": [
+                                  2022,
+                                  2034
+                                ],
+                                "parentNode": 5037,
+                                "uid": 5038
+                              },
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "CallExpression",
+                                      "callee": {
+                                        "type": "MemberExpression",
+                                        "computed": false,
+                                        "object": {
+                                          "type": "Identifier",
+                                          "name": "$container",
+                                          "range": [
+                                            2045,
+                                            2055
+                                          ],
+                                          "parentNode": 5047,
+                                          "uid": 5048
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "find",
+                                          "range": [
+                                            2056,
+                                            2060
+                                          ],
+                                          "parentNode": 5047,
+                                          "uid": 5049
+                                        },
+                                        "range": [
+                                          2045,
+                                          2060
+                                        ],
+                                        "parentNode": 5046,
+                                        "uid": 5047
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "Literal",
+                                          "value": ".js-trigger",
+                                          "raw": "'.js-trigger'",
+                                          "range": [
+                                            2061,
+                                            2074
+                                          ],
+                                          "parentNode": 5046,
+                                          "uid": 5050
+                                        }
+                                      ],
+                                      "range": [
+                                        2045,
+                                        2075
+                                      ],
+                                      "parentNode": 5045,
+                                      "uid": 5046
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "focus",
+                                      "range": [
+                                        2076,
+                                        2081
+                                      ],
+                                      "parentNode": 5045,
+                                      "uid": 5051
+                                    },
+                                    "range": [
+                                      2045,
+                                      2081
+                                    ],
+                                    "parentNode": 5044,
+                                    "uid": 5045
+                                  },
+                                  "arguments": [],
+                                  "range": [
+                                    2045,
+                                    2083
+                                  ],
+                                  "parentNode": 5043,
+                                  "uid": 5044
+                                },
+                                "range": [
+                                  2045,
+                                  2084
+                                ],
+                                "parentNode": 5037,
+                                "uid": 5043
+                              }
+                            ],
+                            "range": [
+                              2010,
+                              2094
+                            ],
+                            "parentNode": 5012,
+                            "uid": 5037
+                          },
+                          "range": [
+                            1868,
+                            2094
+                          ],
+                          "parentNode": 5005,
+                          "uid": 5012
+                        },
+                        {
+                          "type": "BreakStatement",
+                          "label": null,
+                          "range": [
+                            2103,
+                            2109
+                          ],
+                          "parentNode": 5005,
+                          "uid": 5052
+                        }
+                      ],
+                      "range": [
+                        1803,
+                        2109
+                      ],
+                      "parentNode": 4949,
+                      "uid": 5005
+                    },
+                    {
+                      "type": "SwitchCase",
+                      "test": {
+                        "type": "Literal",
+                        "value": 9,
+                        "raw": "9",
+                        "range": [
+                          2121,
+                          2122
+                        ],
+                        "parentNode": 5053,
+                        "uid": 5054
+                      },
+                      "consequent": [
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "event",
+                                "range": [
+                                  2139,
+                                  2144
+                                ],
+                                "parentNode": 5057,
+                                "uid": 5058
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "preventDefault",
+                                "range": [
+                                  2145,
+                                  2159
+                                ],
+                                "parentNode": 5057,
+                                "uid": 5059
+                              },
+                              "range": [
+                                2139,
+                                2159
+                              ],
+                              "parentNode": 5056,
+                              "uid": 5057
+                            },
+                            "arguments": [],
+                            "range": [
+                              2139,
+                              2161
+                            ],
+                            "parentNode": 5055,
+                            "uid": 5056
+                          },
+                          "range": [
+                            2139,
+                            2162
+                          ],
+                          "parentNode": 5053,
+                          "uid": 5055
+                        },
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "ThisExpression",
+                                "range": [
+                                  2171,
+                                  2175
+                                ],
+                                "parentNode": 5062,
+                                "uid": 5063
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "hide",
+                                "range": [
+                                  2176,
+                                  2180
+                                ],
+                                "parentNode": 5062,
+                                "uid": 5064
+                              },
+                              "range": [
+                                2171,
+                                2180
+                              ],
+                              "parentNode": 5061,
+                              "uid": 5062
+                            },
+                            "arguments": [],
+                            "range": [
+                              2171,
+                              2182
+                            ],
+                            "parentNode": 5060,
+                            "uid": 5061
+                          },
+                          "range": [
+                            2171,
+                            2183
+                          ],
+                          "parentNode": 5053,
+                          "uid": 5060
+                        },
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "CallExpression",
+                                "callee": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "Identifier",
+                                    "name": "$container",
+                                    "range": [
+                                      2192,
+                                      2202
+                                    ],
+                                    "parentNode": 5069,
+                                    "uid": 5070
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "find",
+                                    "range": [
+                                      2203,
+                                      2207
+                                    ],
+                                    "parentNode": 5069,
+                                    "uid": 5071
+                                  },
+                                  "range": [
+                                    2192,
+                                    2207
+                                  ],
+                                  "parentNode": 5068,
+                                  "uid": 5069
+                                },
+                                "arguments": [
+                                  {
+                                    "type": "Literal",
+                                    "value": ".js-trigger",
+                                    "raw": "'.js-trigger'",
+                                    "range": [
+                                      2208,
+                                      2221
+                                    ],
+                                    "parentNode": 5068,
+                                    "uid": 5072
+                                  }
+                                ],
+                                "range": [
+                                  2192,
+                                  2222
+                                ],
+                                "parentNode": 5067,
+                                "uid": 5068
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "focus",
+                                "range": [
+                                  2223,
+                                  2228
+                                ],
+                                "parentNode": 5067,
+                                "uid": 5073
+                              },
+                              "range": [
+                                2192,
+                                2228
+                              ],
+                              "parentNode": 5066,
+                              "uid": 5067
+                            },
+                            "arguments": [],
+                            "range": [
+                              2192,
+                              2230
+                            ],
+                            "parentNode": 5065,
+                            "uid": 5066
+                          },
+                          "range": [
+                            2192,
+                            2231
+                          ],
+                          "parentNode": 5053,
+                          "uid": 5065
+                        },
+                        {
+                          "type": "BreakStatement",
+                          "label": null,
+                          "range": [
+                            2240,
+                            2246
+                          ],
+                          "parentNode": 5053,
+                          "uid": 5074
+                        }
+                      ],
+                      "range": [
+                        2116,
+                        2246
+                      ],
+                      "parentNode": 4949,
+                      "uid": 5053
+                    },
+                    {
+                      "type": "SwitchCase",
+                      "test": {
+                        "type": "Literal",
+                        "value": 27,
+                        "raw": "27",
+                        "range": [
+                          2258,
+                          2260
+                        ],
+                        "parentNode": 5075,
+                        "uid": 5076
+                      },
+                      "consequent": [
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "event",
+                                "range": [
+                                  2280,
+                                  2285
+                                ],
+                                "parentNode": 5079,
+                                "uid": 5080
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "preventDefault",
+                                "range": [
+                                  2286,
+                                  2300
+                                ],
+                                "parentNode": 5079,
+                                "uid": 5081
+                              },
+                              "range": [
+                                2280,
+                                2300
+                              ],
+                              "parentNode": 5078,
+                              "uid": 5079
+                            },
+                            "arguments": [],
+                            "range": [
+                              2280,
+                              2302
+                            ],
+                            "parentNode": 5077,
+                            "uid": 5078
+                          },
+                          "range": [
+                            2280,
+                            2303
+                          ],
+                          "parentNode": 5075,
+                          "uid": 5077
+                        },
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "ThisExpression",
+                                "range": [
+                                  2312,
+                                  2316
+                                ],
+                                "parentNode": 5084,
+                                "uid": 5085
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "hide",
+                                "range": [
+                                  2317,
+                                  2321
+                                ],
+                                "parentNode": 5084,
+                                "uid": 5086
+                              },
+                              "range": [
+                                2312,
+                                2321
+                              ],
+                              "parentNode": 5083,
+                              "uid": 5084
+                            },
+                            "arguments": [],
+                            "range": [
+                              2312,
+                              2323
+                            ],
+                            "parentNode": 5082,
+                            "uid": 5083
+                          },
+                          "range": [
+                            2312,
+                            2324
+                          ],
+                          "parentNode": 5075,
+                          "uid": 5082
+                        },
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "CallExpression",
+                                "callee": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "Identifier",
+                                    "name": "$container",
+                                    "range": [
+                                      2333,
+                                      2343
+                                    ],
+                                    "parentNode": 5091,
+                                    "uid": 5092
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "find",
+                                    "range": [
+                                      2344,
+                                      2348
+                                    ],
+                                    "parentNode": 5091,
+                                    "uid": 5093
+                                  },
+                                  "range": [
+                                    2333,
+                                    2348
+                                  ],
+                                  "parentNode": 5090,
+                                  "uid": 5091
+                                },
+                                "arguments": [
+                                  {
+                                    "type": "Literal",
+                                    "value": ".js-trigger",
+                                    "raw": "'.js-trigger'",
+                                    "range": [
+                                      2349,
+                                      2362
+                                    ],
+                                    "parentNode": 5090,
+                                    "uid": 5094
+                                  }
+                                ],
+                                "range": [
+                                  2333,
+                                  2363
+                                ],
+                                "parentNode": 5089,
+                                "uid": 5090
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "focus",
+                                "range": [
+                                  2364,
+                                  2369
+                                ],
+                                "parentNode": 5089,
+                                "uid": 5095
+                              },
+                              "range": [
+                                2333,
+                                2369
+                              ],
+                              "parentNode": 5088,
+                              "uid": 5089
+                            },
+                            "arguments": [],
+                            "range": [
+                              2333,
+                              2371
+                            ],
+                            "parentNode": 5087,
+                            "uid": 5088
+                          },
+                          "range": [
+                            2333,
+                            2372
+                          ],
+                          "parentNode": 5075,
+                          "uid": 5087
+                        },
+                        {
+                          "type": "BreakStatement",
+                          "label": null,
+                          "range": [
+                            2381,
+                            2387
+                          ],
+                          "parentNode": 5075,
+                          "uid": 5096
+                        }
+                      ],
+                      "range": [
+                        2253,
+                        2387
+                      ],
+                      "parentNode": 4949,
+                      "uid": 5075
+                    },
+                    {
+                      "type": "SwitchCase",
+                      "test": {
+                        "type": "Literal",
+                        "value": 13,
+                        "raw": "13",
+                        "range": [
+                          2399,
+                          2401
+                        ],
+                        "parentNode": 5097,
+                        "uid": 5098
+                      },
+                      "consequent": [
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "event",
+                                "range": [
+                                  2424,
+                                  2429
+                                ],
+                                "parentNode": 5101,
+                                "uid": 5102
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "preventDefault",
+                                "range": [
+                                  2430,
+                                  2444
+                                ],
+                                "parentNode": 5101,
+                                "uid": 5103
+                              },
+                              "range": [
+                                2424,
+                                2444
+                              ],
+                              "parentNode": 5100,
+                              "uid": 5101
+                            },
+                            "arguments": [],
+                            "range": [
+                              2424,
+                              2446
+                            ],
+                            "parentNode": 5099,
+                            "uid": 5100
+                          },
+                          "range": [
+                            2424,
+                            2447
+                          ],
+                          "parentNode": 5097,
+                          "uid": 5099
+                        },
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "ThisExpression",
+                                "range": [
+                                  2456,
+                                  2460
+                                ],
+                                "parentNode": 5106,
+                                "uid": 5107
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "optionClick",
+                                "range": [
+                                  2461,
+                                  2472
+                                ],
+                                "parentNode": 5106,
+                                "uid": 5108
+                              },
+                              "range": [
+                                2456,
+                                2472
+                              ],
+                              "parentNode": 5105,
+                              "uid": 5106
+                            },
+                            "arguments": [
+                              {
+                                "type": "Identifier",
+                                "name": "eventData",
+                                "range": [
+                                  2473,
+                                  2482
+                                ],
+                                "parentNode": 5105,
+                                "uid": 5109
+                              }
+                            ],
+                            "range": [
+                              2456,
+                              2483
+                            ],
+                            "parentNode": 5104,
+                            "uid": 5105
+                          },
+                          "range": [
+                            2456,
+                            2484
+                          ],
+                          "parentNode": 5097,
+                          "uid": 5104
+                        }
+                      ],
+                      "range": [
+                        2394,
+                        2484
+                      ],
+                      "parentNode": 4949,
+                      "uid": 5097
+                    },
+                    {
+                      "type": "SwitchCase",
+                      "test": null,
+                      "consequent": [
+                        {
+                          "type": "BreakStatement",
+                          "label": null,
+                          "range": [
+                            2508,
+                            2514
+                          ],
+                          "parentNode": 5110,
+                          "uid": 5111
+                        }
+                      ],
+                      "range": [
+                        2491,
+                        2514
+                      ],
+                      "parentNode": 4949,
+                      "uid": 5110
+                    }
+                  ],
+                  "range": [
+                    1438,
+                    2522
+                  ],
+                  "parentNode": 4912,
+                  "uid": 4949
+                }
+              ],
+              "range": [
+                1222,
+                2528
+              ],
+              "parentNode": 4910,
+              "uid": 4912
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              1201,
+              2528
+            ],
+            "parentNode": 4908,
+            "uid": 4910,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            1186,
+            2528
+          ],
+          "parentNode": 4757,
+          "uid": 4908
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "triggerKeydown",
+            "range": [
+              2598,
+              2612
+            ],
+            "parentNode": 5112,
+            "uid": 5113
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "eventData",
+                "range": [
+                  2624,
+                  2633
+                ],
+                "parentNode": 5114,
+                "uid": 5115
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "event",
+                        "range": [
+                          2647,
+                          2652
+                        ],
+                        "parentNode": 5118,
+                        "uid": 5119
+                      },
+                      "init": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "eventData",
+                          "range": [
+                            2655,
+                            2664
+                          ],
+                          "parentNode": 5120,
+                          "uid": 5121
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "domEvent",
+                          "range": [
+                            2665,
+                            2673
+                          ],
+                          "parentNode": 5120,
+                          "uid": 5122
+                        },
+                        "range": [
+                          2655,
+                          2673
+                        ],
+                        "parentNode": 5118,
+                        "uid": 5120
+                      },
+                      "range": [
+                        2647,
+                        2673
+                      ],
+                      "parentNode": 5117,
+                      "uid": 5118
+                    },
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "$container",
+                        "range": [
+                          2683,
+                          2693
+                        ],
+                        "parentNode": 5123,
+                        "uid": 5124
+                      },
+                      "init": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "$",
+                          "range": [
+                            2696,
+                            2697
+                          ],
+                          "parentNode": 5125,
+                          "uid": 5126
+                        },
+                        "arguments": [
+                          {
+                            "type": "BinaryExpression",
+                            "operator": "+",
+                            "left": {
+                              "type": "Literal",
+                              "value": "#",
+                              "raw": "'#'",
+                              "range": [
+                                2698,
+                                2701
+                              ],
+                              "parentNode": 5127,
+                              "uid": 5128
+                            },
+                            "right": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "ThisExpression",
+                                        "range": [
+                                          2704,
+                                          2708
+                                        ],
+                                        "parentNode": 5133,
+                                        "uid": 5134
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "model",
+                                        "range": [
+                                          2709,
+                                          2714
+                                        ],
+                                        "parentNode": 5133,
+                                        "uid": 5135
+                                      },
+                                      "range": [
+                                        2704,
+                                        2714
+                                      ],
+                                      "parentNode": 5132,
+                                      "uid": 5133
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "lens",
+                                      "range": [
+                                        2715,
+                                        2719
+                                      ],
+                                      "parentNode": 5132,
+                                      "uid": 5136
+                                    },
+                                    "range": [
+                                      2704,
+                                      2719
+                                    ],
+                                    "parentNode": 5131,
+                                    "uid": 5132
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": "dropdownId",
+                                      "raw": "'dropdownId'",
+                                      "range": [
+                                        2720,
+                                        2732
+                                      ],
+                                      "parentNode": 5131,
+                                      "uid": 5137
+                                    }
+                                  ],
+                                  "range": [
+                                    2704,
+                                    2733
+                                  ],
+                                  "parentNode": 5130,
+                                  "uid": 5131
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "get",
+                                  "range": [
+                                    2734,
+                                    2737
+                                  ],
+                                  "parentNode": 5130,
+                                  "uid": 5138
+                                },
+                                "range": [
+                                  2704,
+                                  2737
+                                ],
+                                "parentNode": 5129,
+                                "uid": 5130
+                              },
+                              "arguments": [],
+                              "range": [
+                                2704,
+                                2739
+                              ],
+                              "parentNode": 5127,
+                              "uid": 5129
+                            },
+                            "range": [
+                              2698,
+                              2739
+                            ],
+                            "parentNode": 5125,
+                            "uid": 5127
+                          }
+                        ],
+                        "range": [
+                          2696,
+                          2740
+                        ],
+                        "parentNode": 5123,
+                        "uid": 5125
+                      },
+                      "range": [
+                        2683,
+                        2740
+                      ],
+                      "parentNode": 5117,
+                      "uid": 5123
+                    },
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "$itemsList",
+                        "range": [
+                          2750,
+                          2760
+                        ],
+                        "parentNode": 5139,
+                        "uid": 5140
+                      },
+                      "init": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "$container",
+                            "range": [
+                              2763,
+                              2773
+                            ],
+                            "parentNode": 5142,
+                            "uid": 5143
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "find",
+                            "range": [
+                              2774,
+                              2778
+                            ],
+                            "parentNode": 5142,
+                            "uid": 5144
+                          },
+                          "range": [
+                            2763,
+                            2778
+                          ],
+                          "parentNode": 5141,
+                          "uid": 5142
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": ".option",
+                            "raw": "'.option'",
+                            "range": [
+                              2779,
+                              2788
+                            ],
+                            "parentNode": 5141,
+                            "uid": 5145
+                          }
+                        ],
+                        "range": [
+                          2763,
+                          2789
+                        ],
+                        "parentNode": 5139,
+                        "uid": 5141
+                      },
+                      "range": [
+                        2750,
+                        2789
+                      ],
+                      "parentNode": 5117,
+                      "uid": 5139
+                    }
+                  ],
+                  "kind": "var",
+                  "range": [
+                    2643,
+                    2790
+                  ],
+                  "parentNode": 5116,
+                  "uid": 5117
+                },
+                {
+                  "type": "SwitchStatement",
+                  "discriminant": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "event",
+                      "range": [
+                        2805,
+                        2810
+                      ],
+                      "parentNode": 5147,
+                      "uid": 5148
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "keyCode",
+                      "range": [
+                        2811,
+                        2818
+                      ],
+                      "parentNode": 5147,
+                      "uid": 5149
+                    },
+                    "range": [
+                      2805,
+                      2818
+                    ],
+                    "parentNode": 5146,
+                    "uid": 5147
+                  },
+                  "cases": [
+                    {
+                      "type": "SwitchCase",
+                      "test": {
+                        "type": "Literal",
+                        "value": 13,
+                        "raw": "13",
+                        "range": [
+                          2833,
+                          2835
+                        ],
+                        "parentNode": 5150,
+                        "uid": 5151
+                      },
+                      "consequent": [
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "event",
+                                "range": [
+                                  2858,
+                                  2863
+                                ],
+                                "parentNode": 5154,
+                                "uid": 5155
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "preventDefault",
+                                "range": [
+                                  2864,
+                                  2878
+                                ],
+                                "parentNode": 5154,
+                                "uid": 5156
+                              },
+                              "range": [
+                                2858,
+                                2878
+                              ],
+                              "parentNode": 5153,
+                              "uid": 5154
+                            },
+                            "arguments": [],
+                            "range": [
+                              2858,
+                              2880
+                            ],
+                            "parentNode": 5152,
+                            "uid": 5153
+                          },
+                          "range": [
+                            2858,
+                            2881
+                          ],
+                          "parentNode": 5150,
+                          "uid": 5152
+                        },
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "ThisExpression",
+                                "range": [
+                                  2890,
+                                  2894
+                                ],
+                                "parentNode": 5159,
+                                "uid": 5160
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "show",
+                                "range": [
+                                  2895,
+                                  2899
+                                ],
+                                "parentNode": 5159,
+                                "uid": 5161
+                              },
+                              "range": [
+                                2890,
+                                2899
+                              ],
+                              "parentNode": 5158,
+                              "uid": 5159
+                            },
+                            "arguments": [],
+                            "range": [
+                              2890,
+                              2901
+                            ],
+                            "parentNode": 5157,
+                            "uid": 5158
+                          },
+                          "range": [
+                            2890,
+                            2902
+                          ],
+                          "parentNode": 5150,
+                          "uid": 5157
+                        },
+                        {
+                          "type": "BreakStatement",
+                          "label": null,
+                          "range": [
+                            2911,
+                            2917
+                          ],
+                          "parentNode": 5150,
+                          "uid": 5162
+                        }
+                      ],
+                      "range": [
+                        2828,
+                        2917
+                      ],
+                      "parentNode": 5146,
+                      "uid": 5150
+                    },
+                    {
+                      "type": "SwitchCase",
+                      "test": {
+                        "type": "Literal",
+                        "value": 32,
+                        "raw": "32",
+                        "range": [
+                          2929,
+                          2931
+                        ],
+                        "parentNode": 5163,
+                        "uid": 5164
+                      },
+                      "consequent": [
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "event",
+                                "range": [
+                                  2954,
+                                  2959
+                                ],
+                                "parentNode": 5167,
+                                "uid": 5168
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "preventDefault",
+                                "range": [
+                                  2960,
+                                  2974
+                                ],
+                                "parentNode": 5167,
+                                "uid": 5169
+                              },
+                              "range": [
+                                2954,
+                                2974
+                              ],
+                              "parentNode": 5166,
+                              "uid": 5167
+                            },
+                            "arguments": [],
+                            "range": [
+                              2954,
+                              2976
+                            ],
+                            "parentNode": 5165,
+                            "uid": 5166
+                          },
+                          "range": [
+                            2954,
+                            2977
+                          ],
+                          "parentNode": 5163,
+                          "uid": 5165
+                        },
+                        {
+                          "type": "ExpressionStatement",
+                          "expression": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "ThisExpression",
+                                "range": [
+                                  2986,
+                                  2990
+                                ],
+                                "parentNode": 5172,
+                                "uid": 5173
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "show",
+                                "range": [
+                                  2991,
+                                  2995
+                                ],
+                                "parentNode": 5172,
+                                "uid": 5174
+                              },
+                              "range": [
+                                2986,
+                                2995
+                              ],
+                              "parentNode": 5171,
+                              "uid": 5172
+                            },
+                            "arguments": [],
+                            "range": [
+                              2986,
+                              2997
+                            ],
+                            "parentNode": 5170,
+                            "uid": 5171
+                          },
+                          "range": [
+                            2986,
+                            2998
+                          ],
+                          "parentNode": 5163,
+                          "uid": 5170
+                        },
+                        {
+                          "type": "BreakStatement",
+                          "label": null,
+                          "range": [
+                            3007,
+                            3013
+                          ],
+                          "parentNode": 5163,
+                          "uid": 5175
+                        }
+                      ],
+                      "range": [
+                        2924,
+                        3013
+                      ],
+                      "parentNode": 5146,
+                      "uid": 5163
+                    },
+                    {
+                      "type": "SwitchCase",
+                      "test": null,
+                      "consequent": [
+                        {
+                          "type": "BreakStatement",
+                          "label": null,
+                          "range": [
+                            3037,
+                            3043
+                          ],
+                          "parentNode": 5176,
+                          "uid": 5177
+                        }
+                      ],
+                      "range": [
+                        3020,
+                        3043
+                      ],
+                      "parentNode": 5146,
+                      "uid": 5176
+                    }
+                  ],
+                  "range": [
+                    2797,
+                    3051
+                  ],
+                  "parentNode": 5116,
+                  "uid": 5146
+                }
+              ],
+              "range": [
+                2635,
+                3057
+              ],
+              "parentNode": 5114,
+              "uid": 5116
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              2614,
+              3057
+            ],
+            "parentNode": 5112,
+            "uid": 5114,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            2598,
+            3057
+          ],
+          "parentNode": 4757,
+          "uid": 5112
+        }
+      ],
+      "range": [
+        125,
+        3061
+      ],
+      "parentNode": 4756,
+      "uid": 4757
+    },
+    "range": [
+      118,
+      3062
+    ],
+    "parentNode": 4746,
+    "uid": 4756,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 92,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 2841,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./dropdown",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "show",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "show: function() {"
+      },
+      {
+        "name": "hide",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "hide: function() {"
+      },
+      {
+        "name": "toggle",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "toggle: function() {"
+      },
+      {
+        "name": "optionClick",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 23,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "eventData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "optionClick: function(eventData) {"
+      },
+      {
+        "name": "optionKeydown",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 31,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "eventData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "optionKeydown: function(eventData) {"
+      },
+      {
+        "name": "triggerKeydown",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 73,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "eventData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "triggerKeydown: function(eventData) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myProfile",
+    "fileName": "dropdown.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 118
+}

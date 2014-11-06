@@ -1,0 +1,1328 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "update_payment_due_date",
+      "AMD": true,
+      "webPath": "/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initiateUpdatePaymentDueDate'.",
+        "code": "wfJD",
+        "evidence": "initiateUpdatePaymentDueDate: function() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initiateUpdatePaymentDueDate'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'verifyUpdatePaymentDueDate'.",
+        "code": "wfJD",
+        "evidence": "verifyUpdatePaymentDueDate: function(paymentData) {",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'verifyUpdatePaymentDueDate'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'confirmUpdatePaymentDueDate'.",
+        "code": "wfJD",
+        "evidence": "confirmUpdatePaymentDueDate: function() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'confirmUpdatePaymentDueDate'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'cancelUpdatePaymentDueDate'.",
+        "code": "wfJD",
+        "evidence": "cancelUpdatePaymentDueDate: function() {",
+        "line": 17,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'cancelUpdatePaymentDueDate'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exitUpdatePaymentDueDate'.",
+        "code": "wfJD",
+        "evidence": "exitUpdatePaymentDueDate: function() {",
+        "line": 20,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exitUpdatePaymentDueDate'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myAccounts/updatePaymentDueDate.js",
+  "folderPath": "test-source/component/myAccounts",
+  "fileName": "updatePaymentDueDate.js",
+  "packagePath": "/component/myAccounts",
+  "webPath": "/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "update_payment_due_date",
+  "name": "updatePaymentDueDate",
+  "camelName": "UpdatePaymentDueDate",
+  "processedFilePath": "test-output/component/myAccounts/updatePaymentDueDate.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myAccounts/updatePaymentDueDate */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Initiate update payment due date.\n     */\n    initiateUpdatePaymentDueDate: function () {\n      context.getUpdatePaymentDueDateInitiate(this.model.get());\n    },\n    /**\n     * Verify update payment due date.\n     * @param paymentData\n     */\n    verifyUpdatePaymentDueDate: function (paymentData) {\n      context.getUpdatePaymentDueDateVerify(this.model.get());\n    },\n    /**\n     * Confirm update payment due date.\n     */\n    confirmUpdatePaymentDueDate: function () {\n      context.getUpdatePaymentDueDateConfirm(this.model.get());\n    },\n    /**\n     * Cancel update payment due date.\n     */\n    cancelUpdatePaymentDueDate: function () {\n      context.getUpdatePaymentDueDateCancel(this.model.get());\n    },\n    /**\n     * Exit update payment due date.\n     */\n    exitUpdatePaymentDueDate: function () {\n      var inputData = this.model.get();\n      //redirect to dashboard page\n      var params = [inputData.accountId];\n      context.appChannel.emit('initAccounts', {\n        params: params\n      });\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              94,
+              98
+            ],
+            "parentNode": 1249,
+            "uid": 1250
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        120,
+                        127
+                      ],
+                      "parentNode": 1254,
+                      "uid": 1255
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            130,
+                            134
+                          ],
+                          "parentNode": 1257,
+                          "uid": 1258
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            135,
+                            143
+                          ],
+                          "parentNode": 1257,
+                          "uid": 1259
+                        },
+                        "range": [
+                          130,
+                          143
+                        ],
+                        "parentNode": 1256,
+                        "uid": 1257
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          144,
+                          151
+                        ],
+                        "parentNode": 1256,
+                        "uid": 1260
+                      },
+                      "range": [
+                        130,
+                        151
+                      ],
+                      "parentNode": 1254,
+                      "uid": 1256
+                    },
+                    "range": [
+                      120,
+                      151
+                    ],
+                    "parentNode": 1253,
+                    "uid": 1254
+                  },
+                  "range": [
+                    120,
+                    152
+                  ],
+                  "parentNode": 1252,
+                  "uid": 1253
+                }
+              ],
+              "range": [
+                112,
+                158
+              ],
+              "parentNode": 1251,
+              "uid": 1252
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              100,
+              158
+            ],
+            "parentNode": 1249,
+            "uid": 1251,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            94,
+            158
+          ],
+          "parentNode": 1248,
+          "uid": 1249
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "initiateUpdatePaymentDueDate",
+            "range": [
+              221,
+              249
+            ],
+            "parentNode": 1261,
+            "uid": 1262
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          271,
+                          278
+                        ],
+                        "parentNode": 1267,
+                        "uid": 1268
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "getUpdatePaymentDueDateInitiate",
+                        "range": [
+                          279,
+                          310
+                        ],
+                        "parentNode": 1267,
+                        "uid": 1269
+                      },
+                      "range": [
+                        271,
+                        310
+                      ],
+                      "parentNode": 1266,
+                      "uid": 1267
+                    },
+                    "arguments": [
+                      {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                311,
+                                315
+                              ],
+                              "parentNode": 1272,
+                              "uid": 1273
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                316,
+                                321
+                              ],
+                              "parentNode": 1272,
+                              "uid": 1274
+                            },
+                            "range": [
+                              311,
+                              321
+                            ],
+                            "parentNode": 1271,
+                            "uid": 1272
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "get",
+                            "range": [
+                              322,
+                              325
+                            ],
+                            "parentNode": 1271,
+                            "uid": 1275
+                          },
+                          "range": [
+                            311,
+                            325
+                          ],
+                          "parentNode": 1270,
+                          "uid": 1271
+                        },
+                        "arguments": [],
+                        "range": [
+                          311,
+                          327
+                        ],
+                        "parentNode": 1266,
+                        "uid": 1270
+                      }
+                    ],
+                    "range": [
+                      271,
+                      328
+                    ],
+                    "parentNode": 1265,
+                    "uid": 1266
+                  },
+                  "range": [
+                    271,
+                    329
+                  ],
+                  "parentNode": 1264,
+                  "uid": 1265
+                }
+              ],
+              "range": [
+                263,
+                335
+              ],
+              "parentNode": 1263,
+              "uid": 1264
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              251,
+              335
+            ],
+            "parentNode": 1261,
+            "uid": 1263,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            221,
+            335
+          ],
+          "parentNode": 1248,
+          "uid": 1261
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "verifyUpdatePaymentDueDate",
+            "range": [
+              422,
+              448
+            ],
+            "parentNode": 1276,
+            "uid": 1277
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "paymentData",
+                "range": [
+                  460,
+                  471
+                ],
+                "parentNode": 1278,
+                "uid": 1279
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          481,
+                          488
+                        ],
+                        "parentNode": 1283,
+                        "uid": 1284
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "getUpdatePaymentDueDateVerify",
+                        "range": [
+                          489,
+                          518
+                        ],
+                        "parentNode": 1283,
+                        "uid": 1285
+                      },
+                      "range": [
+                        481,
+                        518
+                      ],
+                      "parentNode": 1282,
+                      "uid": 1283
+                    },
+                    "arguments": [
+                      {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                519,
+                                523
+                              ],
+                              "parentNode": 1288,
+                              "uid": 1289
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                524,
+                                529
+                              ],
+                              "parentNode": 1288,
+                              "uid": 1290
+                            },
+                            "range": [
+                              519,
+                              529
+                            ],
+                            "parentNode": 1287,
+                            "uid": 1288
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "get",
+                            "range": [
+                              530,
+                              533
+                            ],
+                            "parentNode": 1287,
+                            "uid": 1291
+                          },
+                          "range": [
+                            519,
+                            533
+                          ],
+                          "parentNode": 1286,
+                          "uid": 1287
+                        },
+                        "arguments": [],
+                        "range": [
+                          519,
+                          535
+                        ],
+                        "parentNode": 1282,
+                        "uid": 1286
+                      }
+                    ],
+                    "range": [
+                      481,
+                      536
+                    ],
+                    "parentNode": 1281,
+                    "uid": 1282
+                  },
+                  "range": [
+                    481,
+                    537
+                  ],
+                  "parentNode": 1280,
+                  "uid": 1281
+                }
+              ],
+              "range": [
+                473,
+                543
+              ],
+              "parentNode": 1278,
+              "uid": 1280
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              450,
+              543
+            ],
+            "parentNode": 1276,
+            "uid": 1278,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            422,
+            543
+          ],
+          "parentNode": 1248,
+          "uid": 1276
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "confirmUpdatePaymentDueDate",
+            "range": [
+              605,
+              632
+            ],
+            "parentNode": 1292,
+            "uid": 1293
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          654,
+                          661
+                        ],
+                        "parentNode": 1298,
+                        "uid": 1299
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "getUpdatePaymentDueDateConfirm",
+                        "range": [
+                          662,
+                          692
+                        ],
+                        "parentNode": 1298,
+                        "uid": 1300
+                      },
+                      "range": [
+                        654,
+                        692
+                      ],
+                      "parentNode": 1297,
+                      "uid": 1298
+                    },
+                    "arguments": [
+                      {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                693,
+                                697
+                              ],
+                              "parentNode": 1303,
+                              "uid": 1304
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                698,
+                                703
+                              ],
+                              "parentNode": 1303,
+                              "uid": 1305
+                            },
+                            "range": [
+                              693,
+                              703
+                            ],
+                            "parentNode": 1302,
+                            "uid": 1303
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "get",
+                            "range": [
+                              704,
+                              707
+                            ],
+                            "parentNode": 1302,
+                            "uid": 1306
+                          },
+                          "range": [
+                            693,
+                            707
+                          ],
+                          "parentNode": 1301,
+                          "uid": 1302
+                        },
+                        "arguments": [],
+                        "range": [
+                          693,
+                          709
+                        ],
+                        "parentNode": 1297,
+                        "uid": 1301
+                      }
+                    ],
+                    "range": [
+                      654,
+                      710
+                    ],
+                    "parentNode": 1296,
+                    "uid": 1297
+                  },
+                  "range": [
+                    654,
+                    711
+                  ],
+                  "parentNode": 1295,
+                  "uid": 1296
+                }
+              ],
+              "range": [
+                646,
+                717
+              ],
+              "parentNode": 1294,
+              "uid": 1295
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              634,
+              717
+            ],
+            "parentNode": 1292,
+            "uid": 1294,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            605,
+            717
+          ],
+          "parentNode": 1248,
+          "uid": 1292
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "cancelUpdatePaymentDueDate",
+            "range": [
+              778,
+              804
+            ],
+            "parentNode": 1307,
+            "uid": 1308
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          826,
+                          833
+                        ],
+                        "parentNode": 1313,
+                        "uid": 1314
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "getUpdatePaymentDueDateCancel",
+                        "range": [
+                          834,
+                          863
+                        ],
+                        "parentNode": 1313,
+                        "uid": 1315
+                      },
+                      "range": [
+                        826,
+                        863
+                      ],
+                      "parentNode": 1312,
+                      "uid": 1313
+                    },
+                    "arguments": [
+                      {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                864,
+                                868
+                              ],
+                              "parentNode": 1318,
+                              "uid": 1319
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                869,
+                                874
+                              ],
+                              "parentNode": 1318,
+                              "uid": 1320
+                            },
+                            "range": [
+                              864,
+                              874
+                            ],
+                            "parentNode": 1317,
+                            "uid": 1318
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "get",
+                            "range": [
+                              875,
+                              878
+                            ],
+                            "parentNode": 1317,
+                            "uid": 1321
+                          },
+                          "range": [
+                            864,
+                            878
+                          ],
+                          "parentNode": 1316,
+                          "uid": 1317
+                        },
+                        "arguments": [],
+                        "range": [
+                          864,
+                          880
+                        ],
+                        "parentNode": 1312,
+                        "uid": 1316
+                      }
+                    ],
+                    "range": [
+                      826,
+                      881
+                    ],
+                    "parentNode": 1311,
+                    "uid": 1312
+                  },
+                  "range": [
+                    826,
+                    882
+                  ],
+                  "parentNode": 1310,
+                  "uid": 1311
+                }
+              ],
+              "range": [
+                818,
+                888
+              ],
+              "parentNode": 1309,
+              "uid": 1310
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              806,
+              888
+            ],
+            "parentNode": 1307,
+            "uid": 1309,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            778,
+            888
+          ],
+          "parentNode": 1248,
+          "uid": 1307
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "exitUpdatePaymentDueDate",
+            "range": [
+              947,
+              971
+            ],
+            "parentNode": 1322,
+            "uid": 1323
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "inputData",
+                        "range": [
+                          997,
+                          1006
+                        ],
+                        "parentNode": 1327,
+                        "uid": 1328
+                      },
+                      "init": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                1009,
+                                1013
+                              ],
+                              "parentNode": 1331,
+                              "uid": 1332
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                1014,
+                                1019
+                              ],
+                              "parentNode": 1331,
+                              "uid": 1333
+                            },
+                            "range": [
+                              1009,
+                              1019
+                            ],
+                            "parentNode": 1330,
+                            "uid": 1331
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "get",
+                            "range": [
+                              1020,
+                              1023
+                            ],
+                            "parentNode": 1330,
+                            "uid": 1334
+                          },
+                          "range": [
+                            1009,
+                            1023
+                          ],
+                          "parentNode": 1329,
+                          "uid": 1330
+                        },
+                        "arguments": [],
+                        "range": [
+                          1009,
+                          1025
+                        ],
+                        "parentNode": 1327,
+                        "uid": 1329
+                      },
+                      "range": [
+                        997,
+                        1025
+                      ],
+                      "parentNode": 1326,
+                      "uid": 1327
+                    }
+                  ],
+                  "kind": "var",
+                  "range": [
+                    993,
+                    1026
+                  ],
+                  "parentNode": 1325,
+                  "uid": 1326
+                },
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "params",
+                        "range": [
+                          1072,
+                          1078
+                        ],
+                        "parentNode": 1336,
+                        "uid": 1337
+                      },
+                      "init": {
+                        "type": "ArrayExpression",
+                        "elements": [
+                          {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "inputData",
+                              "range": [
+                                1082,
+                                1091
+                              ],
+                              "parentNode": 1339,
+                              "uid": 1340
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "accountId",
+                              "range": [
+                                1092,
+                                1101
+                              ],
+                              "parentNode": 1339,
+                              "uid": 1341
+                            },
+                            "range": [
+                              1082,
+                              1101
+                            ],
+                            "parentNode": 1338,
+                            "uid": 1339
+                          }
+                        ],
+                        "range": [
+                          1081,
+                          1102
+                        ],
+                        "parentNode": 1336,
+                        "uid": 1338
+                      },
+                      "range": [
+                        1072,
+                        1102
+                      ],
+                      "parentNode": 1335,
+                      "uid": 1336
+                    }
+                  ],
+                  "kind": "var",
+                  "range": [
+                    1068,
+                    1103
+                  ],
+                  "parentNode": 1325,
+                  "uid": 1335
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "context",
+                          "range": [
+                            1110,
+                            1117
+                          ],
+                          "parentNode": 1345,
+                          "uid": 1346
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "appChannel",
+                          "range": [
+                            1118,
+                            1128
+                          ],
+                          "parentNode": 1345,
+                          "uid": 1347
+                        },
+                        "range": [
+                          1110,
+                          1128
+                        ],
+                        "parentNode": 1344,
+                        "uid": 1345
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          1129,
+                          1133
+                        ],
+                        "parentNode": 1344,
+                        "uid": 1348
+                      },
+                      "range": [
+                        1110,
+                        1133
+                      ],
+                      "parentNode": 1343,
+                      "uid": 1344
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "initAccounts",
+                        "raw": "'initAccounts'",
+                        "range": [
+                          1134,
+                          1148
+                        ],
+                        "parentNode": 1343,
+                        "uid": 1349
+                      },
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "params",
+                              "range": [
+                                1160,
+                                1166
+                              ],
+                              "parentNode": 1351,
+                              "uid": 1352
+                            },
+                            "value": {
+                              "type": "Identifier",
+                              "name": "params",
+                              "range": [
+                                1168,
+                                1174
+                              ],
+                              "parentNode": 1351,
+                              "uid": 1353
+                            },
+                            "kind": "init",
+                            "range": [
+                              1160,
+                              1174
+                            ],
+                            "parentNode": 1350,
+                            "uid": 1351
+                          }
+                        ],
+                        "range": [
+                          1150,
+                          1182
+                        ],
+                        "parentNode": 1343,
+                        "uid": 1350
+                      }
+                    ],
+                    "range": [
+                      1110,
+                      1183
+                    ],
+                    "parentNode": 1342,
+                    "uid": 1343
+                  },
+                  "range": [
+                    1110,
+                    1184
+                  ],
+                  "parentNode": 1325,
+                  "uid": 1342
+                }
+              ],
+              "range": [
+                985,
+                1190
+              ],
+              "parentNode": 1324,
+              "uid": 1325
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              973,
+              1190
+            ],
+            "parentNode": 1322,
+            "uid": 1324,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            947,
+            1190
+          ],
+          "parentNode": 1248,
+          "uid": 1322
+        }
+      ],
+      "range": [
+        59,
+        1194
+      ],
+      "parentNode": 1247,
+      "uid": 1248
+    },
+    "range": [
+      52,
+      1195
+    ],
+    "parentNode": 1242,
+    "uid": 1247,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 29,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 862,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./updatePaymentDueDate",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "initiateUpdatePaymentDueDate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "initiateUpdatePaymentDueDate: function() {"
+      },
+      {
+        "name": "verifyUpdatePaymentDueDate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "paymentData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "verifyUpdatePaymentDueDate: function(paymentData) {"
+      },
+      {
+        "name": "confirmUpdatePaymentDueDate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "confirmUpdatePaymentDueDate: function() {"
+      },
+      {
+        "name": "cancelUpdatePaymentDueDate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 17,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "cancelUpdatePaymentDueDate: function() {"
+      },
+      {
+        "name": "exitUpdatePaymentDueDate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 20,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exitUpdatePaymentDueDate: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "fileName": "updatePaymentDueDate.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 51
+}

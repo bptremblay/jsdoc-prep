@@ -1,0 +1,351 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "mailing_address_addition_verification",
+      "AMD": true,
+      "webPath": "/view/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MailingAddressListView'.",
+        "code": "wfJD",
+        "evidence": "return function MailingAddressListView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MailingAddressListView'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myProfile/mailingAddressAdditionVerification.js",
+  "folderPath": "test-source/view/myProfile",
+  "fileName": "mailingAddressAdditionVerification.js",
+  "packagePath": "/view/myProfile",
+  "webPath": "/view/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "mailing_address_addition_verification",
+  "name": "mailingAddressAdditionVerification",
+  "camelName": "MailingAddressAdditionVerification",
+  "processedFilePath": "test-output/view/myProfile/mailingAddressAdditionVerification.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction MailingAddressListView() {\n    this.bridge = this.createBridge(require('dashboard/view/webspec/myProfile/mailingAddressAdditionVerification'));\n    this.template = require('dashboard/template/myProfile/mailingAddressAdditionVerification');\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "MailingAddressListView",
+        "range": [
+          137,
+          159
+        ],
+        "parentNode": 313,
+        "uid": 314
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    168,
+                    172
+                  ],
+                  "parentNode": 318,
+                  "uid": 319
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    173,
+                    179
+                  ],
+                  "parentNode": 318,
+                  "uid": 320
+                },
+                "range": [
+                  168,
+                  179
+                ],
+                "parentNode": 317,
+                "uid": 318
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression",
+                    "range": [
+                      182,
+                      186
+                    ],
+                    "parentNode": 322,
+                    "uid": 323
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createBridge",
+                    "range": [
+                      187,
+                      199
+                    ],
+                    "parentNode": 322,
+                    "uid": 324
+                  },
+                  "range": [
+                    182,
+                    199
+                  ],
+                  "parentNode": 321,
+                  "uid": 322
+                },
+                "arguments": [
+                  {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        200,
+                        207
+                      ],
+                      "parentNode": 325,
+                      "uid": 326
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "dashboard/view/webspec/myProfile/mailingAddressAdditionVerification",
+                        "raw": "'dashboard/view/webspec/myProfile/mailingAddressAdditionVerification'",
+                        "range": [
+                          208,
+                          277
+                        ],
+                        "parentNode": 325,
+                        "uid": 327
+                      }
+                    ],
+                    "range": [
+                      200,
+                      278
+                    ],
+                    "parentNode": 321,
+                    "uid": 325
+                  }
+                ],
+                "range": [
+                  182,
+                  279
+                ],
+                "parentNode": 317,
+                "uid": 321
+              },
+              "range": [
+                168,
+                279
+              ],
+              "parentNode": 316,
+              "uid": 317
+            },
+            "range": [
+              168,
+              280
+            ],
+            "parentNode": 315,
+            "uid": 316
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    285,
+                    289
+                  ],
+                  "parentNode": 330,
+                  "uid": 331
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    290,
+                    298
+                  ],
+                  "parentNode": 330,
+                  "uid": 332
+                },
+                "range": [
+                  285,
+                  298
+                ],
+                "parentNode": 329,
+                "uid": 330
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    301,
+                    308
+                  ],
+                  "parentNode": 333,
+                  "uid": 334
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myProfile/mailingAddressAdditionVerification",
+                    "raw": "'dashboard/template/myProfile/mailingAddressAdditionVerification'",
+                    "range": [
+                      309,
+                      374
+                    ],
+                    "parentNode": 333,
+                    "uid": 335
+                  }
+                ],
+                "range": [
+                  301,
+                  375
+                ],
+                "parentNode": 329,
+                "uid": 333
+              },
+              "range": [
+                285,
+                375
+              ],
+              "parentNode": 328,
+              "uid": 329
+            },
+            "range": [
+              285,
+              376
+            ],
+            "parentNode": 315,
+            "uid": 328
+          }
+        ],
+        "range": [
+          162,
+          380
+        ],
+        "parentNode": 313,
+        "uid": 315
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        128,
+        380
+      ],
+      "parentNode": 312,
+      "uid": 313,
+      "returnType": ""
+    },
+    "range": [
+      121,
+      381
+    ],
+    "parentNode": 311,
+    "uid": 312,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 9,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 295,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mailingAddressAdditionVerification",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "MailingAddressListView": 125
+    },
+    "methods": [
+      {
+        "name": "MailingAddressListView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function MailingAddressListView() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "fileName": "mailingAddressAdditionVerification.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 15
+}

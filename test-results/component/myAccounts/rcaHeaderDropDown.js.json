@@ -1,0 +1,650 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "rca_header_drop_down",
+      "AMD": true,
+      "webPath": "/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountDetails'.",
+        "code": "wfJD",
+        "evidence": "requestAccountDetails: function() {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestThingsYouCanDo'.",
+        "code": "wfJD",
+        "evidence": "requestThingsYouCanDo: function() {},",
+        "line": 12,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestThingsYouCanDo'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exitThingsYouCanDo'.",
+        "code": "wfJD",
+        "evidence": "exitThingsYouCanDo: function() {},",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exitThingsYouCanDo'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updatePaymentDueDate'.",
+        "code": "wfJD",
+        "evidence": "updatePaymentDueDate: function() {}",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updatePaymentDueDate'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myAccounts/rcaHeaderDropDown.js",
+  "folderPath": "test-source/component/myAccounts",
+  "fileName": "rcaHeaderDropDown.js",
+  "packagePath": "/component/myAccounts",
+  "webPath": "/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "rca_header_drop_down",
+  "name": "rcaHeaderDropDown",
+  "camelName": "RcaHeaderDropDown",
+  "processedFilePath": "test-output/component/myAccounts/rcaHeaderDropDown.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myAccounts/rcaHeaderDropDown */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Request account details.\n     */\n    requestAccountDetails: function () {\n      context.appChannel.emit('getExpandedRcaLoan', this.model.get());\n    },\n    /**\n     * Request things you can do.\n     */\n    requestThingsYouCanDo: function () {},\n    /**\n     * Exit things you can do.\n     */\n    exitThingsYouCanDo: function () {},\n    /**\n     * Update payment due date.\n     */\n    updatePaymentDueDate: function () {}\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              94,
+              98
+            ],
+            "parentNode": 579,
+            "uid": 580
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        120,
+                        127
+                      ],
+                      "parentNode": 584,
+                      "uid": 585
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            130,
+                            134
+                          ],
+                          "parentNode": 587,
+                          "uid": 588
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            135,
+                            143
+                          ],
+                          "parentNode": 587,
+                          "uid": 589
+                        },
+                        "range": [
+                          130,
+                          143
+                        ],
+                        "parentNode": 586,
+                        "uid": 587
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          144,
+                          151
+                        ],
+                        "parentNode": 586,
+                        "uid": 590
+                      },
+                      "range": [
+                        130,
+                        151
+                      ],
+                      "parentNode": 584,
+                      "uid": 586
+                    },
+                    "range": [
+                      120,
+                      151
+                    ],
+                    "parentNode": 583,
+                    "uid": 584
+                  },
+                  "range": [
+                    120,
+                    152
+                  ],
+                  "parentNode": 582,
+                  "uid": 583
+                }
+              ],
+              "range": [
+                112,
+                158
+              ],
+              "parentNode": 581,
+              "uid": 582
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              100,
+              158
+            ],
+            "parentNode": 579,
+            "uid": 581,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            94,
+            158
+          ],
+          "parentNode": 578,
+          "uid": 579
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestAccountDetails",
+            "range": [
+              212,
+              233
+            ],
+            "parentNode": 591,
+            "uid": 592
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "context",
+                          "range": [
+                            255,
+                            262
+                          ],
+                          "parentNode": 598,
+                          "uid": 599
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "appChannel",
+                          "range": [
+                            263,
+                            273
+                          ],
+                          "parentNode": 598,
+                          "uid": 600
+                        },
+                        "range": [
+                          255,
+                          273
+                        ],
+                        "parentNode": 597,
+                        "uid": 598
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          274,
+                          278
+                        ],
+                        "parentNode": 597,
+                        "uid": 601
+                      },
+                      "range": [
+                        255,
+                        278
+                      ],
+                      "parentNode": 596,
+                      "uid": 597
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "getExpandedRcaLoan",
+                        "raw": "'getExpandedRcaLoan'",
+                        "range": [
+                          279,
+                          299
+                        ],
+                        "parentNode": 596,
+                        "uid": 602
+                      },
+                      {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                301,
+                                305
+                              ],
+                              "parentNode": 605,
+                              "uid": 606
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                306,
+                                311
+                              ],
+                              "parentNode": 605,
+                              "uid": 607
+                            },
+                            "range": [
+                              301,
+                              311
+                            ],
+                            "parentNode": 604,
+                            "uid": 605
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "get",
+                            "range": [
+                              312,
+                              315
+                            ],
+                            "parentNode": 604,
+                            "uid": 608
+                          },
+                          "range": [
+                            301,
+                            315
+                          ],
+                          "parentNode": 603,
+                          "uid": 604
+                        },
+                        "arguments": [],
+                        "range": [
+                          301,
+                          317
+                        ],
+                        "parentNode": 596,
+                        "uid": 603
+                      }
+                    ],
+                    "range": [
+                      255,
+                      318
+                    ],
+                    "parentNode": 595,
+                    "uid": 596
+                  },
+                  "range": [
+                    255,
+                    319
+                  ],
+                  "parentNode": 594,
+                  "uid": 595
+                }
+              ],
+              "range": [
+                247,
+                325
+              ],
+              "parentNode": 593,
+              "uid": 594
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              235,
+              325
+            ],
+            "parentNode": 591,
+            "uid": 593,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            212,
+            325
+          ],
+          "parentNode": 578,
+          "uid": 591
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestThingsYouCanDo",
+            "range": [
+              381,
+              402
+            ],
+            "parentNode": 609,
+            "uid": 610
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                416,
+                418
+              ],
+              "parentNode": 611,
+              "uid": 612
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              404,
+              418
+            ],
+            "parentNode": 609,
+            "uid": 611,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            381,
+            418
+          ],
+          "parentNode": 578,
+          "uid": 609
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "exitThingsYouCanDo",
+            "range": [
+              471,
+              489
+            ],
+            "parentNode": 613,
+            "uid": 614
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                503,
+                505
+              ],
+              "parentNode": 615,
+              "uid": 616
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              491,
+              505
+            ],
+            "parentNode": 613,
+            "uid": 615,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            471,
+            505
+          ],
+          "parentNode": 578,
+          "uid": 613
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "updatePaymentDueDate",
+            "range": [
+              559,
+              579
+            ],
+            "parentNode": 617,
+            "uid": 618
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                593,
+                595
+              ],
+              "parentNode": 619,
+              "uid": 620
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              581,
+              595
+            ],
+            "parentNode": 617,
+            "uid": 619,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            559,
+            595
+          ],
+          "parentNode": 578,
+          "uid": 617
+        }
+      ],
+      "range": [
+        59,
+        599
+      ],
+      "parentNode": 577,
+      "uid": 578
+    },
+    "range": [
+      52,
+      600
+    ],
+    "parentNode": 572,
+    "uid": 577,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 16,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 378,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./rcaHeaderDropDown",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "requestAccountDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountDetails: function() {"
+      },
+      {
+        "name": "requestThingsYouCanDo",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 12,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestThingsYouCanDo: function() {},"
+      },
+      {
+        "name": "exitThingsYouCanDo",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exitThingsYouCanDo: function() {},"
+      },
+      {
+        "name": "updatePaymentDueDate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "updatePaymentDueDate: function() {}"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "fileName": "rcaHeaderDropDown.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 33
+}

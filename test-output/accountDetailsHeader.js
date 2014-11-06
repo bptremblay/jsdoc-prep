@@ -7,7 +7,8 @@ define(
     /**
      * Account details header view.
      */
-    return function accountDetailsHeaderView() {
+    return /** @constructor */
+    function AccountDetailsHeaderView() {
       this.bridge = this.createBridge(require('dashboard/view/webspec/myAccounts/accountDetailsHeader'));
       this.template = require('dashboard/template/myAccounts/accountDetailsHeaderShared');
       /**

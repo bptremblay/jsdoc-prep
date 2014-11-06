@@ -1,0 +1,441 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "main_bill_pay",
+      "AMD": true,
+      "webPath": "/view/payments/shared"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MainBillPayView'.",
+        "code": "wfJD",
+        "evidence": "return function MainBillPayView() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MainBillPayView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/payments/shared/mainBillPay.js",
+  "folderPath": "test-source/view/payments/shared",
+  "fileName": "mainBillPay.js",
+  "packagePath": "/view/payments/shared",
+  "webPath": "/view/payments/shared",
+  "libFile": false,
+  "min": false,
+  "realName": "main_bill_pay",
+  "name": "mainBillPay",
+  "camelName": "MainBillPay",
+  "processedFilePath": "test-output/view/payments/shared/mainBillPay.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction MainBillPayView() {\n    var controllerChannel = require('blue/event/channel/controller'),\n      template = require('blue/template');\n    this.template = require('dashboard/template/payments/shared/mainBillPay');\n    /**\n     * Init.\n     */\n    this.init = function () {};\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "MainBillPayView",
+        "range": [
+          285,
+          300
+        ],
+        "parentNode": 453,
+        "uid": 454
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "controllerChannel",
+                  "range": [
+                    313,
+                    330
+                  ],
+                  "parentNode": 457,
+                  "uid": 458
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      333,
+                      340
+                    ],
+                    "parentNode": 459,
+                    "uid": 460
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "blue/event/channel/controller",
+                      "raw": "'blue/event/channel/controller'",
+                      "range": [
+                        341,
+                        372
+                      ],
+                      "parentNode": 459,
+                      "uid": 461
+                    }
+                  ],
+                  "range": [
+                    333,
+                    373
+                  ],
+                  "parentNode": 457,
+                  "uid": 459
+                },
+                "range": [
+                  313,
+                  373
+                ],
+                "parentNode": 456,
+                "uid": 457
+              },
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    381,
+                    389
+                  ],
+                  "parentNode": 462,
+                  "uid": 463
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      392,
+                      399
+                    ],
+                    "parentNode": 464,
+                    "uid": 465
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "blue/template",
+                      "raw": "'blue/template'",
+                      "range": [
+                        400,
+                        415
+                      ],
+                      "parentNode": 464,
+                      "uid": 466
+                    }
+                  ],
+                  "range": [
+                    392,
+                    416
+                  ],
+                  "parentNode": 462,
+                  "uid": 464
+                },
+                "range": [
+                  381,
+                  416
+                ],
+                "parentNode": 456,
+                "uid": 462
+              }
+            ],
+            "kind": "var",
+            "range": [
+              309,
+              417
+            ],
+            "parentNode": 455,
+            "uid": 456
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    422,
+                    426
+                  ],
+                  "parentNode": 469,
+                  "uid": 470
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    427,
+                    435
+                  ],
+                  "parentNode": 469,
+                  "uid": 471
+                },
+                "range": [
+                  422,
+                  435
+                ],
+                "parentNode": 468,
+                "uid": 469
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    438,
+                    445
+                  ],
+                  "parentNode": 472,
+                  "uid": 473
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/payments/shared/mainBillPay",
+                    "raw": "'dashboard/template/payments/shared/mainBillPay'",
+                    "range": [
+                      446,
+                      494
+                    ],
+                    "parentNode": 472,
+                    "uid": 474
+                  }
+                ],
+                "range": [
+                  438,
+                  495
+                ],
+                "parentNode": 468,
+                "uid": 472
+              },
+              "range": [
+                422,
+                495
+              ],
+              "parentNode": 467,
+              "uid": 468
+            },
+            "range": [
+              422,
+              496
+            ],
+            "parentNode": 455,
+            "uid": 467
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    530,
+                    534
+                  ],
+                  "parentNode": 477,
+                  "uid": 478
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    535,
+                    539
+                  ],
+                  "parentNode": 477,
+                  "uid": 479
+                },
+                "range": [
+                  530,
+                  539
+                ],
+                "parentNode": 476,
+                "uid": 477
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    554,
+                    556
+                  ],
+                  "parentNode": 480,
+                  "uid": 481
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  542,
+                  556
+                ],
+                "parentNode": 476,
+                "uid": 480,
+                "returnType": ""
+              },
+              "range": [
+                530,
+                556
+              ],
+              "parentNode": 475,
+              "uid": 476
+            },
+            "range": [
+              530,
+              557
+            ],
+            "parentNode": 455,
+            "uid": 475
+          }
+        ],
+        "range": [
+          303,
+          561
+        ],
+        "parentNode": 453,
+        "uid": 455
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        276,
+        561
+      ],
+      "parentNode": 452,
+      "uid": 453,
+      "returnType": ""
+    },
+    "range": [
+      269,
+      562
+    ],
+    "parentNode": 445,
+    "uid": 452,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 19,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/payments/shared",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 461,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mainBillPay",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "MainBillPayView": 182
+    },
+    "methods": [
+      {
+        "name": "MainBillPayView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function MainBillPayView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/payments/shared",
+    "fileName": "mainBillPay.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 21
+}

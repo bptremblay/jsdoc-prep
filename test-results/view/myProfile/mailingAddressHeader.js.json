@@ -1,0 +1,507 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "mailing_address_header",
+      "AMD": true,
+      "webPath": "/view/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MailingAddressHeaderView'.",
+        "code": "wfJD",
+        "evidence": "return function MailingAddressHeaderView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MailingAddressHeaderView'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myProfile/mailingAddressHeader.js",
+  "folderPath": "test-source/view/myProfile",
+  "fileName": "mailingAddressHeader.js",
+  "packagePath": "/view/myProfile",
+  "webPath": "/view/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "mailing_address_header",
+  "name": "mailingAddressHeader",
+  "camelName": "MailingAddressHeader",
+  "processedFilePath": "test-output/view/myProfile/mailingAddressHeader.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction MailingAddressHeaderView() {\n    var MailingAddressHeaderBridge = this.createBridgePrototype(require('dashboard/view/webspec/myProfile/mailingAddressHeader'));\n    this.bridge = new MailingAddressHeaderBridge({\n      targets: {\n        addPermanentAddress: '#add-permanent-address',\n        addTemporaryAddress: '#add-temporary-address'\n      }\n    });\n    this.template = require('dashboard/template/myProfile/mailingAddressHeader');\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "MailingAddressHeaderView",
+        "range": [
+          139,
+          163
+        ],
+        "parentNode": 481,
+        "uid": 482
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "MailingAddressHeaderBridge",
+                  "range": [
+                    176,
+                    202
+                  ],
+                  "parentNode": 485,
+                  "uid": 486
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "ThisExpression",
+                      "range": [
+                        205,
+                        209
+                      ],
+                      "parentNode": 488,
+                      "uid": 489
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "createBridgePrototype",
+                      "range": [
+                        210,
+                        231
+                      ],
+                      "parentNode": 488,
+                      "uid": 490
+                    },
+                    "range": [
+                      205,
+                      231
+                    ],
+                    "parentNode": 487,
+                    "uid": 488
+                  },
+                  "arguments": [
+                    {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "Identifier",
+                        "name": "require",
+                        "range": [
+                          232,
+                          239
+                        ],
+                        "parentNode": 491,
+                        "uid": 492
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": "dashboard/view/webspec/myProfile/mailingAddressHeader",
+                          "raw": "'dashboard/view/webspec/myProfile/mailingAddressHeader'",
+                          "range": [
+                            240,
+                            295
+                          ],
+                          "parentNode": 491,
+                          "uid": 493
+                        }
+                      ],
+                      "range": [
+                        232,
+                        296
+                      ],
+                      "parentNode": 487,
+                      "uid": 491
+                    }
+                  ],
+                  "range": [
+                    205,
+                    297
+                  ],
+                  "parentNode": 485,
+                  "uid": 487
+                },
+                "range": [
+                  176,
+                  297
+                ],
+                "parentNode": 484,
+                "uid": 485
+              }
+            ],
+            "kind": "var",
+            "range": [
+              172,
+              298
+            ],
+            "parentNode": 483,
+            "uid": 484
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    303,
+                    307
+                  ],
+                  "parentNode": 496,
+                  "uid": 497
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    308,
+                    314
+                  ],
+                  "parentNode": 496,
+                  "uid": 498
+                },
+                "range": [
+                  303,
+                  314
+                ],
+                "parentNode": 495,
+                "uid": 496
+              },
+              "right": {
+                "type": "NewExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "MailingAddressHeaderBridge",
+                  "range": [
+                    321,
+                    347
+                  ],
+                  "parentNode": 499,
+                  "uid": 500
+                },
+                "arguments": [
+                  {
+                    "type": "ObjectExpression",
+                    "properties": [
+                      {
+                        "type": "Property",
+                        "key": {
+                          "type": "Identifier",
+                          "name": "targets",
+                          "range": [
+                            356,
+                            363
+                          ],
+                          "parentNode": 502,
+                          "uid": 503
+                        },
+                        "value": {
+                          "type": "ObjectExpression",
+                          "properties": [
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "addPermanentAddress",
+                                "range": [
+                                  375,
+                                  394
+                                ],
+                                "parentNode": 505,
+                                "uid": 506
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#add-permanent-address",
+                                "raw": "'#add-permanent-address'",
+                                "range": [
+                                  396,
+                                  420
+                                ],
+                                "parentNode": 505,
+                                "uid": 507
+                              },
+                              "kind": "init",
+                              "range": [
+                                375,
+                                420
+                              ],
+                              "parentNode": 504,
+                              "uid": 505
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "addTemporaryAddress",
+                                "range": [
+                                  430,
+                                  449
+                                ],
+                                "parentNode": 508,
+                                "uid": 509
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#add-temporary-address",
+                                "raw": "'#add-temporary-address'",
+                                "range": [
+                                  451,
+                                  475
+                                ],
+                                "parentNode": 508,
+                                "uid": 510
+                              },
+                              "kind": "init",
+                              "range": [
+                                430,
+                                475
+                              ],
+                              "parentNode": 504,
+                              "uid": 508
+                            }
+                          ],
+                          "range": [
+                            365,
+                            483
+                          ],
+                          "parentNode": 502,
+                          "uid": 504
+                        },
+                        "kind": "init",
+                        "range": [
+                          356,
+                          483
+                        ],
+                        "parentNode": 501,
+                        "uid": 502
+                      }
+                    ],
+                    "range": [
+                      348,
+                      489
+                    ],
+                    "parentNode": 499,
+                    "uid": 501
+                  }
+                ],
+                "range": [
+                  317,
+                  490
+                ],
+                "parentNode": 495,
+                "uid": 499
+              },
+              "range": [
+                303,
+                490
+              ],
+              "parentNode": 494,
+              "uid": 495
+            },
+            "range": [
+              303,
+              491
+            ],
+            "parentNode": 483,
+            "uid": 494
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    496,
+                    500
+                  ],
+                  "parentNode": 513,
+                  "uid": 514
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    501,
+                    509
+                  ],
+                  "parentNode": 513,
+                  "uid": 515
+                },
+                "range": [
+                  496,
+                  509
+                ],
+                "parentNode": 512,
+                "uid": 513
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    512,
+                    519
+                  ],
+                  "parentNode": 516,
+                  "uid": 517
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myProfile/mailingAddressHeader",
+                    "raw": "'dashboard/template/myProfile/mailingAddressHeader'",
+                    "range": [
+                      520,
+                      571
+                    ],
+                    "parentNode": 516,
+                    "uid": 518
+                  }
+                ],
+                "range": [
+                  512,
+                  572
+                ],
+                "parentNode": 512,
+                "uid": 516
+              },
+              "range": [
+                496,
+                572
+              ],
+              "parentNode": 511,
+              "uid": 512
+            },
+            "range": [
+              496,
+              573
+            ],
+            "parentNode": 483,
+            "uid": 511
+          }
+        ],
+        "range": [
+          166,
+          577
+        ],
+        "parentNode": 481,
+        "uid": 483
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        130,
+        577
+      ],
+      "parentNode": 480,
+      "uid": 481,
+      "returnType": ""
+    },
+    "range": [
+      123,
+      578
+    ],
+    "parentNode": 479,
+    "uid": 480,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 15,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 490,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mailingAddressHeader",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "MailingAddressHeaderView": 191
+    },
+    "methods": [
+      {
+        "name": "MailingAddressHeaderView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function MailingAddressHeaderView() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "fileName": "mailingAddressHeader.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 21
+}

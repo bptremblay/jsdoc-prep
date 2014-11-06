@@ -1,0 +1,433 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "update_payment_due_date_confirm",
+      "AMD": true,
+      "webPath": "/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updatePaymentDueDateConfirmView'.",
+        "code": "wfJD",
+        "evidence": "return function updatePaymentDueDateConfirmView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updatePaymentDueDateConfirmView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {};",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myAccounts/updatePaymentDueDateConfirm.js",
+  "folderPath": "test-source/view/myAccounts",
+  "fileName": "updatePaymentDueDateConfirm.js",
+  "packagePath": "/view/myAccounts",
+  "webPath": "/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "update_payment_due_date_confirm",
+  "name": "updatePaymentDueDateConfirm",
+  "camelName": "UpdatePaymentDueDateConfirm",
+  "processedFilePath": "test-output/view/myAccounts/updatePaymentDueDateConfirm.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction UpdatePaymentDueDateConfirmView() {\n    this.template = require('dashboard/template/myAccounts/updatePaymentDueDateConfirm');\n    this.bridge = this.createBridge(require('dashboard/view/webspec/myAccounts/updatePaymentDueDateConfirm'));\n    /**\n     * Init.\n     */\n    this.init = function () {};\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "updatePaymentDueDateConfirmView",
+        "range": [
+          101,
+          132
+        ],
+        "parentNode": 397,
+        "uid": 398
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    141,
+                    145
+                  ],
+                  "parentNode": 402,
+                  "uid": 403
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    146,
+                    154
+                  ],
+                  "parentNode": 402,
+                  "uid": 404
+                },
+                "range": [
+                  141,
+                  154
+                ],
+                "parentNode": 401,
+                "uid": 402
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    157,
+                    164
+                  ],
+                  "parentNode": 405,
+                  "uid": 406
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myAccounts/updatePaymentDueDateConfirm",
+                    "raw": "'dashboard/template/myAccounts/updatePaymentDueDateConfirm'",
+                    "range": [
+                      165,
+                      224
+                    ],
+                    "parentNode": 405,
+                    "uid": 407
+                  }
+                ],
+                "range": [
+                  157,
+                  225
+                ],
+                "parentNode": 401,
+                "uid": 405
+              },
+              "range": [
+                141,
+                225
+              ],
+              "parentNode": 400,
+              "uid": 401
+            },
+            "range": [
+              141,
+              226
+            ],
+            "parentNode": 399,
+            "uid": 400
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    231,
+                    235
+                  ],
+                  "parentNode": 410,
+                  "uid": 411
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    236,
+                    242
+                  ],
+                  "parentNode": 410,
+                  "uid": 412
+                },
+                "range": [
+                  231,
+                  242
+                ],
+                "parentNode": 409,
+                "uid": 410
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression",
+                    "range": [
+                      245,
+                      249
+                    ],
+                    "parentNode": 414,
+                    "uid": 415
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createBridge",
+                    "range": [
+                      250,
+                      262
+                    ],
+                    "parentNode": 414,
+                    "uid": 416
+                  },
+                  "range": [
+                    245,
+                    262
+                  ],
+                  "parentNode": 413,
+                  "uid": 414
+                },
+                "arguments": [
+                  {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        263,
+                        270
+                      ],
+                      "parentNode": 417,
+                      "uid": 418
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "dashboard/view/webspec/myAccounts/updatePaymentDueDateConfirm",
+                        "raw": "'dashboard/view/webspec/myAccounts/updatePaymentDueDateConfirm'",
+                        "range": [
+                          271,
+                          334
+                        ],
+                        "parentNode": 417,
+                        "uid": 419
+                      }
+                    ],
+                    "range": [
+                      263,
+                      335
+                    ],
+                    "parentNode": 413,
+                    "uid": 417
+                  }
+                ],
+                "range": [
+                  245,
+                  336
+                ],
+                "parentNode": 409,
+                "uid": 413
+              },
+              "range": [
+                231,
+                336
+              ],
+              "parentNode": 408,
+              "uid": 409
+            },
+            "range": [
+              231,
+              337
+            ],
+            "parentNode": 399,
+            "uid": 408
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    371,
+                    375
+                  ],
+                  "parentNode": 422,
+                  "uid": 423
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    376,
+                    380
+                  ],
+                  "parentNode": 422,
+                  "uid": 424
+                },
+                "range": [
+                  371,
+                  380
+                ],
+                "parentNode": 421,
+                "uid": 422
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    395,
+                    397
+                  ],
+                  "parentNode": 425,
+                  "uid": 426
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  383,
+                  397
+                ],
+                "parentNode": 421,
+                "uid": 425,
+                "returnType": ""
+              },
+              "range": [
+                371,
+                397
+              ],
+              "parentNode": 420,
+              "uid": 421
+            },
+            "range": [
+              371,
+              398
+            ],
+            "parentNode": 399,
+            "uid": 420
+          }
+        ],
+        "range": [
+          135,
+          402
+        ],
+        "parentNode": 397,
+        "uid": 399
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        92,
+        402
+      ],
+      "parentNode": 396,
+      "uid": 397,
+      "returnType": ""
+    },
+    "range": [
+      85,
+      403
+    ],
+    "parentNode": 395,
+    "uid": 396,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 9,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 323,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./updatePaymentDueDateConfirm",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "updatePaymentDueDateConfirmView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function updatePaymentDueDateConfirmView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {};"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "fileName": "updatePaymentDueDateConfirm.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 18
+}

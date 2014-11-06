@@ -1,0 +1,553 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "footer",
+      "AMD": true,
+      "webPath": "/component/footer"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'clickAction'.",
+        "code": "wfJD",
+        "evidence": "clickAction: function() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'clickAction'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateFooter'.",
+        "code": "wfJD",
+        "evidence": "updateFooter: function(data) {",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateFooter'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/footer/footer.js",
+  "folderPath": "test-source/component/footer",
+  "fileName": "footer.js",
+  "packagePath": "/component/footer",
+  "webPath": "/component/footer",
+  "libFile": false,
+  "min": false,
+  "realName": "footer",
+  "name": "footer",
+  "camelName": "Footer",
+  "processedFilePath": "test-output/component/footer/footer.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/footer/footer */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Click action.\n     * @todo Please describe the return type of this method.\n     */\n    clickAction: function () {\n      return {};\n    },\n    /**\n     * Update footer.\n     * @param data\n     * @todo Please describe the return type of this method.\n     */\n    updateFooter: function (data) {\n      context.model.lens('footerComponent.title').set(data);\n      return {};\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              94,
+              98
+            ],
+            "parentNode": 524,
+            "uid": 525
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        120,
+                        127
+                      ],
+                      "parentNode": 529,
+                      "uid": 530
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            130,
+                            134
+                          ],
+                          "parentNode": 532,
+                          "uid": 533
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            135,
+                            143
+                          ],
+                          "parentNode": 532,
+                          "uid": 534
+                        },
+                        "range": [
+                          130,
+                          143
+                        ],
+                        "parentNode": 531,
+                        "uid": 532
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          144,
+                          151
+                        ],
+                        "parentNode": 531,
+                        "uid": 535
+                      },
+                      "range": [
+                        130,
+                        151
+                      ],
+                      "parentNode": 529,
+                      "uid": 531
+                    },
+                    "range": [
+                      120,
+                      151
+                    ],
+                    "parentNode": 528,
+                    "uid": 529
+                  },
+                  "range": [
+                    120,
+                    152
+                  ],
+                  "parentNode": 527,
+                  "uid": 528
+                }
+              ],
+              "range": [
+                112,
+                158
+              ],
+              "parentNode": 526,
+              "uid": 527
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              100,
+              158
+            ],
+            "parentNode": 524,
+            "uid": 526,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            94,
+            158
+          ],
+          "parentNode": 523,
+          "uid": 524
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "clickAction",
+            "range": [
+              262,
+              273
+            ],
+            "parentNode": 536,
+            "uid": 537
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "ObjectExpression",
+                    "properties": [],
+                    "range": [
+                      302,
+                      304
+                    ],
+                    "parentNode": 540,
+                    "uid": 541
+                  },
+                  "range": [
+                    295,
+                    305
+                  ],
+                  "parentNode": 539,
+                  "uid": 540,
+                  "returnType": ""
+                }
+              ],
+              "range": [
+                287,
+                311
+              ],
+              "parentNode": 538,
+              "uid": 539
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              275,
+              311
+            ],
+            "parentNode": 536,
+            "uid": 538,
+            "returnType": "?"
+          },
+          "kind": "init",
+          "range": [
+            262,
+            311
+          ],
+          "parentNode": 523,
+          "uid": 536
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "updateFooter",
+            "range": [
+              435,
+              447
+            ],
+            "parentNode": 542,
+            "uid": 543
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "data",
+                "range": [
+                  459,
+                  463
+                ],
+                "parentNode": 544,
+                "uid": 545
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "context",
+                              "range": [
+                                473,
+                                480
+                              ],
+                              "parentNode": 552,
+                              "uid": 553
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                481,
+                                486
+                              ],
+                              "parentNode": 552,
+                              "uid": 554
+                            },
+                            "range": [
+                              473,
+                              486
+                            ],
+                            "parentNode": 551,
+                            "uid": 552
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "lens",
+                            "range": [
+                              487,
+                              491
+                            ],
+                            "parentNode": 551,
+                            "uid": 555
+                          },
+                          "range": [
+                            473,
+                            491
+                          ],
+                          "parentNode": 550,
+                          "uid": 551
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "footerComponent.title",
+                            "raw": "'footerComponent.title'",
+                            "range": [
+                              492,
+                              515
+                            ],
+                            "parentNode": 550,
+                            "uid": 556
+                          }
+                        ],
+                        "range": [
+                          473,
+                          516
+                        ],
+                        "parentNode": 549,
+                        "uid": 550
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "set",
+                        "range": [
+                          517,
+                          520
+                        ],
+                        "parentNode": 549,
+                        "uid": 557
+                      },
+                      "range": [
+                        473,
+                        520
+                      ],
+                      "parentNode": 548,
+                      "uid": 549
+                    },
+                    "arguments": [
+                      {
+                        "type": "Identifier",
+                        "name": "data",
+                        "range": [
+                          521,
+                          525
+                        ],
+                        "parentNode": 548,
+                        "uid": 558
+                      }
+                    ],
+                    "range": [
+                      473,
+                      526
+                    ],
+                    "parentNode": 547,
+                    "uid": 548
+                  },
+                  "range": [
+                    473,
+                    527
+                  ],
+                  "parentNode": 546,
+                  "uid": 547
+                },
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "ObjectExpression",
+                    "properties": [],
+                    "range": [
+                      541,
+                      543
+                    ],
+                    "parentNode": 559,
+                    "uid": 560
+                  },
+                  "range": [
+                    534,
+                    544
+                  ],
+                  "parentNode": 546,
+                  "uid": 559,
+                  "returnType": ""
+                }
+              ],
+              "range": [
+                465,
+                550
+              ],
+              "parentNode": 544,
+              "uid": 546
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              449,
+              550
+            ],
+            "parentNode": 542,
+            "uid": 544,
+            "returnType": "?"
+          },
+          "kind": "init",
+          "range": [
+            435,
+            550
+          ],
+          "parentNode": 523,
+          "uid": 542
+        }
+      ],
+      "range": [
+        59,
+        554
+      ],
+      "parentNode": 522,
+      "uid": 523
+    },
+    "range": [
+      52,
+      555
+    ],
+    "parentNode": 517,
+    "uid": 522,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 16,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/footer",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 311,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./footer",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "clickAction",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "clickAction: function() {"
+      },
+      {
+        "name": "updateFooter",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "updateFooter: function(data) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/footer",
+    "fileName": "footer.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 31
+}

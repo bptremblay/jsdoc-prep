@@ -756,7 +756,7 @@ function getTagLines(lines, tag, buffer, getPreamble) {
     }
     if (end === -1) {
         end = lines.length - 1;
-        //console.warn('Reading to the end of the doclet.');
+        // console.warn('Reading to the end of the doclet.');
     }
     tag.textStartsOnSameLine = false;
     getLines(lines, start, end, buffer);
@@ -767,15 +767,15 @@ function getTagLines(lines, tag, buffer, getPreamble) {
         firstLine = firstLine.substring(where + realTag.length);
         // console.log(buffer[0] + '>>>>>' + firstLine);
         if (firstLine.length > 0) {
-           // console.warn(buffer[0] + '>>>>>' + firstLine);
+            // console.warn(buffer[0] + '>>>>>' + firstLine);
             tag.textStartsOnSameLine = true;
         }
         if (buffer.length > 0) {
             tag.textStartsOnSameLine = true;
         }
-//        } else {
-//            console.warn(buffer[0] + '>>>>>' + firstLine);
-//        }
+        // } else {
+        // console.warn(buffer[0] + '>>>>>' + firstLine);
+        // }
         buffer[0] = firstLine;
     }
 
@@ -1309,16 +1309,17 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                     docletData['@' + tag] = tagData.join(' ').trim();
                     currentTagObject = docletData['@' + tag];
                     currentTagObject.tagName = tag;
-                    // // console.warn("TAG DATA is EMPTY----->");
+                    //console.warn("TAG DATA is EMPTY----->");
                     // // console.warn(currentTagObject);
+                    currentTagObject.description = '';
                 } else {
                     docletData['@' + tag] = tagData.join(' ').trim();
                     // docletData['@' + tag] = {};
                     currentTagObject = docletData['@' + tag];
                     currentTagObject.tagName = tag;
                     currentTagObject.description = tagData.join(' ').trim();
-                    // // console.warn("TAG DATA is _NOT_ EMPTY----->");
-                    // console.warn(docletData['@' + tag]);
+                    //console.warn("TAG DATA is _NOT_ EMPTY----->");
+                    //console.warn(docletData['@' + tag]);
                     // // console.warn(currentTagObject);
                 }
 
@@ -1347,6 +1348,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             // the next tag
             // _or_
             // end of doclet
+            //console.log(tag);
             var textBuffer = [];
             if (index === 0) {
                 getTagLines(lines, tag, preamble, true);
@@ -1355,14 +1357,15 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             }
             getTagLines(lines, tag, textBuffer, false);
             textBuffer = stripStarLines(textBuffer);
-            //console.log(textBuffer);
+            // console.log(textBuffer);
             tag.text = textBuffer.join('\n');
+            //console.log(tag);
         }
     } else {
-        //console.warn('doclet with no tags');
+        // console.warn('doclet with no tags');
         if (!linesAreEmpty(lines)) {
             preamble = stripStarLines(lines);
-            //console.warn('doclet with no tags HAS PREAMBLE:\n' + preamble);
+            // console.warn('doclet with no tags HAS PREAMBLE:\n' + preamble);
         }
     }
 
@@ -1371,9 +1374,9 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
         preamble = [];
         docletData.preamble = '';
     }
-    
+
     docletData['freeText'] = docletData.preamble;
-    //console.warn(docletData['freeText']);
+    // console.warn(docletData['freeText']);
 
     var nodeType = 'NONFUNCTION';
 
@@ -1413,18 +1416,19 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
     docletData.nodeType = nodeType;
 
     if ((docletData['freeText'] != null) && docletData['freeText'].length > 0) {
-        if (docletData['freeText'].trim().charAt(docletData['freeText'].trim().length - 1) !== '.') {
+        if (docletData['freeText'].trim().charAt(
+                docletData['freeText'].trim().length - 1) !== '.') {
             if (docletData['freeText'].trim().indexOf('</pre>') === -1) {
                 docletData['freeText'] += '.';
             }
 
-            //console.warn("freeText>>> " + docletData['freeText']);
+            // console.warn("freeText>>> " + docletData['freeText']);
         }
         docletData['freeText'] = docletData['freeText'].split('<br />').join(
                 '<br />\r\n * ');
     }
     // // console.warn(doclet);
-    // console.warn(JSON.stringify(docletData));
+    //console.warn(JSON.stringify(docletData));
     return docletData;
 }
 
@@ -1766,6 +1770,10 @@ function getParentClass(obj, classes) {
 function dumpNamedFunctions(walkerObj, map, ast, output) {
     var input = walkerObj.source;
     var lines = input.split('\n');
+    var checkForReturnNode = true;
+    if (output == null) {
+        checkForReturnNode = true;
+    }
     output = output != null ? output : {};
     output.classes = output.classes != null ? output.classes : {};
     output.methods = output.methods != null ? output.methods : {};
@@ -1797,8 +1805,15 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                 functionWrapper.returnType = obj.returnType;
 
             }
-            if (functionWrapper.name === '' && index === 0) {
-                // console.log('is this the root AMD function?');
+//            if (index === 0 && walkerObj.preprocessed
+//                    && functionWrapper.name === '') {
+//                console.warn(checkForReturnNode + ',' + walkerObj.preprocessed
+//                        + ',' + functionWrapper.name);
+//            }
+
+            if (index === 0 && checkForReturnNode && walkerObj.preprocessed
+                    && functionWrapper.name === '') {
+                //console.warn('is this the root AMD function?');
                 var bodyNodes = obj.body.body;
                 var returnNode = null;
                 for (var n = 0; n < bodyNodes.length; n++) {
@@ -1811,21 +1826,88 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                             // it's returning a blob of crap instead of exports
                             returnNode = node;
                             break;
+                        } else if (node.argument
+                                && node.argument.type === 'FunctionExpression') {
+
+                            // it's returning a blob of crap instead of exports
+                            returnNode = node;
+                            break;
                         }
                     }
                 }
-                // // console.warn(JSON.stringify(returnNode, null, 2));
-                // // console.warn(functionWrapper);
+                
                 if (returnNode) {
-
+                    //console.warn(JSON.stringify(returnNode, null, 2));
+                    // // console.warn(functionWrapper);
                     var rrange = returnNode.range;
                     var returnBody = input.substring(rrange[0], rrange[1])
 
-                    // // console.warn('returnNode = ' + returnBody);
+                    // console.warn('returnNode = ' + returnBody);
 
-                    console.warn('WARNING: module "' + walkerObj.fileName
-                            + '" has an object literal for its exports value');
-                    // TODO: rewrite the source and START OVER!!!
+                    // returnNode = return {
+
+                    var textMinusReturn = returnBody.substring(6).trim();
+
+                    var packagePath = walkerObj.path.split('/');
+                    packagePath.shift();
+                    packagePath = packagePath.join('/');
+                    packagePath = packagePath.split('.js')[0];
+                    var foundNode = false;
+                    if (textMinusReturn.charAt(0) === '{') {
+                        // console.log('module "' + packagePath
+                        // + '" has an object literal for its exports value');
+                        // /**@alias
+                        // module:js/component/myAccounts/depositAccounts*/
+                        returnBody = 'return /**@alias module:' + packagePath
+                                + ' */ ' + textMinusReturn;
+                        // console.log('returnBody = ' + returnBody);
+                        foundNode = true;
+                    } else if (returnNode.argument.id) {
+
+                        var constructorName = returnNode.argument.id.name;
+                        textMinusReturn = textMinusReturn
+                                .split(constructorName).join(
+                                        capitalize(constructorName));
+
+                        console.warn('Renaming class to "'
+                                + capitalize(constructorName) + '".');
+
+                        returnBody = 'return /** @constructor */\n'
+                                + textMinusReturn;
+
+                        // console.log('returnBody = ' + returnBody);
+                        foundNode = true;
+
+                    } else if (!returnNode.argument.id) {
+                        console
+                                .warn('Anonymous function is returned by module.');
+                        // returnBody = 'return /** This module returns an
+                        // anonymous function. */\n'
+                        // + textMinusReturn;
+                        //
+                        // // console.log('returnBody = ' + returnBody);
+                        // foundNode = true;
+                    }
+                    if (foundNode) {
+                        walkerObj.rewrittenReturnBody = returnBody;
+                        walkerObj.rewrittenReturnBodyNode = returnNode;
+
+                        var source = walkerObj.source;
+                        var range = returnNode.range;
+                        // var = input.substring(range[0], range[1]).trim();
+                        var beginningOfFile = source.substring(0, range[0]);
+                        // console.warn(beginningOfFile);
+
+                        var endOfFile = source.substring(range[1]);
+                        // console.warn(endOfFile);
+
+                        // console.warn(returnBody);
+
+                        walkerObj.source = beginningOfFile + returnBody
+                                + endOfFile;
+                        return "AMD_RETURN_BLOCK";
+                    }
+
                 }
 
             }
@@ -1901,6 +1983,7 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
 }
 
 function addMissingComments(walkerObj) {
+    walkerObj.preprocessed = false;
     console.log('addMissingComments ' + walkerObj.path);
     // console.log(walkerObj);
     var beautify = require('js-beautify');
@@ -1977,7 +2060,8 @@ function addMissingComments(walkerObj) {
             newFileLines.push(line);
         } else if (method != null && method.comment !== -1) {
             var newComment = generateComment(method, ast, walkerObj, input);
-            // // console.warn(method.name + " >>>" + newComment);
+           // console.warn(method.name + " >>>" + method.comment);
+           // console.warn(method.name + " >>>" + newComment);
             newFileLines.push(newComment);
             // advance line counter to skip over legacy comments
             lineIndex = method.lineNumber - 1;
@@ -2008,6 +2092,31 @@ function addMissingComments(walkerObj) {
         'unescape_strings' : false,
         'wrap_line_length' : 200
     });
+
+    if (!walkerObj.preprocessed) {
+        // console.warn("checking...");
+        walkerObj.source = newFile;
+        walkerObj.preprocessed = true;
+
+        ast = _esprima.parse(walkerObj.source, {
+            comment : true,
+            tolerant : true,
+            range : true,
+            raw : true,
+            tokens : true
+        });
+
+        functionExpressions = getNodesByType(ast, 'FunctionExpression');
+        functionDeclarations = getNodesByType(ast, 'FunctionDeclaration');
+
+        var check = expressionFunctions = dumpNamedFunctions(walkerObj,
+                functionExpressions, ast);
+
+        if (check === 'AMD_RETURN_BLOCK') {
+            // console.warn("Found the stuff.");
+            newFile = walkerObj.source;
+        }
+    }
 
     var outputArray = [];
 
@@ -2147,7 +2256,7 @@ function getMethodOnLine(methodArray, lineNumber, ast, input) {
  * @returns
  */
 function generateComment(functionWrapper, ast, walkerObj, input) {
-    // // console.warn(functionWrapper.returnValue);
+    //console.warn(functionWrapper.returnValue);
     var funkyName = decamelize(functionWrapper.name);
     funkyName = funkyName.split('_');
     funkyName[0] = capitalize(funkyName[0]);
@@ -2167,8 +2276,9 @@ function generateComment(functionWrapper, ast, walkerObj, input) {
         if (commentBody.indexOf('/**') !== -1) {
 
             var commentText = commentBody;
-
+            //console.warn(commentText);
             doclet = parseDoclet(walkerObj, commentText, false, '', 0);
+            //console.warn(doclet);
         }
 
     }
@@ -2188,21 +2298,22 @@ function generateComment(functionWrapper, ast, walkerObj, input) {
     if (doclet != null) {
         if (doclet.freeText && doclet.freeText != '') {
             // console.warn(doclet.freeText);
-           // commentBlock.push(' * ' + doclet.freeText);
-            
+            // commentBlock.push(' * ' + doclet.freeText);
+
             var freeText = doclet.freeText.trim();
             freeText = addStarLines(freeText, {});
-            
+
             commentBlock.push(freeText);
         }
         for (var tIndex = 0; tIndex < tags.length; tIndex++) {
             var newTag = tags[tIndex];
             var t = '@' + newTag.tag;
             if (doclet.hasOwnProperty(t)) {
+                //console.warn(t);
                 if (t.charAt(0) === '@') {
                     if (t !== '@return') {
                         var tag = doclet[t];
-                        //console.log(tag);
+                        // console.log(tag);
                         if (typeof tag === 'object') {
                             // {
                             // tagName: 'return',
@@ -2211,15 +2322,20 @@ function generateComment(functionWrapper, ast, walkerObj, input) {
                             // line: '@return {String}'
                             // }
                             // construct doclet tag
-                            //console.warn(tag);
+                            // console.warn(tag);
                             commentBlock.push(' * ' + tag.line);
                         } else {
                             // construct doclet tag
                             //console.warn('JUST TEXT >>> ' + JSON.stringify(newTag));
                             // addStarLines(newTag.text, newTag));
+                            //console.warn(doclet);
                             if (newTag.text.trim().length > 0) {
-                                commentBlock.push(' * ' + t + ' '
-                                        + addStarLines(newTag.text, newTag));
+                                var newComment = ' * ' + t + ' ' + addStarLines(newTag.text, newTag);
+                                commentBlock.push(newComment);
+                            }
+                            else{
+                                var newComment = ' * ' + t;
+                                commentBlock.push(newComment);
                             }
                         }
 

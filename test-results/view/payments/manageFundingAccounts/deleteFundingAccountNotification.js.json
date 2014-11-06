@@ -1,0 +1,1036 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "delete_funding_account_notification",
+      "AMD": true,
+      "webPath": "/view/payments/manageFundingAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'deleteFundingAccountNotificationView'.",
+        "code": "wfJD",
+        "evidence": "return function deleteFundingAccountNotificationView() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'deleteFundingAccountNotificationView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 19,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/payments/manageFundingAccounts/deleteFundingAccountNotification.js",
+  "folderPath": "test-source/view/payments/manageFundingAccounts",
+  "fileName": "deleteFundingAccountNotification.js",
+  "packagePath": "/view/payments/manageFundingAccounts",
+  "webPath": "/view/payments/manageFundingAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "delete_funding_account_notification",
+  "name": "deleteFundingAccountNotification",
+  "camelName": "DeleteFundingAccountNotification",
+  "processedFilePath": "test-output/view/payments/manageFundingAccounts/deleteFundingAccountNotification.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction DeleteFundingAccountNotificationView() {\n    var self = this;\n    this.template = require('dashboard/template/payments/manageFundingAccounts/deleteFundingAccountNotification');\n    this.bridge = new bridge({\n      targets: {\n        close_delete_funding_account_notification: '#close_delete_funding_account_notification'\n      }\n    });\n    /**\n     * Init.\n     */\n    this.init = function () {\n      self.bridge.on('state/showDeleteFundingAccountNotification', function (data) {\n        console.log(\"!!!---state/showDeleteFundingAccountConfirmation\");\n        $('#delete_funding_account_notification_modal').removeClass('hide-xs');\n      });\n      self.bridge.on('state/hideDeleteFundingAccountNotification', function (data) {\n        console.log(\"!!!---state/hideDeleteFundingAccountConfirmation\");\n        $('#delete_funding_account_notification_modal').addClass('hide-xs');\n      });\n    };\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "deleteFundingAccountNotificationView",
+        "range": [
+          325,
+          361
+        ],
+        "parentNode": 1369,
+        "uid": 1370
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "self",
+                  "range": [
+                    374,
+                    378
+                  ],
+                  "parentNode": 1373,
+                  "uid": 1374
+                },
+                "init": {
+                  "type": "ThisExpression",
+                  "range": [
+                    381,
+                    385
+                  ],
+                  "parentNode": 1373,
+                  "uid": 1375
+                },
+                "range": [
+                  374,
+                  385
+                ],
+                "parentNode": 1372,
+                "uid": 1373
+              }
+            ],
+            "kind": "var",
+            "range": [
+              370,
+              386
+            ],
+            "parentNode": 1371,
+            "uid": 1372
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    391,
+                    395
+                  ],
+                  "parentNode": 1378,
+                  "uid": 1379
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    396,
+                    404
+                  ],
+                  "parentNode": 1378,
+                  "uid": 1380
+                },
+                "range": [
+                  391,
+                  404
+                ],
+                "parentNode": 1377,
+                "uid": 1378
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    407,
+                    414
+                  ],
+                  "parentNode": 1381,
+                  "uid": 1382
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/payments/manageFundingAccounts/deleteFundingAccountNotification",
+                    "raw": "'dashboard/template/payments/manageFundingAccounts/deleteFundingAccountNotification'",
+                    "range": [
+                      415,
+                      499
+                    ],
+                    "parentNode": 1381,
+                    "uid": 1383
+                  }
+                ],
+                "range": [
+                  407,
+                  500
+                ],
+                "parentNode": 1377,
+                "uid": 1381
+              },
+              "range": [
+                391,
+                500
+              ],
+              "parentNode": 1376,
+              "uid": 1377
+            },
+            "range": [
+              391,
+              501
+            ],
+            "parentNode": 1371,
+            "uid": 1376
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    506,
+                    510
+                  ],
+                  "parentNode": 1386,
+                  "uid": 1387
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    511,
+                    517
+                  ],
+                  "parentNode": 1386,
+                  "uid": 1388
+                },
+                "range": [
+                  506,
+                  517
+                ],
+                "parentNode": 1385,
+                "uid": 1386
+              },
+              "right": {
+                "type": "NewExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    524,
+                    530
+                  ],
+                  "parentNode": 1389,
+                  "uid": 1390
+                },
+                "arguments": [
+                  {
+                    "type": "ObjectExpression",
+                    "properties": [
+                      {
+                        "type": "Property",
+                        "key": {
+                          "type": "Identifier",
+                          "name": "targets",
+                          "range": [
+                            539,
+                            546
+                          ],
+                          "parentNode": 1392,
+                          "uid": 1393
+                        },
+                        "value": {
+                          "type": "ObjectExpression",
+                          "properties": [
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "close_delete_funding_account_notification",
+                                "range": [
+                                  558,
+                                  599
+                                ],
+                                "parentNode": 1395,
+                                "uid": 1396
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#close_delete_funding_account_notification",
+                                "raw": "'#close_delete_funding_account_notification'",
+                                "range": [
+                                  601,
+                                  645
+                                ],
+                                "parentNode": 1395,
+                                "uid": 1397
+                              },
+                              "kind": "init",
+                              "range": [
+                                558,
+                                645
+                              ],
+                              "parentNode": 1394,
+                              "uid": 1395
+                            }
+                          ],
+                          "range": [
+                            548,
+                            653
+                          ],
+                          "parentNode": 1392,
+                          "uid": 1394
+                        },
+                        "kind": "init",
+                        "range": [
+                          539,
+                          653
+                        ],
+                        "parentNode": 1391,
+                        "uid": 1392
+                      }
+                    ],
+                    "range": [
+                      531,
+                      659
+                    ],
+                    "parentNode": 1389,
+                    "uid": 1391
+                  }
+                ],
+                "range": [
+                  520,
+                  660
+                ],
+                "parentNode": 1385,
+                "uid": 1389
+              },
+              "range": [
+                506,
+                660
+              ],
+              "parentNode": 1384,
+              "uid": 1385
+            },
+            "range": [
+              506,
+              661
+            ],
+            "parentNode": 1371,
+            "uid": 1384
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    695,
+                    699
+                  ],
+                  "parentNode": 1400,
+                  "uid": 1401
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    700,
+                    704
+                  ],
+                  "parentNode": 1400,
+                  "uid": 1402
+                },
+                "range": [
+                  695,
+                  704
+                ],
+                "parentNode": 1399,
+                "uid": 1400
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "self",
+                              "range": [
+                                727,
+                                731
+                              ],
+                              "parentNode": 1408,
+                              "uid": 1409
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "bridge",
+                              "range": [
+                                732,
+                                738
+                              ],
+                              "parentNode": 1408,
+                              "uid": 1410
+                            },
+                            "range": [
+                              727,
+                              738
+                            ],
+                            "parentNode": 1407,
+                            "uid": 1408
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "on",
+                            "range": [
+                              739,
+                              741
+                            ],
+                            "parentNode": 1407,
+                            "uid": 1411
+                          },
+                          "range": [
+                            727,
+                            741
+                          ],
+                          "parentNode": 1406,
+                          "uid": 1407
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "state/showDeleteFundingAccountNotification",
+                            "raw": "'state/showDeleteFundingAccountNotification'",
+                            "range": [
+                              742,
+                              786
+                            ],
+                            "parentNode": 1406,
+                            "uid": 1412
+                          },
+                          {
+                            "type": "FunctionExpression",
+                            "id": null,
+                            "params": [
+                              {
+                                "type": "Identifier",
+                                "name": "data",
+                                "range": [
+                                  798,
+                                  802
+                                ],
+                                "parentNode": 1413,
+                                "uid": 1414
+                              }
+                            ],
+                            "defaults": [],
+                            "body": {
+                              "type": "BlockStatement",
+                              "body": [
+                                {
+                                  "type": "ExpressionStatement",
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "Identifier",
+                                        "name": "console",
+                                        "range": [
+                                          814,
+                                          821
+                                        ],
+                                        "parentNode": 1418,
+                                        "uid": 1419
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "log",
+                                        "range": [
+                                          822,
+                                          825
+                                        ],
+                                        "parentNode": 1418,
+                                        "uid": 1420
+                                      },
+                                      "range": [
+                                        814,
+                                        825
+                                      ],
+                                      "parentNode": 1417,
+                                      "uid": 1418
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "Literal",
+                                        "value": "!!!---state/showDeleteFundingAccountConfirmation",
+                                        "raw": "\"!!!---state/showDeleteFundingAccountConfirmation\"",
+                                        "range": [
+                                          826,
+                                          876
+                                        ],
+                                        "parentNode": 1417,
+                                        "uid": 1421
+                                      }
+                                    ],
+                                    "range": [
+                                      814,
+                                      877
+                                    ],
+                                    "parentNode": 1416,
+                                    "uid": 1417
+                                  },
+                                  "range": [
+                                    814,
+                                    878
+                                  ],
+                                  "parentNode": 1415,
+                                  "uid": 1416
+                                },
+                                {
+                                  "type": "ExpressionStatement",
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "Identifier",
+                                          "name": "$",
+                                          "range": [
+                                            887,
+                                            888
+                                          ],
+                                          "parentNode": 1425,
+                                          "uid": 1426
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": "#delete_funding_account_notification_modal",
+                                            "raw": "'#delete_funding_account_notification_modal'",
+                                            "range": [
+                                              889,
+                                              933
+                                            ],
+                                            "parentNode": 1425,
+                                            "uid": 1427
+                                          }
+                                        ],
+                                        "range": [
+                                          887,
+                                          934
+                                        ],
+                                        "parentNode": 1424,
+                                        "uid": 1425
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "removeClass",
+                                        "range": [
+                                          935,
+                                          946
+                                        ],
+                                        "parentNode": 1424,
+                                        "uid": 1428
+                                      },
+                                      "range": [
+                                        887,
+                                        946
+                                      ],
+                                      "parentNode": 1423,
+                                      "uid": 1424
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "Literal",
+                                        "value": "hide-xs",
+                                        "raw": "'hide-xs'",
+                                        "range": [
+                                          947,
+                                          956
+                                        ],
+                                        "parentNode": 1423,
+                                        "uid": 1429
+                                      }
+                                    ],
+                                    "range": [
+                                      887,
+                                      957
+                                    ],
+                                    "parentNode": 1422,
+                                    "uid": 1423
+                                  },
+                                  "range": [
+                                    887,
+                                    958
+                                  ],
+                                  "parentNode": 1415,
+                                  "uid": 1422
+                                }
+                              ],
+                              "range": [
+                                804,
+                                966
+                              ],
+                              "parentNode": 1413,
+                              "uid": 1415
+                            },
+                            "rest": null,
+                            "generator": false,
+                            "expression": false,
+                            "range": [
+                              788,
+                              966
+                            ],
+                            "parentNode": 1406,
+                            "uid": 1413,
+                            "returnType": ""
+                          }
+                        ],
+                        "range": [
+                          727,
+                          967
+                        ],
+                        "parentNode": 1405,
+                        "uid": 1406
+                      },
+                      "range": [
+                        727,
+                        968
+                      ],
+                      "parentNode": 1404,
+                      "uid": 1405
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "self",
+                              "range": [
+                                975,
+                                979
+                              ],
+                              "parentNode": 1433,
+                              "uid": 1434
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "bridge",
+                              "range": [
+                                980,
+                                986
+                              ],
+                              "parentNode": 1433,
+                              "uid": 1435
+                            },
+                            "range": [
+                              975,
+                              986
+                            ],
+                            "parentNode": 1432,
+                            "uid": 1433
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "on",
+                            "range": [
+                              987,
+                              989
+                            ],
+                            "parentNode": 1432,
+                            "uid": 1436
+                          },
+                          "range": [
+                            975,
+                            989
+                          ],
+                          "parentNode": 1431,
+                          "uid": 1432
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "state/hideDeleteFundingAccountNotification",
+                            "raw": "'state/hideDeleteFundingAccountNotification'",
+                            "range": [
+                              990,
+                              1034
+                            ],
+                            "parentNode": 1431,
+                            "uid": 1437
+                          },
+                          {
+                            "type": "FunctionExpression",
+                            "id": null,
+                            "params": [
+                              {
+                                "type": "Identifier",
+                                "name": "data",
+                                "range": [
+                                  1046,
+                                  1050
+                                ],
+                                "parentNode": 1438,
+                                "uid": 1439
+                              }
+                            ],
+                            "defaults": [],
+                            "body": {
+                              "type": "BlockStatement",
+                              "body": [
+                                {
+                                  "type": "ExpressionStatement",
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "Identifier",
+                                        "name": "console",
+                                        "range": [
+                                          1062,
+                                          1069
+                                        ],
+                                        "parentNode": 1443,
+                                        "uid": 1444
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "log",
+                                        "range": [
+                                          1070,
+                                          1073
+                                        ],
+                                        "parentNode": 1443,
+                                        "uid": 1445
+                                      },
+                                      "range": [
+                                        1062,
+                                        1073
+                                      ],
+                                      "parentNode": 1442,
+                                      "uid": 1443
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "Literal",
+                                        "value": "!!!---state/hideDeleteFundingAccountConfirmation",
+                                        "raw": "\"!!!---state/hideDeleteFundingAccountConfirmation\"",
+                                        "range": [
+                                          1074,
+                                          1124
+                                        ],
+                                        "parentNode": 1442,
+                                        "uid": 1446
+                                      }
+                                    ],
+                                    "range": [
+                                      1062,
+                                      1125
+                                    ],
+                                    "parentNode": 1441,
+                                    "uid": 1442
+                                  },
+                                  "range": [
+                                    1062,
+                                    1126
+                                  ],
+                                  "parentNode": 1440,
+                                  "uid": 1441
+                                },
+                                {
+                                  "type": "ExpressionStatement",
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "Identifier",
+                                          "name": "$",
+                                          "range": [
+                                            1135,
+                                            1136
+                                          ],
+                                          "parentNode": 1450,
+                                          "uid": 1451
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": "#delete_funding_account_notification_modal",
+                                            "raw": "'#delete_funding_account_notification_modal'",
+                                            "range": [
+                                              1137,
+                                              1181
+                                            ],
+                                            "parentNode": 1450,
+                                            "uid": 1452
+                                          }
+                                        ],
+                                        "range": [
+                                          1135,
+                                          1182
+                                        ],
+                                        "parentNode": 1449,
+                                        "uid": 1450
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "addClass",
+                                        "range": [
+                                          1183,
+                                          1191
+                                        ],
+                                        "parentNode": 1449,
+                                        "uid": 1453
+                                      },
+                                      "range": [
+                                        1135,
+                                        1191
+                                      ],
+                                      "parentNode": 1448,
+                                      "uid": 1449
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "Literal",
+                                        "value": "hide-xs",
+                                        "raw": "'hide-xs'",
+                                        "range": [
+                                          1192,
+                                          1201
+                                        ],
+                                        "parentNode": 1448,
+                                        "uid": 1454
+                                      }
+                                    ],
+                                    "range": [
+                                      1135,
+                                      1202
+                                    ],
+                                    "parentNode": 1447,
+                                    "uid": 1448
+                                  },
+                                  "range": [
+                                    1135,
+                                    1203
+                                  ],
+                                  "parentNode": 1440,
+                                  "uid": 1447
+                                }
+                              ],
+                              "range": [
+                                1052,
+                                1211
+                              ],
+                              "parentNode": 1438,
+                              "uid": 1440
+                            },
+                            "rest": null,
+                            "generator": false,
+                            "expression": false,
+                            "range": [
+                              1036,
+                              1211
+                            ],
+                            "parentNode": 1431,
+                            "uid": 1438,
+                            "returnType": ""
+                          }
+                        ],
+                        "range": [
+                          975,
+                          1212
+                        ],
+                        "parentNode": 1430,
+                        "uid": 1431
+                      },
+                      "range": [
+                        975,
+                        1213
+                      ],
+                      "parentNode": 1404,
+                      "uid": 1430
+                    }
+                  ],
+                  "range": [
+                    719,
+                    1219
+                  ],
+                  "parentNode": 1403,
+                  "uid": 1404
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  707,
+                  1219
+                ],
+                "parentNode": 1399,
+                "uid": 1403,
+                "returnType": ""
+              },
+              "range": [
+                695,
+                1219
+              ],
+              "parentNode": 1398,
+              "uid": 1399
+            },
+            "range": [
+              695,
+              1220
+            ],
+            "parentNode": 1371,
+            "uid": 1398
+          }
+        ],
+        "range": [
+          364,
+          1224
+        ],
+        "parentNode": 1369,
+        "uid": 1371
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        316,
+        1224
+      ],
+      "parentNode": 1368,
+      "uid": 1369,
+      "returnType": ""
+    },
+    "range": [
+      309,
+      1225
+    ],
+    "parentNode": 1348,
+    "uid": 1368,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 34,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/payments/manageFundingAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1147,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./deleteFundingAccountNotification",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "deleteFundingAccountNotificationView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function deleteFundingAccountNotificationView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 19,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/payments/manageFundingAccounts",
+    "fileName": "deleteFundingAccountNotification.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 36
+}

@@ -1,0 +1,249 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "the_basics",
+      "AMD": true,
+      "webPath": "/component/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myProfile/theBasics.js",
+  "folderPath": "test-source/component/myProfile",
+  "fileName": "theBasics.js",
+  "packagePath": "/component/myProfile",
+  "webPath": "/component/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "the_basics",
+  "name": "theBasics",
+  "camelName": "TheBasics",
+  "processedFilePath": "test-output/component/myProfile/theBasics.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myProfile/theBasics */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              87,
+              91
+            ],
+            "parentNode": 239,
+            "uid": 240
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        113,
+                        120
+                      ],
+                      "parentNode": 244,
+                      "uid": 245
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            123,
+                            127
+                          ],
+                          "parentNode": 247,
+                          "uid": 248
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            128,
+                            136
+                          ],
+                          "parentNode": 247,
+                          "uid": 249
+                        },
+                        "range": [
+                          123,
+                          136
+                        ],
+                        "parentNode": 246,
+                        "uid": 247
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          137,
+                          144
+                        ],
+                        "parentNode": 246,
+                        "uid": 250
+                      },
+                      "range": [
+                        123,
+                        144
+                      ],
+                      "parentNode": 244,
+                      "uid": 246
+                    },
+                    "range": [
+                      113,
+                      144
+                    ],
+                    "parentNode": 243,
+                    "uid": 244
+                  },
+                  "range": [
+                    113,
+                    145
+                  ],
+                  "parentNode": 242,
+                  "uid": 243
+                }
+              ],
+              "range": [
+                105,
+                151
+              ],
+              "parentNode": 241,
+              "uid": 242
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              93,
+              151
+            ],
+            "parentNode": 239,
+            "uid": 241,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            87,
+            151
+          ],
+          "parentNode": 238,
+          "uid": 239
+        }
+      ],
+      "range": [
+        52,
+        155
+      ],
+      "parentNode": 237,
+      "uid": 238
+    },
+    "range": [
+      45,
+      156
+    ],
+    "parentNode": 232,
+    "uid": 237,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 9,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 130,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./theBasics",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myProfile",
+    "fileName": "theBasics.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 15
+}

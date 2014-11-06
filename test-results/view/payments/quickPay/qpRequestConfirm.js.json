@@ -1,0 +1,1328 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "qp_request_confirm",
+      "AMD": true,
+      "webPath": "/view/payments/quickPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'RequestConfirmView'.",
+        "code": "wfJD",
+        "evidence": "return function RequestConfirmView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'RequestConfirmView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 23,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideOverlay'.",
+        "code": "wfJD",
+        "evidence": "this.hideOverlay = function() {",
+        "line": 27,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideOverlay'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/payments/quickPay/qpRequestConfirm.js",
+  "folderPath": "test-source/view/payments/quickPay",
+  "fileName": "qpRequestConfirm.js",
+  "packagePath": "/view/payments/quickPay",
+  "webPath": "/view/payments/quickPay",
+  "libFile": false,
+  "min": false,
+  "realName": "qp_request_confirm",
+  "name": "qpRequestConfirm",
+  "camelName": "QpRequestConfirm",
+  "processedFilePath": "test-output/view/payments/quickPay/qpRequestConfirm.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction RequestConfirmView() {\n    var RequestConfirmBridge = this.createBridgePrototype(require('dashboard/view/webspec/payments/quickPay/qpRequestConfirm')),\n      template = require('blue/template');\n    this.template = require('dashboard/template/payments/quickPay/qpRequestConfirm');\n    template.registerPartial('field', require('dashboard/template/payments/quickPay/common/field'));\n    template.registerPartial('menu', require('dashboard/template/payments/quickPay/common/menu'));\n    template.registerPartial('submenu', require('dashboard/template/payments/quickPay/common/submenu'));\n    template.registerPartial('button', require('dashboard/template/payments/quickPay/common/button'));\n    this.bridge = new RequestConfirmBridge({\n      targets: {\n        close_button: '#close_button',\n        request_more_money_button: '#request_more_money_button'\n      }\n    });\n    /**\n     * Init.\n     */\n    this.init = function () {\n      this.hideOverlay();\n    };\n    /**\n     * Hide overlay.\n     */\n    this.hideOverlay = function () {\n      $('.modal-popup, .overlay, #pre-loader').fadeOut(300);\n      $('#modal-content').empty();\n    };\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "RequestConfirmView",
+        "range": [
+          133,
+          151
+        ],
+        "parentNode": 1353,
+        "uid": 1354
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "RequestConfirmBridge",
+                  "range": [
+                    164,
+                    184
+                  ],
+                  "parentNode": 1357,
+                  "uid": 1358
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "ThisExpression",
+                      "range": [
+                        187,
+                        191
+                      ],
+                      "parentNode": 1360,
+                      "uid": 1361
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "createBridgePrototype",
+                      "range": [
+                        192,
+                        213
+                      ],
+                      "parentNode": 1360,
+                      "uid": 1362
+                    },
+                    "range": [
+                      187,
+                      213
+                    ],
+                    "parentNode": 1359,
+                    "uid": 1360
+                  },
+                  "arguments": [
+                    {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "Identifier",
+                        "name": "require",
+                        "range": [
+                          214,
+                          221
+                        ],
+                        "parentNode": 1363,
+                        "uid": 1364
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": "dashboard/view/webspec/payments/quickPay/qpRequestConfirm",
+                          "raw": "'dashboard/view/webspec/payments/quickPay/qpRequestConfirm'",
+                          "range": [
+                            222,
+                            281
+                          ],
+                          "parentNode": 1363,
+                          "uid": 1365
+                        }
+                      ],
+                      "range": [
+                        214,
+                        282
+                      ],
+                      "parentNode": 1359,
+                      "uid": 1363
+                    }
+                  ],
+                  "range": [
+                    187,
+                    283
+                  ],
+                  "parentNode": 1357,
+                  "uid": 1359
+                },
+                "range": [
+                  164,
+                  283
+                ],
+                "parentNode": 1356,
+                "uid": 1357
+              },
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    291,
+                    299
+                  ],
+                  "parentNode": 1366,
+                  "uid": 1367
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      302,
+                      309
+                    ],
+                    "parentNode": 1368,
+                    "uid": 1369
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "blue/template",
+                      "raw": "'blue/template'",
+                      "range": [
+                        310,
+                        325
+                      ],
+                      "parentNode": 1368,
+                      "uid": 1370
+                    }
+                  ],
+                  "range": [
+                    302,
+                    326
+                  ],
+                  "parentNode": 1366,
+                  "uid": 1368
+                },
+                "range": [
+                  291,
+                  326
+                ],
+                "parentNode": 1356,
+                "uid": 1366
+              }
+            ],
+            "kind": "var",
+            "range": [
+              160,
+              327
+            ],
+            "parentNode": 1355,
+            "uid": 1356
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    332,
+                    336
+                  ],
+                  "parentNode": 1373,
+                  "uid": 1374
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    337,
+                    345
+                  ],
+                  "parentNode": 1373,
+                  "uid": 1375
+                },
+                "range": [
+                  332,
+                  345
+                ],
+                "parentNode": 1372,
+                "uid": 1373
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    348,
+                    355
+                  ],
+                  "parentNode": 1376,
+                  "uid": 1377
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/payments/quickPay/qpRequestConfirm",
+                    "raw": "'dashboard/template/payments/quickPay/qpRequestConfirm'",
+                    "range": [
+                      356,
+                      411
+                    ],
+                    "parentNode": 1376,
+                    "uid": 1378
+                  }
+                ],
+                "range": [
+                  348,
+                  412
+                ],
+                "parentNode": 1372,
+                "uid": 1376
+              },
+              "range": [
+                332,
+                412
+              ],
+              "parentNode": 1371,
+              "uid": 1372
+            },
+            "range": [
+              332,
+              413
+            ],
+            "parentNode": 1355,
+            "uid": 1371
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    418,
+                    426
+                  ],
+                  "parentNode": 1381,
+                  "uid": 1382
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "registerPartial",
+                  "range": [
+                    427,
+                    442
+                  ],
+                  "parentNode": 1381,
+                  "uid": 1383
+                },
+                "range": [
+                  418,
+                  442
+                ],
+                "parentNode": 1380,
+                "uid": 1381
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "field",
+                  "raw": "'field'",
+                  "range": [
+                    443,
+                    450
+                  ],
+                  "parentNode": 1380,
+                  "uid": 1384
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      452,
+                      459
+                    ],
+                    "parentNode": 1385,
+                    "uid": 1386
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "dashboard/template/payments/quickPay/common/field",
+                      "raw": "'dashboard/template/payments/quickPay/common/field'",
+                      "range": [
+                        460,
+                        511
+                      ],
+                      "parentNode": 1385,
+                      "uid": 1387
+                    }
+                  ],
+                  "range": [
+                    452,
+                    512
+                  ],
+                  "parentNode": 1380,
+                  "uid": 1385
+                }
+              ],
+              "range": [
+                418,
+                513
+              ],
+              "parentNode": 1379,
+              "uid": 1380
+            },
+            "range": [
+              418,
+              514
+            ],
+            "parentNode": 1355,
+            "uid": 1379
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    519,
+                    527
+                  ],
+                  "parentNode": 1390,
+                  "uid": 1391
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "registerPartial",
+                  "range": [
+                    528,
+                    543
+                  ],
+                  "parentNode": 1390,
+                  "uid": 1392
+                },
+                "range": [
+                  519,
+                  543
+                ],
+                "parentNode": 1389,
+                "uid": 1390
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "menu",
+                  "raw": "'menu'",
+                  "range": [
+                    544,
+                    550
+                  ],
+                  "parentNode": 1389,
+                  "uid": 1393
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      552,
+                      559
+                    ],
+                    "parentNode": 1394,
+                    "uid": 1395
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "dashboard/template/payments/quickPay/common/menu",
+                      "raw": "'dashboard/template/payments/quickPay/common/menu'",
+                      "range": [
+                        560,
+                        610
+                      ],
+                      "parentNode": 1394,
+                      "uid": 1396
+                    }
+                  ],
+                  "range": [
+                    552,
+                    611
+                  ],
+                  "parentNode": 1389,
+                  "uid": 1394
+                }
+              ],
+              "range": [
+                519,
+                612
+              ],
+              "parentNode": 1388,
+              "uid": 1389
+            },
+            "range": [
+              519,
+              613
+            ],
+            "parentNode": 1355,
+            "uid": 1388
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    618,
+                    626
+                  ],
+                  "parentNode": 1399,
+                  "uid": 1400
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "registerPartial",
+                  "range": [
+                    627,
+                    642
+                  ],
+                  "parentNode": 1399,
+                  "uid": 1401
+                },
+                "range": [
+                  618,
+                  642
+                ],
+                "parentNode": 1398,
+                "uid": 1399
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "submenu",
+                  "raw": "'submenu'",
+                  "range": [
+                    643,
+                    652
+                  ],
+                  "parentNode": 1398,
+                  "uid": 1402
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      654,
+                      661
+                    ],
+                    "parentNode": 1403,
+                    "uid": 1404
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "dashboard/template/payments/quickPay/common/submenu",
+                      "raw": "'dashboard/template/payments/quickPay/common/submenu'",
+                      "range": [
+                        662,
+                        715
+                      ],
+                      "parentNode": 1403,
+                      "uid": 1405
+                    }
+                  ],
+                  "range": [
+                    654,
+                    716
+                  ],
+                  "parentNode": 1398,
+                  "uid": 1403
+                }
+              ],
+              "range": [
+                618,
+                717
+              ],
+              "parentNode": 1397,
+              "uid": 1398
+            },
+            "range": [
+              618,
+              718
+            ],
+            "parentNode": 1355,
+            "uid": 1397
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    723,
+                    731
+                  ],
+                  "parentNode": 1408,
+                  "uid": 1409
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "registerPartial",
+                  "range": [
+                    732,
+                    747
+                  ],
+                  "parentNode": 1408,
+                  "uid": 1410
+                },
+                "range": [
+                  723,
+                  747
+                ],
+                "parentNode": 1407,
+                "uid": 1408
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "button",
+                  "raw": "'button'",
+                  "range": [
+                    748,
+                    756
+                  ],
+                  "parentNode": 1407,
+                  "uid": 1411
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      758,
+                      765
+                    ],
+                    "parentNode": 1412,
+                    "uid": 1413
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "dashboard/template/payments/quickPay/common/button",
+                      "raw": "'dashboard/template/payments/quickPay/common/button'",
+                      "range": [
+                        766,
+                        818
+                      ],
+                      "parentNode": 1412,
+                      "uid": 1414
+                    }
+                  ],
+                  "range": [
+                    758,
+                    819
+                  ],
+                  "parentNode": 1407,
+                  "uid": 1412
+                }
+              ],
+              "range": [
+                723,
+                820
+              ],
+              "parentNode": 1406,
+              "uid": 1407
+            },
+            "range": [
+              723,
+              821
+            ],
+            "parentNode": 1355,
+            "uid": 1406
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    826,
+                    830
+                  ],
+                  "parentNode": 1417,
+                  "uid": 1418
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    831,
+                    837
+                  ],
+                  "parentNode": 1417,
+                  "uid": 1419
+                },
+                "range": [
+                  826,
+                  837
+                ],
+                "parentNode": 1416,
+                "uid": 1417
+              },
+              "right": {
+                "type": "NewExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "RequestConfirmBridge",
+                  "range": [
+                    844,
+                    864
+                  ],
+                  "parentNode": 1420,
+                  "uid": 1421
+                },
+                "arguments": [
+                  {
+                    "type": "ObjectExpression",
+                    "properties": [
+                      {
+                        "type": "Property",
+                        "key": {
+                          "type": "Identifier",
+                          "name": "targets",
+                          "range": [
+                            873,
+                            880
+                          ],
+                          "parentNode": 1423,
+                          "uid": 1424
+                        },
+                        "value": {
+                          "type": "ObjectExpression",
+                          "properties": [
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "close_button",
+                                "range": [
+                                  892,
+                                  904
+                                ],
+                                "parentNode": 1426,
+                                "uid": 1427
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#close_button",
+                                "raw": "'#close_button'",
+                                "range": [
+                                  906,
+                                  921
+                                ],
+                                "parentNode": 1426,
+                                "uid": 1428
+                              },
+                              "kind": "init",
+                              "range": [
+                                892,
+                                921
+                              ],
+                              "parentNode": 1425,
+                              "uid": 1426
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "request_more_money_button",
+                                "range": [
+                                  931,
+                                  956
+                                ],
+                                "parentNode": 1429,
+                                "uid": 1430
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#request_more_money_button",
+                                "raw": "'#request_more_money_button'",
+                                "range": [
+                                  958,
+                                  986
+                                ],
+                                "parentNode": 1429,
+                                "uid": 1431
+                              },
+                              "kind": "init",
+                              "range": [
+                                931,
+                                986
+                              ],
+                              "parentNode": 1425,
+                              "uid": 1429
+                            }
+                          ],
+                          "range": [
+                            882,
+                            994
+                          ],
+                          "parentNode": 1423,
+                          "uid": 1425
+                        },
+                        "kind": "init",
+                        "range": [
+                          873,
+                          994
+                        ],
+                        "parentNode": 1422,
+                        "uid": 1423
+                      }
+                    ],
+                    "range": [
+                      865,
+                      1000
+                    ],
+                    "parentNode": 1420,
+                    "uid": 1422
+                  }
+                ],
+                "range": [
+                  840,
+                  1001
+                ],
+                "parentNode": 1416,
+                "uid": 1420
+              },
+              "range": [
+                826,
+                1001
+              ],
+              "parentNode": 1415,
+              "uid": 1416
+            },
+            "range": [
+              826,
+              1002
+            ],
+            "parentNode": 1355,
+            "uid": 1415
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    1036,
+                    1040
+                  ],
+                  "parentNode": 1434,
+                  "uid": 1435
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    1041,
+                    1045
+                  ],
+                  "parentNode": 1434,
+                  "uid": 1436
+                },
+                "range": [
+                  1036,
+                  1045
+                ],
+                "parentNode": 1433,
+                "uid": 1434
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              1068,
+                              1072
+                            ],
+                            "parentNode": 1441,
+                            "uid": 1442
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "hideOverlay",
+                            "range": [
+                              1073,
+                              1084
+                            ],
+                            "parentNode": 1441,
+                            "uid": 1443
+                          },
+                          "range": [
+                            1068,
+                            1084
+                          ],
+                          "parentNode": 1440,
+                          "uid": 1441
+                        },
+                        "arguments": [],
+                        "range": [
+                          1068,
+                          1086
+                        ],
+                        "parentNode": 1439,
+                        "uid": 1440
+                      },
+                      "range": [
+                        1068,
+                        1087
+                      ],
+                      "parentNode": 1438,
+                      "uid": 1439
+                    }
+                  ],
+                  "range": [
+                    1060,
+                    1093
+                  ],
+                  "parentNode": 1437,
+                  "uid": 1438
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1048,
+                  1093
+                ],
+                "parentNode": 1433,
+                "uid": 1437,
+                "returnType": ""
+              },
+              "range": [
+                1036,
+                1093
+              ],
+              "parentNode": 1432,
+              "uid": 1433
+            },
+            "range": [
+              1036,
+              1094
+            ],
+            "parentNode": 1355,
+            "uid": 1432
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    1136,
+                    1140
+                  ],
+                  "parentNode": 1446,
+                  "uid": 1447
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "hideOverlay",
+                  "range": [
+                    1141,
+                    1152
+                  ],
+                  "parentNode": 1446,
+                  "uid": 1448
+                },
+                "range": [
+                  1136,
+                  1152
+                ],
+                "parentNode": 1445,
+                "uid": 1446
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                1175,
+                                1176
+                              ],
+                              "parentNode": 1454,
+                              "uid": 1455
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": ".modal-popup, .overlay, #pre-loader",
+                                "raw": "'.modal-popup, .overlay, #pre-loader'",
+                                "range": [
+                                  1177,
+                                  1214
+                                ],
+                                "parentNode": 1454,
+                                "uid": 1456
+                              }
+                            ],
+                            "range": [
+                              1175,
+                              1215
+                            ],
+                            "parentNode": 1453,
+                            "uid": 1454
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "fadeOut",
+                            "range": [
+                              1216,
+                              1223
+                            ],
+                            "parentNode": 1453,
+                            "uid": 1457
+                          },
+                          "range": [
+                            1175,
+                            1223
+                          ],
+                          "parentNode": 1452,
+                          "uid": 1453
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": 300,
+                            "raw": "300",
+                            "range": [
+                              1224,
+                              1227
+                            ],
+                            "parentNode": 1452,
+                            "uid": 1458
+                          }
+                        ],
+                        "range": [
+                          1175,
+                          1228
+                        ],
+                        "parentNode": 1451,
+                        "uid": 1452
+                      },
+                      "range": [
+                        1175,
+                        1229
+                      ],
+                      "parentNode": 1450,
+                      "uid": 1451
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                1236,
+                                1237
+                              ],
+                              "parentNode": 1462,
+                              "uid": 1463
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "#modal-content",
+                                "raw": "'#modal-content'",
+                                "range": [
+                                  1238,
+                                  1254
+                                ],
+                                "parentNode": 1462,
+                                "uid": 1464
+                              }
+                            ],
+                            "range": [
+                              1236,
+                              1255
+                            ],
+                            "parentNode": 1461,
+                            "uid": 1462
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "empty",
+                            "range": [
+                              1256,
+                              1261
+                            ],
+                            "parentNode": 1461,
+                            "uid": 1465
+                          },
+                          "range": [
+                            1236,
+                            1261
+                          ],
+                          "parentNode": 1460,
+                          "uid": 1461
+                        },
+                        "arguments": [],
+                        "range": [
+                          1236,
+                          1263
+                        ],
+                        "parentNode": 1459,
+                        "uid": 1460
+                      },
+                      "range": [
+                        1236,
+                        1264
+                      ],
+                      "parentNode": 1450,
+                      "uid": 1459
+                    }
+                  ],
+                  "range": [
+                    1167,
+                    1270
+                  ],
+                  "parentNode": 1449,
+                  "uid": 1450
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1155,
+                  1270
+                ],
+                "parentNode": 1445,
+                "uid": 1449,
+                "returnType": ""
+              },
+              "range": [
+                1136,
+                1270
+              ],
+              "parentNode": 1444,
+              "uid": 1445
+            },
+            "range": [
+              1136,
+              1271
+            ],
+            "parentNode": 1355,
+            "uid": 1444
+          }
+        ],
+        "range": [
+          154,
+          1275
+        ],
+        "parentNode": 1353,
+        "uid": 1355
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        124,
+        1275
+      ],
+      "parentNode": 1352,
+      "uid": 1353,
+      "returnType": ""
+    },
+    "range": [
+      117,
+      1276
+    ],
+    "parentNode": 1351,
+    "uid": 1352,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 32,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/payments/quickPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1132,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./qpRequestConfirm",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "RequestConfirmView": 539
+    },
+    "methods": [
+      {
+        "name": "RequestConfirmView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function RequestConfirmView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 23,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "hideOverlay",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 27,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.hideOverlay = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/payments/quickPay",
+    "fileName": "qpRequestConfirm.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 40
+}

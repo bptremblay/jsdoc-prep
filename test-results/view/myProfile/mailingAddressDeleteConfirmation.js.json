@@ -1,0 +1,351 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "mailing_address_delete_confirmation",
+      "AMD": true,
+      "webPath": "/view/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'MailingAddressListView'.",
+        "code": "wfJD",
+        "evidence": "return function MailingAddressListView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'MailingAddressListView'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myProfile/mailingAddressDeleteConfirmation.js",
+  "folderPath": "test-source/view/myProfile",
+  "fileName": "mailingAddressDeleteConfirmation.js",
+  "packagePath": "/view/myProfile",
+  "webPath": "/view/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "mailing_address_delete_confirmation",
+  "name": "mailingAddressDeleteConfirmation",
+  "camelName": "MailingAddressDeleteConfirmation",
+  "processedFilePath": "test-output/view/myProfile/mailingAddressDeleteConfirmation.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction MailingAddressListView() {\n    this.bridge = this.createBridge(require('dashboard/view/webspec/myProfile/mailingAddressDeleteConfirmation'));\n    this.template = require('dashboard/template/myProfile/mailingAddressDeleteConfirmation');\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "MailingAddressListView",
+        "range": [
+          137,
+          159
+        ],
+        "parentNode": 316,
+        "uid": 317
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    168,
+                    172
+                  ],
+                  "parentNode": 321,
+                  "uid": 322
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    173,
+                    179
+                  ],
+                  "parentNode": 321,
+                  "uid": 323
+                },
+                "range": [
+                  168,
+                  179
+                ],
+                "parentNode": 320,
+                "uid": 321
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression",
+                    "range": [
+                      182,
+                      186
+                    ],
+                    "parentNode": 325,
+                    "uid": 326
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createBridge",
+                    "range": [
+                      187,
+                      199
+                    ],
+                    "parentNode": 325,
+                    "uid": 327
+                  },
+                  "range": [
+                    182,
+                    199
+                  ],
+                  "parentNode": 324,
+                  "uid": 325
+                },
+                "arguments": [
+                  {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        200,
+                        207
+                      ],
+                      "parentNode": 328,
+                      "uid": 329
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "dashboard/view/webspec/myProfile/mailingAddressDeleteConfirmation",
+                        "raw": "'dashboard/view/webspec/myProfile/mailingAddressDeleteConfirmation'",
+                        "range": [
+                          208,
+                          275
+                        ],
+                        "parentNode": 328,
+                        "uid": 330
+                      }
+                    ],
+                    "range": [
+                      200,
+                      276
+                    ],
+                    "parentNode": 324,
+                    "uid": 328
+                  }
+                ],
+                "range": [
+                  182,
+                  277
+                ],
+                "parentNode": 320,
+                "uid": 324
+              },
+              "range": [
+                168,
+                277
+              ],
+              "parentNode": 319,
+              "uid": 320
+            },
+            "range": [
+              168,
+              278
+            ],
+            "parentNode": 318,
+            "uid": 319
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    283,
+                    287
+                  ],
+                  "parentNode": 333,
+                  "uid": 334
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    288,
+                    296
+                  ],
+                  "parentNode": 333,
+                  "uid": 335
+                },
+                "range": [
+                  283,
+                  296
+                ],
+                "parentNode": 332,
+                "uid": 333
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    299,
+                    306
+                  ],
+                  "parentNode": 336,
+                  "uid": 337
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myProfile/mailingAddressDeleteConfirmation",
+                    "raw": "'dashboard/template/myProfile/mailingAddressDeleteConfirmation'",
+                    "range": [
+                      307,
+                      370
+                    ],
+                    "parentNode": 336,
+                    "uid": 338
+                  }
+                ],
+                "range": [
+                  299,
+                  371
+                ],
+                "parentNode": 332,
+                "uid": 336
+              },
+              "range": [
+                283,
+                371
+              ],
+              "parentNode": 331,
+              "uid": 332
+            },
+            "range": [
+              283,
+              372
+            ],
+            "parentNode": 318,
+            "uid": 331
+          }
+        ],
+        "range": [
+          162,
+          376
+        ],
+        "parentNode": 316,
+        "uid": 318
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        128,
+        376
+      ],
+      "parentNode": 315,
+      "uid": 316,
+      "returnType": ""
+    },
+    "range": [
+      121,
+      377
+    ],
+    "parentNode": 314,
+    "uid": 315,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 9,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 292,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mailingAddressDeleteConfirmation",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "MailingAddressListView": 126
+    },
+    "methods": [
+      {
+        "name": "MailingAddressListView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function MailingAddressListView() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "fileName": "mailingAddressDeleteConfirmation.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 15
+}

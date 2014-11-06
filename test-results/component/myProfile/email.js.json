@@ -1,0 +1,782 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "email",
+      "AMD": true,
+      "webPath": "/component/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'editEmailAddress'.",
+        "code": "wfJD",
+        "evidence": "editEmailAddress: function() {",
+        "line": 20,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'editEmailAddress'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'deleteEmailAddress'.",
+        "code": "wfJD",
+        "evidence": "deleteEmailAddress: function() {",
+        "line": 26,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'deleteEmailAddress'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'addServicesToEmailAddress'.",
+        "code": "wfJD",
+        "evidence": "addServicesToEmailAddress: function() {",
+        "line": 32,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'addServicesToEmailAddress'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'saveEmailAddressChanges'.",
+        "code": "wfJD",
+        "evidence": "saveEmailAddressChanges: function() {",
+        "line": 38,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'saveEmailAddressChanges'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'cancelEmailAddressChanges'.",
+        "code": "wfJD",
+        "evidence": "cancelEmailAddressChanges: function() {",
+        "line": 44,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'cancelEmailAddressChanges'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'toggleUseForAccountHelpMessage'.",
+        "code": "wfJD",
+        "evidence": "toggleUseForAccountHelpMessage: function() {",
+        "line": 50,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'toggleUseForAccountHelpMessage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exitUseForAccountHelpMessage'.",
+        "code": "wfJD",
+        "evidence": "exitUseForAccountHelpMessage: function() {",
+        "line": 53,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exitUseForAccountHelpMessage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'removeServicesFromEmailAddress'.",
+        "code": "wfJD",
+        "evidence": "removeServicesFromEmailAddress: function() {",
+        "line": 56,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'removeServicesFromEmailAddress'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestUseForAccountHelpMessage'.",
+        "code": "wfJD",
+        "evidence": "requestUseForAccountHelpMessage: function() {",
+        "line": 59,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestUseForAccountHelpMessage'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myProfile/email.js",
+  "folderPath": "test-source/component/myProfile",
+  "fileName": "email.js",
+  "packagePath": "/component/myProfile",
+  "webPath": "/component/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "email",
+  "name": "email",
+  "camelName": "Email",
+  "processedFilePath": "test-output/component/myProfile/email.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myProfile/email */ {\n    /**\n     * @todo Add some jsDoc comments here!\n     */\n    init: function () {},\n    /**\n     * @todo Add some jsDoc comments here!\n     */\n    editEmailAddress: function () {},\n    /**\n     * @todo Add some jsDoc comments here!\n     */\n    deleteEmailAddress: function () {},\n    /**\n     * @todo Add some jsDoc comments here!\n     */\n    addServicesToEmailAddress: function () {},\n    /**\n     * @todo Add some jsDoc comments here!\n     */\n    saveEmailAddressChanges: function () {},\n    /**\n     * @todo Add some jsDoc comments here!\n     */\n    cancelEmailAddressChanges: function () {},\n    /**\n     * @todo Add some jsDoc comments here!\n     */\n    toggleUseForAccountHelpMessage: function () {},\n    /**\n     * Exit use for account help message.\n     */\n    exitUseForAccountHelpMessage: function () {},\n    /**\n     * Remove services from email address.\n     */\n    removeServicesFromEmailAddress: function () {},\n    /**\n     * Request use for account help message.\n     */\n    requestUseForAccountHelpMessage: function () {}\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              309,
+              313
+            ],
+            "parentNode": 601,
+            "uid": 602
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                327,
+                329
+              ],
+              "parentNode": 603,
+              "uid": 604
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              315,
+              329
+            ],
+            "parentNode": 601,
+            "uid": 603,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            309,
+            329
+          ],
+          "parentNode": 600,
+          "uid": 601
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "editEmailAddress",
+            "range": [
+              394,
+              410
+            ],
+            "parentNode": 605,
+            "uid": 606
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                424,
+                426
+              ],
+              "parentNode": 607,
+              "uid": 608
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              412,
+              426
+            ],
+            "parentNode": 605,
+            "uid": 607,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            394,
+            426
+          ],
+          "parentNode": 600,
+          "uid": 605
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "deleteEmailAddress",
+            "range": [
+              491,
+              509
+            ],
+            "parentNode": 609,
+            "uid": 610
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                523,
+                525
+              ],
+              "parentNode": 611,
+              "uid": 612
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              511,
+              525
+            ],
+            "parentNode": 609,
+            "uid": 611,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            491,
+            525
+          ],
+          "parentNode": 600,
+          "uid": 609
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "addServicesToEmailAddress",
+            "range": [
+              590,
+              615
+            ],
+            "parentNode": 613,
+            "uid": 614
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                629,
+                631
+              ],
+              "parentNode": 615,
+              "uid": 616
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              617,
+              631
+            ],
+            "parentNode": 613,
+            "uid": 615,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            590,
+            631
+          ],
+          "parentNode": 600,
+          "uid": 613
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "saveEmailAddressChanges",
+            "range": [
+              696,
+              719
+            ],
+            "parentNode": 617,
+            "uid": 618
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                733,
+                735
+              ],
+              "parentNode": 619,
+              "uid": 620
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              721,
+              735
+            ],
+            "parentNode": 617,
+            "uid": 619,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            696,
+            735
+          ],
+          "parentNode": 600,
+          "uid": 617
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "cancelEmailAddressChanges",
+            "range": [
+              800,
+              825
+            ],
+            "parentNode": 621,
+            "uid": 622
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                839,
+                841
+              ],
+              "parentNode": 623,
+              "uid": 624
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              827,
+              841
+            ],
+            "parentNode": 621,
+            "uid": 623,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            800,
+            841
+          ],
+          "parentNode": 600,
+          "uid": 621
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "toggleUseForAccountHelpMessage",
+            "range": [
+              906,
+              936
+            ],
+            "parentNode": 625,
+            "uid": 626
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                950,
+                952
+              ],
+              "parentNode": 627,
+              "uid": 628
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              938,
+              952
+            ],
+            "parentNode": 625,
+            "uid": 627,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            906,
+            952
+          ],
+          "parentNode": 600,
+          "uid": 625
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "exitUseForAccountHelpMessage",
+            "range": [
+              1016,
+              1044
+            ],
+            "parentNode": 629,
+            "uid": 630
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                1058,
+                1060
+              ],
+              "parentNode": 631,
+              "uid": 632
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              1046,
+              1060
+            ],
+            "parentNode": 629,
+            "uid": 631,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            1016,
+            1060
+          ],
+          "parentNode": 600,
+          "uid": 629
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "removeServicesFromEmailAddress",
+            "range": [
+              1125,
+              1155
+            ],
+            "parentNode": 633,
+            "uid": 634
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                1169,
+                1171
+              ],
+              "parentNode": 635,
+              "uid": 636
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              1157,
+              1171
+            ],
+            "parentNode": 633,
+            "uid": 635,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            1125,
+            1171
+          ],
+          "parentNode": 600,
+          "uid": 633
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestUseForAccountHelpMessage",
+            "range": [
+              1238,
+              1269
+            ],
+            "parentNode": 637,
+            "uid": 638
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                1283,
+                1285
+              ],
+              "parentNode": 639,
+              "uid": 640
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              1271,
+              1285
+            ],
+            "parentNode": 637,
+            "uid": 639,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            1238,
+            1285
+          ],
+          "parentNode": 600,
+          "uid": 637
+        }
+      ],
+      "range": [
+        244,
+        1289
+      ],
+      "parentNode": 599,
+      "uid": 600
+    },
+    "range": [
+      237,
+      1290
+    ],
+    "parentNode": 592,
+    "uid": 599,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 63,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 985,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./email",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "editEmailAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 20,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "editEmailAddress: function() {"
+      },
+      {
+        "name": "deleteEmailAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 26,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "deleteEmailAddress: function() {"
+      },
+      {
+        "name": "addServicesToEmailAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 32,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "addServicesToEmailAddress: function() {"
+      },
+      {
+        "name": "saveEmailAddressChanges",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 38,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "saveEmailAddressChanges: function() {"
+      },
+      {
+        "name": "cancelEmailAddressChanges",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 44,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "cancelEmailAddressChanges: function() {"
+      },
+      {
+        "name": "toggleUseForAccountHelpMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 50,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "toggleUseForAccountHelpMessage: function() {"
+      },
+      {
+        "name": "exitUseForAccountHelpMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 53,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exitUseForAccountHelpMessage: function() {"
+      },
+      {
+        "name": "removeServicesFromEmailAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 56,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "removeServicesFromEmailAddress: function() {"
+      },
+      {
+        "name": "requestUseForAccountHelpMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 59,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestUseForAccountHelpMessage: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myProfile",
+    "fileName": "email.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 49
+}

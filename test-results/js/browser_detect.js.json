@@ -1,0 +1,139 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "browser_detect",
+      "AMD": true,
+      "webPath": "/js"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 19,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'searchString'.",
+        "code": "wfJD",
+        "evidence": "searchString: function(data) {",
+        "line": 29,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'searchString'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'searchVersion'.",
+        "code": "wfJD",
+        "evidence": "searchVersion: function(dataString) {",
+        "line": 48,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'searchVersion'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/browser_detect.js",
+  "folderPath": "test-source/js",
+  "fileName": "browser_detect.js",
+  "packagePath": "/js",
+  "webPath": "/js",
+  "libFile": false,
+  "min": false,
+  "realName": "browser_detect",
+  "name": "browser_detect",
+  "camelName": "BrowserDetect",
+  "processedFilePath": "test-output/js/browser_detect.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "jsDoccerProcData": {
+    "lines": 133,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 3526,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./browser_detect",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 19,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "searchString",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 29,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "searchString: function(data) {"
+      },
+      {
+        "name": "searchVersion",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 48,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "dataString"
+        ],
+        "description": "",
+        "return": "void",
+        "classDeclarationFlag": false,
+        "line": "searchVersion: function(dataString) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "fileName": "browser_detect.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 135
+}

@@ -1,0 +1,2018 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "primary_search_option",
+      "AMD": true,
+      "webPath": "/component/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'selectSearchOption'.",
+        "code": "wfJD",
+        "evidence": "selectSearchOption: function(data) {",
+        "line": 22,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'selectSearchOption'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideSearchOptions'.",
+        "code": "wfJD",
+        "evidence": "hideSearchOptions: function(data) {",
+        "line": 39,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideSearchOptions'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/conversationDeck/primarySearchOption.js",
+  "folderPath": "test-source/component/conversationDeck",
+  "fileName": "primarySearchOption.js",
+  "packagePath": "/component/conversationDeck",
+  "webPath": "/component/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "primary_search_option",
+  "name": "primarySearchOption",
+  "camelName": "PrimarySearchOption",
+  "processedFilePath": "test-output/component/conversationDeck/primarySearchOption.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/conversationDeck/primarySearchOption */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      this._focusFlag = true;\n    },\n    /**\n     * @function selectSearchResult\n     * @description Emits a message for the controller to get search result\n     * @param data\n     * @return {none}\n     */\n    selectSearchOption: function (data) {\n      var searchOptionData = {\n        searchOption: data.context.searchOption,\n        searchOptionRecognitionID: data.context.searchOptionRecognitionID,\n        searchOptionAnswerID: data.context.searchOptionAnswerID,\n        searchOptionData: data.context.searchOptionData\n      };\n      controllerChannel.emit('selectSearchOption', {\n        searchOptionData: searchOptionData\n      });\n    },\n    /**\n     * @function hideSearchOptions\n     * @description Handles focus\n     * @param {Object} data Event Object\n     */\n    hideSearchOptions: function (data) {\n      if (data.domEvent.type === 'keydown') {\n        if (data.domEvent.shiftKey && data.domEvent.keyCode === 9) {\n          if ((Number(data.dataPath.split('.')[1]) === (this.searchOptions.length - 1))) {\n            this._focusFlag = false;\n          }\n        } else if (data.domEvent.keyCode === 27) {\n          controllerChannel.emit('hideSearchOptions', {\n            escapeKeyPressed: true\n          });\n        }\n      } else if (data.domEvent.type === 'blur') {\n        if ((Number(data.dataPath.split('.')[1]) === (this.searchOptions.length - 1))) {\n          if (this._focusFlag) {\n            controllerChannel.emit('hideSearchOptions', {});\n          }\n          this._focusFlag = true;\n        }\n      }\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              316,
+              320
+            ],
+            "parentNode": 2108,
+            "uid": 2109
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                          342,
+                          346
+                        ],
+                        "parentNode": 2114,
+                        "uid": 2115
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "_focusFlag",
+                        "range": [
+                          347,
+                          357
+                        ],
+                        "parentNode": 2114,
+                        "uid": 2116
+                      },
+                      "range": [
+                        342,
+                        357
+                      ],
+                      "parentNode": 2113,
+                      "uid": 2114
+                    },
+                    "right": {
+                      "type": "Literal",
+                      "value": true,
+                      "raw": "true",
+                      "range": [
+                        360,
+                        364
+                      ],
+                      "parentNode": 2113,
+                      "uid": 2117
+                    },
+                    "range": [
+                      342,
+                      364
+                    ],
+                    "parentNode": 2112,
+                    "uid": 2113
+                  },
+                  "range": [
+                    342,
+                    365
+                  ],
+                  "parentNode": 2111,
+                  "uid": 2112
+                }
+              ],
+              "range": [
+                334,
+                371
+              ],
+              "parentNode": 2110,
+              "uid": 2111
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              322,
+              371
+            ],
+            "parentNode": 2108,
+            "uid": 2110,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            316,
+            371
+          ],
+          "parentNode": 2107,
+          "uid": 2108
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "selectSearchOption",
+            "range": [
+              546,
+              564
+            ],
+            "parentNode": 2118,
+            "uid": 2119
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "data",
+                "range": [
+                  576,
+                  580
+                ],
+                "parentNode": 2120,
+                "uid": 2121
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "searchOptionData",
+                        "range": [
+                          594,
+                          610
+                        ],
+                        "parentNode": 2124,
+                        "uid": 2125
+                      },
+                      "init": {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "searchOption",
+                              "range": [
+                                623,
+                                635
+                              ],
+                              "parentNode": 2127,
+                              "uid": 2128
+                            },
+                            "value": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "data",
+                                  "range": [
+                                    637,
+                                    641
+                                  ],
+                                  "parentNode": 2130,
+                                  "uid": 2131
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "context",
+                                  "range": [
+                                    642,
+                                    649
+                                  ],
+                                  "parentNode": 2130,
+                                  "uid": 2132
+                                },
+                                "range": [
+                                  637,
+                                  649
+                                ],
+                                "parentNode": 2129,
+                                "uid": 2130
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "searchOption",
+                                "range": [
+                                  650,
+                                  662
+                                ],
+                                "parentNode": 2129,
+                                "uid": 2133
+                              },
+                              "range": [
+                                637,
+                                662
+                              ],
+                              "parentNode": 2127,
+                              "uid": 2129
+                            },
+                            "kind": "init",
+                            "range": [
+                              623,
+                              662
+                            ],
+                            "parentNode": 2126,
+                            "uid": 2127
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "searchOptionRecognitionID",
+                              "range": [
+                                672,
+                                697
+                              ],
+                              "parentNode": 2134,
+                              "uid": 2135
+                            },
+                            "value": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "data",
+                                  "range": [
+                                    699,
+                                    703
+                                  ],
+                                  "parentNode": 2137,
+                                  "uid": 2138
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "context",
+                                  "range": [
+                                    704,
+                                    711
+                                  ],
+                                  "parentNode": 2137,
+                                  "uid": 2139
+                                },
+                                "range": [
+                                  699,
+                                  711
+                                ],
+                                "parentNode": 2136,
+                                "uid": 2137
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "searchOptionRecognitionID",
+                                "range": [
+                                  712,
+                                  737
+                                ],
+                                "parentNode": 2136,
+                                "uid": 2140
+                              },
+                              "range": [
+                                699,
+                                737
+                              ],
+                              "parentNode": 2134,
+                              "uid": 2136
+                            },
+                            "kind": "init",
+                            "range": [
+                              672,
+                              737
+                            ],
+                            "parentNode": 2126,
+                            "uid": 2134
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "searchOptionAnswerID",
+                              "range": [
+                                747,
+                                767
+                              ],
+                              "parentNode": 2141,
+                              "uid": 2142
+                            },
+                            "value": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "data",
+                                  "range": [
+                                    769,
+                                    773
+                                  ],
+                                  "parentNode": 2144,
+                                  "uid": 2145
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "context",
+                                  "range": [
+                                    774,
+                                    781
+                                  ],
+                                  "parentNode": 2144,
+                                  "uid": 2146
+                                },
+                                "range": [
+                                  769,
+                                  781
+                                ],
+                                "parentNode": 2143,
+                                "uid": 2144
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "searchOptionAnswerID",
+                                "range": [
+                                  782,
+                                  802
+                                ],
+                                "parentNode": 2143,
+                                "uid": 2147
+                              },
+                              "range": [
+                                769,
+                                802
+                              ],
+                              "parentNode": 2141,
+                              "uid": 2143
+                            },
+                            "kind": "init",
+                            "range": [
+                              747,
+                              802
+                            ],
+                            "parentNode": 2126,
+                            "uid": 2141
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "searchOptionData",
+                              "range": [
+                                812,
+                                828
+                              ],
+                              "parentNode": 2148,
+                              "uid": 2149
+                            },
+                            "value": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "data",
+                                  "range": [
+                                    830,
+                                    834
+                                  ],
+                                  "parentNode": 2151,
+                                  "uid": 2152
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "context",
+                                  "range": [
+                                    835,
+                                    842
+                                  ],
+                                  "parentNode": 2151,
+                                  "uid": 2153
+                                },
+                                "range": [
+                                  830,
+                                  842
+                                ],
+                                "parentNode": 2150,
+                                "uid": 2151
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "searchOptionData",
+                                "range": [
+                                  843,
+                                  859
+                                ],
+                                "parentNode": 2150,
+                                "uid": 2154
+                              },
+                              "range": [
+                                830,
+                                859
+                              ],
+                              "parentNode": 2148,
+                              "uid": 2150
+                            },
+                            "kind": "init",
+                            "range": [
+                              812,
+                              859
+                            ],
+                            "parentNode": 2126,
+                            "uid": 2148
+                          }
+                        ],
+                        "range": [
+                          613,
+                          867
+                        ],
+                        "parentNode": 2124,
+                        "uid": 2126
+                      },
+                      "range": [
+                        594,
+                        867
+                      ],
+                      "parentNode": 2123,
+                      "uid": 2124
+                    }
+                  ],
+                  "kind": "var",
+                  "range": [
+                    590,
+                    868
+                  ],
+                  "parentNode": 2122,
+                  "uid": 2123
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "controllerChannel",
+                        "range": [
+                          875,
+                          892
+                        ],
+                        "parentNode": 2157,
+                        "uid": 2158
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          893,
+                          897
+                        ],
+                        "parentNode": 2157,
+                        "uid": 2159
+                      },
+                      "range": [
+                        875,
+                        897
+                      ],
+                      "parentNode": 2156,
+                      "uid": 2157
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "selectSearchOption",
+                        "raw": "'selectSearchOption'",
+                        "range": [
+                          898,
+                          918
+                        ],
+                        "parentNode": 2156,
+                        "uid": 2160
+                      },
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "searchOptionData",
+                              "range": [
+                                930,
+                                946
+                              ],
+                              "parentNode": 2162,
+                              "uid": 2163
+                            },
+                            "value": {
+                              "type": "Identifier",
+                              "name": "searchOptionData",
+                              "range": [
+                                948,
+                                964
+                              ],
+                              "parentNode": 2162,
+                              "uid": 2164
+                            },
+                            "kind": "init",
+                            "range": [
+                              930,
+                              964
+                            ],
+                            "parentNode": 2161,
+                            "uid": 2162
+                          }
+                        ],
+                        "range": [
+                          920,
+                          972
+                        ],
+                        "parentNode": 2156,
+                        "uid": 2161
+                      }
+                    ],
+                    "range": [
+                      875,
+                      973
+                    ],
+                    "parentNode": 2155,
+                    "uid": 2156
+                  },
+                  "range": [
+                    875,
+                    974
+                  ],
+                  "parentNode": 2122,
+                  "uid": 2155
+                }
+              ],
+              "range": [
+                582,
+                980
+              ],
+              "parentNode": 2120,
+              "uid": 2122
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              566,
+              980
+            ],
+            "parentNode": 2118,
+            "uid": 2120,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            546,
+            980
+          ],
+          "parentNode": 2107,
+          "uid": 2118
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "hideSearchOptions",
+            "range": [
+              1112,
+              1129
+            ],
+            "parentNode": 2165,
+            "uid": 2166
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "data",
+                "range": [
+                  1141,
+                  1145
+                ],
+                "parentNode": 2167,
+                "uid": 2168
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "IfStatement",
+                  "test": {
+                    "type": "BinaryExpression",
+                    "operator": "===",
+                    "left": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "data",
+                          "range": [
+                            1159,
+                            1163
+                          ],
+                          "parentNode": 2173,
+                          "uid": 2174
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "domEvent",
+                          "range": [
+                            1164,
+                            1172
+                          ],
+                          "parentNode": 2173,
+                          "uid": 2175
+                        },
+                        "range": [
+                          1159,
+                          1172
+                        ],
+                        "parentNode": 2172,
+                        "uid": 2173
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "type",
+                        "range": [
+                          1173,
+                          1177
+                        ],
+                        "parentNode": 2172,
+                        "uid": 2176
+                      },
+                      "range": [
+                        1159,
+                        1177
+                      ],
+                      "parentNode": 2171,
+                      "uid": 2172
+                    },
+                    "right": {
+                      "type": "Literal",
+                      "value": "keydown",
+                      "raw": "'keydown'",
+                      "range": [
+                        1182,
+                        1191
+                      ],
+                      "parentNode": 2171,
+                      "uid": 2177
+                    },
+                    "range": [
+                      1159,
+                      1191
+                    ],
+                    "parentNode": 2170,
+                    "uid": 2171
+                  },
+                  "consequent": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "IfStatement",
+                        "test": {
+                          "type": "LogicalExpression",
+                          "operator": "&&",
+                          "left": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "data",
+                                "range": [
+                                  1207,
+                                  1211
+                                ],
+                                "parentNode": 2182,
+                                "uid": 2183
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "domEvent",
+                                "range": [
+                                  1212,
+                                  1220
+                                ],
+                                "parentNode": 2182,
+                                "uid": 2184
+                              },
+                              "range": [
+                                1207,
+                                1220
+                              ],
+                              "parentNode": 2181,
+                              "uid": 2182
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "shiftKey",
+                              "range": [
+                                1221,
+                                1229
+                              ],
+                              "parentNode": 2181,
+                              "uid": 2185
+                            },
+                            "range": [
+                              1207,
+                              1229
+                            ],
+                            "parentNode": 2180,
+                            "uid": 2181
+                          },
+                          "right": {
+                            "type": "BinaryExpression",
+                            "operator": "===",
+                            "left": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "data",
+                                  "range": [
+                                    1233,
+                                    1237
+                                  ],
+                                  "parentNode": 2188,
+                                  "uid": 2189
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "domEvent",
+                                  "range": [
+                                    1238,
+                                    1246
+                                  ],
+                                  "parentNode": 2188,
+                                  "uid": 2190
+                                },
+                                "range": [
+                                  1233,
+                                  1246
+                                ],
+                                "parentNode": 2187,
+                                "uid": 2188
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "keyCode",
+                                "range": [
+                                  1247,
+                                  1254
+                                ],
+                                "parentNode": 2187,
+                                "uid": 2191
+                              },
+                              "range": [
+                                1233,
+                                1254
+                              ],
+                              "parentNode": 2186,
+                              "uid": 2187
+                            },
+                            "right": {
+                              "type": "Literal",
+                              "value": 9,
+                              "raw": "9",
+                              "range": [
+                                1259,
+                                1260
+                              ],
+                              "parentNode": 2186,
+                              "uid": 2192
+                            },
+                            "range": [
+                              1233,
+                              1260
+                            ],
+                            "parentNode": 2180,
+                            "uid": 2186
+                          },
+                          "range": [
+                            1207,
+                            1260
+                          ],
+                          "parentNode": 2179,
+                          "uid": 2180
+                        },
+                        "consequent": {
+                          "type": "BlockStatement",
+                          "body": [
+                            {
+                              "type": "IfStatement",
+                              "test": {
+                                "type": "BinaryExpression",
+                                "operator": "===",
+                                "left": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "Identifier",
+                                    "name": "Number",
+                                    "range": [
+                                      1279,
+                                      1285
+                                    ],
+                                    "parentNode": 2196,
+                                    "uid": 2197
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "MemberExpression",
+                                      "computed": true,
+                                      "object": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "MemberExpression",
+                                            "computed": false,
+                                            "object": {
+                                              "type": "Identifier",
+                                              "name": "data",
+                                              "range": [
+                                                1286,
+                                                1290
+                                              ],
+                                              "parentNode": 2201,
+                                              "uid": 2202
+                                            },
+                                            "property": {
+                                              "type": "Identifier",
+                                              "name": "dataPath",
+                                              "range": [
+                                                1291,
+                                                1299
+                                              ],
+                                              "parentNode": 2201,
+                                              "uid": 2203
+                                            },
+                                            "range": [
+                                              1286,
+                                              1299
+                                            ],
+                                            "parentNode": 2200,
+                                            "uid": 2201
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "split",
+                                            "range": [
+                                              1300,
+                                              1305
+                                            ],
+                                            "parentNode": 2200,
+                                            "uid": 2204
+                                          },
+                                          "range": [
+                                            1286,
+                                            1305
+                                          ],
+                                          "parentNode": 2199,
+                                          "uid": 2200
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": ".",
+                                            "raw": "'.'",
+                                            "range": [
+                                              1306,
+                                              1309
+                                            ],
+                                            "parentNode": 2199,
+                                            "uid": 2205
+                                          }
+                                        ],
+                                        "range": [
+                                          1286,
+                                          1310
+                                        ],
+                                        "parentNode": 2198,
+                                        "uid": 2199
+                                      },
+                                      "property": {
+                                        "type": "Literal",
+                                        "value": 1,
+                                        "raw": "1",
+                                        "range": [
+                                          1311,
+                                          1312
+                                        ],
+                                        "parentNode": 2198,
+                                        "uid": 2206
+                                      },
+                                      "range": [
+                                        1286,
+                                        1313
+                                      ],
+                                      "parentNode": 2196,
+                                      "uid": 2198
+                                    }
+                                  ],
+                                  "range": [
+                                    1279,
+                                    1314
+                                  ],
+                                  "parentNode": 2195,
+                                  "uid": 2196
+                                },
+                                "right": {
+                                  "type": "BinaryExpression",
+                                  "operator": "-",
+                                  "left": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "ThisExpression",
+                                        "range": [
+                                          1320,
+                                          1324
+                                        ],
+                                        "parentNode": 2209,
+                                        "uid": 2210
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "searchOptions",
+                                        "range": [
+                                          1325,
+                                          1338
+                                        ],
+                                        "parentNode": 2209,
+                                        "uid": 2211
+                                      },
+                                      "range": [
+                                        1320,
+                                        1338
+                                      ],
+                                      "parentNode": 2208,
+                                      "uid": 2209
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "length",
+                                      "range": [
+                                        1339,
+                                        1345
+                                      ],
+                                      "parentNode": 2208,
+                                      "uid": 2212
+                                    },
+                                    "range": [
+                                      1320,
+                                      1345
+                                    ],
+                                    "parentNode": 2207,
+                                    "uid": 2208
+                                  },
+                                  "right": {
+                                    "type": "Literal",
+                                    "value": 1,
+                                    "raw": "1",
+                                    "range": [
+                                      1348,
+                                      1349
+                                    ],
+                                    "parentNode": 2207,
+                                    "uid": 2213
+                                  },
+                                  "range": [
+                                    1320,
+                                    1349
+                                  ],
+                                  "parentNode": 2195,
+                                  "uid": 2207
+                                },
+                                "range": [
+                                  1279,
+                                  1350
+                                ],
+                                "parentNode": 2194,
+                                "uid": 2195
+                              },
+                              "consequent": {
+                                "type": "BlockStatement",
+                                "body": [
+                                  {
+                                    "type": "ExpressionStatement",
+                                    "expression": {
+                                      "type": "AssignmentExpression",
+                                      "operator": "=",
+                                      "left": {
+                                        "type": "MemberExpression",
+                                        "computed": false,
+                                        "object": {
+                                          "type": "ThisExpression",
+                                          "range": [
+                                            1367,
+                                            1371
+                                          ],
+                                          "parentNode": 2217,
+                                          "uid": 2218
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "_focusFlag",
+                                          "range": [
+                                            1372,
+                                            1382
+                                          ],
+                                          "parentNode": 2217,
+                                          "uid": 2219
+                                        },
+                                        "range": [
+                                          1367,
+                                          1382
+                                        ],
+                                        "parentNode": 2216,
+                                        "uid": 2217
+                                      },
+                                      "right": {
+                                        "type": "Literal",
+                                        "value": false,
+                                        "raw": "false",
+                                        "range": [
+                                          1385,
+                                          1390
+                                        ],
+                                        "parentNode": 2216,
+                                        "uid": 2220
+                                      },
+                                      "range": [
+                                        1367,
+                                        1390
+                                      ],
+                                      "parentNode": 2215,
+                                      "uid": 2216
+                                    },
+                                    "range": [
+                                      1367,
+                                      1391
+                                    ],
+                                    "parentNode": 2214,
+                                    "uid": 2215
+                                  }
+                                ],
+                                "range": [
+                                  1353,
+                                  1403
+                                ],
+                                "parentNode": 2194,
+                                "uid": 2214
+                              },
+                              "alternate": null,
+                              "range": [
+                                1274,
+                                1403
+                              ],
+                              "parentNode": 2193,
+                              "uid": 2194
+                            }
+                          ],
+                          "range": [
+                            1262,
+                            1413
+                          ],
+                          "parentNode": 2179,
+                          "uid": 2193
+                        },
+                        "alternate": {
+                          "type": "IfStatement",
+                          "test": {
+                            "type": "BinaryExpression",
+                            "operator": "===",
+                            "left": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "data",
+                                  "range": [
+                                    1423,
+                                    1427
+                                  ],
+                                  "parentNode": 2224,
+                                  "uid": 2225
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "domEvent",
+                                  "range": [
+                                    1428,
+                                    1436
+                                  ],
+                                  "parentNode": 2224,
+                                  "uid": 2226
+                                },
+                                "range": [
+                                  1423,
+                                  1436
+                                ],
+                                "parentNode": 2223,
+                                "uid": 2224
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "keyCode",
+                                "range": [
+                                  1437,
+                                  1444
+                                ],
+                                "parentNode": 2223,
+                                "uid": 2227
+                              },
+                              "range": [
+                                1423,
+                                1444
+                              ],
+                              "parentNode": 2222,
+                              "uid": 2223
+                            },
+                            "right": {
+                              "type": "Literal",
+                              "value": 27,
+                              "raw": "27",
+                              "range": [
+                                1449,
+                                1451
+                              ],
+                              "parentNode": 2222,
+                              "uid": 2228
+                            },
+                            "range": [
+                              1423,
+                              1451
+                            ],
+                            "parentNode": 2221,
+                            "uid": 2222
+                          },
+                          "consequent": {
+                            "type": "BlockStatement",
+                            "body": [
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "Identifier",
+                                      "name": "controllerChannel",
+                                      "range": [
+                                        1465,
+                                        1482
+                                      ],
+                                      "parentNode": 2232,
+                                      "uid": 2233
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "emit",
+                                      "range": [
+                                        1483,
+                                        1487
+                                      ],
+                                      "parentNode": 2232,
+                                      "uid": 2234
+                                    },
+                                    "range": [
+                                      1465,
+                                      1487
+                                    ],
+                                    "parentNode": 2231,
+                                    "uid": 2232
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": "hideSearchOptions",
+                                      "raw": "'hideSearchOptions'",
+                                      "range": [
+                                        1488,
+                                        1507
+                                      ],
+                                      "parentNode": 2231,
+                                      "uid": 2235
+                                    },
+                                    {
+                                      "type": "ObjectExpression",
+                                      "properties": [
+                                        {
+                                          "type": "Property",
+                                          "key": {
+                                            "type": "Identifier",
+                                            "name": "escapeKeyPressed",
+                                            "range": [
+                                              1523,
+                                              1539
+                                            ],
+                                            "parentNode": 2237,
+                                            "uid": 2238
+                                          },
+                                          "value": {
+                                            "type": "Literal",
+                                            "value": true,
+                                            "raw": "true",
+                                            "range": [
+                                              1541,
+                                              1545
+                                            ],
+                                            "parentNode": 2237,
+                                            "uid": 2239
+                                          },
+                                          "kind": "init",
+                                          "range": [
+                                            1523,
+                                            1545
+                                          ],
+                                          "parentNode": 2236,
+                                          "uid": 2237
+                                        }
+                                      ],
+                                      "range": [
+                                        1509,
+                                        1557
+                                      ],
+                                      "parentNode": 2231,
+                                      "uid": 2236
+                                    }
+                                  ],
+                                  "range": [
+                                    1465,
+                                    1558
+                                  ],
+                                  "parentNode": 2230,
+                                  "uid": 2231
+                                },
+                                "range": [
+                                  1465,
+                                  1559
+                                ],
+                                "parentNode": 2229,
+                                "uid": 2230
+                              }
+                            ],
+                            "range": [
+                              1453,
+                              1569
+                            ],
+                            "parentNode": 2221,
+                            "uid": 2229
+                          },
+                          "alternate": null,
+                          "range": [
+                            1419,
+                            1569
+                          ],
+                          "parentNode": 2179,
+                          "uid": 2221
+                        },
+                        "range": [
+                          1203,
+                          1569
+                        ],
+                        "parentNode": 2178,
+                        "uid": 2179
+                      }
+                    ],
+                    "range": [
+                      1193,
+                      1577
+                    ],
+                    "parentNode": 2170,
+                    "uid": 2178
+                  },
+                  "alternate": {
+                    "type": "IfStatement",
+                    "test": {
+                      "type": "BinaryExpression",
+                      "operator": "===",
+                      "left": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "data",
+                            "range": [
+                              1587,
+                              1591
+                            ],
+                            "parentNode": 2243,
+                            "uid": 2244
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "domEvent",
+                            "range": [
+                              1592,
+                              1600
+                            ],
+                            "parentNode": 2243,
+                            "uid": 2245
+                          },
+                          "range": [
+                            1587,
+                            1600
+                          ],
+                          "parentNode": 2242,
+                          "uid": 2243
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "type",
+                          "range": [
+                            1601,
+                            1605
+                          ],
+                          "parentNode": 2242,
+                          "uid": 2246
+                        },
+                        "range": [
+                          1587,
+                          1605
+                        ],
+                        "parentNode": 2241,
+                        "uid": 2242
+                      },
+                      "right": {
+                        "type": "Literal",
+                        "value": "blur",
+                        "raw": "'blur'",
+                        "range": [
+                          1610,
+                          1616
+                        ],
+                        "parentNode": 2241,
+                        "uid": 2247
+                      },
+                      "range": [
+                        1587,
+                        1616
+                      ],
+                      "parentNode": 2240,
+                      "uid": 2241
+                    },
+                    "consequent": {
+                      "type": "BlockStatement",
+                      "body": [
+                        {
+                          "type": "IfStatement",
+                          "test": {
+                            "type": "BinaryExpression",
+                            "operator": "===",
+                            "left": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "Identifier",
+                                "name": "Number",
+                                "range": [
+                                  1633,
+                                  1639
+                                ],
+                                "parentNode": 2251,
+                                "uid": 2252
+                              },
+                              "arguments": [
+                                {
+                                  "type": "MemberExpression",
+                                  "computed": true,
+                                  "object": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "MemberExpression",
+                                        "computed": false,
+                                        "object": {
+                                          "type": "Identifier",
+                                          "name": "data",
+                                          "range": [
+                                            1640,
+                                            1644
+                                          ],
+                                          "parentNode": 2256,
+                                          "uid": 2257
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "dataPath",
+                                          "range": [
+                                            1645,
+                                            1653
+                                          ],
+                                          "parentNode": 2256,
+                                          "uid": 2258
+                                        },
+                                        "range": [
+                                          1640,
+                                          1653
+                                        ],
+                                        "parentNode": 2255,
+                                        "uid": 2256
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "split",
+                                        "range": [
+                                          1654,
+                                          1659
+                                        ],
+                                        "parentNode": 2255,
+                                        "uid": 2259
+                                      },
+                                      "range": [
+                                        1640,
+                                        1659
+                                      ],
+                                      "parentNode": 2254,
+                                      "uid": 2255
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "Literal",
+                                        "value": ".",
+                                        "raw": "'.'",
+                                        "range": [
+                                          1660,
+                                          1663
+                                        ],
+                                        "parentNode": 2254,
+                                        "uid": 2260
+                                      }
+                                    ],
+                                    "range": [
+                                      1640,
+                                      1664
+                                    ],
+                                    "parentNode": 2253,
+                                    "uid": 2254
+                                  },
+                                  "property": {
+                                    "type": "Literal",
+                                    "value": 1,
+                                    "raw": "1",
+                                    "range": [
+                                      1665,
+                                      1666
+                                    ],
+                                    "parentNode": 2253,
+                                    "uid": 2261
+                                  },
+                                  "range": [
+                                    1640,
+                                    1667
+                                  ],
+                                  "parentNode": 2251,
+                                  "uid": 2253
+                                }
+                              ],
+                              "range": [
+                                1633,
+                                1668
+                              ],
+                              "parentNode": 2250,
+                              "uid": 2251
+                            },
+                            "right": {
+                              "type": "BinaryExpression",
+                              "operator": "-",
+                              "left": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "ThisExpression",
+                                    "range": [
+                                      1674,
+                                      1678
+                                    ],
+                                    "parentNode": 2264,
+                                    "uid": 2265
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "searchOptions",
+                                    "range": [
+                                      1679,
+                                      1692
+                                    ],
+                                    "parentNode": 2264,
+                                    "uid": 2266
+                                  },
+                                  "range": [
+                                    1674,
+                                    1692
+                                  ],
+                                  "parentNode": 2263,
+                                  "uid": 2264
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "length",
+                                  "range": [
+                                    1693,
+                                    1699
+                                  ],
+                                  "parentNode": 2263,
+                                  "uid": 2267
+                                },
+                                "range": [
+                                  1674,
+                                  1699
+                                ],
+                                "parentNode": 2262,
+                                "uid": 2263
+                              },
+                              "right": {
+                                "type": "Literal",
+                                "value": 1,
+                                "raw": "1",
+                                "range": [
+                                  1702,
+                                  1703
+                                ],
+                                "parentNode": 2262,
+                                "uid": 2268
+                              },
+                              "range": [
+                                1674,
+                                1703
+                              ],
+                              "parentNode": 2250,
+                              "uid": 2262
+                            },
+                            "range": [
+                              1633,
+                              1704
+                            ],
+                            "parentNode": 2249,
+                            "uid": 2250
+                          },
+                          "consequent": {
+                            "type": "BlockStatement",
+                            "body": [
+                              {
+                                "type": "IfStatement",
+                                "test": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "ThisExpression",
+                                    "range": [
+                                      1723,
+                                      1727
+                                    ],
+                                    "parentNode": 2271,
+                                    "uid": 2272
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "_focusFlag",
+                                    "range": [
+                                      1728,
+                                      1738
+                                    ],
+                                    "parentNode": 2271,
+                                    "uid": 2273
+                                  },
+                                  "range": [
+                                    1723,
+                                    1738
+                                  ],
+                                  "parentNode": 2270,
+                                  "uid": 2271
+                                },
+                                "consequent": {
+                                  "type": "BlockStatement",
+                                  "body": [
+                                    {
+                                      "type": "ExpressionStatement",
+                                      "expression": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "Identifier",
+                                            "name": "controllerChannel",
+                                            "range": [
+                                              1754,
+                                              1771
+                                            ],
+                                            "parentNode": 2277,
+                                            "uid": 2278
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "emit",
+                                            "range": [
+                                              1772,
+                                              1776
+                                            ],
+                                            "parentNode": 2277,
+                                            "uid": 2279
+                                          },
+                                          "range": [
+                                            1754,
+                                            1776
+                                          ],
+                                          "parentNode": 2276,
+                                          "uid": 2277
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": "hideSearchOptions",
+                                            "raw": "'hideSearchOptions'",
+                                            "range": [
+                                              1777,
+                                              1796
+                                            ],
+                                            "parentNode": 2276,
+                                            "uid": 2280
+                                          },
+                                          {
+                                            "type": "ObjectExpression",
+                                            "properties": [],
+                                            "range": [
+                                              1798,
+                                              1800
+                                            ],
+                                            "parentNode": 2276,
+                                            "uid": 2281
+                                          }
+                                        ],
+                                        "range": [
+                                          1754,
+                                          1801
+                                        ],
+                                        "parentNode": 2275,
+                                        "uid": 2276
+                                      },
+                                      "range": [
+                                        1754,
+                                        1802
+                                      ],
+                                      "parentNode": 2274,
+                                      "uid": 2275
+                                    }
+                                  ],
+                                  "range": [
+                                    1740,
+                                    1814
+                                  ],
+                                  "parentNode": 2270,
+                                  "uid": 2274
+                                },
+                                "alternate": null,
+                                "range": [
+                                  1719,
+                                  1814
+                                ],
+                                "parentNode": 2269,
+                                "uid": 2270
+                              },
+                              {
+                                "type": "ExpressionStatement",
+                                "expression": {
+                                  "type": "AssignmentExpression",
+                                  "operator": "=",
+                                  "left": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "ThisExpression",
+                                      "range": [
+                                        1825,
+                                        1829
+                                      ],
+                                      "parentNode": 2284,
+                                      "uid": 2285
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "_focusFlag",
+                                      "range": [
+                                        1830,
+                                        1840
+                                      ],
+                                      "parentNode": 2284,
+                                      "uid": 2286
+                                    },
+                                    "range": [
+                                      1825,
+                                      1840
+                                    ],
+                                    "parentNode": 2283,
+                                    "uid": 2284
+                                  },
+                                  "right": {
+                                    "type": "Literal",
+                                    "value": true,
+                                    "raw": "true",
+                                    "range": [
+                                      1843,
+                                      1847
+                                    ],
+                                    "parentNode": 2283,
+                                    "uid": 2287
+                                  },
+                                  "range": [
+                                    1825,
+                                    1847
+                                  ],
+                                  "parentNode": 2282,
+                                  "uid": 2283
+                                },
+                                "range": [
+                                  1825,
+                                  1848
+                                ],
+                                "parentNode": 2269,
+                                "uid": 2282
+                              }
+                            ],
+                            "range": [
+                              1707,
+                              1858
+                            ],
+                            "parentNode": 2249,
+                            "uid": 2269
+                          },
+                          "alternate": null,
+                          "range": [
+                            1628,
+                            1858
+                          ],
+                          "parentNode": 2248,
+                          "uid": 2249
+                        }
+                      ],
+                      "range": [
+                        1618,
+                        1866
+                      ],
+                      "parentNode": 2240,
+                      "uid": 2248
+                    },
+                    "alternate": null,
+                    "range": [
+                      1583,
+                      1866
+                    ],
+                    "parentNode": 2170,
+                    "uid": 2240
+                  },
+                  "range": [
+                    1155,
+                    1866
+                  ],
+                  "parentNode": 2169,
+                  "uid": 2170
+                }
+              ],
+              "range": [
+                1147,
+                1872
+              ],
+              "parentNode": 2167,
+              "uid": 2169
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              1131,
+              1872
+            ],
+            "parentNode": 2165,
+            "uid": 2167,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            1112,
+            1872
+          ],
+          "parentNode": 2107,
+          "uid": 2165
+        }
+      ],
+      "range": [
+        281,
+        1876
+      ],
+      "parentNode": 2106,
+      "uid": 2107
+    },
+    "range": [
+      274,
+      1877
+    ],
+    "parentNode": 2099,
+    "uid": 2106,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 61,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1836,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./primarySearchOption",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "selectSearchOption",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 22,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "selectSearchOption: function(data) {"
+      },
+      {
+        "name": "hideSearchOptions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 39,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "data"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "hideSearchOptions: function(data) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/conversationDeck",
+    "fileName": "primarySearchOption.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 57
+}

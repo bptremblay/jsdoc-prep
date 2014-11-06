@@ -1,0 +1,627 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "mortgage_account_recent_payment",
+      "AMD": true,
+      "webPath": "/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'editAutomaticPayment'.",
+        "code": "wfJD",
+        "evidence": "editAutomaticPayment: function() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'editAutomaticPayment'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'cancelAutomaticPayment'.",
+        "code": "wfJD",
+        "evidence": "cancelAutomaticPayment: function() {",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'cancelAutomaticPayment'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setupAutomaticPayments'.",
+        "code": "wfJD",
+        "evidence": "setupAutomaticPayments: function() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setupAutomaticPayments'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myAccounts/mortgageAccountRecentPayment.js",
+  "folderPath": "test-source/component/myAccounts",
+  "fileName": "mortgageAccountRecentPayment.js",
+  "packagePath": "/component/myAccounts",
+  "webPath": "/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "mortgage_account_recent_payment",
+  "name": "mortgageAccountRecentPayment",
+  "camelName": "MortgageAccountRecentPayment",
+  "processedFilePath": "test-output/component/myAccounts/mortgageAccountRecentPayment.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myAccounts/mortgageAccountRecentPayment */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Edit automatic payment.\n     */\n    editAutomaticPayment: function () {\n      console.log('foo');\n    },\n    /**\n     * Cancel automatic payment.\n     */\n    cancelAutomaticPayment: function () {\n      console.log('foo');\n    },\n    /**\n     * Setup automatic payments.\n     */\n    setupAutomaticPayments: function () {\n      console.log('foo');\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              94,
+              98
+            ],
+            "parentNode": 573,
+            "uid": 574
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        120,
+                        127
+                      ],
+                      "parentNode": 578,
+                      "uid": 579
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            130,
+                            134
+                          ],
+                          "parentNode": 581,
+                          "uid": 582
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            135,
+                            143
+                          ],
+                          "parentNode": 581,
+                          "uid": 583
+                        },
+                        "range": [
+                          130,
+                          143
+                        ],
+                        "parentNode": 580,
+                        "uid": 581
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          144,
+                          151
+                        ],
+                        "parentNode": 580,
+                        "uid": 584
+                      },
+                      "range": [
+                        130,
+                        151
+                      ],
+                      "parentNode": 578,
+                      "uid": 580
+                    },
+                    "range": [
+                      120,
+                      151
+                    ],
+                    "parentNode": 577,
+                    "uid": 578
+                  },
+                  "range": [
+                    120,
+                    152
+                  ],
+                  "parentNode": 576,
+                  "uid": 577
+                }
+              ],
+              "range": [
+                112,
+                158
+              ],
+              "parentNode": 575,
+              "uid": 576
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              100,
+              158
+            ],
+            "parentNode": 573,
+            "uid": 575,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            94,
+            158
+          ],
+          "parentNode": 572,
+          "uid": 573
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "editAutomaticPayment",
+            "range": [
+              211,
+              231
+            ],
+            "parentNode": 585,
+            "uid": 586
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "console",
+                        "range": [
+                          253,
+                          260
+                        ],
+                        "parentNode": 591,
+                        "uid": 592
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "log",
+                        "range": [
+                          261,
+                          264
+                        ],
+                        "parentNode": 591,
+                        "uid": 593
+                      },
+                      "range": [
+                        253,
+                        264
+                      ],
+                      "parentNode": 590,
+                      "uid": 591
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "foo",
+                        "raw": "'foo'",
+                        "range": [
+                          265,
+                          270
+                        ],
+                        "parentNode": 590,
+                        "uid": 594
+                      }
+                    ],
+                    "range": [
+                      253,
+                      271
+                    ],
+                    "parentNode": 589,
+                    "uid": 590
+                  },
+                  "range": [
+                    253,
+                    272
+                  ],
+                  "parentNode": 588,
+                  "uid": 589
+                }
+              ],
+              "range": [
+                245,
+                278
+              ],
+              "parentNode": 587,
+              "uid": 588
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              233,
+              278
+            ],
+            "parentNode": 585,
+            "uid": 587,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            211,
+            278
+          ],
+          "parentNode": 572,
+          "uid": 585
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "cancelAutomaticPayment",
+            "range": [
+              333,
+              355
+            ],
+            "parentNode": 595,
+            "uid": 596
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "console",
+                        "range": [
+                          377,
+                          384
+                        ],
+                        "parentNode": 601,
+                        "uid": 602
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "log",
+                        "range": [
+                          385,
+                          388
+                        ],
+                        "parentNode": 601,
+                        "uid": 603
+                      },
+                      "range": [
+                        377,
+                        388
+                      ],
+                      "parentNode": 600,
+                      "uid": 601
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "foo",
+                        "raw": "'foo'",
+                        "range": [
+                          389,
+                          394
+                        ],
+                        "parentNode": 600,
+                        "uid": 604
+                      }
+                    ],
+                    "range": [
+                      377,
+                      395
+                    ],
+                    "parentNode": 599,
+                    "uid": 600
+                  },
+                  "range": [
+                    377,
+                    396
+                  ],
+                  "parentNode": 598,
+                  "uid": 599
+                }
+              ],
+              "range": [
+                369,
+                402
+              ],
+              "parentNode": 597,
+              "uid": 598
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              357,
+              402
+            ],
+            "parentNode": 595,
+            "uid": 597,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            333,
+            402
+          ],
+          "parentNode": 572,
+          "uid": 595
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "setupAutomaticPayments",
+            "range": [
+              457,
+              479
+            ],
+            "parentNode": 605,
+            "uid": 606
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "console",
+                        "range": [
+                          501,
+                          508
+                        ],
+                        "parentNode": 611,
+                        "uid": 612
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "log",
+                        "range": [
+                          509,
+                          512
+                        ],
+                        "parentNode": 611,
+                        "uid": 613
+                      },
+                      "range": [
+                        501,
+                        512
+                      ],
+                      "parentNode": 610,
+                      "uid": 611
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "foo",
+                        "raw": "'foo'",
+                        "range": [
+                          513,
+                          518
+                        ],
+                        "parentNode": 610,
+                        "uid": 614
+                      }
+                    ],
+                    "range": [
+                      501,
+                      519
+                    ],
+                    "parentNode": 609,
+                    "uid": 610
+                  },
+                  "range": [
+                    501,
+                    520
+                  ],
+                  "parentNode": 608,
+                  "uid": 609
+                }
+              ],
+              "range": [
+                493,
+                526
+              ],
+              "parentNode": 607,
+              "uid": 608
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              481,
+              526
+            ],
+            "parentNode": 605,
+            "uid": 607,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            457,
+            526
+          ],
+          "parentNode": 572,
+          "uid": 605
+        }
+      ],
+      "range": [
+        59,
+        530
+      ],
+      "parentNode": 571,
+      "uid": 572
+    },
+    "range": [
+      52,
+      531
+    ],
+    "parentNode": 566,
+    "uid": 571,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 18,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 357,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mortgageAccountRecentPayment",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "editAutomaticPayment",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "editAutomaticPayment: function() {"
+      },
+      {
+        "name": "cancelAutomaticPayment",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "cancelAutomaticPayment: function() {"
+      },
+      {
+        "name": "setupAutomaticPayments",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setupAutomaticPayments: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "fileName": "mortgageAccountRecentPayment.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 33
+}

@@ -1,0 +1,804 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "mortgage_account_recent_payment",
+      "AMD": true,
+      "webPath": "/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'mortgageRecentPaymentView'.",
+        "code": "wfJD",
+        "evidence": "return function mortgageRecentPaymentView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'mortgageRecentPaymentView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myAccounts/mortgageAccountRecentPayment.js",
+  "folderPath": "test-source/view/myAccounts",
+  "fileName": "mortgageAccountRecentPayment.js",
+  "packagePath": "/view/myAccounts",
+  "webPath": "/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "mortgage_account_recent_payment",
+  "name": "mortgageAccountRecentPayment",
+  "camelName": "MortgageAccountRecentPayment",
+  "processedFilePath": "test-output/view/myAccounts/mortgageAccountRecentPayment.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction MortgageRecentPaymentView() {\n    this.bridge = this.createBridge(require('dashboard/view/webspec/myAccounts/mortgageAccountRecentPayment'));\n    this.template = require('dashboard/template/myAccounts/mortgageAccountRecentPayment');\n    /**\n     * Init.\n     */\n    this.init = function () {\n      this.bridge.on('state/lateFeesHide', function () {\n        $('#showLateFees').hide();\n      });\n      this.bridge.on('state/autoPaymentHide', function () {\n        $('#automaticPayment').hide();\n      });\n    };\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "mortgageRecentPaymentView",
+        "range": [
+          93,
+          118
+        ],
+        "parentNode": 879,
+        "uid": 880
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    127,
+                    131
+                  ],
+                  "parentNode": 884,
+                  "uid": 885
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    132,
+                    138
+                  ],
+                  "parentNode": 884,
+                  "uid": 886
+                },
+                "range": [
+                  127,
+                  138
+                ],
+                "parentNode": 883,
+                "uid": 884
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression",
+                    "range": [
+                      141,
+                      145
+                    ],
+                    "parentNode": 888,
+                    "uid": 889
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createBridge",
+                    "range": [
+                      146,
+                      158
+                    ],
+                    "parentNode": 888,
+                    "uid": 890
+                  },
+                  "range": [
+                    141,
+                    158
+                  ],
+                  "parentNode": 887,
+                  "uid": 888
+                },
+                "arguments": [
+                  {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        159,
+                        166
+                      ],
+                      "parentNode": 891,
+                      "uid": 892
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "dashboard/view/webspec/myAccounts/mortgageAccountRecentPayment",
+                        "raw": "'dashboard/view/webspec/myAccounts/mortgageAccountRecentPayment'",
+                        "range": [
+                          167,
+                          231
+                        ],
+                        "parentNode": 891,
+                        "uid": 893
+                      }
+                    ],
+                    "range": [
+                      159,
+                      232
+                    ],
+                    "parentNode": 887,
+                    "uid": 891
+                  }
+                ],
+                "range": [
+                  141,
+                  233
+                ],
+                "parentNode": 883,
+                "uid": 887
+              },
+              "range": [
+                127,
+                233
+              ],
+              "parentNode": 882,
+              "uid": 883
+            },
+            "range": [
+              127,
+              234
+            ],
+            "parentNode": 881,
+            "uid": 882
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    239,
+                    243
+                  ],
+                  "parentNode": 896,
+                  "uid": 897
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    244,
+                    252
+                  ],
+                  "parentNode": 896,
+                  "uid": 898
+                },
+                "range": [
+                  239,
+                  252
+                ],
+                "parentNode": 895,
+                "uid": 896
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    255,
+                    262
+                  ],
+                  "parentNode": 899,
+                  "uid": 900
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myAccounts/mortgageAccountRecentPayment",
+                    "raw": "'dashboard/template/myAccounts/mortgageAccountRecentPayment'",
+                    "range": [
+                      263,
+                      323
+                    ],
+                    "parentNode": 899,
+                    "uid": 901
+                  }
+                ],
+                "range": [
+                  255,
+                  324
+                ],
+                "parentNode": 895,
+                "uid": 899
+              },
+              "range": [
+                239,
+                324
+              ],
+              "parentNode": 894,
+              "uid": 895
+            },
+            "range": [
+              239,
+              325
+            ],
+            "parentNode": 881,
+            "uid": 894
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    359,
+                    363
+                  ],
+                  "parentNode": 904,
+                  "uid": 905
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    364,
+                    368
+                  ],
+                  "parentNode": 904,
+                  "uid": 906
+                },
+                "range": [
+                  359,
+                  368
+                ],
+                "parentNode": 903,
+                "uid": 904
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                391,
+                                395
+                              ],
+                              "parentNode": 912,
+                              "uid": 913
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "bridge",
+                              "range": [
+                                396,
+                                402
+                              ],
+                              "parentNode": 912,
+                              "uid": 914
+                            },
+                            "range": [
+                              391,
+                              402
+                            ],
+                            "parentNode": 911,
+                            "uid": 912
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "on",
+                            "range": [
+                              403,
+                              405
+                            ],
+                            "parentNode": 911,
+                            "uid": 915
+                          },
+                          "range": [
+                            391,
+                            405
+                          ],
+                          "parentNode": 910,
+                          "uid": 911
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "state/lateFeesHide",
+                            "raw": "'state/lateFeesHide'",
+                            "range": [
+                              406,
+                              426
+                            ],
+                            "parentNode": 910,
+                            "uid": 916
+                          },
+                          {
+                            "type": "FunctionExpression",
+                            "id": null,
+                            "params": [],
+                            "defaults": [],
+                            "body": {
+                              "type": "BlockStatement",
+                              "body": [
+                                {
+                                  "type": "ExpressionStatement",
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "Identifier",
+                                          "name": "$",
+                                          "range": [
+                                            450,
+                                            451
+                                          ],
+                                          "parentNode": 922,
+                                          "uid": 923
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": "#showLateFees",
+                                            "raw": "'#showLateFees'",
+                                            "range": [
+                                              452,
+                                              467
+                                            ],
+                                            "parentNode": 922,
+                                            "uid": 924
+                                          }
+                                        ],
+                                        "range": [
+                                          450,
+                                          468
+                                        ],
+                                        "parentNode": 921,
+                                        "uid": 922
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "hide",
+                                        "range": [
+                                          469,
+                                          473
+                                        ],
+                                        "parentNode": 921,
+                                        "uid": 925
+                                      },
+                                      "range": [
+                                        450,
+                                        473
+                                      ],
+                                      "parentNode": 920,
+                                      "uid": 921
+                                    },
+                                    "arguments": [],
+                                    "range": [
+                                      450,
+                                      475
+                                    ],
+                                    "parentNode": 919,
+                                    "uid": 920
+                                  },
+                                  "range": [
+                                    450,
+                                    476
+                                  ],
+                                  "parentNode": 918,
+                                  "uid": 919
+                                }
+                              ],
+                              "range": [
+                                440,
+                                484
+                              ],
+                              "parentNode": 917,
+                              "uid": 918
+                            },
+                            "rest": null,
+                            "generator": false,
+                            "expression": false,
+                            "range": [
+                              428,
+                              484
+                            ],
+                            "parentNode": 910,
+                            "uid": 917,
+                            "returnType": ""
+                          }
+                        ],
+                        "range": [
+                          391,
+                          485
+                        ],
+                        "parentNode": 909,
+                        "uid": 910
+                      },
+                      "range": [
+                        391,
+                        486
+                      ],
+                      "parentNode": 908,
+                      "uid": 909
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                493,
+                                497
+                              ],
+                              "parentNode": 929,
+                              "uid": 930
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "bridge",
+                              "range": [
+                                498,
+                                504
+                              ],
+                              "parentNode": 929,
+                              "uid": 931
+                            },
+                            "range": [
+                              493,
+                              504
+                            ],
+                            "parentNode": 928,
+                            "uid": 929
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "on",
+                            "range": [
+                              505,
+                              507
+                            ],
+                            "parentNode": 928,
+                            "uid": 932
+                          },
+                          "range": [
+                            493,
+                            507
+                          ],
+                          "parentNode": 927,
+                          "uid": 928
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "state/autoPaymentHide",
+                            "raw": "'state/autoPaymentHide'",
+                            "range": [
+                              508,
+                              531
+                            ],
+                            "parentNode": 927,
+                            "uid": 933
+                          },
+                          {
+                            "type": "FunctionExpression",
+                            "id": null,
+                            "params": [],
+                            "defaults": [],
+                            "body": {
+                              "type": "BlockStatement",
+                              "body": [
+                                {
+                                  "type": "ExpressionStatement",
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "Identifier",
+                                          "name": "$",
+                                          "range": [
+                                            555,
+                                            556
+                                          ],
+                                          "parentNode": 939,
+                                          "uid": 940
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": "#automaticPayment",
+                                            "raw": "'#automaticPayment'",
+                                            "range": [
+                                              557,
+                                              576
+                                            ],
+                                            "parentNode": 939,
+                                            "uid": 941
+                                          }
+                                        ],
+                                        "range": [
+                                          555,
+                                          577
+                                        ],
+                                        "parentNode": 938,
+                                        "uid": 939
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "hide",
+                                        "range": [
+                                          578,
+                                          582
+                                        ],
+                                        "parentNode": 938,
+                                        "uid": 942
+                                      },
+                                      "range": [
+                                        555,
+                                        582
+                                      ],
+                                      "parentNode": 937,
+                                      "uid": 938
+                                    },
+                                    "arguments": [],
+                                    "range": [
+                                      555,
+                                      584
+                                    ],
+                                    "parentNode": 936,
+                                    "uid": 937
+                                  },
+                                  "range": [
+                                    555,
+                                    585
+                                  ],
+                                  "parentNode": 935,
+                                  "uid": 936
+                                }
+                              ],
+                              "range": [
+                                545,
+                                593
+                              ],
+                              "parentNode": 934,
+                              "uid": 935
+                            },
+                            "rest": null,
+                            "generator": false,
+                            "expression": false,
+                            "range": [
+                              533,
+                              593
+                            ],
+                            "parentNode": 927,
+                            "uid": 934,
+                            "returnType": ""
+                          }
+                        ],
+                        "range": [
+                          493,
+                          594
+                        ],
+                        "parentNode": 926,
+                        "uid": 927
+                      },
+                      "range": [
+                        493,
+                        595
+                      ],
+                      "parentNode": 908,
+                      "uid": 926
+                    }
+                  ],
+                  "range": [
+                    383,
+                    601
+                  ],
+                  "parentNode": 907,
+                  "uid": 908
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  371,
+                  601
+                ],
+                "parentNode": 903,
+                "uid": 907,
+                "returnType": ""
+              },
+              "range": [
+                359,
+                601
+              ],
+              "parentNode": 902,
+              "uid": 903
+            },
+            "range": [
+              359,
+              602
+            ],
+            "parentNode": 881,
+            "uid": 902
+          }
+        ],
+        "range": [
+          121,
+          606
+        ],
+        "parentNode": 879,
+        "uid": 881
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        84,
+        606
+      ],
+      "parentNode": 878,
+      "uid": 879,
+      "returnType": ""
+    },
+    "range": [
+      77,
+      607
+    ],
+    "parentNode": 877,
+    "uid": 878,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 22,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 539,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mortgageAccountRecentPayment",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "mortgageRecentPaymentView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function mortgageRecentPaymentView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "fileName": "mortgageAccountRecentPayment.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 26
+}

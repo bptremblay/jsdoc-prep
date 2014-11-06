@@ -1,0 +1,92 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "messages"
+      ],
+      "moduleName": "panel",
+      "AMD": true,
+      "webPath": "/js"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'Panel'.",
+        "code": "wfJD",
+        "evidence": "function Panel() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'Panel'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/panel.js",
+  "folderPath": "test-source/js",
+  "fileName": "panel.js",
+  "packagePath": "/js",
+  "webPath": "/js",
+  "libFile": false,
+  "min": false,
+  "realName": "panel",
+  "name": "panel",
+  "camelName": "Panel",
+  "processedFilePath": "test-output/js/panel.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "jsDoccerProcData": {
+    "lines": 19,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 239,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./panel",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "Panel": 68
+    },
+    "methods": [
+      {
+        "name": "Panel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function Panel() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "fileName": "panel.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 18
+}

@@ -1,0 +1,1619 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "mortgage_account_activity",
+      "AMD": true,
+      "webPath": "/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 4,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountActivity'.",
+        "code": "wfJD",
+        "evidence": "requestAccountActivity: function(inputData) {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountActivity'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'sortBy'.",
+        "code": "wfJD",
+        "evidence": "sortBy: function() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'sortBy'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exportAccountActivity'.",
+        "code": "wfJD",
+        "evidence": "exportAccountActivity: function() {",
+        "line": 17,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exportAccountActivity'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'printAccountActivity'.",
+        "code": "wfJD",
+        "evidence": "printAccountActivity: function() {",
+        "line": 20,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'printAccountActivity'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'toggleAccountActivityDisplay'.",
+        "code": "wfJD",
+        "evidence": "toggleAccountActivityDisplay: function() {",
+        "line": 23,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'toggleAccountActivityDisplay'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myAccounts/mortgageAccountActivity.js",
+  "folderPath": "test-source/component/myAccounts",
+  "fileName": "mortgageAccountActivity.js",
+  "packagePath": "/component/myAccounts",
+  "webPath": "/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "mortgage_account_activity",
+  "name": "mortgageAccountActivity",
+  "camelName": "MortgageAccountActivity",
+  "processedFilePath": "test-output/component/myAccounts/mortgageAccountActivity.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myAccounts/mortgageAccountActivity */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Request account activity.\n     * @param inputData\n     */\n    requestAccountActivity: function (inputData) {\n      // InputData will contain a context object when method initiated by a DOM event\n      if (inputData.context) {\n        inputData.accountId = this.model.lens('accountId').get();\n      }\n      context.makeActivityCall(inputData);\n    },\n    /**\n     * Sort by.\n     */\n    sortBy: function () {},\n    /**\n     * Export account activity.\n     */\n    exportAccountActivity: function () {},\n    /**\n     * Print account activity.\n     */\n    printAccountActivity: function () {},\n    /**\n     * Toggle account activity display.\n     */\n    toggleAccountActivityDisplay: function () {\n      var currentClassName = this.model.lens('activityTableClassName').get(),\n        currentToggleName = this.model.lens('toggleAccountActivityDisplay').get(),\n        activityTableClassName = (currentClassName === 'jpui table' ? 'jpui table show-detailed' : 'jpui table'),\n        activityTableToggleDisplayName = (currentToggleName === 'See Details' ? 'Hide Details' : 'See Details');\n      this.model.lens('activityTableClassName').set(activityTableClassName);\n      this.model.lens('toggleAccountActivityDisplay').set(activityTableToggleDisplayName);\n      context.executeCAV_SharedMortgageAndLoanActivity(this.model.get());\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              87,
+              91
+            ],
+            "parentNode": 1575,
+            "uid": 1576
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        113,
+                        120
+                      ],
+                      "parentNode": 1580,
+                      "uid": 1581
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            123,
+                            127
+                          ],
+                          "parentNode": 1583,
+                          "uid": 1584
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            128,
+                            136
+                          ],
+                          "parentNode": 1583,
+                          "uid": 1585
+                        },
+                        "range": [
+                          123,
+                          136
+                        ],
+                        "parentNode": 1582,
+                        "uid": 1583
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          137,
+                          144
+                        ],
+                        "parentNode": 1582,
+                        "uid": 1586
+                      },
+                      "range": [
+                        123,
+                        144
+                      ],
+                      "parentNode": 1580,
+                      "uid": 1582
+                    },
+                    "range": [
+                      113,
+                      144
+                    ],
+                    "parentNode": 1579,
+                    "uid": 1580
+                  },
+                  "range": [
+                    113,
+                    145
+                  ],
+                  "parentNode": 1578,
+                  "uid": 1579
+                }
+              ],
+              "range": [
+                105,
+                151
+              ],
+              "parentNode": 1577,
+              "uid": 1578
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              93,
+              151
+            ],
+            "parentNode": 1575,
+            "uid": 1577,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            87,
+            151
+          ],
+          "parentNode": 1574,
+          "uid": 1575
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestAccountActivity",
+            "range": [
+              230,
+              252
+            ],
+            "parentNode": 1587,
+            "uid": 1588
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "inputData",
+                "range": [
+                  264,
+                  273
+                ],
+                "parentNode": 1589,
+                "uid": 1590
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "IfStatement",
+                  "test": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "Identifier",
+                      "name": "inputData",
+                      "range": [
+                        373,
+                        382
+                      ],
+                      "parentNode": 1593,
+                      "uid": 1594
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        383,
+                        390
+                      ],
+                      "parentNode": 1593,
+                      "uid": 1595
+                    },
+                    "range": [
+                      373,
+                      390
+                    ],
+                    "parentNode": 1592,
+                    "uid": 1593
+                  },
+                  "consequent": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ExpressionStatement",
+                        "expression": {
+                          "type": "AssignmentExpression",
+                          "operator": "=",
+                          "left": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "inputData",
+                              "range": [
+                                402,
+                                411
+                              ],
+                              "parentNode": 1599,
+                              "uid": 1600
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "accountId",
+                              "range": [
+                                412,
+                                421
+                              ],
+                              "parentNode": 1599,
+                              "uid": 1601
+                            },
+                            "range": [
+                              402,
+                              421
+                            ],
+                            "parentNode": 1598,
+                            "uid": 1599
+                          },
+                          "right": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "CallExpression",
+                                "callee": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "ThisExpression",
+                                      "range": [
+                                        424,
+                                        428
+                                      ],
+                                      "parentNode": 1606,
+                                      "uid": 1607
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "model",
+                                      "range": [
+                                        429,
+                                        434
+                                      ],
+                                      "parentNode": 1606,
+                                      "uid": 1608
+                                    },
+                                    "range": [
+                                      424,
+                                      434
+                                    ],
+                                    "parentNode": 1605,
+                                    "uid": 1606
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "lens",
+                                    "range": [
+                                      435,
+                                      439
+                                    ],
+                                    "parentNode": 1605,
+                                    "uid": 1609
+                                  },
+                                  "range": [
+                                    424,
+                                    439
+                                  ],
+                                  "parentNode": 1604,
+                                  "uid": 1605
+                                },
+                                "arguments": [
+                                  {
+                                    "type": "Literal",
+                                    "value": "accountId",
+                                    "raw": "'accountId'",
+                                    "range": [
+                                      440,
+                                      451
+                                    ],
+                                    "parentNode": 1604,
+                                    "uid": 1610
+                                  }
+                                ],
+                                "range": [
+                                  424,
+                                  452
+                                ],
+                                "parentNode": 1603,
+                                "uid": 1604
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "get",
+                                "range": [
+                                  453,
+                                  456
+                                ],
+                                "parentNode": 1603,
+                                "uid": 1611
+                              },
+                              "range": [
+                                424,
+                                456
+                              ],
+                              "parentNode": 1602,
+                              "uid": 1603
+                            },
+                            "arguments": [],
+                            "range": [
+                              424,
+                              458
+                            ],
+                            "parentNode": 1598,
+                            "uid": 1602
+                          },
+                          "range": [
+                            402,
+                            458
+                          ],
+                          "parentNode": 1597,
+                          "uid": 1598
+                        },
+                        "range": [
+                          402,
+                          459
+                        ],
+                        "parentNode": 1596,
+                        "uid": 1597
+                      }
+                    ],
+                    "range": [
+                      392,
+                      467
+                    ],
+                    "parentNode": 1592,
+                    "uid": 1596
+                  },
+                  "alternate": null,
+                  "range": [
+                    369,
+                    467
+                  ],
+                  "parentNode": 1591,
+                  "uid": 1592
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          474,
+                          481
+                        ],
+                        "parentNode": 1614,
+                        "uid": 1615
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "makeActivityCall",
+                        "range": [
+                          482,
+                          498
+                        ],
+                        "parentNode": 1614,
+                        "uid": 1616
+                      },
+                      "range": [
+                        474,
+                        498
+                      ],
+                      "parentNode": 1613,
+                      "uid": 1614
+                    },
+                    "arguments": [
+                      {
+                        "type": "Identifier",
+                        "name": "inputData",
+                        "range": [
+                          499,
+                          508
+                        ],
+                        "parentNode": 1613,
+                        "uid": 1617
+                      }
+                    ],
+                    "range": [
+                      474,
+                      509
+                    ],
+                    "parentNode": 1612,
+                    "uid": 1613
+                  },
+                  "range": [
+                    474,
+                    510
+                  ],
+                  "parentNode": 1591,
+                  "uid": 1612
+                }
+              ],
+              "range": [
+                275,
+                516
+              ],
+              "parentNode": 1589,
+              "uid": 1591
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              254,
+              516
+            ],
+            "parentNode": 1587,
+            "uid": 1589,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            230,
+            516
+          ],
+          "parentNode": 1574,
+          "uid": 1587
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "sortBy",
+            "range": [
+              554,
+              560
+            ],
+            "parentNode": 1618,
+            "uid": 1619
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                574,
+                576
+              ],
+              "parentNode": 1620,
+              "uid": 1621
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              562,
+              576
+            ],
+            "parentNode": 1618,
+            "uid": 1620,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            554,
+            576
+          ],
+          "parentNode": 1574,
+          "uid": 1618
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "exportAccountActivity",
+            "range": [
+              630,
+              651
+            ],
+            "parentNode": 1622,
+            "uid": 1623
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                665,
+                667
+              ],
+              "parentNode": 1624,
+              "uid": 1625
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              653,
+              667
+            ],
+            "parentNode": 1622,
+            "uid": 1624,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            630,
+            667
+          ],
+          "parentNode": 1574,
+          "uid": 1622
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "printAccountActivity",
+            "range": [
+              720,
+              740
+            ],
+            "parentNode": 1626,
+            "uid": 1627
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                754,
+                756
+              ],
+              "parentNode": 1628,
+              "uid": 1629
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              742,
+              756
+            ],
+            "parentNode": 1626,
+            "uid": 1628,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            720,
+            756
+          ],
+          "parentNode": 1574,
+          "uid": 1626
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "toggleAccountActivityDisplay",
+            "range": [
+              818,
+              846
+            ],
+            "parentNode": 1630,
+            "uid": 1631
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "currentClassName",
+                        "range": [
+                          872,
+                          888
+                        ],
+                        "parentNode": 1635,
+                        "uid": 1636
+                      },
+                      "init": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "ThisExpression",
+                                  "range": [
+                                    891,
+                                    895
+                                  ],
+                                  "parentNode": 1641,
+                                  "uid": 1642
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "model",
+                                  "range": [
+                                    896,
+                                    901
+                                  ],
+                                  "parentNode": 1641,
+                                  "uid": 1643
+                                },
+                                "range": [
+                                  891,
+                                  901
+                                ],
+                                "parentNode": 1640,
+                                "uid": 1641
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "lens",
+                                "range": [
+                                  902,
+                                  906
+                                ],
+                                "parentNode": 1640,
+                                "uid": 1644
+                              },
+                              "range": [
+                                891,
+                                906
+                              ],
+                              "parentNode": 1639,
+                              "uid": 1640
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "activityTableClassName",
+                                "raw": "'activityTableClassName'",
+                                "range": [
+                                  907,
+                                  931
+                                ],
+                                "parentNode": 1639,
+                                "uid": 1645
+                              }
+                            ],
+                            "range": [
+                              891,
+                              932
+                            ],
+                            "parentNode": 1638,
+                            "uid": 1639
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "get",
+                            "range": [
+                              933,
+                              936
+                            ],
+                            "parentNode": 1638,
+                            "uid": 1646
+                          },
+                          "range": [
+                            891,
+                            936
+                          ],
+                          "parentNode": 1637,
+                          "uid": 1638
+                        },
+                        "arguments": [],
+                        "range": [
+                          891,
+                          938
+                        ],
+                        "parentNode": 1635,
+                        "uid": 1637
+                      },
+                      "range": [
+                        872,
+                        938
+                      ],
+                      "parentNode": 1634,
+                      "uid": 1635
+                    },
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "currentToggleName",
+                        "range": [
+                          948,
+                          965
+                        ],
+                        "parentNode": 1647,
+                        "uid": 1648
+                      },
+                      "init": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "ThisExpression",
+                                  "range": [
+                                    968,
+                                    972
+                                  ],
+                                  "parentNode": 1653,
+                                  "uid": 1654
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "model",
+                                  "range": [
+                                    973,
+                                    978
+                                  ],
+                                  "parentNode": 1653,
+                                  "uid": 1655
+                                },
+                                "range": [
+                                  968,
+                                  978
+                                ],
+                                "parentNode": 1652,
+                                "uid": 1653
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "lens",
+                                "range": [
+                                  979,
+                                  983
+                                ],
+                                "parentNode": 1652,
+                                "uid": 1656
+                              },
+                              "range": [
+                                968,
+                                983
+                              ],
+                              "parentNode": 1651,
+                              "uid": 1652
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "toggleAccountActivityDisplay",
+                                "raw": "'toggleAccountActivityDisplay'",
+                                "range": [
+                                  984,
+                                  1014
+                                ],
+                                "parentNode": 1651,
+                                "uid": 1657
+                              }
+                            ],
+                            "range": [
+                              968,
+                              1015
+                            ],
+                            "parentNode": 1650,
+                            "uid": 1651
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "get",
+                            "range": [
+                              1016,
+                              1019
+                            ],
+                            "parentNode": 1650,
+                            "uid": 1658
+                          },
+                          "range": [
+                            968,
+                            1019
+                          ],
+                          "parentNode": 1649,
+                          "uid": 1650
+                        },
+                        "arguments": [],
+                        "range": [
+                          968,
+                          1021
+                        ],
+                        "parentNode": 1647,
+                        "uid": 1649
+                      },
+                      "range": [
+                        948,
+                        1021
+                      ],
+                      "parentNode": 1634,
+                      "uid": 1647
+                    },
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "activityTableClassName",
+                        "range": [
+                          1031,
+                          1053
+                        ],
+                        "parentNode": 1659,
+                        "uid": 1660
+                      },
+                      "init": {
+                        "type": "ConditionalExpression",
+                        "test": {
+                          "type": "BinaryExpression",
+                          "operator": "===",
+                          "left": {
+                            "type": "Identifier",
+                            "name": "currentClassName",
+                            "range": [
+                              1057,
+                              1073
+                            ],
+                            "parentNode": 1662,
+                            "uid": 1663
+                          },
+                          "right": {
+                            "type": "Literal",
+                            "value": "jpui table",
+                            "raw": "'jpui table'",
+                            "range": [
+                              1078,
+                              1090
+                            ],
+                            "parentNode": 1662,
+                            "uid": 1664
+                          },
+                          "range": [
+                            1057,
+                            1090
+                          ],
+                          "parentNode": 1661,
+                          "uid": 1662
+                        },
+                        "consequent": {
+                          "type": "Literal",
+                          "value": "jpui table show-detailed",
+                          "raw": "'jpui table show-detailed'",
+                          "range": [
+                            1093,
+                            1119
+                          ],
+                          "parentNode": 1661,
+                          "uid": 1665
+                        },
+                        "alternate": {
+                          "type": "Literal",
+                          "value": "jpui table",
+                          "raw": "'jpui table'",
+                          "range": [
+                            1122,
+                            1134
+                          ],
+                          "parentNode": 1661,
+                          "uid": 1666
+                        },
+                        "range": [
+                          1057,
+                          1134
+                        ],
+                        "parentNode": 1659,
+                        "uid": 1661
+                      },
+                      "range": [
+                        1031,
+                        1135
+                      ],
+                      "parentNode": 1634,
+                      "uid": 1659
+                    },
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "activityTableToggleDisplayName",
+                        "range": [
+                          1145,
+                          1175
+                        ],
+                        "parentNode": 1667,
+                        "uid": 1668
+                      },
+                      "init": {
+                        "type": "ConditionalExpression",
+                        "test": {
+                          "type": "BinaryExpression",
+                          "operator": "===",
+                          "left": {
+                            "type": "Identifier",
+                            "name": "currentToggleName",
+                            "range": [
+                              1179,
+                              1196
+                            ],
+                            "parentNode": 1670,
+                            "uid": 1671
+                          },
+                          "right": {
+                            "type": "Literal",
+                            "value": "See Details",
+                            "raw": "'See Details'",
+                            "range": [
+                              1201,
+                              1214
+                            ],
+                            "parentNode": 1670,
+                            "uid": 1672
+                          },
+                          "range": [
+                            1179,
+                            1214
+                          ],
+                          "parentNode": 1669,
+                          "uid": 1670
+                        },
+                        "consequent": {
+                          "type": "Literal",
+                          "value": "Hide Details",
+                          "raw": "'Hide Details'",
+                          "range": [
+                            1217,
+                            1231
+                          ],
+                          "parentNode": 1669,
+                          "uid": 1673
+                        },
+                        "alternate": {
+                          "type": "Literal",
+                          "value": "See Details",
+                          "raw": "'See Details'",
+                          "range": [
+                            1234,
+                            1247
+                          ],
+                          "parentNode": 1669,
+                          "uid": 1674
+                        },
+                        "range": [
+                          1179,
+                          1247
+                        ],
+                        "parentNode": 1667,
+                        "uid": 1669
+                      },
+                      "range": [
+                        1145,
+                        1248
+                      ],
+                      "parentNode": 1634,
+                      "uid": 1667
+                    }
+                  ],
+                  "kind": "var",
+                  "range": [
+                    868,
+                    1249
+                  ],
+                  "parentNode": 1633,
+                  "uid": 1634
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                1256,
+                                1260
+                              ],
+                              "parentNode": 1680,
+                              "uid": 1681
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                1261,
+                                1266
+                              ],
+                              "parentNode": 1680,
+                              "uid": 1682
+                            },
+                            "range": [
+                              1256,
+                              1266
+                            ],
+                            "parentNode": 1679,
+                            "uid": 1680
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "lens",
+                            "range": [
+                              1267,
+                              1271
+                            ],
+                            "parentNode": 1679,
+                            "uid": 1683
+                          },
+                          "range": [
+                            1256,
+                            1271
+                          ],
+                          "parentNode": 1678,
+                          "uid": 1679
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "activityTableClassName",
+                            "raw": "'activityTableClassName'",
+                            "range": [
+                              1272,
+                              1296
+                            ],
+                            "parentNode": 1678,
+                            "uid": 1684
+                          }
+                        ],
+                        "range": [
+                          1256,
+                          1297
+                        ],
+                        "parentNode": 1677,
+                        "uid": 1678
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "set",
+                        "range": [
+                          1298,
+                          1301
+                        ],
+                        "parentNode": 1677,
+                        "uid": 1685
+                      },
+                      "range": [
+                        1256,
+                        1301
+                      ],
+                      "parentNode": 1676,
+                      "uid": 1677
+                    },
+                    "arguments": [
+                      {
+                        "type": "Identifier",
+                        "name": "activityTableClassName",
+                        "range": [
+                          1302,
+                          1324
+                        ],
+                        "parentNode": 1676,
+                        "uid": 1686
+                      }
+                    ],
+                    "range": [
+                      1256,
+                      1325
+                    ],
+                    "parentNode": 1675,
+                    "uid": 1676
+                  },
+                  "range": [
+                    1256,
+                    1326
+                  ],
+                  "parentNode": 1633,
+                  "uid": 1675
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                1333,
+                                1337
+                              ],
+                              "parentNode": 1692,
+                              "uid": 1693
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                1338,
+                                1343
+                              ],
+                              "parentNode": 1692,
+                              "uid": 1694
+                            },
+                            "range": [
+                              1333,
+                              1343
+                            ],
+                            "parentNode": 1691,
+                            "uid": 1692
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "lens",
+                            "range": [
+                              1344,
+                              1348
+                            ],
+                            "parentNode": 1691,
+                            "uid": 1695
+                          },
+                          "range": [
+                            1333,
+                            1348
+                          ],
+                          "parentNode": 1690,
+                          "uid": 1691
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "toggleAccountActivityDisplay",
+                            "raw": "'toggleAccountActivityDisplay'",
+                            "range": [
+                              1349,
+                              1379
+                            ],
+                            "parentNode": 1690,
+                            "uid": 1696
+                          }
+                        ],
+                        "range": [
+                          1333,
+                          1380
+                        ],
+                        "parentNode": 1689,
+                        "uid": 1690
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "set",
+                        "range": [
+                          1381,
+                          1384
+                        ],
+                        "parentNode": 1689,
+                        "uid": 1697
+                      },
+                      "range": [
+                        1333,
+                        1384
+                      ],
+                      "parentNode": 1688,
+                      "uid": 1689
+                    },
+                    "arguments": [
+                      {
+                        "type": "Identifier",
+                        "name": "activityTableToggleDisplayName",
+                        "range": [
+                          1385,
+                          1415
+                        ],
+                        "parentNode": 1688,
+                        "uid": 1698
+                      }
+                    ],
+                    "range": [
+                      1333,
+                      1416
+                    ],
+                    "parentNode": 1687,
+                    "uid": 1688
+                  },
+                  "range": [
+                    1333,
+                    1417
+                  ],
+                  "parentNode": 1633,
+                  "uid": 1687
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          1424,
+                          1431
+                        ],
+                        "parentNode": 1701,
+                        "uid": 1702
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "executeCAV_SharedMortgageAndLoanActivity",
+                        "range": [
+                          1432,
+                          1472
+                        ],
+                        "parentNode": 1701,
+                        "uid": 1703
+                      },
+                      "range": [
+                        1424,
+                        1472
+                      ],
+                      "parentNode": 1700,
+                      "uid": 1701
+                    },
+                    "arguments": [
+                      {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                1473,
+                                1477
+                              ],
+                              "parentNode": 1706,
+                              "uid": 1707
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                1478,
+                                1483
+                              ],
+                              "parentNode": 1706,
+                              "uid": 1708
+                            },
+                            "range": [
+                              1473,
+                              1483
+                            ],
+                            "parentNode": 1705,
+                            "uid": 1706
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "get",
+                            "range": [
+                              1484,
+                              1487
+                            ],
+                            "parentNode": 1705,
+                            "uid": 1709
+                          },
+                          "range": [
+                            1473,
+                            1487
+                          ],
+                          "parentNode": 1704,
+                          "uid": 1705
+                        },
+                        "arguments": [],
+                        "range": [
+                          1473,
+                          1489
+                        ],
+                        "parentNode": 1700,
+                        "uid": 1704
+                      }
+                    ],
+                    "range": [
+                      1424,
+                      1490
+                    ],
+                    "parentNode": 1699,
+                    "uid": 1700
+                  },
+                  "range": [
+                    1424,
+                    1491
+                  ],
+                  "parentNode": 1633,
+                  "uid": 1699
+                }
+              ],
+              "range": [
+                860,
+                1497
+              ],
+              "parentNode": 1632,
+              "uid": 1633
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              848,
+              1497
+            ],
+            "parentNode": 1630,
+            "uid": 1632,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            818,
+            1497
+          ],
+          "parentNode": 1574,
+          "uid": 1630
+        }
+      ],
+      "range": [
+        52,
+        1501
+      ],
+      "parentNode": 1573,
+      "uid": 1574
+    },
+    "range": [
+      45,
+      1502
+    ],
+    "parentNode": 1568,
+    "uid": 1573,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 35,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1234,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mortgageAccountActivity",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "requestAccountActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountActivity: function(inputData) {"
+      },
+      {
+        "name": "sortBy",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "sortBy: function() {"
+      },
+      {
+        "name": "exportAccountActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 17,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exportAccountActivity: function() {"
+      },
+      {
+        "name": "printAccountActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 20,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "printAccountActivity: function() {"
+      },
+      {
+        "name": "toggleAccountActivityDisplay",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 23,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "toggleAccountActivityDisplay: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "fileName": "mortgageAccountActivity.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 50
+}

@@ -1,0 +1,351 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "header_drop_down",
+      "AMD": true,
+      "webPath": "/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'HeaderDropDownView'.",
+        "code": "wfJD",
+        "evidence": "return function HeaderDropDownView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'HeaderDropDownView'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myAccounts/headerDropDown.js",
+  "folderPath": "test-source/view/myAccounts",
+  "fileName": "headerDropDown.js",
+  "packagePath": "/view/myAccounts",
+  "webPath": "/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "header_drop_down",
+  "name": "headerDropDown",
+  "camelName": "HeaderDropDown",
+  "processedFilePath": "test-output/view/myAccounts/headerDropDown.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction HeaderDropDownView() {\n    this.bridge = this.createBridge(require('dashboard/view/webspec/myAccounts/headerDropDown'));\n    this.template = require('dashboard/template/myAccounts/headerDropDown');\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "HeaderDropDownView",
+        "range": [
+          133,
+          151
+        ],
+        "parentNode": 316,
+        "uid": 317
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    160,
+                    164
+                  ],
+                  "parentNode": 321,
+                  "uid": 322
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    165,
+                    171
+                  ],
+                  "parentNode": 321,
+                  "uid": 323
+                },
+                "range": [
+                  160,
+                  171
+                ],
+                "parentNode": 320,
+                "uid": 321
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression",
+                    "range": [
+                      174,
+                      178
+                    ],
+                    "parentNode": 325,
+                    "uid": 326
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createBridge",
+                    "range": [
+                      179,
+                      191
+                    ],
+                    "parentNode": 325,
+                    "uid": 327
+                  },
+                  "range": [
+                    174,
+                    191
+                  ],
+                  "parentNode": 324,
+                  "uid": 325
+                },
+                "arguments": [
+                  {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        192,
+                        199
+                      ],
+                      "parentNode": 328,
+                      "uid": 329
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "dashboard/view/webspec/myAccounts/headerDropDown",
+                        "raw": "'dashboard/view/webspec/myAccounts/headerDropDown'",
+                        "range": [
+                          200,
+                          250
+                        ],
+                        "parentNode": 328,
+                        "uid": 330
+                      }
+                    ],
+                    "range": [
+                      192,
+                      251
+                    ],
+                    "parentNode": 324,
+                    "uid": 328
+                  }
+                ],
+                "range": [
+                  174,
+                  252
+                ],
+                "parentNode": 320,
+                "uid": 324
+              },
+              "range": [
+                160,
+                252
+              ],
+              "parentNode": 319,
+              "uid": 320
+            },
+            "range": [
+              160,
+              253
+            ],
+            "parentNode": 318,
+            "uid": 319
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    258,
+                    262
+                  ],
+                  "parentNode": 333,
+                  "uid": 334
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    263,
+                    271
+                  ],
+                  "parentNode": 333,
+                  "uid": 335
+                },
+                "range": [
+                  258,
+                  271
+                ],
+                "parentNode": 332,
+                "uid": 333
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    274,
+                    281
+                  ],
+                  "parentNode": 336,
+                  "uid": 337
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myAccounts/headerDropDown",
+                    "raw": "'dashboard/template/myAccounts/headerDropDown'",
+                    "range": [
+                      282,
+                      328
+                    ],
+                    "parentNode": 336,
+                    "uid": 338
+                  }
+                ],
+                "range": [
+                  274,
+                  329
+                ],
+                "parentNode": 332,
+                "uid": 336
+              },
+              "range": [
+                258,
+                329
+              ],
+              "parentNode": 331,
+              "uid": 332
+            },
+            "range": [
+              258,
+              330
+            ],
+            "parentNode": 318,
+            "uid": 331
+          }
+        ],
+        "range": [
+          154,
+          334
+        ],
+        "parentNode": 316,
+        "uid": 318
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        124,
+        334
+      ],
+      "parentNode": 315,
+      "uid": 316,
+      "returnType": ""
+    },
+    "range": [
+      117,
+      335
+    ],
+    "parentNode": 314,
+    "uid": 315,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 9,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 254,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./headerDropDown",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "HeaderDropDownView": 126
+    },
+    "methods": [
+      {
+        "name": "HeaderDropDownView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function HeaderDropDownView() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "fileName": "headerDropDown.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 15
+}

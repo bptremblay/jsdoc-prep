@@ -1,0 +1,170 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "accounts_container",
+      "AMD": true,
+      "webPath": "/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {}",
+        "line": 4,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myAccounts/accountsContainer.js",
+  "folderPath": "test-source/component/myAccounts",
+  "fileName": "accountsContainer.js",
+  "packagePath": "/component/myAccounts",
+  "webPath": "/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "accounts_container",
+  "name": "accountsContainer",
+  "camelName": "AccountsContainer",
+  "processedFilePath": "test-output/component/myAccounts/accountsContainer.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myAccounts/accountsContainer */ {\n    /**\n     * Init.\n     */\n    init: function () {}\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              65,
+              69
+            ],
+            "parentNode": 120,
+            "uid": 121
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                83,
+                85
+              ],
+              "parentNode": 122,
+              "uid": 123
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              71,
+              85
+            ],
+            "parentNode": 120,
+            "uid": 122,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            65,
+            85
+          ],
+          "parentNode": 119,
+          "uid": 120
+        }
+      ],
+      "range": [
+        30,
+        89
+      ],
+      "parentNode": 118,
+      "uid": 119
+    },
+    "range": [
+      23,
+      90
+    ],
+    "parentNode": 117,
+    "uid": 118,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 7,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 65,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./accountsContainer",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {}"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "fileName": "accountsContainer.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 12
+}

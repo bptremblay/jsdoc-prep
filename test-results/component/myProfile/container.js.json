@@ -1,0 +1,271 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "container",
+      "AMD": true,
+      "webPath": "/component/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exitMyProfile'.",
+        "code": "wfJD",
+        "evidence": "exitMyProfile: function() {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exitMyProfile'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myProfile/container.js",
+  "folderPath": "test-source/component/myProfile",
+  "fileName": "container.js",
+  "packagePath": "/component/myProfile",
+  "webPath": "/component/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "container",
+  "name": "container",
+  "camelName": "Container",
+  "processedFilePath": "test-output/component/myProfile/container.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myProfile/container */ {\n    /**\n     * @function\n     *  Sets state to '#/dashboard'\n     *\n     */\n    exitMyProfile: function () {\n      this.context.controller.state('#/dashboard')\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "exitMyProfile",
+            "range": [
+              255,
+              268
+            ],
+            "parentNode": 220,
+            "uid": 221
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              290,
+                              294
+                            ],
+                            "parentNode": 228,
+                            "uid": 229
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "context",
+                            "range": [
+                              295,
+                              302
+                            ],
+                            "parentNode": 228,
+                            "uid": 230
+                          },
+                          "range": [
+                            290,
+                            302
+                          ],
+                          "parentNode": 227,
+                          "uid": 228
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "controller",
+                          "range": [
+                            303,
+                            313
+                          ],
+                          "parentNode": 227,
+                          "uid": 231
+                        },
+                        "range": [
+                          290,
+                          313
+                        ],
+                        "parentNode": 226,
+                        "uid": 227
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "state",
+                        "range": [
+                          314,
+                          319
+                        ],
+                        "parentNode": 226,
+                        "uid": 232
+                      },
+                      "range": [
+                        290,
+                        319
+                      ],
+                      "parentNode": 225,
+                      "uid": 226
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "#/dashboard",
+                        "raw": "'#/dashboard'",
+                        "range": [
+                          320,
+                          333
+                        ],
+                        "parentNode": 225,
+                        "uid": 233
+                      }
+                    ],
+                    "range": [
+                      290,
+                      334
+                    ],
+                    "parentNode": 224,
+                    "uid": 225
+                  },
+                  "range": [
+                    290,
+                    339
+                  ],
+                  "parentNode": 223,
+                  "uid": 224
+                }
+              ],
+              "range": [
+                282,
+                340
+              ],
+              "parentNode": 222,
+              "uid": 223
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              270,
+              340
+            ],
+            "parentNode": 220,
+            "uid": 222,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            255,
+            340
+          ],
+          "parentNode": 219,
+          "uid": 220
+        }
+      ],
+      "range": [
+        173,
+        344
+      ],
+      "parentNode": 218,
+      "uid": 219
+    },
+    "range": [
+      166,
+      345
+    ],
+    "parentNode": 217,
+    "uid": 218,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 17,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 340,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./container",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "exitMyProfile",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exitMyProfile: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myProfile",
+    "fileName": "container.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 16
+}

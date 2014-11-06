@@ -1,0 +1,445 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "accounts_container",
+      "AMD": true,
+      "webPath": "/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'AccountsContainerView'.",
+        "code": "wfJD",
+        "evidence": "return function AccountsContainerView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'AccountsContainerView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {};",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myAccounts/accountsContainer.js",
+  "folderPath": "test-source/view/myAccounts",
+  "fileName": "accountsContainer.js",
+  "packagePath": "/view/myAccounts",
+  "webPath": "/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "accounts_container",
+  "name": "accountsContainer",
+  "camelName": "AccountsContainer",
+  "processedFilePath": "test-output/view/myAccounts/accountsContainer.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction AccountsContainerView() {\n    this.bridge = this.createBridge(require('dashboard/view/webspec/myAccounts/accountsContainer'), {});\n    this.template = require('dashboard/template/myAccounts/accountsContainer');\n    /**\n     * Init.\n     */\n    this.init = function () {};\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "AccountsContainerView",
+        "range": [
+          136,
+          157
+        ],
+        "parentNode": 413,
+        "uid": 414
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    166,
+                    170
+                  ],
+                  "parentNode": 418,
+                  "uid": 419
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    171,
+                    177
+                  ],
+                  "parentNode": 418,
+                  "uid": 420
+                },
+                "range": [
+                  166,
+                  177
+                ],
+                "parentNode": 417,
+                "uid": 418
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression",
+                    "range": [
+                      180,
+                      184
+                    ],
+                    "parentNode": 422,
+                    "uid": 423
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createBridge",
+                    "range": [
+                      185,
+                      197
+                    ],
+                    "parentNode": 422,
+                    "uid": 424
+                  },
+                  "range": [
+                    180,
+                    197
+                  ],
+                  "parentNode": 421,
+                  "uid": 422
+                },
+                "arguments": [
+                  {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        198,
+                        205
+                      ],
+                      "parentNode": 425,
+                      "uid": 426
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "dashboard/view/webspec/myAccounts/accountsContainer",
+                        "raw": "'dashboard/view/webspec/myAccounts/accountsContainer'",
+                        "range": [
+                          206,
+                          259
+                        ],
+                        "parentNode": 425,
+                        "uid": 427
+                      }
+                    ],
+                    "range": [
+                      198,
+                      260
+                    ],
+                    "parentNode": 421,
+                    "uid": 425
+                  },
+                  {
+                    "type": "ObjectExpression",
+                    "properties": [],
+                    "range": [
+                      262,
+                      264
+                    ],
+                    "parentNode": 421,
+                    "uid": 428
+                  }
+                ],
+                "range": [
+                  180,
+                  265
+                ],
+                "parentNode": 417,
+                "uid": 421
+              },
+              "range": [
+                166,
+                265
+              ],
+              "parentNode": 416,
+              "uid": 417
+            },
+            "range": [
+              166,
+              266
+            ],
+            "parentNode": 415,
+            "uid": 416
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    271,
+                    275
+                  ],
+                  "parentNode": 431,
+                  "uid": 432
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    276,
+                    284
+                  ],
+                  "parentNode": 431,
+                  "uid": 433
+                },
+                "range": [
+                  271,
+                  284
+                ],
+                "parentNode": 430,
+                "uid": 431
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    287,
+                    294
+                  ],
+                  "parentNode": 434,
+                  "uid": 435
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myAccounts/accountsContainer",
+                    "raw": "'dashboard/template/myAccounts/accountsContainer'",
+                    "range": [
+                      295,
+                      344
+                    ],
+                    "parentNode": 434,
+                    "uid": 436
+                  }
+                ],
+                "range": [
+                  287,
+                  345
+                ],
+                "parentNode": 430,
+                "uid": 434
+              },
+              "range": [
+                271,
+                345
+              ],
+              "parentNode": 429,
+              "uid": 430
+            },
+            "range": [
+              271,
+              346
+            ],
+            "parentNode": 415,
+            "uid": 429
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    380,
+                    384
+                  ],
+                  "parentNode": 439,
+                  "uid": 440
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    385,
+                    389
+                  ],
+                  "parentNode": 439,
+                  "uid": 441
+                },
+                "range": [
+                  380,
+                  389
+                ],
+                "parentNode": 438,
+                "uid": 439
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    404,
+                    406
+                  ],
+                  "parentNode": 442,
+                  "uid": 443
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  392,
+                  406
+                ],
+                "parentNode": 438,
+                "uid": 442,
+                "returnType": ""
+              },
+              "range": [
+                380,
+                406
+              ],
+              "parentNode": 437,
+              "uid": 438
+            },
+            "range": [
+              380,
+              407
+            ],
+            "parentNode": 415,
+            "uid": 437
+          }
+        ],
+        "range": [
+          160,
+          411
+        ],
+        "parentNode": 413,
+        "uid": 415
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        127,
+        411
+      ],
+      "parentNode": 412,
+      "uid": 413,
+      "returnType": ""
+    },
+    "range": [
+      120,
+      412
+    ],
+    "parentNode": 411,
+    "uid": 412,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 12,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 300,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./accountsContainer",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "AccountsContainerView": 164
+    },
+    "methods": [
+      {
+        "name": "AccountsContainerView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function AccountsContainerView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {};"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "fileName": "accountsContainer.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 19
+}

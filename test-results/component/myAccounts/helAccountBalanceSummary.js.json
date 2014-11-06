@@ -1,0 +1,237 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "hel_account_balance_summary",
+      "AMD": true,
+      "webPath": "/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myAccounts/helAccountBalanceSummary.js",
+  "folderPath": "test-source/component/myAccounts",
+  "fileName": "helAccountBalanceSummary.js",
+  "packagePath": "/component/myAccounts",
+  "webPath": "/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "hel_account_balance_summary",
+  "name": "helAccountBalanceSummary",
+  "camelName": "HelAccountBalanceSummary",
+  "processedFilePath": "test-output/component/myAccounts/helAccountBalanceSummary.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myAccounts/helAccountBalanceSummary */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              94,
+              98
+            ],
+            "parentNode": 246,
+            "uid": 247
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        120,
+                        127
+                      ],
+                      "parentNode": 251,
+                      "uid": 252
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            130,
+                            134
+                          ],
+                          "parentNode": 254,
+                          "uid": 255
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            135,
+                            143
+                          ],
+                          "parentNode": 254,
+                          "uid": 256
+                        },
+                        "range": [
+                          130,
+                          143
+                        ],
+                        "parentNode": 253,
+                        "uid": 254
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          144,
+                          151
+                        ],
+                        "parentNode": 253,
+                        "uid": 257
+                      },
+                      "range": [
+                        130,
+                        151
+                      ],
+                      "parentNode": 251,
+                      "uid": 253
+                    },
+                    "range": [
+                      120,
+                      151
+                    ],
+                    "parentNode": 250,
+                    "uid": 251
+                  },
+                  "range": [
+                    120,
+                    152
+                  ],
+                  "parentNode": 249,
+                  "uid": 250
+                }
+              ],
+              "range": [
+                112,
+                158
+              ],
+              "parentNode": 248,
+              "uid": 249
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              100,
+              158
+            ],
+            "parentNode": 246,
+            "uid": 248,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            94,
+            158
+          ],
+          "parentNode": 245,
+          "uid": 246
+        }
+      ],
+      "range": [
+        59,
+        162
+      ],
+      "parentNode": 244,
+      "uid": 245
+    },
+    "range": [
+      52,
+      163
+    ],
+    "parentNode": 239,
+    "uid": 244,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 10,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 138,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./helAccountBalanceSummary",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "fileName": "helAccountBalanceSummary.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 15
+}

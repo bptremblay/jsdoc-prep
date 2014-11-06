@@ -1,0 +1,867 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "payments_activity_menu",
+      "AMD": true,
+      "webPath": "/component/payments/paymentsActivity"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestCreditCardPaymentActivity'.",
+        "code": "wfJD",
+        "evidence": "requestCreditCardPaymentActivity: function() {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestCreditCardPaymentActivity'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestMortgagePaymentActivity'.",
+        "code": "wfJD",
+        "evidence": "requestMortgagePaymentActivity: function() {},",
+        "line": 21,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestMortgagePaymentActivity'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestMoneyTransferActivity'.",
+        "code": "wfJD",
+        "evidence": "requestMoneyTransferActivity: function() {},",
+        "line": 22,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestMoneyTransferActivity'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exitPaymentActivity'.",
+        "code": "wfJD",
+        "evidence": "exitPaymentActivity: function() {",
+        "line": 23,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exitPaymentActivity'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/payments/paymentsActivity/paymentsActivityMenu.js",
+  "folderPath": "test-source/component/payments/paymentsActivity",
+  "fileName": "paymentsActivityMenu.js",
+  "packagePath": "/component/payments/paymentsActivity",
+  "webPath": "/component/payments/paymentsActivity",
+  "libFile": false,
+  "min": false,
+  "realName": "payments_activity_menu",
+  "name": "paymentsActivityMenu",
+  "camelName": "PaymentsActivityMenu",
+  "processedFilePath": "test-output/component/payments/paymentsActivity/paymentsActivityMenu.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/payments/paymentsActivity/paymentsActivityMenu */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Request credit card payment activity.\n     */\n    requestCreditCardPaymentActivity: function () {\n      controllerChannel.emit('trigger', {\n        target: this,\n        value: 'requestCreditCardPaymentActivity'\n      });\n      //Hide Payments Acitivty Selection Message\n      this.output.emit('state', {\n        target: this,\n        value: 'hidePaymentActivitySelectionMessage'\n      });\n    },\n    /**\n     * Request mortgage payment activity.\n     */\n    requestMortgagePaymentActivity: function () {},\n    /**\n     * Request money transfer activity.\n     */\n    requestMoneyTransferActivity: function () {},\n    /**\n     * Exit payment activity.\n     */\n    exitPaymentActivity: function () {\n      context.state('/dashboard');\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              160,
+              164
+            ],
+            "parentNode": 848,
+            "uid": 849
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        186,
+                        193
+                      ],
+                      "parentNode": 853,
+                      "uid": 854
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            196,
+                            200
+                          ],
+                          "parentNode": 856,
+                          "uid": 857
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            201,
+                            209
+                          ],
+                          "parentNode": 856,
+                          "uid": 858
+                        },
+                        "range": [
+                          196,
+                          209
+                        ],
+                        "parentNode": 855,
+                        "uid": 856
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          210,
+                          217
+                        ],
+                        "parentNode": 855,
+                        "uid": 859
+                      },
+                      "range": [
+                        196,
+                        217
+                      ],
+                      "parentNode": 853,
+                      "uid": 855
+                    },
+                    "range": [
+                      186,
+                      217
+                    ],
+                    "parentNode": 852,
+                    "uid": 853
+                  },
+                  "range": [
+                    186,
+                    218
+                  ],
+                  "parentNode": 851,
+                  "uid": 852
+                }
+              ],
+              "range": [
+                178,
+                224
+              ],
+              "parentNode": 850,
+              "uid": 851
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              166,
+              224
+            ],
+            "parentNode": 848,
+            "uid": 850,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            160,
+            224
+          ],
+          "parentNode": 847,
+          "uid": 848
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestCreditCardPaymentActivity",
+            "range": [
+              291,
+              323
+            ],
+            "parentNode": 860,
+            "uid": 861
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "controllerChannel",
+                        "range": [
+                          345,
+                          362
+                        ],
+                        "parentNode": 866,
+                        "uid": 867
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          363,
+                          367
+                        ],
+                        "parentNode": 866,
+                        "uid": 868
+                      },
+                      "range": [
+                        345,
+                        367
+                      ],
+                      "parentNode": 865,
+                      "uid": 866
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "trigger",
+                        "raw": "'trigger'",
+                        "range": [
+                          368,
+                          377
+                        ],
+                        "parentNode": 865,
+                        "uid": 869
+                      },
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "target",
+                              "range": [
+                                389,
+                                395
+                              ],
+                              "parentNode": 871,
+                              "uid": 872
+                            },
+                            "value": {
+                              "type": "ThisExpression",
+                              "range": [
+                                397,
+                                401
+                              ],
+                              "parentNode": 871,
+                              "uid": 873
+                            },
+                            "kind": "init",
+                            "range": [
+                              389,
+                              401
+                            ],
+                            "parentNode": 870,
+                            "uid": 871
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "value",
+                              "range": [
+                                411,
+                                416
+                              ],
+                              "parentNode": 874,
+                              "uid": 875
+                            },
+                            "value": {
+                              "type": "Literal",
+                              "value": "requestCreditCardPaymentActivity",
+                              "raw": "'requestCreditCardPaymentActivity'",
+                              "range": [
+                                418,
+                                452
+                              ],
+                              "parentNode": 874,
+                              "uid": 876
+                            },
+                            "kind": "init",
+                            "range": [
+                              411,
+                              452
+                            ],
+                            "parentNode": 870,
+                            "uid": 874
+                          }
+                        ],
+                        "range": [
+                          379,
+                          460
+                        ],
+                        "parentNode": 865,
+                        "uid": 870
+                      }
+                    ],
+                    "range": [
+                      345,
+                      461
+                    ],
+                    "parentNode": 864,
+                    "uid": 865
+                  },
+                  "range": [
+                    345,
+                    462
+                  ],
+                  "parentNode": 863,
+                  "uid": 864
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            518,
+                            522
+                          ],
+                          "parentNode": 880,
+                          "uid": 881
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "output",
+                          "range": [
+                            523,
+                            529
+                          ],
+                          "parentNode": 880,
+                          "uid": 882
+                        },
+                        "range": [
+                          518,
+                          529
+                        ],
+                        "parentNode": 879,
+                        "uid": 880
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          530,
+                          534
+                        ],
+                        "parentNode": 879,
+                        "uid": 883
+                      },
+                      "range": [
+                        518,
+                        534
+                      ],
+                      "parentNode": 878,
+                      "uid": 879
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "state",
+                        "raw": "'state'",
+                        "range": [
+                          535,
+                          542
+                        ],
+                        "parentNode": 878,
+                        "uid": 884
+                      },
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "target",
+                              "range": [
+                                554,
+                                560
+                              ],
+                              "parentNode": 886,
+                              "uid": 887
+                            },
+                            "value": {
+                              "type": "ThisExpression",
+                              "range": [
+                                562,
+                                566
+                              ],
+                              "parentNode": 886,
+                              "uid": 888
+                            },
+                            "kind": "init",
+                            "range": [
+                              554,
+                              566
+                            ],
+                            "parentNode": 885,
+                            "uid": 886
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "value",
+                              "range": [
+                                576,
+                                581
+                              ],
+                              "parentNode": 889,
+                              "uid": 890
+                            },
+                            "value": {
+                              "type": "Literal",
+                              "value": "hidePaymentActivitySelectionMessage",
+                              "raw": "'hidePaymentActivitySelectionMessage'",
+                              "range": [
+                                583,
+                                620
+                              ],
+                              "parentNode": 889,
+                              "uid": 891
+                            },
+                            "kind": "init",
+                            "range": [
+                              576,
+                              620
+                            ],
+                            "parentNode": 885,
+                            "uid": 889
+                          }
+                        ],
+                        "range": [
+                          544,
+                          628
+                        ],
+                        "parentNode": 878,
+                        "uid": 885
+                      }
+                    ],
+                    "range": [
+                      518,
+                      629
+                    ],
+                    "parentNode": 877,
+                    "uid": 878
+                  },
+                  "range": [
+                    518,
+                    630
+                  ],
+                  "parentNode": 863,
+                  "uid": 877
+                }
+              ],
+              "range": [
+                337,
+                636
+              ],
+              "parentNode": 862,
+              "uid": 863
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              325,
+              636
+            ],
+            "parentNode": 860,
+            "uid": 862,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            291,
+            636
+          ],
+          "parentNode": 847,
+          "uid": 860
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestMortgagePaymentActivity",
+            "range": [
+              700,
+              730
+            ],
+            "parentNode": 892,
+            "uid": 893
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                744,
+                746
+              ],
+              "parentNode": 894,
+              "uid": 895
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              732,
+              746
+            ],
+            "parentNode": 892,
+            "uid": 894,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            700,
+            746
+          ],
+          "parentNode": 847,
+          "uid": 892
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestMoneyTransferActivity",
+            "range": [
+              808,
+              836
+            ],
+            "parentNode": 896,
+            "uid": 897
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                850,
+                852
+              ],
+              "parentNode": 898,
+              "uid": 899
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              838,
+              852
+            ],
+            "parentNode": 896,
+            "uid": 898,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            808,
+            852
+          ],
+          "parentNode": 847,
+          "uid": 896
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "exitPaymentActivity",
+            "range": [
+              904,
+              923
+            ],
+            "parentNode": 900,
+            "uid": 901
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          945,
+                          952
+                        ],
+                        "parentNode": 906,
+                        "uid": 907
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "state",
+                        "range": [
+                          953,
+                          958
+                        ],
+                        "parentNode": 906,
+                        "uid": 908
+                      },
+                      "range": [
+                        945,
+                        958
+                      ],
+                      "parentNode": 905,
+                      "uid": 906
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "/dashboard",
+                        "raw": "'/dashboard'",
+                        "range": [
+                          959,
+                          971
+                        ],
+                        "parentNode": 905,
+                        "uid": 909
+                      }
+                    ],
+                    "range": [
+                      945,
+                      972
+                    ],
+                    "parentNode": 904,
+                    "uid": 905
+                  },
+                  "range": [
+                    945,
+                    973
+                  ],
+                  "parentNode": 903,
+                  "uid": 904
+                }
+              ],
+              "range": [
+                937,
+                979
+              ],
+              "parentNode": 902,
+              "uid": 903
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              925,
+              979
+            ],
+            "parentNode": 900,
+            "uid": 902,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            904,
+            979
+          ],
+          "parentNode": 847,
+          "uid": 900
+        }
+      ],
+      "range": [
+        125,
+        983
+      ],
+      "parentNode": 846,
+      "uid": 847
+    },
+    "range": [
+      118,
+      984
+    ],
+    "parentNode": 836,
+    "uid": 846,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 27,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/payments/paymentsActivity",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 734,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./paymentsActivityMenu",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "requestCreditCardPaymentActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestCreditCardPaymentActivity: function() {"
+      },
+      {
+        "name": "requestMortgagePaymentActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 21,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestMortgagePaymentActivity: function() {},"
+      },
+      {
+        "name": "requestMoneyTransferActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 22,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestMoneyTransferActivity: function() {},"
+      },
+      {
+        "name": "exitPaymentActivity",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 23,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exitPaymentActivity: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/payments/paymentsActivity",
+    "fileName": "paymentsActivityMenu.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 44
+}

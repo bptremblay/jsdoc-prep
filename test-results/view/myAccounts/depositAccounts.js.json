@@ -1,0 +1,774 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "deposit_accounts",
+      "AMD": true,
+      "webPath": "/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'DepositAccountsView'.",
+        "code": "wfJD",
+        "evidence": "return function DepositAccountsView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'DepositAccountsView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myAccounts/depositAccounts.js",
+  "folderPath": "test-source/view/myAccounts",
+  "fileName": "depositAccounts.js",
+  "packagePath": "/view/myAccounts",
+  "webPath": "/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "deposit_accounts",
+  "name": "depositAccounts",
+  "camelName": "DepositAccounts",
+  "processedFilePath": "test-output/view/myAccounts/depositAccounts.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction DepositAccountsView() {\n    this.bridge = this.createBridge(require('dashboard/view/webspec/myAccounts/depositAccounts'));\n    this.template = require('dashboard/template/myAccounts/depositAccounts');\n    /**\n     * Init.\n     */\n    this.init = function () {\n      this.bridge.on('state/makeAsActive', function (data) {\n        $('.account-summary-tab').removeClass('active');\n        $('.acc' + data.accountId).addClass('active');\n      });\n    };\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "DepositAccountsView",
+        "range": [
+          134,
+          153
+        ],
+        "parentNode": 838,
+        "uid": 839
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    162,
+                    166
+                  ],
+                  "parentNode": 843,
+                  "uid": 844
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    167,
+                    173
+                  ],
+                  "parentNode": 843,
+                  "uid": 845
+                },
+                "range": [
+                  162,
+                  173
+                ],
+                "parentNode": 842,
+                "uid": 843
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression",
+                    "range": [
+                      176,
+                      180
+                    ],
+                    "parentNode": 847,
+                    "uid": 848
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createBridge",
+                    "range": [
+                      181,
+                      193
+                    ],
+                    "parentNode": 847,
+                    "uid": 849
+                  },
+                  "range": [
+                    176,
+                    193
+                  ],
+                  "parentNode": 846,
+                  "uid": 847
+                },
+                "arguments": [
+                  {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        194,
+                        201
+                      ],
+                      "parentNode": 850,
+                      "uid": 851
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "dashboard/view/webspec/myAccounts/depositAccounts",
+                        "raw": "'dashboard/view/webspec/myAccounts/depositAccounts'",
+                        "range": [
+                          202,
+                          253
+                        ],
+                        "parentNode": 850,
+                        "uid": 852
+                      }
+                    ],
+                    "range": [
+                      194,
+                      254
+                    ],
+                    "parentNode": 846,
+                    "uid": 850
+                  }
+                ],
+                "range": [
+                  176,
+                  255
+                ],
+                "parentNode": 842,
+                "uid": 846
+              },
+              "range": [
+                162,
+                255
+              ],
+              "parentNode": 841,
+              "uid": 842
+            },
+            "range": [
+              162,
+              256
+            ],
+            "parentNode": 840,
+            "uid": 841
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    261,
+                    265
+                  ],
+                  "parentNode": 855,
+                  "uid": 856
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    266,
+                    274
+                  ],
+                  "parentNode": 855,
+                  "uid": 857
+                },
+                "range": [
+                  261,
+                  274
+                ],
+                "parentNode": 854,
+                "uid": 855
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    277,
+                    284
+                  ],
+                  "parentNode": 858,
+                  "uid": 859
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myAccounts/depositAccounts",
+                    "raw": "'dashboard/template/myAccounts/depositAccounts'",
+                    "range": [
+                      285,
+                      332
+                    ],
+                    "parentNode": 858,
+                    "uid": 860
+                  }
+                ],
+                "range": [
+                  277,
+                  333
+                ],
+                "parentNode": 854,
+                "uid": 858
+              },
+              "range": [
+                261,
+                333
+              ],
+              "parentNode": 853,
+              "uid": 854
+            },
+            "range": [
+              261,
+              334
+            ],
+            "parentNode": 840,
+            "uid": 853
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    368,
+                    372
+                  ],
+                  "parentNode": 863,
+                  "uid": 864
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    373,
+                    377
+                  ],
+                  "parentNode": 863,
+                  "uid": 865
+                },
+                "range": [
+                  368,
+                  377
+                ],
+                "parentNode": 862,
+                "uid": 863
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                400,
+                                404
+                              ],
+                              "parentNode": 871,
+                              "uid": 872
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "bridge",
+                              "range": [
+                                405,
+                                411
+                              ],
+                              "parentNode": 871,
+                              "uid": 873
+                            },
+                            "range": [
+                              400,
+                              411
+                            ],
+                            "parentNode": 870,
+                            "uid": 871
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "on",
+                            "range": [
+                              412,
+                              414
+                            ],
+                            "parentNode": 870,
+                            "uid": 874
+                          },
+                          "range": [
+                            400,
+                            414
+                          ],
+                          "parentNode": 869,
+                          "uid": 870
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "state/makeAsActive",
+                            "raw": "'state/makeAsActive'",
+                            "range": [
+                              415,
+                              435
+                            ],
+                            "parentNode": 869,
+                            "uid": 875
+                          },
+                          {
+                            "type": "FunctionExpression",
+                            "id": null,
+                            "params": [
+                              {
+                                "type": "Identifier",
+                                "name": "data",
+                                "range": [
+                                  447,
+                                  451
+                                ],
+                                "parentNode": 876,
+                                "uid": 877
+                              }
+                            ],
+                            "defaults": [],
+                            "body": {
+                              "type": "BlockStatement",
+                              "body": [
+                                {
+                                  "type": "ExpressionStatement",
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "Identifier",
+                                          "name": "$",
+                                          "range": [
+                                            463,
+                                            464
+                                          ],
+                                          "parentNode": 882,
+                                          "uid": 883
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": ".account-summary-tab",
+                                            "raw": "'.account-summary-tab'",
+                                            "range": [
+                                              465,
+                                              487
+                                            ],
+                                            "parentNode": 882,
+                                            "uid": 884
+                                          }
+                                        ],
+                                        "range": [
+                                          463,
+                                          488
+                                        ],
+                                        "parentNode": 881,
+                                        "uid": 882
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "removeClass",
+                                        "range": [
+                                          489,
+                                          500
+                                        ],
+                                        "parentNode": 881,
+                                        "uid": 885
+                                      },
+                                      "range": [
+                                        463,
+                                        500
+                                      ],
+                                      "parentNode": 880,
+                                      "uid": 881
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "Literal",
+                                        "value": "active",
+                                        "raw": "'active'",
+                                        "range": [
+                                          501,
+                                          509
+                                        ],
+                                        "parentNode": 880,
+                                        "uid": 886
+                                      }
+                                    ],
+                                    "range": [
+                                      463,
+                                      510
+                                    ],
+                                    "parentNode": 879,
+                                    "uid": 880
+                                  },
+                                  "range": [
+                                    463,
+                                    511
+                                  ],
+                                  "parentNode": 878,
+                                  "uid": 879
+                                },
+                                {
+                                  "type": "ExpressionStatement",
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "Identifier",
+                                          "name": "$",
+                                          "range": [
+                                            520,
+                                            521
+                                          ],
+                                          "parentNode": 890,
+                                          "uid": 891
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "BinaryExpression",
+                                            "operator": "+",
+                                            "left": {
+                                              "type": "Literal",
+                                              "value": ".acc",
+                                              "raw": "'.acc'",
+                                              "range": [
+                                                522,
+                                                528
+                                              ],
+                                              "parentNode": 892,
+                                              "uid": 893
+                                            },
+                                            "right": {
+                                              "type": "MemberExpression",
+                                              "computed": false,
+                                              "object": {
+                                                "type": "Identifier",
+                                                "name": "data",
+                                                "range": [
+                                                  531,
+                                                  535
+                                                ],
+                                                "parentNode": 894,
+                                                "uid": 895
+                                              },
+                                              "property": {
+                                                "type": "Identifier",
+                                                "name": "accountId",
+                                                "range": [
+                                                  536,
+                                                  545
+                                                ],
+                                                "parentNode": 894,
+                                                "uid": 896
+                                              },
+                                              "range": [
+                                                531,
+                                                545
+                                              ],
+                                              "parentNode": 892,
+                                              "uid": 894
+                                            },
+                                            "range": [
+                                              522,
+                                              545
+                                            ],
+                                            "parentNode": 890,
+                                            "uid": 892
+                                          }
+                                        ],
+                                        "range": [
+                                          520,
+                                          546
+                                        ],
+                                        "parentNode": 889,
+                                        "uid": 890
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "addClass",
+                                        "range": [
+                                          547,
+                                          555
+                                        ],
+                                        "parentNode": 889,
+                                        "uid": 897
+                                      },
+                                      "range": [
+                                        520,
+                                        555
+                                      ],
+                                      "parentNode": 888,
+                                      "uid": 889
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "Literal",
+                                        "value": "active",
+                                        "raw": "'active'",
+                                        "range": [
+                                          556,
+                                          564
+                                        ],
+                                        "parentNode": 888,
+                                        "uid": 898
+                                      }
+                                    ],
+                                    "range": [
+                                      520,
+                                      565
+                                    ],
+                                    "parentNode": 887,
+                                    "uid": 888
+                                  },
+                                  "range": [
+                                    520,
+                                    566
+                                  ],
+                                  "parentNode": 878,
+                                  "uid": 887
+                                }
+                              ],
+                              "range": [
+                                453,
+                                574
+                              ],
+                              "parentNode": 876,
+                              "uid": 878
+                            },
+                            "rest": null,
+                            "generator": false,
+                            "expression": false,
+                            "range": [
+                              437,
+                              574
+                            ],
+                            "parentNode": 869,
+                            "uid": 876,
+                            "returnType": ""
+                          }
+                        ],
+                        "range": [
+                          400,
+                          575
+                        ],
+                        "parentNode": 868,
+                        "uid": 869
+                      },
+                      "range": [
+                        400,
+                        576
+                      ],
+                      "parentNode": 867,
+                      "uid": 868
+                    }
+                  ],
+                  "range": [
+                    392,
+                    582
+                  ],
+                  "parentNode": 866,
+                  "uid": 867
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  380,
+                  582
+                ],
+                "parentNode": 862,
+                "uid": 866,
+                "returnType": ""
+              },
+              "range": [
+                368,
+                582
+              ],
+              "parentNode": 861,
+              "uid": 862
+            },
+            "range": [
+              368,
+              583
+            ],
+            "parentNode": 840,
+            "uid": 861
+          }
+        ],
+        "range": [
+          156,
+          587
+        ],
+        "parentNode": 838,
+        "uid": 840
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        125,
+        587
+      ],
+      "parentNode": 837,
+      "uid": 838,
+      "returnType": ""
+    },
+    "range": [
+      118,
+      588
+    ],
+    "parentNode": 836,
+    "uid": 837,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 17,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 477,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./depositAccounts",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "DepositAccountsView": 343
+    },
+    "methods": [
+      {
+        "name": "DepositAccountsView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function DepositAccountsView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "fileName": "depositAccounts.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 25
+}

@@ -1,0 +1,830 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "site_message",
+      "AMD": true,
+      "webPath": "/component/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {},",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'closeCustomerSiteMessaging'.",
+        "code": "wfJD",
+        "evidence": "closeCustomerSiteMessaging: function() {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'closeCustomerSiteMessaging'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'expandMessage'.",
+        "code": "wfJD",
+        "evidence": "expandMessage: function() {",
+        "line": 24,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'expandMessage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'collapseMessage'.",
+        "code": "wfJD",
+        "evidence": "collapseMessage: function() {",
+        "line": 33,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'collapseMessage'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/conversationDeck/siteMessage.js",
+  "folderPath": "test-source/component/conversationDeck",
+  "fileName": "siteMessage.js",
+  "packagePath": "/component/conversationDeck",
+  "webPath": "/component/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "site_message",
+  "name": "siteMessage",
+  "camelName": "SiteMessage",
+  "processedFilePath": "test-output/component/conversationDeck/siteMessage.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/conversationDeck/siteMessage */ {\n    /**\n     * Init.\n     */\n    init: function () {},\n    /**\n     * @function closeCustomerSiteMessaging emits a 'dismiss' message for the view to handle it\n     *\n     *\n     */\n    closeCustomerSiteMessaging: function () {\n      this.output.emit('state', {\n        target: this,\n        value: 'dismiss'\n      });\n    },\n    /**\n     * @function expandMessage emits a 'expand' message for the view to handle it\n     *\n     */\n    expandMessage: function () {\n      this.output.emit('state', {\n        target: this,\n        value: 'expand'\n      });\n    },\n    /**\n     * @function collapseMessage emits a 'collapse' message for the view to handle it\n     *\n     */\n    collapseMessage: function () {\n      this.output.emit('state', {\n        target: this,\n        value: 'collapse'\n      });\n    }\n  }",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              175,
+              179
+            ],
+            "parentNode": 748,
+            "uid": 749
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                193,
+                195
+              ],
+              "parentNode": 750,
+              "uid": 751
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              181,
+              195
+            ],
+            "parentNode": 748,
+            "uid": 750,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            175,
+            195
+          ],
+          "parentNode": 747,
+          "uid": 748
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "closeCustomerSiteMessaging",
+            "range": [
+              327,
+              353
+            ],
+            "parentNode": 752,
+            "uid": 753
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            375,
+                            379
+                          ],
+                          "parentNode": 759,
+                          "uid": 760
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "output",
+                          "range": [
+                            380,
+                            386
+                          ],
+                          "parentNode": 759,
+                          "uid": 761
+                        },
+                        "range": [
+                          375,
+                          386
+                        ],
+                        "parentNode": 758,
+                        "uid": 759
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          387,
+                          391
+                        ],
+                        "parentNode": 758,
+                        "uid": 762
+                      },
+                      "range": [
+                        375,
+                        391
+                      ],
+                      "parentNode": 757,
+                      "uid": 758
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "state",
+                        "raw": "'state'",
+                        "range": [
+                          392,
+                          399
+                        ],
+                        "parentNode": 757,
+                        "uid": 763
+                      },
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "target",
+                              "range": [
+                                411,
+                                417
+                              ],
+                              "parentNode": 765,
+                              "uid": 766
+                            },
+                            "value": {
+                              "type": "ThisExpression",
+                              "range": [
+                                419,
+                                423
+                              ],
+                              "parentNode": 765,
+                              "uid": 767
+                            },
+                            "kind": "init",
+                            "range": [
+                              411,
+                              423
+                            ],
+                            "parentNode": 764,
+                            "uid": 765
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "value",
+                              "range": [
+                                433,
+                                438
+                              ],
+                              "parentNode": 768,
+                              "uid": 769
+                            },
+                            "value": {
+                              "type": "Literal",
+                              "value": "dismiss",
+                              "raw": "'dismiss'",
+                              "range": [
+                                440,
+                                449
+                              ],
+                              "parentNode": 768,
+                              "uid": 770
+                            },
+                            "kind": "init",
+                            "range": [
+                              433,
+                              449
+                            ],
+                            "parentNode": 764,
+                            "uid": 768
+                          }
+                        ],
+                        "range": [
+                          401,
+                          457
+                        ],
+                        "parentNode": 757,
+                        "uid": 764
+                      }
+                    ],
+                    "range": [
+                      375,
+                      458
+                    ],
+                    "parentNode": 756,
+                    "uid": 757
+                  },
+                  "range": [
+                    375,
+                    459
+                  ],
+                  "parentNode": 755,
+                  "uid": 756
+                }
+              ],
+              "range": [
+                367,
+                465
+              ],
+              "parentNode": 754,
+              "uid": 755
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              355,
+              465
+            ],
+            "parentNode": 752,
+            "uid": 754,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            327,
+            465
+          ],
+          "parentNode": 747,
+          "uid": 752
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "expandMessage",
+            "range": [
+              576,
+              589
+            ],
+            "parentNode": 771,
+            "uid": 772
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            611,
+                            615
+                          ],
+                          "parentNode": 778,
+                          "uid": 779
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "output",
+                          "range": [
+                            616,
+                            622
+                          ],
+                          "parentNode": 778,
+                          "uid": 780
+                        },
+                        "range": [
+                          611,
+                          622
+                        ],
+                        "parentNode": 777,
+                        "uid": 778
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          623,
+                          627
+                        ],
+                        "parentNode": 777,
+                        "uid": 781
+                      },
+                      "range": [
+                        611,
+                        627
+                      ],
+                      "parentNode": 776,
+                      "uid": 777
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "state",
+                        "raw": "'state'",
+                        "range": [
+                          628,
+                          635
+                        ],
+                        "parentNode": 776,
+                        "uid": 782
+                      },
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "target",
+                              "range": [
+                                647,
+                                653
+                              ],
+                              "parentNode": 784,
+                              "uid": 785
+                            },
+                            "value": {
+                              "type": "ThisExpression",
+                              "range": [
+                                655,
+                                659
+                              ],
+                              "parentNode": 784,
+                              "uid": 786
+                            },
+                            "kind": "init",
+                            "range": [
+                              647,
+                              659
+                            ],
+                            "parentNode": 783,
+                            "uid": 784
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "value",
+                              "range": [
+                                669,
+                                674
+                              ],
+                              "parentNode": 787,
+                              "uid": 788
+                            },
+                            "value": {
+                              "type": "Literal",
+                              "value": "expand",
+                              "raw": "'expand'",
+                              "range": [
+                                676,
+                                684
+                              ],
+                              "parentNode": 787,
+                              "uid": 789
+                            },
+                            "kind": "init",
+                            "range": [
+                              669,
+                              684
+                            ],
+                            "parentNode": 783,
+                            "uid": 787
+                          }
+                        ],
+                        "range": [
+                          637,
+                          692
+                        ],
+                        "parentNode": 776,
+                        "uid": 783
+                      }
+                    ],
+                    "range": [
+                      611,
+                      693
+                    ],
+                    "parentNode": 775,
+                    "uid": 776
+                  },
+                  "range": [
+                    611,
+                    694
+                  ],
+                  "parentNode": 774,
+                  "uid": 775
+                }
+              ],
+              "range": [
+                603,
+                700
+              ],
+              "parentNode": 773,
+              "uid": 774
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              591,
+              700
+            ],
+            "parentNode": 771,
+            "uid": 773,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            576,
+            700
+          ],
+          "parentNode": 747,
+          "uid": 771
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "collapseMessage",
+            "range": [
+              815,
+              830
+            ],
+            "parentNode": 790,
+            "uid": 791
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            852,
+                            856
+                          ],
+                          "parentNode": 797,
+                          "uid": 798
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "output",
+                          "range": [
+                            857,
+                            863
+                          ],
+                          "parentNode": 797,
+                          "uid": 799
+                        },
+                        "range": [
+                          852,
+                          863
+                        ],
+                        "parentNode": 796,
+                        "uid": 797
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          864,
+                          868
+                        ],
+                        "parentNode": 796,
+                        "uid": 800
+                      },
+                      "range": [
+                        852,
+                        868
+                      ],
+                      "parentNode": 795,
+                      "uid": 796
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "state",
+                        "raw": "'state'",
+                        "range": [
+                          869,
+                          876
+                        ],
+                        "parentNode": 795,
+                        "uid": 801
+                      },
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "target",
+                              "range": [
+                                888,
+                                894
+                              ],
+                              "parentNode": 803,
+                              "uid": 804
+                            },
+                            "value": {
+                              "type": "ThisExpression",
+                              "range": [
+                                896,
+                                900
+                              ],
+                              "parentNode": 803,
+                              "uid": 805
+                            },
+                            "kind": "init",
+                            "range": [
+                              888,
+                              900
+                            ],
+                            "parentNode": 802,
+                            "uid": 803
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "value",
+                              "range": [
+                                910,
+                                915
+                              ],
+                              "parentNode": 806,
+                              "uid": 807
+                            },
+                            "value": {
+                              "type": "Literal",
+                              "value": "collapse",
+                              "raw": "'collapse'",
+                              "range": [
+                                917,
+                                927
+                              ],
+                              "parentNode": 806,
+                              "uid": 808
+                            },
+                            "kind": "init",
+                            "range": [
+                              910,
+                              927
+                            ],
+                            "parentNode": 802,
+                            "uid": 806
+                          }
+                        ],
+                        "range": [
+                          878,
+                          935
+                        ],
+                        "parentNode": 795,
+                        "uid": 802
+                      }
+                    ],
+                    "range": [
+                      852,
+                      936
+                    ],
+                    "parentNode": 794,
+                    "uid": 795
+                  },
+                  "range": [
+                    852,
+                    937
+                  ],
+                  "parentNode": 793,
+                  "uid": 794
+                }
+              ],
+              "range": [
+                844,
+                943
+              ],
+              "parentNode": 792,
+              "uid": 793
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              832,
+              943
+            ],
+            "parentNode": 790,
+            "uid": 792,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            815,
+            943
+          ],
+          "parentNode": 747,
+          "uid": 790
+        }
+      ],
+      "range": [
+        140,
+        947
+      ],
+      "parentNode": 746,
+      "uid": 747
+    },
+    "range": [
+      133,
+      948
+    ],
+    "parentNode": 745,
+    "uid": 746,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 40,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 899,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./siteMessage",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {},"
+      },
+      {
+        "name": "closeCustomerSiteMessaging",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "closeCustomerSiteMessaging: function() {"
+      },
+      {
+        "name": "expandMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 24,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "expandMessage: function() {"
+      },
+      {
+        "name": "collapseMessage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 33,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "collapseMessage: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/conversationDeck",
+    "fileName": "siteMessage.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 43
+}

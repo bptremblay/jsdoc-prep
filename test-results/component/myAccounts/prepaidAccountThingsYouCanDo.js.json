@@ -1,0 +1,1343 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "prepaid_account_things_you_can_do",
+      "AMD": true,
+      "webPath": "/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountStatements'.",
+        "code": "wfJD",
+        "evidence": "requestAccountStatements: function() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountStatements'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountDetails'.",
+        "code": "wfJD",
+        "evidence": "requestAccountDetails: function() {",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountDetails'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestThingsYouCanDo'.",
+        "code": "wfJD",
+        "evidence": "requestThingsYouCanDo: function() {},",
+        "line": 20,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestThingsYouCanDo'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestFormsAndDocuments'.",
+        "code": "wfJD",
+        "evidence": "requestFormsAndDocuments: function() {},",
+        "line": 21,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestFormsAndDocuments'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateAccountSettingsAndPreferences'.",
+        "code": "wfJD",
+        "evidence": "updateAccountSettingsAndPreferences: function() {},",
+        "line": 22,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateAccountSettingsAndPreferences'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'requestAccountFrequentlyAskedQuestions'.",
+        "code": "wfJD",
+        "evidence": "requestAccountFrequentlyAskedQuestions: function() {},",
+        "line": 23,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'requestAccountFrequentlyAskedQuestions'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'exitThingsYouCanDo'.",
+        "code": "wfJD",
+        "evidence": "exitThingsYouCanDo: function() {}",
+        "line": 24,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'exitThingsYouCanDo'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myAccounts/prepaidAccountThingsYouCanDo.js",
+  "folderPath": "test-source/component/myAccounts",
+  "fileName": "prepaidAccountThingsYouCanDo.js",
+  "packagePath": "/component/myAccounts",
+  "webPath": "/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "prepaid_account_things_you_can_do",
+  "name": "prepaidAccountThingsYouCanDo",
+  "camelName": "PrepaidAccountThingsYouCanDo",
+  "processedFilePath": "test-output/component/myAccounts/prepaidAccountThingsYouCanDo.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myAccounts/prepaidAccountThingsYouCanDo */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Request account statements.\n     */\n    requestAccountStatements: function () {},\n    /**\n     * Request account details.\n     */\n    requestAccountDetails: function () {\n      var prepaidOwnerData = {\n        accountId: this.model.lens('accountId').get(),\n        accountType: this.model.lens('accountType').get(),\n        accountName: this.model.lens('accountName').get(),\n        accountMaskNumber: this.model.lens('accountMaskNumber').get()\n      };\n      context.appChannel.emit('accountDetailsPrepaid', prepaidOwnerData);\n    },\n    /**\n     * Request things you can do.\n     */\n    requestThingsYouCanDo: function () {},\n    /**\n     * Request forms and documents.\n     */\n    requestFormsAndDocuments: function () {},\n    /**\n     * Update account settings and preferences.\n     */\n    updateAccountSettingsAndPreferences: function () {},\n    /**\n     * Request account frequently asked questions.\n     */\n    requestAccountFrequentlyAskedQuestions: function () {},\n    /**\n     * Exit things you can do.\n     */\n    exitThingsYouCanDo: function () {}\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              93,
+              97
+            ],
+            "parentNode": 1220,
+            "uid": 1221
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        119,
+                        126
+                      ],
+                      "parentNode": 1225,
+                      "uid": 1226
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            129,
+                            133
+                          ],
+                          "parentNode": 1228,
+                          "uid": 1229
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            134,
+                            142
+                          ],
+                          "parentNode": 1228,
+                          "uid": 1230
+                        },
+                        "range": [
+                          129,
+                          142
+                        ],
+                        "parentNode": 1227,
+                        "uid": 1228
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          143,
+                          150
+                        ],
+                        "parentNode": 1227,
+                        "uid": 1231
+                      },
+                      "range": [
+                        129,
+                        150
+                      ],
+                      "parentNode": 1225,
+                      "uid": 1227
+                    },
+                    "range": [
+                      119,
+                      150
+                    ],
+                    "parentNode": 1224,
+                    "uid": 1225
+                  },
+                  "range": [
+                    119,
+                    151
+                  ],
+                  "parentNode": 1223,
+                  "uid": 1224
+                }
+              ],
+              "range": [
+                111,
+                157
+              ],
+              "parentNode": 1222,
+              "uid": 1223
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              99,
+              157
+            ],
+            "parentNode": 1220,
+            "uid": 1222,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            93,
+            157
+          ],
+          "parentNode": 1219,
+          "uid": 1220
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestAccountStatements",
+            "range": [
+              214,
+              238
+            ],
+            "parentNode": 1232,
+            "uid": 1233
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                252,
+                254
+              ],
+              "parentNode": 1234,
+              "uid": 1235
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              240,
+              254
+            ],
+            "parentNode": 1232,
+            "uid": 1234,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            214,
+            254
+          ],
+          "parentNode": 1219,
+          "uid": 1232
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestAccountDetails",
+            "range": [
+              308,
+              329
+            ],
+            "parentNode": 1236,
+            "uid": 1237
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "prepaidOwnerData",
+                        "range": [
+                          355,
+                          371
+                        ],
+                        "parentNode": 1241,
+                        "uid": 1242
+                      },
+                      "init": {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "accountId",
+                              "range": [
+                                384,
+                                393
+                              ],
+                              "parentNode": 1244,
+                              "uid": 1245
+                            },
+                            "value": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "ThisExpression",
+                                        "range": [
+                                          395,
+                                          399
+                                        ],
+                                        "parentNode": 1250,
+                                        "uid": 1251
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "model",
+                                        "range": [
+                                          400,
+                                          405
+                                        ],
+                                        "parentNode": 1250,
+                                        "uid": 1252
+                                      },
+                                      "range": [
+                                        395,
+                                        405
+                                      ],
+                                      "parentNode": 1249,
+                                      "uid": 1250
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "lens",
+                                      "range": [
+                                        406,
+                                        410
+                                      ],
+                                      "parentNode": 1249,
+                                      "uid": 1253
+                                    },
+                                    "range": [
+                                      395,
+                                      410
+                                    ],
+                                    "parentNode": 1248,
+                                    "uid": 1249
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": "accountId",
+                                      "raw": "'accountId'",
+                                      "range": [
+                                        411,
+                                        422
+                                      ],
+                                      "parentNode": 1248,
+                                      "uid": 1254
+                                    }
+                                  ],
+                                  "range": [
+                                    395,
+                                    423
+                                  ],
+                                  "parentNode": 1247,
+                                  "uid": 1248
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "get",
+                                  "range": [
+                                    424,
+                                    427
+                                  ],
+                                  "parentNode": 1247,
+                                  "uid": 1255
+                                },
+                                "range": [
+                                  395,
+                                  427
+                                ],
+                                "parentNode": 1246,
+                                "uid": 1247
+                              },
+                              "arguments": [],
+                              "range": [
+                                395,
+                                429
+                              ],
+                              "parentNode": 1244,
+                              "uid": 1246
+                            },
+                            "kind": "init",
+                            "range": [
+                              384,
+                              429
+                            ],
+                            "parentNode": 1243,
+                            "uid": 1244
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "accountType",
+                              "range": [
+                                439,
+                                450
+                              ],
+                              "parentNode": 1256,
+                              "uid": 1257
+                            },
+                            "value": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "ThisExpression",
+                                        "range": [
+                                          452,
+                                          456
+                                        ],
+                                        "parentNode": 1262,
+                                        "uid": 1263
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "model",
+                                        "range": [
+                                          457,
+                                          462
+                                        ],
+                                        "parentNode": 1262,
+                                        "uid": 1264
+                                      },
+                                      "range": [
+                                        452,
+                                        462
+                                      ],
+                                      "parentNode": 1261,
+                                      "uid": 1262
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "lens",
+                                      "range": [
+                                        463,
+                                        467
+                                      ],
+                                      "parentNode": 1261,
+                                      "uid": 1265
+                                    },
+                                    "range": [
+                                      452,
+                                      467
+                                    ],
+                                    "parentNode": 1260,
+                                    "uid": 1261
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": "accountType",
+                                      "raw": "'accountType'",
+                                      "range": [
+                                        468,
+                                        481
+                                      ],
+                                      "parentNode": 1260,
+                                      "uid": 1266
+                                    }
+                                  ],
+                                  "range": [
+                                    452,
+                                    482
+                                  ],
+                                  "parentNode": 1259,
+                                  "uid": 1260
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "get",
+                                  "range": [
+                                    483,
+                                    486
+                                  ],
+                                  "parentNode": 1259,
+                                  "uid": 1267
+                                },
+                                "range": [
+                                  452,
+                                  486
+                                ],
+                                "parentNode": 1258,
+                                "uid": 1259
+                              },
+                              "arguments": [],
+                              "range": [
+                                452,
+                                488
+                              ],
+                              "parentNode": 1256,
+                              "uid": 1258
+                            },
+                            "kind": "init",
+                            "range": [
+                              439,
+                              488
+                            ],
+                            "parentNode": 1243,
+                            "uid": 1256
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "accountName",
+                              "range": [
+                                498,
+                                509
+                              ],
+                              "parentNode": 1268,
+                              "uid": 1269
+                            },
+                            "value": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "ThisExpression",
+                                        "range": [
+                                          511,
+                                          515
+                                        ],
+                                        "parentNode": 1274,
+                                        "uid": 1275
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "model",
+                                        "range": [
+                                          516,
+                                          521
+                                        ],
+                                        "parentNode": 1274,
+                                        "uid": 1276
+                                      },
+                                      "range": [
+                                        511,
+                                        521
+                                      ],
+                                      "parentNode": 1273,
+                                      "uid": 1274
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "lens",
+                                      "range": [
+                                        522,
+                                        526
+                                      ],
+                                      "parentNode": 1273,
+                                      "uid": 1277
+                                    },
+                                    "range": [
+                                      511,
+                                      526
+                                    ],
+                                    "parentNode": 1272,
+                                    "uid": 1273
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": "accountName",
+                                      "raw": "'accountName'",
+                                      "range": [
+                                        527,
+                                        540
+                                      ],
+                                      "parentNode": 1272,
+                                      "uid": 1278
+                                    }
+                                  ],
+                                  "range": [
+                                    511,
+                                    541
+                                  ],
+                                  "parentNode": 1271,
+                                  "uid": 1272
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "get",
+                                  "range": [
+                                    542,
+                                    545
+                                  ],
+                                  "parentNode": 1271,
+                                  "uid": 1279
+                                },
+                                "range": [
+                                  511,
+                                  545
+                                ],
+                                "parentNode": 1270,
+                                "uid": 1271
+                              },
+                              "arguments": [],
+                              "range": [
+                                511,
+                                547
+                              ],
+                              "parentNode": 1268,
+                              "uid": 1270
+                            },
+                            "kind": "init",
+                            "range": [
+                              498,
+                              547
+                            ],
+                            "parentNode": 1243,
+                            "uid": 1268
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "accountMaskNumber",
+                              "range": [
+                                557,
+                                574
+                              ],
+                              "parentNode": 1280,
+                              "uid": 1281
+                            },
+                            "value": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "ThisExpression",
+                                        "range": [
+                                          576,
+                                          580
+                                        ],
+                                        "parentNode": 1286,
+                                        "uid": 1287
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "model",
+                                        "range": [
+                                          581,
+                                          586
+                                        ],
+                                        "parentNode": 1286,
+                                        "uid": 1288
+                                      },
+                                      "range": [
+                                        576,
+                                        586
+                                      ],
+                                      "parentNode": 1285,
+                                      "uid": 1286
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "lens",
+                                      "range": [
+                                        587,
+                                        591
+                                      ],
+                                      "parentNode": 1285,
+                                      "uid": 1289
+                                    },
+                                    "range": [
+                                      576,
+                                      591
+                                    ],
+                                    "parentNode": 1284,
+                                    "uid": 1285
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "Literal",
+                                      "value": "accountMaskNumber",
+                                      "raw": "'accountMaskNumber'",
+                                      "range": [
+                                        592,
+                                        611
+                                      ],
+                                      "parentNode": 1284,
+                                      "uid": 1290
+                                    }
+                                  ],
+                                  "range": [
+                                    576,
+                                    612
+                                  ],
+                                  "parentNode": 1283,
+                                  "uid": 1284
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "get",
+                                  "range": [
+                                    613,
+                                    616
+                                  ],
+                                  "parentNode": 1283,
+                                  "uid": 1291
+                                },
+                                "range": [
+                                  576,
+                                  616
+                                ],
+                                "parentNode": 1282,
+                                "uid": 1283
+                              },
+                              "arguments": [],
+                              "range": [
+                                576,
+                                618
+                              ],
+                              "parentNode": 1280,
+                              "uid": 1282
+                            },
+                            "kind": "init",
+                            "range": [
+                              557,
+                              618
+                            ],
+                            "parentNode": 1243,
+                            "uid": 1280
+                          }
+                        ],
+                        "range": [
+                          374,
+                          626
+                        ],
+                        "parentNode": 1241,
+                        "uid": 1243
+                      },
+                      "range": [
+                        355,
+                        626
+                      ],
+                      "parentNode": 1240,
+                      "uid": 1241
+                    }
+                  ],
+                  "kind": "var",
+                  "range": [
+                    351,
+                    627
+                  ],
+                  "parentNode": 1239,
+                  "uid": 1240
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "context",
+                          "range": [
+                            634,
+                            641
+                          ],
+                          "parentNode": 1295,
+                          "uid": 1296
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "appChannel",
+                          "range": [
+                            642,
+                            652
+                          ],
+                          "parentNode": 1295,
+                          "uid": 1297
+                        },
+                        "range": [
+                          634,
+                          652
+                        ],
+                        "parentNode": 1294,
+                        "uid": 1295
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          653,
+                          657
+                        ],
+                        "parentNode": 1294,
+                        "uid": 1298
+                      },
+                      "range": [
+                        634,
+                        657
+                      ],
+                      "parentNode": 1293,
+                      "uid": 1294
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "accountDetailsPrepaid",
+                        "raw": "'accountDetailsPrepaid'",
+                        "range": [
+                          658,
+                          681
+                        ],
+                        "parentNode": 1293,
+                        "uid": 1299
+                      },
+                      {
+                        "type": "Identifier",
+                        "name": "prepaidOwnerData",
+                        "range": [
+                          683,
+                          699
+                        ],
+                        "parentNode": 1293,
+                        "uid": 1300
+                      }
+                    ],
+                    "range": [
+                      634,
+                      700
+                    ],
+                    "parentNode": 1292,
+                    "uid": 1293
+                  },
+                  "range": [
+                    634,
+                    701
+                  ],
+                  "parentNode": 1239,
+                  "uid": 1292
+                }
+              ],
+              "range": [
+                343,
+                707
+              ],
+              "parentNode": 1238,
+              "uid": 1239
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              331,
+              707
+            ],
+            "parentNode": 1236,
+            "uid": 1238,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            308,
+            707
+          ],
+          "parentNode": 1219,
+          "uid": 1236
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestThingsYouCanDo",
+            "range": [
+              763,
+              784
+            ],
+            "parentNode": 1301,
+            "uid": 1302
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                798,
+                800
+              ],
+              "parentNode": 1303,
+              "uid": 1304
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              786,
+              800
+            ],
+            "parentNode": 1301,
+            "uid": 1303,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            763,
+            800
+          ],
+          "parentNode": 1219,
+          "uid": 1301
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestFormsAndDocuments",
+            "range": [
+              858,
+              882
+            ],
+            "parentNode": 1305,
+            "uid": 1306
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                896,
+                898
+              ],
+              "parentNode": 1307,
+              "uid": 1308
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              884,
+              898
+            ],
+            "parentNode": 1305,
+            "uid": 1307,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            858,
+            898
+          ],
+          "parentNode": 1219,
+          "uid": 1305
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "updateAccountSettingsAndPreferences",
+            "range": [
+              968,
+              1003
+            ],
+            "parentNode": 1309,
+            "uid": 1310
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                1017,
+                1019
+              ],
+              "parentNode": 1311,
+              "uid": 1312
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              1005,
+              1019
+            ],
+            "parentNode": 1309,
+            "uid": 1311,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            968,
+            1019
+          ],
+          "parentNode": 1219,
+          "uid": 1309
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "requestAccountFrequentlyAskedQuestions",
+            "range": [
+              1092,
+              1130
+            ],
+            "parentNode": 1313,
+            "uid": 1314
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                1144,
+                1146
+              ],
+              "parentNode": 1315,
+              "uid": 1316
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              1132,
+              1146
+            ],
+            "parentNode": 1313,
+            "uid": 1315,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            1092,
+            1146
+          ],
+          "parentNode": 1219,
+          "uid": 1313
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "exitThingsYouCanDo",
+            "range": [
+              1199,
+              1217
+            ],
+            "parentNode": 1317,
+            "uid": 1318
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                1231,
+                1233
+              ],
+              "parentNode": 1319,
+              "uid": 1320
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              1219,
+              1233
+            ],
+            "parentNode": 1317,
+            "uid": 1319,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            1199,
+            1233
+          ],
+          "parentNode": 1219,
+          "uid": 1317
+        }
+      ],
+      "range": [
+        58,
+        1237
+      ],
+      "parentNode": 1218,
+      "uid": 1219
+    },
+    "range": [
+      51,
+      1238
+    ],
+    "parentNode": 1213,
+    "uid": 1218,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 26,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 832,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./prepaidAccountThingsYouCanDo",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "requestAccountStatements",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountStatements: function() {"
+      },
+      {
+        "name": "requestAccountDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountDetails: function() {"
+      },
+      {
+        "name": "requestThingsYouCanDo",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 20,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestThingsYouCanDo: function() {},"
+      },
+      {
+        "name": "requestFormsAndDocuments",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 21,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestFormsAndDocuments: function() {},"
+      },
+      {
+        "name": "updateAccountSettingsAndPreferences",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 22,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "updateAccountSettingsAndPreferences: function() {},"
+      },
+      {
+        "name": "requestAccountFrequentlyAskedQuestions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 23,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "requestAccountFrequentlyAskedQuestions: function() {},"
+      },
+      {
+        "name": "exitThingsYouCanDo",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 24,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exitThingsYouCanDo: function() {}"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "fileName": "prepaidAccountThingsYouCanDo.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 51
+}

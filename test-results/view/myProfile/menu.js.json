@@ -1,0 +1,448 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "menu",
+      "AMD": true,
+      "webPath": "/view/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'ProfileMenuView'.",
+        "code": "wfJD",
+        "evidence": "return function ProfileMenuView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'ProfileMenuView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 4,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myProfile/menu.js",
+  "folderPath": "test-source/view/myProfile",
+  "fileName": "menu.js",
+  "packagePath": "/view/myProfile",
+  "webPath": "/view/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "menu",
+  "name": "menu",
+  "camelName": "Menu",
+  "processedFilePath": "test-output/view/myProfile/menu.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction ProfileMenuView() {\n    /**\n     * Init.\n     */\n    this.init = function () {\n      this.bridge = this.createBridge(require('dashboard/view/webspec/myProfile/menu'));\n    };\n    this.template = require('dashboard/template/myProfile/menu');\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "ProfileMenuView",
+        "range": [
+          130,
+          145
+        ],
+        "parentNode": 418,
+        "uid": 419
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    183,
+                    187
+                  ],
+                  "parentNode": 423,
+                  "uid": 424
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    188,
+                    192
+                  ],
+                  "parentNode": 423,
+                  "uid": 425
+                },
+                "range": [
+                  183,
+                  192
+                ],
+                "parentNode": 422,
+                "uid": 423
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              215,
+                              219
+                            ],
+                            "parentNode": 430,
+                            "uid": 431
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "bridge",
+                            "range": [
+                              220,
+                              226
+                            ],
+                            "parentNode": 430,
+                            "uid": 432
+                          },
+                          "range": [
+                            215,
+                            226
+                          ],
+                          "parentNode": 429,
+                          "uid": 430
+                        },
+                        "right": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                229,
+                                233
+                              ],
+                              "parentNode": 434,
+                              "uid": 435
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "createBridge",
+                              "range": [
+                                234,
+                                246
+                              ],
+                              "parentNode": 434,
+                              "uid": 436
+                            },
+                            "range": [
+                              229,
+                              246
+                            ],
+                            "parentNode": 433,
+                            "uid": 434
+                          },
+                          "arguments": [
+                            {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "Identifier",
+                                "name": "require",
+                                "range": [
+                                  247,
+                                  254
+                                ],
+                                "parentNode": 437,
+                                "uid": 438
+                              },
+                              "arguments": [
+                                {
+                                  "type": "Literal",
+                                  "value": "dashboard/view/webspec/myProfile/menu",
+                                  "raw": "'dashboard/view/webspec/myProfile/menu'",
+                                  "range": [
+                                    255,
+                                    294
+                                  ],
+                                  "parentNode": 437,
+                                  "uid": 439
+                                }
+                              ],
+                              "range": [
+                                247,
+                                295
+                              ],
+                              "parentNode": 433,
+                              "uid": 437
+                            }
+                          ],
+                          "range": [
+                            229,
+                            296
+                          ],
+                          "parentNode": 429,
+                          "uid": 433
+                        },
+                        "range": [
+                          215,
+                          296
+                        ],
+                        "parentNode": 428,
+                        "uid": 429
+                      },
+                      "range": [
+                        215,
+                        297
+                      ],
+                      "parentNode": 427,
+                      "uid": 428
+                    }
+                  ],
+                  "range": [
+                    207,
+                    303
+                  ],
+                  "parentNode": 426,
+                  "uid": 427
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  195,
+                  303
+                ],
+                "parentNode": 422,
+                "uid": 426,
+                "returnType": ""
+              },
+              "range": [
+                183,
+                303
+              ],
+              "parentNode": 421,
+              "uid": 422
+            },
+            "range": [
+              183,
+              304
+            ],
+            "parentNode": 420,
+            "uid": 421
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    309,
+                    313
+                  ],
+                  "parentNode": 442,
+                  "uid": 443
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    314,
+                    322
+                  ],
+                  "parentNode": 442,
+                  "uid": 444
+                },
+                "range": [
+                  309,
+                  322
+                ],
+                "parentNode": 441,
+                "uid": 442
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    325,
+                    332
+                  ],
+                  "parentNode": 445,
+                  "uid": 446
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myProfile/menu",
+                    "raw": "'dashboard/template/myProfile/menu'",
+                    "range": [
+                      333,
+                      368
+                    ],
+                    "parentNode": 445,
+                    "uid": 447
+                  }
+                ],
+                "range": [
+                  325,
+                  369
+                ],
+                "parentNode": 441,
+                "uid": 445
+              },
+              "range": [
+                309,
+                369
+              ],
+              "parentNode": 440,
+              "uid": 441
+            },
+            "range": [
+              309,
+              370
+            ],
+            "parentNode": 420,
+            "uid": 440
+          }
+        ],
+        "range": [
+          148,
+          374
+        ],
+        "parentNode": 418,
+        "uid": 420
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        121,
+        374
+      ],
+      "parentNode": 417,
+      "uid": 418,
+      "returnType": ""
+    },
+    "range": [
+      114,
+      375
+    ],
+    "parentNode": 416,
+    "uid": 417,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 10,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 265,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./menu",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "ProfileMenuView": 169
+    },
+    "methods": [
+      {
+        "name": "ProfileMenuView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function ProfileMenuView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "fileName": "menu.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 20
+}

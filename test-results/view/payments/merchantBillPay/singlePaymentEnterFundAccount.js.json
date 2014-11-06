@@ -1,0 +1,1277 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "single_payment_enter_fund_account",
+      "AMD": true,
+      "webPath": "/view/payments/merchantBillPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'SinglePaymentFundAccountView'.",
+        "code": "wfJD",
+        "evidence": "return function SinglePaymentFundAccountView() {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'SinglePaymentFundAccountView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 27,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideOverlay'.",
+        "code": "wfJD",
+        "evidence": "this.hideOverlay = function() {",
+        "line": 31,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideOverlay'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/payments/merchantBillPay/singlePaymentEnterFundAccount.js",
+  "folderPath": "test-source/view/payments/merchantBillPay",
+  "fileName": "singlePaymentEnterFundAccount.js",
+  "packagePath": "/view/payments/merchantBillPay",
+  "webPath": "/view/payments/merchantBillPay",
+  "libFile": false,
+  "min": false,
+  "realName": "single_payment_enter_fund_account",
+  "name": "singlePaymentEnterFundAccount",
+  "camelName": "SinglePaymentEnterFundAccount",
+  "processedFilePath": "test-output/view/payments/merchantBillPay/singlePaymentEnterFundAccount.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction SinglePaymentFundAccountView() {\n    var template = require('blue/template'),\n      MerchantBillPayBridge = require('dashboard/view/bridge/payments/merchantBillPayBridge');\n    template.registerPartial('field', require('dashboard/template/payments/payBills/common/field'));\n    template.registerPartial('menu', require('dashboard/template/payments/payBills/common/menu'));\n    template.registerPartial('submenu', require('dashboard/template/payments/payBills/common/submenu'));\n    template.registerPartial('button', require('dashboard/template/payments/payBills/common/button'));\n    this.bridge = new MerchantBillPayBridge.singlePaymentEnterFundAccountBridge({\n      targets: {\n        funding_account_display_name_with_balance: '#fundingAccountDisplayNameWithBalance'\n      }\n    });\n    this.template = require('dashboard/template/payments/merchantBillPay/singlePaymentFundAccount');\n    /**\n     * Init.\n     */\n    this.init = function () {\n      this.hideOverlay();\n    };\n    /**\n     * Hide overlay.\n     */\n    this.hideOverlay = function () {\n      $('.modal-popup, .overlay, #pre-loader').fadeOut(300);\n      $('#modal-content').empty();\n    };\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "SinglePaymentFundAccountView",
+        "range": [
+          378,
+          406
+        ],
+        "parentNode": 1417,
+        "uid": 1418
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    419,
+                    427
+                  ],
+                  "parentNode": 1421,
+                  "uid": 1422
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      430,
+                      437
+                    ],
+                    "parentNode": 1423,
+                    "uid": 1424
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "blue/template",
+                      "raw": "'blue/template'",
+                      "range": [
+                        438,
+                        453
+                      ],
+                      "parentNode": 1423,
+                      "uid": 1425
+                    }
+                  ],
+                  "range": [
+                    430,
+                    454
+                  ],
+                  "parentNode": 1421,
+                  "uid": 1423
+                },
+                "range": [
+                  419,
+                  454
+                ],
+                "parentNode": 1420,
+                "uid": 1421
+              },
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "MerchantBillPayBridge",
+                  "range": [
+                    462,
+                    483
+                  ],
+                  "parentNode": 1426,
+                  "uid": 1427
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      486,
+                      493
+                    ],
+                    "parentNode": 1428,
+                    "uid": 1429
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "dashboard/view/bridge/payments/merchantBillPayBridge",
+                      "raw": "'dashboard/view/bridge/payments/merchantBillPayBridge'",
+                      "range": [
+                        494,
+                        548
+                      ],
+                      "parentNode": 1428,
+                      "uid": 1430
+                    }
+                  ],
+                  "range": [
+                    486,
+                    549
+                  ],
+                  "parentNode": 1426,
+                  "uid": 1428
+                },
+                "range": [
+                  462,
+                  549
+                ],
+                "parentNode": 1420,
+                "uid": 1426
+              }
+            ],
+            "kind": "var",
+            "range": [
+              415,
+              550
+            ],
+            "parentNode": 1419,
+            "uid": 1420
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    555,
+                    563
+                  ],
+                  "parentNode": 1433,
+                  "uid": 1434
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "registerPartial",
+                  "range": [
+                    564,
+                    579
+                  ],
+                  "parentNode": 1433,
+                  "uid": 1435
+                },
+                "range": [
+                  555,
+                  579
+                ],
+                "parentNode": 1432,
+                "uid": 1433
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "field",
+                  "raw": "'field'",
+                  "range": [
+                    580,
+                    587
+                  ],
+                  "parentNode": 1432,
+                  "uid": 1436
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      589,
+                      596
+                    ],
+                    "parentNode": 1437,
+                    "uid": 1438
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "dashboard/template/payments/payBills/common/field",
+                      "raw": "'dashboard/template/payments/payBills/common/field'",
+                      "range": [
+                        597,
+                        648
+                      ],
+                      "parentNode": 1437,
+                      "uid": 1439
+                    }
+                  ],
+                  "range": [
+                    589,
+                    649
+                  ],
+                  "parentNode": 1432,
+                  "uid": 1437
+                }
+              ],
+              "range": [
+                555,
+                650
+              ],
+              "parentNode": 1431,
+              "uid": 1432
+            },
+            "range": [
+              555,
+              651
+            ],
+            "parentNode": 1419,
+            "uid": 1431
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    656,
+                    664
+                  ],
+                  "parentNode": 1442,
+                  "uid": 1443
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "registerPartial",
+                  "range": [
+                    665,
+                    680
+                  ],
+                  "parentNode": 1442,
+                  "uid": 1444
+                },
+                "range": [
+                  656,
+                  680
+                ],
+                "parentNode": 1441,
+                "uid": 1442
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "menu",
+                  "raw": "'menu'",
+                  "range": [
+                    681,
+                    687
+                  ],
+                  "parentNode": 1441,
+                  "uid": 1445
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      689,
+                      696
+                    ],
+                    "parentNode": 1446,
+                    "uid": 1447
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "dashboard/template/payments/payBills/common/menu",
+                      "raw": "'dashboard/template/payments/payBills/common/menu'",
+                      "range": [
+                        697,
+                        747
+                      ],
+                      "parentNode": 1446,
+                      "uid": 1448
+                    }
+                  ],
+                  "range": [
+                    689,
+                    748
+                  ],
+                  "parentNode": 1441,
+                  "uid": 1446
+                }
+              ],
+              "range": [
+                656,
+                749
+              ],
+              "parentNode": 1440,
+              "uid": 1441
+            },
+            "range": [
+              656,
+              750
+            ],
+            "parentNode": 1419,
+            "uid": 1440
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    755,
+                    763
+                  ],
+                  "parentNode": 1451,
+                  "uid": 1452
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "registerPartial",
+                  "range": [
+                    764,
+                    779
+                  ],
+                  "parentNode": 1451,
+                  "uid": 1453
+                },
+                "range": [
+                  755,
+                  779
+                ],
+                "parentNode": 1450,
+                "uid": 1451
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "submenu",
+                  "raw": "'submenu'",
+                  "range": [
+                    780,
+                    789
+                  ],
+                  "parentNode": 1450,
+                  "uid": 1454
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      791,
+                      798
+                    ],
+                    "parentNode": 1455,
+                    "uid": 1456
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "dashboard/template/payments/payBills/common/submenu",
+                      "raw": "'dashboard/template/payments/payBills/common/submenu'",
+                      "range": [
+                        799,
+                        852
+                      ],
+                      "parentNode": 1455,
+                      "uid": 1457
+                    }
+                  ],
+                  "range": [
+                    791,
+                    853
+                  ],
+                  "parentNode": 1450,
+                  "uid": 1455
+                }
+              ],
+              "range": [
+                755,
+                854
+              ],
+              "parentNode": 1449,
+              "uid": 1450
+            },
+            "range": [
+              755,
+              855
+            ],
+            "parentNode": 1419,
+            "uid": 1449
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    860,
+                    868
+                  ],
+                  "parentNode": 1460,
+                  "uid": 1461
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "registerPartial",
+                  "range": [
+                    869,
+                    884
+                  ],
+                  "parentNode": 1460,
+                  "uid": 1462
+                },
+                "range": [
+                  860,
+                  884
+                ],
+                "parentNode": 1459,
+                "uid": 1460
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "button",
+                  "raw": "'button'",
+                  "range": [
+                    885,
+                    893
+                  ],
+                  "parentNode": 1459,
+                  "uid": 1463
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      895,
+                      902
+                    ],
+                    "parentNode": 1464,
+                    "uid": 1465
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "dashboard/template/payments/payBills/common/button",
+                      "raw": "'dashboard/template/payments/payBills/common/button'",
+                      "range": [
+                        903,
+                        955
+                      ],
+                      "parentNode": 1464,
+                      "uid": 1466
+                    }
+                  ],
+                  "range": [
+                    895,
+                    956
+                  ],
+                  "parentNode": 1459,
+                  "uid": 1464
+                }
+              ],
+              "range": [
+                860,
+                957
+              ],
+              "parentNode": 1458,
+              "uid": 1459
+            },
+            "range": [
+              860,
+              958
+            ],
+            "parentNode": 1419,
+            "uid": 1458
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    963,
+                    967
+                  ],
+                  "parentNode": 1469,
+                  "uid": 1470
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    968,
+                    974
+                  ],
+                  "parentNode": 1469,
+                  "uid": 1471
+                },
+                "range": [
+                  963,
+                  974
+                ],
+                "parentNode": 1468,
+                "uid": 1469
+              },
+              "right": {
+                "type": "NewExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "MerchantBillPayBridge",
+                    "range": [
+                      981,
+                      1002
+                    ],
+                    "parentNode": 1473,
+                    "uid": 1474
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "singlePaymentEnterFundAccountBridge",
+                    "range": [
+                      1003,
+                      1038
+                    ],
+                    "parentNode": 1473,
+                    "uid": 1475
+                  },
+                  "range": [
+                    981,
+                    1038
+                  ],
+                  "parentNode": 1472,
+                  "uid": 1473
+                },
+                "arguments": [
+                  {
+                    "type": "ObjectExpression",
+                    "properties": [
+                      {
+                        "type": "Property",
+                        "key": {
+                          "type": "Identifier",
+                          "name": "targets",
+                          "range": [
+                            1047,
+                            1054
+                          ],
+                          "parentNode": 1477,
+                          "uid": 1478
+                        },
+                        "value": {
+                          "type": "ObjectExpression",
+                          "properties": [
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "funding_account_display_name_with_balance",
+                                "range": [
+                                  1066,
+                                  1107
+                                ],
+                                "parentNode": 1480,
+                                "uid": 1481
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#fundingAccountDisplayNameWithBalance",
+                                "raw": "'#fundingAccountDisplayNameWithBalance'",
+                                "range": [
+                                  1109,
+                                  1148
+                                ],
+                                "parentNode": 1480,
+                                "uid": 1482
+                              },
+                              "kind": "init",
+                              "range": [
+                                1066,
+                                1148
+                              ],
+                              "parentNode": 1479,
+                              "uid": 1480
+                            }
+                          ],
+                          "range": [
+                            1056,
+                            1156
+                          ],
+                          "parentNode": 1477,
+                          "uid": 1479
+                        },
+                        "kind": "init",
+                        "range": [
+                          1047,
+                          1156
+                        ],
+                        "parentNode": 1476,
+                        "uid": 1477
+                      }
+                    ],
+                    "range": [
+                      1039,
+                      1162
+                    ],
+                    "parentNode": 1472,
+                    "uid": 1476
+                  }
+                ],
+                "range": [
+                  977,
+                  1163
+                ],
+                "parentNode": 1468,
+                "uid": 1472
+              },
+              "range": [
+                963,
+                1163
+              ],
+              "parentNode": 1467,
+              "uid": 1468
+            },
+            "range": [
+              963,
+              1164
+            ],
+            "parentNode": 1419,
+            "uid": 1467
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    1169,
+                    1173
+                  ],
+                  "parentNode": 1485,
+                  "uid": 1486
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    1174,
+                    1182
+                  ],
+                  "parentNode": 1485,
+                  "uid": 1487
+                },
+                "range": [
+                  1169,
+                  1182
+                ],
+                "parentNode": 1484,
+                "uid": 1485
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    1185,
+                    1192
+                  ],
+                  "parentNode": 1488,
+                  "uid": 1489
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/payments/merchantBillPay/singlePaymentFundAccount",
+                    "raw": "'dashboard/template/payments/merchantBillPay/singlePaymentFundAccount'",
+                    "range": [
+                      1193,
+                      1263
+                    ],
+                    "parentNode": 1488,
+                    "uid": 1490
+                  }
+                ],
+                "range": [
+                  1185,
+                  1264
+                ],
+                "parentNode": 1484,
+                "uid": 1488
+              },
+              "range": [
+                1169,
+                1264
+              ],
+              "parentNode": 1483,
+              "uid": 1484
+            },
+            "range": [
+              1169,
+              1265
+            ],
+            "parentNode": 1419,
+            "uid": 1483
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    1299,
+                    1303
+                  ],
+                  "parentNode": 1493,
+                  "uid": 1494
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    1304,
+                    1308
+                  ],
+                  "parentNode": 1493,
+                  "uid": 1495
+                },
+                "range": [
+                  1299,
+                  1308
+                ],
+                "parentNode": 1492,
+                "uid": 1493
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              1331,
+                              1335
+                            ],
+                            "parentNode": 1500,
+                            "uid": 1501
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "hideOverlay",
+                            "range": [
+                              1336,
+                              1347
+                            ],
+                            "parentNode": 1500,
+                            "uid": 1502
+                          },
+                          "range": [
+                            1331,
+                            1347
+                          ],
+                          "parentNode": 1499,
+                          "uid": 1500
+                        },
+                        "arguments": [],
+                        "range": [
+                          1331,
+                          1349
+                        ],
+                        "parentNode": 1498,
+                        "uid": 1499
+                      },
+                      "range": [
+                        1331,
+                        1350
+                      ],
+                      "parentNode": 1497,
+                      "uid": 1498
+                    }
+                  ],
+                  "range": [
+                    1323,
+                    1356
+                  ],
+                  "parentNode": 1496,
+                  "uid": 1497
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1311,
+                  1356
+                ],
+                "parentNode": 1492,
+                "uid": 1496,
+                "returnType": ""
+              },
+              "range": [
+                1299,
+                1356
+              ],
+              "parentNode": 1491,
+              "uid": 1492
+            },
+            "range": [
+              1299,
+              1357
+            ],
+            "parentNode": 1419,
+            "uid": 1491
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    1399,
+                    1403
+                  ],
+                  "parentNode": 1505,
+                  "uid": 1506
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "hideOverlay",
+                  "range": [
+                    1404,
+                    1415
+                  ],
+                  "parentNode": 1505,
+                  "uid": 1507
+                },
+                "range": [
+                  1399,
+                  1415
+                ],
+                "parentNode": 1504,
+                "uid": 1505
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                1438,
+                                1439
+                              ],
+                              "parentNode": 1513,
+                              "uid": 1514
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": ".modal-popup, .overlay, #pre-loader",
+                                "raw": "'.modal-popup, .overlay, #pre-loader'",
+                                "range": [
+                                  1440,
+                                  1477
+                                ],
+                                "parentNode": 1513,
+                                "uid": 1515
+                              }
+                            ],
+                            "range": [
+                              1438,
+                              1478
+                            ],
+                            "parentNode": 1512,
+                            "uid": 1513
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "fadeOut",
+                            "range": [
+                              1479,
+                              1486
+                            ],
+                            "parentNode": 1512,
+                            "uid": 1516
+                          },
+                          "range": [
+                            1438,
+                            1486
+                          ],
+                          "parentNode": 1511,
+                          "uid": 1512
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": 300,
+                            "raw": "300",
+                            "range": [
+                              1487,
+                              1490
+                            ],
+                            "parentNode": 1511,
+                            "uid": 1517
+                          }
+                        ],
+                        "range": [
+                          1438,
+                          1491
+                        ],
+                        "parentNode": 1510,
+                        "uid": 1511
+                      },
+                      "range": [
+                        1438,
+                        1492
+                      ],
+                      "parentNode": 1509,
+                      "uid": 1510
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                1499,
+                                1500
+                              ],
+                              "parentNode": 1521,
+                              "uid": 1522
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "#modal-content",
+                                "raw": "'#modal-content'",
+                                "range": [
+                                  1501,
+                                  1517
+                                ],
+                                "parentNode": 1521,
+                                "uid": 1523
+                              }
+                            ],
+                            "range": [
+                              1499,
+                              1518
+                            ],
+                            "parentNode": 1520,
+                            "uid": 1521
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "empty",
+                            "range": [
+                              1519,
+                              1524
+                            ],
+                            "parentNode": 1520,
+                            "uid": 1524
+                          },
+                          "range": [
+                            1499,
+                            1524
+                          ],
+                          "parentNode": 1519,
+                          "uid": 1520
+                        },
+                        "arguments": [],
+                        "range": [
+                          1499,
+                          1526
+                        ],
+                        "parentNode": 1518,
+                        "uid": 1519
+                      },
+                      "range": [
+                        1499,
+                        1527
+                      ],
+                      "parentNode": 1509,
+                      "uid": 1518
+                    }
+                  ],
+                  "range": [
+                    1430,
+                    1533
+                  ],
+                  "parentNode": 1508,
+                  "uid": 1509
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1418,
+                  1533
+                ],
+                "parentNode": 1504,
+                "uid": 1508,
+                "returnType": ""
+              },
+              "range": [
+                1399,
+                1533
+              ],
+              "parentNode": 1503,
+              "uid": 1504
+            },
+            "range": [
+              1399,
+              1534
+            ],
+            "parentNode": 1419,
+            "uid": 1503
+          }
+        ],
+        "range": [
+          409,
+          1538
+        ],
+        "parentNode": 1417,
+        "uid": 1419
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        369,
+        1538
+      ],
+      "parentNode": 1416,
+      "uid": 1417,
+      "returnType": ""
+    },
+    "range": [
+      362,
+      1539
+    ],
+    "parentNode": 1403,
+    "uid": 1416,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 36,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/payments/merchantBillPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1384,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./singlePaymentEnterFundAccount",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "SinglePaymentFundAccountView": 569
+    },
+    "methods": [
+      {
+        "name": "SinglePaymentFundAccountView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function SinglePaymentFundAccountView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 27,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "hideOverlay",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 31,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.hideOverlay = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/payments/merchantBillPay",
+    "fileName": "singlePaymentEnterFundAccount.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 41
+}

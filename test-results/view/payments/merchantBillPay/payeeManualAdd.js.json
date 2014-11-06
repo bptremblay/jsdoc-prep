@@ -1,0 +1,2951 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "payee_manual_add",
+      "AMD": true,
+      "webPath": "/view/payments/merchantBillPay"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'payeeManualAdd'.",
+        "code": "wfJD",
+        "evidence": "return function payeeManualAdd() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'payeeManualAdd'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 43,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setAccountNumberOptions'.",
+        "code": "wfJD",
+        "evidence": "this.setAccountNumberOptions = function(accountNumberAvailable) {",
+        "line": 55,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setAccountNumberOptions'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/payments/merchantBillPay/payeeManualAdd.js",
+  "folderPath": "test-source/view/payments/merchantBillPay",
+  "fileName": "payeeManualAdd.js",
+  "packagePath": "/view/payments/merchantBillPay",
+  "webPath": "/view/payments/merchantBillPay",
+  "libFile": false,
+  "min": false,
+  "realName": "payee_manual_add",
+  "name": "payeeManualAdd",
+  "camelName": "PayeeManualAdd",
+  "processedFilePath": "test-output/view/payments/merchantBillPay/payeeManualAdd.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction PayeeManualAdd() {\n    var self = this;\n    var template = require('blue/template'),\n      MerchantBillPayBridge = require('dashboard/view/bridge/payments/merchantBillPayBridge');\n    template.registerPartial('field', require('dashboard/template/payments/payBills/common/field'));\n    template.registerPartial('menu', require('dashboard/template/payments/payBills/common/menu'));\n    template.registerPartial('submenu', require('dashboard/template/payments/payBills/common/submenu'));\n    template.registerPartial('button', require('dashboard/template/payments/payBills/common/button'));\n    template.registerPartial('steps', require('dashboard/template/payments/payBills/common/steps'));\n    template.registerHelper('base1', function (number) {\n      return number + 1;\n    });\n    this.bridge = new MerchantBillPayBridge.PayeeManualAddBridge({\n      targets: {\n        payee_name: '#payeeName',\n        payee_nickname: '#payeeNickName',\n        mailing_address_line1: '#payeeAddress1',\n        mailing_address_line2: '#payeeAddress2',\n        city: '#city',\n        state: '#state',\n        zip_code: '#zipCode',\n        phone_number: '#phoneNumber',\n        zip_code_extension: '#zipCodeExtension',\n        account_number: '#payeeAccountNumber',\n        confirmed_account_number: '#payeeConfirmedAccountNumber',\n        account_number_available: '#accountNumberAvailable',\n        note_for_payee: '#noteForPayee',\n        continue_button: '#continue-button',\n        cancel_button: '#cancel-button'\n      }\n    });\n    this.template = require('dashboard/template/payments/merchantBillPay/PayeeManualAdd');\n    /**\n     * Init.\n     */\n    this.init = function () {\n      // Handles AccountNumberOptions  state\n      this.bridge.on('state/setAccountNumberOptions', function (data) {\n        self.setAccountNumberOptions(data.accountNumberAvailable);\n      });\n      /**\n       * Function for handling the enable and diabling Account Number fields.\n       * @function setAccountNumberOptions\n       * @memberOf module:PayeeManualAdd\n       *\n       * @param accountNumberAvailable\n       */\n      this.setAccountNumberOptions = function (accountNumberAvailable) {\n        var payeeAccountNumber = $('#payeeAccountNumber'),\n          payeeConfirmedAccountNumber = $('#payeeConfirmedAccountNumber'),\n          dlNoteForPayee = $('#dlNoteForPayee'),\n          noteForPayee = $('#noteForPayee');\n        if (accountNumberAvailable === 'false') {\n          payeeAccountNumber.removeAttr('disabled');\n          payeeConfirmedAccountNumber.removeAttr('disabled');\n          noteForPayee.attr('disabled', 'disabled');\n          noteForPayee.val('');\n          dlNoteForPayee.hide();\n        } else {\n          payeeAccountNumber.attr('disabled', 'disabled');\n          payeeConfirmedAccountNumber.attr('disabled', 'disabled');\n          payeeAccountNumber.val('');\n          payeeConfirmedAccountNumber.val('');\n          dlNoteForPayee.show();\n          noteForPayee.removeAttr('disabled');\n        }\n      };\n    };\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "payeeManualAdd",
+        "range": [
+          242,
+          256
+        ],
+        "parentNode": 3491,
+        "uid": 3492
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "self",
+                  "range": [
+                    269,
+                    273
+                  ],
+                  "parentNode": 3495,
+                  "uid": 3496
+                },
+                "init": {
+                  "type": "ThisExpression",
+                  "range": [
+                    276,
+                    280
+                  ],
+                  "parentNode": 3495,
+                  "uid": 3497
+                },
+                "range": [
+                  269,
+                  280
+                ],
+                "parentNode": 3494,
+                "uid": 3495
+              }
+            ],
+            "kind": "var",
+            "range": [
+              265,
+              281
+            ],
+            "parentNode": 3493,
+            "uid": 3494
+          },
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    290,
+                    298
+                  ],
+                  "parentNode": 3499,
+                  "uid": 3500
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      301,
+                      308
+                    ],
+                    "parentNode": 3501,
+                    "uid": 3502
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "blue/template",
+                      "raw": "'blue/template'",
+                      "range": [
+                        309,
+                        324
+                      ],
+                      "parentNode": 3501,
+                      "uid": 3503
+                    }
+                  ],
+                  "range": [
+                    301,
+                    325
+                  ],
+                  "parentNode": 3499,
+                  "uid": 3501
+                },
+                "range": [
+                  290,
+                  325
+                ],
+                "parentNode": 3498,
+                "uid": 3499
+              },
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "MerchantBillPayBridge",
+                  "range": [
+                    333,
+                    354
+                  ],
+                  "parentNode": 3504,
+                  "uid": 3505
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      357,
+                      364
+                    ],
+                    "parentNode": 3506,
+                    "uid": 3507
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "dashboard/view/bridge/payments/merchantBillPayBridge",
+                      "raw": "'dashboard/view/bridge/payments/merchantBillPayBridge'",
+                      "range": [
+                        365,
+                        419
+                      ],
+                      "parentNode": 3506,
+                      "uid": 3508
+                    }
+                  ],
+                  "range": [
+                    357,
+                    420
+                  ],
+                  "parentNode": 3504,
+                  "uid": 3506
+                },
+                "range": [
+                  333,
+                  420
+                ],
+                "parentNode": 3498,
+                "uid": 3504
+              }
+            ],
+            "kind": "var",
+            "range": [
+              286,
+              421
+            ],
+            "parentNode": 3493,
+            "uid": 3498
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    426,
+                    434
+                  ],
+                  "parentNode": 3511,
+                  "uid": 3512
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "registerPartial",
+                  "range": [
+                    435,
+                    450
+                  ],
+                  "parentNode": 3511,
+                  "uid": 3513
+                },
+                "range": [
+                  426,
+                  450
+                ],
+                "parentNode": 3510,
+                "uid": 3511
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "field",
+                  "raw": "'field'",
+                  "range": [
+                    451,
+                    458
+                  ],
+                  "parentNode": 3510,
+                  "uid": 3514
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      460,
+                      467
+                    ],
+                    "parentNode": 3515,
+                    "uid": 3516
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "dashboard/template/payments/payBills/common/field",
+                      "raw": "'dashboard/template/payments/payBills/common/field'",
+                      "range": [
+                        468,
+                        519
+                      ],
+                      "parentNode": 3515,
+                      "uid": 3517
+                    }
+                  ],
+                  "range": [
+                    460,
+                    520
+                  ],
+                  "parentNode": 3510,
+                  "uid": 3515
+                }
+              ],
+              "range": [
+                426,
+                521
+              ],
+              "parentNode": 3509,
+              "uid": 3510
+            },
+            "range": [
+              426,
+              522
+            ],
+            "parentNode": 3493,
+            "uid": 3509
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    527,
+                    535
+                  ],
+                  "parentNode": 3520,
+                  "uid": 3521
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "registerPartial",
+                  "range": [
+                    536,
+                    551
+                  ],
+                  "parentNode": 3520,
+                  "uid": 3522
+                },
+                "range": [
+                  527,
+                  551
+                ],
+                "parentNode": 3519,
+                "uid": 3520
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "menu",
+                  "raw": "'menu'",
+                  "range": [
+                    552,
+                    558
+                  ],
+                  "parentNode": 3519,
+                  "uid": 3523
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      560,
+                      567
+                    ],
+                    "parentNode": 3524,
+                    "uid": 3525
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "dashboard/template/payments/payBills/common/menu",
+                      "raw": "'dashboard/template/payments/payBills/common/menu'",
+                      "range": [
+                        568,
+                        618
+                      ],
+                      "parentNode": 3524,
+                      "uid": 3526
+                    }
+                  ],
+                  "range": [
+                    560,
+                    619
+                  ],
+                  "parentNode": 3519,
+                  "uid": 3524
+                }
+              ],
+              "range": [
+                527,
+                620
+              ],
+              "parentNode": 3518,
+              "uid": 3519
+            },
+            "range": [
+              527,
+              621
+            ],
+            "parentNode": 3493,
+            "uid": 3518
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    626,
+                    634
+                  ],
+                  "parentNode": 3529,
+                  "uid": 3530
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "registerPartial",
+                  "range": [
+                    635,
+                    650
+                  ],
+                  "parentNode": 3529,
+                  "uid": 3531
+                },
+                "range": [
+                  626,
+                  650
+                ],
+                "parentNode": 3528,
+                "uid": 3529
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "submenu",
+                  "raw": "'submenu'",
+                  "range": [
+                    651,
+                    660
+                  ],
+                  "parentNode": 3528,
+                  "uid": 3532
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      662,
+                      669
+                    ],
+                    "parentNode": 3533,
+                    "uid": 3534
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "dashboard/template/payments/payBills/common/submenu",
+                      "raw": "'dashboard/template/payments/payBills/common/submenu'",
+                      "range": [
+                        670,
+                        723
+                      ],
+                      "parentNode": 3533,
+                      "uid": 3535
+                    }
+                  ],
+                  "range": [
+                    662,
+                    724
+                  ],
+                  "parentNode": 3528,
+                  "uid": 3533
+                }
+              ],
+              "range": [
+                626,
+                725
+              ],
+              "parentNode": 3527,
+              "uid": 3528
+            },
+            "range": [
+              626,
+              726
+            ],
+            "parentNode": 3493,
+            "uid": 3527
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    731,
+                    739
+                  ],
+                  "parentNode": 3538,
+                  "uid": 3539
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "registerPartial",
+                  "range": [
+                    740,
+                    755
+                  ],
+                  "parentNode": 3538,
+                  "uid": 3540
+                },
+                "range": [
+                  731,
+                  755
+                ],
+                "parentNode": 3537,
+                "uid": 3538
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "button",
+                  "raw": "'button'",
+                  "range": [
+                    756,
+                    764
+                  ],
+                  "parentNode": 3537,
+                  "uid": 3541
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      766,
+                      773
+                    ],
+                    "parentNode": 3542,
+                    "uid": 3543
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "dashboard/template/payments/payBills/common/button",
+                      "raw": "'dashboard/template/payments/payBills/common/button'",
+                      "range": [
+                        774,
+                        826
+                      ],
+                      "parentNode": 3542,
+                      "uid": 3544
+                    }
+                  ],
+                  "range": [
+                    766,
+                    827
+                  ],
+                  "parentNode": 3537,
+                  "uid": 3542
+                }
+              ],
+              "range": [
+                731,
+                828
+              ],
+              "parentNode": 3536,
+              "uid": 3537
+            },
+            "range": [
+              731,
+              829
+            ],
+            "parentNode": 3493,
+            "uid": 3536
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    834,
+                    842
+                  ],
+                  "parentNode": 3547,
+                  "uid": 3548
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "registerPartial",
+                  "range": [
+                    843,
+                    858
+                  ],
+                  "parentNode": 3547,
+                  "uid": 3549
+                },
+                "range": [
+                  834,
+                  858
+                ],
+                "parentNode": 3546,
+                "uid": 3547
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "steps",
+                  "raw": "'steps'",
+                  "range": [
+                    859,
+                    866
+                  ],
+                  "parentNode": 3546,
+                  "uid": 3550
+                },
+                {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      868,
+                      875
+                    ],
+                    "parentNode": 3551,
+                    "uid": 3552
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "dashboard/template/payments/payBills/common/steps",
+                      "raw": "'dashboard/template/payments/payBills/common/steps'",
+                      "range": [
+                        876,
+                        927
+                      ],
+                      "parentNode": 3551,
+                      "uid": 3553
+                    }
+                  ],
+                  "range": [
+                    868,
+                    928
+                  ],
+                  "parentNode": 3546,
+                  "uid": 3551
+                }
+              ],
+              "range": [
+                834,
+                929
+              ],
+              "parentNode": 3545,
+              "uid": 3546
+            },
+            "range": [
+              834,
+              930
+            ],
+            "parentNode": 3493,
+            "uid": 3545
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    935,
+                    943
+                  ],
+                  "parentNode": 3556,
+                  "uid": 3557
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "registerHelper",
+                  "range": [
+                    944,
+                    958
+                  ],
+                  "parentNode": 3556,
+                  "uid": 3558
+                },
+                "range": [
+                  935,
+                  958
+                ],
+                "parentNode": 3555,
+                "uid": 3556
+              },
+              "arguments": [
+                {
+                  "type": "Literal",
+                  "value": "base1",
+                  "raw": "'base1'",
+                  "range": [
+                    959,
+                    966
+                  ],
+                  "parentNode": 3555,
+                  "uid": 3559
+                },
+                {
+                  "type": "FunctionExpression",
+                  "id": null,
+                  "params": [
+                    {
+                      "type": "Identifier",
+                      "name": "number",
+                      "range": [
+                        978,
+                        984
+                      ],
+                      "parentNode": 3560,
+                      "uid": 3561
+                    }
+                  ],
+                  "defaults": [],
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ReturnStatement",
+                        "argument": {
+                          "type": "BinaryExpression",
+                          "operator": "+",
+                          "left": {
+                            "type": "Identifier",
+                            "name": "number",
+                            "range": [
+                              1001,
+                              1007
+                            ],
+                            "parentNode": 3564,
+                            "uid": 3565
+                          },
+                          "right": {
+                            "type": "Literal",
+                            "value": 1,
+                            "raw": "1",
+                            "range": [
+                              1010,
+                              1011
+                            ],
+                            "parentNode": 3564,
+                            "uid": 3566
+                          },
+                          "range": [
+                            1001,
+                            1011
+                          ],
+                          "parentNode": 3563,
+                          "uid": 3564
+                        },
+                        "range": [
+                          994,
+                          1012
+                        ],
+                        "parentNode": 3562,
+                        "uid": 3563,
+                        "returnType": ""
+                      }
+                    ],
+                    "range": [
+                      986,
+                      1018
+                    ],
+                    "parentNode": 3560,
+                    "uid": 3562
+                  },
+                  "rest": null,
+                  "generator": false,
+                  "expression": false,
+                  "range": [
+                    968,
+                    1018
+                  ],
+                  "parentNode": 3555,
+                  "uid": 3560,
+                  "returnType": "?"
+                }
+              ],
+              "range": [
+                935,
+                1019
+              ],
+              "parentNode": 3554,
+              "uid": 3555
+            },
+            "range": [
+              935,
+              1020
+            ],
+            "parentNode": 3493,
+            "uid": 3554
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    1025,
+                    1029
+                  ],
+                  "parentNode": 3569,
+                  "uid": 3570
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    1030,
+                    1036
+                  ],
+                  "parentNode": 3569,
+                  "uid": 3571
+                },
+                "range": [
+                  1025,
+                  1036
+                ],
+                "parentNode": 3568,
+                "uid": 3569
+              },
+              "right": {
+                "type": "NewExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "MerchantBillPayBridge",
+                    "range": [
+                      1043,
+                      1064
+                    ],
+                    "parentNode": 3573,
+                    "uid": 3574
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "payeeManualAddBridge",
+                    "range": [
+                      1065,
+                      1085
+                    ],
+                    "parentNode": 3573,
+                    "uid": 3575
+                  },
+                  "range": [
+                    1043,
+                    1085
+                  ],
+                  "parentNode": 3572,
+                  "uid": 3573
+                },
+                "arguments": [
+                  {
+                    "type": "ObjectExpression",
+                    "properties": [
+                      {
+                        "type": "Property",
+                        "key": {
+                          "type": "Identifier",
+                          "name": "targets",
+                          "range": [
+                            1094,
+                            1101
+                          ],
+                          "parentNode": 3577,
+                          "uid": 3578
+                        },
+                        "value": {
+                          "type": "ObjectExpression",
+                          "properties": [
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "payee_name",
+                                "range": [
+                                  1113,
+                                  1123
+                                ],
+                                "parentNode": 3580,
+                                "uid": 3581
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#payeeName",
+                                "raw": "'#payeeName'",
+                                "range": [
+                                  1125,
+                                  1137
+                                ],
+                                "parentNode": 3580,
+                                "uid": 3582
+                              },
+                              "kind": "init",
+                              "range": [
+                                1113,
+                                1137
+                              ],
+                              "parentNode": 3579,
+                              "uid": 3580
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "payee_nickname",
+                                "range": [
+                                  1147,
+                                  1161
+                                ],
+                                "parentNode": 3583,
+                                "uid": 3584
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#payeeNickName",
+                                "raw": "'#payeeNickName'",
+                                "range": [
+                                  1163,
+                                  1179
+                                ],
+                                "parentNode": 3583,
+                                "uid": 3585
+                              },
+                              "kind": "init",
+                              "range": [
+                                1147,
+                                1179
+                              ],
+                              "parentNode": 3579,
+                              "uid": 3583
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "mailing_address_line1",
+                                "range": [
+                                  1189,
+                                  1210
+                                ],
+                                "parentNode": 3586,
+                                "uid": 3587
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#payeeAddress1",
+                                "raw": "'#payeeAddress1'",
+                                "range": [
+                                  1212,
+                                  1228
+                                ],
+                                "parentNode": 3586,
+                                "uid": 3588
+                              },
+                              "kind": "init",
+                              "range": [
+                                1189,
+                                1228
+                              ],
+                              "parentNode": 3579,
+                              "uid": 3586
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "mailing_address_line2",
+                                "range": [
+                                  1238,
+                                  1259
+                                ],
+                                "parentNode": 3589,
+                                "uid": 3590
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#payeeAddress2",
+                                "raw": "'#payeeAddress2'",
+                                "range": [
+                                  1261,
+                                  1277
+                                ],
+                                "parentNode": 3589,
+                                "uid": 3591
+                              },
+                              "kind": "init",
+                              "range": [
+                                1238,
+                                1277
+                              ],
+                              "parentNode": 3579,
+                              "uid": 3589
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "city",
+                                "range": [
+                                  1287,
+                                  1291
+                                ],
+                                "parentNode": 3592,
+                                "uid": 3593
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#city",
+                                "raw": "'#city'",
+                                "range": [
+                                  1293,
+                                  1300
+                                ],
+                                "parentNode": 3592,
+                                "uid": 3594
+                              },
+                              "kind": "init",
+                              "range": [
+                                1287,
+                                1300
+                              ],
+                              "parentNode": 3579,
+                              "uid": 3592
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "state",
+                                "range": [
+                                  1310,
+                                  1315
+                                ],
+                                "parentNode": 3595,
+                                "uid": 3596
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#state",
+                                "raw": "'#state'",
+                                "range": [
+                                  1317,
+                                  1325
+                                ],
+                                "parentNode": 3595,
+                                "uid": 3597
+                              },
+                              "kind": "init",
+                              "range": [
+                                1310,
+                                1325
+                              ],
+                              "parentNode": 3579,
+                              "uid": 3595
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "zip_code",
+                                "range": [
+                                  1335,
+                                  1343
+                                ],
+                                "parentNode": 3598,
+                                "uid": 3599
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#zipCode",
+                                "raw": "'#zipCode'",
+                                "range": [
+                                  1345,
+                                  1355
+                                ],
+                                "parentNode": 3598,
+                                "uid": 3600
+                              },
+                              "kind": "init",
+                              "range": [
+                                1335,
+                                1355
+                              ],
+                              "parentNode": 3579,
+                              "uid": 3598
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "phone_number",
+                                "range": [
+                                  1365,
+                                  1377
+                                ],
+                                "parentNode": 3601,
+                                "uid": 3602
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#phoneNumber",
+                                "raw": "'#phoneNumber'",
+                                "range": [
+                                  1379,
+                                  1393
+                                ],
+                                "parentNode": 3601,
+                                "uid": 3603
+                              },
+                              "kind": "init",
+                              "range": [
+                                1365,
+                                1393
+                              ],
+                              "parentNode": 3579,
+                              "uid": 3601
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "zip_code_extension",
+                                "range": [
+                                  1403,
+                                  1421
+                                ],
+                                "parentNode": 3604,
+                                "uid": 3605
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#zipCodeExtension",
+                                "raw": "'#zipCodeExtension'",
+                                "range": [
+                                  1423,
+                                  1442
+                                ],
+                                "parentNode": 3604,
+                                "uid": 3606
+                              },
+                              "kind": "init",
+                              "range": [
+                                1403,
+                                1442
+                              ],
+                              "parentNode": 3579,
+                              "uid": 3604
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "account_number",
+                                "range": [
+                                  1452,
+                                  1466
+                                ],
+                                "parentNode": 3607,
+                                "uid": 3608
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#payeeAccountNumber",
+                                "raw": "'#payeeAccountNumber'",
+                                "range": [
+                                  1468,
+                                  1489
+                                ],
+                                "parentNode": 3607,
+                                "uid": 3609
+                              },
+                              "kind": "init",
+                              "range": [
+                                1452,
+                                1489
+                              ],
+                              "parentNode": 3579,
+                              "uid": 3607
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "confirmed_account_number",
+                                "range": [
+                                  1499,
+                                  1523
+                                ],
+                                "parentNode": 3610,
+                                "uid": 3611
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#payeeConfirmedAccountNumber",
+                                "raw": "'#payeeConfirmedAccountNumber'",
+                                "range": [
+                                  1525,
+                                  1555
+                                ],
+                                "parentNode": 3610,
+                                "uid": 3612
+                              },
+                              "kind": "init",
+                              "range": [
+                                1499,
+                                1555
+                              ],
+                              "parentNode": 3579,
+                              "uid": 3610
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "account_number_available",
+                                "range": [
+                                  1565,
+                                  1589
+                                ],
+                                "parentNode": 3613,
+                                "uid": 3614
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#accountNumberAvailable",
+                                "raw": "'#accountNumberAvailable'",
+                                "range": [
+                                  1591,
+                                  1616
+                                ],
+                                "parentNode": 3613,
+                                "uid": 3615
+                              },
+                              "kind": "init",
+                              "range": [
+                                1565,
+                                1616
+                              ],
+                              "parentNode": 3579,
+                              "uid": 3613
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "note_for_payee",
+                                "range": [
+                                  1626,
+                                  1640
+                                ],
+                                "parentNode": 3616,
+                                "uid": 3617
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#noteForPayee",
+                                "raw": "'#noteForPayee'",
+                                "range": [
+                                  1642,
+                                  1657
+                                ],
+                                "parentNode": 3616,
+                                "uid": 3618
+                              },
+                              "kind": "init",
+                              "range": [
+                                1626,
+                                1657
+                              ],
+                              "parentNode": 3579,
+                              "uid": 3616
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "continue_button",
+                                "range": [
+                                  1667,
+                                  1682
+                                ],
+                                "parentNode": 3619,
+                                "uid": 3620
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#continue-button",
+                                "raw": "'#continue-button'",
+                                "range": [
+                                  1684,
+                                  1702
+                                ],
+                                "parentNode": 3619,
+                                "uid": 3621
+                              },
+                              "kind": "init",
+                              "range": [
+                                1667,
+                                1702
+                              ],
+                              "parentNode": 3579,
+                              "uid": 3619
+                            },
+                            {
+                              "type": "Property",
+                              "key": {
+                                "type": "Identifier",
+                                "name": "cancel_button",
+                                "range": [
+                                  1712,
+                                  1725
+                                ],
+                                "parentNode": 3622,
+                                "uid": 3623
+                              },
+                              "value": {
+                                "type": "Literal",
+                                "value": "#cancel-button",
+                                "raw": "'#cancel-button'",
+                                "range": [
+                                  1727,
+                                  1743
+                                ],
+                                "parentNode": 3622,
+                                "uid": 3624
+                              },
+                              "kind": "init",
+                              "range": [
+                                1712,
+                                1743
+                              ],
+                              "parentNode": 3579,
+                              "uid": 3622
+                            }
+                          ],
+                          "range": [
+                            1103,
+                            1751
+                          ],
+                          "parentNode": 3577,
+                          "uid": 3579
+                        },
+                        "kind": "init",
+                        "range": [
+                          1094,
+                          1751
+                        ],
+                        "parentNode": 3576,
+                        "uid": 3577
+                      }
+                    ],
+                    "range": [
+                      1086,
+                      1757
+                    ],
+                    "parentNode": 3572,
+                    "uid": 3576
+                  }
+                ],
+                "range": [
+                  1039,
+                  1758
+                ],
+                "parentNode": 3568,
+                "uid": 3572
+              },
+              "range": [
+                1025,
+                1758
+              ],
+              "parentNode": 3567,
+              "uid": 3568
+            },
+            "range": [
+              1025,
+              1759
+            ],
+            "parentNode": 3493,
+            "uid": 3567
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    1764,
+                    1768
+                  ],
+                  "parentNode": 3627,
+                  "uid": 3628
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    1769,
+                    1777
+                  ],
+                  "parentNode": 3627,
+                  "uid": 3629
+                },
+                "range": [
+                  1764,
+                  1777
+                ],
+                "parentNode": 3626,
+                "uid": 3627
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    1780,
+                    1787
+                  ],
+                  "parentNode": 3630,
+                  "uid": 3631
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/payments/merchantBillPay/payeeManualAdd",
+                    "raw": "'dashboard/template/payments/merchantBillPay/payeeManualAdd'",
+                    "range": [
+                      1788,
+                      1848
+                    ],
+                    "parentNode": 3630,
+                    "uid": 3632
+                  }
+                ],
+                "range": [
+                  1780,
+                  1849
+                ],
+                "parentNode": 3626,
+                "uid": 3630
+              },
+              "range": [
+                1764,
+                1849
+              ],
+              "parentNode": 3625,
+              "uid": 3626
+            },
+            "range": [
+              1764,
+              1850
+            ],
+            "parentNode": 3493,
+            "uid": 3625
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    1884,
+                    1888
+                  ],
+                  "parentNode": 3635,
+                  "uid": 3636
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    1889,
+                    1893
+                  ],
+                  "parentNode": 3635,
+                  "uid": 3637
+                },
+                "range": [
+                  1884,
+                  1893
+                ],
+                "parentNode": 3634,
+                "uid": 3635
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                1961,
+                                1965
+                              ],
+                              "parentNode": 3643,
+                              "uid": 3644
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "bridge",
+                              "range": [
+                                1966,
+                                1972
+                              ],
+                              "parentNode": 3643,
+                              "uid": 3645
+                            },
+                            "range": [
+                              1961,
+                              1972
+                            ],
+                            "parentNode": 3642,
+                            "uid": 3643
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "on",
+                            "range": [
+                              1973,
+                              1975
+                            ],
+                            "parentNode": 3642,
+                            "uid": 3646
+                          },
+                          "range": [
+                            1961,
+                            1975
+                          ],
+                          "parentNode": 3641,
+                          "uid": 3642
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "state/setAccountNumberOptions",
+                            "raw": "'state/setAccountNumberOptions'",
+                            "range": [
+                              1976,
+                              2007
+                            ],
+                            "parentNode": 3641,
+                            "uid": 3647
+                          },
+                          {
+                            "type": "FunctionExpression",
+                            "id": null,
+                            "params": [
+                              {
+                                "type": "Identifier",
+                                "name": "data",
+                                "range": [
+                                  2019,
+                                  2023
+                                ],
+                                "parentNode": 3648,
+                                "uid": 3649
+                              }
+                            ],
+                            "defaults": [],
+                            "body": {
+                              "type": "BlockStatement",
+                              "body": [
+                                {
+                                  "type": "ExpressionStatement",
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "Identifier",
+                                        "name": "self",
+                                        "range": [
+                                          2035,
+                                          2039
+                                        ],
+                                        "parentNode": 3653,
+                                        "uid": 3654
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "setAccountNumberOptions",
+                                        "range": [
+                                          2040,
+                                          2063
+                                        ],
+                                        "parentNode": 3653,
+                                        "uid": 3655
+                                      },
+                                      "range": [
+                                        2035,
+                                        2063
+                                      ],
+                                      "parentNode": 3652,
+                                      "uid": 3653
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "MemberExpression",
+                                        "computed": false,
+                                        "object": {
+                                          "type": "Identifier",
+                                          "name": "data",
+                                          "range": [
+                                            2064,
+                                            2068
+                                          ],
+                                          "parentNode": 3656,
+                                          "uid": 3657
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "accountNumberAvailable",
+                                          "range": [
+                                            2069,
+                                            2091
+                                          ],
+                                          "parentNode": 3656,
+                                          "uid": 3658
+                                        },
+                                        "range": [
+                                          2064,
+                                          2091
+                                        ],
+                                        "parentNode": 3652,
+                                        "uid": 3656
+                                      }
+                                    ],
+                                    "range": [
+                                      2035,
+                                      2092
+                                    ],
+                                    "parentNode": 3651,
+                                    "uid": 3652
+                                  },
+                                  "range": [
+                                    2035,
+                                    2093
+                                  ],
+                                  "parentNode": 3650,
+                                  "uid": 3651
+                                }
+                              ],
+                              "range": [
+                                2025,
+                                2101
+                              ],
+                              "parentNode": 3648,
+                              "uid": 3650
+                            },
+                            "rest": null,
+                            "generator": false,
+                            "expression": false,
+                            "range": [
+                              2009,
+                              2101
+                            ],
+                            "parentNode": 3641,
+                            "uid": 3648,
+                            "returnType": ""
+                          }
+                        ],
+                        "range": [
+                          1961,
+                          2102
+                        ],
+                        "parentNode": 3640,
+                        "uid": 3641
+                      },
+                      "range": [
+                        1961,
+                        2103
+                      ],
+                      "parentNode": 3639,
+                      "uid": 3640
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              2340,
+                              2344
+                            ],
+                            "parentNode": 3661,
+                            "uid": 3662
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "setAccountNumberOptions",
+                            "range": [
+                              2345,
+                              2368
+                            ],
+                            "parentNode": 3661,
+                            "uid": 3663
+                          },
+                          "range": [
+                            2340,
+                            2368
+                          ],
+                          "parentNode": 3660,
+                          "uid": 3661
+                        },
+                        "right": {
+                          "type": "FunctionExpression",
+                          "id": null,
+                          "params": [
+                            {
+                              "type": "Identifier",
+                              "name": "accountNumberAvailable",
+                              "range": [
+                                2381,
+                                2403
+                              ],
+                              "parentNode": 3664,
+                              "uid": 3665
+                            }
+                          ],
+                          "defaults": [],
+                          "body": {
+                            "type": "BlockStatement",
+                            "body": [
+                              {
+                                "type": "VariableDeclaration",
+                                "declarations": [
+                                  {
+                                    "type": "VariableDeclarator",
+                                    "id": {
+                                      "type": "Identifier",
+                                      "name": "payeeAccountNumber",
+                                      "range": [
+                                        2419,
+                                        2437
+                                      ],
+                                      "parentNode": 3668,
+                                      "uid": 3669
+                                    },
+                                    "init": {
+                                      "type": "CallExpression",
+                                      "callee": {
+                                        "type": "Identifier",
+                                        "name": "$",
+                                        "range": [
+                                          2440,
+                                          2441
+                                        ],
+                                        "parentNode": 3670,
+                                        "uid": 3671
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "Literal",
+                                          "value": "#payeeAccountNumber",
+                                          "raw": "'#payeeAccountNumber'",
+                                          "range": [
+                                            2442,
+                                            2463
+                                          ],
+                                          "parentNode": 3670,
+                                          "uid": 3672
+                                        }
+                                      ],
+                                      "range": [
+                                        2440,
+                                        2464
+                                      ],
+                                      "parentNode": 3668,
+                                      "uid": 3670
+                                    },
+                                    "range": [
+                                      2419,
+                                      2464
+                                    ],
+                                    "parentNode": 3667,
+                                    "uid": 3668
+                                  },
+                                  {
+                                    "type": "VariableDeclarator",
+                                    "id": {
+                                      "type": "Identifier",
+                                      "name": "payeeConfirmedAccountNumber",
+                                      "range": [
+                                        2476,
+                                        2503
+                                      ],
+                                      "parentNode": 3673,
+                                      "uid": 3674
+                                    },
+                                    "init": {
+                                      "type": "CallExpression",
+                                      "callee": {
+                                        "type": "Identifier",
+                                        "name": "$",
+                                        "range": [
+                                          2506,
+                                          2507
+                                        ],
+                                        "parentNode": 3675,
+                                        "uid": 3676
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "Literal",
+                                          "value": "#payeeConfirmedAccountNumber",
+                                          "raw": "'#payeeConfirmedAccountNumber'",
+                                          "range": [
+                                            2508,
+                                            2538
+                                          ],
+                                          "parentNode": 3675,
+                                          "uid": 3677
+                                        }
+                                      ],
+                                      "range": [
+                                        2506,
+                                        2539
+                                      ],
+                                      "parentNode": 3673,
+                                      "uid": 3675
+                                    },
+                                    "range": [
+                                      2476,
+                                      2539
+                                    ],
+                                    "parentNode": 3667,
+                                    "uid": 3673
+                                  },
+                                  {
+                                    "type": "VariableDeclarator",
+                                    "id": {
+                                      "type": "Identifier",
+                                      "name": "dlNoteForPayee",
+                                      "range": [
+                                        2551,
+                                        2565
+                                      ],
+                                      "parentNode": 3678,
+                                      "uid": 3679
+                                    },
+                                    "init": {
+                                      "type": "CallExpression",
+                                      "callee": {
+                                        "type": "Identifier",
+                                        "name": "$",
+                                        "range": [
+                                          2568,
+                                          2569
+                                        ],
+                                        "parentNode": 3680,
+                                        "uid": 3681
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "Literal",
+                                          "value": "#dlNoteForPayee",
+                                          "raw": "'#dlNoteForPayee'",
+                                          "range": [
+                                            2570,
+                                            2587
+                                          ],
+                                          "parentNode": 3680,
+                                          "uid": 3682
+                                        }
+                                      ],
+                                      "range": [
+                                        2568,
+                                        2588
+                                      ],
+                                      "parentNode": 3678,
+                                      "uid": 3680
+                                    },
+                                    "range": [
+                                      2551,
+                                      2588
+                                    ],
+                                    "parentNode": 3667,
+                                    "uid": 3678
+                                  },
+                                  {
+                                    "type": "VariableDeclarator",
+                                    "id": {
+                                      "type": "Identifier",
+                                      "name": "noteForPayee",
+                                      "range": [
+                                        2600,
+                                        2612
+                                      ],
+                                      "parentNode": 3683,
+                                      "uid": 3684
+                                    },
+                                    "init": {
+                                      "type": "CallExpression",
+                                      "callee": {
+                                        "type": "Identifier",
+                                        "name": "$",
+                                        "range": [
+                                          2615,
+                                          2616
+                                        ],
+                                        "parentNode": 3685,
+                                        "uid": 3686
+                                      },
+                                      "arguments": [
+                                        {
+                                          "type": "Literal",
+                                          "value": "#noteForPayee",
+                                          "raw": "'#noteForPayee'",
+                                          "range": [
+                                            2617,
+                                            2632
+                                          ],
+                                          "parentNode": 3685,
+                                          "uid": 3687
+                                        }
+                                      ],
+                                      "range": [
+                                        2615,
+                                        2633
+                                      ],
+                                      "parentNode": 3683,
+                                      "uid": 3685
+                                    },
+                                    "range": [
+                                      2600,
+                                      2633
+                                    ],
+                                    "parentNode": 3667,
+                                    "uid": 3683
+                                  }
+                                ],
+                                "kind": "var",
+                                "range": [
+                                  2415,
+                                  2634
+                                ],
+                                "parentNode": 3666,
+                                "uid": 3667
+                              },
+                              {
+                                "type": "IfStatement",
+                                "test": {
+                                  "type": "BinaryExpression",
+                                  "operator": "===",
+                                  "left": {
+                                    "type": "Identifier",
+                                    "name": "accountNumberAvailable",
+                                    "range": [
+                                      2647,
+                                      2669
+                                    ],
+                                    "parentNode": 3689,
+                                    "uid": 3690
+                                  },
+                                  "right": {
+                                    "type": "Literal",
+                                    "value": "false",
+                                    "raw": "'false'",
+                                    "range": [
+                                      2674,
+                                      2681
+                                    ],
+                                    "parentNode": 3689,
+                                    "uid": 3691
+                                  },
+                                  "range": [
+                                    2647,
+                                    2681
+                                  ],
+                                  "parentNode": 3688,
+                                  "uid": 3689
+                                },
+                                "consequent": {
+                                  "type": "BlockStatement",
+                                  "body": [
+                                    {
+                                      "type": "ExpressionStatement",
+                                      "expression": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "Identifier",
+                                            "name": "payeeAccountNumber",
+                                            "range": [
+                                              2695,
+                                              2713
+                                            ],
+                                            "parentNode": 3695,
+                                            "uid": 3696
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "removeAttr",
+                                            "range": [
+                                              2714,
+                                              2724
+                                            ],
+                                            "parentNode": 3695,
+                                            "uid": 3697
+                                          },
+                                          "range": [
+                                            2695,
+                                            2724
+                                          ],
+                                          "parentNode": 3694,
+                                          "uid": 3695
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": "disabled",
+                                            "raw": "'disabled'",
+                                            "range": [
+                                              2725,
+                                              2735
+                                            ],
+                                            "parentNode": 3694,
+                                            "uid": 3698
+                                          }
+                                        ],
+                                        "range": [
+                                          2695,
+                                          2736
+                                        ],
+                                        "parentNode": 3693,
+                                        "uid": 3694
+                                      },
+                                      "range": [
+                                        2695,
+                                        2737
+                                      ],
+                                      "parentNode": 3692,
+                                      "uid": 3693
+                                    },
+                                    {
+                                      "type": "ExpressionStatement",
+                                      "expression": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "Identifier",
+                                            "name": "payeeConfirmedAccountNumber",
+                                            "range": [
+                                              2748,
+                                              2775
+                                            ],
+                                            "parentNode": 3701,
+                                            "uid": 3702
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "removeAttr",
+                                            "range": [
+                                              2776,
+                                              2786
+                                            ],
+                                            "parentNode": 3701,
+                                            "uid": 3703
+                                          },
+                                          "range": [
+                                            2748,
+                                            2786
+                                          ],
+                                          "parentNode": 3700,
+                                          "uid": 3701
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": "disabled",
+                                            "raw": "'disabled'",
+                                            "range": [
+                                              2787,
+                                              2797
+                                            ],
+                                            "parentNode": 3700,
+                                            "uid": 3704
+                                          }
+                                        ],
+                                        "range": [
+                                          2748,
+                                          2798
+                                        ],
+                                        "parentNode": 3699,
+                                        "uid": 3700
+                                      },
+                                      "range": [
+                                        2748,
+                                        2799
+                                      ],
+                                      "parentNode": 3692,
+                                      "uid": 3699
+                                    },
+                                    {
+                                      "type": "ExpressionStatement",
+                                      "expression": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "Identifier",
+                                            "name": "noteForPayee",
+                                            "range": [
+                                              2810,
+                                              2822
+                                            ],
+                                            "parentNode": 3707,
+                                            "uid": 3708
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "attr",
+                                            "range": [
+                                              2823,
+                                              2827
+                                            ],
+                                            "parentNode": 3707,
+                                            "uid": 3709
+                                          },
+                                          "range": [
+                                            2810,
+                                            2827
+                                          ],
+                                          "parentNode": 3706,
+                                          "uid": 3707
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": "disabled",
+                                            "raw": "'disabled'",
+                                            "range": [
+                                              2828,
+                                              2838
+                                            ],
+                                            "parentNode": 3706,
+                                            "uid": 3710
+                                          },
+                                          {
+                                            "type": "Literal",
+                                            "value": "disabled",
+                                            "raw": "'disabled'",
+                                            "range": [
+                                              2840,
+                                              2850
+                                            ],
+                                            "parentNode": 3706,
+                                            "uid": 3711
+                                          }
+                                        ],
+                                        "range": [
+                                          2810,
+                                          2851
+                                        ],
+                                        "parentNode": 3705,
+                                        "uid": 3706
+                                      },
+                                      "range": [
+                                        2810,
+                                        2852
+                                      ],
+                                      "parentNode": 3692,
+                                      "uid": 3705
+                                    },
+                                    {
+                                      "type": "ExpressionStatement",
+                                      "expression": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "Identifier",
+                                            "name": "noteForPayee",
+                                            "range": [
+                                              2863,
+                                              2875
+                                            ],
+                                            "parentNode": 3714,
+                                            "uid": 3715
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "val",
+                                            "range": [
+                                              2876,
+                                              2879
+                                            ],
+                                            "parentNode": 3714,
+                                            "uid": 3716
+                                          },
+                                          "range": [
+                                            2863,
+                                            2879
+                                          ],
+                                          "parentNode": 3713,
+                                          "uid": 3714
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": "",
+                                            "raw": "''",
+                                            "range": [
+                                              2880,
+                                              2882
+                                            ],
+                                            "parentNode": 3713,
+                                            "uid": 3717
+                                          }
+                                        ],
+                                        "range": [
+                                          2863,
+                                          2883
+                                        ],
+                                        "parentNode": 3712,
+                                        "uid": 3713
+                                      },
+                                      "range": [
+                                        2863,
+                                        2884
+                                      ],
+                                      "parentNode": 3692,
+                                      "uid": 3712
+                                    },
+                                    {
+                                      "type": "ExpressionStatement",
+                                      "expression": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "Identifier",
+                                            "name": "dlNoteForPayee",
+                                            "range": [
+                                              2895,
+                                              2909
+                                            ],
+                                            "parentNode": 3720,
+                                            "uid": 3721
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "hide",
+                                            "range": [
+                                              2910,
+                                              2914
+                                            ],
+                                            "parentNode": 3720,
+                                            "uid": 3722
+                                          },
+                                          "range": [
+                                            2895,
+                                            2914
+                                          ],
+                                          "parentNode": 3719,
+                                          "uid": 3720
+                                        },
+                                        "arguments": [],
+                                        "range": [
+                                          2895,
+                                          2916
+                                        ],
+                                        "parentNode": 3718,
+                                        "uid": 3719
+                                      },
+                                      "range": [
+                                        2895,
+                                        2917
+                                      ],
+                                      "parentNode": 3692,
+                                      "uid": 3718
+                                    }
+                                  ],
+                                  "range": [
+                                    2683,
+                                    2927
+                                  ],
+                                  "parentNode": 3688,
+                                  "uid": 3692
+                                },
+                                "alternate": {
+                                  "type": "BlockStatement",
+                                  "body": [
+                                    {
+                                      "type": "ExpressionStatement",
+                                      "expression": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "Identifier",
+                                            "name": "payeeAccountNumber",
+                                            "range": [
+                                              2945,
+                                              2963
+                                            ],
+                                            "parentNode": 3726,
+                                            "uid": 3727
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "attr",
+                                            "range": [
+                                              2964,
+                                              2968
+                                            ],
+                                            "parentNode": 3726,
+                                            "uid": 3728
+                                          },
+                                          "range": [
+                                            2945,
+                                            2968
+                                          ],
+                                          "parentNode": 3725,
+                                          "uid": 3726
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": "disabled",
+                                            "raw": "'disabled'",
+                                            "range": [
+                                              2969,
+                                              2979
+                                            ],
+                                            "parentNode": 3725,
+                                            "uid": 3729
+                                          },
+                                          {
+                                            "type": "Literal",
+                                            "value": "disabled",
+                                            "raw": "'disabled'",
+                                            "range": [
+                                              2981,
+                                              2991
+                                            ],
+                                            "parentNode": 3725,
+                                            "uid": 3730
+                                          }
+                                        ],
+                                        "range": [
+                                          2945,
+                                          2992
+                                        ],
+                                        "parentNode": 3724,
+                                        "uid": 3725
+                                      },
+                                      "range": [
+                                        2945,
+                                        2993
+                                      ],
+                                      "parentNode": 3723,
+                                      "uid": 3724
+                                    },
+                                    {
+                                      "type": "ExpressionStatement",
+                                      "expression": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "Identifier",
+                                            "name": "payeeConfirmedAccountNumber",
+                                            "range": [
+                                              3004,
+                                              3031
+                                            ],
+                                            "parentNode": 3733,
+                                            "uid": 3734
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "attr",
+                                            "range": [
+                                              3032,
+                                              3036
+                                            ],
+                                            "parentNode": 3733,
+                                            "uid": 3735
+                                          },
+                                          "range": [
+                                            3004,
+                                            3036
+                                          ],
+                                          "parentNode": 3732,
+                                          "uid": 3733
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": "disabled",
+                                            "raw": "'disabled'",
+                                            "range": [
+                                              3037,
+                                              3047
+                                            ],
+                                            "parentNode": 3732,
+                                            "uid": 3736
+                                          },
+                                          {
+                                            "type": "Literal",
+                                            "value": "disabled",
+                                            "raw": "'disabled'",
+                                            "range": [
+                                              3049,
+                                              3059
+                                            ],
+                                            "parentNode": 3732,
+                                            "uid": 3737
+                                          }
+                                        ],
+                                        "range": [
+                                          3004,
+                                          3060
+                                        ],
+                                        "parentNode": 3731,
+                                        "uid": 3732
+                                      },
+                                      "range": [
+                                        3004,
+                                        3061
+                                      ],
+                                      "parentNode": 3723,
+                                      "uid": 3731
+                                    },
+                                    {
+                                      "type": "ExpressionStatement",
+                                      "expression": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "Identifier",
+                                            "name": "payeeAccountNumber",
+                                            "range": [
+                                              3072,
+                                              3090
+                                            ],
+                                            "parentNode": 3740,
+                                            "uid": 3741
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "val",
+                                            "range": [
+                                              3091,
+                                              3094
+                                            ],
+                                            "parentNode": 3740,
+                                            "uid": 3742
+                                          },
+                                          "range": [
+                                            3072,
+                                            3094
+                                          ],
+                                          "parentNode": 3739,
+                                          "uid": 3740
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": "",
+                                            "raw": "''",
+                                            "range": [
+                                              3095,
+                                              3097
+                                            ],
+                                            "parentNode": 3739,
+                                            "uid": 3743
+                                          }
+                                        ],
+                                        "range": [
+                                          3072,
+                                          3098
+                                        ],
+                                        "parentNode": 3738,
+                                        "uid": 3739
+                                      },
+                                      "range": [
+                                        3072,
+                                        3099
+                                      ],
+                                      "parentNode": 3723,
+                                      "uid": 3738
+                                    },
+                                    {
+                                      "type": "ExpressionStatement",
+                                      "expression": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "Identifier",
+                                            "name": "payeeConfirmedAccountNumber",
+                                            "range": [
+                                              3110,
+                                              3137
+                                            ],
+                                            "parentNode": 3746,
+                                            "uid": 3747
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "val",
+                                            "range": [
+                                              3138,
+                                              3141
+                                            ],
+                                            "parentNode": 3746,
+                                            "uid": 3748
+                                          },
+                                          "range": [
+                                            3110,
+                                            3141
+                                          ],
+                                          "parentNode": 3745,
+                                          "uid": 3746
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": "",
+                                            "raw": "''",
+                                            "range": [
+                                              3142,
+                                              3144
+                                            ],
+                                            "parentNode": 3745,
+                                            "uid": 3749
+                                          }
+                                        ],
+                                        "range": [
+                                          3110,
+                                          3145
+                                        ],
+                                        "parentNode": 3744,
+                                        "uid": 3745
+                                      },
+                                      "range": [
+                                        3110,
+                                        3146
+                                      ],
+                                      "parentNode": 3723,
+                                      "uid": 3744
+                                    },
+                                    {
+                                      "type": "ExpressionStatement",
+                                      "expression": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "Identifier",
+                                            "name": "dlNoteForPayee",
+                                            "range": [
+                                              3157,
+                                              3171
+                                            ],
+                                            "parentNode": 3752,
+                                            "uid": 3753
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "show",
+                                            "range": [
+                                              3172,
+                                              3176
+                                            ],
+                                            "parentNode": 3752,
+                                            "uid": 3754
+                                          },
+                                          "range": [
+                                            3157,
+                                            3176
+                                          ],
+                                          "parentNode": 3751,
+                                          "uid": 3752
+                                        },
+                                        "arguments": [],
+                                        "range": [
+                                          3157,
+                                          3178
+                                        ],
+                                        "parentNode": 3750,
+                                        "uid": 3751
+                                      },
+                                      "range": [
+                                        3157,
+                                        3179
+                                      ],
+                                      "parentNode": 3723,
+                                      "uid": 3750
+                                    },
+                                    {
+                                      "type": "ExpressionStatement",
+                                      "expression": {
+                                        "type": "CallExpression",
+                                        "callee": {
+                                          "type": "MemberExpression",
+                                          "computed": false,
+                                          "object": {
+                                            "type": "Identifier",
+                                            "name": "noteForPayee",
+                                            "range": [
+                                              3190,
+                                              3202
+                                            ],
+                                            "parentNode": 3757,
+                                            "uid": 3758
+                                          },
+                                          "property": {
+                                            "type": "Identifier",
+                                            "name": "removeAttr",
+                                            "range": [
+                                              3203,
+                                              3213
+                                            ],
+                                            "parentNode": 3757,
+                                            "uid": 3759
+                                          },
+                                          "range": [
+                                            3190,
+                                            3213
+                                          ],
+                                          "parentNode": 3756,
+                                          "uid": 3757
+                                        },
+                                        "arguments": [
+                                          {
+                                            "type": "Literal",
+                                            "value": "disabled",
+                                            "raw": "'disabled'",
+                                            "range": [
+                                              3214,
+                                              3224
+                                            ],
+                                            "parentNode": 3756,
+                                            "uid": 3760
+                                          }
+                                        ],
+                                        "range": [
+                                          3190,
+                                          3225
+                                        ],
+                                        "parentNode": 3755,
+                                        "uid": 3756
+                                      },
+                                      "range": [
+                                        3190,
+                                        3226
+                                      ],
+                                      "parentNode": 3723,
+                                      "uid": 3755
+                                    }
+                                  ],
+                                  "range": [
+                                    2933,
+                                    3236
+                                  ],
+                                  "parentNode": 3688,
+                                  "uid": 3723
+                                },
+                                "range": [
+                                  2643,
+                                  3236
+                                ],
+                                "parentNode": 3666,
+                                "uid": 3688
+                              }
+                            ],
+                            "range": [
+                              2405,
+                              3244
+                            ],
+                            "parentNode": 3664,
+                            "uid": 3666
+                          },
+                          "rest": null,
+                          "generator": false,
+                          "expression": false,
+                          "range": [
+                            2371,
+                            3244
+                          ],
+                          "parentNode": 3660,
+                          "uid": 3664,
+                          "returnType": ""
+                        },
+                        "range": [
+                          2340,
+                          3244
+                        ],
+                        "parentNode": 3659,
+                        "uid": 3660
+                      },
+                      "range": [
+                        2340,
+                        3245
+                      ],
+                      "parentNode": 3639,
+                      "uid": 3659
+                    }
+                  ],
+                  "range": [
+                    1908,
+                    3251
+                  ],
+                  "parentNode": 3638,
+                  "uid": 3639
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1896,
+                  3251
+                ],
+                "parentNode": 3634,
+                "uid": 3638,
+                "returnType": ""
+              },
+              "range": [
+                1884,
+                3251
+              ],
+              "parentNode": 3633,
+              "uid": 3634
+            },
+            "range": [
+              1884,
+              3252
+            ],
+            "parentNode": 3493,
+            "uid": 3633
+          }
+        ],
+        "range": [
+          259,
+          3256
+        ],
+        "parentNode": 3491,
+        "uid": 3493
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        233,
+        3256
+      ],
+      "parentNode": 3490,
+      "uid": 3491,
+      "returnType": "?"
+    },
+    "range": [
+      226,
+      3257
+    ],
+    "parentNode": 3489,
+    "uid": 3490,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 82,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/payments/merchantBillPay",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 3096,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./payeeManualAdd",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "payeeManualAdd",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "return function payeeManualAdd() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 43,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "setAccountNumberOptions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 55,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "args": [
+          "accountNumberAvailable"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.setAccountNumberOptions = function(accountNumberAvailable) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/payments/merchantBillPay",
+    "fileName": "payeeManualAdd.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 81
+}

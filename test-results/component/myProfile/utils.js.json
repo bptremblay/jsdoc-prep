@@ -1,0 +1,1449 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "utils",
+      "AMD": true,
+      "webPath": "/component/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isLeapYear'.",
+        "code": "wfJD",
+        "evidence": "isLeapYear: function(year) {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isLeapYear'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getFirstDayOfMonth'.",
+        "code": "wfJD",
+        "evidence": "getFirstDayOfMonth: function(month, year) {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getFirstDayOfMonth'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getNumberOfDaysInMonth'.",
+        "code": "wfJD",
+        "evidence": "getNumberOfDaysInMonth: function(month, year) {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getNumberOfDaysInMonth'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isTabbable'.",
+        "code": "wfJD",
+        "evidence": "isTabbable: function($el) {",
+        "line": 12,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isTabbable'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myProfile/utils.js",
+  "folderPath": "test-source/component/myProfile",
+  "fileName": "utils.js",
+  "packagePath": "/component/myProfile",
+  "webPath": "/component/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "utils",
+  "name": "utils",
+  "camelName": "Utils",
+  "processedFilePath": "test-output/component/myProfile/utils.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myProfile/utils */ {\n    /**\n     * Is leap year.\n     * @param year\n     * @return boolean\n     */\n    isLeapYear: function (year) {\n      return (year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0);\n    },\n    /**\n     * Get first day of month.\n     * @param month\n     * @param year\n     * @todo Please describe the return type of this method.\n     */\n    getFirstDayOfMonth: function (month, year) {\n      return new Date(year, month, 1, 0, 0, 0, 0);\n    },\n    /**\n     * Get number of days in month.\n     * @param month\n     * @param year\n     * @todo Please describe the return type of this method.\n     */\n    getNumberOfDaysInMonth: function (month, year) {\n      return [31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month];\n    },\n    /**\n     * Is tabbable.\n     * @param $el\n     * @return {boolean}\n     */\n    isTabbable: function ($el) {\n      if ($el.is(\":hidden\") || $el.is(\":disabled\")) {\n        return false;\n      }\n      var tabIndex = $el.attr(\"tabindex\");\n      tabIndex = isNaN(tabIndex) ? -1 : tabIndex;\n      return $el.is(\":input, a[href], area[href], iframe\") || tabIndex > -1;\n    }\n  }",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "isLeapYear",
+            "range": [
+              122,
+              132
+            ],
+            "parentNode": 1398,
+            "uid": 1399
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "year",
+                "range": [
+                  144,
+                  148
+                ],
+                "parentNode": 1400,
+                "uid": 1401
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "LogicalExpression",
+                    "operator": "||",
+                    "left": {
+                      "type": "LogicalExpression",
+                      "operator": "&&",
+                      "left": {
+                        "type": "BinaryExpression",
+                        "operator": "===",
+                        "left": {
+                          "type": "BinaryExpression",
+                          "operator": "%",
+                          "left": {
+                            "type": "Identifier",
+                            "name": "year",
+                            "range": [
+                              166,
+                              170
+                            ],
+                            "parentNode": 1407,
+                            "uid": 1408
+                          },
+                          "right": {
+                            "type": "Literal",
+                            "value": 4,
+                            "raw": "4",
+                            "range": [
+                              173,
+                              174
+                            ],
+                            "parentNode": 1407,
+                            "uid": 1409
+                          },
+                          "range": [
+                            166,
+                            174
+                          ],
+                          "parentNode": 1406,
+                          "uid": 1407
+                        },
+                        "right": {
+                          "type": "Literal",
+                          "value": 0,
+                          "raw": "0",
+                          "range": [
+                            179,
+                            180
+                          ],
+                          "parentNode": 1406,
+                          "uid": 1410
+                        },
+                        "range": [
+                          166,
+                          180
+                        ],
+                        "parentNode": 1405,
+                        "uid": 1406
+                      },
+                      "right": {
+                        "type": "BinaryExpression",
+                        "operator": "!==",
+                        "left": {
+                          "type": "BinaryExpression",
+                          "operator": "%",
+                          "left": {
+                            "type": "Identifier",
+                            "name": "year",
+                            "range": [
+                              186,
+                              190
+                            ],
+                            "parentNode": 1412,
+                            "uid": 1413
+                          },
+                          "right": {
+                            "type": "Literal",
+                            "value": 100,
+                            "raw": "100",
+                            "range": [
+                              193,
+                              196
+                            ],
+                            "parentNode": 1412,
+                            "uid": 1414
+                          },
+                          "range": [
+                            186,
+                            196
+                          ],
+                          "parentNode": 1411,
+                          "uid": 1412
+                        },
+                        "right": {
+                          "type": "Literal",
+                          "value": 0,
+                          "raw": "0",
+                          "range": [
+                            201,
+                            202
+                          ],
+                          "parentNode": 1411,
+                          "uid": 1415
+                        },
+                        "range": [
+                          186,
+                          202
+                        ],
+                        "parentNode": 1405,
+                        "uid": 1411
+                      },
+                      "range": [
+                        165,
+                        203
+                      ],
+                      "parentNode": 1404,
+                      "uid": 1405
+                    },
+                    "right": {
+                      "type": "BinaryExpression",
+                      "operator": "===",
+                      "left": {
+                        "type": "BinaryExpression",
+                        "operator": "%",
+                        "left": {
+                          "type": "Identifier",
+                          "name": "year",
+                          "range": [
+                            208,
+                            212
+                          ],
+                          "parentNode": 1417,
+                          "uid": 1418
+                        },
+                        "right": {
+                          "type": "Literal",
+                          "value": 400,
+                          "raw": "400",
+                          "range": [
+                            215,
+                            218
+                          ],
+                          "parentNode": 1417,
+                          "uid": 1419
+                        },
+                        "range": [
+                          208,
+                          218
+                        ],
+                        "parentNode": 1416,
+                        "uid": 1417
+                      },
+                      "right": {
+                        "type": "Literal",
+                        "value": 0,
+                        "raw": "0",
+                        "range": [
+                          223,
+                          224
+                        ],
+                        "parentNode": 1416,
+                        "uid": 1420
+                      },
+                      "range": [
+                        208,
+                        224
+                      ],
+                      "parentNode": 1404,
+                      "uid": 1416
+                    },
+                    "range": [
+                      165,
+                      225
+                    ],
+                    "parentNode": 1403,
+                    "uid": 1404
+                  },
+                  "range": [
+                    158,
+                    226
+                  ],
+                  "parentNode": 1402,
+                  "uid": 1403,
+                  "returnType": ""
+                }
+              ],
+              "range": [
+                150,
+                232
+              ],
+              "parentNode": 1400,
+              "uid": 1402
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              134,
+              232
+            ],
+            "parentNode": 1398,
+            "uid": 1400,
+            "returnType": "boolean"
+          },
+          "kind": "init",
+          "range": [
+            122,
+            232
+          ],
+          "parentNode": 1397,
+          "uid": 1398
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "getFirstDayOfMonth",
+            "range": [
+              385,
+              403
+            ],
+            "parentNode": 1421,
+            "uid": 1422
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "month",
+                "range": [
+                  415,
+                  420
+                ],
+                "parentNode": 1423,
+                "uid": 1424
+              },
+              {
+                "type": "Identifier",
+                "name": "year",
+                "range": [
+                  422,
+                  426
+                ],
+                "parentNode": 1423,
+                "uid": 1425
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "NewExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "Date",
+                      "range": [
+                        447,
+                        451
+                      ],
+                      "parentNode": 1428,
+                      "uid": 1429
+                    },
+                    "arguments": [
+                      {
+                        "type": "Identifier",
+                        "name": "year",
+                        "range": [
+                          452,
+                          456
+                        ],
+                        "parentNode": 1428,
+                        "uid": 1430
+                      },
+                      {
+                        "type": "Identifier",
+                        "name": "month",
+                        "range": [
+                          458,
+                          463
+                        ],
+                        "parentNode": 1428,
+                        "uid": 1431
+                      },
+                      {
+                        "type": "Literal",
+                        "value": 1,
+                        "raw": "1",
+                        "range": [
+                          465,
+                          466
+                        ],
+                        "parentNode": 1428,
+                        "uid": 1432
+                      },
+                      {
+                        "type": "Literal",
+                        "value": 0,
+                        "raw": "0",
+                        "range": [
+                          468,
+                          469
+                        ],
+                        "parentNode": 1428,
+                        "uid": 1433
+                      },
+                      {
+                        "type": "Literal",
+                        "value": 0,
+                        "raw": "0",
+                        "range": [
+                          471,
+                          472
+                        ],
+                        "parentNode": 1428,
+                        "uid": 1434
+                      },
+                      {
+                        "type": "Literal",
+                        "value": 0,
+                        "raw": "0",
+                        "range": [
+                          474,
+                          475
+                        ],
+                        "parentNode": 1428,
+                        "uid": 1435
+                      },
+                      {
+                        "type": "Literal",
+                        "value": 0,
+                        "raw": "0",
+                        "range": [
+                          477,
+                          478
+                        ],
+                        "parentNode": 1428,
+                        "uid": 1436
+                      }
+                    ],
+                    "range": [
+                      443,
+                      479
+                    ],
+                    "parentNode": 1427,
+                    "uid": 1428
+                  },
+                  "range": [
+                    436,
+                    480
+                  ],
+                  "parentNode": 1426,
+                  "uid": 1427,
+                  "returnType": ""
+                }
+              ],
+              "range": [
+                428,
+                486
+              ],
+              "parentNode": 1423,
+              "uid": 1426
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              405,
+              486
+            ],
+            "parentNode": 1421,
+            "uid": 1423,
+            "returnType": "?"
+          },
+          "kind": "init",
+          "range": [
+            385,
+            486
+          ],
+          "parentNode": 1397,
+          "uid": 1421
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "getNumberOfDaysInMonth",
+            "range": [
+              644,
+              666
+            ],
+            "parentNode": 1437,
+            "uid": 1438
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "month",
+                "range": [
+                  678,
+                  683
+                ],
+                "parentNode": 1439,
+                "uid": 1440
+              },
+              {
+                "type": "Identifier",
+                "name": "year",
+                "range": [
+                  685,
+                  689
+                ],
+                "parentNode": 1439,
+                "uid": 1441
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "MemberExpression",
+                    "computed": true,
+                    "object": {
+                      "type": "ArrayExpression",
+                      "elements": [
+                        {
+                          "type": "Literal",
+                          "value": 31,
+                          "raw": "31",
+                          "range": [
+                            707,
+                            709
+                          ],
+                          "parentNode": 1445,
+                          "uid": 1446
+                        },
+                        {
+                          "type": "ConditionalExpression",
+                          "test": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "ThisExpression",
+                                "range": [
+                                  711,
+                                  715
+                                ],
+                                "parentNode": 1449,
+                                "uid": 1450
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "isLeapYear",
+                                "range": [
+                                  716,
+                                  726
+                                ],
+                                "parentNode": 1449,
+                                "uid": 1451
+                              },
+                              "range": [
+                                711,
+                                726
+                              ],
+                              "parentNode": 1448,
+                              "uid": 1449
+                            },
+                            "arguments": [
+                              {
+                                "type": "Identifier",
+                                "name": "year",
+                                "range": [
+                                  727,
+                                  731
+                                ],
+                                "parentNode": 1448,
+                                "uid": 1452
+                              }
+                            ],
+                            "range": [
+                              711,
+                              732
+                            ],
+                            "parentNode": 1447,
+                            "uid": 1448
+                          },
+                          "consequent": {
+                            "type": "Literal",
+                            "value": 29,
+                            "raw": "29",
+                            "range": [
+                              735,
+                              737
+                            ],
+                            "parentNode": 1447,
+                            "uid": 1453
+                          },
+                          "alternate": {
+                            "type": "Literal",
+                            "value": 28,
+                            "raw": "28",
+                            "range": [
+                              740,
+                              742
+                            ],
+                            "parentNode": 1447,
+                            "uid": 1454
+                          },
+                          "range": [
+                            711,
+                            742
+                          ],
+                          "parentNode": 1445,
+                          "uid": 1447
+                        },
+                        {
+                          "type": "Literal",
+                          "value": 31,
+                          "raw": "31",
+                          "range": [
+                            744,
+                            746
+                          ],
+                          "parentNode": 1445,
+                          "uid": 1455
+                        },
+                        {
+                          "type": "Literal",
+                          "value": 30,
+                          "raw": "30",
+                          "range": [
+                            748,
+                            750
+                          ],
+                          "parentNode": 1445,
+                          "uid": 1456
+                        },
+                        {
+                          "type": "Literal",
+                          "value": 31,
+                          "raw": "31",
+                          "range": [
+                            752,
+                            754
+                          ],
+                          "parentNode": 1445,
+                          "uid": 1457
+                        },
+                        {
+                          "type": "Literal",
+                          "value": 30,
+                          "raw": "30",
+                          "range": [
+                            756,
+                            758
+                          ],
+                          "parentNode": 1445,
+                          "uid": 1458
+                        },
+                        {
+                          "type": "Literal",
+                          "value": 31,
+                          "raw": "31",
+                          "range": [
+                            760,
+                            762
+                          ],
+                          "parentNode": 1445,
+                          "uid": 1459
+                        },
+                        {
+                          "type": "Literal",
+                          "value": 31,
+                          "raw": "31",
+                          "range": [
+                            764,
+                            766
+                          ],
+                          "parentNode": 1445,
+                          "uid": 1460
+                        },
+                        {
+                          "type": "Literal",
+                          "value": 30,
+                          "raw": "30",
+                          "range": [
+                            768,
+                            770
+                          ],
+                          "parentNode": 1445,
+                          "uid": 1461
+                        },
+                        {
+                          "type": "Literal",
+                          "value": 31,
+                          "raw": "31",
+                          "range": [
+                            772,
+                            774
+                          ],
+                          "parentNode": 1445,
+                          "uid": 1462
+                        },
+                        {
+                          "type": "Literal",
+                          "value": 30,
+                          "raw": "30",
+                          "range": [
+                            776,
+                            778
+                          ],
+                          "parentNode": 1445,
+                          "uid": 1463
+                        },
+                        {
+                          "type": "Literal",
+                          "value": 31,
+                          "raw": "31",
+                          "range": [
+                            780,
+                            782
+                          ],
+                          "parentNode": 1445,
+                          "uid": 1464
+                        }
+                      ],
+                      "range": [
+                        706,
+                        783
+                      ],
+                      "parentNode": 1444,
+                      "uid": 1445
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "month",
+                      "range": [
+                        784,
+                        789
+                      ],
+                      "parentNode": 1444,
+                      "uid": 1465
+                    },
+                    "range": [
+                      706,
+                      790
+                    ],
+                    "parentNode": 1443,
+                    "uid": 1444
+                  },
+                  "range": [
+                    699,
+                    791
+                  ],
+                  "parentNode": 1442,
+                  "uid": 1443,
+                  "returnType": ""
+                }
+              ],
+              "range": [
+                691,
+                797
+              ],
+              "parentNode": 1439,
+              "uid": 1442
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              668,
+              797
+            ],
+            "parentNode": 1437,
+            "uid": 1439,
+            "returnType": "?"
+          },
+          "kind": "init",
+          "range": [
+            644,
+            797
+          ],
+          "parentNode": 1397,
+          "uid": 1437
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "isTabbable",
+            "range": [
+              882,
+              892
+            ],
+            "parentNode": 1466,
+            "uid": 1467
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "$el",
+                "range": [
+                  904,
+                  907
+                ],
+                "parentNode": 1468,
+                "uid": 1469
+              }
+            ],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "IfStatement",
+                  "test": {
+                    "type": "LogicalExpression",
+                    "operator": "||",
+                    "left": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "$el",
+                          "range": [
+                            921,
+                            924
+                          ],
+                          "parentNode": 1474,
+                          "uid": 1475
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "is",
+                          "range": [
+                            925,
+                            927
+                          ],
+                          "parentNode": 1474,
+                          "uid": 1476
+                        },
+                        "range": [
+                          921,
+                          927
+                        ],
+                        "parentNode": 1473,
+                        "uid": 1474
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": ":hidden",
+                          "raw": "\":hidden\"",
+                          "range": [
+                            928,
+                            937
+                          ],
+                          "parentNode": 1473,
+                          "uid": 1477
+                        }
+                      ],
+                      "range": [
+                        921,
+                        938
+                      ],
+                      "parentNode": 1472,
+                      "uid": 1473
+                    },
+                    "right": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "$el",
+                          "range": [
+                            942,
+                            945
+                          ],
+                          "parentNode": 1479,
+                          "uid": 1480
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "is",
+                          "range": [
+                            946,
+                            948
+                          ],
+                          "parentNode": 1479,
+                          "uid": 1481
+                        },
+                        "range": [
+                          942,
+                          948
+                        ],
+                        "parentNode": 1478,
+                        "uid": 1479
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": ":disabled",
+                          "raw": "\":disabled\"",
+                          "range": [
+                            949,
+                            960
+                          ],
+                          "parentNode": 1478,
+                          "uid": 1482
+                        }
+                      ],
+                      "range": [
+                        942,
+                        961
+                      ],
+                      "parentNode": 1472,
+                      "uid": 1478
+                    },
+                    "range": [
+                      921,
+                      961
+                    ],
+                    "parentNode": 1471,
+                    "uid": 1472
+                  },
+                  "consequent": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ReturnStatement",
+                        "argument": {
+                          "type": "Literal",
+                          "value": false,
+                          "raw": "false",
+                          "range": [
+                            980,
+                            985
+                          ],
+                          "parentNode": 1484,
+                          "uid": 1485
+                        },
+                        "range": [
+                          973,
+                          986
+                        ],
+                        "parentNode": 1483,
+                        "uid": 1484,
+                        "returnType": ""
+                      }
+                    ],
+                    "range": [
+                      963,
+                      994
+                    ],
+                    "parentNode": 1471,
+                    "uid": 1483
+                  },
+                  "alternate": null,
+                  "range": [
+                    917,
+                    994
+                  ],
+                  "parentNode": 1470,
+                  "uid": 1471
+                },
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "tabIndex",
+                        "range": [
+                          1005,
+                          1013
+                        ],
+                        "parentNode": 1487,
+                        "uid": 1488
+                      },
+                      "init": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "$el",
+                            "range": [
+                              1016,
+                              1019
+                            ],
+                            "parentNode": 1490,
+                            "uid": 1491
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "attr",
+                            "range": [
+                              1020,
+                              1024
+                            ],
+                            "parentNode": 1490,
+                            "uid": 1492
+                          },
+                          "range": [
+                            1016,
+                            1024
+                          ],
+                          "parentNode": 1489,
+                          "uid": 1490
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "tabindex",
+                            "raw": "\"tabindex\"",
+                            "range": [
+                              1025,
+                              1035
+                            ],
+                            "parentNode": 1489,
+                            "uid": 1493
+                          }
+                        ],
+                        "range": [
+                          1016,
+                          1036
+                        ],
+                        "parentNode": 1487,
+                        "uid": 1489
+                      },
+                      "range": [
+                        1005,
+                        1036
+                      ],
+                      "parentNode": 1486,
+                      "uid": 1487
+                    }
+                  ],
+                  "kind": "var",
+                  "range": [
+                    1001,
+                    1037
+                  ],
+                  "parentNode": 1470,
+                  "uid": 1486
+                },
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "tabIndex",
+                      "range": [
+                        1044,
+                        1052
+                      ],
+                      "parentNode": 1495,
+                      "uid": 1496
+                    },
+                    "right": {
+                      "type": "ConditionalExpression",
+                      "test": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "isNaN",
+                          "range": [
+                            1055,
+                            1060
+                          ],
+                          "parentNode": 1498,
+                          "uid": 1499
+                        },
+                        "arguments": [
+                          {
+                            "type": "Identifier",
+                            "name": "tabIndex",
+                            "range": [
+                              1061,
+                              1069
+                            ],
+                            "parentNode": 1498,
+                            "uid": 1500
+                          }
+                        ],
+                        "range": [
+                          1055,
+                          1070
+                        ],
+                        "parentNode": 1497,
+                        "uid": 1498
+                      },
+                      "consequent": {
+                        "type": "UnaryExpression",
+                        "operator": "-",
+                        "argument": {
+                          "type": "Literal",
+                          "value": 1,
+                          "raw": "1",
+                          "range": [
+                            1074,
+                            1075
+                          ],
+                          "parentNode": 1501,
+                          "uid": 1502
+                        },
+                        "prefix": true,
+                        "range": [
+                          1073,
+                          1075
+                        ],
+                        "parentNode": 1497,
+                        "uid": 1501
+                      },
+                      "alternate": {
+                        "type": "Identifier",
+                        "name": "tabIndex",
+                        "range": [
+                          1078,
+                          1086
+                        ],
+                        "parentNode": 1497,
+                        "uid": 1503
+                      },
+                      "range": [
+                        1055,
+                        1086
+                      ],
+                      "parentNode": 1495,
+                      "uid": 1497
+                    },
+                    "range": [
+                      1044,
+                      1086
+                    ],
+                    "parentNode": 1494,
+                    "uid": 1495
+                  },
+                  "range": [
+                    1044,
+                    1087
+                  ],
+                  "parentNode": 1470,
+                  "uid": 1494
+                },
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "LogicalExpression",
+                    "operator": "||",
+                    "left": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "$el",
+                          "range": [
+                            1101,
+                            1104
+                          ],
+                          "parentNode": 1507,
+                          "uid": 1508
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "is",
+                          "range": [
+                            1105,
+                            1107
+                          ],
+                          "parentNode": 1507,
+                          "uid": 1509
+                        },
+                        "range": [
+                          1101,
+                          1107
+                        ],
+                        "parentNode": 1506,
+                        "uid": 1507
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": ":input, a[href], area[href], iframe",
+                          "raw": "\":input, a[href], area[href], iframe\"",
+                          "range": [
+                            1108,
+                            1145
+                          ],
+                          "parentNode": 1506,
+                          "uid": 1510
+                        }
+                      ],
+                      "range": [
+                        1101,
+                        1146
+                      ],
+                      "parentNode": 1505,
+                      "uid": 1506
+                    },
+                    "right": {
+                      "type": "BinaryExpression",
+                      "operator": ">",
+                      "left": {
+                        "type": "Identifier",
+                        "name": "tabIndex",
+                        "range": [
+                          1150,
+                          1158
+                        ],
+                        "parentNode": 1511,
+                        "uid": 1512
+                      },
+                      "right": {
+                        "type": "UnaryExpression",
+                        "operator": "-",
+                        "argument": {
+                          "type": "Literal",
+                          "value": 1,
+                          "raw": "1",
+                          "range": [
+                            1162,
+                            1163
+                          ],
+                          "parentNode": 1513,
+                          "uid": 1514
+                        },
+                        "prefix": true,
+                        "range": [
+                          1161,
+                          1163
+                        ],
+                        "parentNode": 1511,
+                        "uid": 1513
+                      },
+                      "range": [
+                        1150,
+                        1163
+                      ],
+                      "parentNode": 1505,
+                      "uid": 1511
+                    },
+                    "range": [
+                      1101,
+                      1163
+                    ],
+                    "parentNode": 1504,
+                    "uid": 1505
+                  },
+                  "range": [
+                    1094,
+                    1164
+                  ],
+                  "parentNode": 1470,
+                  "uid": 1504,
+                  "returnType": ""
+                }
+              ],
+              "range": [
+                909,
+                1170
+              ],
+              "parentNode": 1468,
+              "uid": 1470
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              894,
+              1170
+            ],
+            "parentNode": 1466,
+            "uid": 1468,
+            "returnType": "{boolean}"
+          },
+          "kind": "init",
+          "range": [
+            882,
+            1170
+          ],
+          "parentNode": 1397,
+          "uid": 1466
+        }
+      ],
+      "range": [
+        37,
+        1174
+      ],
+      "parentNode": 1396,
+      "uid": 1397
+    },
+    "range": [
+      30,
+      1175
+    ],
+    "parentNode": 1395,
+    "uid": 1396,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 22,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 717,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./utils",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "isLeapYear",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "year"
+        ],
+        "description": "",
+        "return": "boolean",
+        "classDeclarationFlag": false,
+        "line": "isLeapYear: function(year) {"
+      },
+      {
+        "name": "getFirstDayOfMonth",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "month",
+          "year"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getFirstDayOfMonth: function(month, year) {"
+      },
+      {
+        "name": "getNumberOfDaysInMonth",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "month",
+          "year"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getNumberOfDaysInMonth: function(month, year) {"
+      },
+      {
+        "name": "isTabbable",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 12,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "$el"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "isTabbable: function($el) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myProfile",
+    "fileName": "utils.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 47
+}

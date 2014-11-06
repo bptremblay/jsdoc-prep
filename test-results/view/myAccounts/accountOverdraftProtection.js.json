@@ -1,0 +1,351 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "account_overdraft_protection",
+      "AMD": true,
+      "webPath": "/view/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'OverdraftProtectionSettingsView'.",
+        "code": "wfJD",
+        "evidence": "return function OverdraftProtectionSettingsView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'OverdraftProtectionSettingsView'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myAccounts/accountOverdraftProtection.js",
+  "folderPath": "test-source/view/myAccounts",
+  "fileName": "accountOverdraftProtection.js",
+  "packagePath": "/view/myAccounts",
+  "webPath": "/view/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "account_overdraft_protection",
+  "name": "accountOverdraftProtection",
+  "camelName": "AccountOverdraftProtection",
+  "processedFilePath": "test-output/view/myAccounts/accountOverdraftProtection.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction OverdraftProtectionSettingsView() {\n    this.bridge = this.createBridge(require('dashboard/view/webspec/myAccounts/accountOverdraftProtection'));\n    this.template = require('dashboard/template/myAccounts/accountOverdraftProtection');\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "OverdraftProtectionSettingsView",
+        "range": [
+          146,
+          177
+        ],
+        "parentNode": 316,
+        "uid": 317
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    186,
+                    190
+                  ],
+                  "parentNode": 321,
+                  "uid": 322
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    191,
+                    197
+                  ],
+                  "parentNode": 321,
+                  "uid": 323
+                },
+                "range": [
+                  186,
+                  197
+                ],
+                "parentNode": 320,
+                "uid": 321
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression",
+                    "range": [
+                      200,
+                      204
+                    ],
+                    "parentNode": 325,
+                    "uid": 326
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createBridge",
+                    "range": [
+                      205,
+                      217
+                    ],
+                    "parentNode": 325,
+                    "uid": 327
+                  },
+                  "range": [
+                    200,
+                    217
+                  ],
+                  "parentNode": 324,
+                  "uid": 325
+                },
+                "arguments": [
+                  {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        218,
+                        225
+                      ],
+                      "parentNode": 328,
+                      "uid": 329
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "dashboard/view/webspec/myAccounts/accountOverdraftProtection",
+                        "raw": "'dashboard/view/webspec/myAccounts/accountOverdraftProtection'",
+                        "range": [
+                          226,
+                          288
+                        ],
+                        "parentNode": 328,
+                        "uid": 330
+                      }
+                    ],
+                    "range": [
+                      218,
+                      289
+                    ],
+                    "parentNode": 324,
+                    "uid": 328
+                  }
+                ],
+                "range": [
+                  200,
+                  290
+                ],
+                "parentNode": 320,
+                "uid": 324
+              },
+              "range": [
+                186,
+                290
+              ],
+              "parentNode": 319,
+              "uid": 320
+            },
+            "range": [
+              186,
+              291
+            ],
+            "parentNode": 318,
+            "uid": 319
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    296,
+                    300
+                  ],
+                  "parentNode": 333,
+                  "uid": 334
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    301,
+                    309
+                  ],
+                  "parentNode": 333,
+                  "uid": 335
+                },
+                "range": [
+                  296,
+                  309
+                ],
+                "parentNode": 332,
+                "uid": 333
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    312,
+                    319
+                  ],
+                  "parentNode": 336,
+                  "uid": 337
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myAccounts/accountOverdraftProtection",
+                    "raw": "'dashboard/template/myAccounts/accountOverdraftProtection'",
+                    "range": [
+                      320,
+                      378
+                    ],
+                    "parentNode": 336,
+                    "uid": 338
+                  }
+                ],
+                "range": [
+                  312,
+                  379
+                ],
+                "parentNode": 332,
+                "uid": 336
+              },
+              "range": [
+                296,
+                379
+              ],
+              "parentNode": 331,
+              "uid": 332
+            },
+            "range": [
+              296,
+              380
+            ],
+            "parentNode": 318,
+            "uid": 331
+          }
+        ],
+        "range": [
+          180,
+          384
+        ],
+        "parentNode": 316,
+        "uid": 318
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        137,
+        384
+      ],
+      "parentNode": 315,
+      "uid": 316,
+      "returnType": ""
+    },
+    "range": [
+      130,
+      385
+    ],
+    "parentNode": 314,
+    "uid": 315,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 10,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 292,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./accountOverdraftProtection",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "OverdraftProtectionSettingsView": 126
+    },
+    "methods": [
+      {
+        "name": "OverdraftProtectionSettingsView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function OverdraftProtectionSettingsView() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myAccounts",
+    "fileName": "accountOverdraftProtection.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 15
+}

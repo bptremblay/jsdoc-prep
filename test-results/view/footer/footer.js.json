@@ -1,0 +1,873 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "footer",
+      "AMD": true,
+      "webPath": "/view/footer"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'FooterView'.",
+        "code": "wfJD",
+        "evidence": "return function FooterView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'FooterView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'onDataChange'.",
+        "code": "wfJD",
+        "evidence": "this.onDataChange = function onDataChange() {",
+        "line": 20,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'onDataChange'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/footer/footer.js",
+  "folderPath": "test-source/view/footer",
+  "fileName": "footer.js",
+  "packagePath": "/view/footer",
+  "webPath": "/view/footer",
+  "libFile": false,
+  "min": false,
+  "realName": "footer",
+  "name": "footer",
+  "camelName": "Footer",
+  "processedFilePath": "test-output/view/footer/footer.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction FooterView() {\n    this.template = require('dashboard/template/footer/footer');\n    var controllerChannel = require('blue/event/channel/controller');\n    var logger = require('blue/log')('[classic]');\n    /**\n     * Init.\n     */\n    this.init = function () {\n      // Update the footer content with any passed-in html content from an event\n      controllerChannel.on({\n        'set-page-footer-html': function (htmlContent) {\n          logger.debug('Set page footer html event received: ' + htmlContent);\n          // var footerElement = $('#footer-content');\n          // footerElement.html(htmlContent);\n        }.bind(this)\n      });\n    };\n    /**\n     * On data change.\n     */\n    this.onDataChange = function onDataChange() {\n      this.rerender();\n    };\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "FooterView",
+        "range": [
+          125,
+          135
+        ],
+        "parentNode": 895,
+        "uid": 896
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    144,
+                    148
+                  ],
+                  "parentNode": 900,
+                  "uid": 901
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    149,
+                    157
+                  ],
+                  "parentNode": 900,
+                  "uid": 902
+                },
+                "range": [
+                  144,
+                  157
+                ],
+                "parentNode": 899,
+                "uid": 900
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    160,
+                    167
+                  ],
+                  "parentNode": 903,
+                  "uid": 904
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/footer/footer",
+                    "raw": "'dashboard/template/footer/footer'",
+                    "range": [
+                      168,
+                      202
+                    ],
+                    "parentNode": 903,
+                    "uid": 905
+                  }
+                ],
+                "range": [
+                  160,
+                  203
+                ],
+                "parentNode": 899,
+                "uid": 903
+              },
+              "range": [
+                144,
+                203
+              ],
+              "parentNode": 898,
+              "uid": 899
+            },
+            "range": [
+              144,
+              204
+            ],
+            "parentNode": 897,
+            "uid": 898
+          },
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "controllerChannel",
+                  "range": [
+                    213,
+                    230
+                  ],
+                  "parentNode": 907,
+                  "uid": 908
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      233,
+                      240
+                    ],
+                    "parentNode": 909,
+                    "uid": 910
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "blue/event/channel/controller",
+                      "raw": "'blue/event/channel/controller'",
+                      "range": [
+                        241,
+                        272
+                      ],
+                      "parentNode": 909,
+                      "uid": 911
+                    }
+                  ],
+                  "range": [
+                    233,
+                    273
+                  ],
+                  "parentNode": 907,
+                  "uid": 909
+                },
+                "range": [
+                  213,
+                  273
+                ],
+                "parentNode": 906,
+                "uid": 907
+              }
+            ],
+            "kind": "var",
+            "range": [
+              209,
+              274
+            ],
+            "parentNode": 897,
+            "uid": 906
+          },
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "logger",
+                  "range": [
+                    283,
+                    289
+                  ],
+                  "parentNode": 913,
+                  "uid": 914
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        292,
+                        299
+                      ],
+                      "parentNode": 916,
+                      "uid": 917
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "blue/log",
+                        "raw": "'blue/log'",
+                        "range": [
+                          300,
+                          310
+                        ],
+                        "parentNode": 916,
+                        "uid": 918
+                      }
+                    ],
+                    "range": [
+                      292,
+                      311
+                    ],
+                    "parentNode": 915,
+                    "uid": 916
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "[classic]",
+                      "raw": "'[classic]'",
+                      "range": [
+                        312,
+                        323
+                      ],
+                      "parentNode": 915,
+                      "uid": 919
+                    }
+                  ],
+                  "range": [
+                    292,
+                    324
+                  ],
+                  "parentNode": 913,
+                  "uid": 915
+                },
+                "range": [
+                  283,
+                  324
+                ],
+                "parentNode": 912,
+                "uid": 913
+              }
+            ],
+            "kind": "var",
+            "range": [
+              279,
+              325
+            ],
+            "parentNode": 897,
+            "uid": 912
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    359,
+                    363
+                  ],
+                  "parentNode": 922,
+                  "uid": 923
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    364,
+                    368
+                  ],
+                  "parentNode": 922,
+                  "uid": 924
+                },
+                "range": [
+                  359,
+                  368
+                ],
+                "parentNode": 921,
+                "uid": 922
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "controllerChannel",
+                            "range": [
+                              472,
+                              489
+                            ],
+                            "parentNode": 929,
+                            "uid": 930
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "on",
+                            "range": [
+                              490,
+                              492
+                            ],
+                            "parentNode": 929,
+                            "uid": 931
+                          },
+                          "range": [
+                            472,
+                            492
+                          ],
+                          "parentNode": 928,
+                          "uid": 929
+                        },
+                        "arguments": [
+                          {
+                            "type": "ObjectExpression",
+                            "properties": [
+                              {
+                                "type": "Property",
+                                "key": {
+                                  "type": "Literal",
+                                  "value": "set-page-footer-html",
+                                  "raw": "'set-page-footer-html'",
+                                  "range": [
+                                    503,
+                                    525
+                                  ],
+                                  "parentNode": 933,
+                                  "uid": 934
+                                },
+                                "value": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "FunctionExpression",
+                                      "id": null,
+                                      "params": [
+                                        {
+                                          "type": "Identifier",
+                                          "name": "htmlContent",
+                                          "range": [
+                                            537,
+                                            548
+                                          ],
+                                          "parentNode": 937,
+                                          "uid": 938
+                                        }
+                                      ],
+                                      "defaults": [],
+                                      "body": {
+                                        "type": "BlockStatement",
+                                        "body": [
+                                          {
+                                            "type": "ExpressionStatement",
+                                            "expression": {
+                                              "type": "CallExpression",
+                                              "callee": {
+                                                "type": "MemberExpression",
+                                                "computed": false,
+                                                "object": {
+                                                  "type": "Identifier",
+                                                  "name": "logger",
+                                                  "range": [
+                                                    562,
+                                                    568
+                                                  ],
+                                                  "parentNode": 942,
+                                                  "uid": 943
+                                                },
+                                                "property": {
+                                                  "type": "Identifier",
+                                                  "name": "debug",
+                                                  "range": [
+                                                    569,
+                                                    574
+                                                  ],
+                                                  "parentNode": 942,
+                                                  "uid": 944
+                                                },
+                                                "range": [
+                                                  562,
+                                                  574
+                                                ],
+                                                "parentNode": 941,
+                                                "uid": 942
+                                              },
+                                              "arguments": [
+                                                {
+                                                  "type": "BinaryExpression",
+                                                  "operator": "+",
+                                                  "left": {
+                                                    "type": "Literal",
+                                                    "value": "Set page footer html event received: ",
+                                                    "raw": "'Set page footer html event received: '",
+                                                    "range": [
+                                                      575,
+                                                      614
+                                                    ],
+                                                    "parentNode": 945,
+                                                    "uid": 946
+                                                  },
+                                                  "right": {
+                                                    "type": "Identifier",
+                                                    "name": "htmlContent",
+                                                    "range": [
+                                                      617,
+                                                      628
+                                                    ],
+                                                    "parentNode": 945,
+                                                    "uid": 947
+                                                  },
+                                                  "range": [
+                                                    575,
+                                                    628
+                                                  ],
+                                                  "parentNode": 941,
+                                                  "uid": 945
+                                                }
+                                              ],
+                                              "range": [
+                                                562,
+                                                629
+                                              ],
+                                              "parentNode": 940,
+                                              "uid": 941
+                                            },
+                                            "range": [
+                                              562,
+                                              630
+                                            ],
+                                            "parentNode": 939,
+                                            "uid": 940
+                                          }
+                                        ],
+                                        "range": [
+                                          550,
+                                          741
+                                        ],
+                                        "parentNode": 937,
+                                        "uid": 939
+                                      },
+                                      "rest": null,
+                                      "generator": false,
+                                      "expression": false,
+                                      "range": [
+                                        527,
+                                        741
+                                      ],
+                                      "parentNode": 936,
+                                      "uid": 937,
+                                      "returnType": ""
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "bind",
+                                      "range": [
+                                        742,
+                                        746
+                                      ],
+                                      "parentNode": 936,
+                                      "uid": 948
+                                    },
+                                    "range": [
+                                      527,
+                                      746
+                                    ],
+                                    "parentNode": 935,
+                                    "uid": 936
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "ThisExpression",
+                                      "range": [
+                                        747,
+                                        751
+                                      ],
+                                      "parentNode": 935,
+                                      "uid": 949
+                                    }
+                                  ],
+                                  "range": [
+                                    527,
+                                    752
+                                  ],
+                                  "parentNode": 933,
+                                  "uid": 935
+                                },
+                                "kind": "init",
+                                "range": [
+                                  503,
+                                  752
+                                ],
+                                "parentNode": 932,
+                                "uid": 933
+                              }
+                            ],
+                            "range": [
+                              493,
+                              760
+                            ],
+                            "parentNode": 928,
+                            "uid": 932
+                          }
+                        ],
+                        "range": [
+                          472,
+                          761
+                        ],
+                        "parentNode": 927,
+                        "uid": 928
+                      },
+                      "range": [
+                        472,
+                        762
+                      ],
+                      "parentNode": 926,
+                      "uid": 927
+                    }
+                  ],
+                  "range": [
+                    383,
+                    768
+                  ],
+                  "parentNode": 925,
+                  "uid": 926
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  371,
+                  768
+                ],
+                "parentNode": 921,
+                "uid": 925,
+                "returnType": ""
+              },
+              "range": [
+                359,
+                768
+              ],
+              "parentNode": 920,
+              "uid": 921
+            },
+            "range": [
+              359,
+              769
+            ],
+            "parentNode": 897,
+            "uid": 920
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    813,
+                    817
+                  ],
+                  "parentNode": 952,
+                  "uid": 953
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "onDataChange",
+                  "range": [
+                    818,
+                    830
+                  ],
+                  "parentNode": 952,
+                  "uid": 954
+                },
+                "range": [
+                  813,
+                  830
+                ],
+                "parentNode": 951,
+                "uid": 952
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": {
+                  "type": "Identifier",
+                  "name": "onDataChange",
+                  "range": [
+                    842,
+                    854
+                  ],
+                  "parentNode": 955,
+                  "uid": 956
+                },
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              865,
+                              869
+                            ],
+                            "parentNode": 960,
+                            "uid": 961
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "rerender",
+                            "range": [
+                              870,
+                              878
+                            ],
+                            "parentNode": 960,
+                            "uid": 962
+                          },
+                          "range": [
+                            865,
+                            878
+                          ],
+                          "parentNode": 959,
+                          "uid": 960
+                        },
+                        "arguments": [],
+                        "range": [
+                          865,
+                          880
+                        ],
+                        "parentNode": 958,
+                        "uid": 959
+                      },
+                      "range": [
+                        865,
+                        881
+                      ],
+                      "parentNode": 957,
+                      "uid": 958
+                    }
+                  ],
+                  "range": [
+                    857,
+                    887
+                  ],
+                  "parentNode": 955,
+                  "uid": 957
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  833,
+                  887
+                ],
+                "parentNode": 951,
+                "uid": 955,
+                "returnType": ""
+              },
+              "range": [
+                813,
+                887
+              ],
+              "parentNode": 950,
+              "uid": 951
+            },
+            "range": [
+              813,
+              888
+            ],
+            "parentNode": 897,
+            "uid": 950
+          }
+        ],
+        "range": [
+          138,
+          892
+        ],
+        "parentNode": 895,
+        "uid": 897
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        116,
+        892
+      ],
+      "parentNode": 894,
+      "uid": 895,
+      "returnType": ""
+    },
+    "range": [
+      109,
+      893
+    ],
+    "parentNode": 893,
+    "uid": 894,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 24,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/footer",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 751,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./footer",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "FooterView": 362
+    },
+    "methods": [
+      {
+        "name": "FooterView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function FooterView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "onDataChange",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 20,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.onDataChange = function onDataChange() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/footer",
+    "fileName": "footer.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 36
+}

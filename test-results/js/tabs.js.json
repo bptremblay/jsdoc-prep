@@ -1,0 +1,92 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "messages"
+      ],
+      "moduleName": "tabs",
+      "AMD": true,
+      "webPath": "/js"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'Tabs'.",
+        "code": "wfJD",
+        "evidence": "function Tabs() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'Tabs'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/tabs.js",
+  "folderPath": "test-source/js",
+  "fileName": "tabs.js",
+  "packagePath": "/js",
+  "webPath": "/js",
+  "libFile": false,
+  "min": false,
+  "realName": "tabs",
+  "name": "tabs",
+  "camelName": "Tabs",
+  "processedFilePath": "test-output/js/tabs.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "jsDoccerProcData": {
+    "lines": 19,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 235,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./tabs",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "Tabs": 68
+    },
+    "methods": [
+      {
+        "name": "Tabs",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function Tabs() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "fileName": "tabs.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 18
+}

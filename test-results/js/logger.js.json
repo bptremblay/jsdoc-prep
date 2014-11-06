@@ -1,0 +1,168 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "messages"
+      ],
+      "moduleName": "logger",
+      "AMD": true,
+      "webPath": "/js"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'log'.",
+        "code": "wfJD",
+        "evidence": "function log(msg) {",
+        "line": 16,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'log'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'warn'.",
+        "code": "wfJD",
+        "evidence": "function warn(msg) {",
+        "line": 26,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'warn'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'error'.",
+        "code": "wfJD",
+        "evidence": "function error(msg) {",
+        "line": 36,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'error'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'fine'.",
+        "code": "wfJD",
+        "evidence": "exports.fine = function(msg) {",
+        "line": 46,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'fine'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/logger.js",
+  "folderPath": "test-source/js",
+  "fileName": "logger.js",
+  "packagePath": "/js",
+  "webPath": "/js",
+  "libFile": false,
+  "min": false,
+  "realName": "logger",
+  "name": "logger",
+  "camelName": "Logger",
+  "processedFilePath": "test-output/js/logger.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "jsDoccerProcData": {
+    "lines": 61,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1036,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./logger",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "log",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "msg"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function log(msg) {"
+      },
+      {
+        "name": "warn",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 26,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "msg"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function warn(msg) {"
+      },
+      {
+        "name": "error",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 36,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "args": [
+          "msg"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function error(msg) {"
+      },
+      {
+        "name": "fine",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 46,
+        "memberOf": "exports",
+        "originalJsDocDescription": {},
+        "args": [
+          "msg"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "exports.fine = function(msg) {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "fileName": "logger.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 71
+}

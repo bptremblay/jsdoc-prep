@@ -1,0 +1,629 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "pay_bills_confirm",
+      "AMD": true,
+      "webPath": "/component/payments/payBills"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'payBillsClose'.",
+        "code": "wfJD",
+        "evidence": "payBillsClose: function() {",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'payBillsClose'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'anotherPayBills'.",
+        "code": "wfJD",
+        "evidence": "anotherPayBills: function() {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'anotherPayBills'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/payments/payBills/payBillsConfirm.js",
+  "folderPath": "test-source/component/payments/payBills",
+  "fileName": "payBillsConfirm.js",
+  "packagePath": "/component/payments/payBills",
+  "webPath": "/component/payments/payBills",
+  "libFile": false,
+  "min": false,
+  "realName": "pay_bills_confirm",
+  "name": "payBillsConfirm",
+  "camelName": "PayBillsConfirm",
+  "processedFilePath": "test-output/component/payments/payBills/payBillsConfirm.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/payments/payBills/payBillsConfirm */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Pay bills close.\n     */\n    payBillsClose: function () {\n      context.state(context.settings.get('dashboardUrl'));\n    },\n    /**\n     * Another pay bills.\n     */\n    anotherPayBills: function () {\n      componentChannel.emit('trigger', {\n        target: this,\n        value: 'payBills'\n      });\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              160,
+              164
+            ],
+            "parentNode": 666,
+            "uid": 667
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        186,
+                        193
+                      ],
+                      "parentNode": 671,
+                      "uid": 672
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            196,
+                            200
+                          ],
+                          "parentNode": 674,
+                          "uid": 675
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            201,
+                            209
+                          ],
+                          "parentNode": 674,
+                          "uid": 676
+                        },
+                        "range": [
+                          196,
+                          209
+                        ],
+                        "parentNode": 673,
+                        "uid": 674
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          210,
+                          217
+                        ],
+                        "parentNode": 673,
+                        "uid": 677
+                      },
+                      "range": [
+                        196,
+                        217
+                      ],
+                      "parentNode": 671,
+                      "uid": 673
+                    },
+                    "range": [
+                      186,
+                      217
+                    ],
+                    "parentNode": 670,
+                    "uid": 671
+                  },
+                  "range": [
+                    186,
+                    218
+                  ],
+                  "parentNode": 669,
+                  "uid": 670
+                }
+              ],
+              "range": [
+                178,
+                224
+              ],
+              "parentNode": 668,
+              "uid": 669
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              166,
+              224
+            ],
+            "parentNode": 666,
+            "uid": 668,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            160,
+            224
+          ],
+          "parentNode": 665,
+          "uid": 666
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "payBillsClose",
+            "range": [
+              270,
+              283
+            ],
+            "parentNode": 678,
+            "uid": 679
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          305,
+                          312
+                        ],
+                        "parentNode": 684,
+                        "uid": 685
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "state",
+                        "range": [
+                          313,
+                          318
+                        ],
+                        "parentNode": 684,
+                        "uid": 686
+                      },
+                      "range": [
+                        305,
+                        318
+                      ],
+                      "parentNode": 683,
+                      "uid": 684
+                    },
+                    "arguments": [
+                      {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "context",
+                              "range": [
+                                319,
+                                326
+                              ],
+                              "parentNode": 689,
+                              "uid": 690
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "settings",
+                              "range": [
+                                327,
+                                335
+                              ],
+                              "parentNode": 689,
+                              "uid": 691
+                            },
+                            "range": [
+                              319,
+                              335
+                            ],
+                            "parentNode": 688,
+                            "uid": 689
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "get",
+                            "range": [
+                              336,
+                              339
+                            ],
+                            "parentNode": 688,
+                            "uid": 692
+                          },
+                          "range": [
+                            319,
+                            339
+                          ],
+                          "parentNode": 687,
+                          "uid": 688
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "dashboardUrl",
+                            "raw": "'dashboardUrl'",
+                            "range": [
+                              340,
+                              354
+                            ],
+                            "parentNode": 687,
+                            "uid": 693
+                          }
+                        ],
+                        "range": [
+                          319,
+                          355
+                        ],
+                        "parentNode": 683,
+                        "uid": 687
+                      }
+                    ],
+                    "range": [
+                      305,
+                      356
+                    ],
+                    "parentNode": 682,
+                    "uid": 683
+                  },
+                  "range": [
+                    305,
+                    357
+                  ],
+                  "parentNode": 681,
+                  "uid": 682
+                }
+              ],
+              "range": [
+                297,
+                363
+              ],
+              "parentNode": 680,
+              "uid": 681
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              285,
+              363
+            ],
+            "parentNode": 678,
+            "uid": 680,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            270,
+            363
+          ],
+          "parentNode": 665,
+          "uid": 678
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "anotherPayBills",
+            "range": [
+              411,
+              426
+            ],
+            "parentNode": 694,
+            "uid": 695
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "componentChannel",
+                        "range": [
+                          448,
+                          464
+                        ],
+                        "parentNode": 700,
+                        "uid": 701
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          465,
+                          469
+                        ],
+                        "parentNode": 700,
+                        "uid": 702
+                      },
+                      "range": [
+                        448,
+                        469
+                      ],
+                      "parentNode": 699,
+                      "uid": 700
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "trigger",
+                        "raw": "'trigger'",
+                        "range": [
+                          470,
+                          479
+                        ],
+                        "parentNode": 699,
+                        "uid": 703
+                      },
+                      {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "target",
+                              "range": [
+                                491,
+                                497
+                              ],
+                              "parentNode": 705,
+                              "uid": 706
+                            },
+                            "value": {
+                              "type": "ThisExpression",
+                              "range": [
+                                499,
+                                503
+                              ],
+                              "parentNode": 705,
+                              "uid": 707
+                            },
+                            "kind": "init",
+                            "range": [
+                              491,
+                              503
+                            ],
+                            "parentNode": 704,
+                            "uid": 705
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "value",
+                              "range": [
+                                513,
+                                518
+                              ],
+                              "parentNode": 708,
+                              "uid": 709
+                            },
+                            "value": {
+                              "type": "Literal",
+                              "value": "payBills",
+                              "raw": "'payBills'",
+                              "range": [
+                                520,
+                                530
+                              ],
+                              "parentNode": 708,
+                              "uid": 710
+                            },
+                            "kind": "init",
+                            "range": [
+                              513,
+                              530
+                            ],
+                            "parentNode": 704,
+                            "uid": 708
+                          }
+                        ],
+                        "range": [
+                          481,
+                          538
+                        ],
+                        "parentNode": 699,
+                        "uid": 704
+                      }
+                    ],
+                    "range": [
+                      448,
+                      539
+                    ],
+                    "parentNode": 698,
+                    "uid": 699
+                  },
+                  "range": [
+                    448,
+                    540
+                  ],
+                  "parentNode": 697,
+                  "uid": 698
+                }
+              ],
+              "range": [
+                440,
+                546
+              ],
+              "parentNode": 696,
+              "uid": 697
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              428,
+              546
+            ],
+            "parentNode": 694,
+            "uid": 696,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            411,
+            546
+          ],
+          "parentNode": 665,
+          "uid": 694
+        }
+      ],
+      "range": [
+        125,
+        550
+      ],
+      "parentNode": 664,
+      "uid": 665
+    },
+    "range": [
+      118,
+      551
+    ],
+    "parentNode": 653,
+    "uid": 664,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 21,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/payments/payBills",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 443,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./payBillsConfirm",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "payBillsClose",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "payBillsClose: function() {"
+      },
+      {
+        "name": "anotherPayBills",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "anotherPayBills: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/payments/payBills",
+    "fileName": "payBillsConfirm.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 31
+}

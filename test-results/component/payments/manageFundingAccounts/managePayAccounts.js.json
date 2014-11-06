@@ -1,0 +1,170 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "manage_pay_accounts",
+      "AMD": true,
+      "webPath": "/component/payments/manageFundingAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/payments/manageFundingAccounts/managePayAccounts.js",
+  "folderPath": "test-source/component/payments/manageFundingAccounts",
+  "fileName": "managePayAccounts.js",
+  "packagePath": "/component/payments/manageFundingAccounts",
+  "webPath": "/component/payments/manageFundingAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "manage_pay_accounts",
+  "name": "managePayAccounts",
+  "camelName": "ManagePayAccounts",
+  "processedFilePath": "test-output/component/payments/manageFundingAccounts/managePayAccounts.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/payments/manageFundingAccounts/managePayAccounts */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      //context = this.settings.context;\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              160,
+              164
+            ],
+            "parentNode": 217,
+            "uid": 218
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                178,
+                226
+              ],
+              "parentNode": 219,
+              "uid": 220
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              166,
+              226
+            ],
+            "parentNode": 217,
+            "uid": 219,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            160,
+            226
+          ],
+          "parentNode": 216,
+          "uid": 217
+        }
+      ],
+      "range": [
+        125,
+        230
+      ],
+      "parentNode": 215,
+      "uid": 216
+    },
+    "range": [
+      118,
+      231
+    ],
+    "parentNode": 205,
+    "uid": 215,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 11,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/payments/manageFundingAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 206,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./managePayAccounts",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/payments/manageFundingAccounts",
+    "fileName": "managePayAccounts.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 16
+}

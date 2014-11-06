@@ -1,0 +1,238 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "email_header",
+      "AMD": true,
+      "webPath": "/component/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 12,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'addEmailAddress'.",
+        "code": "wfJD",
+        "evidence": "addEmailAddress: function() {",
+        "line": 19,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'addEmailAddress'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myProfile/emailHeader.js",
+  "folderPath": "test-source/component/myProfile",
+  "fileName": "emailHeader.js",
+  "packagePath": "/component/myProfile",
+  "webPath": "/component/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "email_header",
+  "name": "emailHeader",
+  "camelName": "EmailHeader",
+  "processedFilePath": "test-output/component/myProfile/emailHeader.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myProfile/emailHeader */ {\n    /**\n     * @todo Add some jsDoc comments here!\n     */\n    init: function () {},\n    /**\n     * @todo Add some jsDoc comments here!\n     */\n    addEmailAddress: function () {}\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              247,
+              251
+            ],
+            "parentNode": 173,
+            "uid": 174
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                265,
+                267
+              ],
+              "parentNode": 175,
+              "uid": 176
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              253,
+              267
+            ],
+            "parentNode": 173,
+            "uid": 175,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            247,
+            267
+          ],
+          "parentNode": 172,
+          "uid": 173
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "addEmailAddress",
+            "range": [
+              332,
+              347
+            ],
+            "parentNode": 177,
+            "uid": 178
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [],
+              "range": [
+                361,
+                363
+              ],
+              "parentNode": 179,
+              "uid": 180
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              349,
+              363
+            ],
+            "parentNode": 177,
+            "uid": 179,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            332,
+            363
+          ],
+          "parentNode": 172,
+          "uid": 177
+        }
+      ],
+      "range": [
+        182,
+        367
+      ],
+      "parentNode": 171,
+      "uid": 172
+    },
+    "range": [
+      175,
+      368
+    ],
+    "parentNode": 170,
+    "uid": 171,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 23,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 337,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./emailHeader",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 12,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "addEmailAddress",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 19,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "addEmailAddress: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myProfile",
+    "fileName": "emailHeader.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 16
+}

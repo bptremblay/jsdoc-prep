@@ -1,0 +1,633 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "send_money",
+      "AMD": true,
+      "webPath": "/view/payments/sendMoney"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'sendMoneyView'.",
+        "code": "wfJD",
+        "evidence": "return function sendMoneyView() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'sendMoneyView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/payments/sendMoney/sendMoney.js",
+  "folderPath": "test-source/view/payments/sendMoney",
+  "fileName": "sendMoney.js",
+  "packagePath": "/view/payments/sendMoney",
+  "webPath": "/view/payments/sendMoney",
+  "libFile": false,
+  "min": false,
+  "realName": "send_money",
+  "name": "sendMoney",
+  "camelName": "SendMoney",
+  "processedFilePath": "test-output/view/payments/sendMoney/sendMoney.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction SendMoneyView() {\n    var sendMoneyBridge = require('blue/bridge').create(require('dashboard/view/webspec/payments/sendMoney/sendMoney'), {});\n    this.bridge = new sendMoneyBridge({\n      targets: {}\n    });\n    //render the default view\n    this.template = require('dashboard/template/payments/sendMoney/sendMoney');\n    /**\n     * Init.\n     */\n    this.init = function () {\n      $('.overlay, #pre-loader').hide();\n    };\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "sendMoneyView",
+        "range": [
+          80,
+          93
+        ],
+        "parentNode": 631,
+        "uid": 632
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "sendMoneyBridge",
+                  "range": [
+                    106,
+                    121
+                  ],
+                  "parentNode": 635,
+                  "uid": 636
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "Identifier",
+                        "name": "require",
+                        "range": [
+                          124,
+                          131
+                        ],
+                        "parentNode": 639,
+                        "uid": 640
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": "blue/bridge",
+                          "raw": "'blue/bridge'",
+                          "range": [
+                            132,
+                            145
+                          ],
+                          "parentNode": 639,
+                          "uid": 641
+                        }
+                      ],
+                      "range": [
+                        124,
+                        146
+                      ],
+                      "parentNode": 638,
+                      "uid": 639
+                    },
+                    "property": {
+                      "type": "Identifier",
+                      "name": "create",
+                      "range": [
+                        147,
+                        153
+                      ],
+                      "parentNode": 638,
+                      "uid": 642
+                    },
+                    "range": [
+                      124,
+                      153
+                    ],
+                    "parentNode": 637,
+                    "uid": 638
+                  },
+                  "arguments": [
+                    {
+                      "type": "CallExpression",
+                      "callee": {
+                        "type": "Identifier",
+                        "name": "require",
+                        "range": [
+                          154,
+                          161
+                        ],
+                        "parentNode": 643,
+                        "uid": 644
+                      },
+                      "arguments": [
+                        {
+                          "type": "Literal",
+                          "value": "dashboard/view/webspec/payments/sendMoney/sendMoney",
+                          "raw": "'dashboard/view/webspec/payments/sendMoney/sendMoney'",
+                          "range": [
+                            162,
+                            215
+                          ],
+                          "parentNode": 643,
+                          "uid": 645
+                        }
+                      ],
+                      "range": [
+                        154,
+                        216
+                      ],
+                      "parentNode": 637,
+                      "uid": 643
+                    },
+                    {
+                      "type": "ObjectExpression",
+                      "properties": [],
+                      "range": [
+                        218,
+                        220
+                      ],
+                      "parentNode": 637,
+                      "uid": 646
+                    }
+                  ],
+                  "range": [
+                    124,
+                    221
+                  ],
+                  "parentNode": 635,
+                  "uid": 637
+                },
+                "range": [
+                  106,
+                  221
+                ],
+                "parentNode": 634,
+                "uid": 635
+              }
+            ],
+            "kind": "var",
+            "range": [
+              102,
+              222
+            ],
+            "parentNode": 633,
+            "uid": 634
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    227,
+                    231
+                  ],
+                  "parentNode": 649,
+                  "uid": 650
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    232,
+                    238
+                  ],
+                  "parentNode": 649,
+                  "uid": 651
+                },
+                "range": [
+                  227,
+                  238
+                ],
+                "parentNode": 648,
+                "uid": 649
+              },
+              "right": {
+                "type": "NewExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "sendMoneyBridge",
+                  "range": [
+                    245,
+                    260
+                  ],
+                  "parentNode": 652,
+                  "uid": 653
+                },
+                "arguments": [
+                  {
+                    "type": "ObjectExpression",
+                    "properties": [
+                      {
+                        "type": "Property",
+                        "key": {
+                          "type": "Identifier",
+                          "name": "targets",
+                          "range": [
+                            269,
+                            276
+                          ],
+                          "parentNode": 655,
+                          "uid": 656
+                        },
+                        "value": {
+                          "type": "ObjectExpression",
+                          "properties": [],
+                          "range": [
+                            278,
+                            280
+                          ],
+                          "parentNode": 655,
+                          "uid": 657
+                        },
+                        "kind": "init",
+                        "range": [
+                          269,
+                          280
+                        ],
+                        "parentNode": 654,
+                        "uid": 655
+                      }
+                    ],
+                    "range": [
+                      261,
+                      286
+                    ],
+                    "parentNode": 652,
+                    "uid": 654
+                  }
+                ],
+                "range": [
+                  241,
+                  287
+                ],
+                "parentNode": 648,
+                "uid": 652
+              },
+              "range": [
+                227,
+                287
+              ],
+              "parentNode": 647,
+              "uid": 648
+            },
+            "range": [
+              227,
+              288
+            ],
+            "parentNode": 633,
+            "uid": 647
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    323,
+                    327
+                  ],
+                  "parentNode": 660,
+                  "uid": 661
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    328,
+                    336
+                  ],
+                  "parentNode": 660,
+                  "uid": 662
+                },
+                "range": [
+                  323,
+                  336
+                ],
+                "parentNode": 659,
+                "uid": 660
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    339,
+                    346
+                  ],
+                  "parentNode": 663,
+                  "uid": 664
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/payments/sendMoney/sendMoney",
+                    "raw": "'dashboard/template/payments/sendMoney/sendMoney'",
+                    "range": [
+                      347,
+                      396
+                    ],
+                    "parentNode": 663,
+                    "uid": 665
+                  }
+                ],
+                "range": [
+                  339,
+                  397
+                ],
+                "parentNode": 659,
+                "uid": 663
+              },
+              "range": [
+                323,
+                397
+              ],
+              "parentNode": 658,
+              "uid": 659
+            },
+            "range": [
+              323,
+              398
+            ],
+            "parentNode": 633,
+            "uid": 658
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    432,
+                    436
+                  ],
+                  "parentNode": 668,
+                  "uid": 669
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    437,
+                    441
+                  ],
+                  "parentNode": 668,
+                  "uid": 670
+                },
+                "range": [
+                  432,
+                  441
+                ],
+                "parentNode": 667,
+                "uid": 668
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                464,
+                                465
+                              ],
+                              "parentNode": 676,
+                              "uid": 677
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": ".overlay, #pre-loader",
+                                "raw": "'.overlay, #pre-loader'",
+                                "range": [
+                                  466,
+                                  489
+                                ],
+                                "parentNode": 676,
+                                "uid": 678
+                              }
+                            ],
+                            "range": [
+                              464,
+                              490
+                            ],
+                            "parentNode": 675,
+                            "uid": 676
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "hide",
+                            "range": [
+                              491,
+                              495
+                            ],
+                            "parentNode": 675,
+                            "uid": 679
+                          },
+                          "range": [
+                            464,
+                            495
+                          ],
+                          "parentNode": 674,
+                          "uid": 675
+                        },
+                        "arguments": [],
+                        "range": [
+                          464,
+                          497
+                        ],
+                        "parentNode": 673,
+                        "uid": 674
+                      },
+                      "range": [
+                        464,
+                        498
+                      ],
+                      "parentNode": 672,
+                      "uid": 673
+                    }
+                  ],
+                  "range": [
+                    456,
+                    504
+                  ],
+                  "parentNode": 671,
+                  "uid": 672
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  444,
+                  504
+                ],
+                "parentNode": 667,
+                "uid": 671,
+                "returnType": ""
+              },
+              "range": [
+                432,
+                504
+              ],
+              "parentNode": 666,
+              "uid": 667
+            },
+            "range": [
+              432,
+              505
+            ],
+            "parentNode": 633,
+            "uid": 666
+          }
+        ],
+        "range": [
+          96,
+          509
+        ],
+        "parentNode": 631,
+        "uid": 633
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        71,
+        509
+      ],
+      "parentNode": 630,
+      "uid": 631,
+      "returnType": ""
+    },
+    "range": [
+      64,
+      510
+    ],
+    "parentNode": 629,
+    "uid": 630,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 18,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/payments/sendMoney",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 454,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./sendMoney",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "sendMoneyView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function sendMoneyView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/payments/sendMoney",
+    "fileName": "sendMoney.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 25
+}

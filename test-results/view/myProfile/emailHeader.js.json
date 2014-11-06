@@ -1,0 +1,448 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "email_header",
+      "AMD": true,
+      "webPath": "/view/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'EmailHeaderView'.",
+        "code": "wfJD",
+        "evidence": "return function EmailHeaderView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'EmailHeaderView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 3,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myProfile/emailHeader.js",
+  "folderPath": "test-source/view/myProfile",
+  "fileName": "emailHeader.js",
+  "packagePath": "/view/myProfile",
+  "webPath": "/view/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "email_header",
+  "name": "emailHeader",
+  "camelName": "EmailHeader",
+  "processedFilePath": "test-output/view/myProfile/emailHeader.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction EmailHeaderView() {\n    /**\n     * Init.\n     */\n    this.init = function () {\n      this.bridge = this.createBridge(require('dashboard/view/webspec/myProfile/emailHeader'));\n    };\n    this.template = require('dashboard/template/myProfile/emailHeader');\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "EmailHeaderView",
+        "range": [
+          130,
+          145
+        ],
+        "parentNode": 418,
+        "uid": 419
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    183,
+                    187
+                  ],
+                  "parentNode": 423,
+                  "uid": 424
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    188,
+                    192
+                  ],
+                  "parentNode": 423,
+                  "uid": 425
+                },
+                "range": [
+                  183,
+                  192
+                ],
+                "parentNode": 422,
+                "uid": 423
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              215,
+                              219
+                            ],
+                            "parentNode": 430,
+                            "uid": 431
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "bridge",
+                            "range": [
+                              220,
+                              226
+                            ],
+                            "parentNode": 430,
+                            "uid": 432
+                          },
+                          "range": [
+                            215,
+                            226
+                          ],
+                          "parentNode": 429,
+                          "uid": 430
+                        },
+                        "right": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                229,
+                                233
+                              ],
+                              "parentNode": 434,
+                              "uid": 435
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "createBridge",
+                              "range": [
+                                234,
+                                246
+                              ],
+                              "parentNode": 434,
+                              "uid": 436
+                            },
+                            "range": [
+                              229,
+                              246
+                            ],
+                            "parentNode": 433,
+                            "uid": 434
+                          },
+                          "arguments": [
+                            {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "Identifier",
+                                "name": "require",
+                                "range": [
+                                  247,
+                                  254
+                                ],
+                                "parentNode": 437,
+                                "uid": 438
+                              },
+                              "arguments": [
+                                {
+                                  "type": "Literal",
+                                  "value": "dashboard/view/webspec/myProfile/emailHeader",
+                                  "raw": "'dashboard/view/webspec/myProfile/emailHeader'",
+                                  "range": [
+                                    255,
+                                    301
+                                  ],
+                                  "parentNode": 437,
+                                  "uid": 439
+                                }
+                              ],
+                              "range": [
+                                247,
+                                302
+                              ],
+                              "parentNode": 433,
+                              "uid": 437
+                            }
+                          ],
+                          "range": [
+                            229,
+                            303
+                          ],
+                          "parentNode": 429,
+                          "uid": 433
+                        },
+                        "range": [
+                          215,
+                          303
+                        ],
+                        "parentNode": 428,
+                        "uid": 429
+                      },
+                      "range": [
+                        215,
+                        304
+                      ],
+                      "parentNode": 427,
+                      "uid": 428
+                    }
+                  ],
+                  "range": [
+                    207,
+                    310
+                  ],
+                  "parentNode": 426,
+                  "uid": 427
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  195,
+                  310
+                ],
+                "parentNode": 422,
+                "uid": 426,
+                "returnType": ""
+              },
+              "range": [
+                183,
+                310
+              ],
+              "parentNode": 421,
+              "uid": 422
+            },
+            "range": [
+              183,
+              311
+            ],
+            "parentNode": 420,
+            "uid": 421
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    316,
+                    320
+                  ],
+                  "parentNode": 442,
+                  "uid": 443
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    321,
+                    329
+                  ],
+                  "parentNode": 442,
+                  "uid": 444
+                },
+                "range": [
+                  316,
+                  329
+                ],
+                "parentNode": 441,
+                "uid": 442
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    332,
+                    339
+                  ],
+                  "parentNode": 445,
+                  "uid": 446
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myProfile/emailHeader",
+                    "raw": "'dashboard/template/myProfile/emailHeader'",
+                    "range": [
+                      340,
+                      382
+                    ],
+                    "parentNode": 445,
+                    "uid": 447
+                  }
+                ],
+                "range": [
+                  332,
+                  383
+                ],
+                "parentNode": 441,
+                "uid": 445
+              },
+              "range": [
+                316,
+                383
+              ],
+              "parentNode": 440,
+              "uid": 441
+            },
+            "range": [
+              316,
+              384
+            ],
+            "parentNode": 420,
+            "uid": 440
+          }
+        ],
+        "range": [
+          148,
+          388
+        ],
+        "parentNode": 418,
+        "uid": 420
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        121,
+        388
+      ],
+      "parentNode": 417,
+      "uid": 418,
+      "returnType": ""
+    },
+    "range": [
+      114,
+      389
+    ],
+    "parentNode": 416,
+    "uid": 417,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 8,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 277,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./emailHeader",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "EmailHeaderView": 169
+    },
+    "methods": [
+      {
+        "name": "EmailHeaderView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function EmailHeaderView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 3,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "fileName": "emailHeader.js",
+    "strict": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 20
+}

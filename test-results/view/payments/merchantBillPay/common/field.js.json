@@ -1,0 +1,325 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "field",
+      "AMD": true,
+      "webPath": "/view/payments/merchantBillPay/common"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'fieldView'.",
+        "code": "wfJD",
+        "evidence": "return function fieldView() {",
+        "line": 20,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'fieldView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {};",
+        "line": 24,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/payments/merchantBillPay/common/field.js",
+  "folderPath": "test-source/view/payments/merchantBillPay/common",
+  "fileName": "field.js",
+  "packagePath": "/view/payments/merchantBillPay/common",
+  "webPath": "/view/payments/merchantBillPay/common",
+  "libFile": false,
+  "min": false,
+  "realName": "field",
+  "name": "field",
+  "camelName": "Field",
+  "processedFilePath": "test-output/view/payments/merchantBillPay/common/field.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction FieldView() {\n    //render the default view\n    this.template = require('dashboard/template/payments/payBills/common/field');\n    /**\n     * Init.\n     */\n    this.init = function () {};\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "fieldView",
+        "range": [
+          483,
+          492
+        ],
+        "parentNode": 769,
+        "uid": 770
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    531,
+                    535
+                  ],
+                  "parentNode": 774,
+                  "uid": 775
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    536,
+                    544
+                  ],
+                  "parentNode": 774,
+                  "uid": 776
+                },
+                "range": [
+                  531,
+                  544
+                ],
+                "parentNode": 773,
+                "uid": 774
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    547,
+                    554
+                  ],
+                  "parentNode": 777,
+                  "uid": 778
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/payments/payBills/common/field",
+                    "raw": "'dashboard/template/payments/payBills/common/field'",
+                    "range": [
+                      555,
+                      606
+                    ],
+                    "parentNode": 777,
+                    "uid": 779
+                  }
+                ],
+                "range": [
+                  547,
+                  607
+                ],
+                "parentNode": 773,
+                "uid": 777
+              },
+              "range": [
+                531,
+                607
+              ],
+              "parentNode": 772,
+              "uid": 773
+            },
+            "range": [
+              531,
+              608
+            ],
+            "parentNode": 771,
+            "uid": 772
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    642,
+                    646
+                  ],
+                  "parentNode": 782,
+                  "uid": 783
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    647,
+                    651
+                  ],
+                  "parentNode": 782,
+                  "uid": 784
+                },
+                "range": [
+                  642,
+                  651
+                ],
+                "parentNode": 781,
+                "uid": 782
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    666,
+                    668
+                  ],
+                  "parentNode": 785,
+                  "uid": 786
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  654,
+                  668
+                ],
+                "parentNode": 781,
+                "uid": 785,
+                "returnType": ""
+              },
+              "range": [
+                642,
+                668
+              ],
+              "parentNode": 780,
+              "uid": 781
+            },
+            "range": [
+              642,
+              669
+            ],
+            "parentNode": 771,
+            "uid": 780
+          }
+        ],
+        "range": [
+          495,
+          673
+        ],
+        "parentNode": 769,
+        "uid": 771
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        474,
+        673
+      ],
+      "parentNode": 768,
+      "uid": 769,
+      "returnType": ""
+    },
+    "range": [
+      467,
+      674
+    ],
+    "parentNode": 717,
+    "uid": 768,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 27,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/payments/merchantBillPay/common",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 623,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./field",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "fieldView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 20,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function fieldView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 24,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {};"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/payments/merchantBillPay/common",
+    "fileName": "field.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 33
+}

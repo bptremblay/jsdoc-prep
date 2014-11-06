@@ -1,0 +1,445 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "button_drop_down",
+      "AMD": true,
+      "webPath": "/view/myProfile"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'buttonDropDownView'.",
+        "code": "wfJD",
+        "evidence": "return function buttonDropDownView() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'buttonDropDownView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/myProfile/buttonDropDown.js",
+  "folderPath": "test-source/view/myProfile",
+  "fileName": "buttonDropDown.js",
+  "packagePath": "/view/myProfile",
+  "webPath": "/view/myProfile",
+  "libFile": false,
+  "min": false,
+  "realName": "button_drop_down",
+  "name": "buttonDropDown",
+  "camelName": "ButtonDropDown",
+  "processedFilePath": "test-output/view/myProfile/buttonDropDown.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction ButtonDropDownView() {\n    this.bridge = this.createBridge(require('dashboard/view/webspec/myProfile/buttonDropDown'));\n    this.template = require('dashboard/template/myProfile/buttonDropDown');\n    /**\n     * Init.\n     */\n    this.init = function () {};\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "buttonDropDownView",
+        "range": [
+          86,
+          104
+        ],
+        "parentNode": 394,
+        "uid": 395
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    113,
+                    117
+                  ],
+                  "parentNode": 399,
+                  "uid": 400
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "bridge",
+                  "range": [
+                    118,
+                    124
+                  ],
+                  "parentNode": 399,
+                  "uid": 401
+                },
+                "range": [
+                  113,
+                  124
+                ],
+                "parentNode": 398,
+                "uid": 399
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "ThisExpression",
+                    "range": [
+                      127,
+                      131
+                    ],
+                    "parentNode": 403,
+                    "uid": 404
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "createBridge",
+                    "range": [
+                      132,
+                      144
+                    ],
+                    "parentNode": 403,
+                    "uid": 405
+                  },
+                  "range": [
+                    127,
+                    144
+                  ],
+                  "parentNode": 402,
+                  "uid": 403
+                },
+                "arguments": [
+                  {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "Identifier",
+                      "name": "require",
+                      "range": [
+                        145,
+                        152
+                      ],
+                      "parentNode": 406,
+                      "uid": 407
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "dashboard/view/webspec/myProfile/buttonDropDown",
+                        "raw": "'dashboard/view/webspec/myProfile/buttonDropDown'",
+                        "range": [
+                          153,
+                          202
+                        ],
+                        "parentNode": 406,
+                        "uid": 408
+                      }
+                    ],
+                    "range": [
+                      145,
+                      203
+                    ],
+                    "parentNode": 402,
+                    "uid": 406
+                  }
+                ],
+                "range": [
+                  127,
+                  204
+                ],
+                "parentNode": 398,
+                "uid": 402
+              },
+              "range": [
+                113,
+                204
+              ],
+              "parentNode": 397,
+              "uid": 398
+            },
+            "range": [
+              113,
+              205
+            ],
+            "parentNode": 396,
+            "uid": 397
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    210,
+                    214
+                  ],
+                  "parentNode": 411,
+                  "uid": 412
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    215,
+                    223
+                  ],
+                  "parentNode": 411,
+                  "uid": 413
+                },
+                "range": [
+                  210,
+                  223
+                ],
+                "parentNode": 410,
+                "uid": 411
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    226,
+                    233
+                  ],
+                  "parentNode": 414,
+                  "uid": 415
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/myProfile/buttonDropDown",
+                    "raw": "'dashboard/template/myProfile/buttonDropDown'",
+                    "range": [
+                      234,
+                      279
+                    ],
+                    "parentNode": 414,
+                    "uid": 416
+                  }
+                ],
+                "range": [
+                  226,
+                  280
+                ],
+                "parentNode": 410,
+                "uid": 414
+              },
+              "range": [
+                210,
+                280
+              ],
+              "parentNode": 409,
+              "uid": 410
+            },
+            "range": [
+              210,
+              281
+            ],
+            "parentNode": 396,
+            "uid": 409
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    315,
+                    319
+                  ],
+                  "parentNode": 419,
+                  "uid": 420
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    320,
+                    324
+                  ],
+                  "parentNode": 419,
+                  "uid": 421
+                },
+                "range": [
+                  315,
+                  324
+                ],
+                "parentNode": 418,
+                "uid": 419
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [],
+                  "range": [
+                    339,
+                    341
+                  ],
+                  "parentNode": 422,
+                  "uid": 423
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  327,
+                  341
+                ],
+                "parentNode": 418,
+                "uid": 422,
+                "returnType": ""
+              },
+              "range": [
+                315,
+                341
+              ],
+              "parentNode": 417,
+              "uid": 418
+            },
+            "range": [
+              315,
+              342
+            ],
+            "parentNode": 396,
+            "uid": 417
+          }
+        ],
+        "range": [
+          107,
+          346
+        ],
+        "parentNode": 394,
+        "uid": 396
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        77,
+        346
+      ],
+      "parentNode": 393,
+      "uid": 394,
+      "returnType": ""
+    },
+    "range": [
+      70,
+      347
+    ],
+    "parentNode": 392,
+    "uid": 393,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 12,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 288,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./buttonDropDown",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "buttonDropDownView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function buttonDropDownView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/myProfile",
+    "fileName": "buttonDropDown.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 18
+}

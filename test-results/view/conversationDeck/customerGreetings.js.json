@@ -1,0 +1,2693 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "customer_greetings",
+      "AMD": true,
+      "webPath": "/view/conversationDeck"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'customeGreetingsView'.",
+        "code": "wfJD",
+        "evidence": "return function customeGreetingsView() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'customeGreetingsView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'receieveConvoDeckMessagesDisplay'.",
+        "code": "wfJD",
+        "evidence": "this.receieveConvoDeckMessagesDisplay = function() {",
+        "line": 39,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'receieveConvoDeckMessagesDisplay'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'receiveConvoDeckMessageHeaderRemoved'.",
+        "code": "wfJD",
+        "evidence": "this.receiveConvoDeckMessageHeaderRemoved = function() {",
+        "line": 48,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'receiveConvoDeckMessageHeaderRemoved'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'stateHandlerGreetingMinimized'.",
+        "code": "wfJD",
+        "evidence": "this.stateHandlerGreetingMinimized = function() {",
+        "line": 57,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'stateHandlerGreetingMinimized'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'stateHandlerGreetingMaximized'.",
+        "code": "wfJD",
+        "evidence": "this.stateHandlerGreetingMaximized = function() {",
+        "line": 69,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'stateHandlerGreetingMaximized'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setGreetingHideTimer'.",
+        "code": "wfJD",
+        "evidence": "this.setGreetingHideTimer = function() {",
+        "line": 81,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setGreetingHideTimer'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/view/conversationDeck/customerGreetings.js",
+  "folderPath": "test-source/view/conversationDeck",
+  "fileName": "customerGreetings.js",
+  "packagePath": "/view/conversationDeck",
+  "webPath": "/view/conversationDeck",
+  "libFile": false,
+  "min": false,
+  "realName": "customer_greetings",
+  "name": "customerGreetings",
+  "camelName": "CustomerGreetings",
+  "processedFilePath": "test-output/view/conversationDeck/customerGreetings.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /** @constructor */\nfunction CustomeGreetingsView() {\n    var controllerChannel = require('blue/event/channel/controller'),\n      settings = require('blue/settings');\n    //Settign template\n    this.template = require('dashboard/template/conversationDeck/customerGreetings');\n    /**\n     * Init.\n     */\n    this.init = function () {\n      this.bridge = this.createBridge(require('dashboard/view/webspec/conversationDeck/customerGreetings'));\n      // Bridge channel event handler registration.\n      this.bridge.on('state/greetingMaximizedState', this.stateHandlerGreetingMaximized.bind(this));\n      this.bridge.on('state/greetingMinimizedState', this.stateHandlerGreetingMinimized.bind(this));\n      // Controller channel event handler registration.\n      controllerChannel.on({\n        convoDeckMessagesDisplay: this.receieveConvoDeckMessagesDisplay.bind(this)\n      });\n      controllerChannel.on({\n        convoDeckMessageHeaderRemoved: this.receiveConvoDeckMessageHeaderRemoved.bind(this)\n      });\n      // Set the timer for hiding the greeting after having displayed it for a fixed period of time.\n      this.setGreetingHideTimer();\n    };\n    /**\n     * Handler for the event that the Conversation Deck messages should be displayed.\n     */\n    this.receieveConvoDeckMessagesDisplay = function () {\n      // Hide the greeting.\n      $('#greeting-area').addClass('dis-none');\n    };\n    /**\n     * Handler for the event that the Conversation Deck message header has been removed.\n     */\n    this.receiveConvoDeckMessageHeaderRemoved = function () {\n      // Show the greeting.\n      $('#greeting-area').removeClass('dis-none');\n    };\n    /**\n     * Handler for the state that the header is being minimized (i.e. during search results maximization).\n     */\n    this.stateHandlerGreetingMinimized = function () {\n      // Reduce the width of the greeting.\n      $(\"#convo-deck-left-col\").addClass('col-xs-4');\n      $(\"#convo-deck-left-col\").removeClass('col-xs-8');\n      $(\"#convo-deck-right-col\").addClass('col-xs-8');\n      $(\"#convo-deck-right-col\").removeClass('col-xs-4');\n    };\n    /**\n     * Handler for the state that the header is being maximized (i.e. during search results minimization).\n     */\n    this.stateHandlerGreetingMaximized = function () {\n      // Expand the width of the greeting.\n      $(\"#convo-deck-left-col\").addClass('col-xs-8');\n      $(\"#convo-deck-left-col\").removeClass('col-xs-4');\n      $(\"#convo-deck-right-col\").addClass('col-xs-4');\n      $(\"#convo-deck-right-col\").removeClass('col-xs-8');\n    };\n    /**\n     * Set a timer for when the greeting should be hidden.\n     */\n    this.setGreetingHideTimer = function () {\n      setTimeout(function () {\n        controllerChannel.emit('convoDeckGreetingHideReady');\n      }, settings.get('convoDeckGreetingDisplayTimer'));\n    };\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "FunctionExpression",
+      "id": {
+        "type": "Identifier",
+        "name": "customeGreetingsView",
+        "range": [
+          163,
+          183
+        ],
+        "parentNode": 3014,
+        "uid": 3015
+      },
+      "params": [],
+      "defaults": [],
+      "body": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "VariableDeclaration",
+            "declarations": [
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "controllerChannel",
+                  "range": [
+                    196,
+                    213
+                  ],
+                  "parentNode": 3018,
+                  "uid": 3019
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      216,
+                      223
+                    ],
+                    "parentNode": 3020,
+                    "uid": 3021
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "blue/event/channel/controller",
+                      "raw": "'blue/event/channel/controller'",
+                      "range": [
+                        224,
+                        255
+                      ],
+                      "parentNode": 3020,
+                      "uid": 3022
+                    }
+                  ],
+                  "range": [
+                    216,
+                    256
+                  ],
+                  "parentNode": 3018,
+                  "uid": 3020
+                },
+                "range": [
+                  196,
+                  256
+                ],
+                "parentNode": 3017,
+                "uid": 3018
+              },
+              {
+                "type": "VariableDeclarator",
+                "id": {
+                  "type": "Identifier",
+                  "name": "settings",
+                  "range": [
+                    264,
+                    272
+                  ],
+                  "parentNode": 3023,
+                  "uid": 3024
+                },
+                "init": {
+                  "type": "CallExpression",
+                  "callee": {
+                    "type": "Identifier",
+                    "name": "require",
+                    "range": [
+                      275,
+                      282
+                    ],
+                    "parentNode": 3025,
+                    "uid": 3026
+                  },
+                  "arguments": [
+                    {
+                      "type": "Literal",
+                      "value": "blue/settings",
+                      "raw": "'blue/settings'",
+                      "range": [
+                        283,
+                        298
+                      ],
+                      "parentNode": 3025,
+                      "uid": 3027
+                    }
+                  ],
+                  "range": [
+                    275,
+                    299
+                  ],
+                  "parentNode": 3023,
+                  "uid": 3025
+                },
+                "range": [
+                  264,
+                  299
+                ],
+                "parentNode": 3017,
+                "uid": 3023
+              }
+            ],
+            "kind": "var",
+            "range": [
+              192,
+              300
+            ],
+            "parentNode": 3016,
+            "uid": 3017
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    328,
+                    332
+                  ],
+                  "parentNode": 3030,
+                  "uid": 3031
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "template",
+                  "range": [
+                    333,
+                    341
+                  ],
+                  "parentNode": 3030,
+                  "uid": 3032
+                },
+                "range": [
+                  328,
+                  341
+                ],
+                "parentNode": 3029,
+                "uid": 3030
+              },
+              "right": {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "Identifier",
+                  "name": "require",
+                  "range": [
+                    344,
+                    351
+                  ],
+                  "parentNode": 3033,
+                  "uid": 3034
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "dashboard/template/conversationDeck/customerGreetings",
+                    "raw": "'dashboard/template/conversationDeck/customerGreetings'",
+                    "range": [
+                      352,
+                      407
+                    ],
+                    "parentNode": 3033,
+                    "uid": 3035
+                  }
+                ],
+                "range": [
+                  344,
+                  408
+                ],
+                "parentNode": 3029,
+                "uid": 3033
+              },
+              "range": [
+                328,
+                408
+              ],
+              "parentNode": 3028,
+              "uid": 3029
+            },
+            "range": [
+              328,
+              409
+            ],
+            "parentNode": 3016,
+            "uid": 3028
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    443,
+                    447
+                  ],
+                  "parentNode": 3038,
+                  "uid": 3039
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "init",
+                  "range": [
+                    448,
+                    452
+                  ],
+                  "parentNode": 3038,
+                  "uid": 3040
+                },
+                "range": [
+                  443,
+                  452
+                ],
+                "parentNode": 3037,
+                "uid": 3038
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              475,
+                              479
+                            ],
+                            "parentNode": 3045,
+                            "uid": 3046
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "bridge",
+                            "range": [
+                              480,
+                              486
+                            ],
+                            "parentNode": 3045,
+                            "uid": 3047
+                          },
+                          "range": [
+                            475,
+                            486
+                          ],
+                          "parentNode": 3044,
+                          "uid": 3045
+                        },
+                        "right": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                489,
+                                493
+                              ],
+                              "parentNode": 3049,
+                              "uid": 3050
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "createBridge",
+                              "range": [
+                                494,
+                                506
+                              ],
+                              "parentNode": 3049,
+                              "uid": 3051
+                            },
+                            "range": [
+                              489,
+                              506
+                            ],
+                            "parentNode": 3048,
+                            "uid": 3049
+                          },
+                          "arguments": [
+                            {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "Identifier",
+                                "name": "require",
+                                "range": [
+                                  507,
+                                  514
+                                ],
+                                "parentNode": 3052,
+                                "uid": 3053
+                              },
+                              "arguments": [
+                                {
+                                  "type": "Literal",
+                                  "value": "dashboard/view/webspec/conversationDeck/customerGreetings",
+                                  "raw": "'dashboard/view/webspec/conversationDeck/customerGreetings'",
+                                  "range": [
+                                    515,
+                                    574
+                                  ],
+                                  "parentNode": 3052,
+                                  "uid": 3054
+                                }
+                              ],
+                              "range": [
+                                507,
+                                575
+                              ],
+                              "parentNode": 3048,
+                              "uid": 3052
+                            }
+                          ],
+                          "range": [
+                            489,
+                            576
+                          ],
+                          "parentNode": 3044,
+                          "uid": 3048
+                        },
+                        "range": [
+                          475,
+                          576
+                        ],
+                        "parentNode": 3043,
+                        "uid": 3044
+                      },
+                      "range": [
+                        475,
+                        577
+                      ],
+                      "parentNode": 3042,
+                      "uid": 3043
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                636,
+                                640
+                              ],
+                              "parentNode": 3058,
+                              "uid": 3059
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "bridge",
+                              "range": [
+                                641,
+                                647
+                              ],
+                              "parentNode": 3058,
+                              "uid": 3060
+                            },
+                            "range": [
+                              636,
+                              647
+                            ],
+                            "parentNode": 3057,
+                            "uid": 3058
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "on",
+                            "range": [
+                              648,
+                              650
+                            ],
+                            "parentNode": 3057,
+                            "uid": 3061
+                          },
+                          "range": [
+                            636,
+                            650
+                          ],
+                          "parentNode": 3056,
+                          "uid": 3057
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "state/greetingMaximizedState",
+                            "raw": "'state/greetingMaximizedState'",
+                            "range": [
+                              651,
+                              681
+                            ],
+                            "parentNode": 3056,
+                            "uid": 3062
+                          },
+                          {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "ThisExpression",
+                                  "range": [
+                                    683,
+                                    687
+                                  ],
+                                  "parentNode": 3065,
+                                  "uid": 3066
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "stateHandlerGreetingMaximized",
+                                  "range": [
+                                    688,
+                                    717
+                                  ],
+                                  "parentNode": 3065,
+                                  "uid": 3067
+                                },
+                                "range": [
+                                  683,
+                                  717
+                                ],
+                                "parentNode": 3064,
+                                "uid": 3065
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "bind",
+                                "range": [
+                                  718,
+                                  722
+                                ],
+                                "parentNode": 3064,
+                                "uid": 3068
+                              },
+                              "range": [
+                                683,
+                                722
+                              ],
+                              "parentNode": 3063,
+                              "uid": 3064
+                            },
+                            "arguments": [
+                              {
+                                "type": "ThisExpression",
+                                "range": [
+                                  723,
+                                  727
+                                ],
+                                "parentNode": 3063,
+                                "uid": 3069
+                              }
+                            ],
+                            "range": [
+                              683,
+                              728
+                            ],
+                            "parentNode": 3056,
+                            "uid": 3063
+                          }
+                        ],
+                        "range": [
+                          636,
+                          729
+                        ],
+                        "parentNode": 3055,
+                        "uid": 3056
+                      },
+                      "range": [
+                        636,
+                        730
+                      ],
+                      "parentNode": 3042,
+                      "uid": 3055
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                737,
+                                741
+                              ],
+                              "parentNode": 3073,
+                              "uid": 3074
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "bridge",
+                              "range": [
+                                742,
+                                748
+                              ],
+                              "parentNode": 3073,
+                              "uid": 3075
+                            },
+                            "range": [
+                              737,
+                              748
+                            ],
+                            "parentNode": 3072,
+                            "uid": 3073
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "on",
+                            "range": [
+                              749,
+                              751
+                            ],
+                            "parentNode": 3072,
+                            "uid": 3076
+                          },
+                          "range": [
+                            737,
+                            751
+                          ],
+                          "parentNode": 3071,
+                          "uid": 3072
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "state/greetingMinimizedState",
+                            "raw": "'state/greetingMinimizedState'",
+                            "range": [
+                              752,
+                              782
+                            ],
+                            "parentNode": 3071,
+                            "uid": 3077
+                          },
+                          {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "ThisExpression",
+                                  "range": [
+                                    784,
+                                    788
+                                  ],
+                                  "parentNode": 3080,
+                                  "uid": 3081
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "stateHandlerGreetingMinimized",
+                                  "range": [
+                                    789,
+                                    818
+                                  ],
+                                  "parentNode": 3080,
+                                  "uid": 3082
+                                },
+                                "range": [
+                                  784,
+                                  818
+                                ],
+                                "parentNode": 3079,
+                                "uid": 3080
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "bind",
+                                "range": [
+                                  819,
+                                  823
+                                ],
+                                "parentNode": 3079,
+                                "uid": 3083
+                              },
+                              "range": [
+                                784,
+                                823
+                              ],
+                              "parentNode": 3078,
+                              "uid": 3079
+                            },
+                            "arguments": [
+                              {
+                                "type": "ThisExpression",
+                                "range": [
+                                  824,
+                                  828
+                                ],
+                                "parentNode": 3078,
+                                "uid": 3084
+                              }
+                            ],
+                            "range": [
+                              784,
+                              829
+                            ],
+                            "parentNode": 3071,
+                            "uid": 3078
+                          }
+                        ],
+                        "range": [
+                          737,
+                          830
+                        ],
+                        "parentNode": 3070,
+                        "uid": 3071
+                      },
+                      "range": [
+                        737,
+                        831
+                      ],
+                      "parentNode": 3042,
+                      "uid": 3070
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "controllerChannel",
+                            "range": [
+                              894,
+                              911
+                            ],
+                            "parentNode": 3087,
+                            "uid": 3088
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "on",
+                            "range": [
+                              912,
+                              914
+                            ],
+                            "parentNode": 3087,
+                            "uid": 3089
+                          },
+                          "range": [
+                            894,
+                            914
+                          ],
+                          "parentNode": 3086,
+                          "uid": 3087
+                        },
+                        "arguments": [
+                          {
+                            "type": "ObjectExpression",
+                            "properties": [
+                              {
+                                "type": "Property",
+                                "key": {
+                                  "type": "Identifier",
+                                  "name": "convoDeckMessagesDisplay",
+                                  "range": [
+                                    925,
+                                    949
+                                  ],
+                                  "parentNode": 3091,
+                                  "uid": 3092
+                                },
+                                "value": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "ThisExpression",
+                                        "range": [
+                                          951,
+                                          955
+                                        ],
+                                        "parentNode": 3095,
+                                        "uid": 3096
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "receieveConvoDeckMessagesDisplay",
+                                        "range": [
+                                          956,
+                                          988
+                                        ],
+                                        "parentNode": 3095,
+                                        "uid": 3097
+                                      },
+                                      "range": [
+                                        951,
+                                        988
+                                      ],
+                                      "parentNode": 3094,
+                                      "uid": 3095
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "bind",
+                                      "range": [
+                                        989,
+                                        993
+                                      ],
+                                      "parentNode": 3094,
+                                      "uid": 3098
+                                    },
+                                    "range": [
+                                      951,
+                                      993
+                                    ],
+                                    "parentNode": 3093,
+                                    "uid": 3094
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "ThisExpression",
+                                      "range": [
+                                        994,
+                                        998
+                                      ],
+                                      "parentNode": 3093,
+                                      "uid": 3099
+                                    }
+                                  ],
+                                  "range": [
+                                    951,
+                                    999
+                                  ],
+                                  "parentNode": 3091,
+                                  "uid": 3093
+                                },
+                                "kind": "init",
+                                "range": [
+                                  925,
+                                  999
+                                ],
+                                "parentNode": 3090,
+                                "uid": 3091
+                              }
+                            ],
+                            "range": [
+                              915,
+                              1007
+                            ],
+                            "parentNode": 3086,
+                            "uid": 3090
+                          }
+                        ],
+                        "range": [
+                          894,
+                          1008
+                        ],
+                        "parentNode": 3085,
+                        "uid": 3086
+                      },
+                      "range": [
+                        894,
+                        1009
+                      ],
+                      "parentNode": 3042,
+                      "uid": 3085
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "Identifier",
+                            "name": "controllerChannel",
+                            "range": [
+                              1016,
+                              1033
+                            ],
+                            "parentNode": 3102,
+                            "uid": 3103
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "on",
+                            "range": [
+                              1034,
+                              1036
+                            ],
+                            "parentNode": 3102,
+                            "uid": 3104
+                          },
+                          "range": [
+                            1016,
+                            1036
+                          ],
+                          "parentNode": 3101,
+                          "uid": 3102
+                        },
+                        "arguments": [
+                          {
+                            "type": "ObjectExpression",
+                            "properties": [
+                              {
+                                "type": "Property",
+                                "key": {
+                                  "type": "Identifier",
+                                  "name": "convoDeckMessageHeaderRemoved",
+                                  "range": [
+                                    1047,
+                                    1076
+                                  ],
+                                  "parentNode": 3106,
+                                  "uid": 3107
+                                },
+                                "value": {
+                                  "type": "CallExpression",
+                                  "callee": {
+                                    "type": "MemberExpression",
+                                    "computed": false,
+                                    "object": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "ThisExpression",
+                                        "range": [
+                                          1078,
+                                          1082
+                                        ],
+                                        "parentNode": 3110,
+                                        "uid": 3111
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "receiveConvoDeckMessageHeaderRemoved",
+                                        "range": [
+                                          1083,
+                                          1119
+                                        ],
+                                        "parentNode": 3110,
+                                        "uid": 3112
+                                      },
+                                      "range": [
+                                        1078,
+                                        1119
+                                      ],
+                                      "parentNode": 3109,
+                                      "uid": 3110
+                                    },
+                                    "property": {
+                                      "type": "Identifier",
+                                      "name": "bind",
+                                      "range": [
+                                        1120,
+                                        1124
+                                      ],
+                                      "parentNode": 3109,
+                                      "uid": 3113
+                                    },
+                                    "range": [
+                                      1078,
+                                      1124
+                                    ],
+                                    "parentNode": 3108,
+                                    "uid": 3109
+                                  },
+                                  "arguments": [
+                                    {
+                                      "type": "ThisExpression",
+                                      "range": [
+                                        1125,
+                                        1129
+                                      ],
+                                      "parentNode": 3108,
+                                      "uid": 3114
+                                    }
+                                  ],
+                                  "range": [
+                                    1078,
+                                    1130
+                                  ],
+                                  "parentNode": 3106,
+                                  "uid": 3108
+                                },
+                                "kind": "init",
+                                "range": [
+                                  1047,
+                                  1130
+                                ],
+                                "parentNode": 3105,
+                                "uid": 3106
+                              }
+                            ],
+                            "range": [
+                              1037,
+                              1138
+                            ],
+                            "parentNode": 3101,
+                            "uid": 3105
+                          }
+                        ],
+                        "range": [
+                          1016,
+                          1139
+                        ],
+                        "parentNode": 3100,
+                        "uid": 3101
+                      },
+                      "range": [
+                        1016,
+                        1140
+                      ],
+                      "parentNode": 3042,
+                      "uid": 3100
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              1248,
+                              1252
+                            ],
+                            "parentNode": 3117,
+                            "uid": 3118
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "setGreetingHideTimer",
+                            "range": [
+                              1253,
+                              1273
+                            ],
+                            "parentNode": 3117,
+                            "uid": 3119
+                          },
+                          "range": [
+                            1248,
+                            1273
+                          ],
+                          "parentNode": 3116,
+                          "uid": 3117
+                        },
+                        "arguments": [],
+                        "range": [
+                          1248,
+                          1275
+                        ],
+                        "parentNode": 3115,
+                        "uid": 3116
+                      },
+                      "range": [
+                        1248,
+                        1276
+                      ],
+                      "parentNode": 3042,
+                      "uid": 3115
+                    }
+                  ],
+                  "range": [
+                    467,
+                    1282
+                  ],
+                  "parentNode": 3041,
+                  "uid": 3042
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  455,
+                  1282
+                ],
+                "parentNode": 3037,
+                "uid": 3041,
+                "returnType": ""
+              },
+              "range": [
+                443,
+                1282
+              ],
+              "parentNode": 3036,
+              "uid": 3037
+            },
+            "range": [
+              443,
+              1283
+            ],
+            "parentNode": 3016,
+            "uid": 3036
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    1390,
+                    1394
+                  ],
+                  "parentNode": 3122,
+                  "uid": 3123
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "receieveConvoDeckMessagesDisplay",
+                  "range": [
+                    1395,
+                    1427
+                  ],
+                  "parentNode": 3122,
+                  "uid": 3124
+                },
+                "range": [
+                  1390,
+                  1427
+                ],
+                "parentNode": 3121,
+                "uid": 3122
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                1478,
+                                1479
+                              ],
+                              "parentNode": 3130,
+                              "uid": 3131
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "#greeting-area",
+                                "raw": "'#greeting-area'",
+                                "range": [
+                                  1480,
+                                  1496
+                                ],
+                                "parentNode": 3130,
+                                "uid": 3132
+                              }
+                            ],
+                            "range": [
+                              1478,
+                              1497
+                            ],
+                            "parentNode": 3129,
+                            "uid": 3130
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "addClass",
+                            "range": [
+                              1498,
+                              1506
+                            ],
+                            "parentNode": 3129,
+                            "uid": 3133
+                          },
+                          "range": [
+                            1478,
+                            1506
+                          ],
+                          "parentNode": 3128,
+                          "uid": 3129
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "dis-none",
+                            "raw": "'dis-none'",
+                            "range": [
+                              1507,
+                              1517
+                            ],
+                            "parentNode": 3128,
+                            "uid": 3134
+                          }
+                        ],
+                        "range": [
+                          1478,
+                          1518
+                        ],
+                        "parentNode": 3127,
+                        "uid": 3128
+                      },
+                      "range": [
+                        1478,
+                        1519
+                      ],
+                      "parentNode": 3126,
+                      "uid": 3127
+                    }
+                  ],
+                  "range": [
+                    1442,
+                    1525
+                  ],
+                  "parentNode": 3125,
+                  "uid": 3126
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1430,
+                  1525
+                ],
+                "parentNode": 3121,
+                "uid": 3125,
+                "returnType": ""
+              },
+              "range": [
+                1390,
+                1525
+              ],
+              "parentNode": 3120,
+              "uid": 3121
+            },
+            "range": [
+              1390,
+              1526
+            ],
+            "parentNode": 3016,
+            "uid": 3120
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    1636,
+                    1640
+                  ],
+                  "parentNode": 3137,
+                  "uid": 3138
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "receiveConvoDeckMessageHeaderRemoved",
+                  "range": [
+                    1641,
+                    1677
+                  ],
+                  "parentNode": 3137,
+                  "uid": 3139
+                },
+                "range": [
+                  1636,
+                  1677
+                ],
+                "parentNode": 3136,
+                "uid": 3137
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                1728,
+                                1729
+                              ],
+                              "parentNode": 3145,
+                              "uid": 3146
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "#greeting-area",
+                                "raw": "'#greeting-area'",
+                                "range": [
+                                  1730,
+                                  1746
+                                ],
+                                "parentNode": 3145,
+                                "uid": 3147
+                              }
+                            ],
+                            "range": [
+                              1728,
+                              1747
+                            ],
+                            "parentNode": 3144,
+                            "uid": 3145
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "removeClass",
+                            "range": [
+                              1748,
+                              1759
+                            ],
+                            "parentNode": 3144,
+                            "uid": 3148
+                          },
+                          "range": [
+                            1728,
+                            1759
+                          ],
+                          "parentNode": 3143,
+                          "uid": 3144
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "dis-none",
+                            "raw": "'dis-none'",
+                            "range": [
+                              1760,
+                              1770
+                            ],
+                            "parentNode": 3143,
+                            "uid": 3149
+                          }
+                        ],
+                        "range": [
+                          1728,
+                          1771
+                        ],
+                        "parentNode": 3142,
+                        "uid": 3143
+                      },
+                      "range": [
+                        1728,
+                        1772
+                      ],
+                      "parentNode": 3141,
+                      "uid": 3142
+                    }
+                  ],
+                  "range": [
+                    1692,
+                    1778
+                  ],
+                  "parentNode": 3140,
+                  "uid": 3141
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1680,
+                  1778
+                ],
+                "parentNode": 3136,
+                "uid": 3140,
+                "returnType": ""
+              },
+              "range": [
+                1636,
+                1778
+              ],
+              "parentNode": 3135,
+              "uid": 3136
+            },
+            "range": [
+              1636,
+              1779
+            ],
+            "parentNode": 3016,
+            "uid": 3135
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    1907,
+                    1911
+                  ],
+                  "parentNode": 3152,
+                  "uid": 3153
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "stateHandlerGreetingMinimized",
+                  "range": [
+                    1912,
+                    1941
+                  ],
+                  "parentNode": 3152,
+                  "uid": 3154
+                },
+                "range": [
+                  1907,
+                  1941
+                ],
+                "parentNode": 3151,
+                "uid": 3152
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                2007,
+                                2008
+                              ],
+                              "parentNode": 3160,
+                              "uid": 3161
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "#convo-deck-left-col",
+                                "raw": "\"#convo-deck-left-col\"",
+                                "range": [
+                                  2009,
+                                  2031
+                                ],
+                                "parentNode": 3160,
+                                "uid": 3162
+                              }
+                            ],
+                            "range": [
+                              2007,
+                              2032
+                            ],
+                            "parentNode": 3159,
+                            "uid": 3160
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "addClass",
+                            "range": [
+                              2033,
+                              2041
+                            ],
+                            "parentNode": 3159,
+                            "uid": 3163
+                          },
+                          "range": [
+                            2007,
+                            2041
+                          ],
+                          "parentNode": 3158,
+                          "uid": 3159
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "col-xs-4",
+                            "raw": "'col-xs-4'",
+                            "range": [
+                              2042,
+                              2052
+                            ],
+                            "parentNode": 3158,
+                            "uid": 3164
+                          }
+                        ],
+                        "range": [
+                          2007,
+                          2053
+                        ],
+                        "parentNode": 3157,
+                        "uid": 3158
+                      },
+                      "range": [
+                        2007,
+                        2054
+                      ],
+                      "parentNode": 3156,
+                      "uid": 3157
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                2061,
+                                2062
+                              ],
+                              "parentNode": 3168,
+                              "uid": 3169
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "#convo-deck-left-col",
+                                "raw": "\"#convo-deck-left-col\"",
+                                "range": [
+                                  2063,
+                                  2085
+                                ],
+                                "parentNode": 3168,
+                                "uid": 3170
+                              }
+                            ],
+                            "range": [
+                              2061,
+                              2086
+                            ],
+                            "parentNode": 3167,
+                            "uid": 3168
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "removeClass",
+                            "range": [
+                              2087,
+                              2098
+                            ],
+                            "parentNode": 3167,
+                            "uid": 3171
+                          },
+                          "range": [
+                            2061,
+                            2098
+                          ],
+                          "parentNode": 3166,
+                          "uid": 3167
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "col-xs-8",
+                            "raw": "'col-xs-8'",
+                            "range": [
+                              2099,
+                              2109
+                            ],
+                            "parentNode": 3166,
+                            "uid": 3172
+                          }
+                        ],
+                        "range": [
+                          2061,
+                          2110
+                        ],
+                        "parentNode": 3165,
+                        "uid": 3166
+                      },
+                      "range": [
+                        2061,
+                        2111
+                      ],
+                      "parentNode": 3156,
+                      "uid": 3165
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                2118,
+                                2119
+                              ],
+                              "parentNode": 3176,
+                              "uid": 3177
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "#convo-deck-right-col",
+                                "raw": "\"#convo-deck-right-col\"",
+                                "range": [
+                                  2120,
+                                  2143
+                                ],
+                                "parentNode": 3176,
+                                "uid": 3178
+                              }
+                            ],
+                            "range": [
+                              2118,
+                              2144
+                            ],
+                            "parentNode": 3175,
+                            "uid": 3176
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "addClass",
+                            "range": [
+                              2145,
+                              2153
+                            ],
+                            "parentNode": 3175,
+                            "uid": 3179
+                          },
+                          "range": [
+                            2118,
+                            2153
+                          ],
+                          "parentNode": 3174,
+                          "uid": 3175
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "col-xs-8",
+                            "raw": "'col-xs-8'",
+                            "range": [
+                              2154,
+                              2164
+                            ],
+                            "parentNode": 3174,
+                            "uid": 3180
+                          }
+                        ],
+                        "range": [
+                          2118,
+                          2165
+                        ],
+                        "parentNode": 3173,
+                        "uid": 3174
+                      },
+                      "range": [
+                        2118,
+                        2166
+                      ],
+                      "parentNode": 3156,
+                      "uid": 3173
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                2173,
+                                2174
+                              ],
+                              "parentNode": 3184,
+                              "uid": 3185
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "#convo-deck-right-col",
+                                "raw": "\"#convo-deck-right-col\"",
+                                "range": [
+                                  2175,
+                                  2198
+                                ],
+                                "parentNode": 3184,
+                                "uid": 3186
+                              }
+                            ],
+                            "range": [
+                              2173,
+                              2199
+                            ],
+                            "parentNode": 3183,
+                            "uid": 3184
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "removeClass",
+                            "range": [
+                              2200,
+                              2211
+                            ],
+                            "parentNode": 3183,
+                            "uid": 3187
+                          },
+                          "range": [
+                            2173,
+                            2211
+                          ],
+                          "parentNode": 3182,
+                          "uid": 3183
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "col-xs-4",
+                            "raw": "'col-xs-4'",
+                            "range": [
+                              2212,
+                              2222
+                            ],
+                            "parentNode": 3182,
+                            "uid": 3188
+                          }
+                        ],
+                        "range": [
+                          2173,
+                          2223
+                        ],
+                        "parentNode": 3181,
+                        "uid": 3182
+                      },
+                      "range": [
+                        2173,
+                        2224
+                      ],
+                      "parentNode": 3156,
+                      "uid": 3181
+                    }
+                  ],
+                  "range": [
+                    1956,
+                    2230
+                  ],
+                  "parentNode": 3155,
+                  "uid": 3156
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  1944,
+                  2230
+                ],
+                "parentNode": 3151,
+                "uid": 3155,
+                "returnType": ""
+              },
+              "range": [
+                1907,
+                2230
+              ],
+              "parentNode": 3150,
+              "uid": 3151
+            },
+            "range": [
+              1907,
+              2231
+            ],
+            "parentNode": 3016,
+            "uid": 3150
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    2359,
+                    2363
+                  ],
+                  "parentNode": 3191,
+                  "uid": 3192
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "stateHandlerGreetingMaximized",
+                  "range": [
+                    2364,
+                    2393
+                  ],
+                  "parentNode": 3191,
+                  "uid": 3193
+                },
+                "range": [
+                  2359,
+                  2393
+                ],
+                "parentNode": 3190,
+                "uid": 3191
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                2459,
+                                2460
+                              ],
+                              "parentNode": 3199,
+                              "uid": 3200
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "#convo-deck-left-col",
+                                "raw": "\"#convo-deck-left-col\"",
+                                "range": [
+                                  2461,
+                                  2483
+                                ],
+                                "parentNode": 3199,
+                                "uid": 3201
+                              }
+                            ],
+                            "range": [
+                              2459,
+                              2484
+                            ],
+                            "parentNode": 3198,
+                            "uid": 3199
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "addClass",
+                            "range": [
+                              2485,
+                              2493
+                            ],
+                            "parentNode": 3198,
+                            "uid": 3202
+                          },
+                          "range": [
+                            2459,
+                            2493
+                          ],
+                          "parentNode": 3197,
+                          "uid": 3198
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "col-xs-8",
+                            "raw": "'col-xs-8'",
+                            "range": [
+                              2494,
+                              2504
+                            ],
+                            "parentNode": 3197,
+                            "uid": 3203
+                          }
+                        ],
+                        "range": [
+                          2459,
+                          2505
+                        ],
+                        "parentNode": 3196,
+                        "uid": 3197
+                      },
+                      "range": [
+                        2459,
+                        2506
+                      ],
+                      "parentNode": 3195,
+                      "uid": 3196
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                2513,
+                                2514
+                              ],
+                              "parentNode": 3207,
+                              "uid": 3208
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "#convo-deck-left-col",
+                                "raw": "\"#convo-deck-left-col\"",
+                                "range": [
+                                  2515,
+                                  2537
+                                ],
+                                "parentNode": 3207,
+                                "uid": 3209
+                              }
+                            ],
+                            "range": [
+                              2513,
+                              2538
+                            ],
+                            "parentNode": 3206,
+                            "uid": 3207
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "removeClass",
+                            "range": [
+                              2539,
+                              2550
+                            ],
+                            "parentNode": 3206,
+                            "uid": 3210
+                          },
+                          "range": [
+                            2513,
+                            2550
+                          ],
+                          "parentNode": 3205,
+                          "uid": 3206
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "col-xs-4",
+                            "raw": "'col-xs-4'",
+                            "range": [
+                              2551,
+                              2561
+                            ],
+                            "parentNode": 3205,
+                            "uid": 3211
+                          }
+                        ],
+                        "range": [
+                          2513,
+                          2562
+                        ],
+                        "parentNode": 3204,
+                        "uid": 3205
+                      },
+                      "range": [
+                        2513,
+                        2563
+                      ],
+                      "parentNode": 3195,
+                      "uid": 3204
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                2570,
+                                2571
+                              ],
+                              "parentNode": 3215,
+                              "uid": 3216
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "#convo-deck-right-col",
+                                "raw": "\"#convo-deck-right-col\"",
+                                "range": [
+                                  2572,
+                                  2595
+                                ],
+                                "parentNode": 3215,
+                                "uid": 3217
+                              }
+                            ],
+                            "range": [
+                              2570,
+                              2596
+                            ],
+                            "parentNode": 3214,
+                            "uid": 3215
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "addClass",
+                            "range": [
+                              2597,
+                              2605
+                            ],
+                            "parentNode": 3214,
+                            "uid": 3218
+                          },
+                          "range": [
+                            2570,
+                            2605
+                          ],
+                          "parentNode": 3213,
+                          "uid": 3214
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "col-xs-4",
+                            "raw": "'col-xs-4'",
+                            "range": [
+                              2606,
+                              2616
+                            ],
+                            "parentNode": 3213,
+                            "uid": 3219
+                          }
+                        ],
+                        "range": [
+                          2570,
+                          2617
+                        ],
+                        "parentNode": 3212,
+                        "uid": 3213
+                      },
+                      "range": [
+                        2570,
+                        2618
+                      ],
+                      "parentNode": 3195,
+                      "uid": 3212
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "Identifier",
+                              "name": "$",
+                              "range": [
+                                2625,
+                                2626
+                              ],
+                              "parentNode": 3223,
+                              "uid": 3224
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "#convo-deck-right-col",
+                                "raw": "\"#convo-deck-right-col\"",
+                                "range": [
+                                  2627,
+                                  2650
+                                ],
+                                "parentNode": 3223,
+                                "uid": 3225
+                              }
+                            ],
+                            "range": [
+                              2625,
+                              2651
+                            ],
+                            "parentNode": 3222,
+                            "uid": 3223
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "removeClass",
+                            "range": [
+                              2652,
+                              2663
+                            ],
+                            "parentNode": 3222,
+                            "uid": 3226
+                          },
+                          "range": [
+                            2625,
+                            2663
+                          ],
+                          "parentNode": 3221,
+                          "uid": 3222
+                        },
+                        "arguments": [
+                          {
+                            "type": "Literal",
+                            "value": "col-xs-8",
+                            "raw": "'col-xs-8'",
+                            "range": [
+                              2664,
+                              2674
+                            ],
+                            "parentNode": 3221,
+                            "uid": 3227
+                          }
+                        ],
+                        "range": [
+                          2625,
+                          2675
+                        ],
+                        "parentNode": 3220,
+                        "uid": 3221
+                      },
+                      "range": [
+                        2625,
+                        2676
+                      ],
+                      "parentNode": 3195,
+                      "uid": 3220
+                    }
+                  ],
+                  "range": [
+                    2408,
+                    2682
+                  ],
+                  "parentNode": 3194,
+                  "uid": 3195
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  2396,
+                  2682
+                ],
+                "parentNode": 3190,
+                "uid": 3194,
+                "returnType": ""
+              },
+              "range": [
+                2359,
+                2682
+              ],
+              "parentNode": 3189,
+              "uid": 3190
+            },
+            "range": [
+              2359,
+              2683
+            ],
+            "parentNode": 3016,
+            "uid": 3189
+          },
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "AssignmentExpression",
+              "operator": "=",
+              "left": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "ThisExpression",
+                  "range": [
+                    2763,
+                    2767
+                  ],
+                  "parentNode": 3230,
+                  "uid": 3231
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "setGreetingHideTimer",
+                  "range": [
+                    2768,
+                    2788
+                  ],
+                  "parentNode": 3230,
+                  "uid": 3232
+                },
+                "range": [
+                  2763,
+                  2788
+                ],
+                "parentNode": 3229,
+                "uid": 3230
+              },
+              "right": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [],
+                "defaults": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "expression": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "Identifier",
+                          "name": "setTimeout",
+                          "range": [
+                            2811,
+                            2821
+                          ],
+                          "parentNode": 3236,
+                          "uid": 3237
+                        },
+                        "arguments": [
+                          {
+                            "type": "FunctionExpression",
+                            "id": null,
+                            "params": [],
+                            "defaults": [],
+                            "body": {
+                              "type": "BlockStatement",
+                              "body": [
+                                {
+                                  "type": "ExpressionStatement",
+                                  "expression": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                      "type": "MemberExpression",
+                                      "computed": false,
+                                      "object": {
+                                        "type": "Identifier",
+                                        "name": "controllerChannel",
+                                        "range": [
+                                          2844,
+                                          2861
+                                        ],
+                                        "parentNode": 3242,
+                                        "uid": 3243
+                                      },
+                                      "property": {
+                                        "type": "Identifier",
+                                        "name": "emit",
+                                        "range": [
+                                          2862,
+                                          2866
+                                        ],
+                                        "parentNode": 3242,
+                                        "uid": 3244
+                                      },
+                                      "range": [
+                                        2844,
+                                        2866
+                                      ],
+                                      "parentNode": 3241,
+                                      "uid": 3242
+                                    },
+                                    "arguments": [
+                                      {
+                                        "type": "Literal",
+                                        "value": "convoDeckGreetingHideReady",
+                                        "raw": "'convoDeckGreetingHideReady'",
+                                        "range": [
+                                          2867,
+                                          2895
+                                        ],
+                                        "parentNode": 3241,
+                                        "uid": 3245
+                                      }
+                                    ],
+                                    "range": [
+                                      2844,
+                                      2896
+                                    ],
+                                    "parentNode": 3240,
+                                    "uid": 3241
+                                  },
+                                  "range": [
+                                    2844,
+                                    2897
+                                  ],
+                                  "parentNode": 3239,
+                                  "uid": 3240
+                                }
+                              ],
+                              "range": [
+                                2834,
+                                2905
+                              ],
+                              "parentNode": 3238,
+                              "uid": 3239
+                            },
+                            "rest": null,
+                            "generator": false,
+                            "expression": false,
+                            "range": [
+                              2822,
+                              2905
+                            ],
+                            "parentNode": 3236,
+                            "uid": 3238,
+                            "returnType": ""
+                          },
+                          {
+                            "type": "CallExpression",
+                            "callee": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "settings",
+                                "range": [
+                                  2907,
+                                  2915
+                                ],
+                                "parentNode": 3247,
+                                "uid": 3248
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "get",
+                                "range": [
+                                  2916,
+                                  2919
+                                ],
+                                "parentNode": 3247,
+                                "uid": 3249
+                              },
+                              "range": [
+                                2907,
+                                2919
+                              ],
+                              "parentNode": 3246,
+                              "uid": 3247
+                            },
+                            "arguments": [
+                              {
+                                "type": "Literal",
+                                "value": "convoDeckGreetingDisplayTimer",
+                                "raw": "'convoDeckGreetingDisplayTimer'",
+                                "range": [
+                                  2920,
+                                  2951
+                                ],
+                                "parentNode": 3246,
+                                "uid": 3250
+                              }
+                            ],
+                            "range": [
+                              2907,
+                              2952
+                            ],
+                            "parentNode": 3236,
+                            "uid": 3246
+                          }
+                        ],
+                        "range": [
+                          2811,
+                          2953
+                        ],
+                        "parentNode": 3235,
+                        "uid": 3236
+                      },
+                      "range": [
+                        2811,
+                        2954
+                      ],
+                      "parentNode": 3234,
+                      "uid": 3235
+                    }
+                  ],
+                  "range": [
+                    2803,
+                    2960
+                  ],
+                  "parentNode": 3233,
+                  "uid": 3234
+                },
+                "rest": null,
+                "generator": false,
+                "expression": false,
+                "range": [
+                  2791,
+                  2960
+                ],
+                "parentNode": 3229,
+                "uid": 3233,
+                "returnType": ""
+              },
+              "range": [
+                2763,
+                2960
+              ],
+              "parentNode": 3228,
+              "uid": 3229
+            },
+            "range": [
+              2763,
+              2961
+            ],
+            "parentNode": 3016,
+            "uid": 3228
+          }
+        ],
+        "range": [
+          186,
+          2965
+        ],
+        "parentNode": 3014,
+        "uid": 3016
+      },
+      "rest": null,
+      "generator": false,
+      "expression": false,
+      "range": [
+        154,
+        2965
+      ],
+      "parentNode": 3013,
+      "uid": 3014,
+      "returnType": ""
+    },
+    "range": [
+      147,
+      2966
+    ],
+    "parentNode": 3012,
+    "uid": 3013,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 88,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/conversationDeck",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 2992,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./customerGreetings",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "customeGreetingsView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "return function customeGreetingsView() {"
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function() {"
+      },
+      {
+        "name": "receieveConvoDeckMessagesDisplay",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 39,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.receieveConvoDeckMessagesDisplay = function() {"
+      },
+      {
+        "name": "receiveConvoDeckMessageHeaderRemoved",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 48,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.receiveConvoDeckMessageHeaderRemoved = function() {"
+      },
+      {
+        "name": "stateHandlerGreetingMinimized",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 57,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.stateHandlerGreetingMinimized = function() {"
+      },
+      {
+        "name": "stateHandlerGreetingMaximized",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 69,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.stateHandlerGreetingMaximized = function() {"
+      },
+      {
+        "name": "setGreetingHideTimer",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 81,
+        "memberOf": "this",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.setGreetingHideTimer = function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/view/conversationDeck",
+    "fileName": "customerGreetings.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 80
+}

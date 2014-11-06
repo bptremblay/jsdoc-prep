@@ -1,0 +1,458 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "hel_account_information",
+      "AMD": true,
+      "webPath": "/component/myAccounts"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [
+      {
+        "id": "(error)",
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "Bad character(s) found: ''\\t''."
+      }
+    ],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updatePaymentDueDate'.",
+        "code": "wfJD",
+        "evidence": "updatePaymentDueDate: function() {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updatePaymentDueDate'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component/myAccounts/helAccountInformation.js",
+  "folderPath": "test-source/component/myAccounts",
+  "fileName": "helAccountInformation.js",
+  "packagePath": "/component/myAccounts",
+  "webPath": "/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "hel_account_information",
+  "name": "helAccountInformation",
+  "camelName": "HelAccountInformation",
+  "processedFilePath": "test-output/component/myAccounts/helAccountInformation.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "rewrittenReturnBody": "return /**@alias module:component/myAccounts/helAccountInformation */ {\n    /**\n     * Init.\n     */\n    init: function () {\n      context = this.settings.context;\n    },\n    /**\n     * Update payment due date.\n     */\n    updatePaymentDueDate: function () {\n      context.appChannel.emit('getUpdatePaymentDueDateBegin', this.model.get());\n    }\n  };",
+  "rewrittenReturnBodyNode": {
+    "type": "ReturnStatement",
+    "argument": {
+      "type": "ObjectExpression",
+      "properties": [
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "init",
+            "range": [
+              94,
+              98
+            ],
+            "parentNode": 441,
+            "uid": 442
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "AssignmentExpression",
+                    "operator": "=",
+                    "left": {
+                      "type": "Identifier",
+                      "name": "context",
+                      "range": [
+                        120,
+                        127
+                      ],
+                      "parentNode": 446,
+                      "uid": 447
+                    },
+                    "right": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "ThisExpression",
+                          "range": [
+                            130,
+                            134
+                          ],
+                          "parentNode": 449,
+                          "uid": 450
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "settings",
+                          "range": [
+                            135,
+                            143
+                          ],
+                          "parentNode": 449,
+                          "uid": 451
+                        },
+                        "range": [
+                          130,
+                          143
+                        ],
+                        "parentNode": 448,
+                        "uid": 449
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "context",
+                        "range": [
+                          144,
+                          151
+                        ],
+                        "parentNode": 448,
+                        "uid": 452
+                      },
+                      "range": [
+                        130,
+                        151
+                      ],
+                      "parentNode": 446,
+                      "uid": 448
+                    },
+                    "range": [
+                      120,
+                      151
+                    ],
+                    "parentNode": 445,
+                    "uid": 446
+                  },
+                  "range": [
+                    120,
+                    152
+                  ],
+                  "parentNode": 444,
+                  "uid": 445
+                }
+              ],
+              "range": [
+                112,
+                158
+              ],
+              "parentNode": 443,
+              "uid": 444
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              100,
+              158
+            ],
+            "parentNode": 441,
+            "uid": 443,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            94,
+            158
+          ],
+          "parentNode": 440,
+          "uid": 441
+        },
+        {
+          "type": "Property",
+          "key": {
+            "type": "Identifier",
+            "name": "updatePaymentDueDate",
+            "range": [
+              212,
+              232
+            ],
+            "parentNode": 453,
+            "uid": 454
+          },
+          "value": {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [],
+            "defaults": [],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "MemberExpression",
+                        "computed": false,
+                        "object": {
+                          "type": "Identifier",
+                          "name": "context",
+                          "range": [
+                            254,
+                            261
+                          ],
+                          "parentNode": 460,
+                          "uid": 461
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "name": "appChannel",
+                          "range": [
+                            262,
+                            272
+                          ],
+                          "parentNode": 460,
+                          "uid": 462
+                        },
+                        "range": [
+                          254,
+                          272
+                        ],
+                        "parentNode": 459,
+                        "uid": 460
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "emit",
+                        "range": [
+                          273,
+                          277
+                        ],
+                        "parentNode": 459,
+                        "uid": 463
+                      },
+                      "range": [
+                        254,
+                        277
+                      ],
+                      "parentNode": 458,
+                      "uid": 459
+                    },
+                    "arguments": [
+                      {
+                        "type": "Literal",
+                        "value": "getUpdatePaymentDueDateBegin",
+                        "raw": "'getUpdatePaymentDueDateBegin'",
+                        "range": [
+                          278,
+                          308
+                        ],
+                        "parentNode": 458,
+                        "uid": 464
+                      },
+                      {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "ThisExpression",
+                              "range": [
+                                310,
+                                314
+                              ],
+                              "parentNode": 467,
+                              "uid": 468
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "model",
+                              "range": [
+                                315,
+                                320
+                              ],
+                              "parentNode": 467,
+                              "uid": 469
+                            },
+                            "range": [
+                              310,
+                              320
+                            ],
+                            "parentNode": 466,
+                            "uid": 467
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "get",
+                            "range": [
+                              321,
+                              324
+                            ],
+                            "parentNode": 466,
+                            "uid": 470
+                          },
+                          "range": [
+                            310,
+                            324
+                          ],
+                          "parentNode": 465,
+                          "uid": 466
+                        },
+                        "arguments": [],
+                        "range": [
+                          310,
+                          326
+                        ],
+                        "parentNode": 458,
+                        "uid": 465
+                      }
+                    ],
+                    "range": [
+                      254,
+                      327
+                    ],
+                    "parentNode": 457,
+                    "uid": 458
+                  },
+                  "range": [
+                    254,
+                    328
+                  ],
+                  "parentNode": 456,
+                  "uid": 457
+                }
+              ],
+              "range": [
+                246,
+                334
+              ],
+              "parentNode": 455,
+              "uid": 456
+            },
+            "rest": null,
+            "generator": false,
+            "expression": false,
+            "range": [
+              234,
+              334
+            ],
+            "parentNode": 453,
+            "uid": 455,
+            "returnType": ""
+          },
+          "kind": "init",
+          "range": [
+            212,
+            334
+          ],
+          "parentNode": 440,
+          "uid": 453
+        }
+      ],
+      "range": [
+        59,
+        338
+      ],
+      "parentNode": 439,
+      "uid": 440
+    },
+    "range": [
+      52,
+      339
+    ],
+    "parentNode": 434,
+    "uid": 439,
+    "returnType": ""
+  },
+  "jsDoccerProcData": {
+    "lines": 13,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 265,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./helAccountInformation",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function() {"
+      },
+      {
+        "name": "updatePaymentDueDate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "",
+        "originalJsDocDescription": {},
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "updatePaymentDueDate: function() {"
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/component/myAccounts",
+    "fileName": "helAccountInformation.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 21
+}
