@@ -61,10 +61,10 @@ var processingChain = [
   'jsBeautifyProc',
   'amdProc',
   'jsDoccerProc',
- 'jsDocNameFixerProc',
- 'fixClassDeclarationsProc',
- 'jsDoc3PrepProc',
-  'trimProc',
+// 'jsDocNameFixerProc',
+// 'fixClassDeclarationsProc',
+// 'jsDoc3PrepProc',
+//  'trimProc',
   'jsBeautifyProc'
   ];
 

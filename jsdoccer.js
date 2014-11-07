@@ -1996,13 +1996,20 @@ function addMissingComments(walkerObj) {
     uid = 0;
     nodes = [];
 
-    ast = _esprima.parse(input, {
-        comment : true,
-        tolerant : true,
-        range : true,
-        raw : true,
-        tokens : true
-    });
+    try{
+        ast = _esprima.parse(input, {
+            comment : true,
+            tolerant : true,
+            range : true,
+            raw : true,
+            tokens : true
+        });
+    }
+    catch(esError){
+        console.warn(esError);
+        return 'ERROR';
+    }
+
 
     // writeFile("dump.json", JSON.stringify(ast, null, 2));
 
@@ -2098,13 +2105,20 @@ function addMissingComments(walkerObj) {
         walkerObj.source = newFile;
         walkerObj.preprocessed = true;
 
-        ast = _esprima.parse(walkerObj.source, {
-            comment : true,
-            tolerant : true,
-            range : true,
-            raw : true,
-            tokens : true
-        });
+        
+        try{
+            ast = _esprima.parse(walkerObj.source, {
+                comment : true,
+                tolerant : true,
+                range : true,
+                raw : true,
+                tokens : true
+            });
+        }
+        catch(esError){
+            console.warn(esError);
+            return 'ERROR';
+        }
 
         functionExpressions = getNodesByType(ast, 'FunctionExpression');
         functionDeclarations = getNodesByType(ast, 'FunctionDeclaration');
