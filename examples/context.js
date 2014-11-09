@@ -10,6 +10,8 @@ define(function(require) {
   /**
    * @class Context
    */
+	// in the @lends notation directly below, see how we borrow from rdf-like syntax and and use the hash to denote instance.
+
     Context = require('./declare')( /** @lends module:blue/context~Context */ {
 
       constructor: function Context() {
