@@ -646,7 +646,7 @@
             "raw": "No jsDoc Comments for method 'ChildContext'.",
             "code": "wfJD",
             "evidence": "this.ChildContext = function ChildContext() {",
-            "line": 76,
+            "line": 74,
             "character": -1,
             "scope": "(main)",
             "a": "",
@@ -669,7 +669,7 @@
       "couldParseOriginalSource": true,
       "preprocessed": true,
       "jsDoccerProcData": {
-        "lines": 102,
+        "lines": 100,
         "requires": [],
         "className": "n/a",
         "packagePath": "",
@@ -678,7 +678,7 @@
         "no_lib": true,
         "inferencedClassName": "n/a",
         "uses_$": false,
-        "chars": 2590,
+        "chars": 2516,
         "uses_YUI": false,
         "fields": [],
         "moduleName": "./context",
@@ -693,9 +693,9 @@
             "name": "Context",
             "visibility": "public",
             "static": false,
-            "lineNumber": 17,
+            "lineNumber": 15,
             "memberOf": "",
-            "doclet": "/**\n * @constructs module:blue/context\n * @augments {null}\n * \n * @constructor\n */",
+            "doclet": "/**\n * @constructs module:fluffy/context\n * @augments {null}\n * \n * @constructor\n */",
             "description": "",
             "return": "",
             "classDeclarationFlag": true,
@@ -706,7 +706,7 @@
                 "line": 1,
                 "lastLine": 1,
                 "textStartsOnSameLine": true,
-                "text": "module:blue/context"
+                "text": "module:fluffy/context"
               },
               "augments": {
                 "tag": "augments",
@@ -721,7 +721,7 @@
             "name": "newChild",
             "visibility": "public",
             "static": false,
-            "lineNumber": 63,
+            "lineNumber": 61,
             "memberOf": "",
             "doclet": "/**\n * @function\n * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context. \n * @return {Context} The child context.\n */",
             "args": [
@@ -761,7 +761,7 @@
             "name": "ChildContext",
             "visibility": "public",
             "static": false,
-            "lineNumber": 76,
+            "lineNumber": 74,
             "memberOf": "",
             "doclet": "/**\n * Creates a new instance of class ChildContext.\n * @constructor\n */",
             "description": "",
@@ -782,7 +782,7 @@
       "testStubs": "\n",
       "couldParseProcessedSource": true,
       "corrupted": false,
-      "numberOfLines": 89
+      "numberOfLines": 87
     },
     {
       "results": {
@@ -2859,7 +2859,7 @@
     }
   ],
   "path": "test-source",
-  "timeInSeconds": 0.587,
+  "timeInSeconds": 0.586,
   "outPath": "test-output",
   "testPath": "test-jstests",
   "docPath": "test-jsdocs",

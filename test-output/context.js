@@ -1,15 +1,13 @@
 /**
- * @author Jeff Rose
- * @copyright &copy; JPMorgan Chase & Co. All rights reserved.
- * @module blue/context
- * @requires blue/declare
- * @requires blue/is
+ * @module fluffy/context
+ * @requires fluffy/declare
+ * @requires fluffy/is
  */
 define(function(require) {
   var is = require('./is'),
-    Context = require('./declare')( /** @lends module:blue/context# */ {
+    Context = require('./declare')( /** @lends module:fluffy/context# */ {
       /**
-       * @constructs module:blue/context
+       * @constructs module:fluffy/context
        * @augments {null}
        *
        * @constructor
