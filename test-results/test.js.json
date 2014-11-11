@@ -117,7 +117,7 @@
     "no_lib": true,
     "inferencedClassName": "n/a",
     "uses_$": false,
-    "chars": 4929,
+    "chars": 4926,
     "uses_YUI": false,
     "fields": [],
     "moduleName": "./test",
@@ -128,7 +128,8 @@
       "Freenox": 672,
       "SecondClass": 735,
       "ThirdClass": 771,
-      "FourthClass": 791
+      "FourthClass": 781,
+      "FifthClass": 791
     },
     "methods": [
       {
@@ -343,13 +344,41 @@
         "name": "FourthClass",
         "visibility": "public",
         "static": false,
+        "lineNumber": 100,
+        "memberOf": "",
+        "doclet": "/**\n * Some text without a description.\n * @constructor\n * @description A description tag with more than\n *  one line of stuff\n *  and some of it could be very very long\n * \n *  and some of it could be after a BLANK line.\n * \n */",
+        "description": "\n Some text without a description.\nA description tag with more than\n one line of stuff\n and some of it could be very very long\n\n and some of it could be after a BLANK line.\n",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function FourthClass() {",
+        "originalJsDocDescription": {
+          "constructor": {
+            "tag": "constructor",
+            "line": 2,
+            "lastLine": 2,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "description": {
+            "tag": "description",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "A description tag with more than\n one line of stuff\n and some of it could be very very long\n\n and some of it could be after a BLANK line.\n"
+          }
+        }
+      },
+      {
+        "name": "FifthClass",
+        "visibility": "public",
+        "static": false,
         "lineNumber": 117,
         "memberOf": "",
         "doclet": "/**\n * This is a preamble description that comes before the real description.\n * @constructor\n * @description A description tag with more than\n *  one line of stuff\n *  and some of it could be very very long\n * \n *  and some of it could be after a BLANK line.\n * @example \n *  //This is sample code!\n *  var ft = new FourthClass();\n *  //Note we are using a zero-arg constructor.\n * \n */",
         "description": "\n This is a preamble description that comes before the real description.\nA description tag with more than\n one line of stuff\n and some of it could be very very long\n\n and some of it could be after a BLANK line.",
         "return": "",
         "classDeclarationFlag": true,
-        "line": "function FourthClass() {",
+        "line": "function FifthClass() {",
         "originalJsDocDescription": {
           "constructor": {
             "tag": "constructor",
@@ -379,12 +408,12 @@
         "visibility": "public",
         "static": false,
         "lineNumber": 125,
-        "memberOf": "FourthClass.prototype",
+        "memberOf": "FifthClass.prototype",
         "doclet": "/**\n * Redundant 'function' tag.\n * @function\n * @return {boolean}\n */",
         "description": "\n Redundant 'function' tag.",
         "return": "{boolean}",
         "classDeclarationFlag": false,
-        "line": "FourthClass.prototype.someFunction = function() {",
+        "line": "FifthClass.prototype.someFunction = function() {",
         "originalJsDocDescription": {
           "function": {
             "tag": "function",
@@ -400,12 +429,12 @@
         "visibility": "public",
         "static": false,
         "lineNumber": 134,
-        "memberOf": "FourthClass.prototype",
+        "memberOf": "FifthClass.prototype",
         "doclet": "/**\n * Redundant 'method' tag. Used more by YUIDoc.\n * @method\n * @return {number}\n */",
         "description": "\n Redundant 'method' tag. Used more by YUIDoc.",
         "return": "{number}",
         "classDeclarationFlag": false,
-        "line": "FourthClass.prototype.anotherFunction = function() {",
+        "line": "FifthClass.prototype.anotherFunction = function() {",
         "originalJsDocDescription": {
           "method": {
             "tag": "method",
@@ -489,5 +518,5 @@
   "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 200
+  "numberOfLines": 201
 }

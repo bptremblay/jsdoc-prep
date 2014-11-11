@@ -114,7 +114,7 @@ function() {
      * var ft = new FourthClass();
      * //Note we are using a zero-arg constructor.
      */
-    function FourthClass() {
+    function FifthClass() {
         this.Freenox = new Freenox();
     }
 
@@ -122,7 +122,7 @@ function() {
      * Redundant 'function' tag.
      * @function
      */
-    FourthClass.prototype.someFunction = function() {
+    FifthClass.prototype.someFunction = function() {
         return false;
     };
 
@@ -131,7 +131,7 @@ function() {
      * @method
      * @return {number}
      */
-    FourthClass.prototype.anotherFunction = function() {
+    FifthClass.prototype.anotherFunction = function() {
         return 100;
     };
 

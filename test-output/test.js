@@ -108,10 +108,11 @@ define('test', [],
      * Some text without a description.
      * @constructor
      * @description A description tag with more than
-     * one line of stuff
-     * and some of it could be very very long
+     *  one line of stuff
+     *  and some of it could be very very long
      *
-     * and some of it could be after a BLANK line.
+     *  and some of it could be after a BLANK line.
+     *
      */
     function FourthClass() {
       this.Freenox = new Freenox();
@@ -130,7 +131,7 @@ define('test', [],
      *  //Note we are using a zero-arg constructor.
      *
      */
-    function FourthClass() {
+    function FifthClass() {
       this.Freenox = new Freenox();
     }
     /**
@@ -138,7 +139,7 @@ define('test', [],
      * @function
      * @return {boolean}
      */
-    FourthClass.prototype.someFunction = function() {
+    FifthClass.prototype.someFunction = function() {
       return false;
     };
     /**
@@ -146,7 +147,7 @@ define('test', [],
      * @method
      * @return {number}
      */
-    FourthClass.prototype.anotherFunction = function() {
+    FifthClass.prototype.anotherFunction = function() {
       return 100;
     };
     /**
