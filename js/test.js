@@ -102,6 +102,7 @@ function() {
     }
 
     /**
+     * This is a preamble description that comes before the real description.
      * @constructor
      * @description A description tag with more than 
      * one line of stuff
@@ -122,15 +123,16 @@ function() {
      * @function
      */
     FourthClass.prototype.someFunction = function() {
-
+        return false;
     };
 
     /**
      * Redundant 'method' tag. Used more by YUIDoc.
      * @method
+     * @return {number}
      */
     FourthClass.prototype.anotherFunction = function() {
-
+        return 100;
     };
 
     /**

@@ -971,7 +971,7 @@ var jsDoccerProc = {
                 var methods = input.jsDoccerProcData.methods;
                 for (var m = 0; m < methods.length; m++) {
                     var method = methods[m];
-                    if (method.visibility == 'public') {
+                    if (method.visibility === 'public') {
                         if (method.originalJsDocDescription == null) {
                             method.originalJsDocDescription = {};
                         }
