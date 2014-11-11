@@ -9,7 +9,7 @@ var docPath = 'test-jsdocs';
 var resultsPath = 'test-results';
 var scanPath = 'test-source';
 ///Users/benjamintremblay/jsdoc-prep
-var projectPath = '~';
+var projectPath = '~/Documents/Projects';
 
 function healthCheckCallback(healthCheckResults) {
 	console.log('ALL DONE');
@@ -92,7 +92,7 @@ var opts = {
 	processingChain : processingChain
 };
 
-var justDoc = true;
+var justDoc = false;
 
 if (justDoc) {
 	healthCheckCallback({});

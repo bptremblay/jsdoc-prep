@@ -2376,9 +2376,9 @@ function generateComment(functionWrapper, ast, walkerObj, input) {
         returnValue = '';
     }
     var ctor = functionWrapper.ctor;
-    // if (ctor){
-    // // console.warn(doclet);
-    // }
+     if (ctor){
+         console.warn(doclet);
+     }
 
     if (ctor && doclet['@constructor'] == null) {
         commentBlock.push(' * @constructor');

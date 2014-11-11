@@ -10,9 +10,9 @@
 }());
 
 // one-line comment at top
-define('yes-module', [],
+define('test', [],
 /**
- * comment for anonymous require callback
+ * @exports test comment for anonymous require callback
  */
 function() {
     'use strict';
