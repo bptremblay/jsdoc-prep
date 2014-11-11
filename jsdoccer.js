@@ -1402,7 +1402,9 @@ function getNodesByType(ast, nodeType) {
                             } else if (statement.name === 'undefined') {
                                 returnType = '';
                             } else {
-                                returnType = statement.name;
+                                //returnType = statement.name;
+                                console.warn('Cannot derive meaning from "return ' + statement.name + '".');
+                                returnType = '?';
                             }
 
                         }
@@ -2255,7 +2257,9 @@ function generateComment(functionWrapper, ast, walkerObj, input) {
             commentBlock.push(' * @return ' + returnValue);
         } else {
             commentBlock
-                    .push(' * @todo Please describe the return type of this method.');
+            .push(' * @todo Please describe the return type of this method.');
+            commentBlock
+                    .push(' * @return {object} ??');
         }
     }
     if (commentBlock.length === 1) {

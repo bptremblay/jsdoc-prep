@@ -27,6 +27,11 @@ function() {
         return 1/2;
     }
     
+    function zoopsaPrivateExpression(z){
+        var zzz = "I can't get this type.";
+        return zzz;
+    }
+    
     /**
      * @return A numeric mambo.
      */
@@ -34,6 +39,34 @@ function() {
         return 1/2;
     }
 
+    function stupidFunction() {
+        // some stupid line comment
+        var output = 100;
+        output++;
+        return output;
+    }
+    
+    
+    /**
+     * @private
+     */
+    function funkyFoo(z){
+        return "roger that";
+    }
+    
+    /**
+     * @protected
+     */
+    function funkyFood(z){
+        return "roger that";
+    }
+    
+    /**
+     * @public
+     */
+    function funkyFoodle(z){
+        return "roger that";
+    }
 
     return false;
 });
