@@ -1,83 +1,76 @@
 define('zero-test', [],
-/**
- * @exports zero-test
- * 
- */
-function() {
+  /**
+* @exports zero-test
+
+*/
+  function() {
     'use strict';
     /**
      * Zoo.
-     * 
      * @param z
      */
     function zoo(z) {
-        return null;
+      return null;
     }
     /**
      * Zoop.
-     * 
      * @param z
      * @return {Boolean}
      */
     function zoop(z) {
-        return false;
+      return false;
     }
     /**
      * Zoopsa.
-     * 
      * @param z
      */
     function zoopsa(z) {
-        return undefined;
+      return undefined;
     }
     /**
      * Zoopsa array.
-     * 
      * @param z
      * @return {array}
      */
     function zoopsaArray(z) {
-        return [];
+      return [];
     }
     /**
      * Zoopsa numeric expression.
-     * 
      * @param z
      * @todo Please describe the return type of this method.
      * @return {Object} ??
      */
     function zoopsaNumericExpression(z) {
-        return 1 / 2;
+      return 1 / 2;
     }
     /**
      * Zoopsa private expression.
-     * 
      * @param z
      * @todo Please describe the return type of this method.
      * @return {Object} ??
      */
     function zoopsaPrivateExpression(z) {
-        var zzz = "I can't get this type.";
-        return zzz;
+      var zzz = "I can't get this type.";
+      return zzz;
     }
     /**
      * @param z
      * @return A numeric mambo.
      */
     function zoopsax(z) {
-        return 1 / 2;
+      return 1 / 2;
     }
     /**
      * Stupid function.
-     * 
      * @todo Please describe the return type of this method.
      * @return {Object} ??
      */
     function stupidFunction() {
-        // some stupid line comment
-        var output = 100;
-        output++;
-        return output;
+      // some stupid line comment
+      var output = 100;
+      output++;
+      return output;
     }
     /**
      * @private
@@ -85,7 +78,7 @@ function() {
      * @return {String}
      */
     function funkyFoo(z) {
-        return "roger that";
+      return "roger that";
     }
     /**
      * @protected
@@ -93,7 +86,7 @@ function() {
      * @return {String}
      */
     function funkyFood(z) {
-        return "roger that";
+      return "roger that";
     }
     /**
      * @public
@@ -101,14 +94,14 @@ function() {
      * @return {String}
      */
     function funkyFoodle(z) {
-        return "roger that";
+      return "roger that";
     }
     var is = require('./is', function() {
-        return is.Funky(this);
+      return is.Funky(this);
     });
     var was = require('./was', function() {
-        return was.Funky(this);
+      return was.Funky(this);
     });
     var willBe = require('./willBe');
     return false;
-});
+  });

@@ -82,7 +82,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="zero-test.js.html">zero-test.js</a>, <a href="zero-test.js.html#line14">line 14</a>
+        <a href="yes-module.js.html">yes-module.js</a>, <a href="yes-module.js.html#line16">line 16</a>
     </li></ul></dd>
     
 
@@ -132,7 +132,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="chewBakka"><span class="type-signature"></span>chewBakka<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="chewBakka"><span class="type-signature"></span>chewBakka<span class="signature">()</span><span class="type-signature"> &rarr; {function}</span></h4>
 
     
 </dt>
@@ -173,7 +173,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="zero-test.js.html">zero-test.js</a>, <a href="zero-test.js.html#line19">line 19</a>
+        <a href="yes-module.js.html">yes-module.js</a>, <a href="yes-module.js.html#line21">line 21</a>
     </li></ul></dd>
     
 
@@ -181,13 +181,6 @@
 
     
 
-    
-    <dt class="tag-todo">To Do:</dt>
-    <dd class="tag-todo">
-        <ul>
-            <li>Please describe the return type of this method.</li>
-        </ul>
-    </dd>
     
 </dl>
 
@@ -203,6 +196,24 @@
     
 
     
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">function</span>
+
+
+    </dd>
+</dl>
+
+        
 
     
 </dd>
@@ -210,7 +221,7 @@
         
             
 <dt>
-    <h4 class="name" id="on"><span class="type-signature"></span>on<span class="signature">(eventType, callback)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="on"><span class="type-signature"></span>on<span class="signature">(eventType<span class="signature-attributes">opt</span>, callback<span class="signature-attributes">opt</span>, eventType<span class="signature-attributes">opt</span>, callback<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
 
     
 </dt>
@@ -218,7 +229,9 @@
 
     
     <div class="description">
-        On.
+        Subscribe to events on the component's local Channel. Events on the
+              local channel are not visible to other components or the main
+              ComponentChannel.
     </div>
     
 
@@ -240,6 +253,8 @@
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -257,13 +272,31 @@
 
             <td class="type">
             
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">PlainObject</span>
+
+
+            
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The type of event.</td>
         </tr>
 
     
@@ -275,13 +308,97 @@
 
             <td class="type">
             
+                
+<span class="param-type">function</span>
+
+
+            
             </td>
 
             
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The callback to execute when the event is published.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>eventType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">PlainObject</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The type of event.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The callback to execute when the event is published.</td>
         </tr>
 
     
@@ -312,7 +429,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="zero-test.js.html">zero-test.js</a>, <a href="zero-test.js.html#line117">line 117</a>
+        <a href="yes-module.js.html">yes-module.js</a>, <a href="yes-module.js.html#line199">line 199</a>
     </li></ul></dd>
     
 
@@ -337,21 +454,57 @@
     
 
     
+        <h5>Example</h5>
+        
+    <pre class="prettyprint"><code>// Execute callback for ALL events on the component (no eventType given)
+myComponent.on(function(event){
+    // Analyze, log, etc the event
+});
+
+// Execute callback for a component-generated event
+// Format of eventType is ACTION/VALUE
+// ACTION - function call, state change, etc on the component
+// VALUE - name of action, property name, etc.
+
+// Note: TARGET is automatically prepended to the eventType and
+//       is equal to the name of the component as defined in the spec
+myComponent.on('action/submit', function(event){
+    // Execute logic for the submit action on the component
+});
+
+// Subscribe to multiple events
+myComponent.on( {
+    'action/submit': function(submitEvent){
+        // Business Logic
+    },
+    'state/enabled': function(enabledEvent){
+        // Business Logic
+    },
+    'action/requestBalance': function(requestEvent){
+        // Business Logic
+    },
+    'state/valid': function(validEvent){
+        // Business Logic
+    }
+} );
+
+// Can use wildcards
+myComponent.on('action/*', function(actionEvent){
+    // Logic for all actions on the component
+} );</code></pre>
+
+    
 </dd>
 
         
             
 <dt>
-    <h4 class="name" id="worldPuzzle"><span class="type-signature"></span>worldPuzzle<span class="signature">(toothache, tomato)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="worldPuzzle"><span class="type-signature"></span>worldPuzzle<span class="signature">(toothache, tomato)</span><span class="type-signature"> &rarr; {Object}</span></h4>
 
     
 </dt>
 <dd>
 
-    
-    <div class="description">
-        World puzzle.
-    </div>
     
 
     
@@ -444,7 +597,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="zero-test.js.html">zero-test.js</a>, <a href="zero-test.js.html#line57">line 57</a>
+        <a href="yes-module.js.html">yes-module.js</a>, <a href="yes-module.js.html#line69">line 69</a>
     </li></ul></dd>
     
 
@@ -474,159 +627,13 @@
     
 
     
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="privateFunction"><span class="type-signature">(inner) </span>privateFunction<span class="signature">(a, b, c)</span><span class="type-signature"> &rarr; {string}</span></h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Private function.
-    </div>
-    
-
-    
-
-    
-
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>a</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>b</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>c</code></td>
-            
-
-            <td class="type">
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-    
-
-    
-<dl class="details">
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="zero-test.js.html">zero-test.js</a>, <a href="zero-test.js.html#line45">line 45</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
     <h5>Returns:</h5>
     
             
+<div class="param-desc">
+    ??
+</div>
+
 
 
 <dl>
@@ -635,7 +642,7 @@
     </dt>
     <dd>
         
-<span class="param-type">string</span>
+<span class="param-type">Object</span>
 
 
     </dd>
@@ -662,13 +669,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="context.html">blue/context</a></li><li><a href="module-tab_panel.html">tab_panel</a></li><li><a href="module-yes-module.html">yes-module</a></li></ul><h3>Classes</h3><ul><li><a href="context_ChildContext.html">ChildContext</a></li><li><a href="module-tab_panel-TabPanel.html">TabPanel</a></li><li><a href="module-yes-module-FourthClass.html">FourthClass</a></li><li><a href="module-yes-module-Freenox.html">Freenox</a></li><li><a href="module-yes-module-SecondClass.html">SecondClass</a></li><li><a href="module-yes-module-ThirdClass.html">ThirdClass</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-yes-module.html">yes-module</a></li><li><a href="module-zero-test.html">zero-test</a></li></ul><h3>Classes</h3><ul><li><a href="module-yes-module-FourthClass.html">FourthClass</a></li><li><a href="module-yes-module-Freenox.html">Freenox</a></li><li><a href="module-yes-module-SecondClass.html">SecondClass</a></li><li><a href="module-yes-module-ThirdClass.html">ThirdClass</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha9</a> on Mon Nov 10 2014 12:18:09 GMT-0500 (EST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha9</a> on Wed Nov 12 2014 10:27:40 GMT-0500 (EST)
 </footer>
 
 <script> prettyPrint(); </script>
