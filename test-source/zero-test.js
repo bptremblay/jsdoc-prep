@@ -1,11 +1,17 @@
-
+  /**
+   * @module zero-test
+   * @requires pruna
+   */
 (function() {
     // do something jqueryish
 }());
 
 // one-line comment at top
 define('zero-test', [],
-/** @exports zero-test */
+        /**
+         * @exports zero-test
+         * @requires ./is
+         */
 function() {
     'use strict';
     
@@ -67,6 +73,18 @@ function() {
     function funkyFoodle(z){
         return "roger that";
     }
+    
+    var is = require('./is', function(){
+        return is.Funky(this);
+    });
+    
+    var was = require('./was', function(){
+        return was.Funky(this);
+    });
+    
+    var willBe = require('./willBe');
+
+
 
     return false;
 });

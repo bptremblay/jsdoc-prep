@@ -1,10 +1,7 @@
 {
   "results": {
     "amdProc": {
-      "requires": [
-        "jquery",
-        "messages"
-      ],
+      "requires": [],
       "moduleName": "tab_panel",
       "AMD": true,
       "webPath": ""
@@ -16,7 +13,11 @@
     "badCharactersProc": [],
     "amdFilter": [],
     "jsBeautifyProc": [],
-    "jsDoccerProc": []
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": [],
+    "trimProc": []
   },
   "outputDirectory": "test-output",
   "path": "test-source/tab_panel.js",
@@ -85,5 +86,5 @@
   "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 16
+  "numberOfLines": 13
 }

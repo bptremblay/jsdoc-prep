@@ -25,93 +25,92 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @module fluffy/context
- * @requires fluffy/declare
- * @requires fluffy/is
- */
-define(function(require) {
-  var is = require('./is'),
-    Context = require('./declare')( /** @lends module:fluffy/context# */ {
-      /**
-       * @constructs module:fluffy/context
-       * @augments {null}
-       *
-       * @constructor
-       */
-      constructor: function Context() {
+            <pre class="prettyprint source linenums"><code>define(
+  /**
+   * @exports context
+   */
+  function(require) {
+    var is = require('./is'),
+      Context = require('./declare')( /** @lends module:fluffy/context# */ {
         /**
-         * The parent context.
-         * @member {Context} module:context#parent
+         * @constructs module:fluffy/context
+         * @augments {null}
+         *
+         * @constructor
          */
+        constructor: function Context() {
+          /**
+           * The parent context.
+           * @member {Context} module:context#parent
+           */
+          /**
+           * The first child context.
+           * @member {Context} module:context#firstChild
+           */
+          /**
+           * The last child context.
+           * @member {Context} module:context#lastChild
+           */
+          /**
+           * The next sibling context.
+           * @member {Context} module:context#nextSibling
+           */
+          /**
+           * The previous sibling context.
+           * @member {Context} module:context#prevSibling
+           */
+          this.parent = this.firstChild = this.lastChild = this.nextSibling = this.prevSibling = null;
+          /**
+           * The context itself.
+           * @member {Context} module:context#this
+           */
+          /**
+           * The context itself.
+           * @member {Context} module:context#root
+           */
+          this['this'] = this.root = this;
+        },
         /**
-         * The first child context.
-         * @member {Context} module:context#firstChild
-         */
-        /**
-         * The last child context.
-         * @member {Context} module:context#lastChild
-         */
-        /**
-         * The next sibling context.
-         * @member {Context} module:context#nextSibling
-         */
-        /**
-         * The previous sibling context.
-         * @member {Context} module:context#prevSibling
-         */
-        this.parent = this.firstChild = this.lastChild = this.nextSibling = this.prevSibling = null;
-        /**
-         * The context itself.
-         * @member {Context} module:context#this
-         */
-        /**
-         * The context itself.
-         * @member {Context} module:context#root
-         */
-        this['this'] = this.root = this;
-      },
-      /**
-       * @function
-       * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context.
-       * @return {Context} The child context.
-       */
-      newChild: function(isolate) {
-        var child;
-        is.undefined(isolate) &amp;&amp; (isolate = false);
-        // Create a copy of the parent context
-        if (isolate) {
-          child = new Context();
-          child.root = this.root;
-          // Share the parent context
-        } else {
-          if (!is['function'](this.ChildContext)) {
-            /**
-             * Creates a new instance of class ChildContext.
-             * @constructor
-             */
-            this.ChildContext = function ChildContext() {
-              this.nextSibling = this.firstChild = this.lastChild = null;
-            };
+
+* @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context.
+* @return {Context} The child context.
+*/
+        newChild: function(isolate) {
+          var child;
+          is.undefined(isolate) &amp;&amp; (isolate = false);
+          // Create a copy of the parent context
+          if (isolate) {
+            child = new Context();
+            child.root = this.root;
+            // Share the parent context
+          } else {
+            if (!is['function'](this.ChildContext)) {
+              /**
+               * Creates a new instance of class ChildContext.
+               * @constructor
+               */
+              this.ChildContext = function ChildContext() {
+                this.nextSibling = this.firstChild = this.lastChild = null;
+              };
+            }
+            // Properties set on the parent will show up in descendents
+            this.ChildContext.prototype = this;
+            child = new this.ChildContext();
           }
-          // Properties set on the parent will show up in descendents
-          this.ChildContext.prototype = this;
-          child = new this.ChildContext();
+          child['this'] = child;
+          child.parent = this;
+          child.prevSibling = this.lastChild;
+          if (this.firstChild) {
+            this.lastChild.nextSibling = child;
+            this.lastChild = child;
+          } else {
+            this.firstChild = this.lastChild = child;
+          }
+          return child;
         }
-        child['this'] = child;
-        child.parent = this;
-        child.prevSibling = this.lastChild;
-        if (this.firstChild) {
-          this.lastChild.nextSibling = child;
-          this.lastChild = child;
-        } else {
-          this.firstChild = this.lastChild = child;
-        }
-        return child;
-      }
-    });
-  return Context;
-});</code></pre>
+      });
+    return Context;
+  });</code></pre>
         </article>
     </section>
 
@@ -121,13 +120,13 @@ define(function(require) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="context.html">fluffy/context</a></li><li><a href="module-tab_panel.html">tab_panel</a></li><li><a href="module-test.html">test</a></li><li><a href="module-zero-test.html">zero-test</a></li></ul><h3>Classes</h3><ul><li><a href="context_ChildContext.html">ChildContext</a></li><li><a href="module-tab_panel-TabPanel.html">TabPanel</a></li><li><a href="module-test-FifthClass.html">FifthClass</a></li><li><a href="module-test-FourthClass.html">FourthClass</a></li><li><a href="module-test-Freenox.html">Freenox</a></li><li><a href="module-test-SecondClass.html">SecondClass</a></li><li><a href="module-test-ThirdClass.html">ThirdClass</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-accountDetailsHeader.html">accountDetailsHeader</a></li><li><a href="module-browser_detect.html">browser_detect</a></li><li><a href="module-context.html">context</a></li><li><a href="module-depositAccounts.html">depositAccounts</a></li><li><a href="module-gallery_dao.html">gallery_dao</a></li><li><a href="module-gallery_model.html">gallery_model</a></li><li><a href="module-gallery_view.html">gallery_view</a></li><li><a href="module-info_panel.html">info_panel</a></li><li><a href="module-logger.html">logger</a></li><li><a href="module-messages.html">messages</a></li><li><a href="module-panel.html">panel</a></li><li><a href="contextual_carousel.html">portfolio/contextual_carousel</a></li><li><a href="module-slide_panel.html">slide_panel</a></li><li><a href="module-tab_panel.html">tab_panel</a></li><li><a href="module-tabs.html">tabs</a></li><li><a href="module-test.html">test</a></li><li><a href="module-thumbnail_panel.html">thumbnail_panel</a></li><li><a href="module-zero-test.html">zero-test</a></li></ul><h3>Classes</h3><ul><li><a href="module-accountDetailsHeader-AccountDetailsHeaderView.html">AccountDetailsHeaderView</a></li><li><a href="module-browser_detect-BrowserDetect.html">BrowserDetect</a></li><li><a href="context.html">module:fluffy/context</a></li><li><a href="context_ChildContext.html">ChildContext</a></li><li><a href="module-info_panel-InfoPanel.html">InfoPanel</a></li><li><a href="module-panel-Panel.html">Panel</a></li><li><a href="contextual_carousel-ContextualCarousel.html">ContextualCarousel</a></li><li><a href="module-slide_panel-SlidePanel.html">SlidePanel</a></li><li><a href="module-tab_panel-TabPanel.html">TabPanel</a></li><li><a href="module-tabs-Tabs.html">Tabs</a></li><li><a href="module-test-FifthClass.html">FifthClass</a></li><li><a href="module-test-FourthClass.html">FourthClass</a></li><li><a href="module-test-Freenox.html">Freenox</a></li><li><a href="module-test-SecondClass.html">SecondClass</a></li><li><a href="module-test-ThirdClass.html">ThirdClass</a></li><li><a href="module-thumbnail_panel-ThumbnailPanel.html">ThumbnailPanel</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha9</a> on Tue Nov 11 2014 17:51:18 GMT-0500 (EST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha9</a> on Tue Nov 11 2014 18:40:40 GMT-0500 (EST)
 </footer>
 
 <script> prettyPrint(); </script>

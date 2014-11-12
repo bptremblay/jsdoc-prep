@@ -1,9 +1,8 @@
-(function() {
-  // do something jqueryish
-}());
-// one-line comment at top
 define('zero-test', [],
-  /** @exports zero-test */
+  /**
+* @exports zero-test
+
+*/
   function() {
     'use strict';
     /**
@@ -16,7 +15,7 @@ define('zero-test', [],
     /**
      * Zoop.
      * @param z
-     * @return {boolean}
+     * @return {Boolean}
      */
     function zoop(z) {
       return false;
@@ -40,7 +39,7 @@ define('zero-test', [],
      * Zoopsa numeric expression.
      * @param z
      * @todo Please describe the return type of this method.
-     * @return {object} ??
+     * @return {Object} ??
      */
     function zoopsaNumericExpression(z) {
       return 1 / 2;
@@ -49,7 +48,7 @@ define('zero-test', [],
      * Zoopsa private expression.
      * @param z
      * @todo Please describe the return type of this method.
-     * @return {object} ??
+     * @return {Object} ??
      */
     function zoopsaPrivateExpression(z) {
       var zzz = "I can't get this type.";
@@ -65,7 +64,7 @@ define('zero-test', [],
     /**
      * Stupid function.
      * @todo Please describe the return type of this method.
-     * @return {object} ??
+     * @return {Object} ??
      */
     function stupidFunction() {
       // some stupid line comment
@@ -76,7 +75,7 @@ define('zero-test', [],
     /**
      * @private
      * @param z
-     * @return {string}
+     * @return {String}
      */
     function funkyFoo(z) {
       return "roger that";
@@ -84,7 +83,7 @@ define('zero-test', [],
     /**
      * @protected
      * @param z
-     * @return {string}
+     * @return {String}
      */
     function funkyFood(z) {
       return "roger that";
@@ -92,10 +91,17 @@ define('zero-test', [],
     /**
      * @public
      * @param z
-     * @return {string}
+     * @return {String}
      */
     function funkyFoodle(z) {
       return "roger that";
     }
+    var is = require('./is', function() {
+      return is.Funky(this);
+    });
+    var was = require('./was', function() {
+      return was.Funky(this);
+    });
+    var willBe = require('./willBe');
     return false;
   });

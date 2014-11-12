@@ -1,7 +1,11 @@
 {
   "results": {
     "amdProc": {
-      "requires": [],
+      "requires": [
+        "./is",
+        "./was",
+        "./willBe"
+      ],
       "moduleName": "zero_test",
       "AMD": true,
       "webPath": ""
@@ -19,7 +23,7 @@
         "raw": "No jsDoc Comments for method 'zoo'.",
         "code": "wfJD",
         "evidence": "function zoo(z) {",
-        "line": 11,
+        "line": 18,
         "character": -1,
         "scope": "(main)",
         "a": "",
@@ -30,7 +34,7 @@
         "raw": "No jsDoc Comments for method 'zoop'.",
         "code": "wfJD",
         "evidence": "function zoop(z) {",
-        "line": 15,
+        "line": 22,
         "character": -1,
         "scope": "(main)",
         "a": "",
@@ -41,7 +45,7 @@
         "raw": "No jsDoc Comments for method 'zoopsa'.",
         "code": "wfJD",
         "evidence": "function zoopsa(z) {",
-        "line": 19,
+        "line": 26,
         "character": -1,
         "scope": "(main)",
         "a": "",
@@ -52,7 +56,7 @@
         "raw": "No jsDoc Comments for method 'zoopsaArray'.",
         "code": "wfJD",
         "evidence": "function zoopsaArray(z) {",
-        "line": 23,
+        "line": 30,
         "character": -1,
         "scope": "(main)",
         "a": "",
@@ -63,7 +67,7 @@
         "raw": "No jsDoc Comments for method 'zoopsaNumericExpression'.",
         "code": "wfJD",
         "evidence": "function zoopsaNumericExpression(z) {",
-        "line": 27,
+        "line": 34,
         "character": -1,
         "scope": "(main)",
         "a": "",
@@ -74,7 +78,7 @@
         "raw": "No jsDoc Comments for method 'zoopsaPrivateExpression'.",
         "code": "wfJD",
         "evidence": "function zoopsaPrivateExpression(z) {",
-        "line": 31,
+        "line": 38,
         "character": -1,
         "scope": "(main)",
         "a": "",
@@ -85,13 +89,16 @@
         "raw": "No jsDoc Comments for method 'stupidFunction'.",
         "code": "wfJD",
         "evidence": "function stupidFunction() {",
-        "line": 43,
+        "line": 50,
         "character": -1,
         "scope": "(main)",
         "a": "",
         "reason": "No jsDoc Comments for method 'stupidFunction'."
       }
-    ]
+    ],
+    "jsDocNameFixerProc": [],
+    "jsDoc3PrepProc": [],
+    "trimProc": []
   },
   "outputDirectory": "test-output",
   "path": "test-source/zero-test.js",
@@ -102,13 +109,13 @@
   "libFile": false,
   "min": false,
   "realName": "zero-test",
-  "name": "zero_test",
+  "name": "zero-test",
   "camelName": "ZeroTest",
   "processedFilePath": "test-output/zero-test.js",
   "couldParseOriginalSource": true,
   "preprocessed": true,
   "jsDoccerProcData": {
-    "lines": 73,
+    "lines": 92,
     "requires": [],
     "className": "n/a",
     "packagePath": "",
@@ -117,7 +124,7 @@
     "no_lib": true,
     "inferencedClassName": "n/a",
     "uses_$": false,
-    "chars": 1091,
+    "chars": 1517,
     "uses_YUI": false,
     "fields": [],
     "moduleName": "./zero-test",
@@ -129,7 +136,7 @@
         "name": "zoo",
         "visibility": "public",
         "static": false,
-        "lineNumber": 11,
+        "lineNumber": 18,
         "memberOf": "",
         "doclet": "/**\n * Zoo.\n * @param z\n */",
         "args": [
@@ -144,7 +151,7 @@
         "name": "zoop",
         "visibility": "public",
         "static": false,
-        "lineNumber": 15,
+        "lineNumber": 22,
         "memberOf": "",
         "doclet": "/**\n * Zoop.\n * @param z\n * @return {boolean}\n */",
         "args": [
@@ -160,7 +167,7 @@
         "name": "zoopsa",
         "visibility": "public",
         "static": false,
-        "lineNumber": 19,
+        "lineNumber": 26,
         "memberOf": "",
         "doclet": "/**\n * Zoopsa.\n * @param z\n */",
         "args": [
@@ -175,7 +182,7 @@
         "name": "zoopsaArray",
         "visibility": "public",
         "static": false,
-        "lineNumber": 23,
+        "lineNumber": 30,
         "memberOf": "",
         "doclet": "/**\n * Zoopsa array.\n * @param z\n * @return {array}\n */",
         "args": [
@@ -191,7 +198,7 @@
         "name": "zoopsaNumericExpression",
         "visibility": "public",
         "static": false,
-        "lineNumber": 27,
+        "lineNumber": 34,
         "memberOf": "",
         "doclet": "/**\n * Zoopsa numeric expression.\n * @param z\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
         "args": [
@@ -207,7 +214,7 @@
         "name": "zoopsaPrivateExpression",
         "visibility": "public",
         "static": false,
-        "lineNumber": 31,
+        "lineNumber": 38,
         "memberOf": "",
         "doclet": "/**\n * Zoopsa private expression.\n * @param z\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
         "args": [
@@ -223,7 +230,7 @@
         "name": "zoopsax",
         "visibility": "public",
         "static": false,
-        "lineNumber": 39,
+        "lineNumber": 46,
         "memberOf": "",
         "doclet": "/**\n * @param z\n * @return A numeric mambo.\n */",
         "args": [
@@ -247,7 +254,7 @@
         "name": "stupidFunction",
         "visibility": "public",
         "static": false,
-        "lineNumber": 43,
+        "lineNumber": 50,
         "memberOf": "",
         "doclet": "/**\n * Stupid function.\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
         "description": "",
@@ -260,7 +267,7 @@
         "name": "funkyFoo",
         "visibility": "public",
         "static": false,
-        "lineNumber": 54,
+        "lineNumber": 61,
         "memberOf": "",
         "doclet": "/**\n * @private\n * @param z\n * @return {string}\n */",
         "args": [
@@ -284,7 +291,7 @@
         "name": "funkyFood",
         "visibility": "public",
         "static": false,
-        "lineNumber": 61,
+        "lineNumber": 68,
         "memberOf": "",
         "doclet": "/**\n * @protected\n * @param z\n * @return {string}\n */",
         "args": [
@@ -308,7 +315,7 @@
         "name": "funkyFoodle",
         "visibility": "public",
         "static": false,
-        "lineNumber": 68,
+        "lineNumber": 75,
         "memberOf": "",
         "doclet": "/**\n * @public\n * @param z\n * @return {string}\n */",
         "args": [
@@ -341,5 +348,5 @@
   "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 101
+  "numberOfLines": 107
 }

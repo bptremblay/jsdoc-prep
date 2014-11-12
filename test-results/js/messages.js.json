@@ -1,0 +1,145 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "logger"
+      ],
+      "moduleName": "messages",
+      "AMD": true,
+      "webPath": "/js"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": [],
+    "trimProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/messages.js",
+  "folderPath": "test-source/js",
+  "fileName": "messages.js",
+  "packagePath": "/js",
+  "webPath": "/js",
+  "libFile": false,
+  "min": false,
+  "realName": "messages",
+  "name": "messages",
+  "camelName": "Messages",
+  "processedFilePath": "test-output/js/messages.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "jsDoccerProcData": {
+    "lines": 52,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1188,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./messages",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "notify",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 20,
+        "memberOf": "exports",
+        "doclet": "/**\n * Notify.\n * @param what  \n * @param data\n */",
+        "args": [
+          "what",
+          "data"
+        ],
+        "description": "\n Notify.\n",
+        "classDeclarationFlag": false,
+        "line": "exports.notify = function(what, data) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "what"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "data\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "observe",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 40,
+        "memberOf": "exports",
+        "doclet": "/**\n * Observe.\n * @param what  \n * @param who  \n * @param listener\n */",
+        "args": [
+          "what",
+          "who",
+          "listener"
+        ],
+        "description": "\n Observe.\n",
+        "classDeclarationFlag": false,
+        "line": "exports.observe = function(what, who, listener) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "what"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "who"
+            },
+            {
+              "tag": "param",
+              "line": 5,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "listener\n"
+            }
+          ]
+        }
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "fileName": "messages.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 48
+}

@@ -734,8 +734,10 @@ function replace(source, original, token) {
 function getRequiresTags(input) {
     var output = '';
     var amdProcData = input.results.amdProc;
+
     for (var index = 0; index < amdProcData.requires.length; index++) {
         var moduleName = amdProcData.requires[index];
+        console.warn(moduleName);
         if (typeof moduleName !== 'string') {
             continue;
         }
@@ -1287,7 +1289,10 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                 '<br />\r\n * ');
     }
     // // console.warn(doclet);
-    // console.warn(JSON.stringify(docletData));
+    //console.warn(JSON.stringify(docletData));
+
+    //console.warn(getRequiresTags(input));
+
     return docletData;
 }
 
@@ -1403,7 +1408,7 @@ function getNodesByType(ast, nodeType) {
                                 returnType = '';
                             } else {
                                 //returnType = statement.name;
-                                console.warn('Cannot derive meaning from "return ' + statement.name + '".');
+                                //console.warn('Cannot derive meaning from "return ' + statement.name + '".');
                                 returnType = '?';
                             }
 
@@ -1845,6 +1850,38 @@ function enumTags(doclet) {
     return output;
 }
 
+function getCommentWith(input, comments, whatTag) {
+    //    { type: 'Block',
+    //        value: '*\n   * @module zero-test\n   * @requires pruna\n   ',
+    //        range: [ 2, 55 ] }
+
+    for (var index = 0; index < comments.length; index++) {
+        var comment = comments[index];
+
+        var range = comment.range;
+        // console.log(comment);
+
+        if (comment.type === 'Line') {
+            continue;
+        }
+
+        var commentBody = input.substring(range[0], range[1]);
+
+        if (commentBody.indexOf('/**') === -1) {
+            continue;
+        }
+
+        comment.commentBody = commentBody;
+
+        //console.warn(commentBody);
+
+        if (commentBody.indexOf(whatTag) !== -1) {
+            return comment;
+        }
+    }
+    return null;
+}
+
 function addMissingComments(walkerObj) {
     walkerObj.preprocessed = false;
     console.log('addMissingComments ' + walkerObj.path);
@@ -1867,6 +1904,31 @@ function addMissingComments(walkerObj) {
         console.warn(esError);
         return 'ERROR';
     }
+
+    //console.log(ast.comments);
+
+    // TODO: patch the @exports or @module @requires tags and re-parse the source!!!
+
+    var hasModule = getCommentWith(input, ast.comments, '@module');
+    var hasExports = getCommentWith(input, ast.comments, '@exports');
+    var nodeWithRequiresBlock = null;
+    if (hasExports != null) {
+        console.warn('Found @exports.');
+        nodeWithRequiresBlock = hasExports;
+    } else if (hasModule != null) {
+        console.warn('Did not find @exports but found @module.');
+        nodeWithRequiresBlock = hasModule;
+    }
+
+    if (nodeWithRequiresBlock != null) {
+        //        var doclet = parseDoclet(walkerObj, nodeWithRequiresBlock.commentBody,
+        //                false, '', 0, null);
+        //        console.warn(doclet);
+
+        var newComment = generateComment(null, ast, walkerObj, input, nodeWithRequiresBlock);
+        console.warn(newComment);
+    }
+
     // writeFile("dump.json", JSON.stringify(ast, null, 2));
     var moduleAtTop = input.indexOf('@exports') === -1;
     var defineModuleInTopOfFile = moduleAtTop;
@@ -2124,36 +2186,47 @@ function getMethodOnLine(methodArray, lineNumber, ast, input) {
  * @param input
  * @returns
  */
-function generateComment(functionWrapper, ast, walkerObj, input) {
+function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt) {
     // console.warn(functionWrapper.returnType);
-    var funkyName = decamelize(functionWrapper.name);
-    funkyName = funkyName.split('_');
-    funkyName[0] = capitalize(funkyName[0]);
-    funkyName = funkyName.join(' ');
-    funkyName += '.';
-    if (functionWrapper.ctor) {
-        funkyName = 'Creates a new instance of class ' + functionWrapper.name
-                + '.';
-    }
-    // // console.warn(funkyName + ' << ' + functionWrapper.name);
+    var funkyName = '';
     var doclet = null;
-    if (functionWrapper.comment !== -1) {
-        var oldComment = ast.comments[functionWrapper.comment];
-        var range = oldComment.range;
-        var commentBody = input.substring(range[0], range[1]).trim();
-        if (commentBody.indexOf('/**') !== -1) {
-            var commentText = commentBody;
-            // console.warn(commentText);
-            doclet = parseDoclet(walkerObj, commentText, false, '', 0,
-                    functionWrapper);
-            // console.warn(doclet);
-        }
-    }
     var tags = [];
+    if (functionWrapper != null) {
+        funkyName = decamelize(functionWrapper.name);
+        funkyName = funkyName.split('_');
+        funkyName[0] = capitalize(funkyName[0]);
+        funkyName = funkyName.join(' ');
+        funkyName += '.';
+        if (functionWrapper.ctor) {
+            funkyName = 'Creates a new instance of class '
+                    + functionWrapper.name + '.';
+        }
+        if (functionWrapper.comment !== -1) {
+            var oldComment = ast.comments[functionWrapper.comment];
+            var range = oldComment.range;
+            var commentBody = input.substring(range[0], range[1]).trim();
+            if (commentBody.indexOf('/**') !== -1) {
+                var commentText = commentBody;
+                // console.warn(commentText);
+                doclet = parseDoclet(walkerObj, commentText, false, '', 0,
+                        functionWrapper);
+                // console.warn(doclet);
+            }
+        }
+    } else {
+        commentText = commentBodyOpt.commentBody;
+        functionWrapper = {};
+        doclet = parseDoclet(walkerObj, commentText, false, '', 0, null);
+        console.warn(doclet);
+    }
+
+    // // console.warn(funkyName + ' << ' + functionWrapper.name);
+
     if (doclet != null && doclet.tags) {
         // console.warn(doclet.tags);
         tags = doclet.tags;
     }
+    
     // TODO: Rewrite this to dump the tags in the original order they were
     // declared.
     var commentBlock = [];
@@ -2170,7 +2243,7 @@ function generateComment(functionWrapper, ast, walkerObj, input) {
             var newTag = tags[tIndex];
             var t = '@' + newTag.tag;
             if (doclet.hasOwnProperty(t)) {
-                // console.warn(t);
+                //console.warn(t);
                 if (t.charAt(0) === '@') {
                     if (t !== '@return') {
                         var tag = doclet[t];
@@ -2257,9 +2330,8 @@ function generateComment(functionWrapper, ast, walkerObj, input) {
             commentBlock.push(' * @return ' + returnValue);
         } else {
             commentBlock
-            .push(' * @todo Please describe the return type of this method.');
-            commentBlock
-                    .push(' * @return {object} ??');
+                    .push(' * @todo Please describe the return type of this method.');
+            commentBlock.push(' * @return {object} ??');
         }
     }
     if (commentBlock.length === 1) {

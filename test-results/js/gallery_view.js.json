@@ -1,0 +1,718 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "gallery_model",
+        "messages",
+        "logger",
+        "contextual_carousel"
+      ],
+      "moduleName": "gallery_view",
+      "AMD": true,
+      "webPath": "/js"
+    }
+  },
+  "errors": {
+    "thirdPartyFilter": [],
+    "minFilter": [],
+    "badCharactersProc": [],
+    "amdFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handlerIn'.",
+        "code": "wfJD",
+        "evidence": "$('.gallery-item').hover(function handlerIn(eventObject) {",
+        "line": 124,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handlerIn'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'handlerOut'.",
+        "code": "wfJD",
+        "evidence": "}, function handlerOut(eventObject) {",
+        "line": 129,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'handlerOut'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'displayGenrePanels'.",
+        "code": "wfJD",
+        "evidence": "function displayGenrePanels() {",
+        "line": 248,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'displayGenrePanels'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'filterGenrePanels'.",
+        "code": "wfJD",
+        "evidence": "function filterGenrePanels() {",
+        "line": 261,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'filterGenrePanels'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'cacheAllImages'.",
+        "code": "wfJD",
+        "evidence": "function cacheAllImages() {",
+        "line": 390,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'cacheAllImages'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'busyCursor'.",
+        "code": "wfJD",
+        "evidence": "function busyCursor() {",
+        "line": 407,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'busyCursor'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'normalCursor'.",
+        "code": "wfJD",
+        "evidence": "function normalCursor() {",
+        "line": 419,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'normalCursor'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'goBack'.",
+        "code": "wfJD",
+        "evidence": "exports.goBack = function() {",
+        "line": 454,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'goBack'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showFossils'.",
+        "code": "wfJD",
+        "evidence": "exports.showFossils = function() {",
+        "line": 475,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showFossils'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": [],
+    "trimProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/gallery_view.js",
+  "folderPath": "test-source/js",
+  "fileName": "gallery_view.js",
+  "packagePath": "/js",
+  "webPath": "/js",
+  "libFile": false,
+  "min": false,
+  "realName": "gallery_view",
+  "name": "gallery_view",
+  "camelName": "GalleryView",
+  "processedFilePath": "test-output/js/gallery_view.js",
+  "couldParseOriginalSource": true,
+  "preprocessed": true,
+  "jsDoccerProcData": {
+    "lines": 534,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 15623,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./gallery_view",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "createCategoryControl",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 36,
+        "memberOf": "",
+        "doclet": "/**\n * make some kind of control for categories.\n * @param {String} category\n */",
+        "args": [
+          "category",
+          "active"
+        ],
+        "description": "\n make some kind of control for categories\n\n make some kind of control for categories.",
+        "classDeclarationFlag": false,
+        "line": "function createCategoryControl(category, active) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "{String} category\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "createTabButton",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 52,
+        "memberOf": "",
+        "doclet": "/**\n * general tab button.\n * @param {String} category\n */",
+        "args": [
+          "category",
+          "active"
+        ],
+        "description": "\n general tab button\n\n general tab button.",
+        "classDeclarationFlag": false,
+        "line": "function createTabButton(category, active) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "{String} category\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 69,
+        "memberOf": "exports",
+        "doclet": "/**\n * Render.\n * @param data\n */",
+        "args": [
+          "data"
+        ],
+        "description": "\n Render.\n",
+        "classDeclarationFlag": false,
+        "line": "exports.render = function(data) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "data\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "handlerIn",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 124,
+        "memberOf": "",
+        "doclet": "/**\n * Handler in.\n * @param eventObject\n */",
+        "args": [
+          "eventObject"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "$('.gallery-item').hover(function handlerIn(eventObject) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "handlerOut",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 129,
+        "memberOf": "",
+        "doclet": "/**\n * Handler out.\n * @param eventObject\n */",
+        "args": [
+          "eventObject"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "}, function handlerOut(eventObject) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "padTitle",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 154,
+        "memberOf": "",
+        "doclet": "/**\n * Pad title.\n * @param {String}  \n * @return {String}\n */",
+        "args": [
+          "input"
+        ],
+        "description": "\n Pad title.\n",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function padTitle(input) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "{String}\n            input"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 5,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{String}\n"
+          }
+        }
+      },
+      {
+        "name": "createGenrePanel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 164,
+        "memberOf": "",
+        "doclet": "/**\n * Create genre panel.\n * @param genreTitle  \n * @param genreItems  \n * @return {Object}\n */",
+        "args": [
+          "genreTitle",
+          "genreItems"
+        ],
+        "description": "\n Create genre panel.\n",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function createGenrePanel(genreTitle, genreItems) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "genreTitle"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "genreItems"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 5,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object}\n"
+          }
+        }
+      },
+      {
+        "name": "createGalleryItem",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 192,
+        "memberOf": "",
+        "doclet": "/**\n * Create gallery item.\n * @param item  \n * @param index  \n * @return {Object}\n */",
+        "args": [
+          "item",
+          "index"
+        ],
+        "description": "\n Create gallery item.\n",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function createGalleryItem(item, index) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "item"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "index"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 5,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object}\n"
+          }
+        }
+      },
+      {
+        "name": "createGallerySlide",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 216,
+        "memberOf": "",
+        "doclet": "/**\n * Create gallery slide.\n * @param item  \n * @param index  \n * @return {Object} A jQuery element.\n */",
+        "args": [
+          "item",
+          "index"
+        ],
+        "description": "\n Create gallery slide.\n",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function createGallerySlide(item, index) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "item"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "index"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 5,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} A jQuery element.\n"
+          }
+        }
+      },
+      {
+        "name": "displayGenrePanels",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 248,
+        "memberOf": "",
+        "doclet": "/**\n * Display genre panels.\n */",
+        "description": "\n Display genre panels.\n",
+        "classDeclarationFlag": false,
+        "line": "function displayGenrePanels() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "filterGenrePanels",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 261,
+        "memberOf": "",
+        "doclet": "/**\n * Filter genre panels.\n */",
+        "description": "\n Filter genre panels.\n",
+        "classDeclarationFlag": false,
+        "line": "function filterGenrePanels() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "filterItems",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 300,
+        "memberOf": "",
+        "doclet": "/**\n * Filter items.\n * @param date  \n * @param industry  \n * @param tabCategory  \n * @param genre\n */",
+        "args": [
+          "date",
+          "industry",
+          "tabCategory",
+          "genre"
+        ],
+        "description": "\n Filter items.\n",
+        "classDeclarationFlag": false,
+        "line": "function filterItems(date, industry, tabCategory, genre) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "date"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "industry"
+            },
+            {
+              "tag": "param",
+              "line": 5,
+              "lastLine": 5,
+              "textStartsOnSameLine": true,
+              "text": "tabCategory"
+            },
+            {
+              "tag": "param",
+              "line": 6,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "genre\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "showPopup",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 382,
+        "memberOf": "exports",
+        "doclet": "/**\n * Show popup.\n * @param item  \n * @param slideIndex\n */",
+        "args": [
+          "item",
+          "slideIndex"
+        ],
+        "description": "\n Show popup.\n",
+        "classDeclarationFlag": false,
+        "line": "exports.showPopup = function(item, slideIndex) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "item"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "slideIndex\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "cacheAllImages",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 390,
+        "memberOf": "",
+        "doclet": "/**\n * Cache all images.\n */",
+        "description": "\n Cache all images.\n",
+        "classDeclarationFlag": false,
+        "line": "function cacheAllImages() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "busyCursor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 407,
+        "memberOf": "",
+        "doclet": "/**\n * Busy cursor.\n */",
+        "description": "\n Busy cursor.\n",
+        "classDeclarationFlag": false,
+        "line": "function busyCursor() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "normalCursor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 419,
+        "memberOf": "",
+        "doclet": "/**\n * Normal cursor.\n */",
+        "description": "\n Normal cursor.\n",
+        "classDeclarationFlag": false,
+        "line": "function normalCursor() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "setCategory",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 435,
+        "memberOf": "exports",
+        "doclet": "/**\n * Set category.\n * @param value  \n * @param ui\n */",
+        "args": [
+          "value"
+        ],
+        "description": "\n Set category.\n",
+        "classDeclarationFlag": false,
+        "line": "exports.setCategory = function(value) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "value"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "ui\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "goBack",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 454,
+        "memberOf": "exports",
+        "doclet": "/**\n * Go back.\n */",
+        "description": "\n Go back.\n",
+        "classDeclarationFlag": false,
+        "line": "exports.goBack = function() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "showItem",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 465,
+        "memberOf": "exports",
+        "doclet": "/**\n * Show item.\n * @param itemJQElement\n */",
+        "args": [
+          "itemJQElement"
+        ],
+        "description": "\n Show item.\n",
+        "classDeclarationFlag": false,
+        "line": "exports.showItem = function(itemJQElement) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "itemJQElement\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "showFossils",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 475,
+        "memberOf": "exports",
+        "doclet": "/**\n * Show fossils.\n */",
+        "description": "\n Show fossils.\n",
+        "classDeclarationFlag": false,
+        "line": "exports.showFossils = function() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "loadBigSlide",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 492,
+        "memberOf": "exports",
+        "doclet": "/**\n * Load big slide.\n * @param thumbNailElement\n */",
+        "args": [
+          "bigSrc"
+        ],
+        "description": "\n Load big slide.\n",
+        "classDeclarationFlag": false,
+        "line": "exports.loadBigSlide = function(bigSrc) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "thumbNailElement\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "update",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 507,
+        "memberOf": "exports",
+        "doclet": "/**\n * Update.\n * @param observation  \n * @param data\n */",
+        "args": [
+          "observation",
+          "data"
+        ],
+        "description": "\n Update.\n",
+        "classDeclarationFlag": false,
+        "line": "exports.update = function(observation, data) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "observation"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "data\n"
+            }
+          ]
+        }
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js",
+    "fileName": "gallery_view.js",
+    "strict": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 488
+}
