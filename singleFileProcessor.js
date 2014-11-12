@@ -137,15 +137,15 @@ var amdProc = {
             }
             return result;
         }
-        //console.warn(converted.requires);
+        // console.warn(converted.requires);
         result.requires = fixRequires(converted.requires);
-        //console.warn(result.requires);
+        // console.warn(result.requires);
         
         var inlineRequires = fixRequires(getInlineRequires(input));
         for (var ir = 0; ir<inlineRequires.length; ir++){
             var inlineModule = inlineRequires[ir];
             result.requires.push(inlineModule);
-            //console.warn('require("' + inlineModule + '")');
+            // console.warn('require("' + inlineModule + '")');
         }
         
         result.moduleName = converted.name;
@@ -162,32 +162,32 @@ function getInlineRequires(input){
         return [];
     }
     var output = [];
-    //console.warn('dig for inline requires() in ' + input.name);
+    // console.warn('dig for inline requires() in ' + input.name);
     var chunks = [];
     if (noSpaceRequire > -1){
         chunks = source.split("require(");  
-        //console.warn(chunks.length);
+        // console.warn(chunks.length);
         for (var index = 1; index<chunks.length; index++){
             var chunk = chunks[index];
             var trimChunk = chunk.trim();
-            //console.warn(trimChunk);
+            // console.warn(trimChunk);
             var startChar = trimChunk.charAt(0);
             var splitter = trimChunk.split(startChar);
             var moduleName = splitter[1].trim();
-            //console.warn(moduleName);
+            // console.warn(moduleName);
             output.push(moduleName);
         }
     } else if (oneSpaceRequire > -1){
         chunks = source.split("require (");  
-        //console.warn(chunks.length);
+        // console.warn(chunks.length);
         for (var index = 1; index<chunks.length; index++){
             var chunk = chunks[index];
             var trimChunk = chunk.trim();
-            //console.warn(trimChunk);
+            // console.warn(trimChunk);
             var startChar = trimChunk.charAt(0);
             var splitter = trimChunk.split(startChar);
             var moduleName = splitter[1].trim();
-            //console.warn(moduleName);
+            // console.warn(moduleName);
             output.push(moduleName);
         }
     }
@@ -986,6 +986,7 @@ var jsDoccerProc = {
         }
 
         function runJsDoccer(fileName, id) {
+            //console.warn('runJsDoccer');
             var exePath = 'java -jar jsdoccer.jar';
             var exec = require('child_process').exec;
             var basePath = _path.normalize(input.outputDirectory + '/' + input.packagePath);
@@ -1044,7 +1045,7 @@ var jsDoccerProc = {
             }
             input.source = unescape(splitter[1]);
             input.testStubs = unescape(splitter[2]);
-            //console.warn(input.source);
+            // console.warn(input.source);
             writeFile(input.processedFilePath, input.source);
             doneCallback(input);
             // });
@@ -1083,11 +1084,11 @@ function readFile(filePathName) {
 
 function writeFile(filePathName, source) {
     
-//    if (filePathName.indexOf('.json') === -1){
-//        console.warn(arguments.callee.caller);
-//        console.warn('writeFile: ' + filePathName);
-//        //console.warn(source);
-//    }
+// if (filePathName.indexOf('.json') === -1){
+// console.warn(arguments.callee.caller);
+// console.warn('writeFile: ' + filePathName);
+// //console.warn(source);
+// }
     
     if (WRITE_ENABLED) {
         filePathName = _path.normalize(filePathName);
@@ -1177,7 +1178,7 @@ function processFile(baseDirectory, filePathName, outputDirectory,
 
     function _finishedProcessingChain() {
         var VERIFY_PARSE = true;
-        //console.warn(output.source);
+        // console.warn(output.source);
         writeFile(outputfilePathName, output.source);
         output.couldParseProcessedSource = canParse(outputfilePathName,
             output.source, processor.id);
@@ -1660,7 +1661,7 @@ function getRequiresTags(input) {
     if (!amdProcData.AMD){
         return '';
     }
-    //console.warn(amdProcData);
+    // console.warn(amdProcData);
     for (var index = 0; index < amdProcData.requires.length; index++) {
         var moduleName = amdProcData.requires[index];
         if (typeof moduleName !== 'string') {
@@ -1719,11 +1720,11 @@ var jsDoc3PrepProc = {
         input.name = input.fileName.split('.js')[0];
         // console.warn(input.name);
         var source = input.source;
-        //console.warn(input.source);
-        //        if (input.name === 'context'){
-        //            //console.warn(splitter[0]);
-        //            console.warn(source);
-        //        }
+        // console.warn(input.source);
+        // if (input.name === 'context'){
+        // //console.warn(splitter[0]);
+        // console.warn(source);
+        // }
         source = replace(source, '{string}', '{String}');
         source = replace(source, '{object}', '{Object}');
         source = replace(source, '{number}', '{Number}');
@@ -1736,7 +1737,7 @@ var jsDoc3PrepProc = {
         input.source = source;
         firstDoclet = null;
         
-        //console.warn(getRequiresTags(input));
+        // console.warn(getRequiresTags(input));
         
         var lines = input.source.split('\n');
         var index = 0;
@@ -1750,13 +1751,13 @@ var jsDoc3PrepProc = {
             if (line.indexOf('* @method') !== -1 || line.indexOf('* @function') !== -1 || line.indexOf('* @memberOf') !== -1) {
                 lines[index] = '';
             }
-//            if (line.indexOf('* @requires') !== -1) {
-//                lines[index] = '';
-//            }
+// if (line.indexOf('* @requires') !== -1) {
+// lines[index] = '';
+// }
             // this is for Backbone stuff.
             if (line.indexOf('* @lends') !== -1 || line.indexOf('*@lends') !== -1) {
                 if (lastLine.indexOf('.extend') === -1) {
-                    //console.warn('hacking a @lends tag: ' + line);
+                    // console.warn('hacking a @lends tag: ' + line);
                     lines[index] = line;
                 } else {
                     if (line.indexOf('~') === -1) {
@@ -1774,9 +1775,9 @@ var jsDoc3PrepProc = {
             lastLine = line;
         }
         input.source = lines.join('\n');
-        //        if (input.name === 'context'){
-        //            console.warn(input.source);
-        //        }
+        // if (input.name === 'context'){
+        // console.warn(input.source);
+        // }
         var whereDefine = input.source.indexOf('define(\'');
         if (whereDefine === -1) {
             whereDefine = input.source.indexOf('define("');
@@ -1788,16 +1789,17 @@ var jsDoc3PrepProc = {
             whereDefine = -1;
         }
         // HANDLE THIS:
-        //        define( function( require ){
-        //            var is      = require( './is' ),
+        // define( function( require ){
+        // var is = require( './is' ),
         //
-        //                Context = require( './declare' )( /** @lends module:fluffy/context# */ {
+        // Context = require( './declare' )( /** @lends module:fluffy/context#
+        // */ {
         //
-        //                    /**
-        //                     * @constructs module:fluffy/context
-        //                     * @augments {null}
-        //                     */
-        //                    constructor: function Context(){
+        // /**
+        // * @constructs module:fluffy/context
+        // * @augments {null}
+        // */
+        // constructor: function Context(){
         if (whereDefine !== -1) {
             console.warn('jsDoc3PrepProc: found define() in the module');
             var source = input.source.substring(whereDefine);
@@ -1825,11 +1827,11 @@ var jsDoc3PrepProc = {
                             splitter = source.split('function (');
                         }
                         var combiner = [];
-                        //                        if (input.name === 'context'){
-                        //                            //console.warn(splitter[0]);
-                        //                            console.warn(source);
-                        //                        }
-                        //console.warn(JSON.stringify(input,null,2));
+                        // if (input.name === 'context'){
+                        // //console.warn(splitter[0]);
+                        // console.warn(source);
+                        // }
+                        // console.warn(JSON.stringify(input,null,2));
                         var packagePath = input.path.split('/');
                         packagePath.shift();
                         packagePath = packagePath.join('/');
@@ -1838,16 +1840,16 @@ var jsDoc3PrepProc = {
                         
                         // console.warn(packagePath);
                         combiner.push(splitter[0] + '\n' + '/**\n * @exports ' + packagePath + '\n' + getRequiresTags(input) + ' */\n');
-                        //                        if (input.name === 'context'){
-                        //                            console.warn(splitter[0]);
-                        //                            //console.warn(source);
-                        //                        }
+                        // if (input.name === 'context'){
+                        // console.warn(splitter[0]);
+                        // //console.warn(source);
+                        // }
                         var splitterLength = splitter.length;
                         for (index = 1; index < splitterLength; index++) {
-                            //                            if (input.name === 'context'){
-                            //                                console.warn(splitter[index]);
-                            //                                //console.warn(source);
-                            //                            }
+                            // if (input.name === 'context'){
+                            // console.warn(splitter[index]);
+                            // //console.warn(source);
+                            // }
                             combiner.push(splitter[index]);
                         }
                         source = combiner.join('function(');
@@ -1868,9 +1870,9 @@ var jsDoc3PrepProc = {
             }
             var originalHeader = input.source.substring(0, whereDefine);
             console.warn('splicing');
-            //console.warn('originalHeader: "' + originalHeader + '"');
+            // console.warn('originalHeader: "' + originalHeader + '"');
             input.source = originalHeader + '' + source;
-            //console.warn(input.source);
+            // console.warn(input.source);
         }
         var prototypal = false;
         if (input.source.indexOf(input.camelName + '.prototype.') !== -1) {

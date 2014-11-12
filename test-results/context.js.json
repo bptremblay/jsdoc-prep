@@ -13,19 +13,7 @@
   "errors": {
     "thirdPartyFilter": [],
     "minFilter": [],
-    "badCharactersProc": [
-      {
-        "id": "(error)",
-        "raw": "Bad character(s) found.",
-        "code": "wfBC",
-        "evidence": "",
-        "line": -1,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "Bad character(s) found: ''\\t''."
-      }
-    ],
+    "badCharactersProc": [],
     "amdFilter": [],
     "jsBeautifyProc": [],
     "jsDoccerProc": [
@@ -40,11 +28,7 @@
         "a": "",
         "reason": "No jsDoc Comments for method 'ChildContext'."
       }
-    ],
-    "jsDocNameFixerProc": [],
-    "fixClassDeclarationsProc": [],
-    "jsDoc3PrepProc": [],
-    "trimProc": []
+    ]
   },
   "outputDirectory": "test-output",
   "path": "test-source/context.js",
@@ -70,7 +54,7 @@
     "no_lib": true,
     "inferencedClassName": "n/a",
     "uses_$": false,
-    "chars": 2646,
+    "chars": 2755,
     "uses_YUI": false,
     "fields": [],
     "moduleName": "./context",
@@ -87,7 +71,7 @@
         "static": false,
         "lineNumber": 18,
         "memberOf": "",
-        "doclet": "/**\n * @constructs module:blue/context~Context\n * @augments {null}\n * \n * @constructor\n */",
+        "doclet": "/**\n * @constructs module:blue/context\n * @augments {null}\n * \n * @constructor\n */",
         "description": "",
         "return": "",
         "classDeclarationFlag": true,
@@ -98,7 +82,7 @@
             "line": 1,
             "lastLine": 1,
             "textStartsOnSameLine": true,
-            "text": "module:blue/context~Context"
+            "text": "module:blue/context"
           },
           "augments": [
             {
@@ -117,7 +101,7 @@
         "static": false,
         "lineNumber": 64,
         "memberOf": "",
-        "doclet": "/**\n * @function\n * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context.\n * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context. \n * @return {Context} The child context.\n */",
+        "doclet": "/**\n * @function\n * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context. \n * @return {Context} The child context.\n */",
         "args": [
           "isolate"
         ],
@@ -176,5 +160,5 @@
   "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 89
+  "numberOfLines": 92
 }

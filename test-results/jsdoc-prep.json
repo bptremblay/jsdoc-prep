@@ -3,119 +3,114 @@
     {
       "results": {
         "amdProc": {
-          "requires": [
-            "./is",
-            "./was",
-            "./willBe"
-          ],
-          "moduleName": "zero_test",
-          "AMD": true,
+          "requires": [],
+          "moduleName": "no_module",
+          "AMD": false,
           "webPath": ""
         }
       },
       "errors": {
-        "thirdPartyFilter": [],
-        "minFilter": [],
-        "badCharactersProc": [],
-        "amdFilter": [],
         "jsBeautifyProc": [],
         "jsDoccerProc": [
           {
             "id": "(error)",
-            "raw": "No jsDoc Comments for method 'zoo'.",
+            "raw": "No jsDoc Comments for method 'Fronum'.",
             "code": "wfJD",
-            "evidence": "function zoo(z) {",
-            "line": 19,
+            "evidence": "function Fronum() {",
+            "line": 11,
             "character": -1,
             "scope": "(main)",
             "a": "",
-            "reason": "No jsDoc Comments for method 'zoo'."
+            "reason": "No jsDoc Comments for method 'Fronum'."
           },
           {
             "id": "(error)",
-            "raw": "No jsDoc Comments for method 'zoop'.",
+            "raw": "No jsDoc Comments for method 'chewBakka'.",
             "code": "wfJD",
-            "evidence": "function zoop(z) {",
-            "line": 23,
+            "evidence": "this.chewBakka = function() {",
+            "line": 12,
             "character": -1,
             "scope": "(main)",
             "a": "",
-            "reason": "No jsDoc Comments for method 'zoop'."
+            "reason": "No jsDoc Comments for method 'chewBakka'."
           },
           {
             "id": "(error)",
-            "raw": "No jsDoc Comments for method 'zoopsa'.",
+            "raw": "No jsDoc Comments for method 'DonutView'.",
             "code": "wfJD",
-            "evidence": "function zoopsa(z) {",
-            "line": 27,
+            "evidence": "return function DonutView() {",
+            "line": 13,
             "character": -1,
             "scope": "(main)",
             "a": "",
-            "reason": "No jsDoc Comments for method 'zoopsa'."
-          },
-          {
-            "id": "(error)",
-            "raw": "No jsDoc Comments for method 'zoopsaArray'.",
-            "code": "wfJD",
-            "evidence": "function zoopsaArray(z) {",
-            "line": 31,
-            "character": -1,
-            "scope": "(main)",
-            "a": "",
-            "reason": "No jsDoc Comments for method 'zoopsaArray'."
-          },
-          {
-            "id": "(error)",
-            "raw": "No jsDoc Comments for method 'zoopsaNumericExpression'.",
-            "code": "wfJD",
-            "evidence": "function zoopsaNumericExpression(z) {",
-            "line": 35,
-            "character": -1,
-            "scope": "(main)",
-            "a": "",
-            "reason": "No jsDoc Comments for method 'zoopsaNumericExpression'."
-          },
-          {
-            "id": "(error)",
-            "raw": "No jsDoc Comments for method 'zoopsaPrivateExpression'.",
-            "code": "wfJD",
-            "evidence": "function zoopsaPrivateExpression(z) {",
-            "line": 39,
-            "character": -1,
-            "scope": "(main)",
-            "a": "",
-            "reason": "No jsDoc Comments for method 'zoopsaPrivateExpression'."
+            "reason": "No jsDoc Comments for method 'DonutView'."
           },
           {
             "id": "(error)",
             "raw": "No jsDoc Comments for method 'stupidFunction'.",
             "code": "wfJD",
-            "evidence": "function stupidFunction() {",
-            "line": 51,
+            "evidence": "this[\"stupidFunction\"] = function() {",
+            "line": 24,
             "character": -1,
             "scope": "(main)",
             "a": "",
             "reason": "No jsDoc Comments for method 'stupidFunction'."
+          },
+          {
+            "id": "(error)",
+            "raw": "No jsDoc Comments for method 'worldPuzzle'.",
+            "code": "wfJD",
+            "evidence": "Fronum.prototype.worldPuzzle = function(toothache, tomato) {",
+            "line": 52,
+            "character": -1,
+            "scope": "(main)",
+            "a": "",
+            "reason": "No jsDoc Comments for method 'worldPuzzle'."
+          },
+          {
+            "id": "(error)",
+            "raw": "No jsDoc Comments for method 'SecondClass'.",
+            "code": "wfJD",
+            "evidence": "function SecondClass() {}",
+            "line": 57,
+            "character": -1,
+            "scope": "(main)",
+            "a": "",
+            "reason": "No jsDoc Comments for method 'SecondClass'."
+          },
+          {
+            "id": "(error)",
+            "raw": "No jsDoc Comments for method 'fixTheWorld'.",
+            "code": "wfJD",
+            "evidence": "SecondClass.prototype.fixTheWorld = function(toothache, tomato) {",
+            "line": 58,
+            "character": -1,
+            "scope": "(main)",
+            "a": "",
+            "reason": "No jsDoc Comments for method 'fixTheWorld'."
           }
         ],
+        "jsDocNameFixerProc": [],
+        "fixClassDeclarationsProc": [],
+        "jsDoc3PrepProc": [],
         "trimProc": []
       },
       "outputDirectory": "test-output",
-      "path": "test-source/zero-test.js",
+      "path": "test-source/no-module.js",
       "folderPath": "test-source",
-      "fileName": "zero-test.js",
+      "fileName": "no-module.js",
       "packagePath": "",
       "webPath": "",
       "libFile": false,
       "min": false,
-      "realName": "zero-test",
-      "name": "zero_test",
-      "camelName": "ZeroTest",
-      "processedFilePath": "test-output/zero-test.js",
+      "realName": "no-module",
+      "name": "no-module",
+      "camelName": "NoModule",
+      "processedFilePath": "test-output/no-module.js",
       "couldParseOriginalSource": true,
       "preprocessed": true,
       "jsDoccerProcData": {
-        "lines": 127,
+        "lines": 142,
         "requires": [],
         "className": "n/a",
         "packagePath": "",
@@ -124,159 +119,87 @@
         "no_lib": true,
         "inferencedClassName": "n/a",
         "uses_$": false,
-        "chars": 2519,
+        "chars": 3785,
         "uses_YUI": false,
         "fields": [],
-        "moduleName": "./zero-test",
+        "moduleName": "./no-module",
         "uses_console_log": false,
         "uses_backbone": false,
-        "classes": {},
+        "classes": {
+          "DonutView": 2519,
+          "Component": 1678,
+          "Fronum": 1597,
+          "SecondClass": 1660
+        },
         "methods": [
           {
-            "name": "zoo",
+            "name": "Fronum",
             "visibility": "public",
             "static": false,
-            "lineNumber": 19,
+            "lineNumber": 11,
             "memberOf": "",
-            "doclet": "/**\n * Zoo.\n * @param z\n */",
-            "args": [
-              "z"
-            ],
+            "doclet": "/**\n * Creates a new instance of class Fronum.\n * @constructor\n */",
             "description": "",
-            "classDeclarationFlag": false,
-            "line": "function zoo(z) {",
+            "return": "",
+            "classDeclarationFlag": true,
+            "line": "function Fronum() {",
             "originalJsDocDescription": {}
           },
           {
-            "name": "zoop",
+            "name": "chewBakka",
             "visibility": "public",
             "static": false,
-            "lineNumber": 23,
-            "memberOf": "",
-            "doclet": "/**\n * Zoop.\n * @param z\n * @return {boolean}\n */",
-            "args": [
-              "z"
-            ],
+            "lineNumber": 12,
+            "memberOf": "this",
+            "doclet": "/**\n * Chew bakka.\n * @return {function}\n */",
             "description": "",
-            "return": "{boolean}",
+            "return": "{function}",
             "classDeclarationFlag": false,
-            "line": "function zoop(z) {",
+            "line": "this.chewBakka = function() {",
             "originalJsDocDescription": {}
           },
           {
-            "name": "zoopsa",
+            "name": "DonutView",
             "visibility": "public",
             "static": false,
-            "lineNumber": 27,
+            "lineNumber": 13,
             "memberOf": "",
-            "doclet": "/**\n * Zoopsa.\n * @param z\n */",
-            "args": [
-              "z"
-            ],
+            "doclet": "/**\n * Creates a new instance of class DonutView.\n * @constructor\n */",
             "description": "",
-            "classDeclarationFlag": false,
-            "line": "function zoopsa(z) {",
+            "return": "",
+            "classDeclarationFlag": true,
+            "line": "return function DonutView() {",
             "originalJsDocDescription": {}
-          },
-          {
-            "name": "zoopsaArray",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 31,
-            "memberOf": "",
-            "doclet": "/**\n * Zoopsa array.\n * @param z\n * @return {array}\n */",
-            "args": [
-              "z"
-            ],
-            "description": "",
-            "return": "{array}",
-            "classDeclarationFlag": false,
-            "line": "function zoopsaArray(z) {",
-            "originalJsDocDescription": {}
-          },
-          {
-            "name": "zoopsaNumericExpression",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 35,
-            "memberOf": "",
-            "doclet": "/**\n * Zoopsa numeric expression.\n * @param z\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
-            "args": [
-              "z"
-            ],
-            "description": "",
-            "return": "?",
-            "classDeclarationFlag": false,
-            "line": "function zoopsaNumericExpression(z) {",
-            "originalJsDocDescription": {}
-          },
-          {
-            "name": "zoopsaPrivateExpression",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 39,
-            "memberOf": "",
-            "doclet": "/**\n * Zoopsa private expression.\n * @param z\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
-            "args": [
-              "z"
-            ],
-            "description": "",
-            "return": "?",
-            "classDeclarationFlag": false,
-            "line": "function zoopsaPrivateExpression(z) {",
-            "originalJsDocDescription": {}
-          },
-          {
-            "name": "zoopsax",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 47,
-            "memberOf": "",
-            "doclet": "/**\n * @param z\n * @return A numeric mambo.\n */",
-            "args": [
-              "z"
-            ],
-            "description": "",
-            "return": "?",
-            "classDeclarationFlag": false,
-            "line": "function zoopsax(z) {",
-            "originalJsDocDescription": {
-              "return": {
-                "tag": "return",
-                "line": 1,
-                "lastLine": -1,
-                "textStartsOnSameLine": true,
-                "text": "A numeric mambo.\n"
-              }
-            }
           },
           {
             "name": "stupidFunction",
             "visibility": "public",
             "static": false,
-            "lineNumber": 51,
-            "memberOf": "",
-            "doclet": "/**\n * Stupid function.\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
-            "description": "",
+            "lineNumber": 24,
+            "memberOf": "this",
+            "doclet": "/**\n * The function is stupid but the comment is a valid doclet.\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
+            "description": "\n The function is stupid but the comment is a valid doclet.\n",
             "return": "?",
             "classDeclarationFlag": false,
-            "line": "function stupidFunction() {",
+            "line": "this[\"stupidFunction\"] = function() {",
             "originalJsDocDescription": {}
           },
           {
-            "name": "funkyFoo",
+            "name": "privateFunction",
             "visibility": "public",
             "static": false,
-            "lineNumber": 63,
+            "lineNumber": 41,
             "memberOf": "",
-            "doclet": "/**\n * @private\n * @param z\n * \n * @param z\n * @return {string}\n */",
+            "doclet": "/**\n * @private\n * @param a  \n * @param {Banana}  \n * @param {boolean}  \n * @return {String}\n */",
             "args": [
-              "z"
+              "a",
+              "b",
+              "c"
             ],
             "description": "",
             "return": "{string}",
             "classDeclarationFlag": false,
-            "line": "function funkyFoo(z) {",
+            "line": "var privateFunction = function(a, b, c) {",
             "originalJsDocDescription": {
               "private": {
                 "tag": "private",
@@ -289,208 +212,113 @@
                 {
                   "tag": "param",
                   "line": 2,
+                  "lastLine": 3,
+                  "textStartsOnSameLine": true,
+                  "text": "a\n            A standard apple fruit."
+                },
+                {
+                  "tag": "param",
+                  "line": 4,
+                  "lastLine": 5,
+                  "textStartsOnSameLine": true,
+                  "text": "{Banana}\n            b The Banana."
+                },
+                {
+                  "tag": "param",
+                  "line": 6,
+                  "lastLine": 7,
+                  "textStartsOnSameLine": true,
+                  "text": "{boolean}\n            c"
+                }
+              ],
+              "return": {
+                "tag": "return",
+                "line": 8,
+                "lastLine": -1,
+                "textStartsOnSameLine": true,
+                "text": "{String}\n"
+              }
+            }
+          },
+          {
+            "name": "worldPuzzle",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 52,
+            "memberOf": "Fronum.prototype",
+            "doclet": "/**\n * @param toothache\n * @param tomato\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
+            "args": [
+              "toothache",
+              "tomato"
+            ],
+            "description": "",
+            "return": "?",
+            "classDeclarationFlag": false,
+            "line": "Fronum.prototype.worldPuzzle = function(toothache, tomato) {",
+            "originalJsDocDescription": {}
+          },
+          {
+            "name": "SecondClass",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 57,
+            "memberOf": "",
+            "doclet": "/**\n * Creates a new instance of class SecondClass.\n * @constructor\n */",
+            "description": "",
+            "return": "",
+            "classDeclarationFlag": true,
+            "line": "function SecondClass() {}",
+            "originalJsDocDescription": {}
+          },
+          {
+            "name": "fixTheWorld",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 58,
+            "memberOf": "SecondClass.prototype",
+            "doclet": "/**\n * Fix the world.\n * @param toothache\n * @param tomato\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
+            "args": [
+              "toothache",
+              "tomato"
+            ],
+            "description": "",
+            "return": "?",
+            "classDeclarationFlag": false,
+            "line": "SecondClass.prototype.fixTheWorld = function(toothache, tomato) {",
+            "originalJsDocDescription": {}
+          },
+          {
+            "name": "Component",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 64,
+            "memberOf": "",
+            "doclet": "/**\n * @constructs module:blue/component\n * @constructor\n * @param {PlainObject} options\n */",
+            "args": [
+              "cfgModel",
+              "options"
+            ],
+            "description": "",
+            "return": "",
+            "classDeclarationFlag": true,
+            "line": "constructor: function Component(cfgModel, options) {",
+            "originalJsDocDescription": {
+              "constructs": {
+                "tag": "constructs",
+                "line": 1,
+                "lastLine": 1,
+                "textStartsOnSameLine": true,
+                "text": "module:blue/component"
+              },
+              "params": [
+                {
+                  "tag": "param",
+                  "line": 2,
                   "lastLine": -1,
                   "textStartsOnSameLine": true,
-                  "text": "z\n"
+                  "text": "{PlainObject} options\n"
                 }
               ]
-            }
-          },
-          {
-            "name": "funkyFood",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 70,
-            "memberOf": "",
-            "doclet": "/**\n * @protected\n * @param z\n * @return {string}\n */",
-            "args": [
-              "z"
-            ],
-            "description": "",
-            "return": "{string}",
-            "classDeclarationFlag": false,
-            "line": "function funkyFood(z) {",
-            "originalJsDocDescription": {
-              "protected": {
-                "tag": "protected",
-                "line": 1,
-                "lastLine": -1,
-                "textStartsOnSameLine": true,
-                "text": "\n"
-              }
-            }
-          },
-          {
-            "name": "funkyFoodle",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 77,
-            "memberOf": "",
-            "doclet": "/**\n * @public\n * @param z\n * @return {string}\n */",
-            "args": [
-              "z"
-            ],
-            "description": "",
-            "return": "{string}",
-            "classDeclarationFlag": false,
-            "line": "function funkyFoodle(z) {",
-            "originalJsDocDescription": {
-              "public": {
-                "tag": "public",
-                "line": 1,
-                "lastLine": -1,
-                "textStartsOnSameLine": true,
-                "text": "\n"
-              }
-            }
-          },
-          {
-            "name": "newChild",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 96,
-            "memberOf": "",
-            "doclet": "/**\n * @function\n * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context.\n * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context. \n * @return {Context} The child context.\n */",
-            "args": [
-              "isolate"
-            ],
-            "description": "",
-            "classDeclarationFlag": false,
-            "line": "function newChild(isolate) {",
-            "originalJsDocDescription": {
-              "function": {
-                "tag": "function",
-                "line": 1,
-                "lastLine": 1,
-                "textStartsOnSameLine": true,
-                "text": ""
-              },
-              "params": [
-                {
-                  "tag": "param",
-                  "line": 2,
-                  "lastLine": 2,
-                  "textStartsOnSameLine": true,
-                  "text": "{Boolean} [isolate] Whether or not to isolate the child context from the parent context."
-                }
-              ],
-              "return": {
-                "tag": "return",
-                "line": 3,
-                "lastLine": -1,
-                "textStartsOnSameLine": true,
-                "text": "{Context} The child context.\n"
-              }
-            }
-          },
-          {
-            "name": "oldChild",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 105,
-            "memberOf": "",
-            "doclet": "/**\n * @function\n * @param {Boolean} Whether or not to isolate the child context from the parent context.\n * @param {Boolean} Whether or not to isolate the child context from the parent context. \n * @return {Context} The child context.\n */",
-            "args": [
-              "isolate"
-            ],
-            "description": "",
-            "classDeclarationFlag": false,
-            "line": "function oldChild(isolate) {",
-            "originalJsDocDescription": {
-              "function": {
-                "tag": "function",
-                "line": 1,
-                "lastLine": 1,
-                "textStartsOnSameLine": true,
-                "text": ""
-              },
-              "params": [
-                {
-                  "tag": "param",
-                  "line": 2,
-                  "lastLine": 2,
-                  "textStartsOnSameLine": true,
-                  "text": "{Boolean} Whether or not to isolate the child context from the parent context."
-                }
-              ],
-              "return": {
-                "tag": "return",
-                "line": 3,
-                "lastLine": -1,
-                "textStartsOnSameLine": true,
-                "text": "{Context} The child context.\n"
-              }
-            }
-          },
-          {
-            "name": "simple",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 114,
-            "memberOf": "",
-            "doclet": "/**\n * @function\n * @param Whether or not to isolate the child context from the parent context.\n * @param Whether or not to isolate the child context from the parent context. \n * @return {Context} The child context.\n */",
-            "args": [
-              "isolate"
-            ],
-            "description": "",
-            "classDeclarationFlag": false,
-            "line": "function simple(isolate) {",
-            "originalJsDocDescription": {
-              "function": {
-                "tag": "function",
-                "line": 1,
-                "lastLine": 1,
-                "textStartsOnSameLine": true,
-                "text": ""
-              },
-              "params": [
-                {
-                  "tag": "param",
-                  "line": 2,
-                  "lastLine": 2,
-                  "textStartsOnSameLine": true,
-                  "text": "Whether or not to isolate the child context from the parent context."
-                }
-              ],
-              "return": {
-                "tag": "return",
-                "line": 3,
-                "lastLine": -1,
-                "textStartsOnSameLine": true,
-                "text": "{Context} The child context.\n"
-              }
-            }
-          },
-          {
-            "name": "simpleNoFunc",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 122,
-            "memberOf": "",
-            "doclet": "/**\n * @param isolate Whether or not to isolate the child context from the parent context.\n * @param isolate Whether or not to isolate the child context from the parent context. \n * @return The child context.\n */",
-            "args": [
-              "isolate"
-            ],
-            "description": "",
-            "classDeclarationFlag": false,
-            "line": "function simpleNoFunc(isolate) {",
-            "originalJsDocDescription": {
-              "params": [
-                {
-                  "tag": "param",
-                  "line": 1,
-                  "lastLine": 1,
-                  "textStartsOnSameLine": true,
-                  "text": "isolate Whether or not to isolate the child context from the parent context."
-                }
-              ],
-              "return": {
-                "tag": "return",
-                "line": 2,
-                "lastLine": -1,
-                "textStartsOnSameLine": true,
-                "text": "The child context.\n"
-              }
             }
           }
         ],
@@ -499,18 +327,17 @@
         "uses_y_log": false,
         "requiresRaw": [],
         "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source",
-        "fileName": "zero-test.js",
+        "fileName": "no-module.js",
         "strict": false
       },
-      "possibleClassname": "",
       "testStubs": "\n",
       "couldParseProcessedSource": true,
       "corrupted": false,
-      "numberOfLines": 154
+      "numberOfLines": 146
     }
   ],
   "path": "test-source",
-  "timeInSeconds": 0.116,
+  "timeInSeconds": 0.144,
   "outPath": "test-output",
   "testPath": "test-jstests",
   "docPath": "test-jsdocs",

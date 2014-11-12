@@ -114,8 +114,6 @@
         "reason": "No jsDoc Comments for method 'anotherFunction'."
       }
     ],
-    "jsDocNameFixerProc": [],
-    "jsDoc3PrepProc": [],
     "trimProc": []
   },
   "outputDirectory": "test-output",
@@ -127,7 +125,7 @@
   "libFile": false,
   "min": false,
   "realName": "yes-module",
-  "name": "yes-module",
+  "name": "yes_module",
   "camelName": "YesModule",
   "processedFilePath": "test-output/yes-module.js",
   "couldParseOriginalSource": true,
@@ -142,18 +140,18 @@
     "no_lib": true,
     "inferencedClassName": "n/a",
     "uses_$": false,
-    "chars": 4789,
+    "chars": 4781,
     "uses_YUI": false,
     "fields": [],
     "moduleName": "./yes-module",
     "uses_console_log": false,
     "uses_backbone": false,
     "classes": {
-      "DonutView": 1084,
-      "Freenox": 657,
-      "SecondClass": 720,
-      "ThirdClass": 756,
-      "FourthClass": 776
+      "DonutView": 1080,
+      "Freenox": 654,
+      "SecondClass": 717,
+      "ThirdClass": 753,
+      "FourthClass": 773
     },
     "methods": [
       {
@@ -214,7 +212,7 @@
         "static": false,
         "lineNumber": 51,
         "memberOf": "",
-        "doclet": "/**\n * @private\n * @param a\n *             A standard apple fruit.\n * @param {Banana}\n *             b The Banana.\n * @param {boolean}\n *             c\n * @param a  \n * @param {Banana}  \n * @param {boolean}  \n * @return {String}\n */",
+        "doclet": "/**\n * @private\n * @param a  \n * @param {Banana}  \n * @param {boolean}  \n * @return {String}\n */",
         "args": [
           "a",
           "b",
@@ -429,7 +427,7 @@
         "static": false,
         "lineNumber": 181,
         "memberOf": "Freenox.prototype",
-        "doclet": "/**\n * @description Subscribe to events on the component's local Channel. Events on the\n *               local channel are not visible to other components or the main\n *               ComponentChannel.\n * @function\n * @param {String|PlainObject} [eventType] The type of event.\n * @param {Function} [callback] The callback to execute when the event is published.\n * @example \n *  // Execute callback for ALL events on the component (no eventType given)\n *  myComponent.on(function(event){\n *      // Analyze, log, etc the event\n *  });\n * \n *  // Execute callback for a component-generated event\n *  // Format of eventType is ACTION/VALUE\n *  // ACTION - function call, state change, etc on the component\n *  // VALUE - name of action, property name, etc.\n * \n *  // Note: TARGET is automatically prepended to the eventType and\n *  //       is equal to the name of the component as defined in the spec\n *  myComponent.on('action/submit', function(event){\n *      // Execute logic for the submit action on the component\n *  });\n * \n *  // Subscribe to multiple events\n *  myComponent.on( {\n *      'action/submit': function(submitEvent){\n *          // Business Logic\n *      },\n *      'state/enabled': function(enabledEvent){\n *          // Business Logic\n *      },\n *      'action/requestBalance': function(requestEvent){\n *          // Business Logic\n *      },\n *      'state/valid': function(validEvent){\n *          // Business Logic\n *      }\n *  } );\n * \n *  // Can use wildcards\n *  myComponent.on('action/*', function(actionEvent){\n *      // Logic for all actions on the component\n *  } );\n * \n * @param {String|PlainObject} [eventType] The type of event. \n * @param {Function} [callback] The callback to execute when the event is published. \n */",
+        "doclet": "/**\n * @description Subscribe to events on the component's local Channel. Events on the\n *               local channel are not visible to other components or the main\n *               ComponentChannel.\n * @function\n * @example \n *  // Execute callback for ALL events on the component (no eventType given)\n *  myComponent.on(function(event){\n *      // Analyze, log, etc the event\n *  });\n * \n *  // Execute callback for a component-generated event\n *  // Format of eventType is ACTION/VALUE\n *  // ACTION - function call, state change, etc on the component\n *  // VALUE - name of action, property name, etc.\n * \n *  // Note: TARGET is automatically prepended to the eventType and\n *  //       is equal to the name of the component as defined in the spec\n *  myComponent.on('action/submit', function(event){\n *      // Execute logic for the submit action on the component\n *  });\n * \n *  // Subscribe to multiple events\n *  myComponent.on( {\n *      'action/submit': function(submitEvent){\n *          // Business Logic\n *      },\n *      'state/enabled': function(enabledEvent){\n *          // Business Logic\n *      },\n *      'action/requestBalance': function(requestEvent){\n *          // Business Logic\n *      },\n *      'state/valid': function(validEvent){\n *          // Business Logic\n *      }\n *  } );\n * \n *  // Can use wildcards\n *  myComponent.on('action/*', function(actionEvent){\n *      // Logic for all actions on the component\n *  } );\n * \n * @param {String|PlainObject} [eventType] The type of event. \n * @param {Function} [callback] The callback to execute when the event is published. \n */",
         "args": [
           "eventType",
           "callback"
@@ -489,5 +487,5 @@
   "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 201
+  "numberOfLines": 199
 }

@@ -15,7 +15,14 @@ function healthCheckCallback(healthCheckResults) {
     console.log('ALL DONE');
 
     function runJsDoc(sourceDirectory) {
-        rimraf(projectPath + '/jsdoc-prep/test-jsdocs', function() {
+        
+        var docPath = projectPath + '/jsdoc-prep/test-jsdocs';
+        console.log('Delete the test-jsdocs directory? ' + docPath);
+        rimraf(docPath, function() {
+            
+//            console.warn(arguments);
+//            return;
+
             // sourceDirectory = path.normalize(sourceDirectory);
             var exePath = path.normalize(projectPath
                     + '/jsdoc-prep/node_modules/.bin/jsdoc');
@@ -43,7 +50,7 @@ function healthCheckCallback(healthCheckResults) {
              * @param code
              */
             child.on('close', function(code) {
-                console.log('child process exited with code ' + code);
+                console.log('child process "node jsdoc" exited with code ' + code);
             });
         });
     }
@@ -51,15 +58,20 @@ function healthCheckCallback(healthCheckResults) {
 }
 // 'jsDoc3PrepProc',
 var processingChain = [
-// 'trimProc',
-'thirdPartyFilter', 'minFilter', 'badCharactersProc',
-// 'trimProc',
-'amdFilter', 'jsBeautifyProc', 'amdProc', 'jsDoccerProc',
-
-//'jsDocNameFixerProc', 'fixClassDeclarationsProc', 
-//'jsDoc3PrepProc', 
-'trimProc',
-        'jsBeautifyProc' ];
+                       // 'trimProc',
+//                       'thirdPartyFilter',
+//                       'minFilter',
+//                       'badCharactersProc',
+                       // 'trimProc',
+//                       'amdFilter',
+                       'jsBeautifyProc',
+                       'amdProc',
+                       'jsDoccerProc',
+                       'jsDocNameFixerProc',
+                       'fixClassDeclarationsProc',
+                       'jsDoc3PrepProc',
+                       'trimProc',
+                       'jsBeautifyProc' ];
 
 // var processingChain = [
 // // 'trimProc',
