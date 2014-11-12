@@ -955,9 +955,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
     var docletData = {};
     docletData.params = [];
     docletData.tags = [];
-    // docletData.requiresList = []; // input.results.amdProc.requires;
     docletData.requiresList = input.results.amdProc.requires;
-    // }
     docletData.moduleName = input.name;
     docletData.camelName = input.camelName;
     if (nextLineOfCode.indexOf('.extend') !== -1) {
@@ -1289,9 +1287,9 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                 '<br />\r\n * ');
     }
     // // console.warn(doclet);
-    //console.warn(JSON.stringify(docletData));
+    // console.warn(JSON.stringify(docletData));
 
-    //console.warn(getRequiresTags(input));
+    // console.warn(getRequiresTags(input));
 
     return docletData;
 }
@@ -1407,8 +1405,9 @@ function getNodesByType(ast, nodeType) {
                             } else if (statement.name === 'undefined') {
                                 returnType = '';
                             } else {
-                                //returnType = statement.name;
-                                //console.warn('Cannot derive meaning from "return ' + statement.name + '".');
+                                // returnType = statement.name;
+                                // console.warn('Cannot derive meaning from
+                                // "return ' + statement.name + '".');
                                 returnType = '?';
                             }
 
@@ -1454,10 +1453,10 @@ function getNodesByType(ast, nodeType) {
             }
         }
         node.returnType = returnType;
-        //if (returnType === 'undefined') {
-        //    console.warn(statement);
-        //}
-        //console.warn(returnType);
+        // if (returnType === 'undefined') {
+        // console.warn(statement);
+        // }
+        // console.warn(returnType);
     }
     return results;
 }
@@ -1812,20 +1811,32 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
  * @return the tag
  */
 function searchTags(doclet, name) {
-    var tags = doclet.tags;
+    var tags = enumTags(doclet);
+    // console.warn("searchTags");
     // console.warn(tags);
     if (tags == null) {
+        // console.warn("searchTags found no tags");
         return null;
     }
-    for (var i = 0; i < tags.length; i++) {
-        var tag = tags[i];
-        if (tag.tag === name) {
-            return tag;
-        }
+    var tagHash = tags[name];
+    if (tagHash == null) {
+        return null;
     }
-    return null;
+    if (tagHash.join !== null) {
+        //console.warn('found a collection of tags');
+        return tagHash;
+    } else {
+        //console.warn('found a single tag');
+        return tagHash;
+    }
 }
 
+/**
+ * 
+ * @param doclet
+ *            from parseDoclet()
+ * @returns {Object} simple mapping of tags
+ */
 function enumTags(doclet) {
     var output = {};
     var tags = doclet.tags;
@@ -1842,6 +1853,42 @@ function enumTags(doclet) {
                 output.params = params;
             }
             params.push(tag);
+        } else if (tag.tag === 'requires') {
+            var requires = output.requires;
+            if (requires == null) {
+                requires = [];
+                output.requires = requires;
+            }
+            requires.push(tag);
+
+        } else if (tag.tag === 'augments') {
+            var augments = output.augments;
+            if (augments == null) {
+                augments = [];
+                output.augments = augments;
+            }
+            augments.push(tag);
+        } else if (tag.tag === 'lends') {
+            var lends = output.lends;
+            if (lends == null) {
+                lends = [];
+                output.lends = lends;
+            }
+            lends.push(tag);
+        } else if (tag.tag === 'borrows') {
+            var borrows = output.borrows;
+            if (borrows == null) {
+                borrows = [];
+                output.borrows = borrows;
+            }
+            borrows.push(tag);
+        } else if (tag.tag === 'author') {
+            var author = output.author;
+            if (author == null) {
+                author = [];
+                output.author = author;
+            }
+            author.push(tag);
         } else {
             output[tag.tag] = tag;
         }
@@ -1851,9 +1898,9 @@ function enumTags(doclet) {
 }
 
 function getCommentWith(input, comments, whatTag) {
-    //    { type: 'Block',
-    //        value: '*\n   * @module zero-test\n   * @requires pruna\n   ',
-    //        range: [ 2, 55 ] }
+    // { type: 'Block',
+    // value: '*\n * @module zero-test\n * @requires pruna\n ',
+    // range: [ 2, 55 ] }
 
     for (var index = 0; index < comments.length; index++) {
         var comment = comments[index];
@@ -1873,7 +1920,7 @@ function getCommentWith(input, comments, whatTag) {
 
         comment.commentBody = commentBody;
 
-        //console.warn(commentBody);
+        // console.warn(commentBody);
 
         if (commentBody.indexOf(whatTag) !== -1) {
             return comment;
@@ -1905,28 +1952,31 @@ function addMissingComments(walkerObj) {
         return 'ERROR';
     }
 
-    //console.log(ast.comments);
+    // console.log(ast.comments);
 
-    // TODO: patch the @exports or @module @requires tags and re-parse the source!!!
+    // TODO: patch the @exports or @module @requires tags and re-parse the
+    // source!!!
 
     var hasModule = getCommentWith(input, ast.comments, '@module');
     var hasExports = getCommentWith(input, ast.comments, '@exports');
     var nodeWithRequiresBlock = null;
     if (hasExports != null) {
-        console.warn('Found @exports.');
+        console.log('Found @exports.');
         nodeWithRequiresBlock = hasExports;
     } else if (hasModule != null) {
-        console.warn('Did not find @exports but found @module.');
+        console.log('Did not find @exports but found @module.');
         nodeWithRequiresBlock = hasModule;
     }
 
     if (nodeWithRequiresBlock != null) {
-        //        var doclet = parseDoclet(walkerObj, nodeWithRequiresBlock.commentBody,
-        //                false, '', 0, null);
-        //        console.warn(doclet);
+        // var doclet = parseDoclet(walkerObj,
+        // nodeWithRequiresBlock.commentBody,
+        // false, '', 0, null);
+        // console.warn(doclet);
 
-        var newComment = generateComment(null, ast, walkerObj, input, nodeWithRequiresBlock);
-        console.warn(newComment);
+        var newComment = generateComment(null, ast, walkerObj, input,
+                nodeWithRequiresBlock);
+        // console.warn(newComment);
     }
 
     // writeFile("dump.json", JSON.stringify(ast, null, 2));
@@ -2177,6 +2227,81 @@ function getMethodOnLine(methodArray, lineNumber, ast, input) {
     }
     return null;
 }
+
+/**
+ * Combine physical/logical requires so doclet will print with all.
+ * 
+ * @param doclet
+ */
+function mergeRequires(doclet) {
+    // console.warn(doclet);
+    var allRequires = searchTags(doclet, 'requires');
+
+    if (allRequires == null) {
+        allRequires = [];
+    }
+    //console.warn(allRequires);
+    
+    var requiresList = doclet.requiresList;
+    if (requiresList == null) {
+        requiresList = [];
+    }
+    //console.warn(requiresList);
+
+    var diffRequires = getValuesNotInTags(allRequires, requiresList);
+    // console.warn(diffRequires);
+//    console.warn('These require modules were not included: '
+//            + diffRequires.toString());
+//    // put any items in requiresList after allRequires if they are not already
+    // listed
+    var line = 1;
+    var lastLine = 1;
+    for (var i = 0; i < diffRequires.length; i++) {
+        var diffRequire = diffRequires[i];
+        var newTag = {
+                tag : 'requires',
+                line : -1,
+                lastLine : lastLine,
+                textStartsOnSameLine : true,
+                text : diffRequire
+            };
+        //console.warn(newTag);
+        doclet.tags.push(newTag);
+    }
+}
+
+/**
+ * 
+ * @param tagList
+ * @param valueList
+ * @returns {Array}
+ */
+function getValuesNotInTags(tagList, valueList) {
+    var output = [];
+    var textValues = getTextFromTags(tagList);
+    // console.warn(textValues);
+    for (var i = 0; i < valueList.length; i++) {
+        var value = valueList[i];
+        if (textValues.indexOf(value) === -1) {
+            output.push(value);
+        }
+    }
+    return output;
+}
+
+/**
+ * 
+ * @param tagList
+ * @returns {Array}
+ */
+function getTextFromTags(tagList) {
+    var output = [];
+    for (var i = 0; i < tagList.length; i++) {
+        output.push(tagList[i].text.trim());
+    }
+    return output;
+}
+
 /**
  * Generate a new comment, or fix an existing one.
  * 
@@ -2217,6 +2342,8 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt)
         commentText = commentBodyOpt.commentBody;
         functionWrapper = {};
         doclet = parseDoclet(walkerObj, commentText, false, '', 0, null);
+        // console.warn(doclet);
+        mergeRequires(doclet);
         console.warn(doclet);
     }
 
@@ -2226,7 +2353,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt)
         // console.warn(doclet.tags);
         tags = doclet.tags;
     }
-    
+
     // TODO: Rewrite this to dump the tags in the original order they were
     // declared.
     var commentBlock = [];
@@ -2243,7 +2370,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt)
             var newTag = tags[tIndex];
             var t = '@' + newTag.tag;
             if (doclet.hasOwnProperty(t)) {
-                //console.warn(t);
+                // console.warn(t);
                 if (t.charAt(0) === '@') {
                     if (t !== '@return') {
                         var tag = doclet[t];
