@@ -16,9 +16,9 @@ function healthCheckCallback(healthCheckResults) {
 
     function runJsDoc(sourceDirectory) {
         
-        var docPath = projectPath + '/jsdoc-prep/test-jsdocs';
+        //var docPath = projectPath + '/jsdoc-prep/test-jsdocs';
         console.log('Delete the test-jsdocs directory? ' + docPath);
-        rimraf(docPath, function() {
+        rimraf(path.normalize(docPath), function() {
             
 //            console.warn(arguments);
 //            return;
@@ -99,6 +99,7 @@ var justDoc = false;
 if (justDoc) {
     healthCheckCallback({});
 } else {
+    //console.warn(outPath);
     rimraf(outPath, function() {
         healthCheck.run({
             callBack : opts.callBack,
