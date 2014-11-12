@@ -55,6 +55,7 @@ function() {
     
     /**
      * @private
+     * @param z
      */
     function funkyFoo(z){
         return "roger that";
@@ -84,7 +85,40 @@ function() {
     
     var willBe = require('./willBe');
 
-
+    /**
+     * @function
+     * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context.
+     * @return {Context} The child context.
+     */
+    function newChild( isolate ){
+        new Context();
+    }
+    
+    /**
+     * @function
+     * @param {Boolean} Whether or not to isolate the child context from the parent context.
+     * @return {Context} The child context.
+     */
+    function oldChild( isolate ){
+        new Context();
+    }
+    
+    /**
+     * @function
+     * @param Whether or not to isolate the child context from the parent context.
+     * @return {Context} The child context.
+     */
+    function simple( isolate ){
+        new Context();
+    }
+    
+    /**
+     * @param isolate Whether or not to isolate the child context from the parent context.
+     * @return The child context.
+     */
+    function simpleNoFunc( isolate ){
+        new Context();
+    }
 
     return false;
 });

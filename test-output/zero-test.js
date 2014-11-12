@@ -1,8 +1,18 @@
+/**
+ * @module zero-test
+ * @requires pruna
+ */
+(function() {
+  // do something jqueryish
+}());
+// one-line comment at top
 define('zero-test', [],
   /**
-* @exports zero-test
-
-*/
+   * @exports zero-test
+   * @requires ./is
+   * @requires ./was
+   * @requires ./willBe
+   */
   function() {
     'use strict';
     /**
@@ -15,7 +25,7 @@ define('zero-test', [],
     /**
      * Zoop.
      * @param z
-     * @return {Boolean}
+     * @return {boolean}
      */
     function zoop(z) {
       return false;
@@ -39,7 +49,7 @@ define('zero-test', [],
      * Zoopsa numeric expression.
      * @param z
      * @todo Please describe the return type of this method.
-     * @return {Object} ??
+     * @return {object} ??
      */
     function zoopsaNumericExpression(z) {
       return 1 / 2;
@@ -48,7 +58,7 @@ define('zero-test', [],
      * Zoopsa private expression.
      * @param z
      * @todo Please describe the return type of this method.
-     * @return {Object} ??
+     * @return {object} ??
      */
     function zoopsaPrivateExpression(z) {
       var zzz = "I can't get this type.";
@@ -64,7 +74,7 @@ define('zero-test', [],
     /**
      * Stupid function.
      * @todo Please describe the return type of this method.
-     * @return {Object} ??
+     * @return {object} ??
      */
     function stupidFunction() {
       // some stupid line comment
@@ -75,7 +85,9 @@ define('zero-test', [],
     /**
      * @private
      * @param z
-     * @return {String}
+     *
+     * @param z
+     * @return {string}
      */
     function funkyFoo(z) {
       return "roger that";
@@ -83,7 +95,7 @@ define('zero-test', [],
     /**
      * @protected
      * @param z
-     * @return {String}
+     * @return {string}
      */
     function funkyFood(z) {
       return "roger that";
@@ -91,7 +103,7 @@ define('zero-test', [],
     /**
      * @public
      * @param z
-     * @return {String}
+     * @return {string}
      */
     function funkyFoodle(z) {
       return "roger that";
@@ -103,5 +115,40 @@ define('zero-test', [],
       return was.Funky(this);
     });
     var willBe = require('./willBe');
+    /**
+     * @function
+     * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context.
+     * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context.
+     * @return {Context} The child context.
+     */
+    function newChild(isolate) {
+      new Context();
+    }
+    /**
+     * @function
+     * @param {Boolean} Whether or not to isolate the child context from the parent context.
+     * @param {Boolean} Whether or not to isolate the child context from the parent context.
+     * @return {Context} The child context.
+     */
+    function oldChild(isolate) {
+      new Context();
+    }
+    /**
+     * @function
+     * @param Whether or not to isolate the child context from the parent context.
+     * @param Whether or not to isolate the child context from the parent context.
+     * @return {Context} The child context.
+     */
+    function simple(isolate) {
+      new Context();
+    }
+    /**
+     * @param isolate Whether or not to isolate the child context from the parent context.
+     * @param isolate Whether or not to isolate the child context from the parent context.
+     * @return The child context.
+     */
+    function simpleNoFunc(isolate) {
+      new Context();
+    }
     return false;
   });

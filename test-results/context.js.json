@@ -1,7 +1,10 @@
 {
   "results": {
     "amdProc": {
-      "requires": [],
+      "requires": [
+        "./is",
+        "./declare"
+      ],
       "moduleName": "context",
       "AMD": true,
       "webPath": ""
@@ -31,7 +34,7 @@
         "raw": "No jsDoc Comments for method 'ChildContext'.",
         "code": "wfJD",
         "evidence": "this.ChildContext = function ChildContext() {",
-        "line": 74,
+        "line": 77,
         "character": -1,
         "scope": "(main)",
         "a": "",
@@ -58,7 +61,7 @@
   "couldParseOriginalSource": true,
   "preprocessed": true,
   "jsDoccerProcData": {
-    "lines": 100,
+    "lines": 103,
     "requires": [],
     "className": "n/a",
     "packagePath": "",
@@ -67,7 +70,7 @@
     "no_lib": true,
     "inferencedClassName": "n/a",
     "uses_$": false,
-    "chars": 2516,
+    "chars": 2646,
     "uses_YUI": false,
     "fields": [],
     "moduleName": "./context",
@@ -82,9 +85,9 @@
         "name": "Context",
         "visibility": "public",
         "static": false,
-        "lineNumber": 15,
+        "lineNumber": 18,
         "memberOf": "",
-        "doclet": "/**\n * @constructs module:fluffy/context\n * @augments {null}\n * \n * @constructor\n */",
+        "doclet": "/**\n * @constructs module:blue/context~Context\n * @augments {null}\n * \n * @constructor\n */",
         "description": "",
         "return": "",
         "classDeclarationFlag": true,
@@ -95,24 +98,26 @@
             "line": 1,
             "lastLine": 1,
             "textStartsOnSameLine": true,
-            "text": "module:fluffy/context"
+            "text": "module:blue/context~Context"
           },
-          "augments": {
-            "tag": "augments",
-            "line": 2,
-            "lastLine": -1,
-            "textStartsOnSameLine": true,
-            "text": "{null}\n"
-          }
+          "augments": [
+            {
+              "tag": "augments",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "{null}\n"
+            }
+          ]
         }
       },
       {
         "name": "newChild",
         "visibility": "public",
         "static": false,
-        "lineNumber": 61,
+        "lineNumber": 64,
         "memberOf": "",
-        "doclet": "/**\n * @function\n * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context. \n * @return {Context} The child context.\n */",
+        "doclet": "/**\n * @function\n * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context.\n * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context. \n * @return {Context} The child context.\n */",
         "args": [
           "isolate"
         ],
@@ -150,7 +155,7 @@
         "name": "ChildContext",
         "visibility": "public",
         "static": false,
-        "lineNumber": 74,
+        "lineNumber": 77,
         "memberOf": "",
         "doclet": "/**\n * Creates a new instance of class ChildContext.\n * @constructor\n */",
         "description": "",
@@ -171,5 +176,5 @@
   "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 86
+  "numberOfLines": 89
 }

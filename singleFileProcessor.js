@@ -1044,6 +1044,7 @@ var jsDoccerProc = {
             }
             input.source = unescape(splitter[1]);
             input.testStubs = unescape(splitter[2]);
+            //console.warn(input.source);
             writeFile(input.processedFilePath, input.source);
             doneCallback(input);
             // });
@@ -1081,6 +1082,13 @@ function readFile(filePathName) {
 }
 
 function writeFile(filePathName, source) {
+    
+//    if (filePathName.indexOf('.json') === -1){
+//        console.warn(arguments.callee.caller);
+//        console.warn('writeFile: ' + filePathName);
+//        //console.warn(source);
+//    }
+    
     if (WRITE_ENABLED) {
         filePathName = _path.normalize(filePathName);
         safeCreateFileDir(filePathName);
@@ -1169,6 +1177,7 @@ function processFile(baseDirectory, filePathName, outputDirectory,
 
     function _finishedProcessingChain() {
         var VERIFY_PARSE = true;
+        //console.warn(output.source);
         writeFile(outputfilePathName, output.source);
         output.couldParseProcessedSource = canParse(outputfilePathName,
             output.source, processor.id);
@@ -1186,12 +1195,14 @@ function processFile(baseDirectory, filePathName, outputDirectory,
         if (VERIFY_PARSE) {
             if (output.couldParseOriginalSource != output.couldParseProcessedSource) {
                 if (!output.couldParseProcessedSource) {
+                    console.warn('COULD NOT PARSE MODIFIED SOURCE in file ' + output.name);
                     output.source = output.undoBuffer;
                     output.corrupted = false;
                     writeFile(outputfilePathName, output.source);
                 }
             }
         }
+        output.rawSource = null;
         delete output.rawSource;
         completionCallback(output);
     }
@@ -1643,8 +1654,13 @@ function convert(input, filePathname) {
 }
 
 function getRequiresTags(input) {
+    console.warn('getRequiresTags: ' + input.name);
     var output = '';
     var amdProcData = input.results.amdProc;
+    if (!amdProcData.AMD){
+        return '';
+    }
+    //console.warn(amdProcData);
     for (var index = 0; index < amdProcData.requires.length; index++) {
         var moduleName = amdProcData.requires[index];
         if (typeof moduleName !== 'string') {
@@ -1690,11 +1706,12 @@ function replace(source, original, token) {
     var array = source.split(original);
     return array.join(token);
 }
+
 var jsDoc3PrepProc = {
     id: 'jsDoc3PrepProc',
     type: 'processor',
     description: 'Fixes annotations. Less is more.',
-    process: function (input, doneCallback) {
+    process: function jsDoc3PrepProcess (input, doneCallback) {
         var PROC_DOCLETS = true;
         if (input.errors[this.id] == null) {
             input.errors[this.id] = [];
@@ -1702,6 +1719,7 @@ var jsDoc3PrepProc = {
         input.name = input.fileName.split('.js')[0];
         // console.warn(input.name);
         var source = input.source;
+        //console.warn(input.source);
         //        if (input.name === 'context'){
         //            //console.warn(splitter[0]);
         //            console.warn(source);
@@ -1732,9 +1750,9 @@ var jsDoc3PrepProc = {
             if (line.indexOf('* @method') !== -1 || line.indexOf('* @function') !== -1 || line.indexOf('* @memberOf') !== -1) {
                 lines[index] = '';
             }
-            if (line.indexOf('* @requires') !== -1) {
-                lines[index] = '';
-            }
+//            if (line.indexOf('* @requires') !== -1) {
+//                lines[index] = '';
+//            }
             // this is for Backbone stuff.
             if (line.indexOf('* @lends') !== -1 || line.indexOf('*@lends') !== -1) {
                 if (lastLine.indexOf('.extend') === -1) {
@@ -1781,6 +1799,7 @@ var jsDoc3PrepProc = {
         //                     */
         //                    constructor: function Context(){
         if (whereDefine !== -1) {
+            console.warn('jsDoc3PrepProc: found define() in the module');
             var source = input.source.substring(whereDefine);
             var whereVar = source.indexOf('var ');
             var whereFunctionNoSpace = source.indexOf('function(');
@@ -1794,6 +1813,7 @@ var jsDoc3PrepProc = {
                     if (whereFunctionNoSpace === -1 && whereFunction === -1 && whereDefine === -1) {
                         console.warn('jsDoc3PrepProc: could not find a function or define() in the module?');
                     } else {
+                        console.warn('jsDoc3PrepProc: found @exports in the module');
                         var splitter = [];
                         if (whereFunctionNoSpace === -1) {
                             splitter = source.split('function (');
@@ -1833,6 +1853,7 @@ var jsDoc3PrepProc = {
                         source = combiner.join('function(');
                     }
                 } else if (whereDefine !== -1 && source.indexOf('@module') === -1) {
+                    
                     var combiner = [];
                     // console.warn(JSON.stringify(input,null,2));
                     var packagePath = input.path.split('/');
@@ -1846,7 +1867,10 @@ var jsDoc3PrepProc = {
                 }
             }
             var originalHeader = input.source.substring(0, whereDefine);
+            console.warn('splicing');
+            //console.warn('originalHeader: "' + originalHeader + '"');
             input.source = originalHeader + '' + source;
+            //console.warn(input.source);
         }
         var prototypal = false;
         if (input.source.indexOf(input.camelName + '.prototype.') !== -1) {
@@ -1895,66 +1919,8 @@ var jsDoc3PrepProc = {
         input.source = splitter.join('@constructor');
         splitter = input.source.split('@extends');
         input.source = splitter.join('@augments');
-        PROC_DOCLETS = false;
-        if (PROC_DOCLETS) {
-            lines = input.source.split('\n');
-            var newLines = [];
-            index = 0;
-            linesLength = lines.length;
-            var startOfDoclet = -1;
-            var endOfDoclet = -1;
-            var moduleAtTop = input.source.indexOf('@exports') === -1;
-            var defineModuleInTopOfFile = moduleAtTop;
-            var lastLine = '';
-            for (index = 0; index < linesLength; index++) {
-                var line = lines[index].trim();
-                if (line.indexOf('//') === 0) {
-                    newLines.push(line);
-                    continue;
-                }
-                if (line.indexOf('/**') !== -1 && line.indexOf('*/') !== -1) {
-                    var nextLineOfCode = getNextLineOfCode(lines, index);
-                    var docletText = printDoclet(parseDoclet(input, line,
-                            defineModuleInTopOfFile, nextLineOfCode),
-                        defineModuleInTopOfFile);
-                    if (lastLine.indexOf(docletText) === -1) {
-                        line = docletText;
-                    } else {}
-                    defineModuleInTopOfFile = false;
-                    newLines.push(line);
-                } else if (line.indexOf('/**') !== -1) {
-                    startOfDoclet = index;
-                } else if (line.indexOf('*/') !== -1) {
-                    if (startOfDoclet !== -1) {
-                        endOfDoclet = index;
-                        var block = getLines(lines, startOfDoclet, endOfDoclet);
-                        var newBlock = block;
-                        var parsed = {};
-                        try {
-                            var nextLineOfCode = getNextLineOfCode(lines, index);
-                            parsed = parseDoclet(input, block,
-                                defineModuleInTopOfFile, nextLineOfCode);
-                        } catch (e) {}
-                        try {
-                            newBlock = printDoclet(parsed,
-                                defineModuleInTopOfFile);
-                            defineModuleInTopOfFile = false;
-                        } catch (e) {}
-                        if (lastLine.indexOf(newBlock) === -1) {
-                            concatLines(newLines, newBlock);
-                        } else {}
-                        startOfDoclet = -1;
-                        endOfDoclet = -1;
-                    } else {
-                        newLines.push(line);
-                    }
-                } else if (startOfDoclet === -1 && endOfDoclet === -1) {
-                    newLines.push(line);
-                }
-                lastLine = line;
-            }
-            input.source = newLines.join('\n');
-        }
+        
+        writeFile(input.processedFilePath, input.source);
         doneCallback(input);
     }
 };

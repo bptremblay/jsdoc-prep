@@ -3,499 +3,6 @@
     {
       "results": {
         "amdProc": {
-          "requires": [],
-          "moduleName": "yes_module",
-          "AMD": true,
-          "webPath": ""
-        }
-      },
-      "errors": {
-        "thirdPartyFilter": [],
-        "minFilter": [],
-        "badCharactersProc": [],
-        "amdFilter": [],
-        "jsBeautifyProc": [],
-        "jsDoccerProc": [
-          {
-            "id": "(error)",
-            "raw": "No jsDoc Comments for method 'Freenox'.",
-            "code": "wfJD",
-            "evidence": "function Freenox() {",
-            "line": 21,
-            "character": -1,
-            "scope": "(main)",
-            "a": "",
-            "reason": "No jsDoc Comments for method 'Freenox'."
-          },
-          {
-            "id": "(error)",
-            "raw": "No jsDoc Comments for method 'chewBakka'.",
-            "code": "wfJD",
-            "evidence": "this.chewBakka = function() {",
-            "line": 22,
-            "character": -1,
-            "scope": "(main)",
-            "a": "",
-            "reason": "No jsDoc Comments for method 'chewBakka'."
-          },
-          {
-            "id": "(error)",
-            "raw": "No jsDoc Comments for method 'DonutView'.",
-            "code": "wfJD",
-            "evidence": "return function DonutView() {",
-            "line": 23,
-            "character": -1,
-            "scope": "(main)",
-            "a": "",
-            "reason": "No jsDoc Comments for method 'DonutView'."
-          },
-          {
-            "id": "(error)",
-            "raw": "No jsDoc Comments for method 'stupidFunction'.",
-            "code": "wfJD",
-            "evidence": "this[\"stupidFunction\"] = function() {",
-            "line": 34,
-            "character": -1,
-            "scope": "(main)",
-            "a": "",
-            "reason": "No jsDoc Comments for method 'stupidFunction'."
-          },
-          {
-            "id": "(error)",
-            "raw": "No jsDoc Comments for method 'worldPuzzle'.",
-            "code": "wfJD",
-            "evidence": "Freenox.prototype.worldPuzzle = function(toothache, tomato) {",
-            "line": 62,
-            "character": -1,
-            "scope": "(main)",
-            "a": "",
-            "reason": "No jsDoc Comments for method 'worldPuzzle'."
-          },
-          {
-            "id": "(error)",
-            "raw": "No jsDoc Comments for method 'SecondClass'.",
-            "code": "wfJD",
-            "evidence": "function SecondClass() {",
-            "line": 67,
-            "character": -1,
-            "scope": "(main)",
-            "a": "",
-            "reason": "No jsDoc Comments for method 'SecondClass'."
-          },
-          {
-            "id": "(error)",
-            "raw": "No jsDoc Comments for method 'fixTheWorld'.",
-            "code": "wfJD",
-            "evidence": "SecondClass.prototype.fixTheWorld = function(toothache, tomato) {",
-            "line": 70,
-            "character": -1,
-            "scope": "(main)",
-            "a": "",
-            "reason": "No jsDoc Comments for method 'fixTheWorld'."
-          },
-          {
-            "id": "(error)",
-            "raw": "No jsDoc Comments for method 'someFunction'.",
-            "code": "wfJD",
-            "evidence": "FourthClass.prototype.someFunction = function() {",
-            "line": 124,
-            "character": -1,
-            "scope": "(main)",
-            "a": "",
-            "reason": "No jsDoc Comments for method 'someFunction'."
-          },
-          {
-            "id": "(error)",
-            "raw": "No jsDoc Comments for method 'anotherFunction'.",
-            "code": "wfJD",
-            "evidence": "FourthClass.prototype.anotherFunction = function() {",
-            "line": 132,
-            "character": -1,
-            "scope": "(main)",
-            "a": "",
-            "reason": "No jsDoc Comments for method 'anotherFunction'."
-          }
-        ],
-        "jsDocNameFixerProc": [],
-        "jsDoc3PrepProc": [],
-        "trimProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/yes-module.js",
-      "folderPath": "test-source",
-      "fileName": "yes-module.js",
-      "packagePath": "",
-      "webPath": "",
-      "libFile": false,
-      "min": false,
-      "realName": "yes-module",
-      "name": "yes-module",
-      "camelName": "YesModule",
-      "processedFilePath": "test-output/yes-module.js",
-      "couldParseOriginalSource": true,
-      "preprocessed": true,
-      "jsDoccerProcData": {
-        "lines": 186,
-        "requires": [],
-        "className": "n/a",
-        "packagePath": "",
-        "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source",
-        "uses_Y": false,
-        "no_lib": true,
-        "inferencedClassName": "n/a",
-        "uses_$": false,
-        "chars": 4789,
-        "uses_YUI": false,
-        "fields": [],
-        "moduleName": "./yes-module",
-        "uses_console_log": false,
-        "uses_backbone": false,
-        "classes": {
-          "DonutView": 1084,
-          "Freenox": 657,
-          "SecondClass": 720,
-          "ThirdClass": 756,
-          "FourthClass": 776
-        },
-        "methods": [
-          {
-            "name": "Freenox",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 21,
-            "memberOf": "",
-            "doclet": "/**\n * Creates a new instance of class Freenox.\n * @constructor\n */",
-            "description": "",
-            "return": "",
-            "classDeclarationFlag": true,
-            "line": "function Freenox() {",
-            "originalJsDocDescription": {}
-          },
-          {
-            "name": "chewBakka",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 22,
-            "memberOf": "this",
-            "doclet": "/**\n * Chew bakka.\n * @return {function}\n */",
-            "description": "",
-            "return": "{function}",
-            "classDeclarationFlag": false,
-            "line": "this.chewBakka = function() {",
-            "originalJsDocDescription": {}
-          },
-          {
-            "name": "DonutView",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 23,
-            "memberOf": "",
-            "doclet": "/**\n * Creates a new instance of class DonutView.\n * @constructor\n */",
-            "description": "",
-            "return": "",
-            "classDeclarationFlag": true,
-            "line": "return function DonutView() {",
-            "originalJsDocDescription": {}
-          },
-          {
-            "name": "stupidFunction",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 34,
-            "memberOf": "this",
-            "doclet": "/**\n * The function is stupid but the comment is a valid doclet.\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
-            "description": "\n The function is stupid but the comment is a valid doclet.\n",
-            "return": "?",
-            "classDeclarationFlag": false,
-            "line": "this[\"stupidFunction\"] = function() {",
-            "originalJsDocDescription": {}
-          },
-          {
-            "name": "privateFunction",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 51,
-            "memberOf": "",
-            "doclet": "/**\n * @private\n * @param a\n *             A standard apple fruit.\n * @param {Banana}\n *             b The Banana.\n * @param {boolean}\n *             c\n * @param a  \n * @param {Banana}  \n * @param {boolean}  \n * @return {String}\n */",
-            "args": [
-              "a",
-              "b",
-              "c"
-            ],
-            "description": "",
-            "return": "{string}",
-            "classDeclarationFlag": false,
-            "line": "var privateFunction = function(a, b, c) {",
-            "originalJsDocDescription": {
-              "private": {
-                "tag": "private",
-                "line": 1,
-                "lastLine": 1,
-                "textStartsOnSameLine": true,
-                "text": ""
-              },
-              "params": [
-                {
-                  "tag": "param",
-                  "line": 2,
-                  "lastLine": 3,
-                  "textStartsOnSameLine": true,
-                  "text": "a\n            A standard apple fruit."
-                },
-                {
-                  "tag": "param",
-                  "line": 4,
-                  "lastLine": 5,
-                  "textStartsOnSameLine": true,
-                  "text": "{Banana}\n            b The Banana."
-                },
-                {
-                  "tag": "param",
-                  "line": 6,
-                  "lastLine": 7,
-                  "textStartsOnSameLine": true,
-                  "text": "{boolean}\n            c"
-                }
-              ],
-              "return": {
-                "tag": "return",
-                "line": 8,
-                "lastLine": -1,
-                "textStartsOnSameLine": true,
-                "text": "{String}\n"
-              }
-            }
-          },
-          {
-            "name": "worldPuzzle",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 62,
-            "memberOf": "Freenox.prototype",
-            "doclet": "/**\n * @param toothache\n * @param tomato\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
-            "args": [
-              "toothache",
-              "tomato"
-            ],
-            "description": "",
-            "return": "?",
-            "classDeclarationFlag": false,
-            "line": "Freenox.prototype.worldPuzzle = function(toothache, tomato) {",
-            "originalJsDocDescription": {}
-          },
-          {
-            "name": "SecondClass",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 67,
-            "memberOf": "",
-            "doclet": "/**\n * Creates a new instance of class SecondClass.\n * @constructor\n */",
-            "description": "",
-            "return": "",
-            "classDeclarationFlag": true,
-            "line": "function SecondClass() {",
-            "originalJsDocDescription": {}
-          },
-          {
-            "name": "fixTheWorld",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 70,
-            "memberOf": "SecondClass.prototype",
-            "doclet": "/**\n * Fix the world.\n * @param toothache\n * @param tomato\n * @return {boolean}\n */",
-            "args": [
-              "toothache",
-              "tomato"
-            ],
-            "description": "",
-            "return": "{boolean}",
-            "classDeclarationFlag": false,
-            "line": "SecondClass.prototype.fixTheWorld = function(toothache, tomato) {",
-            "originalJsDocDescription": {}
-          },
-          {
-            "name": "preambleTest",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 79,
-            "memberOf": "SecondClass.prototype",
-            "doclet": "/**\n * This is a preamble to a doclet.\n *  It might have more than one line.\n * @param toothache\n * @param tomato\n * @return {boolean}\n */",
-            "args": [
-              "toothache",
-              "tomato"
-            ],
-            "description": "\n This is a preamble to a doclet.\n It might have more than one line.",
-            "return": "{boolean}",
-            "classDeclarationFlag": false,
-            "line": "SecondClass.prototype.preambleTest = function(toothache, tomato) {",
-            "originalJsDocDescription": {
-              "return": {
-                "tag": "return",
-                "line": 3,
-                "lastLine": -1,
-                "textStartsOnSameLine": true,
-                "text": "{boolean}\n"
-              }
-            }
-          },
-          {
-            "name": "ThirdClass",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 87,
-            "memberOf": "",
-            "doclet": "/**\n * @constructor\n * @description A description tag.\n * \n */",
-            "description": "A description tag.\n",
-            "return": "",
-            "classDeclarationFlag": true,
-            "line": "function ThirdClass() {",
-            "originalJsDocDescription": {
-              "constructor": {
-                "tag": "constructor",
-                "line": 1,
-                "lastLine": 1,
-                "textStartsOnSameLine": true,
-                "text": ""
-              },
-              "description": {
-                "tag": "description",
-                "line": 2,
-                "lastLine": -1,
-                "textStartsOnSameLine": true,
-                "text": "A description tag.\n"
-              }
-            }
-          },
-          {
-            "name": "FourthClass",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 116,
-            "memberOf": "",
-            "doclet": "/**\n * @constructor\n * @description A description tag with more than\n *  one line of stuff\n *  and some of it could be very very long\n * \n *  and some of it could be after a BLANK line.\n * @example \n *  //This is sample code!\n *  var ft = new FourthClass();\n *  //Note we are using a zero-arg constructor.\n * \n */",
-            "description": "A description tag with more than\n one line of stuff\n and some of it could be very very long\n\n and some of it could be after a BLANK line.",
-            "return": "",
-            "classDeclarationFlag": true,
-            "line": "function FourthClass() {",
-            "originalJsDocDescription": {
-              "constructor": {
-                "tag": "constructor",
-                "line": 1,
-                "lastLine": 1,
-                "textStartsOnSameLine": true,
-                "text": ""
-              },
-              "description": {
-                "tag": "description",
-                "line": 2,
-                "lastLine": 6,
-                "textStartsOnSameLine": true,
-                "text": "A description tag with more than\n one line of stuff\n and some of it could be very very long\n\n and some of it could be after a BLANK line."
-              },
-              "example": {
-                "tag": "example",
-                "line": 7,
-                "lastLine": -1,
-                "textStartsOnSameLine": true,
-                "text": "\n //This is sample code!\n var ft = new FourthClass();\n //Note we are using a zero-arg constructor.\n"
-              }
-            }
-          },
-          {
-            "name": "someFunction",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 124,
-            "memberOf": "FourthClass.prototype",
-            "doclet": "/**\n * Some function.\n */",
-            "description": "",
-            "classDeclarationFlag": false,
-            "line": "FourthClass.prototype.someFunction = function() {",
-            "originalJsDocDescription": {}
-          },
-          {
-            "name": "anotherFunction",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 132,
-            "memberOf": "FourthClass.prototype",
-            "doclet": "/**\n * Another function.\n */",
-            "description": "",
-            "classDeclarationFlag": false,
-            "line": "FourthClass.prototype.anotherFunction = function() {",
-            "originalJsDocDescription": {}
-          },
-          {
-            "name": "on",
-            "visibility": "public",
-            "static": false,
-            "lineNumber": 181,
-            "memberOf": "Freenox.prototype",
-            "doclet": "/**\n * @description Subscribe to events on the component's local Channel. Events on the\n *               local channel are not visible to other components or the main\n *               ComponentChannel.\n * @function\n * @param {String|PlainObject} [eventType] The type of event.\n * @param {Function} [callback] The callback to execute when the event is published.\n * @example \n *  // Execute callback for ALL events on the component (no eventType given)\n *  myComponent.on(function(event){\n *      // Analyze, log, etc the event\n *  });\n * \n *  // Execute callback for a component-generated event\n *  // Format of eventType is ACTION/VALUE\n *  // ACTION - function call, state change, etc on the component\n *  // VALUE - name of action, property name, etc.\n * \n *  // Note: TARGET is automatically prepended to the eventType and\n *  //       is equal to the name of the component as defined in the spec\n *  myComponent.on('action/submit', function(event){\n *      // Execute logic for the submit action on the component\n *  });\n * \n *  // Subscribe to multiple events\n *  myComponent.on( {\n *      'action/submit': function(submitEvent){\n *          // Business Logic\n *      },\n *      'state/enabled': function(enabledEvent){\n *          // Business Logic\n *      },\n *      'action/requestBalance': function(requestEvent){\n *          // Business Logic\n *      },\n *      'state/valid': function(validEvent){\n *          // Business Logic\n *      }\n *  } );\n * \n *  // Can use wildcards\n *  myComponent.on('action/*', function(actionEvent){\n *      // Logic for all actions on the component\n *  } );\n * \n * @param {String|PlainObject} [eventType] The type of event. \n * @param {Function} [callback] The callback to execute when the event is published. \n */",
-            "args": [
-              "eventType",
-              "callback"
-            ],
-            "description": "Subscribe to events on the component's local Channel. Events on the\n              local channel are not visible to other components or the main\n              ComponentChannel.",
-            "classDeclarationFlag": false,
-            "line": "Freenox.prototype.on = function(eventType, callback) {",
-            "originalJsDocDescription": {
-              "description": {
-                "tag": "description",
-                "line": 1,
-                "lastLine": 3,
-                "textStartsOnSameLine": true,
-                "text": "Subscribe to events on the component's local Channel. Events on the\n              local channel are not visible to other components or the main\n              ComponentChannel."
-              },
-              "function": {
-                "tag": "function",
-                "line": 4,
-                "lastLine": 4,
-                "textStartsOnSameLine": true,
-                "text": ""
-              },
-              "params": [
-                {
-                  "tag": "param",
-                  "line": 5,
-                  "lastLine": 5,
-                  "textStartsOnSameLine": true,
-                  "text": "{String|PlainObject} [eventType] The type of event."
-                },
-                {
-                  "tag": "param",
-                  "line": 6,
-                  "lastLine": 6,
-                  "textStartsOnSameLine": true,
-                  "text": "{Function} [callback] The callback to execute when the event is published."
-                }
-              ],
-              "example": {
-                "tag": "example",
-                "line": 7,
-                "lastLine": -1,
-                "textStartsOnSameLine": true,
-                "text": "\n // Execute callback for ALL events on the component (no eventType given)\n myComponent.on(function(event){\n     // Analyze, log, etc the event\n });\n\n // Execute callback for a component-generated event\n // Format of eventType is ACTION/VALUE\n // ACTION - function call, state change, etc on the component\n // VALUE - name of action, property name, etc.\n\n // Note: TARGET is automatically prepended to the eventType and\n //       is equal to the name of the component as defined in the spec\n myComponent.on('action/submit', function(event){\n     // Execute logic for the submit action on the component\n });\n\n // Subscribe to multiple events\n myComponent.on( {\n     'action/submit': function(submitEvent){\n         // Business Logic\n     },\n     'state/enabled': function(enabledEvent){\n         // Business Logic\n     },\n     'action/requestBalance': function(requestEvent){\n         // Business Logic\n     },\n     'state/valid': function(validEvent){\n         // Business Logic\n     }\n } );\n\n // Can use wildcards\n myComponent.on('action/*', function(actionEvent){\n     // Logic for all actions on the component\n } );\n"
-              }
-            }
-          }
-        ],
-        "is_module": false,
-        "uses_alert": false,
-        "uses_y_log": false,
-        "requiresRaw": [],
-        "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source",
-        "fileName": "yes-module.js",
-        "strict": false
-      },
-      "testStubs": "\n",
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 201
-    },
-    {
-      "results": {
-        "amdProc": {
           "requires": [
             "./is",
             "./was",
@@ -518,7 +25,7 @@
             "raw": "No jsDoc Comments for method 'zoo'.",
             "code": "wfJD",
             "evidence": "function zoo(z) {",
-            "line": 18,
+            "line": 19,
             "character": -1,
             "scope": "(main)",
             "a": "",
@@ -529,7 +36,7 @@
             "raw": "No jsDoc Comments for method 'zoop'.",
             "code": "wfJD",
             "evidence": "function zoop(z) {",
-            "line": 22,
+            "line": 23,
             "character": -1,
             "scope": "(main)",
             "a": "",
@@ -540,7 +47,7 @@
             "raw": "No jsDoc Comments for method 'zoopsa'.",
             "code": "wfJD",
             "evidence": "function zoopsa(z) {",
-            "line": 26,
+            "line": 27,
             "character": -1,
             "scope": "(main)",
             "a": "",
@@ -551,7 +58,7 @@
             "raw": "No jsDoc Comments for method 'zoopsaArray'.",
             "code": "wfJD",
             "evidence": "function zoopsaArray(z) {",
-            "line": 30,
+            "line": 31,
             "character": -1,
             "scope": "(main)",
             "a": "",
@@ -562,7 +69,7 @@
             "raw": "No jsDoc Comments for method 'zoopsaNumericExpression'.",
             "code": "wfJD",
             "evidence": "function zoopsaNumericExpression(z) {",
-            "line": 34,
+            "line": 35,
             "character": -1,
             "scope": "(main)",
             "a": "",
@@ -573,7 +80,7 @@
             "raw": "No jsDoc Comments for method 'zoopsaPrivateExpression'.",
             "code": "wfJD",
             "evidence": "function zoopsaPrivateExpression(z) {",
-            "line": 38,
+            "line": 39,
             "character": -1,
             "scope": "(main)",
             "a": "",
@@ -584,15 +91,13 @@
             "raw": "No jsDoc Comments for method 'stupidFunction'.",
             "code": "wfJD",
             "evidence": "function stupidFunction() {",
-            "line": 50,
+            "line": 51,
             "character": -1,
             "scope": "(main)",
             "a": "",
             "reason": "No jsDoc Comments for method 'stupidFunction'."
           }
         ],
-        "jsDocNameFixerProc": [],
-        "jsDoc3PrepProc": [],
         "trimProc": []
       },
       "outputDirectory": "test-output",
@@ -604,13 +109,13 @@
       "libFile": false,
       "min": false,
       "realName": "zero-test",
-      "name": "zero-test",
+      "name": "zero_test",
       "camelName": "ZeroTest",
       "processedFilePath": "test-output/zero-test.js",
       "couldParseOriginalSource": true,
       "preprocessed": true,
       "jsDoccerProcData": {
-        "lines": 92,
+        "lines": 127,
         "requires": [],
         "className": "n/a",
         "packagePath": "",
@@ -619,7 +124,7 @@
         "no_lib": true,
         "inferencedClassName": "n/a",
         "uses_$": false,
-        "chars": 1517,
+        "chars": 2519,
         "uses_YUI": false,
         "fields": [],
         "moduleName": "./zero-test",
@@ -631,7 +136,7 @@
             "name": "zoo",
             "visibility": "public",
             "static": false,
-            "lineNumber": 18,
+            "lineNumber": 19,
             "memberOf": "",
             "doclet": "/**\n * Zoo.\n * @param z\n */",
             "args": [
@@ -646,7 +151,7 @@
             "name": "zoop",
             "visibility": "public",
             "static": false,
-            "lineNumber": 22,
+            "lineNumber": 23,
             "memberOf": "",
             "doclet": "/**\n * Zoop.\n * @param z\n * @return {boolean}\n */",
             "args": [
@@ -662,7 +167,7 @@
             "name": "zoopsa",
             "visibility": "public",
             "static": false,
-            "lineNumber": 26,
+            "lineNumber": 27,
             "memberOf": "",
             "doclet": "/**\n * Zoopsa.\n * @param z\n */",
             "args": [
@@ -677,7 +182,7 @@
             "name": "zoopsaArray",
             "visibility": "public",
             "static": false,
-            "lineNumber": 30,
+            "lineNumber": 31,
             "memberOf": "",
             "doclet": "/**\n * Zoopsa array.\n * @param z\n * @return {array}\n */",
             "args": [
@@ -693,7 +198,7 @@
             "name": "zoopsaNumericExpression",
             "visibility": "public",
             "static": false,
-            "lineNumber": 34,
+            "lineNumber": 35,
             "memberOf": "",
             "doclet": "/**\n * Zoopsa numeric expression.\n * @param z\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
             "args": [
@@ -709,7 +214,7 @@
             "name": "zoopsaPrivateExpression",
             "visibility": "public",
             "static": false,
-            "lineNumber": 38,
+            "lineNumber": 39,
             "memberOf": "",
             "doclet": "/**\n * Zoopsa private expression.\n * @param z\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
             "args": [
@@ -725,7 +230,7 @@
             "name": "zoopsax",
             "visibility": "public",
             "static": false,
-            "lineNumber": 46,
+            "lineNumber": 47,
             "memberOf": "",
             "doclet": "/**\n * @param z\n * @return A numeric mambo.\n */",
             "args": [
@@ -749,7 +254,7 @@
             "name": "stupidFunction",
             "visibility": "public",
             "static": false,
-            "lineNumber": 50,
+            "lineNumber": 51,
             "memberOf": "",
             "doclet": "/**\n * Stupid function.\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
             "description": "",
@@ -762,9 +267,9 @@
             "name": "funkyFoo",
             "visibility": "public",
             "static": false,
-            "lineNumber": 61,
+            "lineNumber": 63,
             "memberOf": "",
-            "doclet": "/**\n * @private\n * @param z\n * @return {string}\n */",
+            "doclet": "/**\n * @private\n * @param z\n * \n * @param z\n * @return {string}\n */",
             "args": [
               "z"
             ],
@@ -776,17 +281,26 @@
               "private": {
                 "tag": "private",
                 "line": 1,
-                "lastLine": -1,
+                "lastLine": 1,
                 "textStartsOnSameLine": true,
-                "text": "\n"
-              }
+                "text": ""
+              },
+              "params": [
+                {
+                  "tag": "param",
+                  "line": 2,
+                  "lastLine": -1,
+                  "textStartsOnSameLine": true,
+                  "text": "z\n"
+                }
+              ]
             }
           },
           {
             "name": "funkyFood",
             "visibility": "public",
             "static": false,
-            "lineNumber": 68,
+            "lineNumber": 70,
             "memberOf": "",
             "doclet": "/**\n * @protected\n * @param z\n * @return {string}\n */",
             "args": [
@@ -810,7 +324,7 @@
             "name": "funkyFoodle",
             "visibility": "public",
             "static": false,
-            "lineNumber": 75,
+            "lineNumber": 77,
             "memberOf": "",
             "doclet": "/**\n * @public\n * @param z\n * @return {string}\n */",
             "args": [
@@ -829,6 +343,155 @@
                 "text": "\n"
               }
             }
+          },
+          {
+            "name": "newChild",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 96,
+            "memberOf": "",
+            "doclet": "/**\n * @function\n * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context.\n * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context. \n * @return {Context} The child context.\n */",
+            "args": [
+              "isolate"
+            ],
+            "description": "",
+            "classDeclarationFlag": false,
+            "line": "function newChild(isolate) {",
+            "originalJsDocDescription": {
+              "function": {
+                "tag": "function",
+                "line": 1,
+                "lastLine": 1,
+                "textStartsOnSameLine": true,
+                "text": ""
+              },
+              "params": [
+                {
+                  "tag": "param",
+                  "line": 2,
+                  "lastLine": 2,
+                  "textStartsOnSameLine": true,
+                  "text": "{Boolean} [isolate] Whether or not to isolate the child context from the parent context."
+                }
+              ],
+              "return": {
+                "tag": "return",
+                "line": 3,
+                "lastLine": -1,
+                "textStartsOnSameLine": true,
+                "text": "{Context} The child context.\n"
+              }
+            }
+          },
+          {
+            "name": "oldChild",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 105,
+            "memberOf": "",
+            "doclet": "/**\n * @function\n * @param {Boolean} Whether or not to isolate the child context from the parent context.\n * @param {Boolean} Whether or not to isolate the child context from the parent context. \n * @return {Context} The child context.\n */",
+            "args": [
+              "isolate"
+            ],
+            "description": "",
+            "classDeclarationFlag": false,
+            "line": "function oldChild(isolate) {",
+            "originalJsDocDescription": {
+              "function": {
+                "tag": "function",
+                "line": 1,
+                "lastLine": 1,
+                "textStartsOnSameLine": true,
+                "text": ""
+              },
+              "params": [
+                {
+                  "tag": "param",
+                  "line": 2,
+                  "lastLine": 2,
+                  "textStartsOnSameLine": true,
+                  "text": "{Boolean} Whether or not to isolate the child context from the parent context."
+                }
+              ],
+              "return": {
+                "tag": "return",
+                "line": 3,
+                "lastLine": -1,
+                "textStartsOnSameLine": true,
+                "text": "{Context} The child context.\n"
+              }
+            }
+          },
+          {
+            "name": "simple",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 114,
+            "memberOf": "",
+            "doclet": "/**\n * @function\n * @param Whether or not to isolate the child context from the parent context.\n * @param Whether or not to isolate the child context from the parent context. \n * @return {Context} The child context.\n */",
+            "args": [
+              "isolate"
+            ],
+            "description": "",
+            "classDeclarationFlag": false,
+            "line": "function simple(isolate) {",
+            "originalJsDocDescription": {
+              "function": {
+                "tag": "function",
+                "line": 1,
+                "lastLine": 1,
+                "textStartsOnSameLine": true,
+                "text": ""
+              },
+              "params": [
+                {
+                  "tag": "param",
+                  "line": 2,
+                  "lastLine": 2,
+                  "textStartsOnSameLine": true,
+                  "text": "Whether or not to isolate the child context from the parent context."
+                }
+              ],
+              "return": {
+                "tag": "return",
+                "line": 3,
+                "lastLine": -1,
+                "textStartsOnSameLine": true,
+                "text": "{Context} The child context.\n"
+              }
+            }
+          },
+          {
+            "name": "simpleNoFunc",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 122,
+            "memberOf": "",
+            "doclet": "/**\n * @param isolate Whether or not to isolate the child context from the parent context.\n * @param isolate Whether or not to isolate the child context from the parent context. \n * @return The child context.\n */",
+            "args": [
+              "isolate"
+            ],
+            "description": "",
+            "classDeclarationFlag": false,
+            "line": "function simpleNoFunc(isolate) {",
+            "originalJsDocDescription": {
+              "params": [
+                {
+                  "tag": "param",
+                  "line": 1,
+                  "lastLine": 1,
+                  "textStartsOnSameLine": true,
+                  "text": "isolate Whether or not to isolate the child context from the parent context."
+                }
+              ],
+              "return": {
+                "tag": "return",
+                "line": 2,
+                "lastLine": -1,
+                "textStartsOnSameLine": true,
+                "text": "The child context.\n"
+              }
+            }
           }
         ],
         "is_module": false,
@@ -843,11 +506,11 @@
       "testStubs": "\n",
       "couldParseProcessedSource": true,
       "corrupted": false,
-      "numberOfLines": 107
+      "numberOfLines": 154
     }
   ],
   "path": "test-source",
-  "timeInSeconds": 0.275,
+  "timeInSeconds": 0.116,
   "outPath": "test-output",
   "testPath": "test-jstests",
   "docPath": "test-jsdocs",

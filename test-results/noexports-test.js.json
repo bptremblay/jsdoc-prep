@@ -6,7 +6,7 @@
         "./was",
         "./willBe"
       ],
-      "moduleName": "zero_test",
+      "moduleName": "noexports_test",
       "AMD": true,
       "webPath": ""
     }
@@ -23,7 +23,7 @@
         "raw": "No jsDoc Comments for method 'zoo'.",
         "code": "wfJD",
         "evidence": "function zoo(z) {",
-        "line": 19,
+        "line": 18,
         "character": -1,
         "scope": "(main)",
         "a": "",
@@ -34,7 +34,7 @@
         "raw": "No jsDoc Comments for method 'zoop'.",
         "code": "wfJD",
         "evidence": "function zoop(z) {",
-        "line": 23,
+        "line": 22,
         "character": -1,
         "scope": "(main)",
         "a": "",
@@ -45,7 +45,7 @@
         "raw": "No jsDoc Comments for method 'zoopsa'.",
         "code": "wfJD",
         "evidence": "function zoopsa(z) {",
-        "line": 27,
+        "line": 26,
         "character": -1,
         "scope": "(main)",
         "a": "",
@@ -56,7 +56,7 @@
         "raw": "No jsDoc Comments for method 'zoopsaArray'.",
         "code": "wfJD",
         "evidence": "function zoopsaArray(z) {",
-        "line": 31,
+        "line": 30,
         "character": -1,
         "scope": "(main)",
         "a": "",
@@ -67,7 +67,7 @@
         "raw": "No jsDoc Comments for method 'zoopsaNumericExpression'.",
         "code": "wfJD",
         "evidence": "function zoopsaNumericExpression(z) {",
-        "line": 35,
+        "line": 34,
         "character": -1,
         "scope": "(main)",
         "a": "",
@@ -78,7 +78,7 @@
         "raw": "No jsDoc Comments for method 'zoopsaPrivateExpression'.",
         "code": "wfJD",
         "evidence": "function zoopsaPrivateExpression(z) {",
-        "line": 39,
+        "line": 38,
         "character": -1,
         "scope": "(main)",
         "a": "",
@@ -89,31 +89,34 @@
         "raw": "No jsDoc Comments for method 'stupidFunction'.",
         "code": "wfJD",
         "evidence": "function stupidFunction() {",
-        "line": 51,
+        "line": 50,
         "character": -1,
         "scope": "(main)",
         "a": "",
         "reason": "No jsDoc Comments for method 'stupidFunction'."
       }
     ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": [],
     "trimProc": []
   },
   "outputDirectory": "test-output",
-  "path": "test-source/zero-test.js",
+  "path": "test-source/noexports-test.js",
   "folderPath": "test-source",
-  "fileName": "zero-test.js",
+  "fileName": "noexports-test.js",
   "packagePath": "",
   "webPath": "",
   "libFile": false,
   "min": false,
-  "realName": "zero-test",
-  "name": "zero_test",
-  "camelName": "ZeroTest",
-  "processedFilePath": "test-output/zero-test.js",
+  "realName": "noexports-test",
+  "name": "noexports-test",
+  "camelName": "NoexportsTest",
+  "processedFilePath": "test-output/noexports-test.js",
   "couldParseOriginalSource": true,
   "preprocessed": true,
   "jsDoccerProcData": {
-    "lines": 127,
+    "lines": 92,
     "requires": [],
     "className": "n/a",
     "packagePath": "",
@@ -122,10 +125,10 @@
     "no_lib": true,
     "inferencedClassName": "n/a",
     "uses_$": false,
-    "chars": 2519,
+    "chars": 1513,
     "uses_YUI": false,
     "fields": [],
-    "moduleName": "./zero-test",
+    "moduleName": "./noexports-test",
     "uses_console_log": false,
     "uses_backbone": false,
     "classes": {},
@@ -134,7 +137,7 @@
         "name": "zoo",
         "visibility": "public",
         "static": false,
-        "lineNumber": 19,
+        "lineNumber": 18,
         "memberOf": "",
         "doclet": "/**\n * Zoo.\n * @param z\n */",
         "args": [
@@ -149,7 +152,7 @@
         "name": "zoop",
         "visibility": "public",
         "static": false,
-        "lineNumber": 23,
+        "lineNumber": 22,
         "memberOf": "",
         "doclet": "/**\n * Zoop.\n * @param z\n * @return {boolean}\n */",
         "args": [
@@ -165,7 +168,7 @@
         "name": "zoopsa",
         "visibility": "public",
         "static": false,
-        "lineNumber": 27,
+        "lineNumber": 26,
         "memberOf": "",
         "doclet": "/**\n * Zoopsa.\n * @param z\n */",
         "args": [
@@ -180,7 +183,7 @@
         "name": "zoopsaArray",
         "visibility": "public",
         "static": false,
-        "lineNumber": 31,
+        "lineNumber": 30,
         "memberOf": "",
         "doclet": "/**\n * Zoopsa array.\n * @param z\n * @return {array}\n */",
         "args": [
@@ -196,7 +199,7 @@
         "name": "zoopsaNumericExpression",
         "visibility": "public",
         "static": false,
-        "lineNumber": 35,
+        "lineNumber": 34,
         "memberOf": "",
         "doclet": "/**\n * Zoopsa numeric expression.\n * @param z\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
         "args": [
@@ -212,7 +215,7 @@
         "name": "zoopsaPrivateExpression",
         "visibility": "public",
         "static": false,
-        "lineNumber": 39,
+        "lineNumber": 38,
         "memberOf": "",
         "doclet": "/**\n * Zoopsa private expression.\n * @param z\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
         "args": [
@@ -228,7 +231,7 @@
         "name": "zoopsax",
         "visibility": "public",
         "static": false,
-        "lineNumber": 47,
+        "lineNumber": 46,
         "memberOf": "",
         "doclet": "/**\n * @param z\n * @return A numeric mambo.\n */",
         "args": [
@@ -252,7 +255,7 @@
         "name": "stupidFunction",
         "visibility": "public",
         "static": false,
-        "lineNumber": 51,
+        "lineNumber": 50,
         "memberOf": "",
         "doclet": "/**\n * Stupid function.\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
         "description": "",
@@ -265,9 +268,9 @@
         "name": "funkyFoo",
         "visibility": "public",
         "static": false,
-        "lineNumber": 63,
+        "lineNumber": 61,
         "memberOf": "",
-        "doclet": "/**\n * @private\n * @param z\n * \n * @param z\n * @return {string}\n */",
+        "doclet": "/**\n * @private\n * @param z\n * @return {string}\n */",
         "args": [
           "z"
         ],
@@ -279,26 +282,17 @@
           "private": {
             "tag": "private",
             "line": 1,
-            "lastLine": 1,
+            "lastLine": -1,
             "textStartsOnSameLine": true,
-            "text": ""
-          },
-          "params": [
-            {
-              "tag": "param",
-              "line": 2,
-              "lastLine": -1,
-              "textStartsOnSameLine": true,
-              "text": "z\n"
-            }
-          ]
+            "text": "\n"
+          }
         }
       },
       {
         "name": "funkyFood",
         "visibility": "public",
         "static": false,
-        "lineNumber": 70,
+        "lineNumber": 68,
         "memberOf": "",
         "doclet": "/**\n * @protected\n * @param z\n * @return {string}\n */",
         "args": [
@@ -322,7 +316,7 @@
         "name": "funkyFoodle",
         "visibility": "public",
         "static": false,
-        "lineNumber": 77,
+        "lineNumber": 75,
         "memberOf": "",
         "doclet": "/**\n * @public\n * @param z\n * @return {string}\n */",
         "args": [
@@ -341,155 +335,6 @@
             "text": "\n"
           }
         }
-      },
-      {
-        "name": "newChild",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 96,
-        "memberOf": "",
-        "doclet": "/**\n * @function\n * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context.\n * @param {Boolean} [isolate] Whether or not to isolate the child context from the parent context. \n * @return {Context} The child context.\n */",
-        "args": [
-          "isolate"
-        ],
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "function newChild(isolate) {",
-        "originalJsDocDescription": {
-          "function": {
-            "tag": "function",
-            "line": 1,
-            "lastLine": 1,
-            "textStartsOnSameLine": true,
-            "text": ""
-          },
-          "params": [
-            {
-              "tag": "param",
-              "line": 2,
-              "lastLine": 2,
-              "textStartsOnSameLine": true,
-              "text": "{Boolean} [isolate] Whether or not to isolate the child context from the parent context."
-            }
-          ],
-          "return": {
-            "tag": "return",
-            "line": 3,
-            "lastLine": -1,
-            "textStartsOnSameLine": true,
-            "text": "{Context} The child context.\n"
-          }
-        }
-      },
-      {
-        "name": "oldChild",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 105,
-        "memberOf": "",
-        "doclet": "/**\n * @function\n * @param {Boolean} Whether or not to isolate the child context from the parent context.\n * @param {Boolean} Whether or not to isolate the child context from the parent context. \n * @return {Context} The child context.\n */",
-        "args": [
-          "isolate"
-        ],
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "function oldChild(isolate) {",
-        "originalJsDocDescription": {
-          "function": {
-            "tag": "function",
-            "line": 1,
-            "lastLine": 1,
-            "textStartsOnSameLine": true,
-            "text": ""
-          },
-          "params": [
-            {
-              "tag": "param",
-              "line": 2,
-              "lastLine": 2,
-              "textStartsOnSameLine": true,
-              "text": "{Boolean} Whether or not to isolate the child context from the parent context."
-            }
-          ],
-          "return": {
-            "tag": "return",
-            "line": 3,
-            "lastLine": -1,
-            "textStartsOnSameLine": true,
-            "text": "{Context} The child context.\n"
-          }
-        }
-      },
-      {
-        "name": "simple",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 114,
-        "memberOf": "",
-        "doclet": "/**\n * @function\n * @param Whether or not to isolate the child context from the parent context.\n * @param Whether or not to isolate the child context from the parent context. \n * @return {Context} The child context.\n */",
-        "args": [
-          "isolate"
-        ],
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "function simple(isolate) {",
-        "originalJsDocDescription": {
-          "function": {
-            "tag": "function",
-            "line": 1,
-            "lastLine": 1,
-            "textStartsOnSameLine": true,
-            "text": ""
-          },
-          "params": [
-            {
-              "tag": "param",
-              "line": 2,
-              "lastLine": 2,
-              "textStartsOnSameLine": true,
-              "text": "Whether or not to isolate the child context from the parent context."
-            }
-          ],
-          "return": {
-            "tag": "return",
-            "line": 3,
-            "lastLine": -1,
-            "textStartsOnSameLine": true,
-            "text": "{Context} The child context.\n"
-          }
-        }
-      },
-      {
-        "name": "simpleNoFunc",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 122,
-        "memberOf": "",
-        "doclet": "/**\n * @param isolate Whether or not to isolate the child context from the parent context.\n * @param isolate Whether or not to isolate the child context from the parent context. \n * @return The child context.\n */",
-        "args": [
-          "isolate"
-        ],
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "function simpleNoFunc(isolate) {",
-        "originalJsDocDescription": {
-          "params": [
-            {
-              "tag": "param",
-              "line": 1,
-              "lastLine": 1,
-              "textStartsOnSameLine": true,
-              "text": "isolate Whether or not to isolate the child context from the parent context."
-            }
-          ],
-          "return": {
-            "tag": "return",
-            "line": 2,
-            "lastLine": -1,
-            "textStartsOnSameLine": true,
-            "text": "The child context.\n"
-          }
-        }
       }
     ],
     "is_module": false,
@@ -497,12 +342,12 @@
     "uses_y_log": false,
     "requiresRaw": [],
     "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source",
-    "fileName": "zero-test.js",
+    "fileName": "noexports-test.js",
     "strict": false
   },
   "possibleClassname": "",
   "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 154
+  "numberOfLines": 110
 }
