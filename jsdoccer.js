@@ -1994,6 +1994,13 @@ function addMissingComments(walkerObj) {
         };
         var newComment = generateComment(null, ast, walkerObj, input,
                 nodeWithRequiresBlock, statusCheck);
+        
+         //console.warn("AST comment node we need to edit:");
+         //console.warn(nodeWithRequiresBlock);
+         //console.warn("Replace with new doclet:");
+         //console.warn(newComment);
+         //console.warn(walkerObj.results.amdProc.requires);
+        
         if (statusCheck.merge) {
             // console.warn("AST comment node we need to edit:");
             // console.warn(nodeWithRequiresBlock);
