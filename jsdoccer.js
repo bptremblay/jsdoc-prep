@@ -1360,8 +1360,12 @@ function walk(node, attr, val, results, parentNode) {
                 // array?
                 // // console.log(e + ': ' + '[]');
                 for (var index = 0; index < child.length; index++) {
+                    //console.warn(child);
                     var elem = child[index];
-                    walk(elem, attr, val, results, node);
+                    if (elem != null){
+                        walk(elem, attr, val, results, node);
+                    }
+                    
                 }
             } else if (typeof child === 'object') {
                 child.parentNode = node;
