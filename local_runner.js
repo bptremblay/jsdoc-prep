@@ -70,8 +70,9 @@ var processingChain = [
                        'jsDocNameFixerProc',
                        'fixClassDeclarationsProc',
                        'jsDoc3PrepProc',
-                       'trimProc',
-                       'jsBeautifyProc' ];
+                      // 'trimProc',
+                       'jsBeautifyProc' 
+                       ];
 
 // var processingChain = [
 // // 'trimProc',

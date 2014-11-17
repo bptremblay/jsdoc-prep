@@ -331,129 +331,129 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
     var has_description = false;
     // // console.warn('>>>>>>>>>>>>>>>>>>>>>>>>>> printDoclet');
     var printableTags = {
-        'abstract' : 1,
-        // This member must be implemented (or overridden) by the inheritor.
-        'access' : 1,
-        // Specify the access level of this member - private, public, or
-        // protected.
-        'alias' : 1,
-        // Treat a member as if it had a different name.
-        'augments' : 1,
-        // This object adds onto a parent object.
-        'extends' : 1,
-        // This object adds onto a parent object.
-        'author' : 1,
-        // Identify the author of an item.
-        'borrows' : 1,
-        // This object uses something from another object.
-        'callback' : 1,
-        // Document a callback function.
-        'classdesc' : 1,
-        // Use the following text to describe the entire class.
-        'constant' : 1,
-        // Document an object as a constant.
-        // 'constructor': 1,
-        // This function is intended to be called with the "new" keyword.
-        'constructs' : 1,
-        // This function member will be the constructor for the previous class.
-        'copyright' : 1,
-        // Document some copyright information.
-        'default' : 1,
-        // Document the default value.
-        'deprecated' : 1,
-        // Document that this is no longer the preferred way.
-        'desc' : 1,
-        // Describe a symbol.
-        'enum' : 1,
-        // Document a collection of related properties.
-        'event' : 1,
-        // Document an event.
-        'example' : 1,
-        // Provide an example of how to use a documented item.
-        'exports' : 1,
-        // Identify the member that is exported by a JavaScript module.
-        'external' : 1,
-        // Document an external class/namespace/module.
-        'file' : 1,
-        // Describe a file.
-        'fires' : 1,
-        // Describe the events this method may fire.
-        'global' : 1,
-        // Document a global object.
-        'ignore' : 1,
-        // [todo] Remove this from the final output.
-        'inner' : 1,
-        // Document an inner object.
-        'instance' : 1,
-        // Document an instance member.
-        'kind' : 1,
-        // What kind of symbol is this?
-        'lends' : 1,
-        // Document properties on an object literal as if they belonged to a
-        // symbol
-        // with a given name.
-        'license' : 1,
-        // [todo] Document the software license that applies to this code.
-        'link' : 1,
-        // Inline tag - create a link.
-        'member' : 1,
-        // Document a member.
-        // 'memberof': 1,
-        // 'memberOf': 1,
-        // This symbol belongs to a parent symbol.
-        // 'method': 1,
-        // Describe a method or function.
-        'mixes' : 1,
-        // This object mixes in all the members from another object.
-        'mixin' : 1,
-        // Document a mixin object.
-        'module' : 1,
-        // Document a JavaScript module.
-        'name' : 1,
-        // Document the name of an object.
-        'namespace' : 1,
-        // Document a namespace object.
-        // 'param': 1,
-        // Document the parameter to a function.
-        'private' : 1,
-        // This symbol is meant to be private.
-        'property' : 1,
-        // Document a property of an object.
-        'protected' : 1,
-        // This member is meant to be protected.
-        'public' : 1,
-        // This symbol is meant to be public.
-        'readonly' : 1,
-        // This symbol is meant to be read-only.
-        // 'requires': 1,
-        // This file requires a JavaScript module.
-        'returns' : 1,
-        'return' : 1,
-        // Document the return value of a function.
-        'see' : 1,
-        // Refer to some other documentation for more information.
-        'since' : 1,
-        // When was this feature added?
-        'static' : 1,
-        // Document a static member.
-        'summary' : 1,
-        // A shorter version of the full description.
-        'this' : 1,
-        // What does the 'this' keyword refer to here?
-        'throws' : 1,
-        // Describe what errors could be thrown.
-        'todo' : 1,
-        // Document tasks to be completed.
-        'tutorial' : 1,
-        // Insert a link to an included tutorial file.
-        'type' : 1,
-        // Document the type of an object.
-        'typedef' : 1,
-        // Document a custom type.
-        'variation' : 1,
-        // Distinguish different objects with the same name.
-        'version' : 1
-    // Documents the version number of an item.
+                         'abstract' : 1,
+                         // This member must be implemented (or overridden) by the inheritor.
+                         'access' : 1,
+                         // Specify the access level of this member - private, public, or
+                         // protected.
+                         'alias' : 1,
+                         // Treat a member as if it had a different name.
+                         'augments' : 1,
+                         // This object adds onto a parent object.
+                         'extends' : 1,
+                         // This object adds onto a parent object.
+                         'author' : 1,
+                         // Identify the author of an item.
+                         'borrows' : 1,
+                         // This object uses something from another object.
+                         'callback' : 1,
+                         // Document a callback function.
+                         'classdesc' : 1,
+                         // Use the following text to describe the entire class.
+                         'constant' : 1,
+                         // Document an object as a constant.
+                         // 'constructor': 1,
+                         // This function is intended to be called with the "new" keyword.
+                         'constructs' : 1,
+                         // This function member will be the constructor for the previous class.
+                         'copyright' : 1,
+                         // Document some copyright information.
+                         'default' : 1,
+                         // Document the default value.
+                         'deprecated' : 1,
+                         // Document that this is no longer the preferred way.
+                         'desc' : 1,
+                         // Describe a symbol.
+                         'enum' : 1,
+                         // Document a collection of related properties.
+                         'event' : 1,
+                         // Document an event.
+                         'example' : 1,
+                         // Provide an example of how to use a documented item.
+                         'exports' : 1,
+                         // Identify the member that is exported by a JavaScript module.
+                         'external' : 1,
+                         // Document an external class/namespace/module.
+                         'file' : 1,
+                         // Describe a file.
+                         'fires' : 1,
+                         // Describe the events this method may fire.
+                         'global' : 1,
+                         // Document a global object.
+                         'ignore' : 1,
+                         // [todo] Remove this from the final output.
+                         'inner' : 1,
+                         // Document an inner object.
+                         'instance' : 1,
+                         // Document an instance member.
+                         'kind' : 1,
+                         // What kind of symbol is this?
+                         'lends' : 1,
+                         // Document properties on an object literal as if they belonged to a
+                         // symbol
+                         // with a given name.
+                         'license' : 1,
+                         // [todo] Document the software license that applies to this code.
+                         'link' : 1,
+                         // Inline tag - create a link.
+                         'member' : 1,
+                         // Document a member.
+                         // 'memberof': 1,
+                         // 'memberOf': 1,
+                         // This symbol belongs to a parent symbol.
+                         // 'method': 1,
+                         // Describe a method or function.
+                         'mixes' : 1,
+                         // This object mixes in all the members from another object.
+                         'mixin' : 1,
+                         // Document a mixin object.
+                         'module' : 1,
+                         // Document a JavaScript module.
+                         'name' : 1,
+                         // Document the name of an object.
+                         'namespace' : 1,
+                         // Document a namespace object.
+                         // 'param': 1,
+                         // Document the parameter to a function.
+                         'private' : 1,
+                         // This symbol is meant to be private.
+                         'property' : 1,
+                         // Document a property of an object.
+                         'protected' : 1,
+                         // This member is meant to be protected.
+                         'public' : 1,
+                         // This symbol is meant to be public.
+                         'readonly' : 1,
+                         // This symbol is meant to be read-only.
+                         // 'requires': 1,
+                         // This file requires a JavaScript module.
+                         'returns' : 1,
+                         'return' : 1,
+                         // Document the return value of a function.
+                         'see' : 1,
+                         // Refer to some other documentation for more information.
+                         'since' : 1,
+                         // When was this feature added?
+                         'static' : 1,
+                         // Document a static member.
+                         'summary' : 1,
+                         // A shorter version of the full description.
+                         'this' : 1,
+                         // What does the 'this' keyword refer to here?
+                         'throws' : 1,
+                         // Describe what errors could be thrown.
+                         'todo' : 1,
+                         // Document tasks to be completed.
+                         'tutorial' : 1,
+                         // Insert a link to an included tutorial file.
+                         'type' : 1,
+                         // Document the type of an object.
+                         'typedef' : 1,
+                         // Document a custom type.
+                         'variation' : 1,
+                         // Distinguish different objects with the same name.
+                         'version' : 1
+                         // Documents the version number of an item.
     };
     var buffer = [];
     var hasAttributes = false;
@@ -560,7 +560,7 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
         // returnTag = ' * ' + e + ' ' + returnText;
         var returnBlock = docletData['@return'];
         returnTag = ' * ' + '@return' + ' ' + returnBlock.type + ' '
-                + returnBlock.description;
+        + returnBlock.description;
         // console.log(returnTag);
     }
     if (docletData['@exports'] != null) {
@@ -672,16 +672,16 @@ function getTagLines(lines, tag, buffer, getPreamble) {
     if (getPreamble) {
         start = 0;
         end = tag.line - 1;
-        //console.warn(lines);
+        // console.warn(lines);
         // console.warn(tag);
-        //console.warn(start + ',' + end);
-        if (start < 1 && end < 1){
+        // console.warn(start + ',' + end);
+        if (start < 1 && end < 1) {
             return;
         }
     }
     if (end === -1) {
         end = lines.length - 1;
-        //console.warn('Reading to the end of the doclet.');
+        // console.warn('Reading to the end of the doclet.');
     }
     tag.textStartsOnSameLine = false;
     getLines(lines, start, end, buffer);
@@ -753,16 +753,16 @@ function getRequiresTags(input) {
 }
 var firstDoclet = null;
 var typesMap = {
-    'function' : 'Function',
-    'number' : 'Number',
-    'int' : 'Number',
-    'float' : 'Number',
-    'long' : 'Number',
-    'bool' : 'Boolean',
-    'boolean' : 'Boolean',
-    'string' : 'String',
-    'array' : 'Array',
-    'object' : 'Object'
+                'function' : 'Function',
+                'number' : 'Number',
+                'int' : 'Number',
+                'float' : 'Number',
+                'long' : 'Number',
+                'bool' : 'Boolean',
+                'boolean' : 'Boolean',
+                'string' : 'String',
+                'array' : 'Array',
+                'object' : 'Object'
 };
 
 function getType(input) {
@@ -773,7 +773,7 @@ function getType(input) {
         return theType;
     }
     if (lowerInput === 'null' || lowerInput === 'void'
-            || lowerInput === 'nothing') {
+        || lowerInput === 'nothing') {
         return 'null';
     }
     if (input.indexOf('$') === 0) {
@@ -830,7 +830,7 @@ function fixReturnText(input, docletData) {
                 // input = saveInput;
             } else {
                 return '{Object} FIXME: Nonstandard comment in line: "'
-                        + saveInput + '"';
+                + saveInput + '"';
             }
         }
     }
@@ -1030,7 +1030,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
         if (line.indexOf('@') === 0) {
             if (!firstTag) {
                 docletData['freeText'] = commentBuffer.trim();
-                //console.warn('freeText: ' + docletData['freeText']);
+                // console.warn('freeText: ' + docletData['freeText']);
                 commentBuffer = '';
             } else if (currentTagObject != null) {
                 if (currentTagObject.description != null) {
@@ -1050,18 +1050,19 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                 lastTag = docletData.tags[docletData.tags.length - 1];
             }
             var newTag = {
-                tag : tag,
-                line : index,
-                lastLine : -1
+                          tag : tag,
+                          line : index,
+                          lastLine : -1
             };
             if (lastTag !== null) {
                 lastTag.lastLine = index - 1;
             }
-            //console.warn(newTag);
+            // console.warn(newTag);
             docletData.tags.push(newTag);
             if (tag === 'param') {
                 if (tagData.length === 0) {
-                    console.wanr('(' + input.name + ')' + " Can't parse data for this param tag: " + line);
+                    console.wanr('(' + input.name + ')'
+                            + " Can't parse data for this param tag: " + line);
                     continue;
                 }
                 var paramDescription = '';
@@ -1094,10 +1095,10 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                     }
                 }
                 var paramObject = {
-                    tagName : tag,
-                    name : paramName,
-                    type : paramType,
-                    description : paramDescription
+                                   tagName : tag,
+                                   name : paramName,
+                                   type : paramType,
+                                   description : paramDescription
                 };
                 currentTagObject = paramObject;
                 docletData.params.push(paramObject);
@@ -1138,11 +1139,11 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                     }
                 }
                 var returnObject = {
-                    // name : returnName,
-                    tagName : tag,
-                    type : returnType,
-                    description : returnDescription,
-                    line : line
+                                    // name : returnName,
+                                    tagName : tag,
+                                    type : returnType,
+                                    description : returnDescription,
+                                    line : line
                 };
                 currentTagObject = returnObject;
                 docletData['@return'] = currentTagObject;
@@ -1206,17 +1207,15 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             // // console.warn("it's a freeform description comment... who owns
             // it?");
             // it's a freeform description comment... who owns it?
-             // console.warn(line);
+            // console.warn(line);
         }
     }
     // Collate all the loose text fragments:
     // preamble is the text before any tags have been declared
     var preamble = [];
-    
-    
+
     // HOW DID THIS HAPPEN???
-    
-    
+
     if (docletData.tags.length > 0) {
         for (var index = 0; index < docletData.tags.length; index++) {
             var tag = docletData.tags[index];
@@ -1224,15 +1223,15 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             // the next tag
             // _or_
             // end of doclet
-            //console.warn(tag);
+            // console.warn(tag);
             var textBuffer = [];
             if (index === 0) {
                 getTagLines(lines, tag, preamble, true);
-                //console.warn(preamble);
+                // console.warn(preamble);
                 preamble = stripStarLines(preamble);
-                //console.warn('parseDoclet WTF');
-                //console.warn(tag);
-                //console.warn(preamble);
+                // console.warn('parseDoclet WTF');
+                // console.warn(tag);
+                // console.warn(preamble);
             }
             getTagLines(lines, tag, textBuffer, false);
             textBuffer = stripStarLines(textBuffer);
@@ -1241,10 +1240,10 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             // console.log(tag);
         }
     } else {
-        //console.warn('doclet with no tags');
+        // console.warn('doclet with no tags');
         if (!linesAreEmpty(lines)) {
             preamble = stripStarLines(lines);
-            //console.warn('doclet with no tags HAS PREAMBLE:\n' + preamble);
+            // console.warn('doclet with no tags HAS PREAMBLE:\n' + preamble);
         }
     }
     docletData.preamble = preamble.join('\n');
@@ -1253,11 +1252,11 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
         docletData.preamble = '';
     } else {
         docletData['freeText'] = docletData.preamble;
-        //console.warn("parseDoclet: getting freeText from preamble");
-        //console.warn(docletData.preamble);
+        // console.warn("parseDoclet: getting freeText from preamble");
+        // console.warn(docletData.preamble);
     }
 
-    //console.warn('freeText: ' + docletData['freeText']);
+    // console.warn('freeText: ' + docletData['freeText']);
     var nodeType = 'NONFUNCTION';
     if (docletData['@constructor'] != null) {
         nodeType = 'CLASS';
@@ -1295,13 +1294,13 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             if (docletData['freeText'].trim().indexOf('</pre>') === -1) {
                 docletData['freeText'] += '.';
             }
-           // console.warn("freeText>>> " + docletData['freeText']);
+            // console.warn("freeText>>> " + docletData['freeText']);
         }
         docletData['freeText'] = docletData['freeText'].split('<br />').join(
-                '<br />\r\n * ');
+        '<br />\r\n * ');
     }
-   // console.warn(doclet);
-   // console.warn(JSON.stringify(docletData, null, 2));
+    // console.warn(doclet);
+    // console.warn(JSON.stringify(docletData, null, 2));
 
     // console.warn(getRequiresTags(input));
 
@@ -1311,7 +1310,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
 function walk(node, attr, val, results, parentNode) {
     if (parentNode == null) {
         parentNode = {
-            type : 'ROOT'
+                      type : 'ROOT'
         };
         parentNode.uid = -1;
     }
@@ -1360,12 +1359,12 @@ function walk(node, attr, val, results, parentNode) {
                 // array?
                 // // console.log(e + ': ' + '[]');
                 for (var index = 0; index < child.length; index++) {
-                    //console.warn(child);
+                    // console.warn(child);
                     var elem = child[index];
-                    if (elem != null){
+                    if (elem != null) {
                         walk(elem, attr, val, results, node);
                     }
-                    
+
                 }
             } else if (typeof child === 'object') {
                 child.parentNode = node;
@@ -1510,29 +1509,51 @@ function stripWhite(input) {
  * @param ast
  */
 function getClosestComment(input, nodeStart, ast, wrapper) {
+    // console.warn('getClosestComment');
+    //console.warn(ast.comments);
     var endpoint = ast.comments.length - 1;
+    //console.warn(endpoint);
     // todo: move to shared ref
-    // var lines = input.split('\n');
-    for (var index = endpoint; index > 0; index--) {
+    var lines = input.split('\n');
+    for (var index = endpoint; index > -1; index--) {
         var comment = ast.comments[index];
+        //console.warn(comment);
+        if (comment.lineNumber != null) {
+            //console.warn('getClosestComment found a comment already used! skip and keep searching up...');
+            continue;
+        }
         var range = comment.range;
         var commentBody = input.substring(range[0], range[1]).trim();
         if (commentBody.indexOf('/**') === -1) {
             continue;
         }
-        var lineNumber = getLineNumber(input, comment);
-        comment.lineNumber = lineNumber;
+        //var lineNumber = getLineNumber(input, comment);
+        //comment.lineNumber = lineNumber;
         var commentEnd = range[1];
         if (nodeStart > commentEnd) {
             var corpus = (input.substring(commentEnd, nodeStart).trim());
             if (corpus.length === 0) {
                 var lineNumber = getLineNumber(input, comment);
+
+                //console.warn('getClosestComment() found ' + commentBody + ' for ' + wrapper.name);
+                var block = getLines(lines, lineNumber - 1,
+                        wrapper.lineNumber - 1);
+                var funxChunx = block.split('function ');
+                //console.warn(funxChunx.length);
+                if (block.split('/**').length > 3 || funxChunx.length > 3) {
+                    //console.warn('ALL THE TEXT FOR ' + wrapper.name + ':');
+                    //console.warn(block);
+                    return -1;
+                }
                 comment.lineNumber = lineNumber;
                 return index;
             }
+            // else{
+            // console.warn('getClosestComment skipping over ' + corpus );
+            // }
         }
     }
-    // // console.warn('>>>>> NO COMMENT for ' + wrapper.name);
+    //console.warn('>>>>> NO COMMENT for ' + wrapper.name);
     // // console.warn(nodeStart);
     return -1;
 }
@@ -1546,33 +1567,47 @@ function getClosestComment(input, nodeStart, ast, wrapper) {
  * @returns {Number}
  */
 function getExistingComment(input, obj, ast, wrapper) {
-    var dump = obj.type;
-    // console.log('look for comment in ' + dump);
+    var astNodeType = obj.type;
+    //console.warn('look for comment for ' + wrapper.name + ' in ' + astNodeType);
     var range = obj.range;
     var rangeStart = range[0];
+    // console.warn(obj);
+    // console.warn('Calling getClosestComment() for ' + obj.name);
+//    console.warn('Calling getClosestComment() for NODE ' + wrapper.name
+//            + ' of type ' + astNodeType);
     var nearComment = getClosestComment(input, rangeStart, ast, wrapper);
     if (nearComment === -1 && obj.parentNode != -1) {
         var parentNode = getNodeByUid(obj.parentNode);
-        dump = parentNode.type;
-        // console.log('look for comment in ' + dump);
+        astNodeType = parentNode.type;
+        // console.warn('look for comment in ' + astNodeType);
         var range = parentNode.range;
         var rangeStart = range[0];
+//        console.warn('Calling getClosestComment() for PARENT of '
+//                + wrapper.name + ' of type ' + astNodeType);
         var nearComment = getClosestComment(input, rangeStart, ast, wrapper);
         if (nearComment === -1 && parentNode.parentNode != -1) {
             parentNode = getNodeByUid(parentNode.parentNode);
             if (parentNode == null) {
                 console.error("getExistingComment fatal error");
             }
-            dump = parentNode.type;
-            // // console.warn('look for comment in ' + dump);
-            if (dump === 'FunctionExpression') {
+            astNodeType = parentNode.type;
+            // console.warn('look for comment in ' + astNodeType);
+            if (astNodeType === 'FunctionExpression') {
+                return -1;
+            }
+            else if (astNodeType === 'ObjectExpression') {
                 return -1;
             }
             range = parentNode.range;
             rangeStart = range[0];
+//            console.warn('Calling getClosestComment() for GRANDPARENT of '
+//                    + wrapper.name + ' of type ' + astNodeType);
             nearComment = getClosestComment(input, rangeStart, ast, wrapper);
         }
     }
+//    if (nearComment !== -1) {
+//        console.warn('getExistingComment() found... ' + nearComment);
+//    }
     return nearComment;
 }
 
@@ -1659,8 +1694,8 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
         if (true) {
             var obj = map[index];
             var functionWrapper = {
-                name : '',
-                todos : []
+                                   name : '',
+                                   todos : []
             };
             if (obj.id !== null) {
                 // // console.warn("dumpNamedFunctions " + obj.id.name);
@@ -1724,23 +1759,23 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                         // /**@alias
                         // module:js/component/myAccounts/depositAccounts*/
                         returnBody = 'return /**@alias module:' + packagePath
-                                + ' */ ' + textMinusReturn;
+                        + ' */ ' + textMinusReturn;
                         // console.log('returnBody = ' + returnBody);
                         foundNode = true;
                     } else if (returnNode.argument.id) {
                         var constructorName = returnNode.argument.id.name;
                         textMinusReturn = textMinusReturn
-                                .split(constructorName).join(
-                                        capitalize(constructorName));
+                        .split(constructorName).join(
+                                capitalize(constructorName));
                         console.warn('Renaming class to "'
                                 + capitalize(constructorName) + '".');
                         returnBody = 'return /** @constructor */\n'
-                                + textMinusReturn;
+                            + textMinusReturn;
                         // console.log('returnBody = ' + returnBody);
                         foundNode = true;
                     } else if (!returnNode.argument.id) {
                         console
-                                .warn('Anonymous function is returned by module.');
+                        .warn('Anonymous function is returned by module.');
                         // returnBody = 'return /** This module returns an
                         // anonymous function. */\n'
                         // + textMinusReturn;
@@ -1760,7 +1795,7 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                         // console.warn(endOfFile);
                         // console.warn(returnBody);
                         walkerObj.source = beginningOfFile + returnBody
-                                + endOfFile;
+                        + endOfFile;
                         return "AMD_RETURN_BLOCK";
                     }
                 }
@@ -1780,6 +1815,14 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
             functionWrapper.memberOf = '';
             if (functionWrapper.name && functionWrapper.name !== '') {
                 var firstChar = functionWrapper.name.charAt(0);
+                if (!isAlpha(firstChar)){
+                    for (var ccc = 0; ccc<functionWrapper.name.length; ccc++){
+                        firstChar = functionWrapper.name.charAt(ccc);
+                        if (isAlpha(firstChar)){
+                            break;
+                        }
+                    }
+                }
                 if (functionWrapper.name.indexOf('.') !== -1
                         || functionWrapper.name.indexOf(']') !== -1) {
                     functionWrapper.realName = functionWrapper.name;
@@ -1788,13 +1831,14 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                     functionWrapper.name = longSplit.pop();
                     functionWrapper.memberOf = longSplit.join('.');
                     if (functionWrapper.memberOf !== 'this'
-                            && (functionWrapper.memberOf.indexOf('.prototype') === -1)) {
+                        && (functionWrapper.memberOf.indexOf('.prototype') === -1)) {
                         // is it an inner?
                         functionWrapper.todos.push('MEMBEROF');
                     }
                 } else {
                     if (firstChar.toUpperCase() === firstChar) {
                         ctor = true;
+                        console.warn('CTOR = true');
                         functionWrapper.returnType = '';
                         output.classes[functionWrapper.name] = obj.uid;
                     }
@@ -1947,11 +1991,50 @@ function getCommentWith(input, comments, whatTag) {
     return null;
 }
 
-function addMissingComments(walkerObj) {
+/**
+ * 
+ * @param message
+ * @param error
+ * @param errors
+ * @returns {Array}
+ */
+function reportError(message, error, errors, walkerObj){
+    if (errors == null){
+        message = '';
+    }
+    if (errors == null){
+        errors = [];
+    }
+    if (error == null){
+        error = new Error();
+        error.message = message;
+    }
+    if (walkerObj != null){
+        error.module = walkerObj;
+    }
+    error.description = message;
+    errors.push(error);
+    console.warn(error);
+    return errors;
+}
+
+/**
+ * 
+ * @param walkerObj
+ * @param errors
+ * @returns
+ */
+function addMissingComments(walkerObj, errors) {
+    if (errors == null){
+        errors = [];
+    }
+    if (walkerObj.checkForRequiresMismatch == null) {
+        walkerObj.checkForRequiresMismatch = true;
+    }
     walkerObj.preprocessed = false;
     console.log('addMissingComments ' + walkerObj.path);
     // console.log('addMissingComments ' + walkerObj.source);
-    // console.log(walkerObj);
+    // console.log(walkerObj.source);
     var beautify = require('js-beautify');
     var input = walkerObj.source;
     var _esprima = require('esprima');
@@ -1967,8 +2050,7 @@ function addMissingComments(walkerObj) {
             tokens : true
         });
     } catch (esError) {
-        console.warn('ESPRIMA ERROR at top of addMissingComments');
-        console.warn(esError);
+        reportError('ESPRIMA ERROR at top of addMissingComments', esError, errors, walkerObj);
         return 'ERROR';
     }
 
@@ -1976,58 +2058,66 @@ function addMissingComments(walkerObj) {
 
     // TODO: patch the @exports or @module @requires tags and re-parse the
     // source!!!
-
-    var hasModule = getCommentWith(input, ast.comments, '@module');
-    var hasExports = getCommentWith(input, ast.comments, '@exports');
     var nodeWithRequiresBlock = null;
-    if (hasExports != null) {
-        console.log('Found @exports.');
-        nodeWithRequiresBlock = hasExports;
-    } else if (hasModule != null) {
-        console.log('Did not find @exports but found @module.');
-        nodeWithRequiresBlock = hasModule;
-    }
+    if (walkerObj.checkForRequiresMismatch) {
+        console
+        .warn('Scanning the @requires tag to see if it matches inline require() invocations.');
+        var hasModule = getCommentWith(input, ast.comments, '@module');
+        var hasExports = getCommentWith(input, ast.comments, '@exports');
 
-    if (nodeWithRequiresBlock != null) {
-        // var doclet = parseDoclet(walkerObj,
-        // nodeWithRequiresBlock.commentBody,
-        // false, '', 0, null);
+        if (hasExports != null) {
+            console.log('Found @exports.');
+            nodeWithRequiresBlock = hasExports;
+        } else if (hasModule != null) {
+            console.log('Did not find @exports but found @module.');
+            nodeWithRequiresBlock = hasModule;
+        }
 
-        var statusCheck = {
-            merge : false
-        };
-        var newComment = generateComment(null, ast, walkerObj, input,
-                nodeWithRequiresBlock, statusCheck);
-        
-         //console.warn("AST comment node we need to edit:");
-         //console.warn(nodeWithRequiresBlock);
-         //console.warn("Replace with new doclet:");
-         //console.warn(newComment);
-         //console.warn(walkerObj.results.amdProc.requires);
-        
-        if (statusCheck.merge) {
+        if (nodeWithRequiresBlock != null) {
+            // var doclet = parseDoclet(walkerObj,
+            // nodeWithRequiresBlock.commentBody,
+            // false, '', 0, null);
+
+            var statusCheck = {
+                               merge : false
+            };
+            var newComment = generateComment(null, ast, walkerObj, input,
+                    nodeWithRequiresBlock, statusCheck);
+
+            // console.warn(walkerObj.source);
+
             // console.warn("AST comment node we need to edit:");
             // console.warn(nodeWithRequiresBlock);
             // console.warn("Replace with new doclet:");
             // console.warn(newComment);
-            var head = walkerObj.source.substring(0,
-                    nodeWithRequiresBlock.range[0] - 1);
-            // console.warn(head);
-            var tail = walkerObj.source
-                    .substring(nodeWithRequiresBlock.range[1] + 1);
-            // console.warn(tail);
-            walkerObj.source = (head + newComment + tail);
-            // console.warn(walkerObj.source);
-            // Reboot!
-            console.log('>>>>> Need to rewrite requires on ' + walkerObj.name
-                    + '.');
-            return addMissingComments(walkerObj);
+            // console.warn(walkerObj.results.amdProc.requires);
 
-        } else {
-            console.log('No need to rewrite requires on ' + walkerObj.name
-                    + '.');
+            if (statusCheck.merge) {
+                // console.warn("AST comment node we need to edit:");
+                // console.warn(nodeWithRequiresBlock);
+                // console.warn("Replace with new doclet:");
+                // console.warn(newComment);
+                var head = walkerObj.source.substring(0,
+                        nodeWithRequiresBlock.range[0] - 1);
+                // console.warn('head: ' + head);
+                var tail = walkerObj.source
+                .substring(nodeWithRequiresBlock.range[1] + 1);
+                // console.warn('tail: ' + tail);
+                walkerObj.source = (head + newComment + tail);
+                // console.warn(walkerObj.source);
+                // Reboot!
+                console.log('>>>>> Need to rewrite requires on '
+                        + walkerObj.name + '.');
+                walkerObj.checkForRequiresMismatch = false;
+
+                return addMissingComments(walkerObj, errors);
+
+            } else {
+                console.log('No need to rewrite requires on ' + walkerObj.name
+                        + '.');
+            }
+
         }
-
     }
 
     // writeFile("dump.json", JSON.stringify(ast, null, 2));
@@ -2063,32 +2153,43 @@ function addMissingComments(walkerObj) {
     // todo: replace code below
     // console.log(JSON.stringify(methodArray, null, 2));
     var lines = input.split('\n');
+    // console.warn(lines);
     // method knows it's comment, so should know comment's range
     var newFileLines = [];
+    var rewriteLines = true;
     for (var lineIndex = 0; lineIndex < lines.length; lineIndex++) {
         var line = lines[lineIndex];
-        // // console.warn(line);
+        // console.warn(lineIndex + ' --> ' + line);
         var method = getMethodOnLine(methodArray, lineIndex + 1, ast, input);
-        if (method != null && method.comment === -1) {
-            var newComment = generateComment(method, ast, walkerObj, input);
-            method.jsDoc = newComment;
-            newFileLines.push(newComment);
-            newFileLines.push(line);
-        } else if (method != null && method.comment !== -1) {
-            var newComment = generateComment(method, ast, walkerObj, input);
-            method.jsDoc = newComment;
-            // console.warn(method.name + " >>>" + method.comment);
-            // console.warn(method.name + " >>>" + newComment);
-            newFileLines.push(newComment);
-            // advance line counter to skip over legacy comments
-            lineIndex = method.lineNumber - 1;
-            line = lines[lineIndex];
-            newFileLines.push(line);
+        if (rewriteLines) {
+            if (method != null && method.comment === -1) {
+                // console.warn(lineIndex + ',' + method.name);
+                var newComment = generateComment(method, ast, walkerObj, input);
+                method.jsDoc = newComment;
+                newFileLines.push(newComment);
+                newFileLines.push(line);
+            } else if (method != null && method.comment !== -1) {
+                // console.warn(lineIndex + ',' + method.name);
+                var newComment = generateComment(method, ast, walkerObj, input);
+                method.jsDoc = newComment;
+                // console.warn(method.name + " >>>" + method.comment);
+                // console.warn(method.name + " >>>" + newComment);
+                newFileLines.push(newComment);
+                // advance line counter to skip over legacy comments
+                lineIndex = method.lineNumber - 1;
+                line = lines[lineIndex];
+                newFileLines.push(line);
+            } else {
+                // console.warn(lineIndex + ',' + line);
+                newFileLines.push(line);
+            }
         } else {
             newFileLines.push(line);
         }
+
     }
     newFile = newFileLines.join('\n');
+    // console.warn(newFile);
     newFile = beautify(newFile, {
         'indent_size' : 2,
         'indent_char' : ' ',
@@ -2107,7 +2208,7 @@ function addMissingComments(walkerObj) {
         'wrap_line_length' : 200
     });
     if (!walkerObj.preprocessed) {
-        // console.warn("checking...");
+        console.warn("checking... re-written code");
         walkerObj.source = newFile;
         walkerObj.preprocessed = true;
         try {
@@ -2119,9 +2220,7 @@ function addMissingComments(walkerObj) {
                 tokens : true
             });
         } catch (esError) {
-            console.warn('ESPRIMA ERROR 2nd time parse in addMissingComments');
-            console.warn(esError);
-            console.error(walkerObj.source);
+            reportError('ESPRIMA ERROR 2nd time parse in addMissingComments', esError, errors, walkerObj);
             return 'ERROR';
         }
         functionExpressions = getNodesByType(ast, 'FunctionExpression');
@@ -2211,31 +2310,31 @@ function addMissingComments(walkerObj) {
         });
     }
     var jsDoccerBlob = {
-        "lines" : lines.length,
-        "requires" : [],
-        "className" : "n/a",
-        "packagePath" : "",
-        "directoryPath" : dir,
-        "uses_Y" : false,
-        "no_lib" : true,
-        "inferencedClassName" : "n/a",
-        "uses_$" : false,
-        "chars" : input.length,
-        "uses_YUI" : false,
-        "fields" : [],
-        "moduleName" : _path.dirname(walkerObj.fileName) + '/'
-                + fileNameMinusExt,
-        "uses_console_log" : false,
-        "uses_backbone" : false,
-        "classes" : allMethods.classes,
-        "methods" : wrappedMethods,
-        "is_module" : false,
-        "uses_alert" : false,
-        "uses_y_log" : false,
-        "requiresRaw" : [],
-        "basePath" : basePath,
-        "fileName" : fileNameOnly,
-        "strict" : false
+                        "lines" : lines.length,
+                        "requires" : [],
+                        "className" : "n/a",
+                        "packagePath" : "",
+                        "directoryPath" : dir,
+                        "uses_Y" : false,
+                        "no_lib" : true,
+                        "inferencedClassName" : "n/a",
+                        "uses_$" : false,
+                        "chars" : input.length,
+                        "uses_YUI" : false,
+                        "fields" : [],
+                        "moduleName" : _path.dirname(walkerObj.fileName) + '/'
+                        + fileNameMinusExt,
+                        "uses_console_log" : false,
+                        "uses_backbone" : false,
+                        "classes" : allMethods.classes,
+                        "methods" : wrappedMethods,
+                        "is_module" : false,
+                        "uses_alert" : false,
+                        "uses_y_log" : false,
+                        "requiresRaw" : [],
+                        "basePath" : basePath,
+                        "fileName" : fileNameOnly,
+                        "strict" : false
     };
     outputArray.push(JSON.stringify(jsDoccerBlob, null, 2));
     outputArray.push(newFile);
@@ -2263,22 +2362,38 @@ function getMethodOnLine(methodArray, lineNumber, ast, input) {
             var commentBody = input.substring(comment.range[0],
                     comment.range[1]).trim();
             if (commentBody.indexOf('/**') === -1) {
+                // console.warn('SKIPPING COMMENT ' + commentBody);
                 continue;
             }
             // test for line type is redundant to above test
-            // if (comment.type.toLowerCase() === 'line'){
-            // continue;
-            // }
+            if (comment.type.toLowerCase() === 'line') {
+                // console.warn('SKIPPING LINE COMMENT');
+                continue;
+            }
+
             if (lineNumber === comment.lineNumber) {
-                // // console.warn('Found a comment, so stop on this line: '
-                // + commentBody);
+
+                // @WARNING this is only true if the method is on the next
+                // non-comment/non-whitespace line after this comment!!!
+
+//                console.warn("Found ORIGINAL comment on line " + lineNumber
+//                        + ". " + method.name);
+
+                method.commentBody = commentBody;
+                method.oldComment = comment;
+                // console.warn(method);
                 return method;
             }
         }
         if (lineNumber === method.lineNumber) {
+            // console.warn("Found A METHOD, but NO COMMENT on line " +
+            // lineNumber
+            // + ". " + method.name);
+            // console.warn(method);
             return method;
         }
     }
+    // console.warn("Could not find a method on line " + lineNumber + ".");
     return null;
 }
 
@@ -2328,11 +2443,11 @@ function mergeRequires(doclet) {
         for (var i = 0; i < diffRequires.length; i++) {
             var diffRequire = diffRequires[i];
             var newTag = {
-                tag : 'requires',
-                line : line,
-                lastLine : lastLine,
-                textStartsOnSameLine : true,
-                text : diffRequire
+                          tag : 'requires',
+                          line : line,
+                          lastLine : lastLine,
+                          textStartsOnSameLine : true,
+                          text : diffRequire
             };
             line++;
             lastLine++;
@@ -2391,6 +2506,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
     var funkyName = '';
     var doclet = null;
     var tags = [];
+    var oldComment = null;
     if (statusCheck == null) {
         statusCheck = {};
     }
@@ -2404,10 +2520,16 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         // console.warn(funkyName);
         if (functionWrapper.ctor) {
             funkyName = 'Creates a new instance of class '
-                    + functionWrapper.name + '.';
+                + functionWrapper.name + '.';
+        }
+        if (funkyName.indexOf('[') !== -1){
+            funkyName = '';
+        }
+        if (funkyName.indexOf('.') !== -1){
+            funkyName = '';
         }
         if (functionWrapper.comment !== -1) {
-            var oldComment = ast.comments[functionWrapper.comment];
+            oldComment = ast.comments[functionWrapper.comment];
             var range = oldComment.range;
             var commentBody = input.substring(range[0], range[1]).trim();
             if (commentBody.indexOf('/**') !== -1) {
@@ -2415,19 +2537,21 @@ function generateComment(functionWrapper, ast, walkerObj, input,
                 // console.warn(commentText);
                 doclet = parseDoclet(walkerObj, commentText, false, '', 0,
                         functionWrapper);
+                functionWrapper.oldComment = oldComment;
                 // console.warn(doclet);
             }
         }
     } else {
         commentText = commentBodyOpt.commentBody;
         functionWrapper = {};
-        doclet = parseDoclet(walkerObj, commentText, false, '', 0, functionWrapper);
+        doclet = parseDoclet(walkerObj, commentText, false, '', 0,
+                functionWrapper);
         // console.warn(doclet);
         if (mergeRequires(doclet)) {
 
             console
-                    .warn("Requires list needs to be re-printed. Start parse over now.");
-            //console.warn(doclet);
+            .warn("Requires list needs to be re-printed. Start parse over now.");
+            // console.warn(doclet);
             statusCheck.merge = true;
         }
 
@@ -2483,7 +2607,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
                     var newComment = '';
                     if (newTag.text.trim().length > 0) {
                         newComment = ' * ' + t + ' '
-                                + addStarLines(newTag.text, newTag);
+                        + addStarLines(newTag.text, newTag);
                         commentBlock.push(newComment);
                     } else {
                         newComment = ' * ' + t;
@@ -2497,11 +2621,14 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         }
     } else {
         doclet = {
-            params : [],
-            returnValue : ''
+                  params : [],
+                  returnValue : ''
         };
-        //console.warn('Non-tag lines: ' + funkyName);
-        commentBlock.push(' * ' + funkyName);
+        // console.warn('Non-tag lines: ' + funkyName);
+        if (funkyName.trim().length>0){
+            commentBlock.push(' * ' + funkyName);
+        }
+
     }
     var params = functionWrapper.params;
     if (params == null) {
@@ -2514,6 +2641,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
     var ctor = functionWrapper.ctor;
     if (ctor && doclet['@constructor'] == null) {
         commentBlock.push(' * @constructor');
+        console.warn('Constructor FOUND!!');
     }
     functionWrapper.doclet = doclet;
     // param tags
@@ -2545,7 +2673,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
             commentBlock.push(' * @return ' + returnValue);
         } else {
             commentBlock
-                    .push(' * @todo Please describe the return type of this method.');
+            .push(' * @todo Please describe the return type of this method.');
             commentBlock.push(' * @return {object} ??');
         }
     }
@@ -2555,25 +2683,37 @@ function generateComment(functionWrapper, ast, walkerObj, input,
     commentBlock.push(" */");
     return commentBlock.join('\n');
 }
+
+
+function isAlpha(input) {
+  return (input >= 'a' && input <= 'z\uffff')
+      || (input >= 'A' && input <= 'Z\uffff');
+}
+
+function isDigit(input) {
+  return (input >= '0' && input <= '9');
+}
+
+
 module.exports = {
-    'addMissingComments' : addMissingComments
+                  'addMissingComments' : addMissingComments
 };
 if (false) {
     var testFileName = 'index.js';
     var input = {
-        name : getModuleName(testFileName),
-        source : '',
-        fileName : testFileName,
-        folderPath : 'test-source',
-        camelName : camelize(getModuleName(testFileName)),
-        results : {
-            "amdProc" : {
-                "requires" : [],
-                "moduleName" : testFileName,
-                "AMD" : false,
-                "webPath" : ""
-            }
-        }
+                 name : getModuleName(testFileName),
+                 source : '',
+                 fileName : testFileName,
+                 folderPath : 'test-source',
+                 camelName : camelize(getModuleName(testFileName)),
+                 results : {
+                     "amdProc" : {
+                         "requires" : [],
+                         "moduleName" : testFileName,
+                         "AMD" : false,
+                         "webPath" : ""
+                     }
+                 }
     };
     var source = readFile(input.folderPath + _path.sep + testFileName);
     input.source = source;
