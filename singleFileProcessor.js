@@ -1807,9 +1807,10 @@ var jsDoc3PrepProc = {
                 .indexOf('//') === 0) {
                 continue;
             }
-            if (line.indexOf('* @method') !== -1 || line.indexOf('* @function') !== -1 || line.indexOf('* @memberOf') !== -1) {
-                lines[index] = '';
-            }
+            // DO NOT REMOVE THESE!!! They are part of the jsDoc spec.
+//            if (line.indexOf('* @method') !== -1 || line.indexOf('* @function') !== -1 || line.indexOf('* @memberOf') !== -1) {
+//                lines[index] = '';
+//            }
             // if (line.indexOf('* @requires') !== -1) {
             // lines[index] = '';
             // }
