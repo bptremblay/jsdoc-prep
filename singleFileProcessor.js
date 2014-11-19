@@ -139,17 +139,29 @@ var amdProc = {
                 }
                 return result;
             }
-            // console.warn(converted.requires);
+        //console.warn(converted.requires);
         result.requires = fixRequires(converted.requires);
-        // console.warn(result.requires);
+        //console.warn(result.requires);
         var inlineRequires = fixRequires(getInlineRequires(input));
         for (var ir = 0; ir < inlineRequires.length; ir++) {
             var inlineModule = inlineRequires[ir];
             result.requires.push(inlineModule);
-            // console.warn('require("' + inlineModule + '")');
+            //console.warn('require("' + inlineModule + '")');
         }
         result.moduleName = converted.name;
         result.AMD = converted.isModule;
+        
+        result.min = converted.min;
+        result.main = converted.isMain;
+        result.uses_$ = input.source.indexOf('$(') !== -1;
+        result.uses_Y = converted.callsYuiApi;
+        // FIXME: BUGGY
+        result.uses_alert = input.source.indexOf('alert(') !== -1;
+        // FIXME: BUGGY
+        result.strict = input.source.indexOf('use strict') !== -1; 
+
+            
+        
         doneCallback(input);
     }
 };
@@ -1025,6 +1037,20 @@ var jsDoccerProc = {
             var splitter = stdout.split('/*jsdoc_prep_data*/');
             try {
                 input.jsDoccerProcData = JSON.parse(unescape(splitter[0]));
+                var amdProcData = input.results.amdProc;
+                input.jsDoccerProcData.requires = amdProcData.requires;
+                input.jsDoccerProcData.is_module = amdProcData.AMD;
+                
+
+                input.jsDoccerProcData.min = amdProcData.min;
+                input.jsDoccerProcData.main = amdProcData.main;
+                input.jsDoccerProcData.uses_$ = amdProcData.uses_$;
+                input.jsDoccerProcData.uses_Y = amdProcData.uses_Y;
+                input.jsDoccerProcData.uses_alert = amdProcData.uses_alert;
+                input.jsDoccerProcData.strict = amdProcData.strict;
+                input.jsDoccerProcData.uses_console_log = input.source.indexOf('console.') !== -1;
+                input.jsDoccerProcData.uses_backbone = input.source.indexOf('Backbone.') !== -1;
+                
                 var classes = input.jsDoccerProcData.classes;
                 if (classes[input.camelName] == null) {
                     var classArray = [];

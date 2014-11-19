@@ -1,0 +1,162 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "blue/observable",
+        "dashboard/spec/classic/classic",
+        "dashboard/component/classic/classic",
+        "common/blue/register"
+      ],
+      "moduleName": "classic",
+      "AMD": true,
+      "webPath": "/js/controller/classic",
+      "min": false,
+      "main": false,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'ClassicController'.",
+        "code": "wfJD",
+        "evidence": "return function ClassicController() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'ClassicController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function () {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/classic/classic.js",
+  "folderPath": "test-source/js/controller/classic",
+  "fileName": "classic.js",
+  "packagePath": "/js/controller/classic",
+  "webPath": "/js/controller/classic",
+  "libFile": false,
+  "min": false,
+  "realName": "classic",
+  "name": "classic",
+  "camelName": "Classic",
+  "processedFilePath": "test-output/js/controller/classic/classic.js",
+  "couldParseOriginalSource": true,
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "jsDoccerProcData": {
+    "lines": 42,
+    "requires": [
+      "blue/observable",
+      "dashboard/spec/classic/classic",
+      "dashboard/component/classic/classic",
+      "common/blue/register"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/classic",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1455,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./classic",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "ClassicController": 924
+    },
+    "methods": [
+      {
+        "name": "ClassicController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function ClassicController() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "this",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 28,
+        "memberOf": "this",
+        "doclet": "/**\n * Function for default action.\n * @function index\n * @memberOf module:Indexthis\n * \n * @param params\n * @return {array}\n */",
+        "args": [
+          "params"
+        ],
+        "description": "\n Function for default action\n\n Function for default action.",
+        "return": "{array}",
+        "classDeclarationFlag": false,
+        "line": "this.index = function (params) {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 2,
+            "lastLine": 2,
+            "textStartsOnSameLine": true,
+            "text": "index"
+          },
+          "memberOf": {
+            "tag": "memberOf",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "module:Indexthis\n"
+          }
+        }
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/classic",
+    "fileName": "classic.js",
+    "strict": false,
+    "min": false,
+    "main": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 60
+}

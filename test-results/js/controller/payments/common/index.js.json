@@ -1,0 +1,221 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "blue/observable",
+        "dashboard/spec/payments/sendMoney/sendMoney",
+        "dashboard/component/payments/sendMoney/sendMoney",
+        "dashboard/spec/payments/payBills/payBills",
+        "dashboard/component/payments/payBills/payBills",
+        "dashboard/spec/payments/payBills/payBillsVerify",
+        "dashboard/component/payments/payBills/payBillsVerify",
+        "dashboard/spec/payments/payBills/payBillsConfirm",
+        "dashboard/component/payments/payBills/payBillsConfirm",
+        "dashboard/spec/payments/transferMoney/transferMoney",
+        "dashboard/component/payments/transferMoney/transferMoney"
+      ],
+      "moduleName": "index",
+      "AMD": true,
+      "webPath": "/js/controller/payments/common",
+      "min": false,
+      "main": false,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'IndexController'.",
+        "code": "wfJD",
+        "evidence": "return function IndexController() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'IndexController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function () {",
+        "line": 17,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'payBillsVerify'.",
+        "code": "wfJD",
+        "evidence": "this.payBillsVerify = function () {",
+        "line": 65,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'payBillsVerify'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'payBillsConfirm'.",
+        "code": "wfJD",
+        "evidence": "this.payBillsConfirm = function () {",
+        "line": 78,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'payBillsConfirm'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/payments/common/index.js",
+  "folderPath": "test-source/js/controller/payments/common",
+  "fileName": "index.js",
+  "packagePath": "/js/controller/payments/common",
+  "webPath": "/js/controller/payments/common",
+  "libFile": false,
+  "min": false,
+  "realName": "index",
+  "name": "index",
+  "camelName": "Index",
+  "processedFilePath": "test-output/js/controller/payments/common/index.js",
+  "couldParseOriginalSource": true,
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "jsDoccerProcData": {
+    "lines": 92,
+    "requires": [
+      "blue/observable",
+      "dashboard/spec/payments/sendMoney/sendMoney",
+      "dashboard/component/payments/sendMoney/sendMoney",
+      "dashboard/spec/payments/payBills/payBills",
+      "dashboard/component/payments/payBills/payBills",
+      "dashboard/spec/payments/payBills/payBillsVerify",
+      "dashboard/component/payments/payBills/payBillsVerify",
+      "dashboard/spec/payments/payBills/payBillsConfirm",
+      "dashboard/component/payments/payBills/payBillsConfirm",
+      "dashboard/spec/payments/transferMoney/transferMoney",
+      "dashboard/component/payments/transferMoney/transferMoney"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/payments/common",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 3490,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./index",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "IndexController": 1777
+    },
+    "methods": [
+      {
+        "name": "IndexController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function IndexController() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 17,
+        "memberOf": "this",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 33,
+        "memberOf": "this",
+        "doclet": "/**\n * Function for default action.\n * @function index\n * @memberOf module:Indexthis\n * \n * @param params\n */",
+        "args": [
+          "params"
+        ],
+        "description": "\n Function for default action\n\n Function for default action.",
+        "classDeclarationFlag": false,
+        "line": "this.index = function (params) {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 2,
+            "lastLine": 2,
+            "textStartsOnSameLine": true,
+            "text": "index"
+          },
+          "memberOf": {
+            "tag": "memberOf",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "module:Indexthis\n"
+          }
+        }
+      },
+      {
+        "name": "payBillsVerify",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 65,
+        "memberOf": "this",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.payBillsVerify = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "payBillsConfirm",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 78,
+        "memberOf": "this",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.payBillsConfirm = function () {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/payments/common",
+    "fileName": "index.js",
+    "strict": false,
+    "min": false,
+    "main": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 122
+}

@@ -1,0 +1,219 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "blue/event/channel/controller",
+        "blue/observable",
+        "dashboard/spec/myAccounts/accountActivity",
+        "dashboard/component/myAccounts/accountActivity",
+        "dashboard/spec/myAccounts/cardDetails",
+        "dashboard/component/myAccounts/cardDetails",
+        "dashboard/spec/myAccounts/autoLoanDetails",
+        "dashboard/component/myAccounts/autoLoanDetails",
+        "dashboard/spec/myAccounts/autoLeaseDetails",
+        "dashboard/component/myAccounts/autoLeaseDetails",
+        "dashboard/spec/myAccounts/loanDetails",
+        "dashboard/component/myAccounts/loanDetails",
+        "dashboard/spec/myAccounts/mortgageDetails",
+        "dashboard/component/myAccounts/mortgageDetails",
+        "dashboard/spec/myAccounts/investmentDetails",
+        "dashboard/component/myAccounts/investmentDetails",
+        "dashboard/spec/myAccounts/ddaDetails",
+        "dashboard/component/myAccounts/ddaDetails",
+        "dashboard/spec/myAccounts/ddaDetails",
+        "dashboard/component/myAccounts/ddaDetails"
+      ],
+      "moduleName": "activity",
+      "AMD": true,
+      "webPath": "/js/controller/myAccounts",
+      "min": false,
+      "main": false,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'ActivityController'.",
+        "code": "wfJD",
+        "evidence": "return function ActivityController() {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'ActivityController'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "this.init = function () {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getDetails'.",
+        "code": "wfJD",
+        "evidence": "this.getDetails = function (inputData) {",
+        "line": 94,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getDetails'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/controller/myAccounts/activity.js",
+  "folderPath": "test-source/js/controller/myAccounts",
+  "fileName": "activity.js",
+  "packagePath": "/js/controller/myAccounts",
+  "webPath": "/js/controller/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "activity",
+  "name": "activity",
+  "camelName": "Activity",
+  "processedFilePath": "test-output/js/controller/myAccounts/activity.js",
+  "couldParseOriginalSource": true,
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "jsDoccerProcData": {
+    "lines": 113,
+    "requires": [
+      "blue/event/channel/controller",
+      "blue/observable",
+      "dashboard/spec/myAccounts/accountActivity",
+      "dashboard/component/myAccounts/accountActivity",
+      "dashboard/spec/myAccounts/cardDetails",
+      "dashboard/component/myAccounts/cardDetails",
+      "dashboard/spec/myAccounts/autoLoanDetails",
+      "dashboard/component/myAccounts/autoLoanDetails",
+      "dashboard/spec/myAccounts/autoLeaseDetails",
+      "dashboard/component/myAccounts/autoLeaseDetails",
+      "dashboard/spec/myAccounts/loanDetails",
+      "dashboard/component/myAccounts/loanDetails",
+      "dashboard/spec/myAccounts/mortgageDetails",
+      "dashboard/component/myAccounts/mortgageDetails",
+      "dashboard/spec/myAccounts/investmentDetails",
+      "dashboard/component/myAccounts/investmentDetails",
+      "dashboard/spec/myAccounts/ddaDetails",
+      "dashboard/component/myAccounts/ddaDetails",
+      "dashboard/spec/myAccounts/ddaDetails",
+      "dashboard/component/myAccounts/ddaDetails"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 4327,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./activity",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "ActivityController": 2219
+    },
+    "methods": [
+      {
+        "name": "ActivityController",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "return function ActivityController() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "this",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.init = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "index",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 65,
+        "memberOf": "this",
+        "doclet": "/**\n * Function for default action.\n * @function index\n * @memberOf module:activity~ActivityController\n * \n * @param params\n */",
+        "args": [
+          "params"
+        ],
+        "description": "\n Function for default action\n\n Function for default action.",
+        "classDeclarationFlag": false,
+        "line": "this.index = function (params) {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 2,
+            "lastLine": 2,
+            "textStartsOnSameLine": true,
+            "text": "index"
+          },
+          "memberOf": {
+            "tag": "memberOf",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "module:activity~ActivityController\n"
+          }
+        }
+      },
+      {
+        "name": "getDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 94,
+        "memberOf": "this",
+        "doclet": "/**\n * @param inputData\n */",
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "this.getDetails = function (inputData) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myAccounts",
+    "fileName": "activity.js",
+    "strict": false,
+    "min": false,
+    "main": false
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 149
+}

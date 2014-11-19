@@ -1,0 +1,126 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "blue/event/channel/controller"
+      ],
+      "moduleName": "investment_details",
+      "AMD": true,
+      "webPath": "/js/component/myAccounts",
+      "min": false,
+      "main": false,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "init: function () {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'displayDetails'.",
+        "code": "wfJD",
+        "evidence": "displayDetails: function (inputData) {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'displayDetails'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/js/component/myAccounts/investmentDetails.js",
+  "folderPath": "test-source/js/component/myAccounts",
+  "fileName": "investmentDetails.js",
+  "packagePath": "/js/component/myAccounts",
+  "webPath": "/js/component/myAccounts",
+  "libFile": false,
+  "min": false,
+  "realName": "investment_details",
+  "name": "investmentDetails",
+  "camelName": "InvestmentDetails",
+  "processedFilePath": "test-output/js/component/myAccounts/investmentDetails.js",
+  "couldParseOriginalSource": true,
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "jsDoccerProcData": {
+    "lines": 26,
+    "requires": [
+      "blue/event/channel/controller"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 963,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./investmentDetails",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "init: function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "displayDetails",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "doclet": "/**\n * @param inputData\n */",
+        "args": [
+          "inputData"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "displayDetails: function (inputData) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
+    "fileName": "investmentDetails.js",
+    "strict": false,
+    "min": false,
+    "main": false
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 37
+}

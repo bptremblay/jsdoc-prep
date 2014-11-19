@@ -102,6 +102,10 @@ function __nextFile() {
                 }
                 var resultsJSON = "{}";
                 try {
+                    result.rewrittenReturnBody = null;
+                    result.rewrittenReturnBodyNode = null;
+                    delete result.rewrittenReturnBody;
+                    delete result.rewrittenReturnBodyNode;
                     resultsJSON = JSON.stringify(result, null, 2);
                 } catch (jsonError) {
                     console.warn(jsonError);

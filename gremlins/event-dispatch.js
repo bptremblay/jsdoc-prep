@@ -46,6 +46,7 @@ define(
              * Add handler.
              * 
              * @private
+             * @lends EventDispatch.prototype
              * @param eventId
              * @param handlerOwner
              * @param handlerFunction
