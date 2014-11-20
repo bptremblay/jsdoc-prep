@@ -21,7 +21,7 @@ function healthCheckCallback(healthCheckResults) {
         rimraf(
                 path.normalize(docPath),
                 function() {
-                    var USE_HARUKI = true;
+                    var USE_HARUKI = false;
 
                     // console.warn(arguments);
                     // return;
@@ -85,12 +85,12 @@ var processingChain = [
                        // 'badCharactersProc',
                        // 'trimProc',
                        // 'amdFilter',
-                       'jsBeautifyProc',
+//                       'jsBeautifyProc',
                        'amdProc',
                        'jsDoccerProc',
                        'jsDocNameFixerProc',
                        'fixClassDeclarationsProc',
-                       'jsDoc3PrepProc',
+                      'jsDoc3PrepProc',
                        // 'trimProc',
                        'jsBeautifyProc' ];
 

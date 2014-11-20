@@ -2157,9 +2157,16 @@ function addMissingComments(walkerObj, errors) {
     // method knows it's comment, so should know comment's range
     var newFileLines = [];
     var rewriteLines = true;
+    // console.warn(input);
     for (var lineIndex = 0; lineIndex < lines.length; lineIndex++) {
         var line = lines[lineIndex];
-        // console.warn(lineIndex + ' --> ' + line);
+        //console.warn(lineIndex + ' --> ' + line);
+        var trimLine = line.trim();
+        // || trimLine.indexOf('/*') === 0
+        if (trimLine.indexOf('//') === 0 || trimLine.length === 0){
+            newFileLines.push(line);
+            continue;
+        }
         var method = getMethodOnLine(methodArray, lineIndex + 1, ast, input);
         if (rewriteLines) {
             if (method != null && method.comment === -1) {
@@ -2232,6 +2239,12 @@ function addMissingComments(walkerObj, errors) {
             newFile = walkerObj.source;
         }
     }
+    if (walkerObj.source.indexOf('@typedef') !== -1){
+        newFile = walkerObj.source;
+        console.warn('SKIPPING FILE ' + walkerObj.name + ' because it\'s got @typedef');
+        walkerObj.skip = true;
+    }
+    
     var outputArray = [];
     // TODO: build a mockup of jsDoccer data.
     var builtPath = walkerObj.folderPath + _path.sep + walkerObj.fileName;
@@ -2639,9 +2652,11 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         returnValue = '';
     }
     var ctor = functionWrapper.ctor;
-    if (ctor && doclet['@constructor'] == null) {
+    var hasConstructsTag = searchTags(doclet, 'constructs');
+    var hasConstructorTag = searchTags(doclet, 'constructor');
+    if (ctor && hasConstructorTag == null && hasConstructsTag == null) {
         commentBlock.push(' * @constructor');
-        console.warn('Constructor FOUND!!');
+        console.warn('Constructor FOUND, and we have not already declared it in @constructor or @constructs.');
     }
     functionWrapper.doclet = doclet;
     // param tags

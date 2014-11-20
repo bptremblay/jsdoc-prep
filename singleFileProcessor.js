@@ -1214,6 +1214,14 @@ function processFile(baseDirectory, filePathName, outputDirectory,
         if (!WRITE_ENABLED) {
             output.source = output.rawSource;
         }
+        if (output.skip){
+            currentChainIndex++;
+            if (currentChainIndex >= processorChain.length) {
+                _finishedProcessingChain();
+                console.warn('>>>>>>>>>>>>>>>>>>>>>> SKIPPING THIS MODULE');
+                return;
+            }
+        }
         var processor = processorChain[currentChainIndex];
         processor.process(output, function (result) {
             currentChainIndex++;
@@ -1430,6 +1438,24 @@ function stripOneLineComments(input) {
         lines[L] = commentCheck[0];
     }
     return lines.join('\n');
+}
+
+function canParseSource(source){
+    var _esprima = require('esprima');
+    var ast = null;
+    try {
+        ast = _esprima.parse(source, {
+            comment : true,
+            tolerant : true,
+            range : true,
+            raw : true,
+            tokens : true
+        });
+    } catch (esError) {
+        console.warn(esError);
+        return false;
+    }
+    return true;
 }
 
 function canParse(moduleName, input, procId) {
@@ -1962,6 +1988,10 @@ var jsDoc3PrepProc = {
             //console.warn('originalHeader: "' + originalHeader + '"');
             input.source = originalHeader + '\n' + source;
             // console.warn(input.source);
+            
+            if (!canParseSource(input.source)){
+                input.source = input.undoBuffer;
+            }
         }
         var prototypal = false;
         if (input.source.indexOf(input.camelName + '.prototype.') !== -1) {
