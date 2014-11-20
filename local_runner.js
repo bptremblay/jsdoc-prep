@@ -15,64 +15,84 @@ function healthCheckCallback(healthCheckResults) {
     console.log('ALL DONE');
 
     function runJsDoc(sourceDirectory) {
-        
-        //var docPath = projectPath + '/jsdoc-prep/test-jsdocs';
-        console.log('Delete the test-jsdocs directory? ' + docPath);
-        rimraf(path.normalize(docPath), function() {
-            
-//            console.warn(arguments);
-//            return;
 
-            // sourceDirectory = path.normalize(sourceDirectory);
-            var exePath = path.normalize(projectPath
-                    + '/jsdoc-prep/node_modules/.bin/jsdoc');
-            // console.warn('runJsDoc: ' + exePath + ' <> ' + sourceDirectory);
-            // $ jsdoc -r -l -d ~/workspace/jsdoc-prep/out
-            // ~/workspace/jsdoc-prep/processed/framework
-            var exec = require('child_process').exec;
-            var cmdLine = exePath + ' -r -l -d ' + projectPath
-                    + '/jsdoc-prep/test-jsdocs ' + sourceDirectory + '';
-            console.log(cmdLine);
-            var child = exec(cmdLine, function(error, stdout, stderr) {
-                // normal
-                if (stderr) {
-                    console.error(stderr);
-                } else {
-                    console.log(stdout);
-                }
-            });
-            /**
-             * Handler for close event.
-             * 
-             * @function
-             * @name close
-             * @method close
-             * @param code
-             */
-            child.on('close', function(code) {
-                console.log('child process "node jsdoc" exited with code ' + code);
-            });
-        });
+        // var docPath = projectPath + '/jsdoc-prep/test-jsdocs';
+        console.log('Delete the test-jsdocs directory? ' + docPath);
+        rimraf(
+                path.normalize(docPath),
+                function() {
+                    var USE_HARUKI = true;
+
+                    // console.warn(arguments);
+                    // return;
+
+                    // sourceDirectory = path.normalize(sourceDirectory);
+                    var exePath = path.normalize(projectPath
+                            + '/jsdoc-prep/node_modules/.bin/jsdoc');
+                    // console.warn('runJsDoc: ' + exePath + ' <> ' +
+                    // sourceDirectory);
+                    // $ jsdoc -r -l -d ~/workspace/jsdoc-prep/out
+                    // ~/workspace/jsdoc-prep/processed/framework
+                    var exec = require('child_process').exec;
+                    var cmdLine = exePath;
+                    var docPath = projectPath + '/jsdoc-prep/test-jsdocs';
+                    var reportPath = projectPath + '/jsdoc-prep/test-results';
+
+                    if (USE_HARUKI) {
+                        cmdLine += ' -r -l -t templates/../../experimental_template/haruki -d ' + reportPath + '/jsDocModel.json' + ' -q format=json'
+                                + ' ' + sourceDirectory + '';
+                    } else {
+                        cmdLine += ' -r -l -d ' + docPath + ' '
+                                + sourceDirectory + '';
+                        // exePath + ' -r -l -d ' + projectPath
+                        // + '/jsdoc-prep/test-jsdocs ' + sourceDirectory + '';
+                    }
+
+                    console.log(cmdLine);
+                    var child = exec(cmdLine, function(error, stdout, stderr) {
+                        // normal
+                        if (stderr) {
+                            console.error(stderr);
+                        } else {
+                            console.log(stdout);
+                        }
+                    });
+                    /**
+                     * Handler for close event.
+                     * 
+                     * @function
+                     * @name close
+                     * @method close
+                     * @param code
+                     */
+                    child
+                            .on(
+                                    'close',
+                                    function(code) {
+                                        console
+                                                .log('child process "node jsdoc" exited with code '
+                                                        + code);
+                                    });
+                });
     }
     runJsDoc(projectPath + '/jsdoc-prep/test-output');
 }
 // 'jsDoc3PrepProc',
 var processingChain = [
                        // 'trimProc',
-//                       'thirdPartyFilter',
-//                       'minFilter',
-//                       'badCharactersProc',
+                       // 'thirdPartyFilter',
+                       // 'minFilter',
+                       // 'badCharactersProc',
                        // 'trimProc',
-//                       'amdFilter',
+                       // 'amdFilter',
                        'jsBeautifyProc',
                        'amdProc',
                        'jsDoccerProc',
                        'jsDocNameFixerProc',
                        'fixClassDeclarationsProc',
                        'jsDoc3PrepProc',
-                      // 'trimProc',
-                       'jsBeautifyProc' 
-                       ];
+                       // 'trimProc',
+                       'jsBeautifyProc' ];
 
 // var processingChain = [
 // // 'trimProc',

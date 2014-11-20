@@ -1,0 +1,495 @@
+{
+  "modules": [
+    {
+      "name": "yes-module",
+      "description": "",
+      "requires": [],
+      "author": "",
+      "copyright": "",
+      "exports": "",
+      "line": 8,
+      "file": "yes-module.js",
+      "range": [
+        120,
+        5273
+      ],
+      "scope": "global",
+      "classes": [
+        {
+          "name": "Freenox",
+          "alias": "",
+          "description": "",
+          "extends": [],
+          "access": "",
+          "virtual": false,
+          "fires": "",
+          "constructor": {
+            "name": "Freenox",
+            "description": "",
+            "parameters": [],
+            "examples": []
+          },
+          "line": 14,
+          "file": "yes-module.js",
+          "range": [
+            234,
+            1136
+          ],
+          "scope": "inner",
+          "functions": [
+            {
+              "name": "chewBakka",
+              "access": "",
+              "memberof": "module:yes-module~Freenox",
+              "virtual": false,
+              "description": "",
+              "parameters": [],
+              "examples": [],
+              "line": 18,
+              "file": "yes-module.js",
+              "range": [
+                309,
+                480
+              ],
+              "scope": "instance",
+              "returns": {
+                "type": "function",
+                "description": ""
+              }
+            },
+            {
+              "name": "privateFunction",
+              "access": "private",
+              "memberof": "module:yes-module~Freenox",
+              "virtual": false,
+              "description": "",
+              "parameters": [
+                {
+                  "name": "a",
+                  "type": "",
+                  "description": "",
+                  "default": "",
+                  "optional": "",
+                  "nullable": ""
+                },
+                {
+                  "type": "Banana",
+                  "description": "",
+                  "default": "",
+                  "optional": "",
+                  "nullable": ""
+                },
+                {
+                  "type": "Boolean",
+                  "description": "",
+                  "default": "",
+                  "optional": "",
+                  "nullable": ""
+                }
+              ],
+              "examples": [],
+              "line": 47,
+              "file": "yes-module.js",
+              "range": [
+                1014,
+                1129
+              ],
+              "scope": "inner",
+              "returns": {
+                "type": "String",
+                "description": ""
+              }
+            },
+            {
+              "name": "worldPuzzle",
+              "access": "",
+              "memberof": "module:yes-module~Freenox",
+              "virtual": false,
+              "description": "",
+              "parameters": [
+                {
+                  "name": "toothache",
+                  "type": "",
+                  "description": "",
+                  "default": "",
+                  "optional": "",
+                  "nullable": ""
+                },
+                {
+                  "name": "tomato",
+                  "type": "",
+                  "description": "",
+                  "default": "",
+                  "optional": "",
+                  "nullable": ""
+                }
+              ],
+              "examples": [],
+              "line": 59,
+              "file": "yes-module.js",
+              "range": [
+                1341,
+                1448
+              ],
+              "scope": "instance",
+              "returns": {
+                "type": "Object",
+                "description": "??"
+              }
+            },
+            {
+              "name": "on",
+              "access": "",
+              "memberof": "module:yes-module~Freenox",
+              "virtual": false,
+              "description": "Subscribe to events on the component's local Channel. Events on the\n              local channel are not visible to other components or the main\n              ComponentChannel.",
+              "parameters": [
+                {
+                  "name": "eventType",
+                  "type": [
+                    "String",
+                    "PlainObject"
+                  ],
+                  "description": "The type of event.",
+                  "default": "",
+                  "optional": true,
+                  "nullable": ""
+                },
+                {
+                  "name": "callback",
+                  "type": "function",
+                  "description": "The callback to execute when the event is published.",
+                  "default": "",
+                  "optional": true,
+                  "nullable": ""
+                }
+              ],
+              "examples": [
+                "// Execute callback for ALL events on the component (no eventType given)\nmyComponent.on(function(event){\n    // Analyze, log, etc the event\n});\n\n// Execute callback for a component-generated event\n// Format of eventType is ACTION/VALUE\n// ACTION - function call, state change, etc on the component\n// VALUE - name of action, property name, etc.\n\n// Note: TARGET is automatically prepended to the eventType and\n//       is equal to the name of the component as defined in the spec\nmyComponent.on('action/submit', function(event){\n    // Execute logic for the submit action on the component\n});\n\n// Subscribe to multiple events\nmyComponent.on( {\n    'action/submit': function(submitEvent){\n        // Business Logic\n    },\n    'state/enabled': function(enabledEvent){\n        // Business Logic\n    },\n    'action/requestBalance': function(requestEvent){\n        // Business Logic\n    },\n    'state/valid': function(validEvent){\n        // Business Logic\n    }\n} );\n\n// Can use wildcards\nmyComponent.on('action/*', function(actionEvent){\n    // Logic for all actions on the component\n} );"
+              ],
+              "line": 187,
+              "file": "yes-module.js",
+              "range": [
+                5188,
+                5244
+              ],
+              "scope": "instance"
+            }
+          ]
+        },
+        {
+          "name": "SecondClass",
+          "alias": "",
+          "description": "",
+          "extends": [],
+          "access": "",
+          "virtual": false,
+          "fires": "",
+          "constructor": {
+            "name": "SecondClass",
+            "description": "",
+            "parameters": [],
+            "examples": []
+          },
+          "line": 66,
+          "file": "yes-module.js",
+          "range": [
+            1490,
+            1556
+          ],
+          "scope": "inner",
+          "functions": [
+            {
+              "name": "fixTheWorld",
+              "access": "",
+              "memberof": "module:yes-module~SecondClass",
+              "virtual": false,
+              "description": "",
+              "parameters": [
+                {
+                  "name": "toothache",
+                  "type": "",
+                  "description": "",
+                  "default": "",
+                  "optional": "",
+                  "nullable": ""
+                },
+                {
+                  "name": "tomato",
+                  "type": "",
+                  "description": "",
+                  "default": "",
+                  "optional": "",
+                  "nullable": ""
+                }
+              ],
+              "examples": [],
+              "line": 74,
+              "file": "yes-module.js",
+              "range": [
+                1647,
+                1739
+              ],
+              "scope": "instance",
+              "returns": {
+                "type": "Boolean",
+                "description": ""
+              }
+            },
+            {
+              "name": "preambleTest",
+              "access": "",
+              "memberof": "module:yes-module~SecondClass",
+              "virtual": false,
+              "description": "This is a preamble to a doclet.\n It might have more than one line.",
+              "parameters": [
+                {
+                  "name": "toothache",
+                  "type": "",
+                  "description": "",
+                  "default": "",
+                  "optional": "",
+                  "nullable": ""
+                },
+                {
+                  "name": "tomato",
+                  "type": "",
+                  "description": "",
+                  "default": "",
+                  "optional": "",
+                  "nullable": ""
+                }
+              ],
+              "examples": [],
+              "line": 84,
+              "file": "yes-module.js",
+              "range": [
+                1912,
+                2005
+              ],
+              "scope": "instance",
+              "returns": {
+                "type": "Boolean",
+                "description": ""
+              }
+            }
+          ]
+        },
+        {
+          "name": "ThirdClass",
+          "alias": "",
+          "description": "",
+          "extends": [
+            "module:yes-module~SecondClass"
+          ],
+          "access": "",
+          "virtual": false,
+          "fires": "",
+          "constructor": {
+            "name": "ThirdClass",
+            "description": "A description tag.",
+            "parameters": [],
+            "examples": []
+          },
+          "line": 94,
+          "file": "yes-module.js",
+          "range": [
+            2186,
+            2251
+          ],
+          "scope": "inner",
+          "functions": [
+            {
+              "name": "fixTheWorld",
+              "access": "",
+              "memberof": "module:yes-module~ThirdClass",
+              "virtual": false,
+              "description": "",
+              "parameters": [
+                {
+                  "name": "toothache",
+                  "type": "",
+                  "description": "",
+                  "default": "",
+                  "optional": "",
+                  "nullable": ""
+                },
+                {
+                  "name": "tomato",
+                  "type": "",
+                  "description": "",
+                  "default": "",
+                  "optional": "",
+                  "nullable": ""
+                }
+              ],
+              "examples": [],
+              "line": 74,
+              "file": "yes-module.js",
+              "range": [
+                1647,
+                1739
+              ],
+              "scope": "instance",
+              "returns": {
+                "type": "Boolean",
+                "description": ""
+              }
+            },
+            {
+              "name": "preambleTest",
+              "access": "",
+              "memberof": "module:yes-module~ThirdClass",
+              "virtual": false,
+              "description": "This is a preamble to a doclet.\n It might have more than one line.",
+              "parameters": [
+                {
+                  "name": "toothache",
+                  "type": "",
+                  "description": "",
+                  "default": "",
+                  "optional": "",
+                  "nullable": ""
+                },
+                {
+                  "name": "tomato",
+                  "type": "",
+                  "description": "",
+                  "default": "",
+                  "optional": "",
+                  "nullable": ""
+                }
+              ],
+              "examples": [],
+              "line": 84,
+              "file": "yes-module.js",
+              "range": [
+                1912,
+                2005
+              ],
+              "scope": "instance",
+              "returns": {
+                "type": "Boolean",
+                "description": ""
+              }
+            }
+          ]
+        },
+        {
+          "name": "FourthClass",
+          "alias": "",
+          "description": "",
+          "extends": [],
+          "access": "",
+          "virtual": false,
+          "fires": "",
+          "constructor": {
+            "name": "FourthClass",
+            "description": "A description tag with more than\none line of stuff\nand some of it could be very very long\n\nand some of it could be after a BLANK line.",
+            "parameters": [],
+            "examples": []
+          },
+          "line": 106,
+          "file": "yes-module.js",
+          "range": [
+            2514,
+            2580
+          ],
+          "scope": "inner",
+          "functions": [
+            {
+              "name": "someFunction",
+              "access": "",
+              "memberof": "module:yes-module~FourthClass",
+              "virtual": false,
+              "description": "",
+              "parameters": [],
+              "examples": [],
+              "line": 132,
+              "file": "yes-module.js",
+              "range": [
+                3143,
+                3194
+              ],
+              "scope": "instance"
+            },
+            {
+              "name": "anotherFunction",
+              "access": "",
+              "memberof": "module:yes-module~FourthClass",
+              "virtual": false,
+              "description": "",
+              "parameters": [],
+              "examples": [],
+              "line": 140,
+              "file": "yes-module.js",
+              "range": [
+                3341,
+                3395
+              ],
+              "scope": "instance"
+            }
+          ]
+        },
+        {
+          "name": "FourthClass",
+          "alias": "",
+          "description": "",
+          "extends": [],
+          "access": "",
+          "virtual": false,
+          "fires": "",
+          "constructor": {
+            "name": "FourthClass",
+            "description": "A description tag with more than\n one line of stuff\n and some of it could be very very long\n\n and some of it could be after a BLANK line.",
+            "parameters": [],
+            "examples": [
+              "//This is sample code!\nvar ft = new FourthClass();\n//Note we are using a zero-arg constructor."
+            ]
+          },
+          "line": 122,
+          "file": "yes-module.js",
+          "range": [
+            2948,
+            3014
+          ],
+          "scope": "inner",
+          "functions": [
+            {
+              "name": "someFunction",
+              "access": "",
+              "memberof": "module:yes-module~FourthClass",
+              "virtual": false,
+              "description": "",
+              "parameters": [],
+              "examples": [],
+              "line": 132,
+              "file": "yes-module.js",
+              "range": [
+                3143,
+                3194
+              ],
+              "scope": "instance"
+            },
+            {
+              "name": "anotherFunction",
+              "access": "",
+              "memberof": "module:yes-module~FourthClass",
+              "virtual": false,
+              "description": "",
+              "parameters": [],
+              "examples": [],
+              "line": 140,
+              "file": "yes-module.js",
+              "range": [
+                3341,
+                3395
+              ],
+              "scope": "instance"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

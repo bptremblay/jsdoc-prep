@@ -1061,7 +1061,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             docletData.tags.push(newTag);
             if (tag === 'param') {
                 if (tagData.length === 0) {
-                    console.wanr('(' + input.name + ')'
+                    console.warn('(' + input.name + ')'
                             + " Can't parse data for this param tag: " + line);
                     continue;
                 }
