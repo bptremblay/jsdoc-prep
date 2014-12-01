@@ -2017,6 +2017,7 @@ function reportError(message, error, errors, walkerObj) {
     return errors;
 }
 
+var incompleteLends = null;
 /**
  * 
  * @param walkerObj
@@ -2052,6 +2053,27 @@ function addMissingComments(walkerObj, errors) {
         reportError('ESPRIMA ERROR at top of addMissingComments', esError,
                 errors, walkerObj);
         return 'ERROR';
+    }
+
+    var hasLends = getCommentWith(input, ast.comments, '@lends');
+    if (hasLends != null && incompleteLends == null) {
+        
+//        { type: 'Block',
+//            value: '* @lends module:mvc/mav ',
+//            range: [ 426, 454 ],
+//            commentBody: '/** @lends module:mvc/mav */' }
+        
+        
+        
+        if (hasLends.value.indexOf('module:') !== -1){
+            if (hasLends.value.indexOf('~') === -1){
+                console.warn('@lends used with a Module but not with a Class.');
+                console.warn(hasLends);
+                incompleteLends = hasLends;
+            }
+        }
+        
+        
     }
 
     // console.log(ast.comments);
@@ -2308,6 +2330,9 @@ function addMissingComments(walkerObj, errors) {
 
         // console.warn(docletNode.tags);
         var doclet = realMethod.jsDoc != null ? realMethod.jsDoc : '';
+        
+
+        
         wrappedMethods.push({
             "name" : realMethod.name,
             "visibility" : visibility,
@@ -2324,6 +2349,25 @@ function addMissingComments(walkerObj, errors) {
             'originalJsDocDescription' : originalJsDocDescription
         });
     }
+    
+    if (incompleteLends != null && incompleteLends.possibleClassName != null){
+        var lendsPath = incompleteLends.value.trim();
+        if (lendsPath.charAt(lendsPath.length-1) === '#'){
+            lendsPath = lendsPath.substring(0, lendsPath.length-1);
+            console.warn('removed hash: ' + lendsPath);
+           // lendsPath += '~' + incompleteLends.possibleClassName + '#';
+            lendsPath += '~' + incompleteLends.possibleClassName;
+        }
+        else{
+            lendsPath += '~' + incompleteLends.possibleClassName;
+        }
+        
+        //incompleteLends.value.trim() + '~' + incompleteLends.possibleClassName
+        console.warn('Added class to @lends: ' + lendsPath);
+        newFile = newFile.split(incompleteLends.value).join(lendsPath);
+        incompleteLends = null;
+    }
+    
     var jsDoccerBlob = {
         "lines" : lines.length,
         "requires" : [],
@@ -2517,7 +2561,7 @@ function getTextFromTags(tagList) {
  */
 function generateComment(functionWrapper, ast, walkerObj, input,
         commentBodyOpt, statusCheck) {
-    // console.warn(functionWrapper.returnType);
+
     var funkyName = '';
     var doclet = null;
     var tags = [];
@@ -2581,16 +2625,18 @@ function generateComment(functionWrapper, ast, walkerObj, input,
 
     var hasConstructsTag = null;
     var hasConstructorTag = null;
+    var hasLendsTag = null
 
     // TODO: Rewrite this to dump the tags in the original order they were
     // declared.
     var commentBlock = [];
     commentBlock.push("/**");
     if (doclet != null) {
-        
+
         hasConstructsTag = searchTags(doclet, 'constructs');
         hasConstructorTag = searchTags(doclet, 'constructor');
-        
+        hasLendsTag = searchTags(doclet, 'lends');
+
         if (doclet.freeText && doclet.freeText != '') {
             // console.warn(doclet.freeText);
             // commentBlock.push(' * ' + doclet.freeText);
@@ -2604,44 +2650,12 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         for (var tIndex = 0; tIndex < tags.length; tIndex++) {
             var newTag = tags[tIndex];
             var t = '@' + newTag.tag;
-            // console.warn(t);
-            // if (doclet.hasOwnProperty(t)) {
-            // console.warn(t);
-            // if (t.charAt(0) === '@') {
+
             if (t !== '@return' && t !== '@param') {
                 var tag = doclet[t];
 
                 if (hasConstructsTag === newTag) {
 
-                    //                  { 
-                    //                      tag: 'constructs',
-                    //                      line: 1,
-                    //                      lastLine: 1,
-                    //                      textStartsOnSameLine: true,
-                    //                      text: 'module:blue/log/logger' 
-                    //                  }
-
-                    //                  { 
-                    //                      todos: [],
-                    //                      memberOf: '',
-                    //                      returnType: '',
-                    //                      ctor: true,
-                    //                      lineNumber: 30,
-                    //                      line: 'constructor: function ModuleResolver(){',
-                    //                      comment: 2,
-                    //                      range: [ 1049, 1252 ],
-                    //                      name: 'ModuleResolver',
-                    //                      commentBody: '/**\n\t\t * @constructs module:resolver/module\n\t\t * @augments module:resolver\n\t\t * @param {PlainObject} options Optional settings.\n\t\t * @property {String} prefix Text that will be prepended to the `name` passed into {@link module:resolver#resolve}.\n\t\t * @property {String} suffix Text that will be appended to the `name` passed into {@link module:resolver#resolve}.\n\t\t */',
-                    //                      oldComment: 
-                    //                      { type: 'Block',
-                    //                          value: '*\n\t\t * @constructs module:resolver/module\n\t\t * @augments module:resolver\n\t\t * @param {PlainObject} options Optional settings.\n\t\t * @property {String} prefix Text that will be prepended to the `name` passed into {@link module:resolver#resolve}.\n\t\t * @property {String} suffix Text that will be appended to the `name` passed into {@link module:resolver#resolve}.\n\t\t ',
-                    //                          range: [ 665, 1033 ],
-                    //                          lineNumber: 23 
-                    //                      } 
-                    //                  }
-
-                    //console.warn(hasConstructsTag);
-                    //console.warn(functionWrapper);
                     var text = hasConstructsTag.text.trim();
 
                     if (text.indexOf(functionWrapper.name) === -1) {
@@ -2650,8 +2664,14 @@ function generateComment(functionWrapper, ast, walkerObj, input,
                                         + text + ' ~' + functionWrapper.name);
                         hasConstructsTag.text = text + '~'
                                 + functionWrapper.name;
+                        if (incompleteLends != null){
+                            incompleteLends.possibleClassName = functionWrapper.name;
+                        }
                     }
+
+                    // change /** @lends module:mvc/mav */  to  /** @lends module:mvc/mav~ModelAndView# */ 
                 }
+
                 // console.log(tag);
                 if (typeof tag === 'object') {
                     // {
@@ -2704,6 +2724,13 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         returnValue = '';
     }
     var ctor = functionWrapper.ctor;
+    
+    if (ctor && (incompleteLends != null)){
+        if (incompleteLends.possibleClassName == null){
+            console.warn('>>>>>>>>>> Guess: does the @lends tag point to this class? ' + functionWrapper.name);
+            incompleteLends.possibleClassName = functionWrapper.name ;
+        }
+    }
 
     if (ctor && hasConstructorTag == null && hasConstructsTag == null) {
         commentBlock.push(' * @constructor');
