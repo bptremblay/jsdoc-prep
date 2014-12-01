@@ -1879,6 +1879,9 @@ function searchTags(doclet, name) {
         // console.warn("searchTags found no tags");
         return null;
     }
+    if (!tags.hasOwnProperty(name)) {
+        return null;
+    }
     var tagHash = tags[name];
     if (tagHash == null) {
         return null;
@@ -2018,6 +2021,7 @@ function reportError(message, error, errors, walkerObj) {
 }
 
 var incompleteLends = null;
+var spliceInlineConstructor = null;
 /**
  * 
  * @param walkerObj
@@ -2054,26 +2058,47 @@ function addMissingComments(walkerObj, errors) {
                 errors, walkerObj);
         return 'ERROR';
     }
+    
+    var moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
+    if (input.indexOf('@exports') !== -1){
+        // get the module name given there...
+        var modChunk = input.split('@exports')[1];
+        modChunk = modChunk.split('\n')[0].trim();
+        
+        moduleName = 'module:' + modChunk;
+        //throw(new Error(moduleName));
+    }
+    else if (input.indexOf('@module') !== -1){
+        // get the module name given there...
+        var modChunk = input.split('@module')[1];
+        modChunk = modChunk.split('\n')[0].trim();
+        
+        moduleName = 'module:' + modChunk;
+        //throw(new Error(moduleName));
+    }
+    else{
+        moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
+        
+    }
+    walkerObj.moduleName = moduleName;
+    console.warn('USE THIS AS THE MODULE NAME??? ' + moduleName);
 
     var hasLends = getCommentWith(input, ast.comments, '@lends');
     if (hasLends != null && incompleteLends == null) {
-        
-//        { type: 'Block',
-//            value: '* @lends module:mvc/mav ',
-//            range: [ 426, 454 ],
-//            commentBody: '/** @lends module:mvc/mav */' }
-        
-        
-        
-        if (hasLends.value.indexOf('module:') !== -1){
-            if (hasLends.value.indexOf('~') === -1){
+
+        //      { type: 'Block',
+        //      value: '* @lends module:mvc/mav ',
+        //      range: [ 426, 454 ],
+        //      commentBody: '/** @lends module:mvc/mav */' }
+
+        if (hasLends.value.indexOf('module:') !== -1) {
+            if (hasLends.value.indexOf('~') === -1) {
                 console.warn('@lends used with a Module but not with a Class.');
                 console.warn(hasLends);
                 incompleteLends = hasLends;
             }
         }
-        
-        
+
     }
 
     // console.log(ast.comments);
@@ -2330,9 +2355,7 @@ function addMissingComments(walkerObj, errors) {
 
         // console.warn(docletNode.tags);
         var doclet = realMethod.jsDoc != null ? realMethod.jsDoc : '';
-        
 
-        
         wrappedMethods.push({
             "name" : realMethod.name,
             "visibility" : visibility,
@@ -2349,25 +2372,62 @@ function addMissingComments(walkerObj, errors) {
             'originalJsDocDescription' : originalJsDocDescription
         });
     }
-    
-    if (incompleteLends != null && incompleteLends.possibleClassName != null){
+
+    if (incompleteLends != null && incompleteLends.possibleClassName != null) {
         var lendsPath = incompleteLends.value.trim();
-        if (lendsPath.charAt(lendsPath.length-1) === '#'){
-            lendsPath = lendsPath.substring(0, lendsPath.length-1);
+        if (lendsPath.charAt(lendsPath.length - 1) === '#') {
+            lendsPath = lendsPath.substring(0, lendsPath.length - 1);
             console.warn('removed hash: ' + lendsPath);
-           // lendsPath += '~' + incompleteLends.possibleClassName + '#';
+            //lendsPath += '~' + incompleteLends.possibleClassName + '#';
             lendsPath += '~' + incompleteLends.possibleClassName;
-        }
-        else{
+        } else {
             lendsPath += '~' + incompleteLends.possibleClassName;
         }
         
+        // always add this for classes when using @lends
+        lendsPath += '#';
+        
+       // console.warn(incompleteLends);
+
         //incompleteLends.value.trim() + '~' + incompleteLends.possibleClassName
         console.warn('Added class to @lends: ' + lendsPath);
         newFile = newFile.split(incompleteLends.value).join(lendsPath);
         incompleteLends = null;
     }
-    
+
+    if (spliceInlineConstructor != null) {
+        var ctorName = spliceInlineConstructor.name;
+        // add module
+
+        
+        var ctorLine = spliceInlineConstructor.line;
+        if (ctorLine.indexOf('(') !== -1){
+            ctorLine = ctorLine.split('(')[0];
+        }
+
+        //console.warn("SPLICE IN CONSTRUCTOR TAG for " + ctorName);
+        
+        if (newFile.indexOf(ctorLine) !== -1) {
+            var where = ctorLine.indexOf(':');
+            var fixedCtorLine = ctorLine.substring(0, where + 1);
+            fixedCtorLine += ' /** @constructor ' + ctorName + ' */';
+            fixedCtorLine += ctorLine.substring(where + 1);
+            //console.warn("SPLICE IN CONSTRUCTOR TAG: " + fixedCtorLine);
+            var ctorSimple = '@constructor ' + ctorName;
+            if (newFile.indexOf(ctorSimple) !== -1){
+                newFile = newFile.split(ctorSimple).join('@fixme: do not use the constructor tag unless it precedes directly a constructor function'); 
+            }
+            
+            //newFile = newFile.split(ctorLine).join(fixedCtorLine);
+           // console.warn(newFile);
+
+        } else {
+            console.warn("SPLICE IN CONSTRUCTOR TAG for " + ctorName);
+            console.warn('COULD NOT FIND ' + ctorLine);
+        }
+        spliceInlineConstructor = null;
+    }
+
     var jsDoccerBlob = {
         "lines" : lines.length,
         "requires" : [],
@@ -2625,7 +2685,9 @@ function generateComment(functionWrapper, ast, walkerObj, input,
 
     var hasConstructsTag = null;
     var hasConstructorTag = null;
-    var hasLendsTag = null
+    var hasLendsTag = null;
+    
+   
 
     // TODO: Rewrite this to dump the tags in the original order they were
     // declared.
@@ -2636,6 +2698,10 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         hasConstructsTag = searchTags(doclet, 'constructs');
         hasConstructorTag = searchTags(doclet, 'constructor');
         hasLendsTag = searchTags(doclet, 'lends');
+
+        //        if (hasConstructorTag) {
+        //            console.warn('hasConstructorTag: ' + JSON.stringify(hasConstructorTag));
+        //        }
 
         if (doclet.freeText && doclet.freeText != '') {
             // console.warn(doclet.freeText);
@@ -2661,15 +2727,13 @@ function generateComment(functionWrapper, ast, walkerObj, input,
                     if (text.indexOf(functionWrapper.name) === -1) {
                         console
                                 .warn('>>>>>>>>>> @constructs pathname lacks class? '
-                                        + text + ' ~' + functionWrapper.name);
+                                        + text + '~' + functionWrapper.name);
                         hasConstructsTag.text = text + '~'
                                 + functionWrapper.name;
-                        if (incompleteLends != null){
+                        if (incompleteLends != null) {
                             incompleteLends.possibleClassName = functionWrapper.name;
                         }
                     }
-
-                    // change /** @lends module:mvc/mav */  to  /** @lends module:mvc/mav~ModelAndView# */ 
                 }
 
                 // console.log(tag);
@@ -2724,18 +2788,72 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         returnValue = '';
     }
     var ctor = functionWrapper.ctor;
-    
-    if (ctor && (incompleteLends != null)){
-        if (incompleteLends.possibleClassName == null){
-            console.warn('>>>>>>>>>> Guess: does the @lends tag point to this class? ' + functionWrapper.name);
-            incompleteLends.possibleClassName = functionWrapper.name ;
+
+    if (ctor && (incompleteLends != null)) {
+        if (incompleteLends.possibleClassName == null) {
+            console
+                    .warn('>>>>>>>>>> Guess: does the @lends tag point to this class? '
+                            + functionWrapper.name);
+            incompleteLends.possibleClassName = functionWrapper.name;
         }
     }
 
     if (ctor && hasConstructorTag == null && hasConstructsTag == null) {
-        commentBlock.push(' * @constructor');
+
+        // line: 'constructor: function ControllerRegistry(){',
+        // name: 'ControllerRegistry'
+        
+        if (incompleteLends != null && incompleteLends.possibleClassName === functionWrapper.name) {
+            var justPath = incompleteLends.value;
+            if (justPath.indexOf('module:') !== -1){
+                //value: '* @lends module:blue/validate/validator# ',
+                justPath = justPath.split('module:')[1];
+                justPath = justPath.split('#').join('');
+                justPath = justPath.trim();
+                if (justPath.indexOf(functionWrapper.name) === -1){
+                    justPath += '~' + functionWrapper.name;
+                }
+                justPath = 'module:' + justPath;
+                
+                incompleteLends.fullClassName = justPath;
+                
+                
+                
+                //var prefix = incompleteLends.value.split('module:')[0];
+                //incompleteLends.value = prefix + justPath;
+                console.warn("!!! Add full path to constructor? " + incompleteLends.fullClassName);
+            }
+           
+        }
+
         console
                 .warn('Constructor FOUND, and we have not already declared it in @constructor or @constructs.');
+
+        if (functionWrapper.line.indexOf('constructor: function') !== -1) {
+            console
+                    .warn("Constructor, but it's to the RIGHT of \"constructor:\"");
+            console.warn('     "' + functionWrapper.line + '"');
+            var moduleName = walkerObj.moduleName;
+            if (incompleteLends != null && incompleteLends.fullClassName != null){
+                commentBlock.push(' * @constructs ' + incompleteLends.fullClassName);
+                incompleteLends.fullClassName = null;
+                delete incompleteLends.fullClassName;
+            }
+            else{
+                //console.warn(walkerObj.results.amdProc.moduleName);
+                
+                commentBlock.push(' * @constructs ' + moduleName + '~' + functionWrapper.name);
+            }
+            
+            
+            
+            spliceInlineConstructor = functionWrapper;
+        } else {
+            commentBlock.push(' * @constructor');
+        }
+        
+        //commentBlock.push(' * @constructor');
+        //console.warn(functionWrapper);
 
     }
 
