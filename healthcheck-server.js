@@ -166,6 +166,87 @@ http
 						}
 
 						return;
+					} else if (filename == "/single") {
+						var paramsBlock = {};
+
+						if (params.length > 0) {
+							var paramsSplit = params.split("&");
+
+							for (var index = 0; index < paramsSplit.length; index++) {
+								var kv = paramsSplit[index];
+								kv = kv.split("=");
+								paramsBlock[kv[0]] = unescape(kv[1]);
+							}
+						}
+
+						// console.warn(paramsBlock);
+						/**
+						 * Completion callback for processor tasks.
+						 * 
+						 * @inner
+						 * @param healthCheckResults
+						 */
+						function healthCheckCallback(healthCheckResults) {
+							console.log("Results are ready.");
+							var contents = JSON.stringify(healthCheckResults);
+
+							res.setHeader("Content-Type", "application/json");
+
+							// FIXME: Why doesn't Content-Length work here? The number is
+							// too
+							// small.
+							// res.setHeader("Content-Length", contents.length);
+
+							res.statusCode = 200;
+							res.end(contents);
+						}
+
+						var outPath = '/Users/btremblay/Documents/workspace/js-health-check/processed';
+						var testPath = '/Users/btremblay/Documents/workspace/js-health-check/jstests';
+						var docPath = '/Users/btremblay/Documents/workspace/js-health-check/jsdocs';
+						var resultsPath = '/Users/btremblay/Documents/workspace/js-health-check/results';
+
+						if (paramsBlock.options != null) {
+							var opts = JSON.parse(paramsBlock.options);
+
+							if (opts.processingChain.length === 0) {
+								console
+										.warn("Error: must have at least one proc in the processing chain.");
+								var contents = {
+									"error" : "Select at least one processor chain item."
+								};
+
+								res.setHeader("Content-Type",
+										"application/json");
+
+								res.statusCode = 200;
+								res.end(JSON.stringify(contents));
+								return;
+							}
+							healthCheck.run({
+								callBack : healthCheckCallback,
+								scanPath : opts.scanPath,
+								writePath : outPath,
+								writeTestPath : testPath,
+								writeDocPath : docPath,
+								writeResultsPath : resultsPath,
+								writeEnable : opts.writeEnable,
+								processingChain : opts.processingChain
+							});
+						} else {
+							console.warn(paramsBlock);
+							console.warn("Error: invalid request params.");
+							var contents = {
+								"error" : "no options parameter"
+							};
+
+							res.setHeader("Content-Type", "application/json");
+
+							res.statusCode = 200;
+							res.end(JSON.stringify(contents));
+						}
+
+						return;
 					}
 					var validExtensions = {
 						".html" : "text/html",
