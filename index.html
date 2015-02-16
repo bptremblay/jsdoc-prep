@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Wayfair JavaScript Health Check</title>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+	</head>
+
+	<body>
+		<script data-main="includes/js/toolkit/init-toolkit.js"
+		src="includes/js/infrastructure/require/require-min.js"></script>
+
+		<div id="panel">
+			<div class="display">
+				<h3>File processor chain.</h3>
+
+				<br />
+
+				<select id="toolChains">
+
+					</select>
+						<br />
+						<div id="plugins"> </div>
+
+			</div>
+
+			<div class="display">
+				<h3>Directory on my server to scan:</h3>
+
+				<br />
+
+				<input id="path" type="text"
+				value = "/Users/btremblay/Documents/workspace/js-health-check/js_test_resources/framework"
+
+				style="width:400px;">
+				<button id="test">
+					Run
+				</button>
+
+				<br />
+				<textarea id="results" rows="15"> </textarea>
+			</div>
+		</div>
+	</body>
+</html>
