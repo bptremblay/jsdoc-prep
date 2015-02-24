@@ -21,6 +21,73 @@ var headerProc = {
         doneCallback(input);
     }
 };
+
+
+var singleJsDocProc = {
+        id: 'singleJsDocProc',
+        type: 'processor',
+        description: 'Stub for necessary proc: generate the JSDOC for a single file.',
+        process: function (input, doneCallback) {
+            // does not modify source
+            // must be asynchronous
+            doneCallback(input);
+        }
+    };
+
+
+var fixMyJsProc = {
+        id: 'fixMyJsProc',
+        type: 'processor',
+        description: 'Runs fixmyjs.',
+        process: function (input, doneCallback) {
+
+            var jshint = require('jshint').JSHINT
+            var fixmyjs = require('fixmyjs')
+
+
+
+            if (input.errors[this.id] == null) {
+                input.errors[this.id] = [];
+            }
+            var JSHINT = require('jshint')
+            .JSHINT;
+            var options = {
+                    browser: true,
+                    curly: true,
+                    eqnull: true,
+                    camelcase: true,
+                    yui: true,
+                    jquery: true,
+                    undef: true,
+                    shadow: false,
+                    validthis: false,
+                    newcap: true
+            };
+            var globals = {
+                    'YUI_config': false,
+                    'define': false,
+                    'require': false,
+                    'FB': false,
+                    'OA_output': false
+            };
+            JSHINT.errors = null;
+
+
+
+
+            var success = JSHINT(input.source, options, globals);
+            input.errors[this.id] = JSHINT.errors;
+            input.source = fixmyjs(jshint.data(), input.source, options).run();
+            success = JSHINT(input.source, options, globals);
+            input.errors[this.id] = JSHINT.errors;
+            JSHINT.errors = null;
+
+
+            doneCallback(input);
+        }
+};
+
+
 var uglifyProc = {
     id: 'uglifyProc',
     type: 'processor',
@@ -997,7 +1064,7 @@ var gsLintProc = {
 var jsDoccerProc = {
     id: 'jsDoccerProc',
     type: 'processor',
-    description: 'Runs jsDoccer java tool.',
+    description: 'Runs jsDoccer tool, generating a jsDoc coverage report.',
     process: function (input, doneCallback) {
         if (input.errors[this.id] == null) {
             input.errors[this.id] = [];
@@ -2072,7 +2139,9 @@ var plugins = {
     'uglifyProc': uglifyProc,
     'jsDoc3PrepProc': jsDoc3PrepProc,
     'generateJavaProc': generateJavaProc,
-    'fixJSDocFormattingProc': fixJSDocFormattingProc
+    'fixJSDocFormattingProc': fixJSDocFormattingProc,
+    'fixMyJsProc': fixMyJsProc,
+    'singleJsDocProc': singleJsDocProc
 };
 
 function getAmdConfig() {

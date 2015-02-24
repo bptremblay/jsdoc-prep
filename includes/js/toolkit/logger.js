@@ -1,6 +1,6 @@
 /**
- * @author Wayfair
- * @fileoverview Copyright(c) 2013 Wayfair, Inc., All Rights Reserved.
+ * @author btremblay@me.com
+ * @fileoverview Copyright(c) 2013 btremblay@me.com, Inc., All Rights Reserved.
  */
 define(function(){
     "use strict";

@@ -1,9 +1,9 @@
 /*
  * Exposes utility functions for using the jQuery flexslider plugin for viewing multiple product images
  *
- * @author    Simon Leung <sleung@wayfair.com>
- * @author    Jeff Ladino <jladino@wayfair.com>
- * @copyright 2013 Wayfair, LLC - All rights reserved
+ * @author    Simon Leung <sleung@btremblay@me.com.com>
+ * @author    Jeff Ladino <jladino@btremblay@me.com.com>
+ * @copyright 2013 btremblay@me.com, LLC - All rights reserved
  * @version   SVN: $Id$
  */
 YUI().add('jquery-flexsliderproductimages', function(Y) {

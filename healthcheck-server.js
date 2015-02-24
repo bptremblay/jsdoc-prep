@@ -13,7 +13,7 @@ function HealthCheckServer() {
  * Garann Means (p. 9-10)
  * 
  * @author btremblay
- * @copyright 2013 Wayfair LLC
+ * @copyright 2013 btremblay@me.com LLC
  */
 
 var port = 8000;
@@ -120,10 +120,10 @@ http
 							res.end(contents);
 						}
 
-						var outPath = '/Users/btremblay/Documents/workspace/js-health-check/processed';
-						var testPath = '/Users/btremblay/Documents/workspace/js-health-check/jstests';
-						var docPath = '/Users/btremblay/Documents/workspace/js-health-check/jsdocs';
-						var resultsPath = '/Users/btremblay/Documents/workspace/js-health-check/results';
+						var outPath = 'test-output';
+						var testPath = 'test-jstests';
+						var docPath = 'test-jsdocs';
+						var resultsPath = 'test-results';
 
 						if (paramsBlock.options != null) {
 							var opts = JSON.parse(paramsBlock.options);
@@ -201,10 +201,10 @@ http
 							res.end(contents);
 						}
 
-						var outPath = '/Users/btremblay/Documents/workspace/js-health-check/processed';
-						var testPath = '/Users/btremblay/Documents/workspace/js-health-check/jstests';
-						var docPath = '/Users/btremblay/Documents/workspace/js-health-check/jsdocs';
-						var resultsPath = '/Users/btremblay/Documents/workspace/js-health-check/results';
+						var outPath = 'test-output';
+                        var testPath = 'test-jstests';
+                        var docPath = 'test-jsdocs';
+                        var resultsPath = 'test-results';
 
 						if (paramsBlock.options != null) {
 							var opts = JSON.parse(paramsBlock.options);

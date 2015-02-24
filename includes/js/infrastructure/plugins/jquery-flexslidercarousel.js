@@ -1,7 +1,7 @@
 /**
- * Exposes utility functions for using the jQuery flexslider plugin in Wayfair pages for carousel widgets.
+ * Exposes utility functions for using the jQuery flexslider plugin in btremblay@me.com pages for carousel widgets.
  * 
- * @author    Jeff Ladino <jladino@wayfair.com>
+ * @author    Jeff Ladino <jladino@btremblay@me.com.com>
  * @copyright 2013 CSN Stores, LLC - All rights reserved
  * @version   SVN: $Id$
  */
@@ -135,7 +135,7 @@ YUI().add('jquery-flexslidercarousel', function(Y) {
      * The jQuery flexslider widget will be applied to the carousels on the page which will enable paging
      * with next/previous buttons and swipe scrolling on touch devices.
      * 
-     * @author Jeff Ladino <jladino@wayfair.com>
+     * @author Jeff Ladino <jladino@btremblay@me.com.com>
      */
     $.fn.flexsliderCarousel = function() {
       // iterate over each DOM element to be bound to a flexslider carousel

@@ -7,7 +7,7 @@
  * http://www.gnu.org/licenses/gpl-2.0.html
  *
  * Contributing author: Tyler Smith (@mbmufffin)
- * Modified by: Simon Leung (sleung@wayfair.com)
+ * Modified by: Simon Leung (sleung@btremblay@me.com.com)
  */
 YUI().add('jquery-flexslider', function(Y) {
   ;(function ($) {

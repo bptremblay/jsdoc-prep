@@ -1,5 +1,5 @@
 //==========================================================================
-//Copyright: &copy;Wayfair LLC All rights reserved.
+//Copyright: &copy;btremblay@me.com LLC All rights reserved.
 //==========================================================================
 
 requirejs.config({
@@ -91,13 +91,16 @@ define([
 				                               ]);
 
 		toolChains.pluginsForBen = new ToolChain("Ben's stuff.", [
-		                                                          'amdProc',
-		                                                          'jsDoccerProc',
-		                                                          'jsDocNameFixerProc',
-		                                                          'fixClassDeclarationsProc',
-		                                                         'jsDoc3PrepProc',
-		                                                          'jsBeautifyProc'
-		                                                          ]);
+		                                                          // 'minFilter',
+		                                                           'parseFilter',
+		                                                          // 'thirdPartyFilter',
+		                                                           'badCharactersProc',
+		                                                           'jsBeautifyProc',
+		                                                           'fixMyJsProc',
+		                                                           'jsDocNameFixerProc',
+		                                                           'jsDoccerProc',
+		                                                           'jsBeautifyProc'
+		                                                         ]);
 
 		// Handler for .ready() called.
 

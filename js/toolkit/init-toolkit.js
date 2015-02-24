@@ -91,11 +91,12 @@ define([
     ]);
 
     toolChains.pluginsForBen = new ToolChain("Ben's stuff.", [
-      'minFilter',
+     // 'minFilter',
       'parseFilter',
-      'thirdPartyFilter',
+     // 'thirdPartyFilter',
       'badCharactersProc',
       'jsBeautifyProc',
+      'fixMyJsProc',
       'jsDocNameFixerProc',
       'jsDoccerProc',
       'jsBeautifyProc'

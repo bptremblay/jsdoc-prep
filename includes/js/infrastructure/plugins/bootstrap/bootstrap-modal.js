@@ -18,8 +18,8 @@
  * ========================================================= */
 
 /*
- * Wayfair custom modifications of this plugin. Please commit any changes to this file to the wayfair github fork for bootstrap:
- * https://github.com/wayfair/bootstrap
+ * btremblay@me.com custom modifications of this plugin. Please commit any changes to this file to the btremblay@me.com github fork for bootstrap:
+ * https://github.com/btremblay@me.com/bootstrap
  */
 
 YUI().add('bootstrap-modal', function (Y) {
@@ -261,7 +261,7 @@ YUI().add('bootstrap-modal', function (Y) {
         })
     });
 
-    /******************** WAYFAIR MODAL ADDITIONS ************************/
+    /******************** btremblay@me.com MODAL ADDITIONS ************************/
 
     $.extend($.fn.modal.defaults, {
         centered : true,

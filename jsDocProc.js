@@ -3861,7 +3861,7 @@
   var methodCount = 0;
 
   function generateDoc(input, fName, documentation) {
-    input = input.split('﻿').join('');
+    input = input.split('Ôªø').join('');
     input = trim(input);
 
     var baseClassStr = input.split("inherits:");
@@ -4355,7 +4355,7 @@
     // block += "\r\n * ";
     // SkeletonView.prototype = new View ();
     // block += "\r\n * @author Apollo Group";
-    jsDocBlock.author = "Wayfair LLC";
+    jsDocBlock.author = "btremblay@me.com LLC";
 
     // jsDocBlock.type = "header";
     jsDocBlock.fileoverview = '';
