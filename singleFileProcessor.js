@@ -2118,6 +2118,7 @@ var jsDoc3PrepProc = {
 var plugins = {
     'trimProc': trimProc,
     'headerProc': headerProc,
+    'fixMyJsProc': fixMyJsProc,
     'jsBeautifyProc': jsBeautifyProc,
     'gsLintProc': gsLintProc,
     'jsHintProc': jsHintProc,
@@ -2140,7 +2141,7 @@ var plugins = {
     'jsDoc3PrepProc': jsDoc3PrepProc,
     'generateJavaProc': generateJavaProc,
     'fixJSDocFormattingProc': fixJSDocFormattingProc,
-    'fixMyJsProc': fixMyJsProc,
+    
     'singleJsDocProc': singleJsDocProc
 };
 
