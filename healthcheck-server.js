@@ -16,14 +16,14 @@ function HealthCheckServer() {
  * @copyright 2013 btremblay@me.com LLC
  */
 
-var port = 8000;
+var port = 9000;
 var serverUrl = "127.0.0.1";
 
 var http = require("http");
 var path = require("path");
 var fs = require("fs");
 var healthCheck = require('./fileSystemProcessor');
-
+var sfp = require('./singleFileProcessor');
 console
 		.log("Starting healthcheck web application at " + serverUrl + ":"
 				+ port);
@@ -179,6 +179,7 @@ http
 							}
 						}
 
+						var tempFilePath = 'temp-input/temp.js';
 						// console.warn(paramsBlock);
 						/**
 						 * Completion callback for processor tasks.
@@ -188,8 +189,11 @@ http
 						 */
 						function healthCheckCallback(healthCheckResults) {
 							console.log("Results are ready.");
-							var contents = JSON.stringify(healthCheckResults);
-
+							var newSource = sfp.readFile('test-output/temp.js');
+							healthCheckResults.source = newSource;
+							var contents = (JSON.stringify(healthCheckResults));
+							
+							
 							res.setHeader("Content-Type", "application/json");
 
 							// FIXME: Why doesn't Content-Length work here? The number is
@@ -199,12 +203,17 @@ http
 
 							res.statusCode = 200;
 							res.end(contents);
+							console.log(newSource);
 						}
 
 						var outPath = 'test-output';
                         var testPath = 'test-jstests';
                         var docPath = 'test-jsdocs';
                         var resultsPath = 'test-results';
+                        
+                        
+                        
+                        
 
 						if (paramsBlock.options != null) {
 							var opts = JSON.parse(paramsBlock.options);
@@ -223,6 +232,9 @@ http
 								res.end(JSON.stringify(contents));
 								return;
 							}
+							
+							sfp.writeFile(tempFilePath, unescape(opts.source));
+							
 							healthCheck.run({
 								callBack : healthCheckCallback,
 								scanPath : opts.scanPath,

@@ -1,58 +1,34 @@
 {
-  "results": {
-    "amdProc": {
-      "requires": [],
-      "moduleName": "mortgage_details",
-      "AMD": true,
-      "webPath": "/js/component/myAccounts",
-      "min": false,
-      "main": 0,
-      "uses_$": false,
-      "uses_Y": false,
-      "uses_alert": false,
-      "strict": false
-    }
-  },
+  "results": {},
   "errors": {
-    "jsBeautifyProc": [],
-    "jsDoccerProc": [
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'init'.",
-        "code": "wfJD",
-        "evidence": "init: function () {",
-        "line": 4,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'init'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'displayDetails'.",
-        "code": "wfJD",
-        "evidence": "displayDetails: function (inputData) {",
-        "line": 7,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'displayDetails'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'showPayoff'.",
-        "code": "wfJD",
-        "evidence": "showPayoff: function () {",
-        "line": 26,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'showPayoff'."
-      }
-    ],
+    "minFilter": [],
+    "parseFilter": [],
+    "thirdPartyFilter": [],
+    "badCharactersProc": [],
     "jsDocNameFixerProc": [],
-    "fixClassDeclarationsProc": [],
-    "jsDoc3PrepProc": []
+    "jsHintProc": [
+      {
+        "id": "(error)",
+        "raw": "Missing semicolon.",
+        "code": "W033",
+        "evidence": "            console.log(this)",
+        "line": 31,
+        "character": 30,
+        "scope": "(main)",
+        "reason": "Missing semicolon."
+      },
+      {
+        "id": "(error)",
+        "raw": "'{a}' is not defined.",
+        "code": "W117",
+        "evidence": "            console.log(this)",
+        "line": 31,
+        "character": 13,
+        "scope": "(main)",
+        "a": "console",
+        "reason": "'console' is not defined."
+      }
+    ]
   },
   "outputDirectory": "test-output",
   "path": "test-source/js/component/myAccounts/mortgageDetails.js",
@@ -63,83 +39,11 @@
   "libFile": false,
   "min": false,
   "realName": "mortgage_details",
-  "name": "mortgageDetails",
+  "name": "mortgage_details",
   "camelName": "MortgageDetails",
   "processedFilePath": "test-output/js/component/myAccounts/mortgageDetails.js",
   "couldParseOriginalSource": true,
-  "checkForRequiresMismatch": true,
-  "preprocessed": true,
-  "jsDoccerProcData": {
-    "lines": 31,
-    "requires": [],
-    "className": "n/a",
-    "packagePath": "",
-    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
-    "uses_Y": false,
-    "no_lib": true,
-    "inferencedClassName": "n/a",
-    "uses_$": false,
-    "chars": 1170,
-    "uses_YUI": false,
-    "fields": [],
-    "moduleName": "./mortgageDetails",
-    "uses_console_log": true,
-    "uses_backbone": false,
-    "classes": {},
-    "methods": [
-      {
-        "name": "init",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 4,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "init: function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "displayDetails",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 7,
-        "memberOf": "",
-        "doclet": "/**\n * @param inputData\n */",
-        "args": [
-          "inputData"
-        ],
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "displayDetails: function (inputData) {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "showPayoff",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 26,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "showPayoff: function () {",
-        "originalJsDocDescription": {}
-      }
-    ],
-    "is_module": true,
-    "uses_alert": false,
-    "uses_y_log": false,
-    "requiresRaw": [],
-    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
-    "fileName": "mortgageDetails.js",
-    "strict": false,
-    "min": false,
-    "main": 0
-  },
-  "possibleClassname": "",
-  "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 44
+  "numberOfLines": 35
 }

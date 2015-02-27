@@ -1,52 +1,12 @@
 {
-  "results": {
-    "amdProc": {
-      "requires": [
-        "dashboard/service/languageMapper",
-        "blue/observable",
-        "dashboard/spec/footer/footer",
-        "dashboard/component/footer/footer"
-      ],
-      "moduleName": "footer",
-      "AMD": true,
-      "webPath": "/js/controller/footer",
-      "min": false,
-      "main": false,
-      "uses_$": false,
-      "uses_Y": false,
-      "uses_alert": false,
-      "strict": false
-    }
-  },
+  "results": {},
   "errors": {
-    "jsBeautifyProc": [],
-    "jsDoccerProc": [
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'FooterController'.",
-        "code": "wfJD",
-        "evidence": "return function FooterController() {",
-        "line": 2,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'FooterController'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'init'.",
-        "code": "wfJD",
-        "evidence": "this.init = function () {",
-        "line": 7,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'init'."
-      }
-    ],
+    "minFilter": [],
+    "parseFilter": [],
+    "thirdPartyFilter": [],
+    "badCharactersProc": [],
     "jsDocNameFixerProc": [],
-    "fixClassDeclarationsProc": [],
-    "jsDoc3PrepProc": []
+    "jsHintProc": []
   },
   "outputDirectory": "test-output",
   "path": "test-source/js/controller/footer/footer.js",
@@ -61,99 +21,7 @@
   "camelName": "Footer",
   "processedFilePath": "test-output/js/controller/footer/footer.js",
   "couldParseOriginalSource": true,
-  "checkForRequiresMismatch": true,
-  "preprocessed": true,
-  "jsDoccerProcData": {
-    "lines": 36,
-    "requires": [
-      "dashboard/service/languageMapper",
-      "blue/observable",
-      "dashboard/spec/footer/footer",
-      "dashboard/component/footer/footer"
-    ],
-    "className": "n/a",
-    "packagePath": "",
-    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/footer",
-    "uses_Y": false,
-    "no_lib": true,
-    "inferencedClassName": "n/a",
-    "uses_$": false,
-    "chars": 1139,
-    "uses_YUI": false,
-    "fields": [],
-    "moduleName": "./footer",
-    "uses_console_log": false,
-    "uses_backbone": false,
-    "classes": {
-      "FooterController": 662
-    },
-    "methods": [
-      {
-        "name": "FooterController",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 2,
-        "memberOf": "",
-        "doclet": "/**\n * @constructor\n */",
-        "description": "",
-        "return": "",
-        "classDeclarationFlag": true,
-        "line": "return function FooterController() {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "init",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 7,
-        "memberOf": "this",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "this.init = function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "index",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 27,
-        "memberOf": "this",
-        "doclet": "/**\n * Function for default action.\n * @function index\n * @memberOf module:Indexthis\n * \n * @return {array}\n */",
-        "description": "\n Function for default action\n\n Function for default action.",
-        "return": "{array}",
-        "classDeclarationFlag": false,
-        "line": "this.index = function () {",
-        "originalJsDocDescription": {
-          "function": {
-            "tag": "function",
-            "line": 2,
-            "lastLine": 2,
-            "textStartsOnSameLine": true,
-            "text": "index"
-          },
-          "memberOf": {
-            "tag": "memberOf",
-            "line": 3,
-            "lastLine": -1,
-            "textStartsOnSameLine": true,
-            "text": "module:Indexthis\n"
-          }
-        }
-      }
-    ],
-    "is_module": true,
-    "uses_alert": false,
-    "uses_y_log": false,
-    "requiresRaw": [],
-    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/footer",
-    "fileName": "footer.js",
-    "strict": false,
-    "min": false,
-    "main": false
-  },
-  "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 53
+  "numberOfLines": 43
 }

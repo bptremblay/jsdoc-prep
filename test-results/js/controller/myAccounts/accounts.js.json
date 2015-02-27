@@ -1,70 +1,24 @@
 {
-  "results": {
-    "amdProc": {
-      "requires": [
-        "dashboard/service/languageMapper",
-        "blue/observable",
-        "blue/event/channel/controller",
-        "dashboard/spec/myAccounts/accountsContainer",
-        "dashboard/component/myAccounts/accountsContainer",
-        "dashboard/spec/myAccounts/card",
-        "dashboard/component/myAccounts/card",
-        "dashboard/spec/myAccounts/autoLoan",
-        "dashboard/component/myAccounts/autoLoan",
-        "dashboard/spec/myAccounts/autoLease",
-        "dashboard/component/myAccounts/autoLease",
-        "dashboard/spec/myAccounts/loan",
-        "dashboard/component/myAccounts/loan",
-        "dashboard/spec/myAccounts/mortgage",
-        "dashboard/component/myAccounts/mortgage",
-        "dashboard/spec/myAccounts/investment",
-        "dashboard/component/myAccounts/investment",
-        "dashboard/spec/myAccounts/dda",
-        "dashboard/component/myAccounts/dda",
-        "dashboard/spec/myAccounts/dda",
-        "dashboard/component/myAccounts/dda",
-        "blue/deferred"
-      ],
-      "moduleName": "accounts",
-      "AMD": true,
-      "webPath": "/js/controller/myAccounts",
-      "min": false,
-      "main": false,
-      "uses_$": false,
-      "uses_Y": false,
-      "uses_alert": false,
-      "strict": false
-    }
-  },
+  "results": {},
   "errors": {
-    "jsBeautifyProc": [],
-    "jsDoccerProc": [
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'AccountsController'.",
-        "code": "wfJD",
-        "evidence": "return function AccountsController() {",
-        "line": 2,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'AccountsController'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'init'.",
-        "code": "wfJD",
-        "evidence": "this.init = function () {",
-        "line": 8,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'init'."
-      }
-    ],
+    "minFilter": [],
+    "parseFilter": [],
+    "thirdPartyFilter": [],
+    "badCharactersProc": [],
     "jsDocNameFixerProc": [],
-    "fixClassDeclarationsProc": [],
-    "jsDoc3PrepProc": []
+    "jsHintProc": [
+      {
+        "id": "(error)",
+        "raw": "Identifier '{a}' is not in camel case.",
+        "code": "W106",
+        "evidence": "                            account.lead_value = 'N/A';",
+        "line": 106,
+        "character": 0,
+        "scope": "(main)",
+        "a": "lead_value",
+        "reason": "Identifier 'lead_value' is not in camel case."
+      }
+    ]
   },
   "outputDirectory": "test-output",
   "path": "test-source/js/controller/myAccounts/accounts.js",
@@ -79,119 +33,7 @@
   "camelName": "Accounts",
   "processedFilePath": "test-output/js/controller/myAccounts/accounts.js",
   "couldParseOriginalSource": true,
-  "checkForRequiresMismatch": true,
-  "preprocessed": true,
-  "jsDoccerProcData": {
-    "lines": 144,
-    "requires": [
-      "dashboard/service/languageMapper",
-      "blue/observable",
-      "blue/event/channel/controller",
-      "dashboard/spec/myAccounts/accountsContainer",
-      "dashboard/component/myAccounts/accountsContainer",
-      "dashboard/spec/myAccounts/card",
-      "dashboard/component/myAccounts/card",
-      "dashboard/spec/myAccounts/autoLoan",
-      "dashboard/component/myAccounts/autoLoan",
-      "dashboard/spec/myAccounts/autoLease",
-      "dashboard/component/myAccounts/autoLease",
-      "dashboard/spec/myAccounts/loan",
-      "dashboard/component/myAccounts/loan",
-      "dashboard/spec/myAccounts/mortgage",
-      "dashboard/component/myAccounts/mortgage",
-      "dashboard/spec/myAccounts/investment",
-      "dashboard/component/myAccounts/investment",
-      "dashboard/spec/myAccounts/dda",
-      "dashboard/component/myAccounts/dda",
-      "dashboard/spec/myAccounts/dda",
-      "dashboard/component/myAccounts/dda",
-      "blue/deferred"
-    ],
-    "className": "n/a",
-    "packagePath": "",
-    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myAccounts",
-    "uses_Y": false,
-    "no_lib": true,
-    "inferencedClassName": "n/a",
-    "uses_$": false,
-    "chars": 6243,
-    "uses_YUI": false,
-    "fields": [],
-    "moduleName": "./accounts",
-    "uses_console_log": false,
-    "uses_backbone": false,
-    "classes": {
-      "AccountsController": 3536
-    },
-    "methods": [
-      {
-        "name": "AccountsController",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 2,
-        "memberOf": "",
-        "doclet": "/**\n * @constructor\n */",
-        "description": "",
-        "return": "",
-        "classDeclarationFlag": true,
-        "line": "return function AccountsController() {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "init",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 8,
-        "memberOf": "this",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "this.init = function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "index",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 59,
-        "memberOf": "this",
-        "doclet": "/**\n * Function for default action.\n * @function index\n * @memberOf module:Indexthis\n * \n * @param params\n */",
-        "args": [
-          "params"
-        ],
-        "description": "\n Function for default action\n\n Function for default action.",
-        "classDeclarationFlag": false,
-        "line": "this.index = function (params) {",
-        "originalJsDocDescription": {
-          "function": {
-            "tag": "function",
-            "line": 2,
-            "lastLine": 2,
-            "textStartsOnSameLine": true,
-            "text": "index"
-          },
-          "memberOf": {
-            "tag": "memberOf",
-            "line": 3,
-            "lastLine": -1,
-            "textStartsOnSameLine": true,
-            "text": "module:Indexthis\n"
-          }
-        }
-      }
-    ],
-    "is_module": true,
-    "uses_alert": false,
-    "uses_y_log": false,
-    "requiresRaw": [],
-    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myAccounts",
-    "fileName": "accounts.js",
-    "strict": false,
-    "min": false,
-    "main": false
-  },
-  "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 179
+  "numberOfLines": 166
 }

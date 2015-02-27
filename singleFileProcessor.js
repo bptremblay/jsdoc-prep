@@ -2152,6 +2152,7 @@ module.exports = {
     'plugins': plugins,
     'processFile': processFile,
     'writeFile': writeFile,
+    'readFile': readFile,
     'setWriteEnable': setWriteEnable,
     'getAmdConfig': getAmdConfig
 };

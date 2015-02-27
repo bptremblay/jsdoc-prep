@@ -1,71 +1,24 @@
 {
-  "results": {
-    "amdProc": {
-      "requires": [
-        "blue/event/channel/controller"
-      ],
-      "moduleName": "auto_loan",
-      "AMD": true,
-      "webPath": "/js/component/myAccounts",
-      "min": false,
-      "main": false,
-      "uses_$": false,
-      "uses_Y": false,
-      "uses_alert": false,
-      "strict": false
-    }
-  },
+  "results": {},
   "errors": {
-    "jsBeautifyProc": [],
-    "jsDoccerProc": [
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'init'.",
-        "code": "wfJD",
-        "evidence": "init: function () {",
-        "line": 5,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'init'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'selectMore'.",
-        "code": "wfJD",
-        "evidence": "selectMore: function () {",
-        "line": 8,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'selectMore'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'refreshBalance'.",
-        "code": "wfJD",
-        "evidence": "refreshBalance: function (accountId) {",
-        "line": 11,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'refreshBalance'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'showDetails'.",
-        "code": "wfJD",
-        "evidence": "showDetails: function () {",
-        "line": 28,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'showDetails'."
-      }
-    ],
+    "minFilter": [],
+    "parseFilter": [],
+    "thirdPartyFilter": [],
+    "badCharactersProc": [],
     "jsDocNameFixerProc": [],
-    "fixClassDeclarationsProc": [],
-    "jsDoc3PrepProc": []
+    "jsHintProc": [
+      {
+        "id": "(error)",
+        "raw": "'{a}' is not defined.",
+        "code": "W117",
+        "evidence": "            console.log('select_more called', arguments);",
+        "line": 11,
+        "character": 13,
+        "scope": "(main)",
+        "a": "console",
+        "reason": "'console' is not defined."
+      }
+    ]
   },
   "outputDirectory": "test-output",
   "path": "test-source/js/component/myAccounts/autoLoan.js",
@@ -76,97 +29,11 @@
   "libFile": false,
   "min": false,
   "realName": "auto_loan",
-  "name": "autoLoan",
+  "name": "auto_loan",
   "camelName": "AutoLoan",
   "processedFilePath": "test-output/js/component/myAccounts/autoLoan.js",
   "couldParseOriginalSource": true,
-  "checkForRequiresMismatch": true,
-  "preprocessed": true,
-  "jsDoccerProcData": {
-    "lines": 54,
-    "requires": [
-      "blue/event/channel/controller"
-    ],
-    "className": "n/a",
-    "packagePath": "",
-    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
-    "uses_Y": false,
-    "no_lib": true,
-    "inferencedClassName": "n/a",
-    "uses_$": false,
-    "chars": 1938,
-    "uses_YUI": false,
-    "fields": [],
-    "moduleName": "./autoLoan",
-    "uses_console_log": true,
-    "uses_backbone": false,
-    "classes": {},
-    "methods": [
-      {
-        "name": "init",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 5,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "init: function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "selectMore",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 8,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "selectMore: function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "refreshBalance",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 11,
-        "memberOf": "",
-        "doclet": "/**\n * @param accountId\n */",
-        "args": [
-          "accountId"
-        ],
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "refreshBalance: function (accountId) {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "showDetails",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 28,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "showDetails: function () {",
-        "originalJsDocDescription": {}
-      }
-    ],
-    "is_module": true,
-    "uses_alert": false,
-    "uses_y_log": false,
-    "requiresRaw": [],
-    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
-    "fileName": "autoLoan.js",
-    "strict": false,
-    "min": false,
-    "main": false
-  },
-  "possibleClassname": "",
-  "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 71
+  "numberOfLines": 62
 }

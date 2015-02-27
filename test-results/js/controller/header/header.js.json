@@ -1,64 +1,12 @@
 {
-  "results": {
-    "amdProc": {
-      "requires": [
-        "blue/observable",
-        "dashboard/spec/header/myInfo",
-        "dashboard/component/header/myInfo",
-        "dashboard/spec/header/moduleHeader",
-        "dashboard/component/header/moduleHeader",
-        "dashboard/spec/header/topMenu",
-        "dashboard/component/header/topMenu",
-        "dashboard/spec/conversationDeck/myNotifications",
-        "dashboard/component/conversationDeck/myNotifications",
-        "dashboard/spec/conversationDeck/search",
-        "dashboard/component/conversationDeck/search",
-        "dashboard/spec/payments/paymentsMenu/paymentsMenu",
-        "dashboard/component/payments/paymentsMenu/paymentsMenu",
-        "dashboard/spec/header/headerContainer",
-        "dashboard/component/header/headerContainer",
-        "common/utility/dynamicContentUtil"
-      ],
-      "moduleName": "header",
-      "AMD": true,
-      "webPath": "/js/controller/header",
-      "min": false,
-      "main": false,
-      "uses_$": false,
-      "uses_Y": false,
-      "uses_alert": false,
-      "strict": false
-    }
-  },
+  "results": {},
   "errors": {
-    "jsBeautifyProc": [],
-    "jsDoccerProc": [
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'HeaderController'.",
-        "code": "wfJD",
-        "evidence": "return function HeaderController() {",
-        "line": 22,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'HeaderController'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'init'.",
-        "code": "wfJD",
-        "evidence": "this.init = function () {",
-        "line": 39,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'init'."
-      }
-    ],
+    "minFilter": [],
+    "parseFilter": [],
+    "thirdPartyFilter": [],
+    "badCharactersProc": [],
     "jsDocNameFixerProc": [],
-    "fixClassDeclarationsProc": [],
-    "jsDoc3PrepProc": []
+    "jsHintProc": []
   },
   "outputDirectory": "test-output",
   "path": "test-source/js/controller/header/header.js",
@@ -73,111 +21,7 @@
   "camelName": "Header",
   "processedFilePath": "test-output/js/controller/header/header.js",
   "couldParseOriginalSource": true,
-  "checkForRequiresMismatch": false,
-  "preprocessed": true,
-  "jsDoccerProcData": {
-    "lines": 142,
-    "requires": [
-      "blue/observable",
-      "dashboard/spec/header/myInfo",
-      "dashboard/component/header/myInfo",
-      "dashboard/spec/header/moduleHeader",
-      "dashboard/component/header/moduleHeader",
-      "dashboard/spec/header/topMenu",
-      "dashboard/component/header/topMenu",
-      "dashboard/spec/conversationDeck/myNotifications",
-      "dashboard/component/conversationDeck/myNotifications",
-      "dashboard/spec/conversationDeck/search",
-      "dashboard/component/conversationDeck/search",
-      "dashboard/spec/payments/paymentsMenu/paymentsMenu",
-      "dashboard/component/payments/paymentsMenu/paymentsMenu",
-      "dashboard/spec/header/headerContainer",
-      "dashboard/component/header/headerContainer",
-      "common/utility/dynamicContentUtil"
-    ],
-    "className": "n/a",
-    "packagePath": "",
-    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/header",
-    "uses_Y": false,
-    "no_lib": true,
-    "inferencedClassName": "n/a",
-    "uses_$": false,
-    "chars": 5954,
-    "uses_YUI": false,
-    "fields": [],
-    "moduleName": "./header",
-    "uses_console_log": false,
-    "uses_backbone": false,
-    "classes": {
-      "HeaderController": 2661
-    },
-    "methods": [
-      {
-        "name": "HeaderController",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 22,
-        "memberOf": "",
-        "doclet": "/**\n * @constructor\n */",
-        "description": "",
-        "return": "",
-        "classDeclarationFlag": true,
-        "line": "return function HeaderController() {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "init",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 39,
-        "memberOf": "this",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "this.init = function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "index",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 54,
-        "memberOf": "this",
-        "doclet": "/**\n * Function for default action.\n * @function index\n * @memberOf module:Indexthis\n * \n * @return {array}\n */",
-        "description": "\n Function for default action\n\n Function for default action.",
-        "return": "{array}",
-        "classDeclarationFlag": false,
-        "line": "this.index = function () {",
-        "originalJsDocDescription": {
-          "function": {
-            "tag": "function",
-            "line": 2,
-            "lastLine": 2,
-            "textStartsOnSameLine": true,
-            "text": "index"
-          },
-          "memberOf": {
-            "tag": "memberOf",
-            "line": 3,
-            "lastLine": -1,
-            "textStartsOnSameLine": true,
-            "text": "module:Indexthis\n"
-          }
-        }
-      }
-    ],
-    "is_module": true,
-    "uses_alert": false,
-    "uses_y_log": false,
-    "requiresRaw": [],
-    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/header",
-    "fileName": "header.js",
-    "strict": false,
-    "min": false,
-    "main": false
-  },
-  "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 151
+  "numberOfLines": 132
 }

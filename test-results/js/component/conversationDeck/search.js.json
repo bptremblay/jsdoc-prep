@@ -1,80 +1,12 @@
 {
-  "results": {
-    "amdProc": {
-      "requires": [],
-      "moduleName": "search",
-      "AMD": true,
-      "webPath": "/js/component/conversationDeck",
-      "min": false,
-      "main": 0,
-      "uses_$": false,
-      "uses_Y": false,
-      "uses_alert": false,
-      "strict": false
-    }
-  },
+  "results": {},
   "errors": {
-    "jsBeautifyProc": [],
-    "jsDoccerProc": [
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'init'.",
-        "code": "wfJD",
-        "evidence": "init: function () {",
-        "line": 4,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'init'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'showSearchOptions'.",
-        "code": "wfJD",
-        "evidence": "showSearchOptions: function () {},",
-        "line": 7,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'showSearchOptions'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'search'.",
-        "code": "wfJD",
-        "evidence": "search: function () {",
-        "line": 8,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'search'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'hideSearchOptions'.",
-        "code": "wfJD",
-        "evidence": "hideSearchOptions: function () {",
-        "line": 53,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'hideSearchOptions'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'triggerSuggestedAction'.",
-        "code": "wfJD",
-        "evidence": "triggerSuggestedAction: function () {",
-        "line": 59,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'triggerSuggestedAction'."
-      }
-    ],
+    "minFilter": [],
+    "parseFilter": [],
+    "thirdPartyFilter": [],
+    "badCharactersProc": [],
     "jsDocNameFixerProc": [],
-    "fixClassDeclarationsProc": [],
-    "jsDoc3PrepProc": []
+    "jsHintProc": []
   },
   "outputDirectory": "test-output",
   "path": "test-source/js/component/conversationDeck/search.js",
@@ -89,100 +21,7 @@
   "camelName": "Search",
   "processedFilePath": "test-output/js/component/conversationDeck/search.js",
   "couldParseOriginalSource": true,
-  "checkForRequiresMismatch": true,
-  "preprocessed": true,
-  "jsDoccerProcData": {
-    "lines": 63,
-    "requires": [],
-    "className": "n/a",
-    "packagePath": "",
-    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/conversationDeck",
-    "uses_Y": false,
-    "no_lib": true,
-    "inferencedClassName": "n/a",
-    "uses_$": false,
-    "chars": 1814,
-    "uses_YUI": false,
-    "fields": [],
-    "moduleName": "./search",
-    "uses_console_log": false,
-    "uses_backbone": false,
-    "classes": {},
-    "methods": [
-      {
-        "name": "init",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 4,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "init: function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "showSearchOptions",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 7,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "showSearchOptions: function () {},",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "search",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 8,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "search: function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "hideSearchOptions",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 53,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "hideSearchOptions: function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "triggerSuggestedAction",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 59,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "triggerSuggestedAction: function () {",
-        "originalJsDocDescription": {}
-      }
-    ],
-    "is_module": true,
-    "uses_alert": false,
-    "uses_y_log": false,
-    "requiresRaw": [],
-    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/conversationDeck",
-    "fileName": "search.js",
-    "strict": false,
-    "min": false,
-    "main": 0
-  },
-  "possibleClassname": "",
-  "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 82
+  "numberOfLines": 64
 }

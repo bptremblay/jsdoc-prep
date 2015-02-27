@@ -1,1394 +1,315 @@
 {
   "results": [
     {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
+      "results": {
+        "amdProc": {
+          "requires": [
+            "blue/event/channel/controller",
+            "blue/observable",
+            "dashboard/spec/myAccounts/cardDetails",
+            "dashboard/component/myAccounts/cardDetails",
+            "dashboard/spec/myAccounts/autoLoanDetails",
+            "dashboard/component/myAccounts/autoLoanDetails",
+            "dashboard/spec/myAccounts/autoLeaseDetails",
+            "dashboard/component/myAccounts/autoLeaseDetails",
+            "dashboard/spec/myAccounts/loanDetails",
+            "dashboard/component/myAccounts/loanDetails",
+            "bluespec/mortgage_account_header",
+            "dashboard/component/myAccounts/mortgageAccountHeader",
+            "dashboard/spec/myAccounts/investmentDetails",
+            "dashboard/component/myAccounts/investmentDetails",
+            "bluespec/dda_account_header",
+            "dashboard/component/myAccounts/ddaAccountHeader",
+            "bluespec/cds_account_header",
+            "dashboard/component/myAccounts/cdsAccountHeader",
+            "bluespec/prepaid_account_header",
+            "dashboard/component/myAccounts/prepaidAccountHeader",
+            "bluespec/dda_account_header",
+            "dashboard/component/myAccounts/ddaAccountHeader",
+            "bluespec/mortgage_account_things_you_can_do",
+            "dashboard/component/myAccounts/headerDropDown",
+            "bluespec/account_overdraft_protection",
+            "dashboard/component/myAccounts/accountOverdraftProtection"
+          ],
+          "moduleName": "temp",
+          "AMD": true,
+          "webPath": "",
+          "min": false,
+          "main": false,
+          "uses_$": false,
+          "uses_Y": false,
+          "uses_alert": false,
+          "strict": false
+        }
       },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/Calculator.js",
-      "folderPath": "test-source/js",
-      "fileName": "Calculator.js",
-      "packagePath": "/js",
-      "webPath": "/js",
-      "libFile": false,
-      "min": false,
-      "realName": "calculator",
-      "name": "calculator",
-      "camelName": "Calculator",
-      "processedFilePath": "test-output/js/Calculator.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 47
-    },
-    {
-      "results": {},
       "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/ScientificCalculator.js",
-      "folderPath": "test-source/js",
-      "fileName": "ScientificCalculator.js",
-      "packagePath": "/js",
-      "webPath": "/js",
-      "libFile": false,
-      "min": false,
-      "realName": "scientific_calculator",
-      "name": "scientific_calculator",
-      "camelName": "ScientificCalculator",
-      "processedFilePath": "test-output/js/ScientificCalculator.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 47
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": [
+        "jsDoccerProc": [
           {
             "id": "(error)",
-            "raw": "'{a}' is not defined.",
-            "code": "W117",
-            "evidence": "\t\tvar thePromise = new Promise(function(resolve, reject) {",
-            "line": 16,
-            "character": 30,
-            "scope": "(main)",
-            "a": "Promise",
-            "reason": "'Promise' is not defined."
-          }
-        ]
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/delay.js",
-      "folderPath": "test-source/js",
-      "fileName": "delay.js",
-      "packagePath": "/js",
-      "webPath": "/js",
-      "libFile": false,
-      "min": false,
-      "realName": "delay",
-      "name": "delay",
-      "camelName": "Delay",
-      "processedFilePath": "test-output/js/delay.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 33
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/withExponents.js",
-      "folderPath": "test-source/js",
-      "fileName": "withExponents.js",
-      "packagePath": "/js",
-      "webPath": "/js",
-      "libFile": false,
-      "min": false,
-      "realName": "with_exponents",
-      "name": "with_exponents",
-      "camelName": "WithExponents",
-      "processedFilePath": "test-output/js/withExponents.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 90
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/classic/classic.js",
-      "folderPath": "test-source/js/component/classic",
-      "fileName": "classic.js",
-      "packagePath": "/js/component/classic",
-      "webPath": "/js/component/classic",
-      "libFile": false,
-      "min": false,
-      "realName": "classic",
-      "name": "classic",
-      "camelName": "Classic",
-      "processedFilePath": "test-output/js/component/classic/classic.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 13
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/conversationDeck/myNotifications.js",
-      "folderPath": "test-source/js/component/conversationDeck",
-      "fileName": "myNotifications.js",
-      "packagePath": "/js/component/conversationDeck",
-      "webPath": "/js/component/conversationDeck",
-      "libFile": false,
-      "min": false,
-      "realName": "my_notifications",
-      "name": "my_notifications",
-      "camelName": "MyNotifications",
-      "processedFilePath": "test-output/js/component/conversationDeck/myNotifications.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 36
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/conversationDeck/search.js",
-      "folderPath": "test-source/js/component/conversationDeck",
-      "fileName": "search.js",
-      "packagePath": "/js/component/conversationDeck",
-      "webPath": "/js/component/conversationDeck",
-      "libFile": false,
-      "min": false,
-      "realName": "search",
-      "name": "search",
-      "camelName": "Search",
-      "processedFilePath": "test-output/js/component/conversationDeck/search.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 64
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/footer/footer.js",
-      "folderPath": "test-source/js/component/footer",
-      "fileName": "footer.js",
-      "packagePath": "/js/component/footer",
-      "webPath": "/js/component/footer",
-      "libFile": false,
-      "min": false,
-      "realName": "footer",
-      "name": "footer",
-      "camelName": "Footer",
-      "processedFilePath": "test-output/js/component/footer/footer.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 16
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/header/headerContainer.js",
-      "folderPath": "test-source/js/component/header",
-      "fileName": "headerContainer.js",
-      "packagePath": "/js/component/header",
-      "webPath": "/js/component/header",
-      "libFile": false,
-      "min": false,
-      "realName": "header_container",
-      "name": "header_container",
-      "camelName": "HeaderContainer",
-      "processedFilePath": "test-output/js/component/header/headerContainer.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 16
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/header/moduleHeader.js",
-      "folderPath": "test-source/js/component/header",
-      "fileName": "moduleHeader.js",
-      "packagePath": "/js/component/header",
-      "webPath": "/js/component/header",
-      "libFile": false,
-      "min": false,
-      "realName": "module_header",
-      "name": "module_header",
-      "camelName": "ModuleHeader",
-      "processedFilePath": "test-output/js/component/header/moduleHeader.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 11
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": [
-          {
-            "id": "(error)",
-            "raw": "'{a}' is not defined.",
-            "code": "W117",
-            "evidence": "            this.profileUrl = envConfig.PROFILE_INDEX + context.settings.get('profileUrl');",
-            "line": 13,
-            "character": 31,
-            "scope": "(main)",
-            "a": "envConfig",
-            "reason": "'envConfig' is not defined."
-          },
-          {
-            "id": "(error)",
-            "raw": "'{a}' is not defined.",
-            "code": "W117",
-            "evidence": "            this.logOutUrl = envConfig.AUTH_INDEX + context.settings.get('logOutUrl');",
-            "line": 14,
-            "character": 30,
-            "scope": "(main)",
-            "a": "envConfig",
-            "reason": "'envConfig' is not defined."
-          }
-        ]
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/header/myInfo.js",
-      "folderPath": "test-source/js/component/header",
-      "fileName": "myInfo.js",
-      "packagePath": "/js/component/header",
-      "webPath": "/js/component/header",
-      "libFile": false,
-      "min": false,
-      "realName": "my_info",
-      "name": "my_info",
-      "camelName": "MyInfo",
-      "processedFilePath": "test-output/js/component/header/myInfo.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 17
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/header/topMenu.js",
-      "folderPath": "test-source/js/component/header",
-      "fileName": "topMenu.js",
-      "packagePath": "/js/component/header",
-      "webPath": "/js/component/header",
-      "libFile": false,
-      "min": false,
-      "realName": "top_menu",
-      "name": "top_menu",
-      "camelName": "TopMenu",
-      "processedFilePath": "test-output/js/component/header/topMenu.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 26
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": [
-          {
-            "id": "(error)",
-            "raw": "Expected an assignment or function call and instead saw an expression.",
-            "code": "W030",
-            "evidence": "            this.model.lens(data.dataPath + \"SortStyle\").set(\"DES\");",
-            "line": 80,
-            "character": 67,
-            "scope": "(main)",
-            "reason": "Expected an assignment or function call and instead saw an expression."
-          }
-        ]
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/accountActivity.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "accountActivity.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "account_activity",
-      "name": "account_activity",
-      "camelName": "AccountActivity",
-      "processedFilePath": "test-output/js/component/myAccounts/accountActivity.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 93
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/accountsContainer.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "accountsContainer.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "accounts_container",
-      "name": "accounts_container",
-      "camelName": "AccountsContainer",
-      "processedFilePath": "test-output/js/component/myAccounts/accountsContainer.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 8
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": [
-          {
-            "id": "(error)",
-            "raw": "'{a}' is not defined.",
-            "code": "W117",
-            "evidence": "            console.log('select_more called', arguments);",
-            "line": 11,
-            "character": 13,
-            "scope": "(main)",
-            "a": "console",
-            "reason": "'console' is not defined."
-          }
-        ]
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/autoLease.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "autoLease.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "auto_lease",
-      "name": "auto_lease",
-      "camelName": "AutoLease",
-      "processedFilePath": "test-output/js/component/myAccounts/autoLease.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 61
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/autoLeaseDetails.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "autoLeaseDetails.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "auto_lease_details",
-      "name": "auto_lease_details",
-      "camelName": "AutoLeaseDetails",
-      "processedFilePath": "test-output/js/component/myAccounts/autoLeaseDetails.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 29
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": [
-          {
-            "id": "(error)",
-            "raw": "'{a}' is not defined.",
-            "code": "W117",
-            "evidence": "            console.log('select_more called', arguments);",
-            "line": 11,
-            "character": 13,
-            "scope": "(main)",
-            "a": "console",
-            "reason": "'console' is not defined."
-          }
-        ]
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/autoLoan.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "autoLoan.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "auto_loan",
-      "name": "auto_loan",
-      "camelName": "AutoLoan",
-      "processedFilePath": "test-output/js/component/myAccounts/autoLoan.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 62
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/autoLoanDetails.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "autoLoanDetails.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "auto_loan_details",
-      "name": "auto_loan_details",
-      "camelName": "AutoLoanDetails",
-      "processedFilePath": "test-output/js/component/myAccounts/autoLoanDetails.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 29
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": [
-          {
-            "id": "(error)",
-            "raw": "'{a}' is not defined.",
-            "code": "W117",
-            "evidence": "            console.log('make_card_payment called', arguments);",
-            "line": 11,
-            "character": 13,
-            "scope": "(main)",
-            "a": "console",
-            "reason": "'console' is not defined."
-          },
-          {
-            "id": "(error)",
-            "raw": "'{a}' is not defined.",
-            "code": "W117",
-            "evidence": "            console.log('redeem_points called', arguments);",
-            "line": 14,
-            "character": 13,
-            "scope": "(main)",
-            "a": "console",
-            "reason": "'console' is not defined."
-          },
-          {
-            "id": "(error)",
-            "raw": "'{a}' is not defined.",
-            "code": "W117",
-            "evidence": "            console.log('select_more called', arguments);",
-            "line": 17,
-            "character": 13,
-            "scope": "(main)",
-            "a": "console",
-            "reason": "'console' is not defined."
-          }
-        ]
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/card.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "card.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "card",
-      "name": "card",
-      "camelName": "Card",
-      "processedFilePath": "test-output/js/component/myAccounts/card.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 67
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/cardDetails.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "cardDetails.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "card_details",
-      "name": "card_details",
-      "camelName": "CardDetails",
-      "processedFilePath": "test-output/js/component/myAccounts/cardDetails.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 32
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/dda.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "dda.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "dda",
-      "name": "dda",
-      "camelName": "Dda",
-      "processedFilePath": "test-output/js/component/myAccounts/dda.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 57
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/ddaDetails.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "ddaDetails.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "dda_details",
-      "name": "dda_details",
-      "camelName": "DdaDetails",
-      "processedFilePath": "test-output/js/component/myAccounts/ddaDetails.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 29
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": [
-          {
-            "id": "(error)",
-            "raw": "'{a}' is not defined.",
-            "code": "W117",
-            "evidence": "            console.log('select_more called', arguments);",
-            "line": 10,
-            "character": 13,
-            "scope": "(main)",
-            "a": "console",
-            "reason": "'console' is not defined."
-          }
-        ]
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/investment.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "investment.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "investment",
-      "name": "investment",
-      "camelName": "Investment",
-      "processedFilePath": "test-output/js/component/myAccounts/investment.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 45
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/investmentDetails.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "investmentDetails.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "investment_details",
-      "name": "investment_details",
-      "camelName": "InvestmentDetails",
-      "processedFilePath": "test-output/js/component/myAccounts/investmentDetails.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 29
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": [
-          {
-            "id": "(error)",
-            "raw": "'{a}' is not defined.",
-            "code": "W117",
-            "evidence": "            console.log('select_more called', arguments);",
-            "line": 11,
-            "character": 13,
-            "scope": "(main)",
-            "a": "console",
-            "reason": "'console' is not defined."
-          }
-        ]
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/loan.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "loan.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "loan",
-      "name": "loan",
-      "camelName": "Loan",
-      "processedFilePath": "test-output/js/component/myAccounts/loan.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 61
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/loanDetails.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "loanDetails.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "loan_details",
-      "name": "loan_details",
-      "camelName": "LoanDetails",
-      "processedFilePath": "test-output/js/component/myAccounts/loanDetails.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 31
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": [
-          {
-            "id": "(error)",
-            "raw": "'{a}' is not defined.",
-            "code": "W117",
-            "evidence": "            console.log('redeem_points called', arguments);",
-            "line": 11,
-            "character": 13,
-            "scope": "(main)",
-            "a": "console",
-            "reason": "'console' is not defined."
-          },
-          {
-            "id": "(error)",
-            "raw": "'{a}' is not defined.",
-            "code": "W117",
-            "evidence": "            console.log('select_more called', arguments);",
-            "line": 14,
-            "character": 13,
-            "scope": "(main)",
-            "a": "console",
-            "reason": "'console' is not defined."
-          }
-        ]
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/mortgage.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "mortgage.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "mortgage",
-      "name": "mortgage",
-      "camelName": "Mortgage",
-      "processedFilePath": "test-output/js/component/myAccounts/mortgage.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 66
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": [
-          {
-            "id": "(error)",
-            "raw": "'{a}' is not defined.",
-            "code": "W117",
-            "evidence": "            console.log(this);",
+            "raw": "No jsDoc Comments for method 'DetailsController'.",
+            "code": "wfJD",
+            "evidence": "return function DetailsController() {",
             "line": 31,
-            "character": 13,
+            "character": -1,
             "scope": "(main)",
-            "a": "console",
-            "reason": "'console' is not defined."
-          }
-        ]
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myAccounts/mortgageDetails.js",
-      "folderPath": "test-source/js/component/myAccounts",
-      "fileName": "mortgageDetails.js",
-      "packagePath": "/js/component/myAccounts",
-      "webPath": "/js/component/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "mortgage_details",
-      "name": "mortgage_details",
-      "camelName": "MortgageDetails",
-      "processedFilePath": "test-output/js/component/myAccounts/mortgageDetails.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 35
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myProfile/mySettings.js",
-      "folderPath": "test-source/js/component/myProfile",
-      "fileName": "mySettings.js",
-      "packagePath": "/js/component/myProfile",
-      "webPath": "/js/component/myProfile",
-      "libFile": false,
-      "min": false,
-      "realName": "my_settings",
-      "name": "my_settings",
-      "camelName": "MySettings",
-      "processedFilePath": "test-output/js/component/myProfile/mySettings.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 1
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myProfile/personalDetails.js",
-      "folderPath": "test-source/js/component/myProfile",
-      "fileName": "personalDetails.js",
-      "packagePath": "/js/component/myProfile",
-      "webPath": "/js/component/myProfile",
-      "libFile": false,
-      "min": false,
-      "realName": "personal_details",
-      "name": "personal_details",
-      "camelName": "PersonalDetails",
-      "processedFilePath": "test-output/js/component/myProfile/personalDetails.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 1
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myProfile/profileContainer.js",
-      "folderPath": "test-source/js/component/myProfile",
-      "fileName": "profileContainer.js",
-      "packagePath": "/js/component/myProfile",
-      "webPath": "/js/component/myProfile",
-      "libFile": false,
-      "min": false,
-      "realName": "profile_container",
-      "name": "profile_container",
-      "camelName": "ProfileContainer",
-      "processedFilePath": "test-output/js/component/myProfile/profileContainer.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 9
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myProfile/profileLeftMenu.js",
-      "folderPath": "test-source/js/component/myProfile",
-      "fileName": "profileLeftMenu.js",
-      "packagePath": "/js/component/myProfile",
-      "webPath": "/js/component/myProfile",
-      "libFile": false,
-      "min": false,
-      "realName": "profile_left_menu",
-      "name": "profile_left_menu",
-      "camelName": "ProfileLeftMenu",
-      "processedFilePath": "test-output/js/component/myProfile/profileLeftMenu.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 12
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myProfile/profilePhone.js",
-      "folderPath": "test-source/js/component/myProfile",
-      "fileName": "profilePhone.js",
-      "packagePath": "/js/component/myProfile",
-      "webPath": "/js/component/myProfile",
-      "libFile": false,
-      "min": false,
-      "realName": "profile_phone",
-      "name": "profile_phone",
-      "camelName": "ProfilePhone",
-      "processedFilePath": "test-output/js/component/myProfile/profilePhone.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 9
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/myProfile/profileTheBasics.js",
-      "folderPath": "test-source/js/component/myProfile",
-      "fileName": "profileTheBasics.js",
-      "packagePath": "/js/component/myProfile",
-      "webPath": "/js/component/myProfile",
-      "libFile": false,
-      "min": false,
-      "realName": "profile_the_basics",
-      "name": "profile_the_basics",
-      "camelName": "ProfileTheBasics",
-      "processedFilePath": "test-output/js/component/myProfile/profileTheBasics.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 9
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/payments/payBills/payBills.js",
-      "folderPath": "test-source/js/component/payments/payBills",
-      "fileName": "payBills.js",
-      "packagePath": "/js/component/payments/payBills",
-      "webPath": "/js/component/payments/payBills",
-      "libFile": false,
-      "min": false,
-      "realName": "pay_bills",
-      "name": "pay_bills",
-      "camelName": "PayBills",
-      "processedFilePath": "test-output/js/component/payments/payBills/payBills.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 16
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/payments/payBills/payBillsConfirm.js",
-      "folderPath": "test-source/js/component/payments/payBills",
-      "fileName": "payBillsConfirm.js",
-      "packagePath": "/js/component/payments/payBills",
-      "webPath": "/js/component/payments/payBills",
-      "libFile": false,
-      "min": false,
-      "realName": "pay_bills_confirm",
-      "name": "pay_bills_confirm",
-      "camelName": "PayBillsConfirm",
-      "processedFilePath": "test-output/js/component/payments/payBills/payBillsConfirm.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 16
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/payments/payBills/payBillsVerify.js",
-      "folderPath": "test-source/js/component/payments/payBills",
-      "fileName": "payBillsVerify.js",
-      "packagePath": "/js/component/payments/payBills",
-      "webPath": "/js/component/payments/payBills",
-      "libFile": false,
-      "min": false,
-      "realName": "pay_bills_verify",
-      "name": "pay_bills_verify",
-      "camelName": "PayBillsVerify",
-      "processedFilePath": "test-output/js/component/payments/payBills/payBillsVerify.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 19
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/payments/paymentsActivity/paymentsActivity.js",
-      "folderPath": "test-source/js/component/payments/paymentsActivity",
-      "fileName": "paymentsActivity.js",
-      "packagePath": "/js/component/payments/paymentsActivity",
-      "webPath": "/js/component/payments/paymentsActivity",
-      "libFile": false,
-      "min": false,
-      "realName": "payments_activity",
-      "name": "payments_activity",
-      "camelName": "PaymentsActivity",
-      "processedFilePath": "test-output/js/component/payments/paymentsActivity/paymentsActivity.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 1
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/payments/paymentsMenu/paymentsMenu.js",
-      "folderPath": "test-source/js/component/payments/paymentsMenu",
-      "fileName": "paymentsMenu.js",
-      "packagePath": "/js/component/payments/paymentsMenu",
-      "webPath": "/js/component/payments/paymentsMenu",
-      "libFile": false,
-      "min": false,
-      "realName": "payments_menu",
-      "name": "payments_menu",
-      "camelName": "PaymentsMenu",
-      "processedFilePath": "test-output/js/component/payments/paymentsMenu/paymentsMenu.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 43
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/payments/sendMoney/sendMoney.js",
-      "folderPath": "test-source/js/component/payments/sendMoney",
-      "fileName": "sendMoney.js",
-      "packagePath": "/js/component/payments/sendMoney",
-      "webPath": "/js/component/payments/sendMoney",
-      "libFile": false,
-      "min": false,
-      "realName": "send_money",
-      "name": "send_money",
-      "camelName": "SendMoney",
-      "processedFilePath": "test-output/js/component/payments/sendMoney/sendMoney.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 9
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/payments/transferMoney/transferMoney.js",
-      "folderPath": "test-source/js/component/payments/transferMoney",
-      "fileName": "transferMoney.js",
-      "packagePath": "/js/component/payments/transferMoney",
-      "webPath": "/js/component/payments/transferMoney",
-      "libFile": false,
-      "min": false,
-      "realName": "transfer_money",
-      "name": "transfer_money",
-      "camelName": "TransferMoney",
-      "processedFilePath": "test-output/js/component/payments/transferMoney/transferMoney.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 8
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/component/sideMenu/megaMenu.js",
-      "folderPath": "test-source/js/component/sideMenu",
-      "fileName": "megaMenu.js",
-      "packagePath": "/js/component/sideMenu",
-      "webPath": "/js/component/sideMenu",
-      "libFile": false,
-      "min": false,
-      "realName": "mega_menu",
-      "name": "mega_menu",
-      "camelName": "MegaMenu",
-      "processedFilePath": "test-output/js/component/sideMenu/megaMenu.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 146
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": [
-          {
-            "id": "(error)",
-            "raw": "'{a}' is not defined.",
-            "code": "W117",
-            "evidence": "            this.goURL(envConfig.ACCOUNTS_INDEX + this.settings.get('dashboardUrl'));",
-            "line": 16,
-            "character": 24,
-            "scope": "(main)",
-            "a": "envConfig",
-            "reason": "'envConfig' is not defined."
-          }
-        ]
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/controller/scenario.js",
-      "folderPath": "test-source/js/controller",
-      "fileName": "scenario.js",
-      "packagePath": "/js/controller",
-      "webPath": "/js/controller",
-      "libFile": false,
-      "min": false,
-      "realName": "scenario",
-      "name": "scenario",
-      "camelName": "Scenario",
-      "processedFilePath": "test-output/js/controller/scenario.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 19
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/controller/classic/classic.js",
-      "folderPath": "test-source/js/controller/classic",
-      "fileName": "classic.js",
-      "packagePath": "/js/controller/classic",
-      "webPath": "/js/controller/classic",
-      "libFile": false,
-      "min": false,
-      "realName": "classic",
-      "name": "classic",
-      "camelName": "Classic",
-      "processedFilePath": "test-output/js/controller/classic/classic.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 52
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/controller/footer/footer.js",
-      "folderPath": "test-source/js/controller/footer",
-      "fileName": "footer.js",
-      "packagePath": "/js/controller/footer",
-      "webPath": "/js/controller/footer",
-      "libFile": false,
-      "min": false,
-      "realName": "footer",
-      "name": "footer",
-      "camelName": "Footer",
-      "processedFilePath": "test-output/js/controller/footer/footer.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 43
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/controller/header/header.js",
-      "folderPath": "test-source/js/controller/header",
-      "fileName": "header.js",
-      "packagePath": "/js/controller/header",
-      "webPath": "/js/controller/header",
-      "libFile": false,
-      "min": false,
-      "realName": "header",
-      "name": "header",
-      "camelName": "Header",
-      "processedFilePath": "test-output/js/controller/header/header.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 132
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": [
-          {
-            "id": "(error)",
-            "raw": "Identifier '{a}' is not in camel case.",
-            "code": "W106",
-            "evidence": "                            account.lead_value = 'N/A';",
-            "line": 106,
-            "character": 0,
-            "scope": "(main)",
-            "a": "lead_value",
-            "reason": "Identifier 'lead_value' is not in camel case."
-          }
-        ]
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/controller/myAccounts/accounts.js",
-      "folderPath": "test-source/js/controller/myAccounts",
-      "fileName": "accounts.js",
-      "packagePath": "/js/controller/myAccounts",
-      "webPath": "/js/controller/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "accounts",
-      "name": "accounts",
-      "camelName": "Accounts",
-      "processedFilePath": "test-output/js/controller/myAccounts/accounts.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 166
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/controller/myAccounts/activity.js",
-      "folderPath": "test-source/js/controller/myAccounts",
-      "fileName": "activity.js",
-      "packagePath": "/js/controller/myAccounts",
-      "webPath": "/js/controller/myAccounts",
-      "libFile": false,
-      "min": false,
-      "realName": "activity",
-      "name": "activity",
-      "camelName": "Activity",
-      "processedFilePath": "test-output/js/controller/myAccounts/activity.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 124
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/controller/myProfile/mySettings.js",
-      "folderPath": "test-source/js/controller/myProfile",
-      "fileName": "mySettings.js",
-      "packagePath": "/js/controller/myProfile",
-      "webPath": "/js/controller/myProfile",
-      "libFile": false,
-      "min": false,
-      "realName": "my_settings",
-      "name": "my_settings",
-      "camelName": "MySettings",
-      "processedFilePath": "test-output/js/controller/myProfile/mySettings.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 1
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/controller/myProfile/personalDetails.js",
-      "folderPath": "test-source/js/controller/myProfile",
-      "fileName": "personalDetails.js",
-      "packagePath": "/js/controller/myProfile",
-      "webPath": "/js/controller/myProfile",
-      "libFile": false,
-      "min": false,
-      "realName": "personal_details",
-      "name": "personal_details",
-      "camelName": "PersonalDetails",
-      "processedFilePath": "test-output/js/controller/myProfile/personalDetails.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 1
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": []
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/controller/myProfile/profile.js",
-      "folderPath": "test-source/js/controller/myProfile",
-      "fileName": "profile.js",
-      "packagePath": "/js/controller/myProfile",
-      "webPath": "/js/controller/myProfile",
-      "libFile": false,
-      "min": false,
-      "realName": "profile",
-      "name": "profile",
-      "camelName": "Profile",
-      "processedFilePath": "test-output/js/controller/myProfile/profile.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 256
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": [
-          {
-            "id": "(error)",
-            "raw": "'{a}' is not defined.",
-            "code": "W117",
-            "evidence": "                    ASSETS_INDEX: envConfig.ASSETS_INDEX",
-            "line": 26,
-            "character": 35,
-            "scope": "(main)",
-            "a": "envConfig",
-            "reason": "'envConfig' is not defined."
-          }
-        ]
-      },
-      "outputDirectory": "test-output",
-      "path": "test-source/js/controller/payments/common/index.js",
-      "folderPath": "test-source/js/controller/payments/common",
-      "fileName": "index.js",
-      "packagePath": "/js/controller/payments/common",
-      "webPath": "/js/controller/payments/common",
-      "libFile": false,
-      "min": false,
-      "realName": "index",
-      "name": "index",
-      "camelName": "Index",
-      "processedFilePath": "test-output/js/controller/payments/common/index.js",
-      "couldParseOriginalSource": true,
-      "couldParseProcessedSource": true,
-      "corrupted": false,
-      "numberOfLines": 99
-    },
-    {
-      "results": {},
-      "errors": {
-        "fixMyJsProc": [
-          {
-            "id": "(error)",
-            "raw": "Script URL.",
-            "code": "W107",
-            "evidence": "                    linkTo: 'javascript:;',",
-            "line": 48,
-            "character": 43,
-            "scope": "(main)",
-            "reason": "Script URL."
+            "a": "",
+            "reason": "No jsDoc Comments for method 'DetailsController'."
           },
           {
             "id": "(error)",
-            "raw": "Script URL.",
-            "code": "W107",
-            "evidence": "                    linkTo: 'javascript:;',",
-            "line": 55,
-            "character": 43,
+            "raw": "No jsDoc Comments for method 'init'.",
+            "code": "wfJD",
+            "evidence": "this.init = function() {",
+            "line": 35,
+            "character": -1,
             "scope": "(main)",
-            "reason": "Script URL."
+            "a": "",
+            "reason": "No jsDoc Comments for method 'init'."
+          },
+          {
+            "id": "(error)",
+            "raw": "No jsDoc Comments for method 'getMortgageDetails'.",
+            "code": "wfJD",
+            "evidence": "this.getMortgageDetails = function(inputData) {",
+            "line": 117,
+            "character": -1,
+            "scope": "(main)",
+            "a": "",
+            "reason": "No jsDoc Comments for method 'getMortgageDetails'."
+          },
+          {
+            "id": "(error)",
+            "raw": "No jsDoc Comments for method 'getDetails_Framework'.",
+            "code": "wfJD",
+            "evidence": "this.getDetails_Framework = function(inputData) {",
+            "line": 171,
+            "character": -1,
+            "scope": "(main)",
+            "a": "",
+            "reason": "No jsDoc Comments for method 'getDetails_Framework'."
+          },
+          {
+            "id": "(error)",
+            "raw": "No jsDoc Comments for method 'getDetails'.",
+            "code": "wfJD",
+            "evidence": "this.getDetails = function(inputData) {",
+            "line": 195,
+            "character": -1,
+            "scope": "(main)",
+            "a": "",
+            "reason": "No jsDoc Comments for method 'getDetails'."
+          },
+          {
+            "id": "(error)",
+            "raw": "No jsDoc Comments for method 'updateOverdraftSettings'.",
+            "code": "wfJD",
+            "evidence": "this.updateOverdraftSettings = function(inputData) {",
+            "line": 235,
+            "character": -1,
+            "scope": "(main)",
+            "a": "",
+            "reason": "No jsDoc Comments for method 'updateOverdraftSettings'."
           }
-        ]
+        ],
+        "jsDocNameFixerProc": [],
+        "fixClassDeclarationsProc": [],
+        "jsDoc3PrepProc": [],
+        "jsBeautifyProc": []
       },
       "outputDirectory": "test-output",
-      "path": "test-source/js/controller/sideMenu/megaMenu.js",
-      "folderPath": "test-source/js/controller/sideMenu",
-      "fileName": "megaMenu.js",
-      "packagePath": "/js/controller/sideMenu",
-      "webPath": "/js/controller/sideMenu",
+      "path": "temp-input/temp.js",
+      "folderPath": "temp-input",
+      "fileName": "temp.js",
+      "packagePath": "",
+      "webPath": "",
       "libFile": false,
       "min": false,
-      "realName": "mega_menu",
-      "name": "mega_menu",
-      "camelName": "MegaMenu",
-      "processedFilePath": "test-output/js/controller/sideMenu/megaMenu.js",
+      "realName": "temp",
+      "name": "temp",
+      "camelName": "Temp",
+      "processedFilePath": "test-output/temp.js",
       "couldParseOriginalSource": true,
+      "checkForRequiresMismatch": false,
+      "preprocessed": true,
+      "moduleName": "module:Details",
+      "jsDoccerProcData": {
+        "lines": 249,
+        "requires": [
+          "blue/event/channel/controller",
+          "blue/observable",
+          "dashboard/spec/myAccounts/cardDetails",
+          "dashboard/component/myAccounts/cardDetails",
+          "dashboard/spec/myAccounts/autoLoanDetails",
+          "dashboard/component/myAccounts/autoLoanDetails",
+          "dashboard/spec/myAccounts/autoLeaseDetails",
+          "dashboard/component/myAccounts/autoLeaseDetails",
+          "dashboard/spec/myAccounts/loanDetails",
+          "dashboard/component/myAccounts/loanDetails",
+          "bluespec/mortgage_account_header",
+          "dashboard/component/myAccounts/mortgageAccountHeader",
+          "dashboard/spec/myAccounts/investmentDetails",
+          "dashboard/component/myAccounts/investmentDetails",
+          "bluespec/dda_account_header",
+          "dashboard/component/myAccounts/ddaAccountHeader",
+          "bluespec/cds_account_header",
+          "dashboard/component/myAccounts/cdsAccountHeader",
+          "bluespec/prepaid_account_header",
+          "dashboard/component/myAccounts/prepaidAccountHeader",
+          "bluespec/dda_account_header",
+          "dashboard/component/myAccounts/ddaAccountHeader",
+          "bluespec/mortgage_account_things_you_can_do",
+          "dashboard/component/myAccounts/headerDropDown",
+          "bluespec/account_overdraft_protection",
+          "dashboard/component/myAccounts/accountOverdraftProtection"
+        ],
+        "className": "n/a",
+        "packagePath": "",
+        "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/temp-input",
+        "uses_Y": false,
+        "no_lib": true,
+        "inferencedClassName": "n/a",
+        "uses_$": false,
+        "chars": 11408,
+        "uses_YUI": false,
+        "fields": [],
+        "moduleName": "./temp",
+        "uses_console_log": false,
+        "uses_backbone": false,
+        "classes": {
+          "DetailsController": 5174
+        },
+        "methods": [
+          {
+            "name": "DetailsController",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 31,
+            "memberOf": "",
+            "doclet": "/**\n * @constructor\n */",
+            "description": "",
+            "return": "",
+            "classDeclarationFlag": true,
+            "line": "return function DetailsController() {",
+            "originalJsDocDescription": {}
+          },
+          {
+            "name": "init",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 35,
+            "memberOf": "this",
+            "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+            "description": "",
+            "classDeclarationFlag": false,
+            "line": "this.init = function() {",
+            "originalJsDocDescription": {}
+          },
+          {
+            "name": "index",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 115,
+            "memberOf": "this",
+            "doclet": "/**\n * Function for default action.\n * @function index\n * @memberOf module:Index~this\n * \n */",
+            "description": "\n Function for default action\n\n Function for default action.",
+            "classDeclarationFlag": false,
+            "line": "this.index = function() {};",
+            "originalJsDocDescription": {
+              "function": {
+                "tag": "function",
+                "line": 2,
+                "lastLine": 2,
+                "textStartsOnSameLine": true,
+                "text": "index"
+              },
+              "memberOf": {
+                "tag": "memberOf",
+                "line": 3,
+                "lastLine": -1,
+                "textStartsOnSameLine": true,
+                "text": "module:Index~this\n"
+              }
+            }
+          },
+          {
+            "name": "getMortgageDetails",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 117,
+            "memberOf": "this",
+            "doclet": "/**\n * @param inputData\n */",
+            "args": [
+              "inputData"
+            ],
+            "description": "",
+            "classDeclarationFlag": false,
+            "line": "this.getMortgageDetails = function(inputData) {",
+            "originalJsDocDescription": {}
+          },
+          {
+            "name": "getDetails_Framework",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 171,
+            "memberOf": "this",
+            "doclet": "/**\n * @param inputData\n */",
+            "args": [
+              "inputData"
+            ],
+            "description": "",
+            "classDeclarationFlag": false,
+            "line": "this.getDetails_Framework = function(inputData) {",
+            "originalJsDocDescription": {}
+          },
+          {
+            "name": "getDetails",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 195,
+            "memberOf": "this",
+            "doclet": "/**\n * @param inputData\n */",
+            "args": [
+              "inputData"
+            ],
+            "description": "",
+            "classDeclarationFlag": false,
+            "line": "this.getDetails = function(inputData) {",
+            "originalJsDocDescription": {}
+          },
+          {
+            "name": "updateOverdraftSettings",
+            "visibility": "public",
+            "static": false,
+            "lineNumber": 235,
+            "memberOf": "this",
+            "doclet": "/**\n * @param inputData\n */",
+            "args": [
+              "inputData"
+            ],
+            "description": "",
+            "classDeclarationFlag": false,
+            "line": "this.updateOverdraftSettings = function(inputData) {",
+            "originalJsDocDescription": {}
+          }
+        ],
+        "is_module": true,
+        "uses_alert": false,
+        "uses_y_log": false,
+        "requiresRaw": [],
+        "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/temp-input",
+        "fileName": "temp.js",
+        "strict": false,
+        "min": false,
+        "main": false
+      },
+      "testStubs": "\n",
       "couldParseProcessedSource": true,
       "corrupted": false,
-      "numberOfLines": 81
+      "numberOfLines": 244
     }
   ],
-  "path": "test-source",
-  "timeInSeconds": 4.04,
+  "path": "temp-input",
+  "timeInSeconds": 0.135,
   "outPath": "test-output",
   "testPath": "test-jstests",
   "docPath": "test-jsdocs",

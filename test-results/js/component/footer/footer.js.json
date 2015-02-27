@@ -1,58 +1,12 @@
 {
-  "results": {
-    "amdProc": {
-      "requires": [],
-      "moduleName": "footer",
-      "AMD": true,
-      "webPath": "/js/component/footer",
-      "min": false,
-      "main": 0,
-      "uses_$": false,
-      "uses_Y": false,
-      "uses_alert": false,
-      "strict": false
-    }
-  },
+  "results": {},
   "errors": {
-    "jsBeautifyProc": [],
-    "jsDoccerProc": [
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'init'.",
-        "code": "wfJD",
-        "evidence": "init: function () {",
-        "line": 4,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'init'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'clickAction'.",
-        "code": "wfJD",
-        "evidence": "clickAction: function () {",
-        "line": 7,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'clickAction'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'updateFooter'.",
-        "code": "wfJD",
-        "evidence": "updateFooter: function (data) {",
-        "line": 10,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'updateFooter'."
-      }
-    ],
+    "minFilter": [],
+    "parseFilter": [],
+    "thirdPartyFilter": [],
+    "badCharactersProc": [],
     "jsDocNameFixerProc": [],
-    "fixClassDeclarationsProc": [],
-    "jsDoc3PrepProc": []
+    "jsHintProc": []
   },
   "outputDirectory": "test-output",
   "path": "test-source/js/component/footer/footer.js",
@@ -67,81 +21,7 @@
   "camelName": "Footer",
   "processedFilePath": "test-output/js/component/footer/footer.js",
   "couldParseOriginalSource": true,
-  "checkForRequiresMismatch": true,
-  "preprocessed": true,
-  "jsDoccerProcData": {
-    "lines": 15,
-    "requires": [],
-    "className": "n/a",
-    "packagePath": "",
-    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/footer",
-    "uses_Y": false,
-    "no_lib": true,
-    "inferencedClassName": "n/a",
-    "uses_$": false,
-    "chars": 314,
-    "uses_YUI": false,
-    "fields": [],
-    "moduleName": "./footer",
-    "uses_console_log": false,
-    "uses_backbone": false,
-    "classes": {},
-    "methods": [
-      {
-        "name": "init",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 4,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "init: function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "clickAction",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 7,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
-        "description": "",
-        "return": "?",
-        "classDeclarationFlag": false,
-        "line": "clickAction: function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "updateFooter",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 10,
-        "memberOf": "",
-        "doclet": "/**\n * @param data\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
-        "args": [
-          "data"
-        ],
-        "description": "",
-        "return": "?",
-        "classDeclarationFlag": false,
-        "line": "updateFooter: function (data) {",
-        "originalJsDocDescription": {}
-      }
-    ],
-    "is_module": true,
-    "uses_alert": false,
-    "uses_y_log": false,
-    "requiresRaw": [],
-    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/footer",
-    "fileName": "footer.js",
-    "strict": false,
-    "min": false,
-    "main": 0
-  },
-  "possibleClassname": "",
-  "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 31
+  "numberOfLines": 16
 }

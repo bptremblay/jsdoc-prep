@@ -1,80 +1,57 @@
 {
-  "results": {
-    "amdProc": {
-      "requires": [],
-      "moduleName": "account_activity",
-      "AMD": true,
-      "webPath": "/js/component/myAccounts",
-      "min": false,
-      "main": 0,
-      "uses_$": false,
-      "uses_Y": false,
-      "uses_alert": false,
-      "strict": false
-    }
-  },
+  "results": {},
   "errors": {
-    "jsBeautifyProc": [],
-    "jsDoccerProc": [
+    "minFilter": [],
+    "parseFilter": [],
+    "thirdPartyFilter": [],
+    "badCharactersProc": [
       {
         "id": "(error)",
-        "raw": "No jsDoc Comments for method 'updateActivity'.",
-        "code": "wfJD",
-        "evidence": "function updateActivity(activityType, data, sortStyle) {",
-        "line": 6,
+        "raw": "Bad character(s) found.",
+        "code": "wfBC",
+        "evidence": "",
+        "line": -1,
         "character": -1,
         "scope": "(main)",
         "a": "",
-        "reason": "No jsDoc Comments for method 'updateActivity'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'init'.",
-        "code": "wfJD",
-        "evidence": "init: function () {",
-        "line": 23,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'init'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'list'.",
-        "code": "wfJD",
-        "evidence": "list: function (inputData) {",
-        "line": 26,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'list'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'reverseOrder'.",
-        "code": "wfJD",
-        "evidence": "reverseOrder: function (data) {",
-        "line": 65,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'reverseOrder'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'selectTransactionDetails'.",
-        "code": "wfJD",
-        "evidence": "selectTransactionDetails: function () {}",
-        "line": 81,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'selectTransactionDetails'."
+        "reason": "Bad character(s) found: ''\\t''."
       }
     ],
     "jsDocNameFixerProc": [],
-    "fixClassDeclarationsProc": [],
-    "jsDoc3PrepProc": []
+    "jsHintProc": [
+      {
+        "id": "(error)",
+        "raw": "['{a}'] is better written in dot notation.",
+        "code": "W069",
+        "evidence": "                        updateActivity.call(this, \"pendingActivity\", groupData.pendingData.list, this.model.get()[\"pendingActivitySortStyle\"]);",
+        "line": 57,
+        "character": 114,
+        "scope": "(main)",
+        "a": "pendingActivitySortStyle",
+        "reason": "['pendingActivitySortStyle'] is better written in dot notation."
+      },
+      {
+        "id": "(error)",
+        "raw": "['{a}'] is better written in dot notation.",
+        "code": "W069",
+        "evidence": "                        updateActivity.call(this, \"postedActivity\", groupData.postedData.list, this.model.get()[\"postedActivitySortStyle\"]);",
+        "line": 58,
+        "character": 112,
+        "scope": "(main)",
+        "a": "postedActivitySortStyle",
+        "reason": "['postedActivitySortStyle'] is better written in dot notation."
+      },
+      {
+        "id": "(error)",
+        "raw": "Expected an assignment or function call and instead saw an expression.",
+        "code": "W030",
+        "evidence": "            this.model.lens(data.dataPath + \"SortStyle\").set(\"DES\");",
+        "line": 80,
+        "character": 67,
+        "scope": "(main)",
+        "reason": "Expected an assignment or function call and instead saw an expression."
+      }
+    ]
   },
   "outputDirectory": "test-output",
   "path": "test-source/js/component/myAccounts/accountActivity.js",
@@ -85,116 +62,11 @@
   "libFile": false,
   "min": false,
   "realName": "account_activity",
-  "name": "accountActivity",
+  "name": "account_activity",
   "camelName": "AccountActivity",
   "processedFilePath": "test-output/js/component/myAccounts/accountActivity.js",
   "couldParseOriginalSource": true,
-  "checkForRequiresMismatch": true,
-  "preprocessed": true,
-  "jsDoccerProcData": {
-    "lines": 83,
-    "requires": [],
-    "className": "n/a",
-    "packagePath": "",
-    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
-    "uses_Y": false,
-    "no_lib": true,
-    "inferencedClassName": "n/a",
-    "uses_$": false,
-    "chars": 3834,
-    "uses_YUI": false,
-    "fields": [],
-    "moduleName": "./accountActivity",
-    "uses_console_log": false,
-    "uses_backbone": false,
-    "classes": {},
-    "methods": [
-      {
-        "name": "updateActivity",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 6,
-        "memberOf": "",
-        "doclet": "/**\n * @param activityType\n * @param data\n * @param sortStyle\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
-        "args": [
-          "activityType",
-          "data",
-          "sortStyle"
-        ],
-        "description": "",
-        "return": "?",
-        "classDeclarationFlag": false,
-        "line": "function updateActivity(activityType, data, sortStyle) {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "init",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 23,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "init: function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "list",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 26,
-        "memberOf": "",
-        "doclet": "/**\n * @param inputData\n */",
-        "args": [
-          "inputData"
-        ],
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "list: function (inputData) {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "reverseOrder",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 65,
-        "memberOf": "",
-        "doclet": "/**\n * @param data\n */",
-        "args": [
-          "data"
-        ],
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "reverseOrder: function (data) {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "selectTransactionDetails",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 81,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "selectTransactionDetails: function () {}",
-        "originalJsDocDescription": {}
-      }
-    ],
-    "is_module": true,
-    "uses_alert": false,
-    "uses_y_log": false,
-    "requiresRaw": [],
-    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/myAccounts",
-    "fileName": "accountActivity.js",
-    "strict": false,
-    "min": false,
-    "main": 0
-  },
-  "possibleClassname": "",
-  "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 106
+  "numberOfLines": 93
 }

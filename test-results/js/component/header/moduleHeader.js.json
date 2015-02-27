@@ -1,47 +1,12 @@
 {
-  "results": {
-    "amdProc": {
-      "requires": [],
-      "moduleName": "module_header",
-      "AMD": true,
-      "webPath": "/js/component/header",
-      "min": false,
-      "main": 0,
-      "uses_$": false,
-      "uses_Y": false,
-      "uses_alert": false,
-      "strict": false
-    }
-  },
+  "results": {},
   "errors": {
-    "jsBeautifyProc": [],
-    "jsDoccerProc": [
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'init'.",
-        "code": "wfJD",
-        "evidence": "init: function () {",
-        "line": 4,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'init'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'closeProfile'.",
-        "code": "wfJD",
-        "evidence": "closeProfile: function () {",
-        "line": 7,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'closeProfile'."
-      }
-    ],
+    "minFilter": [],
+    "parseFilter": [],
+    "thirdPartyFilter": [],
+    "badCharactersProc": [],
     "jsDocNameFixerProc": [],
-    "fixClassDeclarationsProc": [],
-    "jsDoc3PrepProc": []
+    "jsHintProc": []
   },
   "outputDirectory": "test-output",
   "path": "test-source/js/component/header/moduleHeader.js",
@@ -52,68 +17,11 @@
   "libFile": false,
   "min": false,
   "realName": "module_header",
-  "name": "moduleHeader",
+  "name": "module_header",
   "camelName": "ModuleHeader",
   "processedFilePath": "test-output/js/component/header/moduleHeader.js",
   "couldParseOriginalSource": true,
-  "checkForRequiresMismatch": true,
-  "preprocessed": true,
-  "jsDoccerProcData": {
-    "lines": 11,
-    "requires": [],
-    "className": "n/a",
-    "packagePath": "",
-    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/header",
-    "uses_Y": false,
-    "no_lib": true,
-    "inferencedClassName": "n/a",
-    "uses_$": false,
-    "chars": 229,
-    "uses_YUI": false,
-    "fields": [],
-    "moduleName": "./moduleHeader",
-    "uses_console_log": false,
-    "uses_backbone": false,
-    "classes": {},
-    "methods": [
-      {
-        "name": "init",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 4,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "init: function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "closeProfile",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 7,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "closeProfile: function () {",
-        "originalJsDocDescription": {}
-      }
-    ],
-    "is_module": true,
-    "uses_alert": false,
-    "uses_y_log": false,
-    "requiresRaw": [],
-    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/header",
-    "fileName": "moduleHeader.js",
-    "strict": false,
-    "min": false,
-    "main": 0
-  },
-  "possibleClassname": "",
-  "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 21
+  "numberOfLines": 11
 }

@@ -1,79 +1,12 @@
 {
-  "results": {
-    "amdProc": {
-      "requires": [
-        "blue/observable",
-        "dashboard/spec/myProfile/profileContainer",
-        "dashboard/component/myProfile/profileContainer",
-        "dashboard/spec/myProfile/profileLeftMenu",
-        "dashboard/component/myProfile/profileLeftMenu",
-        "dashboard/spec/myProfile/profileTheBasics",
-        "dashboard/component/myProfile/profileTheBasics",
-        "dashboard/spec/myProfile/profilePhone",
-        "dashboard/component/myProfile/profilePhone"
-      ],
-      "moduleName": "profile",
-      "AMD": true,
-      "webPath": "/js/controller/myProfile",
-      "min": false,
-      "main": false,
-      "uses_$": false,
-      "uses_Y": false,
-      "uses_alert": false,
-      "strict": false
-    }
-  },
+  "results": {},
   "errors": {
-    "jsBeautifyProc": [],
-    "jsDoccerProc": [
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'ProfileController'.",
-        "code": "wfJD",
-        "evidence": "return function ProfileController() {",
-        "line": 2,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'ProfileController'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'init'.",
-        "code": "wfJD",
-        "evidence": "this.init = function () {",
-        "line": 9,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'init'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'index'.",
-        "code": "wfJD",
-        "evidence": "this.index = function () {",
-        "line": 180,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'index'."
-      },
-      {
-        "id": "(error)",
-        "raw": "No jsDoc Comments for method 'setProfileContent'.",
-        "code": "wfJD",
-        "evidence": "this.setProfileContent = function (selection) {",
-        "line": 200,
-        "character": -1,
-        "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'setProfileContent'."
-      }
-    ],
+    "minFilter": [],
+    "parseFilter": [],
+    "thirdPartyFilter": [],
+    "badCharactersProc": [],
     "jsDocNameFixerProc": [],
-    "fixClassDeclarationsProc": [],
-    "jsDoc3PrepProc": []
+    "jsHintProc": []
   },
   "outputDirectory": "test-output",
   "path": "test-source/js/controller/myProfile/profile.js",
@@ -88,103 +21,7 @@
   "camelName": "Profile",
   "processedFilePath": "test-output/js/controller/myProfile/profile.js",
   "couldParseOriginalSource": true,
-  "checkForRequiresMismatch": true,
-  "preprocessed": true,
-  "jsDoccerProcData": {
-    "lines": 242,
-    "requires": [
-      "blue/observable",
-      "dashboard/spec/myProfile/profileContainer",
-      "dashboard/component/myProfile/profileContainer",
-      "dashboard/spec/myProfile/profileLeftMenu",
-      "dashboard/component/myProfile/profileLeftMenu",
-      "dashboard/spec/myProfile/profileTheBasics",
-      "dashboard/component/myProfile/profileTheBasics",
-      "dashboard/spec/myProfile/profilePhone",
-      "dashboard/component/myProfile/profilePhone"
-    ],
-    "className": "n/a",
-    "packagePath": "",
-    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myProfile",
-    "uses_Y": false,
-    "no_lib": true,
-    "inferencedClassName": "n/a",
-    "uses_$": false,
-    "chars": 7555,
-    "uses_YUI": false,
-    "fields": [],
-    "moduleName": "./profile",
-    "uses_console_log": false,
-    "uses_backbone": false,
-    "classes": {
-      "ProfileController": 4345
-    },
-    "methods": [
-      {
-        "name": "ProfileController",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 2,
-        "memberOf": "",
-        "doclet": "/**\n * @constructor\n */",
-        "description": "",
-        "return": "",
-        "classDeclarationFlag": true,
-        "line": "return function ProfileController() {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "init",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 9,
-        "memberOf": "this",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "this.init = function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "index",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 180,
-        "memberOf": "this",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "this.index = function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "setProfileContent",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 200,
-        "memberOf": "this",
-        "doclet": "/**\n * @param selection\n */",
-        "args": [
-          "selection"
-        ],
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "this.setProfileContent = function (selection) {",
-        "originalJsDocDescription": {}
-      }
-    ],
-    "is_module": true,
-    "uses_alert": false,
-    "uses_y_log": false,
-    "requiresRaw": [],
-    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/controller/myProfile",
-    "fileName": "profile.js",
-    "strict": false,
-    "min": false,
-    "main": false
-  },
-  "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 268
+  "numberOfLines": 256
 }

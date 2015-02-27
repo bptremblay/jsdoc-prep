@@ -1,47 +1,35 @@
 {
-  "results": {
-    "amdProc": {
-      "requires": [],
-      "moduleName": "my_info",
-      "AMD": true,
-      "webPath": "/js/component/header",
-      "min": false,
-      "main": 0,
-      "uses_$": false,
-      "uses_Y": false,
-      "uses_alert": false,
-      "strict": false
-    }
-  },
+  "results": {},
   "errors": {
-    "jsBeautifyProc": [],
-    "jsDoccerProc": [
+    "minFilter": [],
+    "parseFilter": [],
+    "thirdPartyFilter": [],
+    "badCharactersProc": [],
+    "jsDocNameFixerProc": [],
+    "jsHintProc": [
       {
         "id": "(error)",
-        "raw": "No jsDoc Comments for method 'init'.",
-        "code": "wfJD",
-        "evidence": "init: function () {",
-        "line": 4,
-        "character": -1,
+        "raw": "'{a}' is not defined.",
+        "code": "W117",
+        "evidence": "            this.profileUrl = envConfig.PROFILE_INDEX + context.settings.get('profileUrl');",
+        "line": 13,
+        "character": 31,
         "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'init'."
+        "a": "envConfig",
+        "reason": "'envConfig' is not defined."
       },
       {
         "id": "(error)",
-        "raw": "No jsDoc Comments for method 'showProfile'.",
-        "code": "wfJD",
-        "evidence": "showProfile: function () {",
-        "line": 7,
-        "character": -1,
+        "raw": "'{a}' is not defined.",
+        "code": "W117",
+        "evidence": "            this.logOutUrl = envConfig.AUTH_INDEX + context.settings.get('logOutUrl');",
+        "line": 14,
+        "character": 30,
         "scope": "(main)",
-        "a": "",
-        "reason": "No jsDoc Comments for method 'showProfile'."
+        "a": "envConfig",
+        "reason": "'envConfig' is not defined."
       }
-    ],
-    "jsDocNameFixerProc": [],
-    "fixClassDeclarationsProc": [],
-    "jsDoc3PrepProc": []
+    ]
   },
   "outputDirectory": "test-output",
   "path": "test-source/js/component/header/myInfo.js",
@@ -52,68 +40,11 @@
   "libFile": false,
   "min": false,
   "realName": "my_info",
-  "name": "myInfo",
+  "name": "my_info",
   "camelName": "MyInfo",
   "processedFilePath": "test-output/js/component/header/myInfo.js",
   "couldParseOriginalSource": true,
-  "checkForRequiresMismatch": true,
-  "preprocessed": true,
-  "jsDoccerProcData": {
-    "lines": 16,
-    "requires": [],
-    "className": "n/a",
-    "packagePath": "",
-    "directoryPath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/header",
-    "uses_Y": false,
-    "no_lib": true,
-    "inferencedClassName": "n/a",
-    "uses_$": false,
-    "chars": 433,
-    "uses_YUI": false,
-    "fields": [],
-    "moduleName": "./myInfo",
-    "uses_console_log": false,
-    "uses_backbone": false,
-    "classes": {},
-    "methods": [
-      {
-        "name": "init",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 4,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "init: function () {",
-        "originalJsDocDescription": {}
-      },
-      {
-        "name": "showProfile",
-        "visibility": "public",
-        "static": false,
-        "lineNumber": 7,
-        "memberOf": "",
-        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-        "description": "",
-        "classDeclarationFlag": false,
-        "line": "showProfile: function () {",
-        "originalJsDocDescription": {}
-      }
-    ],
-    "is_module": true,
-    "uses_alert": false,
-    "uses_y_log": false,
-    "requiresRaw": [],
-    "basePath": "/Users/f558910/Documents/Projects/jsdoc-prep/test-source/js/component/header",
-    "fileName": "myInfo.js",
-    "strict": false,
-    "min": false,
-    "main": 0
-  },
-  "possibleClassname": "",
-  "testStubs": "\n",
   "couldParseProcessedSource": true,
   "corrupted": false,
-  "numberOfLines": 26
+  "numberOfLines": 17
 }
