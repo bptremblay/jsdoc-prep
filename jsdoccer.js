@@ -3,6 +3,15 @@ var _path = require('path');
 var _wrench = require('wrench');
 var uid = 0;
 var nodes = [];
+// Doctor the comment. Can cause problems.
+var FIX_COMMENT_GRAMMAR = true;
+// Try to normalize module names so hand-coded ones match. Can cause problems.
+var FIX_MODULE_NAMES = true;
+
+function fixModuleName(moduleName, walkerObj){
+    var usedModuleName = walkerObj.moduleName;
+    return moduleName;
+}
 /**
  * Read file.
  * 
@@ -398,8 +407,8 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
         // Inline tag - create a link.
         'member' : 1,
         // Document a member.
-        // 'memberof': 1,
-        // 'memberOf': 1,
+        //'memberof': 1,
+        //'memberOf': 1,
         // This symbol belongs to a parent symbol.
         // 'method': 1,
         // Describe a method or function.
@@ -953,7 +962,11 @@ function linesAreEmpty(lines) {
 
 function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
         chunkIndex) {
+    doclet = doclet.split('@Returns').join('@return');
     doclet = doclet.split('@returns').join('@return');
+    doclet = doclet.split('@Desc').join('@desc');
+    doclet = doclet.split('@Param').join('@param');
+    doclet = doclet.split('@desc ').join('@description ');
     var commentBuffer = '';
     var docletData = {};
     docletData.params = [];
@@ -1237,6 +1250,18 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             textBuffer = stripStarLines(textBuffer);
             // console.log(textBuffer);
             tag.text = textBuffer.join('\n');
+            if (tag.text.trim().indexOf(':') === 0 && FIX_COMMENT_GRAMMAR){
+                //console.warn(tag.text);
+                var stringBuffer = tag.text.trim().split('');
+                stringBuffer.shift();
+                tag.text = stringBuffer.join('');
+                
+                tag.text = capitalize(decamelize(tag.text).split('_').join(' '));
+                var lastChar = tag.text.charAt(tag.text.length-1);
+                if (lastChar !== '.' && lastChar !== '?' && lastChar !== '!' && lastChar !== ':'){
+                    tag.text += '.';
+                }
+            }
             // console.log(tag);
         }
     } else {
@@ -1510,16 +1535,17 @@ function stripWhite(input) {
  */
 function getClosestComment(input, nodeStart, ast, wrapper) {
     // console.warn('getClosestComment');
-    //console.warn(ast.comments);
+    // console.warn(ast.comments);
     var endpoint = ast.comments.length - 1;
-    //console.warn(endpoint);
+    // console.warn(endpoint);
     // todo: move to shared ref
     var lines = input.split('\n');
     for (var index = endpoint; index > -1; index--) {
         var comment = ast.comments[index];
-        //console.warn(comment);
+        // console.warn(comment);
         if (comment.lineNumber != null) {
-            //console.warn('getClosestComment found a comment already used! skip and keep searching up...');
+            // console.warn('getClosestComment found a comment already used!
+            // skip and keep searching up...');
             continue;
         }
         var range = comment.range;
@@ -1527,22 +1553,23 @@ function getClosestComment(input, nodeStart, ast, wrapper) {
         if (commentBody.indexOf('/**') === -1) {
             continue;
         }
-        //var lineNumber = getLineNumber(input, comment);
-        //comment.lineNumber = lineNumber;
+        // var lineNumber = getLineNumber(input, comment);
+        // comment.lineNumber = lineNumber;
         var commentEnd = range[1];
         if (nodeStart > commentEnd) {
             var corpus = (input.substring(commentEnd, nodeStart).trim());
             if (corpus.length === 0) {
                 var lineNumber = getLineNumber(input, comment);
 
-                //console.warn('getClosestComment() found ' + commentBody + ' for ' + wrapper.name);
+                // console.warn('getClosestComment() found ' + commentBody + '
+                // for ' + wrapper.name);
                 var block = getLines(lines, lineNumber - 1,
                         wrapper.lineNumber - 1);
                 var funxChunx = block.split('function ');
-                //console.warn(funxChunx.length);
+                // console.warn(funxChunx.length);
                 if (block.split('/**').length > 3 || funxChunx.length > 3) {
-                    //console.warn('ALL THE TEXT FOR ' + wrapper.name + ':');
-                    //console.warn(block);
+                    // console.warn('ALL THE TEXT FOR ' + wrapper.name + ':');
+                    // console.warn(block);
                     return -1;
                 }
                 comment.lineNumber = lineNumber;
@@ -1553,7 +1580,7 @@ function getClosestComment(input, nodeStart, ast, wrapper) {
             // }
         }
     }
-    //console.warn('>>>>> NO COMMENT for ' + wrapper.name);
+    // console.warn('>>>>> NO COMMENT for ' + wrapper.name);
     // // console.warn(nodeStart);
     return -1;
 }
@@ -1568,13 +1595,14 @@ function getClosestComment(input, nodeStart, ast, wrapper) {
  */
 function getExistingComment(input, obj, ast, wrapper) {
     var astNodeType = obj.type;
-    //console.warn('look for comment for ' + wrapper.name + ' in ' + astNodeType);
+    // console.warn('look for comment for ' + wrapper.name + ' in ' +
+    // astNodeType);
     var range = obj.range;
     var rangeStart = range[0];
     // console.warn(obj);
     // console.warn('Calling getClosestComment() for ' + obj.name);
-    //    console.warn('Calling getClosestComment() for NODE ' + wrapper.name
-    //            + ' of type ' + astNodeType);
+    // console.warn('Calling getClosestComment() for NODE ' + wrapper.name
+    // + ' of type ' + astNodeType);
     var nearComment = getClosestComment(input, rangeStart, ast, wrapper);
     if (nearComment === -1 && obj.parentNode != -1) {
         var parentNode = getNodeByUid(obj.parentNode);
@@ -1582,8 +1610,8 @@ function getExistingComment(input, obj, ast, wrapper) {
         // console.warn('look for comment in ' + astNodeType);
         var range = parentNode.range;
         var rangeStart = range[0];
-        //        console.warn('Calling getClosestComment() for PARENT of '
-        //                + wrapper.name + ' of type ' + astNodeType);
+        // console.warn('Calling getClosestComment() for PARENT of '
+        // + wrapper.name + ' of type ' + astNodeType);
         var nearComment = getClosestComment(input, rangeStart, ast, wrapper);
         if (nearComment === -1 && parentNode.parentNode != -1) {
             parentNode = getNodeByUid(parentNode.parentNode);
@@ -1599,14 +1627,14 @@ function getExistingComment(input, obj, ast, wrapper) {
             }
             range = parentNode.range;
             rangeStart = range[0];
-            //            console.warn('Calling getClosestComment() for GRANDPARENT of '
-            //                    + wrapper.name + ' of type ' + astNodeType);
+            // console.warn('Calling getClosestComment() for GRANDPARENT of '
+            // + wrapper.name + ' of type ' + astNodeType);
             nearComment = getClosestComment(input, rangeStart, ast, wrapper);
         }
     }
-    //    if (nearComment !== -1) {
-    //        console.warn('getExistingComment() found... ' + nearComment);
-    //    }
+    // if (nearComment !== -1) {
+    // console.warn('getExistingComment() found... ' + nearComment);
+    // }
     return nearComment;
 }
 
@@ -2058,27 +2086,25 @@ function addMissingComments(walkerObj, errors) {
                 errors, walkerObj);
         return 'ERROR';
     }
-    
+
     var moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
-    if (input.indexOf('@exports') !== -1){
+    if (input.indexOf('@exports') !== -1) {
         // get the module name given there...
         var modChunk = input.split('@exports')[1];
         modChunk = modChunk.split('\n')[0].trim();
-        
+
         moduleName = 'module:' + modChunk;
-        //throw(new Error(moduleName));
-    }
-    else if (input.indexOf('@module') !== -1){
+        // throw(new Error(moduleName));
+    } else if (input.indexOf('@module') !== -1) {
         // get the module name given there...
         var modChunk = input.split('@module')[1];
         modChunk = modChunk.split('\n')[0].trim();
-        
+
         moduleName = 'module:' + modChunk;
-        //throw(new Error(moduleName));
-    }
-    else{
+        // throw(new Error(moduleName));
+    } else {
         moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
-        
+
     }
     walkerObj.moduleName = moduleName;
     console.warn('USE THIS AS THE MODULE NAME??? ' + moduleName);
@@ -2086,10 +2112,10 @@ function addMissingComments(walkerObj, errors) {
     var hasLends = getCommentWith(input, ast.comments, '@lends');
     if (hasLends != null && incompleteLends == null) {
 
-        //      { type: 'Block',
-        //      value: '* @lends module:mvc/mav ',
-        //      range: [ 426, 454 ],
-        //      commentBody: '/** @lends module:mvc/mav */' }
+        // { type: 'Block',
+        // value: '* @lends module:mvc/mav ',
+        // range: [ 426, 454 ],
+        // commentBody: '/** @lends module:mvc/mav */' }
 
         if (hasLends.value.indexOf('module:') !== -1) {
             if (hasLends.value.indexOf('~') === -1) {
@@ -2207,7 +2233,7 @@ function addMissingComments(walkerObj, errors) {
     // console.warn(input);
     for (var lineIndex = 0; lineIndex < lines.length; lineIndex++) {
         var line = lines[lineIndex];
-        //console.warn(lineIndex + ' --> ' + line);
+        // console.warn(lineIndex + ' --> ' + line);
         var trimLine = line.trim();
         // || trimLine.indexOf('/*') === 0
         if (trimLine.indexOf('//') === 0 || trimLine.length === 0) {
@@ -2378,18 +2404,19 @@ function addMissingComments(walkerObj, errors) {
         if (lendsPath.charAt(lendsPath.length - 1) === '#') {
             lendsPath = lendsPath.substring(0, lendsPath.length - 1);
             console.warn('removed hash: ' + lendsPath);
-            //lendsPath += '~' + incompleteLends.possibleClassName + '#';
+            // lendsPath += '~' + incompleteLends.possibleClassName + '#';
             lendsPath += '~' + incompleteLends.possibleClassName;
         } else {
             lendsPath += '~' + incompleteLends.possibleClassName;
         }
-        
+
         // always add this for classes when using @lends
         lendsPath += '#';
-        
-       // console.warn(incompleteLends);
 
-        //incompleteLends.value.trim() + '~' + incompleteLends.possibleClassName
+        // console.warn(incompleteLends);
+
+        // incompleteLends.value.trim() + '~' +
+        // incompleteLends.possibleClassName
         console.warn('Added class to @lends: ' + lendsPath);
         newFile = newFile.split(incompleteLends.value).join(lendsPath);
         incompleteLends = null;
@@ -2399,27 +2426,29 @@ function addMissingComments(walkerObj, errors) {
         var ctorName = spliceInlineConstructor.name;
         // add module
 
-        
         var ctorLine = spliceInlineConstructor.line;
-        if (ctorLine.indexOf('(') !== -1){
+        if (ctorLine.indexOf('(') !== -1) {
             ctorLine = ctorLine.split('(')[0];
         }
 
-        //console.warn("SPLICE IN CONSTRUCTOR TAG for " + ctorName);
-        
+        // console.warn("SPLICE IN CONSTRUCTOR TAG for " + ctorName);
+
         if (newFile.indexOf(ctorLine) !== -1) {
             var where = ctorLine.indexOf(':');
             var fixedCtorLine = ctorLine.substring(0, where + 1);
             fixedCtorLine += ' /** @constructor ' + ctorName + ' */';
             fixedCtorLine += ctorLine.substring(where + 1);
-            //console.warn("SPLICE IN CONSTRUCTOR TAG: " + fixedCtorLine);
+            // console.warn("SPLICE IN CONSTRUCTOR TAG: " + fixedCtorLine);
             var ctorSimple = '@constructor ' + ctorName;
-            if (newFile.indexOf(ctorSimple) !== -1){
-                newFile = newFile.split(ctorSimple).join('@fixme: do not use the constructor tag unless it precedes directly a constructor function'); 
+            if (newFile.indexOf(ctorSimple) !== -1) {
+                newFile = newFile
+                        .split(ctorSimple)
+                        .join(
+                                '@fixme: do not use the constructor tag unless it precedes directly a constructor function');
             }
-            
-            //newFile = newFile.split(ctorLine).join(fixedCtorLine);
-           // console.warn(newFile);
+
+            // newFile = newFile.split(ctorLine).join(fixedCtorLine);
+            // console.warn(newFile);
 
         } else {
             console.warn("SPLICE IN CONSTRUCTOR TAG for " + ctorName);
@@ -2495,8 +2524,8 @@ function getMethodOnLine(methodArray, lineNumber, ast, input) {
                 // @WARNING this is only true if the method is on the next
                 // non-comment/non-whitespace line after this comment!!!
 
-                //                console.warn("Found ORIGINAL comment on line " + lineNumber
-                //                        + ". " + method.name);
+                // console.warn("Found ORIGINAL comment on line " + lineNumber
+                // + ". " + method.name);
 
                 method.commentBody = commentBody;
                 method.oldComment = comment;
@@ -2686,8 +2715,6 @@ function generateComment(functionWrapper, ast, walkerObj, input,
     var hasConstructsTag = null;
     var hasConstructorTag = null;
     var hasLendsTag = null;
-    
-   
 
     // TODO: Rewrite this to dump the tags in the original order they were
     // declared.
@@ -2699,9 +2726,10 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         hasConstructorTag = searchTags(doclet, 'constructor');
         hasLendsTag = searchTags(doclet, 'lends');
 
-        //        if (hasConstructorTag) {
-        //            console.warn('hasConstructorTag: ' + JSON.stringify(hasConstructorTag));
-        //        }
+        // if (hasConstructorTag) {
+        // console.warn('hasConstructorTag: ' +
+        // JSON.stringify(hasConstructorTag));
+        // }
 
         if (doclet.freeText && doclet.freeText != '') {
             // console.warn(doclet.freeText);
@@ -2802,28 +2830,28 @@ function generateComment(functionWrapper, ast, walkerObj, input,
 
         // line: 'constructor: function ControllerRegistry(){',
         // name: 'ControllerRegistry'
-        
-        if (incompleteLends != null && incompleteLends.possibleClassName === functionWrapper.name) {
+
+        if (incompleteLends != null
+                && incompleteLends.possibleClassName === functionWrapper.name) {
             var justPath = incompleteLends.value;
-            if (justPath.indexOf('module:') !== -1){
-                //value: '* @lends module:blue/validate/validator# ',
+            if (justPath.indexOf('module:') !== -1) {
+                // value: '* @lends module:blue/validate/validator# ',
                 justPath = justPath.split('module:')[1];
                 justPath = justPath.split('#').join('');
                 justPath = justPath.trim();
-                if (justPath.indexOf(functionWrapper.name) === -1){
+                if (justPath.indexOf(functionWrapper.name) === -1) {
                     justPath += '~' + functionWrapper.name;
                 }
                 justPath = 'module:' + justPath;
-                
+
                 incompleteLends.fullClassName = justPath;
-                
-                
-                
-                //var prefix = incompleteLends.value.split('module:')[0];
-                //incompleteLends.value = prefix + justPath;
-                console.warn("!!! Add full path to constructor? " + incompleteLends.fullClassName);
+
+                // var prefix = incompleteLends.value.split('module:')[0];
+                // incompleteLends.value = prefix + justPath;
+                console.warn("!!! Add full path to constructor? "
+                        + incompleteLends.fullClassName);
             }
-           
+
         }
 
         console
@@ -2834,32 +2862,32 @@ function generateComment(functionWrapper, ast, walkerObj, input,
                     .warn("Constructor, but it's to the RIGHT of \"constructor:\"");
             console.warn('     "' + functionWrapper.line + '"');
             var moduleName = walkerObj.moduleName;
-            if (incompleteLends != null && incompleteLends.fullClassName != null){
-                commentBlock.push(' * @constructs ' + incompleteLends.fullClassName);
+            if (incompleteLends != null
+                    && incompleteLends.fullClassName != null) {
+                commentBlock.push(' * @constructs '
+                        + incompleteLends.fullClassName);
                 incompleteLends.fullClassName = null;
                 delete incompleteLends.fullClassName;
+            } else {
+                // console.warn(walkerObj.results.amdProc.moduleName);
+
+                commentBlock.push(' * @constructs ' + moduleName + '~'
+                        + functionWrapper.name);
             }
-            else{
-                //console.warn(walkerObj.results.amdProc.moduleName);
-                
-                commentBlock.push(' * @constructs ' + moduleName + '~' + functionWrapper.name);
-            }
-            
-            
-            
+
             spliceInlineConstructor = functionWrapper;
         } else {
             commentBlock.push(' * @constructor');
         }
-        
-        //commentBlock.push(' * @constructor');
-        //console.warn(functionWrapper);
+
+        // commentBlock.push(' * @constructor');
+        // console.warn(functionWrapper);
 
     }
 
-    //    if (hasConstructorTag != null){
-    //        console.warn(hasConstructorTag);
-    //    }
+    // if (hasConstructorTag != null){
+    // console.warn(hasConstructorTag);
+    // }
 
     functionWrapper.doclet = doclet;
     // param tags
