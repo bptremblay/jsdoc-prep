@@ -8,9 +8,31 @@ var FIX_COMMENT_GRAMMAR = true;
 // Try to normalize module names so hand-coded ones match. Can cause problems.
 var FIX_MODULE_NAMES = true;
 
+function fixModuleNameInText(text, walkerObj){
+   
+    //console.warn('Fix reference to module name "' + text + '".');
+    var splitter = text.split('module:');
+    splitter.shift();
+    var moduleName = splitter.join('module:').trim();
+    moduleName = moduleName.split(' ')[0];
+    var newModuleName = fixModuleName(moduleName, walkerObj);
+    //console.warn('Fix moduleName: "' + moduleName + '" >>> "' + newModuleName + '".');
+    text = 'module:' + newModuleName;
+    //console.warn('Fixed text: "' + text + '".');
+    
+    return text;
+}
+
 function fixModuleName(moduleName, walkerObj){
     var usedModuleName = walkerObj.moduleName;
-    return moduleName;
+    
+    var packagePath = walkerObj.path.split('/');
+    packagePath.shift();
+    packagePath = packagePath.join('/');
+    packagePath = packagePath.split('.js')[0];
+    usedModuleName = packagePath;
+    
+    return usedModuleName;
 }
 /**
  * Read file.
@@ -1250,7 +1272,8 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             textBuffer = stripStarLines(textBuffer);
             // console.log(textBuffer);
             tag.text = textBuffer.join('\n');
-            if (tag.text.trim().indexOf(':') === 0 && FIX_COMMENT_GRAMMAR){
+            //console.warn(tag);
+            if (tag.text.trim().indexOf(':') === 0 && FIX_COMMENT_GRAMMAR && tag.tag !== 'function' && tag.tag !== 'method'){
                 //console.warn(tag.text);
                 var stringBuffer = tag.text.trim().split('');
                 stringBuffer.shift();
@@ -2764,7 +2787,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
                     }
                 }
 
-                // console.log(tag);
+                //console.log(tag);
                 if (typeof tag === 'object') {
                     // {
                     // tagName: 'return',
@@ -2773,16 +2796,25 @@ function generateComment(functionWrapper, ast, walkerObj, input,
                     // line: '@return {String}'
                     // }
                     // construct doclet tag
-                    // console.warn(tag);
+                    //console.warn(tag);
                     commentBlock.push(' * ' + tag.line);
                 } else {
                     // construct doclet tag
                     // console.warn('JUST TEXT >>> ' +
                     // JSON.stringify(newTag));
                     // addStarLines(newTag.text, newTag));
-                    // console.warn(doclet);
+                    //console.warn(doclet);
                     var newComment = '';
+                    
+                    
+                    
                     if (newTag.text.trim().length > 0) {
+                        var textOfTag = newTag.text.trim();
+                        if (textOfTag.indexOf('module:') === 0){
+                            //console.warn(textOfTag);
+                            newTag.text = fixModuleNameInText(textOfTag, walkerObj);
+                        }
+                        
                         newComment = ' * ' + t + ' '
                                 + addStarLines(newTag.text, newTag);
                         commentBlock.push(newComment);
