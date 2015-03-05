@@ -42,10 +42,13 @@ function healthCheckCallback(healthCheckResults) {
                         cmdLine += ' -r -l -t templates/../../experimental_template/haruki -d ' + reportPath + '/jsDocModel.json' + ' -q format=json'
                                 + ' ' + sourceDirectory + '';
                     } else {
-                        cmdLine += ' -r -l -d ' + docPath + ' '
-                                + sourceDirectory + '';
+//                        cmdLine += ' -r -l -d ' + docPath + ' '
+//                                + sourceDirectory + '';
                         // exePath + ' -r -l -d ' + projectPath
                         // + '/jsdoc-prep/test-jsdocs ' + sourceDirectory + '';
+                        
+                        cmdLine += ' -r -l -t templates/../../experimental_template/default -d ' + docPath + '' + ' -q format=json'
+                        + ' ' + sourceDirectory + '';
                     }
 
                     console.log(cmdLine);

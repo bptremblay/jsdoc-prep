@@ -8,30 +8,44 @@ var FIX_COMMENT_GRAMMAR = true;
 // Try to normalize module names so hand-coded ones match. Can cause problems.
 var FIX_MODULE_NAMES = true;
 
-function fixModuleNameInText(text, walkerObj){
-   
-    //console.warn('Fix reference to module name "' + text + '".');
+var Logger = function() {
+    this.log = function() {
+
+    };
+    this.warn = function() {
+
+    };
+    this.error = function() {
+
+    };
+};
+
+var logger = new Logger();
+
+function fixModuleNameInText(text, walkerObj) {
+
+    //logger.log('Fix reference to module name "' + text + '".');
     var splitter = text.split('module:');
     splitter.shift();
     var moduleName = splitter.join('module:').trim();
     moduleName = moduleName.split(' ')[0];
     var newModuleName = fixModuleName(moduleName, walkerObj);
-    //console.warn('Fix moduleName: "' + moduleName + '" >>> "' + newModuleName + '".');
+    //logger.log('Fix moduleName: "' + moduleName + '" >>> "' + newModuleName + '".');
     text = 'module:' + newModuleName;
-    //console.warn('Fixed text: "' + text + '".');
-    
+    //logger.log('Fixed text: "' + text + '".');
+
     return text;
 }
 
-function fixModuleName(moduleName, walkerObj){
+function fixModuleName(moduleName, walkerObj) {
     var usedModuleName = walkerObj.moduleName;
-    
+
     var packagePath = walkerObj.path.split('/');
     packagePath.shift();
     packagePath = packagePath.join('/');
     packagePath = packagePath.split('.js')[0];
     usedModuleName = packagePath;
-    
+
     return usedModuleName;
 }
 /**
@@ -50,7 +64,7 @@ function readFile(filePathName) {
     try {
         source = _fs.readFileSync(filePathName, FILE_ENCODING);
     } catch (er) {
-        // console.error(er.message);
+        // logger.error(er.message);
         source = '';
     }
     return source;
@@ -69,14 +83,14 @@ function decamelize(input) {
     if ((test.length > 1) && (input.indexOf('_') > 0)) {
         // do a different kind of split here
         var output = trim(input.toLowerCase());
-        // // console.log('decamelize >>> ' + output);
+        // // logger.log('decamelize >>> ' + output);
         return output;
     }
     test = input.split('-');
     if ((test.length > 1) && (input.indexOf('-') > 0)) {
         // do a different kind of split here
         var output = trim(input.toLowerCase());
-        // // console.log('decamelize >>> ' + output);
+        // // logger.log('decamelize >>> ' + output);
         return output;
     }
     var words = [];
@@ -254,7 +268,7 @@ function safeCreateFileDir(path) {
     }
     var dir = _path.dirname(path);
     if (!_fs.existsSync(dir)) {
-        // // // console.log("does not exist");
+        // // // logger.log("does not exist");
         _wrench.mkdirSyncRecursive(dir);
     }
 }
@@ -270,7 +284,7 @@ function safeCreateDir(dir) {
         return;
     }
     if (!_fs.existsSync(dir)) {
-        // // // console.log("does not exist");
+        // // // logger.log("does not exist");
         _wrench.mkdirSyncRecursive(dir);
     }
 }
@@ -327,7 +341,7 @@ function stripOneLineComments(input) {
 function safeCreateFileDir(path) {
     var dir = _path.dirname(path);
     if (!_fs.existsSync(dir)) {
-        // // // console.log("does not exist");
+        // // // logger.log("does not exist");
         _wrench.mkdirSyncRecursive(dir);
     }
 }
@@ -340,7 +354,7 @@ function safeCreateFileDir(path) {
  */
 function safeCreateDir(dir) {
     if (!_fs.existsSync(dir)) {
-        // // // console.log("does not exist");
+        // // // logger.log("does not exist");
         _wrench.mkdirSyncRecursive(dir);
     }
 }
@@ -360,7 +374,7 @@ function writeFile(filePathName, source) {
 
 function printDoclet(docletData, defineModuleInTopOfFile) {
     var has_description = false;
-    // // console.warn('>>>>>>>>>>>>>>>>>>>>>>>>>> printDoclet');
+    // // logger.log('>>>>>>>>>>>>>>>>>>>>>>>>>> printDoclet');
     var printableTags = {
         'abstract' : 1,
         // This member must be implemented (or overridden) by the inheritor.
@@ -542,7 +556,7 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
             correctNodeName = 'module';
             buffer.push(' * @' + correctNodeName + ' ' + docletData.moduleName);
             atCount++;
-            // console.log("REQUIRES??? " + docletData.requiresList);
+            // logger.log("REQUIRES??? " + docletData.requiresList);
             try {
                 for (var r = 0; r < docletData.requiresList.length; r++) {
                     var include = docletData.requiresList[r];
@@ -554,7 +568,7 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
                     atCount++;
                 }
             } catch (reqEr) {
-                console.error("ERROR BUILDING REQUIRES: " + reqEr);
+                logger.error("ERROR BUILDING REQUIRES: " + reqEr);
             }
         } else if (docletData['@exports'] != null) {
             // merge firstDoclet
@@ -565,7 +579,7 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
             }
         }
     }
-    // console.log(docletData.tagName);
+    // logger.log(docletData.tagName);
     var returnTag = '';
     // get secondary details
     for ( var e in docletData) {
@@ -592,7 +606,7 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
         var returnBlock = docletData['@return'];
         returnTag = ' * ' + '@return' + ' ' + returnBlock.type + ' '
                 + returnBlock.description;
-        // console.log(returnTag);
+        // logger.log(returnTag);
     }
     if (docletData['@exports'] != null) {
         try {
@@ -606,20 +620,21 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
                 atCount++;
             }
         } catch (reqEr) {
-            console.error("ERROR BUILDING REQUIRES for @exports: " + reqEr);
+            logger.error("ERROR BUILDING REQUIRES for @exports: " + reqEr);
         }
     }
     // get params
     var docletParams = docletData['params'];
     if (docletParams == null) {
-        console.error(typeof docletData);
-        console.error('docletData["params"] is NULL NULL NULL!!!!');
+        logger.error(typeof docletData);
+        logger.error('docletData["params"] is NULL NULL NULL!!!!');
     }
     if (docletParams.length > 0) {
         // buffer.push(' * @' + e + " " + docletData[e]);
         for (var p = 0; p < docletParams.length; p++) {
             var param = docletParams[p];
             if (param.type != null) {
+                param.type = param.type.toLowerCase();
                 if (param.type === '{string}') {
                     param.type = '{String}';
                 } else if (param.type === '{object}') {
@@ -628,9 +643,13 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
                     param.type = '{Number}';
                 } else if (param.type === '{int}') {
                     param.type = '{Number}';
+                } else if (param.type === '{integer}') {
+                    param.type = '{Number}';
                 } else if (param.type === '{long}') {
                     param.type = '{Number}';
                 } else if (param.type === '{double}') {
+                    param.type = '{Number}';
+                } else if (param.type === '{float}') {
                     param.type = '{Number}';
                 } else if (param.type === '{boolean}') {
                     param.type = '{Boolean}';
@@ -639,7 +658,7 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
                 }
             }
             if (param.name == null) {
-                // console.warn('printDoclet: param name is NULL');
+                // logger.log('printDoclet: param name is NULL');
             } else {
                 if (param.type.length > 0 && param.description.length > 0) {
                     buffer.push(' * @param ' + param.type + ' ' + param.name
@@ -666,11 +685,11 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
         docletMarkup = '/**\n' + buffer.join('\n') + '\n */' + '';
     }
     if (docletMarkup.indexOf('@') === -1 && !has_description) {
-        console.error("!!!!!!!!!!!!!!!!!!!!!!!!! empty doclet");
-        // console.warn(JSON.stringify(docletData));
+        logger.error("!!!!!!!!!!!!!!!!!!!!!!!!! empty doclet");
+        // logger.log(JSON.stringify(docletData));
         return '/** ' + '@todo Please add a description.' + ' */' + '';
     }
-    // // console.warn(docletMarkup);
+    // // logger.log(docletMarkup);
     return docletMarkup;
 }
 
@@ -697,22 +716,22 @@ function getLines(lines, x, y, buffer) {
  *            getPreamble
  */
 function getTagLines(lines, tag, buffer, getPreamble) {
-    // console.log(lines);
+    // logger.log(lines);
     var start = tag.line;
     var end = tag.lastLine;
     if (getPreamble) {
         start = 0;
         end = tag.line - 1;
-        // console.warn(lines);
-        // console.warn(tag);
-        // console.warn(start + ',' + end);
+        // logger.log(lines);
+        // logger.log(tag);
+        // logger.log(start + ',' + end);
         if (start < 1 && end < 1) {
             return;
         }
     }
     if (end === -1) {
         end = lines.length - 1;
-        // console.warn('Reading to the end of the doclet.');
+        // logger.log('Reading to the end of the doclet.');
     }
     tag.textStartsOnSameLine = false;
     getLines(lines, start, end, buffer);
@@ -721,16 +740,16 @@ function getTagLines(lines, tag, buffer, getPreamble) {
         var realTag = '@' + tag.tag;
         var where = firstLine.indexOf(realTag);
         firstLine = firstLine.substring(where + realTag.length);
-        // console.log(buffer[0] + '>>>>>' + firstLine);
+        // logger.log(buffer[0] + '>>>>>' + firstLine);
         if (firstLine.length > 0) {
-            // console.warn(buffer[0] + '>>>>>' + firstLine);
+            // logger.log(buffer[0] + '>>>>>' + firstLine);
             tag.textStartsOnSameLine = true;
         }
         if (buffer.length > 0) {
             tag.textStartsOnSameLine = true;
         }
         // } else {
-        // console.warn(buffer[0] + '>>>>>' + firstLine);
+        // logger.log(buffer[0] + '>>>>>' + firstLine);
         // }
         buffer[0] = firstLine;
     }
@@ -771,7 +790,7 @@ function getRequiresTags(input) {
 
     for (var index = 0; index < amdProcData.requires.length; index++) {
         var moduleName = amdProcData.requires[index];
-        // console.warn(moduleName);
+        // logger.log(moduleName);
         if (typeof moduleName !== 'string') {
             continue;
         }
@@ -797,7 +816,7 @@ var typesMap = {
 };
 
 function getType(input) {
-    // console.log(input);
+    // logger.log(input);
     var lowerInput = input.toLowerCase();
     var theType = typesMap[lowerInput];
     if (theType != null) {
@@ -846,17 +865,17 @@ function fixReturnText(input, docletData) {
         input = splitter.join('}');
     } else if (input.indexOf('{') !== -1) {
         // is ia a YUI-style jsDoc?
-        // console.warn('YUI??? >>> ' + saveInput);
+        // logger.warn('YUI??? >>> ' + saveInput);
     } else {
         // have to guess what it is
         // ??
         if (input.indexOf(' ') === -1) {
             input = fixTypes(input);
         } else {
-            // console.warn('Nonstandard comment (' + docletData.moduleName +
+            // logger.log('Nonstandard comment (' + docletData.moduleName +
             // '): ' + saveInput);
             if (theType != null && theType != 'null') {
-                // console.warn("IS THIS THE TYPE??? {" + theType + "}");
+                // logger.warn("IS THIS THE TYPE??? {" + theType + "}");
                 input = replaceWord(saveInput, 0, '{' + theType + '}');
                 // input = saveInput;
             } else {
@@ -867,7 +886,7 @@ function fixReturnText(input, docletData) {
     }
     // {string} name name of severity level
     // {string} stack trace
-    // // console.log(input);
+    // // logger.log(input);
     return input;
 }
 
@@ -891,7 +910,7 @@ function fixTypes(input, dontCuddle) {
     } else {
         input = capitalize(input);
     }
-    // // console.log(input);
+    // // logger.log(input);
     if (dontCuddle) {
         return input;
     }
@@ -1011,7 +1030,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             if (leftOfEquals.indexOf('var ') !== -1) {
                 leftOfEquals = leftOfEquals.split('var ')[1].trim();
             }
-            // // // console.warn("AUGMENTS >>>>>>>>" + leftOfEquals + "," +
+            // // // logger.log("AUGMENTS >>>>>>>>" + leftOfEquals + "," +
             // rightOfEquals + "," + rightOfExtend);
             docletData['@augments'] = rightOfEquals;
         } else {
@@ -1023,11 +1042,11 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                 rightOfExtend = rightOfExtend.split(',')[0].trim();
             }
             docletData['@augments'] = rightOfExtend;
-            // // // console.warn("AUGMENTS >>>>>>>>" + leftOfExtend + "," +
+            // // // logger.log("AUGMENTS >>>>>>>>" + leftOfExtend + "," +
             // rightOfExtend);
         }
         // $.wf.QuickShipOptions = Backbone.View.extend(
-        // // // console.warn(" AUGMENTS >>>>>>>>>>>>>>>>>" + nextLineOfCode);
+        // // // logger.log(" AUGMENTS >>>>>>>>>>>>>>>>>" + nextLineOfCode);
     }
     if (firstDoclet == null) {
         firstDoclet = docletData;
@@ -1035,13 +1054,13 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
     // if (defineModuleInTopOfFile) {
     // do it now
     if (doclet.indexOf('/**') === -1 || doclet.indexOf('*/') === -1) {
-        console.error('parseDoclet FORMAT ERROR: ' + doclet);
+        logger.error('parseDoclet FORMAT ERROR: ' + doclet);
         return docletData;
     }
     // strip comment tags
     var chunker = doclet.split('/**')[1];
     chunker = chunker.split('*/')[0];
-    // // // console.log(chunker);
+    // // // logger.log(chunker);
     var lines = chunker.split('\n');
     var index = 0;
     var linesLength = lines.length;
@@ -1058,14 +1077,14 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             // strip the comment star
             line = line.substring(1).trim();
         } else {
-            // // console.warn('parseDoclet(' + input.name + '): a line did not
+            // // logger.log('parseDoclet(' + input.name + '): a line did not
             // begin with * ' + line);
             line = line.trim();
         }
         if (line.indexOf('@') === 0) {
             if (!firstTag) {
                 docletData['freeText'] = commentBuffer.trim();
-                // console.warn('freeText: ' + docletData['freeText']);
+                // logger.log('freeText: ' + docletData['freeText']);
                 commentBuffer = '';
             } else if (currentTagObject != null) {
                 if (currentTagObject.description != null) {
@@ -1092,11 +1111,11 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             if (lastTag !== null) {
                 lastTag.lastLine = index - 1;
             }
-            // console.warn(newTag);
+            // logger.log(newTag);
             docletData.tags.push(newTag);
             if (tag === 'param') {
                 if (tagData.length === 0) {
-                    console.warn('(' + input.name + ')'
+                    logger.log('(' + input.name + ')'
                             + " Can't parse data for this param tag: " + line);
                     continue;
                 }
@@ -1116,8 +1135,8 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                 paramDescription = tagData.join(' ').trim();
                 paramType = fixTypes(paramType);
                 if (paramType.length === 0) {
-                    // // console.log(line);
-                    // // console.warn(paramObject);
+                    // // logger.log(line);
+                    // // logger.log(paramObject);
                     if (paramDescription.indexOf('}') !== -1) {
                         var paramParser = paramDescription.split('}');
                         paramType = fixTypes(paramParser[0]);
@@ -1126,7 +1145,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                         if (paramDescription.indexOf('{') !== -1) {
                             paramDescription += '}';
                         }
-                        // console.warn(paramType + " " + paramDescription);
+                        // logger.log(paramType + " " + paramDescription);
                     }
                 }
                 var paramObject = {
@@ -1139,7 +1158,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                 docletData.params.push(paramObject);
             } else if (tag === 'return') {
                 if (tagData.length === 0) {
-                    console.error('(' + input.name + ')'
+                    logger.error('(' + input.name + ')'
                             + " Can't parse data for this return tag: " + line);
                     continue;
                 }
@@ -1157,11 +1176,11 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                     tagData.shift();
                 }
                 returnDescription = tagData.join(' ').trim();
-                // console.warn(returnChunk);
+                // logger.log(returnChunk);
                 returnType = fixTypes(returnType);
                 if (returnType.length === 0) {
-                    // // console.log(line);
-                    // // console.warn(returnObject);
+                    // // logger.log(line);
+                    // // logger.log(returnObject);
                     if (returnDescription.indexOf('}') !== -1) {
                         var returnParser = returnDescription.split('}');
                         returnType = fixTypes(returnParser[0]);
@@ -1170,7 +1189,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                         if (returnDescription.indexOf('{') !== -1) {
                             returnDescription += '}';
                         }
-                        // console.warn(returnType + " " + returnDescription);
+                        // logger.log(returnType + " " + returnDescription);
                     }
                 }
                 var returnObject = {
@@ -1182,7 +1201,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                 };
                 currentTagObject = returnObject;
                 docletData['@return'] = currentTagObject;
-                // console.log(currentTagObject);
+                // logger.log(currentTagObject);
             } else if (tag === 'requires') {
                 var paramDescription = '';
                 var paramChunk = tagData[0].trim();
@@ -1220,8 +1239,8 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                     docletData['@' + tag] = tagData.join(' ').trim();
                     currentTagObject = docletData['@' + tag];
                     currentTagObject.tagName = tag;
-                    // console.warn("TAG DATA is EMPTY----->");
-                    // // console.warn(currentTagObject);
+                    // logger.log("TAG DATA is EMPTY----->");
+                    // // logger.log(currentTagObject);
                     currentTagObject.description = '';
                 } else {
                     docletData['@' + tag] = tagData.join(' ').trim();
@@ -1229,9 +1248,9 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
                     currentTagObject = docletData['@' + tag];
                     currentTagObject.tagName = tag;
                     currentTagObject.description = tagData.join(' ').trim();
-                    // console.warn("TAG DATA is _NOT_ EMPTY----->");
-                    // console.warn(docletData['@' + tag]);
-                    // // console.warn(currentTagObject);
+                    // logger.log("TAG DATA is _NOT_ EMPTY----->");
+                    // logger.log(docletData['@' + tag]);
+                    // // logger.log(currentTagObject);
                 }
                 // docletData['@' + tag] = tagData.join(' ').trim();
                 // currentTagObject = docletData['@' + tag];
@@ -1239,10 +1258,10 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             }
             currentTag = tag;
         } else {
-            // // console.warn("it's a freeform description comment... who owns
+            // // logger.log("it's a freeform description comment... who owns
             // it?");
             // it's a freeform description comment... who owns it?
-            // console.warn(line);
+            // logger.log(line);
         }
     }
     // Collate all the loose text fragments:
@@ -1258,40 +1277,42 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             // the next tag
             // _or_
             // end of doclet
-            // console.warn(tag);
+            // logger.log(tag);
             var textBuffer = [];
             if (index === 0) {
                 getTagLines(lines, tag, preamble, true);
-                // console.warn(preamble);
+                // logger.log(preamble);
                 preamble = stripStarLines(preamble);
-                // console.warn('parseDoclet WTF');
-                // console.warn(tag);
-                // console.warn(preamble);
+                // logger.log('parseDoclet WTF');
+                // logger.log(tag);
+                // logger.log(preamble);
             }
             getTagLines(lines, tag, textBuffer, false);
             textBuffer = stripStarLines(textBuffer);
-            // console.log(textBuffer);
+            // logger.log(textBuffer);
             tag.text = textBuffer.join('\n');
-            //console.warn(tag);
-            if (tag.text.trim().indexOf(':') === 0 && FIX_COMMENT_GRAMMAR && tag.tag !== 'function' && tag.tag !== 'method'){
-                //console.warn(tag.text);
+            //logger.log(tag);
+            if (tag.text.trim().indexOf(':') === 0 && FIX_COMMENT_GRAMMAR
+                    && tag.tag !== 'function' && tag.tag !== 'method') {
+                //logger.log(tag.text);
                 var stringBuffer = tag.text.trim().split('');
                 stringBuffer.shift();
                 tag.text = stringBuffer.join('');
-                
+
                 tag.text = capitalize(decamelize(tag.text).split('_').join(' '));
-                var lastChar = tag.text.charAt(tag.text.length-1);
-                if (lastChar !== '.' && lastChar !== '?' && lastChar !== '!' && lastChar !== ':'){
+                var lastChar = tag.text.charAt(tag.text.length - 1);
+                if (lastChar !== '.' && lastChar !== '?' && lastChar !== '!'
+                        && lastChar !== ':') {
                     tag.text += '.';
                 }
             }
-            // console.log(tag);
+            // logger.log(tag);
         }
     } else {
-        // console.warn('doclet with no tags');
+        // logger.log('doclet with no tags');
         if (!linesAreEmpty(lines)) {
             preamble = stripStarLines(lines);
-            // console.warn('doclet with no tags HAS PREAMBLE:\n' + preamble);
+            // logger.log('doclet with no tags HAS PREAMBLE:\n' + preamble);
         }
     }
     docletData.preamble = preamble.join('\n');
@@ -1300,11 +1321,11 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
         docletData.preamble = '';
     } else {
         docletData['freeText'] = docletData.preamble;
-        // console.warn("parseDoclet: getting freeText from preamble");
-        // console.warn(docletData.preamble);
+        // logger.log("parseDoclet: getting freeText from preamble");
+        // logger.log(docletData.preamble);
     }
 
-    // console.warn('freeText: ' + docletData['freeText']);
+    // logger.log('freeText: ' + docletData['freeText']);
     var nodeType = 'NONFUNCTION';
     if (docletData['@constructor'] != null) {
         nodeType = 'CLASS';
@@ -1342,15 +1363,15 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
             if (docletData['freeText'].trim().indexOf('</pre>') === -1) {
                 docletData['freeText'] += '.';
             }
-            // console.warn("freeText>>> " + docletData['freeText']);
+            // logger.log("freeText>>> " + docletData['freeText']);
         }
         docletData['freeText'] = docletData['freeText'].split('<br />').join(
                 '<br />\r\n * ');
     }
-    // console.warn(doclet);
-    // console.warn(JSON.stringify(docletData, null, 2));
+    // logger.log(doclet);
+    // logger.log(JSON.stringify(docletData, null, 2));
 
-    // console.warn(getRequiresTags(input));
+    // logger.log(getRequiresTags(input));
 
     return docletData;
 }
@@ -1367,7 +1388,7 @@ function walk(node, attr, val, results, parentNode) {
         node.uid = uid++;
     }
     if (node.length != null) {
-        console.error("Walking an Array!!!");
+        logger.error("Walking an Array!!!");
     }
     if (results == null) {
         results = [];
@@ -1402,12 +1423,12 @@ function walk(node, attr, val, results, parentNode) {
             if (child == null) {
                 continue;
             }
-            // // console.log(child);
+            // // logger.log(child);
             if (typeof child === 'object' && child.length != null) {
                 // array?
-                // // console.log(e + ': ' + '[]');
+                // // logger.log(e + ': ' + '[]');
                 for (var index = 0; index < child.length; index++) {
-                    // console.warn(child);
+                    // logger.log(child);
                     var elem = child[index];
                     if (elem != null) {
                         walk(elem, attr, val, results, node);
@@ -1417,14 +1438,14 @@ function walk(node, attr, val, results, parentNode) {
             } else if (typeof child === 'object') {
                 child.parentNode = node;
                 // obj?
-                // // console.log(e + ': ' + '{}'); //JSON.stringify(child));
+                // // logger.log(e + ': ' + '{}'); //JSON.stringify(child));
                 walk(child, attr, val, results, node);
             } else if (typeof child === 'string') {
                 // string?
-                // console.log(e + ': ' + child);
+                // logger.log(e + ': ' + child);
             } else {
                 // string?
-                // console.log(e + ': ' + typeof child);
+                // logger.log(e + ': ' + typeof child);
             }
         }
     }
@@ -1438,7 +1459,7 @@ function getNodeByUid(uid) {
             return node;
         }
     }
-    // console.warn('getNodeByUid(' + uid + ') >>> null');
+    // logger.log('getNodeByUid(' + uid + ') >>> null');
     return null;
 }
 
@@ -1471,7 +1492,7 @@ function getNodesByType(ast, nodeType) {
                                 returnType = '';
                             } else {
                                 // returnType = statement.name;
-                                // console.warn('Cannot derive meaning from
+                                // logger.warn('Cannot derive meaning from
                                 // "return ' + statement.name + '".');
                                 returnType = '?';
                             }
@@ -1495,22 +1516,22 @@ function getNodesByType(ast, nodeType) {
                     } else if (statement.type === 'ArrayExpression') {
                         returnType = '{array}';
                     } else {
-                        // console.warn(statement);
+                        // logger.warn(statement);
                         returnType = '';
                         if (statement.name != null) {
                             returnType = statement.name;
                         } else if (statement.type != null) {
                             returnType = statement.type;
                         } else {
-                            console.warn(statement);
+                            logger.warn(statement);
                         }
                     }
                     // if (statement.name != null) {
-                    // console.warn(statement.type + ':' + statement.name + ':'
+                    // logger.warn(statement.type + ':' + statement.name + ':'
                     // + returnType);
                     // } else {
-                    // console.warn(statement.type + ':' + returnType);
-                    // //console.warn(statement);
+                    // logger.warn(statement.type + ':' + returnType);
+                    // //logger.warn(statement);
                     // }
                 } else {
                     returnType = '';
@@ -1519,9 +1540,9 @@ function getNodesByType(ast, nodeType) {
         }
         node.returnType = returnType;
         // if (returnType === 'undefined') {
-        // console.warn(statement);
+        // logger.warn(statement);
         // }
-        // console.warn(returnType);
+        // logger.warn(returnType);
     }
     return results;
 }
@@ -1529,13 +1550,13 @@ function getNodesByType(ast, nodeType) {
 function getLineNumber(input, obj) {
     var range = obj.range;
     var corpus = input.substring(0, range[0]);
-    // // console.warn("XXX");
-    // // console.warn(corpus);
-    // // console.warn("YYY");
+    // // logger.warn("XXX");
+    // // logger.warn(corpus);
+    // // logger.warn("YYY");
     var lineCount = corpus.split('\n').length;
     // var lines = input.split('\n');
-    // // console.warn(obj.type);
-    // // console.warn(lines[lineCount]);
+    // // logger.warn(obj.type);
+    // // logger.warn(lines[lineCount]);
     return lineCount;
 }
 
@@ -1557,17 +1578,17 @@ function stripWhite(input) {
  * @param ast
  */
 function getClosestComment(input, nodeStart, ast, wrapper) {
-    // console.warn('getClosestComment');
-    // console.warn(ast.comments);
+    // logger.log('getClosestComment');
+    // logger.log(ast.comments);
     var endpoint = ast.comments.length - 1;
-    // console.warn(endpoint);
+    // logger.log(endpoint);
     // todo: move to shared ref
     var lines = input.split('\n');
     for (var index = endpoint; index > -1; index--) {
         var comment = ast.comments[index];
-        // console.warn(comment);
+        // logger.log(comment);
         if (comment.lineNumber != null) {
-            // console.warn('getClosestComment found a comment already used!
+            // logger.log('getClosestComment found a comment already used!
             // skip and keep searching up...');
             continue;
         }
@@ -1584,27 +1605,27 @@ function getClosestComment(input, nodeStart, ast, wrapper) {
             if (corpus.length === 0) {
                 var lineNumber = getLineNumber(input, comment);
 
-                // console.warn('getClosestComment() found ' + commentBody + '
+                // logger.log('getClosestComment() found ' + commentBody + '
                 // for ' + wrapper.name);
                 var block = getLines(lines, lineNumber - 1,
                         wrapper.lineNumber - 1);
                 var funxChunx = block.split('function ');
-                // console.warn(funxChunx.length);
+                // logger.log(funxChunx.length);
                 if (block.split('/**').length > 3 || funxChunx.length > 3) {
-                    // console.warn('ALL THE TEXT FOR ' + wrapper.name + ':');
-                    // console.warn(block);
+                    // logger.log('ALL THE TEXT FOR ' + wrapper.name + ':');
+                    // logger.log(block);
                     return -1;
                 }
                 comment.lineNumber = lineNumber;
                 return index;
             }
             // else{
-            // console.warn('getClosestComment skipping over ' + corpus );
+            // logger.log('getClosestComment skipping over ' + corpus );
             // }
         }
     }
-    // console.warn('>>>>> NO COMMENT for ' + wrapper.name);
-    // // console.warn(nodeStart);
+    // logger.log('>>>>> NO COMMENT for ' + wrapper.name);
+    // // logger.log(nodeStart);
     return -1;
 }
 /**
@@ -1618,31 +1639,31 @@ function getClosestComment(input, nodeStart, ast, wrapper) {
  */
 function getExistingComment(input, obj, ast, wrapper) {
     var astNodeType = obj.type;
-    // console.warn('look for comment for ' + wrapper.name + ' in ' +
+    // logger.log('look for comment for ' + wrapper.name + ' in ' +
     // astNodeType);
     var range = obj.range;
     var rangeStart = range[0];
-    // console.warn(obj);
-    // console.warn('Calling getClosestComment() for ' + obj.name);
-    // console.warn('Calling getClosestComment() for NODE ' + wrapper.name
+    // logger.log(obj);
+    // logger.log('Calling getClosestComment() for ' + obj.name);
+    // logger.log('Calling getClosestComment() for NODE ' + wrapper.name
     // + ' of type ' + astNodeType);
     var nearComment = getClosestComment(input, rangeStart, ast, wrapper);
     if (nearComment === -1 && obj.parentNode != -1) {
         var parentNode = getNodeByUid(obj.parentNode);
         astNodeType = parentNode.type;
-        // console.warn('look for comment in ' + astNodeType);
+        // logger.log('look for comment in ' + astNodeType);
         var range = parentNode.range;
         var rangeStart = range[0];
-        // console.warn('Calling getClosestComment() for PARENT of '
+        // logger.log('Calling getClosestComment() for PARENT of '
         // + wrapper.name + ' of type ' + astNodeType);
         var nearComment = getClosestComment(input, rangeStart, ast, wrapper);
         if (nearComment === -1 && parentNode.parentNode != -1) {
             parentNode = getNodeByUid(parentNode.parentNode);
             if (parentNode == null) {
-                console.error("getExistingComment fatal error");
+                logger.error("getExistingComment fatal error");
             }
             astNodeType = parentNode.type;
-            // console.warn('look for comment in ' + astNodeType);
+            // logger.log('look for comment in ' + astNodeType);
             if (astNodeType === 'FunctionExpression') {
                 return -1;
             } else if (astNodeType === 'ObjectExpression') {
@@ -1650,23 +1671,23 @@ function getExistingComment(input, obj, ast, wrapper) {
             }
             range = parentNode.range;
             rangeStart = range[0];
-            // console.warn('Calling getClosestComment() for GRANDPARENT of '
+            // logger.log('Calling getClosestComment() for GRANDPARENT of '
             // + wrapper.name + ' of type ' + astNodeType);
             nearComment = getClosestComment(input, rangeStart, ast, wrapper);
         }
     }
     // if (nearComment !== -1) {
-    // console.warn('getExistingComment() found... ' + nearComment);
+    // logger.log('getExistingComment() found... ' + nearComment);
     // }
     return nearComment;
 }
 
 function getFunctionFullName(input, obj) {
-    // console.log(obj.parentNode);
+    // logger.log(obj.parentNode);
     var parentNode = getNodeByUid(obj.parentNode);
-    // console.log(parentNode);
+    // logger.log(parentNode);
     if (parentNode.type === 'Property') {
-        // // console.warn('getFunctionFullName() working on a propery list of
+        // // logger.log('getFunctionFullName() working on a propery list of
         // functions, found "' + parentNode.key.name + '"');
         return parentNode.key.name;
     }
@@ -1705,14 +1726,14 @@ function unsquareName(input) {
 }
 
 function getParentClass(obj, classes) {
-    // console.warn('getParentClass: ' + obj.range);
+    // logger.log('getParentClass: ' + obj.range);
     for ( var e in classes) {
         if (classes.hasOwnProperty(e)) {
             var klass = classes[e];
             var classRange = klass.range;
-            // console.warn('class range: ' + classRange);
+            // logger.log('class range: ' + classRange);
             if (obj.range[0] >= classRange[0] && obj.range[1] <= classRange[1]) {
-                // console.warn('found parent class');
+                // logger.log('found parent class');
                 return klass;
             }
         }
@@ -1748,35 +1769,35 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                 todos : []
             };
             if (obj.id !== null) {
-                // // console.warn("dumpNamedFunctions " + obj.id.name);
+                // // logger.log("dumpNamedFunctions " + obj.id.name);
                 functionWrapper.name = obj.id.name;
             } else {
-                // console.log(obj);
-                // // console.warn(getFunctionFullName(input,obj));
+                // logger.log(obj);
+                // // logger.log(getFunctionFullName(input,obj));
                 functionWrapper.name = getFunctionFullName(input, obj);
             }
             if (obj.params.length > 0) {
-                // // console.warn(obj.params);
+                // // logger.log(obj.params);
                 functionWrapper.params = dumpParams(obj.params);
             }
             if (obj.returnType !== '') {
-                // // console.warn(obj.returnType);
+                // // logger.log(obj.returnType);
                 functionWrapper.returnType = obj.returnType;
             }
             // if (index === 0 && walkerObj.preprocessed
             // && functionWrapper.name === '') {
-            // console.warn(checkForReturnNode + ',' + walkerObj.preprocessed
+            // logger.log(checkForReturnNode + ',' + walkerObj.preprocessed
             // + ',' + functionWrapper.name);
             // }
             if (index === 0 && checkForReturnNode && walkerObj.preprocessed
                     && functionWrapper.name === '') {
-                // console.warn('is this the root AMD function?');
+                // logger.log('is this the root AMD function?');
                 var bodyNodes = obj.body.body;
                 var returnNode = null;
                 for (var n = 0; n < bodyNodes.length; n++) {
                     var node = bodyNodes[n];
                     if (node.type === 'ReturnStatement') {
-                        // // console.warn(node);
+                        // // logger.log(node);
                         if (node.argument
                                 && node.argument.type === 'ObjectExpression') {
                             // it's returning a blob of crap instead of exports
@@ -1791,11 +1812,11 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                     }
                 }
                 if (returnNode) {
-                    // console.warn(JSON.stringify(returnNode, null, 2));
-                    // // console.warn(functionWrapper);
+                    // logger.log(JSON.stringify(returnNode, null, 2));
+                    // // logger.log(functionWrapper);
                     var rrange = returnNode.range;
                     var returnBody = input.substring(rrange[0], rrange[1])
-                    // console.warn('returnNode = ' + returnBody);
+                    // logger.log('returnNode = ' + returnBody);
                     // returnNode = return {
                     var textMinusReturn = returnBody.substring(6).trim();
                     var packagePath = walkerObj.path.split('/');
@@ -1804,24 +1825,24 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                     packagePath = packagePath.split('.js')[0];
                     var foundNode = false;
                     if (textMinusReturn.charAt(0) === '{') {
-                        // console.log('module "' + packagePath
+                        // logger.log('module "' + packagePath
                         // + '" has an object literal for its exports value');
                         // /**@alias
                         // module:js/component/myAccounts/depositAccounts*/
                         returnBody = 'return /**@alias module:' + packagePath
                                 + ' */ ' + textMinusReturn;
-                        // console.log('returnBody = ' + returnBody);
+                        // logger.log('returnBody = ' + returnBody);
                         foundNode = true;
                     } else if (returnNode.argument.id) {
                         var constructorName = returnNode.argument.id.name;
                         textMinusReturn = textMinusReturn
                                 .split(constructorName).join(
                                         capitalize(constructorName));
-                        console.warn('Renaming class to "'
+                        logger.log('Renaming class to "'
                                 + capitalize(constructorName) + '".');
                         returnBody = 'return /** @constructor */\n'
                                 + textMinusReturn;
-                        // console.log('returnBody = ' + returnBody);
+                        // logger.log('returnBody = ' + returnBody);
                         foundNode = true;
                     } else if (!returnNode.argument.id) {
                         console
@@ -1830,7 +1851,7 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                         // anonymous function. */\n'
                         // + textMinusReturn;
                         //
-                        // // console.log('returnBody = ' + returnBody);
+                        // // logger.log('returnBody = ' + returnBody);
                         // foundNode = true;
                     }
                     if (foundNode) {
@@ -1840,24 +1861,24 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                         var range = returnNode.range;
                         // var = input.substring(range[0], range[1]).trim();
                         var beginningOfFile = source.substring(0, range[0]);
-                        // console.warn(beginningOfFile);
+                        // logger.log(beginningOfFile);
                         var endOfFile = source.substring(range[1]);
-                        // console.warn(endOfFile);
-                        // console.warn(returnBody);
+                        // logger.log(endOfFile);
+                        // logger.log(returnBody);
                         walkerObj.source = beginningOfFile + returnBody
                                 + endOfFile;
                         return "AMD_RETURN_BLOCK";
                     }
                 }
             }
-            // console.log('Looking for comment for function "'
+            // logger.log('Looking for comment for function "'
             // + functionWrapper.name + '"');
             // if (functionWrapper.comment != null){
-            // console.log('Found comment for function ' + functionWrapper.name
+            // logger.log('Found comment for function ' + functionWrapper.name
             // + ': ' + functionWrapper.comment);
             //
             // }
-            // console.log(functionWrapper);
+            // logger.log(functionWrapper);
             // if (functionWrapper.name === '') {
             // functionWrapper.name = '_' + obj.uid;
             // }
@@ -1888,7 +1909,7 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                 } else {
                     if (firstChar.toUpperCase() === firstChar) {
                         ctor = true;
-                        console.warn('CTOR = true');
+                        logger.log('CTOR = true');
                         functionWrapper.returnType = '';
                         output.classes[functionWrapper.name] = obj.uid;
                     }
@@ -1924,10 +1945,10 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
  */
 function searchTags(doclet, name) {
     var tags = enumTags(doclet);
-    // console.warn("searchTags");
-    // console.warn(tags);
+    // logger.log("searchTags");
+    // logger.log(tags);
     if (tags == null) {
-        // console.warn("searchTags found no tags");
+        // logger.log("searchTags found no tags");
         return null;
     }
     if (!tags.hasOwnProperty(name)) {
@@ -1938,10 +1959,10 @@ function searchTags(doclet, name) {
         return null;
     }
     if (tagHash.join !== null) {
-        // console.warn('found a collection of tags');
+        // logger.log('found a collection of tags');
         return tagHash;
     } else {
-        // console.warn('found a single tag');
+        // logger.log('found a single tag');
         return tagHash;
     }
 }
@@ -1955,7 +1976,7 @@ function searchTags(doclet, name) {
 function enumTags(doclet) {
     var output = {};
     var tags = doclet.tags;
-    // console.warn(tags);
+    // logger.log(tags);
     if (tags == null) {
         return output;
     }
@@ -2021,7 +2042,7 @@ function getCommentWith(input, comments, whatTag) {
         var comment = comments[index];
 
         var range = comment.range;
-        // console.log(comment);
+        // logger.log(comment);
 
         if (comment.type === 'Line') {
             continue;
@@ -2035,7 +2056,7 @@ function getCommentWith(input, comments, whatTag) {
 
         comment.commentBody = commentBody;
 
-        // console.warn(commentBody);
+        // logger.log(commentBody);
 
         if (commentBody.indexOf(whatTag) !== -1) {
             return comment;
@@ -2067,7 +2088,7 @@ function reportError(message, error, errors, walkerObj) {
     }
     error.description = message;
     errors.push(error);
-    console.warn(error);
+    logger.warn(error);
     return errors;
 }
 
@@ -2087,9 +2108,9 @@ function addMissingComments(walkerObj, errors) {
         walkerObj.checkForRequiresMismatch = true;
     }
     walkerObj.preprocessed = false;
-    console.log('addMissingComments ' + walkerObj.path);
-    // console.log('addMissingComments ' + walkerObj.source);
-    // console.log(walkerObj.source);
+    logger.log('addMissingComments ' + walkerObj.path);
+    // logger.log('addMissingComments ' + walkerObj.source);
+    // logger.log(walkerObj.source);
     var beautify = require('js-beautify');
     var input = walkerObj.source;
     var _esprima = require('esprima');
@@ -2127,10 +2148,10 @@ function addMissingComments(walkerObj, errors) {
         // throw(new Error(moduleName));
     } else {
         moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
-
+        logger.log('Infer module name from file or AMD definition.');
     }
     walkerObj.moduleName = moduleName;
-    console.warn('USE THIS AS THE MODULE NAME??? ' + moduleName);
+    logger.log('USE THIS AS THE MODULE NAME??? ' + moduleName);
 
     var hasLends = getCommentWith(input, ast.comments, '@lends');
     if (hasLends != null && incompleteLends == null) {
@@ -2142,30 +2163,30 @@ function addMissingComments(walkerObj, errors) {
 
         if (hasLends.value.indexOf('module:') !== -1) {
             if (hasLends.value.indexOf('~') === -1) {
-                console.warn('@lends used with a Module but not with a Class.');
-                console.warn(hasLends);
+                logger.warn('@lends used with a Module but not with a Class.');
+                logger.warn(hasLends);
                 incompleteLends = hasLends;
             }
         }
 
     }
 
-    // console.log(ast.comments);
+    // logger.log(ast.comments);
 
     // TODO: patch the @exports or @module @requires tags and re-parse the
     // source!!!
     var nodeWithRequiresBlock = null;
     if (walkerObj.checkForRequiresMismatch) {
         console
-                .warn('Scanning the @requires tag to see if it matches inline require() invocations.');
+                .log('Scanning the @requires tag to see if it matches inline require() invocations.');
         var hasModule = getCommentWith(input, ast.comments, '@module');
         var hasExports = getCommentWith(input, ast.comments, '@exports');
 
         if (hasExports != null) {
-            console.log('Found @exports.');
+            logger.log('Found @exports.');
             nodeWithRequiresBlock = hasExports;
         } else if (hasModule != null) {
-            console.log('Did not find @exports but found @module.');
+            logger.log('Did not find @exports but found @module.');
             nodeWithRequiresBlock = hasModule;
         }
 
@@ -2180,36 +2201,36 @@ function addMissingComments(walkerObj, errors) {
             var newComment = generateComment(null, ast, walkerObj, input,
                     nodeWithRequiresBlock, statusCheck);
 
-            // console.warn(walkerObj.source);
+            // logger.warn(walkerObj.source);
 
-            // console.warn("AST comment node we need to edit:");
-            // console.warn(nodeWithRequiresBlock);
-            // console.warn("Replace with new doclet:");
-            // console.warn(newComment);
-            // console.warn(walkerObj.results.amdProc.requires);
+            // logger.warn("AST comment node we need to edit:");
+            // logger.warn(nodeWithRequiresBlock);
+            // logger.warn("Replace with new doclet:");
+            // logger.warn(newComment);
+            // logger.warn(walkerObj.results.amdProc.requires);
 
             if (statusCheck.merge) {
-                // console.warn("AST comment node we need to edit:");
-                // console.warn(nodeWithRequiresBlock);
-                // console.warn("Replace with new doclet:");
-                // console.warn(newComment);
+                // logger.warn("AST comment node we need to edit:");
+                // logger.warn(nodeWithRequiresBlock);
+                // logger.warn("Replace with new doclet:");
+                // logger.warn(newComment);
                 var head = walkerObj.source.substring(0,
                         nodeWithRequiresBlock.range[0] - 1);
-                // console.warn('head: ' + head);
+                // logger.warn('head: ' + head);
                 var tail = walkerObj.source
                         .substring(nodeWithRequiresBlock.range[1] + 1);
-                // console.warn('tail: ' + tail);
+                // logger.warn('tail: ' + tail);
                 walkerObj.source = (head + newComment + tail);
-                // console.warn(walkerObj.source);
+                // logger.warn(walkerObj.source);
                 // Reboot!
-                console.log('>>>>> Need to rewrite requires on '
+                logger.log('>>>>> Need to rewrite requires on '
                         + walkerObj.name + '.');
                 walkerObj.checkForRequiresMismatch = false;
 
                 return addMissingComments(walkerObj, errors);
 
             } else {
-                console.log('No need to rewrite requires on ' + walkerObj.name
+                logger.log('No need to rewrite requires on ' + walkerObj.name
                         + '.');
             }
 
@@ -2228,7 +2249,7 @@ function addMissingComments(walkerObj, errors) {
     var allMethods = dumpNamedFunctions(walkerObj, functionDeclarations, ast,
             expressionFunctions);
     var methods = allMethods.methods;
-    // // console.warn(JSON.stringify(methods, null, 2));
+    // // logger.warn(JSON.stringify(methods, null, 2));
     var methodArray = [];
     for ( var m in methods) {
         if (methods.hasOwnProperty(m)) {
@@ -2247,16 +2268,16 @@ function addMissingComments(walkerObj, errors) {
         return 0;
     });
     // todo: replace code below
-    // console.log(JSON.stringify(methodArray, null, 2));
+    // logger.log(JSON.stringify(methodArray, null, 2));
     var lines = input.split('\n');
-    // console.warn(lines);
+    // logger.warn(lines);
     // method knows it's comment, so should know comment's range
     var newFileLines = [];
     var rewriteLines = true;
-    // console.warn(input);
+    // logger.warn(input);
     for (var lineIndex = 0; lineIndex < lines.length; lineIndex++) {
         var line = lines[lineIndex];
-        // console.warn(lineIndex + ' --> ' + line);
+        // logger.warn(lineIndex + ' --> ' + line);
         var trimLine = line.trim();
         // || trimLine.indexOf('/*') === 0
         if (trimLine.indexOf('//') === 0 || trimLine.length === 0) {
@@ -2266,24 +2287,24 @@ function addMissingComments(walkerObj, errors) {
         var method = getMethodOnLine(methodArray, lineIndex + 1, ast, input);
         if (rewriteLines) {
             if (method != null && method.comment === -1) {
-                // console.warn(lineIndex + ',' + method.name);
+                // logger.warn(lineIndex + ',' + method.name);
                 var newComment = generateComment(method, ast, walkerObj, input);
                 method.jsDoc = newComment;
                 newFileLines.push(newComment);
                 newFileLines.push(line);
             } else if (method != null && method.comment !== -1) {
-                // console.warn(lineIndex + ',' + method.name);
+                // logger.warn(lineIndex + ',' + method.name);
                 var newComment = generateComment(method, ast, walkerObj, input);
                 method.jsDoc = newComment;
-                // console.warn(method.name + " >>>" + method.comment);
-                // console.warn(method.name + " >>>" + newComment);
+                // logger.warn(method.name + " >>>" + method.comment);
+                // logger.warn(method.name + " >>>" + newComment);
                 newFileLines.push(newComment);
                 // advance line counter to skip over legacy comments
                 lineIndex = method.lineNumber - 1;
                 line = lines[lineIndex];
                 newFileLines.push(line);
             } else {
-                // console.warn(lineIndex + ',' + line);
+                // logger.warn(lineIndex + ',' + line);
                 newFileLines.push(line);
             }
         } else {
@@ -2292,7 +2313,7 @@ function addMissingComments(walkerObj, errors) {
 
     }
     newFile = newFileLines.join('\n');
-    // console.warn(newFile);
+    // logger.warn(newFile);
     newFile = beautify(newFile, {
         'indent_size' : 2,
         'indent_char' : ' ',
@@ -2311,7 +2332,7 @@ function addMissingComments(walkerObj, errors) {
         'wrap_line_length' : 200
     });
     if (!walkerObj.preprocessed) {
-        console.warn("checking... re-written code");
+        logger.warn("checking... re-written code");
         walkerObj.source = newFile;
         walkerObj.preprocessed = true;
         try {
@@ -2332,13 +2353,13 @@ function addMissingComments(walkerObj, errors) {
         var check = expressionFunctions = dumpNamedFunctions(walkerObj,
                 functionExpressions, ast);
         if (check === 'AMD_RETURN_BLOCK') {
-            // console.warn("Found the stuff.");
+            // logger.warn("Found the stuff.");
             newFile = walkerObj.source;
         }
     }
     if (walkerObj.source.indexOf('@typedef') !== -1) {
         newFile = walkerObj.source;
-        console.warn('SKIPPING FILE ' + walkerObj.name
+        logger.warn('SKIPPING FILE ' + walkerObj.name
                 + ' because it\'s got @typedef');
         walkerObj.skip = true;
     }
@@ -2357,8 +2378,8 @@ function addMissingComments(walkerObj, errors) {
         splitPath.pop();
         basePath = splitPath.join(_path.sep);
     }
-    // // console.warn(dir);
-    // // console.warn(fileNameOnly);
+    // // logger.warn(dir);
+    // // logger.warn(fileNameOnly);
     var wrappedMethods = [];
     for (var meth = 0; meth < methodArray.length; meth++) {
         var realMethod = methodArray[meth];
@@ -2375,10 +2396,14 @@ function addMissingComments(walkerObj, errors) {
         // range: [175, 278],
         // name: 'chewBakka'
         // }
-        // console.log(realMethod);
+        // logger.log(realMethod);
         var visibility = 'public';
         var staticScope = false;
         var docletNode = realMethod.doclet;
+        if (!docletNode){
+            logger.error(new Error('Method in addMissingComments() lacks a doclet: ' + realMethod.name));
+            continue;
+        }
         var description = '';
         var preamble = '';
         if (docletNode.preamble) {
@@ -2396,13 +2421,13 @@ function addMissingComments(walkerObj, errors) {
             }
         }
         if (preamble != description) {
-            // console.warn(docletNode);
+            // logger.warn(docletNode);
             if (preamble.length > 0) {
                 description = preamble + '\n' + description;
             }
         }
 
-        // console.warn(docletNode.tags);
+        // logger.warn(docletNode.tags);
         var doclet = realMethod.jsDoc != null ? realMethod.jsDoc : '';
 
         wrappedMethods.push({
@@ -2426,7 +2451,7 @@ function addMissingComments(walkerObj, errors) {
         var lendsPath = incompleteLends.value.trim();
         if (lendsPath.charAt(lendsPath.length - 1) === '#') {
             lendsPath = lendsPath.substring(0, lendsPath.length - 1);
-            console.warn('removed hash: ' + lendsPath);
+            logger.log('removed hash: ' + lendsPath);
             // lendsPath += '~' + incompleteLends.possibleClassName + '#';
             lendsPath += '~' + incompleteLends.possibleClassName;
         } else {
@@ -2436,11 +2461,11 @@ function addMissingComments(walkerObj, errors) {
         // always add this for classes when using @lends
         lendsPath += '#';
 
-        // console.warn(incompleteLends);
+        // logger.warn(incompleteLends);
 
         // incompleteLends.value.trim() + '~' +
         // incompleteLends.possibleClassName
-        console.warn('Added class to @lends: ' + lendsPath);
+        logger.warn('Added class to @lends: ' + lendsPath);
         newFile = newFile.split(incompleteLends.value).join(lendsPath);
         incompleteLends = null;
     }
@@ -2454,14 +2479,14 @@ function addMissingComments(walkerObj, errors) {
             ctorLine = ctorLine.split('(')[0];
         }
 
-        // console.warn("SPLICE IN CONSTRUCTOR TAG for " + ctorName);
+        // logger.warn("SPLICE IN CONSTRUCTOR TAG for " + ctorName);
 
         if (newFile.indexOf(ctorLine) !== -1) {
             var where = ctorLine.indexOf(':');
             var fixedCtorLine = ctorLine.substring(0, where + 1);
             fixedCtorLine += ' /** @constructor ' + ctorName + ' */';
             fixedCtorLine += ctorLine.substring(where + 1);
-            // console.warn("SPLICE IN CONSTRUCTOR TAG: " + fixedCtorLine);
+            // logger.warn("SPLICE IN CONSTRUCTOR TAG: " + fixedCtorLine);
             var ctorSimple = '@constructor ' + ctorName;
             if (newFile.indexOf(ctorSimple) !== -1) {
                 newFile = newFile
@@ -2471,11 +2496,11 @@ function addMissingComments(walkerObj, errors) {
             }
 
             // newFile = newFile.split(ctorLine).join(fixedCtorLine);
-            // console.warn(newFile);
+            // logger.warn(newFile);
 
         } else {
-            console.warn("SPLICE IN CONSTRUCTOR TAG for " + ctorName);
-            console.warn('COULD NOT FIND ' + ctorLine);
+            logger.log("SPLICE IN CONSTRUCTOR TAG for " + ctorName);
+            logger.log('COULD NOT FIND ' + ctorLine);
         }
         spliceInlineConstructor = null;
     }
@@ -2509,9 +2534,9 @@ function addMissingComments(walkerObj, errors) {
     };
     outputArray.push(JSON.stringify(jsDoccerBlob, null, 2));
     outputArray.push(newFile);
-    // console.warn(newFile);
+    // logger.log(newFile);
     outputArray.push('');
-    console.log('done ' + walkerObj.name);
+    logger.log('done ' + walkerObj.name);
     return outputArray.join('\n/*jsdoc_prep_data*/\n');
 }
 /**
@@ -2533,12 +2558,12 @@ function getMethodOnLine(methodArray, lineNumber, ast, input) {
             var commentBody = input.substring(comment.range[0],
                     comment.range[1]).trim();
             if (commentBody.indexOf('/**') === -1) {
-                // console.warn('SKIPPING COMMENT ' + commentBody);
+                // logger.log('SKIPPING COMMENT ' + commentBody);
                 continue;
             }
             // test for line type is redundant to above test
             if (comment.type.toLowerCase() === 'line') {
-                // console.warn('SKIPPING LINE COMMENT');
+                // logger.log('SKIPPING LINE COMMENT');
                 continue;
             }
 
@@ -2547,24 +2572,24 @@ function getMethodOnLine(methodArray, lineNumber, ast, input) {
                 // @WARNING this is only true if the method is on the next
                 // non-comment/non-whitespace line after this comment!!!
 
-                // console.warn("Found ORIGINAL comment on line " + lineNumber
+                // logger.log("Found ORIGINAL comment on line " + lineNumber
                 // + ". " + method.name);
 
                 method.commentBody = commentBody;
                 method.oldComment = comment;
-                // console.warn(method);
+                // logger.log(method);
                 return method;
             }
         }
         if (lineNumber === method.lineNumber) {
-            // console.warn("Found A METHOD, but NO COMMENT on line " +
+            // logger.log("Found A METHOD, but NO COMMENT on line " +
             // lineNumber
             // + ". " + method.name);
-            // console.warn(method);
+            // logger.log(method);
             return method;
         }
     }
-    // console.warn("Could not find a method on line " + lineNumber + ".");
+    // logger.log("Could not find a method on line " + lineNumber + ".");
     return null;
 }
 
@@ -2574,27 +2599,27 @@ function getMethodOnLine(methodArray, lineNumber, ast, input) {
  * @param doclet
  */
 function mergeRequires(doclet) {
-    // console.warn(doclet);
+    // logger.log(doclet);
     var needToMerge = false;
     var allRequires = searchTags(doclet, 'requires');
 
     if (allRequires == null) {
         allRequires = [];
     }
-    // console.warn(allRequires);
+    // logger.log(allRequires);
 
     var requiresList = doclet.requiresList;
     if (requiresList == null) {
         requiresList = [];
     }
-    // console.warn(requiresList);
+    // logger.log(requiresList);
 
     var diffRequires = getValuesNotInTags(allRequires, requiresList);
 
     if (diffRequires.length > 0) {
 
-        // console.warn(diffRequires);
-        // console.warn('These require modules were not included: '
+        // logger.log(diffRequires);
+        // logger.log('These require modules were not included: '
         // + diffRequires.toString());
         // // put any items in requiresList after allRequires if they are not
         // already
@@ -2604,8 +2629,8 @@ function mergeRequires(doclet) {
 
         if (allRequires.length > 0) {
             var lastTag = allRequires[allRequires.length - 1];
-            // console.warn("LAST TAG:");
-            // console.warn(lastTag);
+            // logger.log("LAST TAG:");
+            // logger.log(lastTag);
             line = lastTag.line + 1;
             lastLine = lastTag.lastLine + 1;
             lastTag.text = lastTag.text.trim();
@@ -2622,7 +2647,7 @@ function mergeRequires(doclet) {
             };
             line++;
             lastLine++;
-            // console.warn(newTag);
+            // logger.log(newTag);
             doclet.tags.push(newTag);
             needToMerge = true;
         }
@@ -2639,7 +2664,7 @@ function mergeRequires(doclet) {
 function getValuesNotInTags(tagList, valueList) {
     var output = [];
     var textValues = getTextFromTags(tagList);
-    // console.warn(textValues);
+    // logger.log(textValues);
     for (var i = 0; i < valueList.length; i++) {
         var value = valueList[i];
         if (textValues.indexOf(value) === -1) {
@@ -2688,7 +2713,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         funkyName[0] = capitalize(funkyName[0]);
         funkyName = funkyName.join(' ');
         funkyName += '.';
-        // console.warn(funkyName);
+        // logger.log(funkyName);
         if (functionWrapper.ctor) {
             funkyName = 'Creates a new instance of class '
                     + functionWrapper.name + '.';
@@ -2705,11 +2730,11 @@ function generateComment(functionWrapper, ast, walkerObj, input,
             var commentBody = input.substring(range[0], range[1]).trim();
             if (commentBody.indexOf('/**') !== -1) {
                 var commentText = commentBody;
-                // console.warn(commentText);
+                // logger.log(commentText);
                 doclet = parseDoclet(walkerObj, commentText, false, '', 0,
                         functionWrapper);
                 functionWrapper.oldComment = oldComment;
-                // console.warn(doclet);
+                // logger.log(doclet);
             }
         }
     } else {
@@ -2717,21 +2742,21 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         functionWrapper = {};
         doclet = parseDoclet(walkerObj, commentText, false, '', 0,
                 functionWrapper);
-        // console.warn(doclet);
+        // logger.log(doclet);
         if (mergeRequires(doclet)) {
 
             console
                     .warn("Requires list needs to be re-printed. Start parse over now.");
-            // console.warn(doclet);
+            // logger.log(doclet);
             statusCheck.merge = true;
         }
 
     }
 
-    // // console.warn(funkyName + ' << ' + functionWrapper.name);
+    // // logger.log(funkyName + ' << ' + functionWrapper.name);
 
     if (doclet != null && doclet.tags) {
-        // console.warn(doclet.tags);
+        // logger.log(doclet.tags);
         tags = doclet.tags;
     }
 
@@ -2750,12 +2775,12 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         hasLendsTag = searchTags(doclet, 'lends');
 
         // if (hasConstructorTag) {
-        // console.warn('hasConstructorTag: ' +
+        // logger.log('hasConstructorTag: ' +
         // JSON.stringify(hasConstructorTag));
         // }
 
         if (doclet.freeText && doclet.freeText != '') {
-            // console.warn(doclet.freeText);
+            // logger.log(doclet.freeText);
             // commentBlock.push(' * ' + doclet.freeText);
             var freeText = doclet.freeText.trim();
             freeText = addStarLines(freeText, {});
@@ -2787,7 +2812,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
                     }
                 }
 
-                //console.log(tag);
+                //logger.log(tag);
                 if (typeof tag === 'object') {
                     // {
                     // tagName: 'return',
@@ -2796,25 +2821,24 @@ function generateComment(functionWrapper, ast, walkerObj, input,
                     // line: '@return {String}'
                     // }
                     // construct doclet tag
-                    //console.warn(tag);
+                    //logger.log(tag);
                     commentBlock.push(' * ' + tag.line);
                 } else {
                     // construct doclet tag
-                    // console.warn('JUST TEXT >>> ' +
+                    // logger.log('JUST TEXT >>> ' +
                     // JSON.stringify(newTag));
                     // addStarLines(newTag.text, newTag));
-                    //console.warn(doclet);
+                    //logger.log(doclet);
                     var newComment = '';
-                    
-                    
-                    
+
                     if (newTag.text.trim().length > 0) {
                         var textOfTag = newTag.text.trim();
-                        if (textOfTag.indexOf('module:') === 0){
-                            //console.warn(textOfTag);
-                            newTag.text = fixModuleNameInText(textOfTag, walkerObj);
+                        if (textOfTag.indexOf('module:') === 0) {
+                            //logger.log(textOfTag);
+                            newTag.text = fixModuleNameInText(textOfTag,
+                                    walkerObj);
                         }
-                        
+
                         newComment = ' * ' + t + ' '
                                 + addStarLines(newTag.text, newTag);
                         commentBlock.push(newComment);
@@ -2833,7 +2857,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
             params : [],
             returnValue : ''
         };
-        // console.warn('Non-tag lines: ' + funkyName);
+        // logger.warn('Non-tag lines: ' + funkyName);
         if (funkyName.trim().length > 0) {
             commentBlock.push(' * ' + funkyName);
         }
@@ -2880,7 +2904,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
 
                 // var prefix = incompleteLends.value.split('module:')[0];
                 // incompleteLends.value = prefix + justPath;
-                console.warn("!!! Add full path to constructor? "
+                logger.warn("!!! Add full path to constructor? "
                         + incompleteLends.fullClassName);
             }
 
@@ -2892,7 +2916,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         if (functionWrapper.line.indexOf('constructor: function') !== -1) {
             console
                     .warn("Constructor, but it's to the RIGHT of \"constructor:\"");
-            console.warn('     "' + functionWrapper.line + '"');
+            logger.warn('     "' + functionWrapper.line + '"');
             var moduleName = walkerObj.moduleName;
             if (incompleteLends != null
                     && incompleteLends.fullClassName != null) {
@@ -2901,7 +2925,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
                 incompleteLends.fullClassName = null;
                 delete incompleteLends.fullClassName;
             } else {
-                // console.warn(walkerObj.results.amdProc.moduleName);
+                // logger.log(walkerObj.results.amdProc.moduleName);
 
                 commentBlock.push(' * @constructs ' + moduleName + '~'
                         + functionWrapper.name);
@@ -2913,12 +2937,12 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         }
 
         // commentBlock.push(' * @constructor');
-        // console.warn(functionWrapper);
+        // logger.log(functionWrapper);
 
     }
 
     // if (hasConstructorTag != null){
-    // console.warn(hasConstructorTag);
+    // logger.log(hasConstructorTag);
     // }
 
     functionWrapper.doclet = doclet;
@@ -2993,9 +3017,9 @@ if (false) {
     };
     var source = readFile(input.folderPath + _path.sep + testFileName);
     input.source = source;
-    // console.log(input);
+    // logger.log(input);
     var testResult = addMissingComments(input);
     testResult = testResult.split('/*jsdoc_prep_data*/')[1];
-    // console.log(testResult);
+    // logger.log(testResult);
     writeFile('test-output' + _path.sep + testFileName, testResult);
 }
