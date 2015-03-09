@@ -12,6 +12,28 @@ var newJsDoccerEngine = require('./jsdoccer');
 var parseDoclet = docletEngine.parseDoclet;
 var printDoclet = docletEngine.printDoclet;
 var addMissingComments = newJsDoccerEngine.addMissingComments;
+
+
+function mapModuleName(mappedModuleName, modulePaths){
+    for (var p in modulePaths){
+        if (modulePaths.hasOwnProperty(p)){
+            var pattern = modulePaths[p];
+            if (mappedModuleName.indexOf(pattern) !== -1){
+                mappedModuleName = mappedModuleName.split(pattern).join(p);
+                // stop, don't apply every match 
+                break; 
+            }
+            
+        }
+    }
+    
+    if (mappedModuleName.charAt(0) === '/'){
+        mappedModuleName = mappedModuleName.substring(1);
+    }
+
+    return mappedModuleName;
+}
+
 var headerProc = {
     id: 'headerProc',
     type: 'processor',
@@ -1189,7 +1211,7 @@ function test() {
     var outPath = 'jsdoc-preptoolkit\\processed';
     var testPath = 'jsdoc-preptoolkit\\jstests';
     var docPath = 'jsdoc-preptoolkit\\jsdocs';
-    processFile(basePath, inPath, outPath, testPath, docPath, [gsLintProc],
+    processFile({}, basePath, inPath, outPath, testPath, docPath, [gsLintProc],
         function (result) {});
 }
 
@@ -1219,7 +1241,7 @@ function setWriteEnable(val) {
     WRITE_ENABLED = val;
 }
 
-function processFile(baseDirectory, filePathName, outputDirectory,
+function processFile(modulePaths, baseDirectory, filePathName, outputDirectory,
     testDirectory, docDirectory, processorChain, completionCallback,
     writeEnable) {
     var pathDelim = filePathName.indexOf('/') == -1 ? '\\' : '/';
@@ -1246,6 +1268,7 @@ function processFile(baseDirectory, filePathName, outputDirectory,
     wholePath = wholePath.join(pathDelim);
     output.folderPath = wholePath;
     output.fileName = fileName;
+    output.modulePaths = modulePaths;
     output.packagePath = wholePath.substring(baseDirectory.length);
     if (pathDelim === '\\') {
         output.webPath = output.packagePath.split('\\')
@@ -1274,6 +1297,11 @@ function processFile(baseDirectory, filePathName, outputDirectory,
     output.rawSource = source;
     output.source = source;
     output.processedFilePath = outputfilePathName;
+    output.mappedModuleName = mapModuleName(output.packagePath, modulePaths) + '/' + moduleName;
+    
+    //console.warn('mappedModuleName: ', output.mappedModuleName, ' from ', output.packagePath);
+   // exit();
+    
     var currentChainIndex = 0;
 
     function runNextProcessor() {
@@ -2015,10 +2043,7 @@ var jsDoc3PrepProc = {
                         // console.warn(source);
                         // }
                         // console.warn(JSON.stringify(input,null,2));
-                        var packagePath = input.path.split('/');
-                        packagePath.shift();
-                        packagePath = packagePath.join('/');
-                        packagePath = packagePath.split('.js')[0];
+                        var packagePath = input.mappedModuleName;
                         // console.warn(packagePath);
                         combiner.push(splitter[0] + '\n' + '/**\n * @exports ' + packagePath + '\n' + getRequiresTags(input) + ' */\n');
                         // if (input.name === 'context'){
@@ -2039,10 +2064,11 @@ var jsDoc3PrepProc = {
                 } else if (whereDefine !== -1 && source.indexOf('@module') === -1) {
                     var combiner = [];
                     // console.warn(JSON.stringify(input,null,2));
-                    var packagePath = input.path.split('/');
-                    packagePath.shift();
-                    packagePath = packagePath.join('/');
-                    packagePath = packagePath.split('.js')[0];
+//                    var packagePath = input.path.split('/');
+//                    packagePath.shift();
+//                    packagePath = packagePath.join('/');
+//                    packagePath = packagePath.split('.js')[0];
+                    var packagePath = input.mappedModuleName;
                     // console.warn(packagePath);
                     source = ('/**\n * @module ' + packagePath + '\n' + getRequiresTags(input) + ' */\n') + source;
                 } else {
@@ -2149,11 +2175,13 @@ function getAmdConfig() {
     return AMD_DATA;
 }
 module.exports = {
-    'plugins': plugins,
-    'processFile': processFile,
-    'writeFile': writeFile,
-    'readFile': readFile,
-    'setWriteEnable': setWriteEnable,
-    'getAmdConfig': getAmdConfig
-};
-
+        'plugins': plugins,
+        'processFile': processFile,
+        'writeFile': writeFile,
+        'readFile': readFile,
+        'setWriteEnable': setWriteEnable,
+        'getAmdConfig': getAmdConfig,
+        'mapModuleName': function (moduleName) {
+            return mapModuleName(moduleName, modulePaths);
+        }
+    };

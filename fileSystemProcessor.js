@@ -30,6 +30,7 @@ var outputPath = '';
 var modules = {};
 var allSource = '';
 var totalFiles = [];
+var modulePaths = {};
 
 /**
  * Filter files.
@@ -82,7 +83,7 @@ function __nextFile() {
     var basePath = SCAN_PATH;
     var inPath = nextPath;
 
-    sfp.processFile(basePath, inPath, outPath, testPath, docPath,
+    sfp.processFile(modulePaths, basePath, inPath, outPath, testPath, docPath,
             processingChain, function(result) {
                 if (result.corrupted) {
                     console.error('HALTED');
@@ -180,6 +181,7 @@ function run(options) {
         return output;
     }
     cb = options.callBack;
+    modulePaths = options.modulePaths;
     SCAN_PATH = options.scanPath;
     outPath = options.writePath;
     testPath = options.writeTestPath;

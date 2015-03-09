@@ -117,7 +117,10 @@ var opts = {
     writeDocPath : docPath,
     writeResultsPath : resultsPath,
     writeEnable : true,
-    processingChain : processingChain
+    processingChain : processingChain,
+    modulePaths: {
+        'blue': 'blue/js'
+    }
 };
 var justDoc = false;
 if (justDoc) {
@@ -126,6 +129,8 @@ if (justDoc) {
     //console.warn(outPath);
     rimraf(outPath, function() {
         healthCheck.run({
+            
+            modulePaths: opts.modulePaths,
             callBack : opts.callBack,
             scanPath : opts.scanPath,
             writePath : outPath,
