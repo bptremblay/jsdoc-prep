@@ -3,9 +3,9 @@ var _path = require('path');
 var _wrench = require('wrench');
 var uid = 0;
 var nodes = [];
-// Doctor the comment. Can cause problems.
+//Doctor the comment. Can cause problems.
 var FIX_COMMENT_GRAMMAR = true;
-// Try to normalize module names so hand-coded ones match. Can cause problems.
+//Try to normalize module names so hand-coded ones match. Can cause problems.
 var FIX_MODULE_NAMES = true;
 
 var Logger = function() {
@@ -2531,7 +2531,7 @@ function addMissingComments(walkerObj, errors) {
             logger.log('COULD NOT FIND ' + ctorLine);
         }
         spliceInlineConstructor = null;
-        
+
     }
 
     var jsDoccerBlob = {
@@ -2566,7 +2566,8 @@ function addMissingComments(walkerObj, errors) {
     // logger.log(newFile);
     outputArray.push('');
     logger.log('done ' + walkerObj.name);
-    console.warn('Named constructors! ', JSON.stringify(walkerObj.namedConstructors, null, 2));
+    console.warn('Named constructors! ', JSON.stringify(
+            walkerObj.namedConstructors, null, 2));
     return outputArray.join('\n/*jsdoc_prep_data*/\n');
 }
 /**
@@ -2910,7 +2911,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
             incompleteLends.possibleClassName = functionWrapper.name;
         }
     }
-
+    var moduleName = walkerObj.mappedModuleName;
     if (ctor && hasConstructorTag == null && hasConstructsTag == null) {
 
         // line: 'constructor: function ControllerRegistry(){',
@@ -2941,43 +2942,71 @@ function generateComment(functionWrapper, ast, walkerObj, input,
 
         console
                 .warn('Constructor FOUND, and we have not already declared it in @constructor or @constructs.');
-        var moduleName = walkerObj.mappedModuleName;
+
         if (functionWrapper.line.indexOf('constructor: function') !== -1) {
             console
                     .warn("Constructor, but it's to the RIGHT of \"constructor:\"");
-            logger.warn('     "' + functionWrapper.line + '"');
-            
+            //console.warn('     "' + functionWrapper.line + '"');
+
             if (incompleteLends != null
                     && incompleteLends.fullClassName != null) {
-                walkerObj.namedConstructors[incompleteLends.fullClassName] = '@constructs';
-                commentBlock.push(' * @constructs '
-                        + incompleteLends.fullClassName);
+                if (walkerObj.namedConstructors[incompleteLends.fullClassName] == null) {
+                    walkerObj.namedConstructors[incompleteLends.fullClassName] = '@constructs';
+                    commentBlock.push(' * @constructs '
+                            + incompleteLends.fullClassName);
+                } else {
+                    console
+                            .warn('Constructor for '
+                                    + incompleteLends.fullClassName
+                                    + ' already found, so not adding extra @constructs tag');
+                }
+                // TODO: is this right?
                 incompleteLends.fullClassName = null;
                 delete incompleteLends.fullClassName;
             } else {
                 // logger.log(walkerObj.results.amdProc.moduleName);
                 var constructsMarkup = ' * @constructs ' + moduleName + '~'
                         + functionWrapper.name;
-                walkerObj.namedConstructors[moduleName + '~'
-                                            + functionWrapper.name] = '@constructs';
-                console.warn(constructsMarkup);
-                // FIXME: don't add @constructs if @constructor or @class is already named 
-                // commentBlock.push(constructsMarkup);
+
+                if (walkerObj.namedConstructors[moduleName + '~'
+                        + functionWrapper.name] == null) {
+                    walkerObj.namedConstructors[moduleName + '~'
+                            + functionWrapper.name] = '@constructs';
+                    //console.warn(constructsMarkup);
+                    // FIXME: don't add @constructs if @constructor or @class is already named 
+                    commentBlock.push(constructsMarkup);
+                } else {
+                    console.warn('Constructor for ' + moduleName + '~'
+                            + functionWrapper.name + ' already found, so not adding extra @constructs tag');
+                }
             }
 
             spliceInlineConstructor = functionWrapper;
         } else {
-            commentBlock.push(' * @constructor');
-            walkerObj.namedConstructors[moduleName + '~' + functionWrapper.name] = '@constructor';
+            var context = functionWrapper.line;
+            if (context.indexOf('=') !== -1) {
+                context = context.split('=')[0].trim();
+            } else if (context.indexOf(':') !== -1) {
+                context = context.split(':')[0].trim();
+            } else {
+                context = functionWrapper.name;
+            }
+            //console.warn('What is left of this "constructor" ? ' + context);
+            if (walkerObj.namedConstructors[moduleName + '~' + context] == null) {
+                commentBlock.push(' * @constructor');
+                walkerObj.namedConstructors[moduleName + '~' + context] = '@constructor';
+            } else {
+                console.warn('Constructor for ' + moduleName + '~' + context
+                        + ' already found.');
+            }
+
         }
 
         // commentBlock.push(' * @constructor');
         // logger.log(functionWrapper);
 
-        
-    }
-    else if (ctor && (hasConstructorTag != null || hasConstructsTag != null)) {
-        walkerObj.namedConstructors[functionWrapper.name] = true;
+    } else if (ctor && (hasConstructorTag != null || hasConstructsTag != null)) {
+        walkerObj.namedConstructors[moduleName + '~' + functionWrapper.name] = '@constructor';
     }
 
     // if (hasConstructorTag != null){
