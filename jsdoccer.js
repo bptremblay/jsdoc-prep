@@ -9,14 +9,14 @@ var FIX_COMMENT_GRAMMAR = true;
 var FIX_MODULE_NAMES = true;
 
 var Logger = function() {
-    this.log = function() {
-
+    this.log = function(msg) {
+        console.log(msg);
     };
-    this.warn = function() {
-
+    this.warn = function(msg) {
+        console.warn(msg);
     };
-    this.error = function() {
-
+    this.error = function(msg) {
+        console.error(msg);
     };
 };
 
@@ -2404,8 +2404,12 @@ function addMissingComments(walkerObj, errors) {
                 tokens : true
             });
         } catch (esError) {
+            
+            writeFile(walkerObj.processedFilePath, walkerObj.source);
+            
             reportError('ESPRIMA ERROR 2nd time parse in addMissingComments',
                     esError, errors, walkerObj);
+            ex();
             return 'ERROR';
         }
         functionExpressions = getNodesByType(ast, 'FunctionExpression');
