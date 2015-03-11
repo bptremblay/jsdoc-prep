@@ -3,9 +3,9 @@ var _path = require('path');
 var _wrench = require('wrench');
 var uid = 0;
 var nodes = [];
-//Doctor the comment. Can cause problems.
+// Doctor the comment. Can cause problems.
 var FIX_COMMENT_GRAMMAR = true;
-//Try to normalize module names so hand-coded ones match. Can cause problems.
+// Try to normalize module names so hand-coded ones match. Can cause problems.
 var FIX_MODULE_NAMES = true;
 
 var Logger = function() {
@@ -45,22 +45,23 @@ function mapModuleName(mappedModuleName, walkerObj) {
 
 function fixModuleNameInText(text, walkerObj) {
 
-    // logger.log('Fix reference to module name "' + text + '".');
+    //console.warn('Fix reference to module name "' + text + '".');
     var splitter = text.split('module:');
     splitter.shift();
     var moduleName = splitter.join('module:').trim();
     moduleName = moduleName.split(' ')[0];
-    var newModuleName = fixModuleName(moduleName, walkerObj);
+    
+    //var newModuleName = inferModuleName(moduleName, walkerObj);
     // logger.log('Fix moduleName: "' + moduleName + '" >>> "' + newModuleName +
     // '".');
-    text = 'module:' + mapModuleName(newModuleName, walkerObj);
-    console.warn('fixModuleNameInText Fixed text: "' + text + '".');
+    text = 'module:' + mapModuleName(moduleName, walkerObj);
+    //console.warn('fixModuleNameInText Fixed text: "' + text + '".');
 
     return text;
 }
 
-function fixModuleName(moduleName, walkerObj) {
-    var usedModuleName = walkerObj.moduleName;
+function inferModuleName( walkerObj) {
+    var usedModuleName = walkerObj.fileName.split('.js')[0];
 
     var packagePath = walkerObj.path.split('/');
     packagePath.shift();
@@ -1374,6 +1375,9 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode,
         nodeType = 'MODULE';
     } else if (docletData['@lends'] != null) {
         nodeType = 'LENDS';
+    } else if (docletData['@mixes'] != null) {
+        //nodeType = 'MIXES';
+       // console.warn(docletData);
     } else if (docletData['@var'] != null) {
         nodeType = 'VAR';
     } else if (docletData['@type'] != null) {
@@ -1906,6 +1910,7 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
             // functionWrapper.name = '_' + obj.uid;
             // }
             var ctor = false;
+            // "blue/reactive_view~this[ '_' + name ]": "@constructor",
             functionWrapper.memberOf = '';
             if (functionWrapper.name && functionWrapper.name !== '') {
                 var firstChar = functionWrapper.name.charAt(0);
@@ -1929,14 +1934,26 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                         // is it an inner?
                         functionWrapper.todos.push('MEMBEROF');
                     }
+                    // console.warn('>>>>>>>> SQUARE >>>' +
+                    // functionWrapper.name, functionWrapper);
                 } else {
+
                     if (firstChar.toUpperCase() === firstChar) {
-                        ctor = true;
-                        logger.log('CTOR = true');
-                        functionWrapper.returnType = '';
-                        output.classes[functionWrapper.name] = obj.uid;
+                        // Make it a constructor just 'cause it's uppacase?
+                        // console.warn("Make it a constructor just 'cause it's
+                        // uppacase? " + functionWrapper.name + '?');
+                        if (functionWrapper.name === walkerObj.camelName) {
+                            // Only if it's known to the real module name.
+                            ctor = true;
+                            // console.warn('Constructor for ' +
+                            // walkerObj.camelName + '? ', functionWrapper);
+                            functionWrapper.returnType = '';
+                            output.classes[functionWrapper.name] = obj.uid;
+                        }
+
                     }
                 }
+
                 functionWrapper.ctor = ctor;
                 var lineNumber = getLineNumber(input, obj);
                 functionWrapper.lineNumber = lineNumber;
@@ -1952,8 +1969,14 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                 }
                 functionWrapper.range = obj.range;
                 output.methods[functionWrapper.name] = functionWrapper;
+
+                // if (ctor){
+                // console.warn('CONSTRUCTOR', functionWrapper);
+                // }
+
                 functionWrapper.name = null;
                 delete functionWrapper.name;
+
             }
         }
     }
@@ -2034,6 +2057,13 @@ function enumTags(doclet) {
                 output.lends = lends;
             }
             lends.push(tag);
+        } else if (tag.tag === 'mixes') {
+            var mixes = output.mixes;
+            if (mixes == null) {
+                mixes = [];
+                output.mixes = mixes;
+            }
+            mixes.push(tag);
         } else if (tag.tag === 'borrows') {
             var borrows = output.borrows;
             if (borrows == null) {
@@ -2156,29 +2186,33 @@ function addMissingComments(walkerObj, errors) {
     }
 
     var moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
+    // console.warn(moduleName);
+    // exit;
     if (input.indexOf('@exports') !== -1) {
         // get the module name given there...
         var modChunk = input.split('@exports')[1];
         modChunk = modChunk.split('\n')[0].trim();
 
         moduleName = 'module:' + modChunk;
-        // throw(new Error(moduleName));
+        console.warn('Infer module name from @exports definition.');
     } else if (input.indexOf('@module') !== -1) {
         // get the module name given there...
         var modChunk = input.split('@module')[1];
         modChunk = modChunk.split('\n')[0].trim();
 
         moduleName = 'module:' + modChunk;
-        // throw(new Error(moduleName));
+        console.warn('Infer module name from @module definition.');
     } else {
         moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
-        logger.log('Infer module name from file or AMD definition.');
+        console.warn('Infer module name from file or AMD definition.');
     }
     walkerObj.moduleName = moduleName;
     // console.warn('USE THIS AS THE MODULE NAME??? ' + moduleName);
     // console.warn('OR, USE THIS AS THE MODULE NAME??? module:' +
     // walkerObj.mappedModuleName);
     walkerObj.moduleName = walkerObj.mappedModuleName;
+    // console.warn(walkerObj.moduleName);
+    // exit
     var hasLends = getCommentWith(input, ast.comments, '@lends');
     if (hasLends != null && incompleteLends == null) {
 
@@ -2566,8 +2600,8 @@ function addMissingComments(walkerObj, errors) {
     // logger.log(newFile);
     outputArray.push('');
     logger.log('done ' + walkerObj.name);
-    console.warn('Named constructors! ', JSON.stringify(
-            walkerObj.namedConstructors, null, 2));
+    // console.warn('Named constructors! ', JSON.stringify(
+    // walkerObj.namedConstructors, null, 2));
     return outputArray.join('\n/*jsdoc_prep_data*/\n');
 }
 /**
@@ -2825,7 +2859,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
 
             if (t !== '@return' && t !== '@param') {
                 var tag = doclet[t];
-
+                
                 if (hasConstructsTag === newTag) {
 
                     var text = hasConstructsTag.text.trim();
@@ -2844,6 +2878,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
 
                 // logger.log(tag);
                 if (typeof tag === 'object') {
+                    
                     // {
                     // tagName: 'return',
                     // type: '{String}',
@@ -2854,19 +2889,21 @@ function generateComment(functionWrapper, ast, walkerObj, input,
                     // logger.log(tag);
                     commentBlock.push(' * ' + tag.line);
                 } else {
+                    
                     // construct doclet tag
                     // logger.log('JUST TEXT >>> ' +
                     // JSON.stringify(newTag));
                     // addStarLines(newTag.text, newTag));
                     // logger.log(doclet);
                     var newComment = '';
-
+                    //console.warn(newTag);
                     if (newTag.text.trim().length > 0) {
                         var textOfTag = newTag.text.trim();
                         if (textOfTag.indexOf('module:') === 0) {
-                            // logger.log(textOfTag);
+                            //console.warn('CHANGING ' + textOfTag);
                             newTag.text = fixModuleNameInText(textOfTag,
                                     walkerObj);
+                            //console.warn('...TO:  ' + newTag.text);
                         }
 
                         newComment = ' * ' + t + ' '
@@ -2934,7 +2971,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
 
                 // var prefix = incompleteLends.value.split('module:')[0];
                 // incompleteLends.value = prefix + justPath;
-                logger.warn("!!! Add full path to constructor? "
+                console.warn("!!! Add full path to constructor? "
                         + incompleteLends.fullClassName);
             }
 
@@ -2946,13 +2983,16 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         if (functionWrapper.line.indexOf('constructor: function') !== -1) {
             console
                     .warn("Constructor, but it's to the RIGHT of \"constructor:\"");
-            //console.warn('     "' + functionWrapper.line + '"');
+            // console.warn(' "' + functionWrapper.line + '"');
 
             if (incompleteLends != null
                     && incompleteLends.fullClassName != null) {
                 if (walkerObj.namedConstructors[incompleteLends.fullClassName] == null) {
-                    walkerObj.namedConstructors[incompleteLends.fullClassName] = '@constructs';
+                    functionWrapper.ctorType = '@constructs';
+                    walkerObj.namedConstructors[incompleteLends.fullClassName] = functionWrapper;
                     commentBlock.push(' * @constructs '
+                            + incompleteLends.fullClassName);
+                    console.warn(' * @constructs '
                             + incompleteLends.fullClassName);
                 } else {
                     console
@@ -2970,14 +3010,20 @@ function generateComment(functionWrapper, ast, walkerObj, input,
 
                 if (walkerObj.namedConstructors[moduleName + '~'
                         + functionWrapper.name] == null) {
+                    functionWrapper.ctorType = '@constructs';
                     walkerObj.namedConstructors[moduleName + '~'
-                            + functionWrapper.name] = '@constructs';
-                    //console.warn(constructsMarkup);
-                    // FIXME: don't add @constructs if @constructor or @class is already named 
+                            + functionWrapper.name] = functionWrapper;
+                    console.warn('ZZZZZZZZZZZ ' + constructsMarkup);
+                    // FIXME: don't add @constructs if @constructor or @class is
+                    // already named
                     commentBlock.push(constructsMarkup);
                 } else {
-                    console.warn('Constructor for ' + moduleName + '~'
-                            + functionWrapper.name + ' already found, so not adding extra @constructs tag');
+                    console
+                            .warn('Constructor for '
+                                    + moduleName
+                                    + '~'
+                                    + functionWrapper.name
+                                    + ' already found, so not adding extra @constructs tag');
                 }
             }
 
@@ -2991,10 +3037,11 @@ function generateComment(functionWrapper, ast, walkerObj, input,
             } else {
                 context = functionWrapper.name;
             }
-            //console.warn('What is left of this "constructor" ? ' + context);
+            console.warn('What is left of this "constructor" ? ' + context);
             if (walkerObj.namedConstructors[moduleName + '~' + context] == null) {
                 commentBlock.push(' * @constructor');
-                walkerObj.namedConstructors[moduleName + '~' + context] = '@constructor';
+                functionWrapper.ctorType = '@constructor';
+                walkerObj.namedConstructors[moduleName + '~' + context] = functionWrapper;
             } else {
                 console.warn('Constructor for ' + moduleName + '~' + context
                         + ' already found.');
@@ -3006,7 +3053,8 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         // logger.log(functionWrapper);
 
     } else if (ctor && (hasConstructorTag != null || hasConstructsTag != null)) {
-        walkerObj.namedConstructors[moduleName + '~' + functionWrapper.name] = '@constructor';
+        functionWrapper.ctorType = '@constructor';
+        walkerObj.namedConstructors[moduleName + '~' + functionWrapper.name] = functionWrapper;
     }
 
     // if (hasConstructorTag != null){

@@ -204,7 +204,7 @@ var amdProc = {
         }
         var result = input.results[this.id];
         result.requires = [];
-        result.moduleName = input.name;
+        result.moduleName = input.fileName.split('.js')[0];
         result.AMD = false;
         result.webPath = input.webPath;
         // AMD_DATA.paths[result.moduleName] = 'v2' + result.webPath
@@ -237,7 +237,8 @@ var amdProc = {
             result.requires.push(inlineModule);
             //console.warn('require("' + inlineModule + '")');
         }
-        result.moduleName = converted.name;
+        result.convertedName = converted.name;
+        //result.moduleName = converted.name;
         result.AMD = converted.isModule;
         
         result.min = converted.min;
@@ -1297,7 +1298,7 @@ function processFile(modulePaths, baseDirectory, filePathName, outputDirectory,
     output.rawSource = source;
     output.source = source;
     output.processedFilePath = outputfilePathName;
-    output.mappedModuleName = mapModuleName(output.packagePath, modulePaths) + '/' + moduleName;
+    output.mappedModuleName = mapModuleName(output.packagePath, modulePaths) + '/' + output.fileName.split('.js')[0];
     
     //console.warn('mappedModuleName: ', output.mappedModuleName, ' from ', output.packagePath);
    // exit();
