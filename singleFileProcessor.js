@@ -813,6 +813,27 @@ var yuiFilter = {
         }
     }
 };
+
+var JSONFilter = {
+        id: 'JSONFilter',
+        type: 'filter',
+        description: 'Filters out js files that ARE really just simple JSON files.',
+        process: function (input, doneCallback) {
+            if (input.errors[this.id] == null) {
+                input.errors[this.id] = [];
+            }
+            temp = input.source;
+            var stripped = stripOneLineComments(stripCComments(temp));
+            var isJSON = stripped.trim().indexOf('{') === 0;
+            // TODO: add test for [] too?
+            if (!isJSON) {
+                doneCallback(input);
+            } else {
+                finishedProcessingChain();
+            }
+        }
+    };
+
 var amdFilter = {
     id: 'amdFilter',
     type: 'filter',
@@ -1245,13 +1266,18 @@ function setWriteEnable(val) {
 function processFile(modulePaths, baseDirectory, filePathName, outputDirectory,
     testDirectory, docDirectory, processorChain, completionCallback,
     writeEnable) {
-    var pathDelim = filePathName.indexOf('/') == -1 ? '\\' : '/';
-    WRITE_ENABLED = writeEnable = writeEnable != null ? writeEnable : false;
-    finishedProcessingChain = _finishedProcessingChain;
     var output = {};
     output.results = {};
     output.errors = {};
     output.outputDirectory = outputDirectory;
+    if (!filePathName){
+        output.error = 'filePathName is null';
+        return output;
+    }
+    var pathDelim = filePathName.indexOf('/') == -1 ? '\\' : '/';
+    WRITE_ENABLED = writeEnable = writeEnable != null ? writeEnable : false;
+    finishedProcessingChain = _finishedProcessingChain;
+    
     var outputfilePathName = '';
     baseDirectory = _path.normalize(baseDirectory);
     filePathName = _path.normalize(filePathName);
@@ -2168,7 +2194,7 @@ var plugins = {
     'jsDoc3PrepProc': jsDoc3PrepProc,
     'generateJavaProc': generateJavaProc,
     'fixJSDocFormattingProc': fixJSDocFormattingProc,
-    
+    'JSONFilter': JSONFilter,
     'singleJsDocProc': singleJsDocProc
 };
 

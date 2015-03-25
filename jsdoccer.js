@@ -2780,8 +2780,8 @@ function generateComment(functionWrapper, ast, walkerObj, input,
         funkyName = funkyName.split('_');
         funkyName[0] = capitalize(funkyName[0]);
         funkyName = funkyName.join(' ');
-        funkyName += '.';
-        // logger.log(funkyName);
+        //funkyName += '.';
+        //logger.warn(funkyName);
         if (functionWrapper.ctor) {
             funkyName = 'Creates a new instance of class '
                     + functionWrapper.name + '.';
@@ -2928,9 +2928,9 @@ function generateComment(functionWrapper, ast, walkerObj, input,
             params : [],
             returnValue : ''
         };
-        // logger.warn('Non-tag lines: ' + funkyName);
+        logger.warn('Non-tag lines: ' + funkyName);
         if (funkyName.trim().length > 0) {
-            commentBlock.push(' * ' + funkyName);
+            commentBlock.push(' * ' + funkyName + '.');
         }
 
     }
@@ -3018,7 +3018,7 @@ function generateComment(functionWrapper, ast, walkerObj, input,
                     walkerObj.namedConstructors[moduleName + '~'
                             + functionWrapper.name] = functionWrapper;
                     console.warn('ZZZZZZZZZZZ ' + constructsMarkup);
-                    // FIXME: don't add @constructs if @constructor or @class is
+                    // Don't add @constructs if @constructor or @class is
                     // already named
                     commentBlock.push(constructsMarkup);
                 } else {

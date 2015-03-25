@@ -2,13 +2,13 @@ var path = require('path');
 var fs = require('fs');
 var healthCheck = require('./fileSystemProcessor');
 var rimraf = require('rimraf');
-//
+
 var outPath = 'test-output';
 var testPath = 'test-jstests';
 var docPath = 'test-jsdocs';
 var resultsPath = 'test-results';
 var scanPath = 'test-source';
-// /Users/benjamintremblay/jsdoc-prep
+///Users/benjamintremblay/jsdoc-prep
 var projectPath = '~/Documents/Projects';
 
 function healthCheckCallback(healthCheckResults) {
@@ -40,13 +40,13 @@ function healthCheckCallback(healthCheckResults) {
 
                     if (USE_HARUKI) {
                         cmdLine += ' -r -l -t templates/../../experimental_template/haruki -d ' + reportPath + '/jsDocModel.json' + ' -q format=json'
-                                + ' ' + sourceDirectory + '';
+                        + ' ' + sourceDirectory + '';
                     } else {
-//                        cmdLine += ' -r -l -d ' + docPath + ' '
-//                                + sourceDirectory + '';
+//                      cmdLine += ' -r -l -d ' + docPath + ' '
+//                      + sourceDirectory + '';
                         // exePath + ' -r -l -d ' + projectPath
                         // + '/jsdoc-prep/test-jsdocs ' + sourceDirectory + '';
-                        
+
                         cmdLine += ' -r -l -t templates/../../experimental_template/default -d ' + docPath + '' + ' -q format=json'
                         + ' ' + sourceDirectory + '';
                     }
@@ -69,18 +69,18 @@ function healthCheckCallback(healthCheckResults) {
                      * @param code
                      */
                     child
-                            .on(
-                                    'close',
-                                    function(code) {
-                                        console
-                                                .log('child process "node jsdoc" exited with code '
-                                                        + code);
-                                    });
+                    .on(
+                            'close',
+                            function(code) {
+                                console
+                                .log('child process "node jsdoc" exited with code '
+                                        + code);
+                            });
                 });
     }
     runJsDoc(projectPath + '/jsdoc-prep/test-output');
 }
-// 'jsDoc3PrepProc',
+//'jsDoc3PrepProc',
 var processingChain = [
                        // 'trimProc',
                        // 'thirdPartyFilter',
@@ -88,39 +88,40 @@ var processingChain = [
                        // 'badCharactersProc',
                        // 'trimProc',
                        // 'amdFilter',
-//                       'jsBeautifyProc',
+//                     'jsBeautifyProc',
+                       'JSONFilter',
                        'amdProc',
                        'jsDoccerProc',
                        'jsDocNameFixerProc',
                        'fixClassDeclarationsProc',
-                      'jsDoc3PrepProc',
+                       'jsDoc3PrepProc',
                        // 'trimProc',
                        'jsBeautifyProc' ];
 
-// var processingChain = [
-// // 'trimProc',
-// 'thirdPartyFilter',
-// 'minFilter',
-// 'badCharactersProc',
-// //'trimProc',
-// 'amdFilter',
-// 'jsBeautifyProc',
-// 'amdProc',
-// 'jsDoccerProc',
-// 'jsBeautifyProc'
-// ];
+//var processingChain = [
+//// 'trimProc',
+//'thirdPartyFilter',
+//'minFilter',
+//'badCharactersProc',
+////'trimProc',
+//'amdFilter',
+//'jsBeautifyProc',
+//'amdProc',
+//'jsDoccerProc',
+//'jsBeautifyProc'
+//];
 var opts = {
-    callBack : healthCheckCallback,
-    scanPath : scanPath,
-    writePath : outPath,
-    writeTestPath : testPath,
-    writeDocPath : docPath,
-    writeResultsPath : resultsPath,
-    writeEnable : true,
-    processingChain : processingChain,
-    modulePaths: {
-        'blue': 'blue/js'
-    }
+        callBack : healthCheckCallback,
+        scanPath : scanPath,
+        writePath : outPath,
+        writeTestPath : testPath,
+        writeDocPath : docPath,
+        writeResultsPath : resultsPath,
+        writeEnable : true,
+        processingChain : processingChain,
+        modulePaths: {
+            'blue': 'blue/js'
+        }
 };
 var justDoc = false;
 if (justDoc) {
@@ -129,7 +130,7 @@ if (justDoc) {
     //console.warn(outPath);
     rimraf(outPath, function() {
         healthCheck.run({
-            
+
             modulePaths: opts.modulePaths,
             callBack : opts.callBack,
             scanPath : opts.scanPath,
