@@ -92,10 +92,9 @@ var processingChain = [
                        'JSONFilter',
                        'amdProc',
                        'jsDoccerProc',
-                       'jsDocNameFixerProc',
-                       'fixClassDeclarationsProc',
-                       'jsDoc3PrepProc',
-                       // 'trimProc',
+//                       'jsDocNameFixerProc',
+//                       'fixClassDeclarationsProc',
+//                       'jsDoc3PrepProc',
                        'jsBeautifyProc' ];
 
 //var processingChain = [
@@ -130,7 +129,7 @@ if (justDoc) {
     //console.warn(outPath);
     rimraf(outPath, function() {
         healthCheck.run({
-
+            
             modulePaths: opts.modulePaths,
             callBack : opts.callBack,
             scanPath : opts.scanPath,

@@ -144,14 +144,14 @@ var fixJSDocFormattingProc = {
 };
 
 function createJavaClass(input, amdProcData) {
-    var exportPath = 'statebaster\\src\\storefront\\modules\\';
+    var exportPath = 'javasrc';
     var classFileName = input.camelName + '.java';
     var packageSubpath = amdProcData.webPath;
     var subPackage = packageSubpath.split('/')
         .join('.');
     var buffer = [];
-    buffer.push('package storefront.modules' + subPackage + ';');
-    buffer.push('import storefront.Module;');
+    buffer.push('package amd.modules' + subPackage + ';');
+    buffer.push('import amd.Module;');
     buffer.push('public class ' + input.camelName + ' extends Module {');
     for (var index = 0; index < amdProcData.requires.length; index++) {
         var moduleName = amdProcData.requires[index];
@@ -216,15 +216,17 @@ var amdProc = {
                 var result = [];
                 for (var index = 0; index < inputArray.length; index++) {
                     var temp = inputArray[index];
+                    var rawTemp = temp;
                     if (temp == null) {
                         continue;
                     }
                     if (temp.length === 0) {
                         continue;
                     }
-                    temp = temp.split('\'')
-                        .join('');
+                    temp = temp.split('\'').join('');
+                    
                     result.push(trim(temp));
+                   
                 }
                 return result;
             }
@@ -272,12 +274,18 @@ function getInlineRequires(input) {
         for (var index = 1; index < chunks.length; index++) {
             var chunk = chunks[index];
             var trimChunk = chunk.trim();
-            // console.warn(trimChunk);
+            //console.warn(trimChunk);
             var startChar = trimChunk.charAt(0);
+            //console.warn(startChar);
             var splitter = trimChunk.split(startChar);
             var moduleName = splitter[1].trim();
-            // console.warn(moduleName);
-            output.push(moduleName);
+            //console.warn(moduleName);
+            if (startChar === "'" || startChar === '"'){
+                output.push(moduleName);
+            }
+            else{
+                console.warn('getInlineRequires() skipped: ' + moduleName);
+            }
         }
     } else if (oneSpaceRequire > -1) {
         chunks = source.split("require (");
@@ -285,12 +293,18 @@ function getInlineRequires(input) {
         for (var index = 1; index < chunks.length; index++) {
             var chunk = chunks[index];
             var trimChunk = chunk.trim();
-            // console.warn(trimChunk);
+            //console.warn(trimChunk);
             var startChar = trimChunk.charAt(0);
+            //console.warn(startChar);
             var splitter = trimChunk.split(startChar);
             var moduleName = splitter[1].trim();
             // console.warn(moduleName);
-            output.push(moduleName);
+            if (startChar === "'" || startChar === '"'){
+                output.push(moduleName);
+            }
+            else{
+                console.warn('getInlineRequires() skipped: ' + moduleName);
+            }
         }
     }
     return output;
@@ -1324,7 +1338,11 @@ function processFile(modulePaths, baseDirectory, filePathName, outputDirectory,
     output.rawSource = source;
     output.source = source;
     output.processedFilePath = outputfilePathName;
-    output.mappedModuleName = mapModuleName(output.packagePath, modulePaths) + '/' + output.fileName.split('.js')[0];
+    var mmn = mapModuleName(output.packagePath, modulePaths);
+    if (mmn.length > 0){
+        mmn += '/';
+    }
+    output.mappedModuleName = mmn + output.fileName.split('.js')[0];
     
     //console.warn('mappedModuleName: ', output.mappedModuleName, ' from ', output.packagePath);
    // exit();
@@ -1796,6 +1814,7 @@ function convert(input, filePathname) {
                     depsRaw = [];
                     depsRaw.push(tempDeps);
                 }
+                console.warn("define()--> " + depsRaw);
                 // console.warn("convert--> depsRaw");
                 // console.warn(depsRaw);
                 requires = depsRaw;
@@ -1835,12 +1854,14 @@ function convert(input, filePathname) {
                     depsRaw = depsRaw.split(',');
                     for (var index = 0; index < depsRaw.length; index++) {
                         var item = depsRaw[index];
+                        var rawItem = item;
+                        console.warn("require()--> " + rawItem);
                         item = item.split('"')
                             .join('');
                         item = trim(item);
                         depsRaw[index] = item;
                     }
-                    requires = depsRaw;
+                    requires = depsRaw; 
                     var depVarnames = afterDefine.split('(')[1];
                     depVarnames = depVarnames.split(')')[0];
                     depVarnames = depVarnames.split(',');
@@ -2071,7 +2092,7 @@ var jsDoc3PrepProc = {
                         // }
                         // console.warn(JSON.stringify(input,null,2));
                         var packagePath = input.mappedModuleName;
-                        // console.warn(packagePath);
+                        console.warn(packagePath);
                         combiner.push(splitter[0] + '\n' + '/**\n * @exports ' + packagePath + '\n' + getRequiresTags(input) + ' */\n');
                         // if (input.name === 'context'){
                         // console.warn(splitter[0]);
