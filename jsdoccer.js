@@ -826,6 +826,8 @@ function getRequiresTags(input) {
     return output;
 }
 var firstDoclet = null;
+
+/** @type {Object} A simple mapping of found names to their preferred representatoins. */
 var typesMap = {
         'function' : 'Function',
         'number' : 'Number',
@@ -2282,11 +2284,11 @@ function addMissingComments(walkerObj, errors) {
                 // logger.warn("Replace with new doclet:");
                 // logger.warn(newComment);
                 var head = walkerObj.source.substring(0, nodeWithRequiresBlock.range[0] - 1);
-                logger.warn('head: ' + head);
+                //logger.warn('head: ' + head);
                 var tail = walkerObj.source.substring(nodeWithRequiresBlock.range[1] + 1);
-                logger.warn('tail: ' + tail);
+                //logger.warn('tail: ' + tail);
                 walkerObj.source = (head + newComment + '\n' + tail);
-                logger.warn(walkerObj.source);
+                //logger.warn(walkerObj.source);
                 // Reboot!
                 logger.log('>>>>> Need to rewrite requires on '
                         + walkerObj.name + '.');
@@ -2694,8 +2696,8 @@ function mergeRequires(doclet) {
 
        //logger.log(diffRequires);
         
-        // logger.log('These require modules were not included: '
-        // + diffRequires.toString());
+//         logger.warn('These require modules were not included: '
+//         + diffRequires.toString());
         // // put any items in requiresList after allRequires if they are not
         // already
         // listed

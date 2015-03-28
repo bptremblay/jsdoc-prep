@@ -8,15 +8,15 @@ var testPath = 'test-jstests';
 var docPath = 'test-jsdocs';
 var resultsPath = 'test-results';
 var scanPath = 'test-source';
-///Users/benjamintremblay/jsdoc-prep
-var projectPath = '~/Documents/Projects';
+///Users/benjamintremblay
+var projectPath = process.cwd();
 
 function healthCheckCallback(healthCheckResults) {
     console.log('ALL DONE');
 
     function runJsDoc(sourceDirectory) {
 
-        // var docPath = projectPath + '/jsdoc-prep/test-jsdocs';
+        // var docPath = projectPath + '/test-jsdocs';
         console.log('Delete the test-jsdocs directory? ' + docPath);
         rimraf(
                 path.normalize(docPath),
@@ -28,15 +28,15 @@ function healthCheckCallback(healthCheckResults) {
 
                     // sourceDirectory = path.normalize(sourceDirectory);
                     var exePath = path.normalize(projectPath
-                            + '/jsdoc-prep/node_modules/.bin/jsdoc');
+                            + '/node_modules/.bin/jsdoc');
                     // console.warn('runJsDoc: ' + exePath + ' <> ' +
                     // sourceDirectory);
-                    // $ jsdoc -r -l -d ~/workspace/jsdoc-prep/out
-                    // ~/workspace/jsdoc-prep/processed/framework
+                    // $ jsdoc -r -l -d ~/workspace/out
+                    // ~/workspace/processed/framework
                     var exec = require('child_process').exec;
                     var cmdLine = exePath;
-                    var docPath = projectPath + '/jsdoc-prep/test-jsdocs';
-                    var reportPath = projectPath + '/jsdoc-prep/test-results';
+                    var docPath = projectPath + '/test-jsdocs';
+                    var reportPath = projectPath + '/test-results';
 
                     if (USE_HARUKI) {
                         cmdLine += ' -r -l -t templates/../../experimental_template/haruki -d ' + reportPath + '/jsDocModel.json' + ' -q format=json'
@@ -45,7 +45,7 @@ function healthCheckCallback(healthCheckResults) {
 //                      cmdLine += ' -r -l -d ' + docPath + ' '
 //                      + sourceDirectory + '';
                         // exePath + ' -r -l -d ' + projectPath
-                        // + '/jsdoc-prep/test-jsdocs ' + sourceDirectory + '';
+                        // + '/test-jsdocs ' + sourceDirectory + '';
 
                         cmdLine += ' -r -l -t templates/../../experimental_template/default -d ' + docPath + '' + ' -q format=json'
                         + ' ' + sourceDirectory + '';
@@ -78,7 +78,7 @@ function healthCheckCallback(healthCheckResults) {
                             });
                 });
     }
-    runJsDoc(projectPath + '/jsdoc-prep/test-output');
+    runJsDoc(projectPath + '/test-output');
 }
 //'jsDoc3PrepProc',
 var processingChain = [
@@ -88,13 +88,13 @@ var processingChain = [
                        // 'badCharactersProc',
                        // 'trimProc',
                        // 'amdFilter',
-//                     'jsBeautifyProc',
+                       'jsBeautifyProc',
                        'JSONFilter',
                        'amdProc',
                        'jsDoccerProc',
-//                       'jsDocNameFixerProc',
-//                       'fixClassDeclarationsProc',
-//                       'jsDoc3PrepProc',
+                       'jsDocNameFixerProc',
+                       'fixClassDeclarationsProc',
+                      'jsDoc3PrepProc',
                        'jsBeautifyProc' ];
 
 //var processingChain = [
