@@ -826,8 +826,6 @@ function getRequiresTags(input) {
     return output;
 }
 var firstDoclet = null;
-
-/** @type {Object} A simple mapping of found names to their preferred representatoins. */
 var typesMap = {
         'function' : 'Function',
         'number' : 'Number',
@@ -2266,9 +2264,9 @@ function addMissingComments(walkerObj, errors) {
                     nodeWithRequiresBlock, statusCheck);
             
             
-            //newComment = nodeWithRequiresBlock.commentBody;
-            
-            console.warn(newComment);
+            var oldComment = nodeWithRequiresBlock.commentBody;
+            //console.warn("ORIGINAL: \n", oldComment);
+            //console.warn("NEW: \n", newComment);
 
             // logger.warn(walkerObj.source);
 
@@ -2279,10 +2277,10 @@ function addMissingComments(walkerObj, errors) {
             // logger.warn(walkerObj.results.amdProc.requires);
 
             if (statusCheck.merge) {
-                // logger.warn("AST comment node we need to edit:");
-                // logger.warn(nodeWithRequiresBlock);
-                // logger.warn("Replace with new doclet:");
-                // logger.warn(newComment);
+                //logger.warn("AST comment node we need to edit:");
+                //logger.warn(nodeWithRequiresBlock);
+                logger.warn("Replace with new doclet:");
+                logger.warn(newComment);
                 var head = walkerObj.source.substring(0, nodeWithRequiresBlock.range[0] - 1);
                 //logger.warn('head: ' + head);
                 var tail = walkerObj.source.substring(nodeWithRequiresBlock.range[1] + 1);
@@ -2694,10 +2692,10 @@ function mergeRequires(doclet) {
 
     if (diffRequires.length > 0) {
 
-       //logger.log(diffRequires);
+       //logger.warn(diffRequires);
         
-//         logger.warn('These require modules were not included: '
-//         + diffRequires.toString());
+        // logger.log('These require modules were not included: '
+        // + diffRequires.toString());
         // // put any items in requiresList after allRequires if they are not
         // already
         // listed
@@ -2724,7 +2722,7 @@ function mergeRequires(doclet) {
             };
             line++;
             lastLine++;
-            // logger.log(newTag);
+            //logger.warn(newTag);
             doclet.tags.push(newTag);
             needToMerge = true;
         }
@@ -2741,15 +2739,16 @@ function mergeRequires(doclet) {
 function getValuesNotInTags(tagList, valueList) {
     var output = [];
     var textValues = getTextFromTags(tagList);
-    // logger.log(textValues);
+   // logger.log(textValues);
     for (var i = 0; i < valueList.length; i++) {
         var value = valueList[i];
         var leaf = value;
         if (leaf.indexOf('/') !== -1){
             leaf = leaf.split('/').pop();
         }
-        console.warn();
-        if (textValues.indexOf(leaf) === -1) {
+        
+        if (textValues.join(' ').indexOf(leaf) === -1) {
+            console.warn("ADDING new REQUIRE: ", value);
             output.push(value);
         }
     }

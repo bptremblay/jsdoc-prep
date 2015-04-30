@@ -20,7 +20,7 @@ function mapModuleName(mappedModuleName, modulePaths){
             var pattern = modulePaths[p];
             if (mappedModuleName.indexOf(pattern) !== -1){
                 mappedModuleName = mappedModuleName.split(pattern).join(p);
-                // stop, don't apply every match
+                // stop, don't apply every match 
                 break; 
             }
             
@@ -230,17 +230,17 @@ var amdProc = {
                 }
                 return result;
             }
-        // console.warn(converted.requires);
+        //console.warn(converted.requires);
         result.requires = fixRequires(converted.requires);
-        // console.warn(result.requires);
+        //console.warn(result.requires);
         var inlineRequires = fixRequires(getInlineRequires(input));
         for (var ir = 0; ir < inlineRequires.length; ir++) {
             var inlineModule = inlineRequires[ir];
             result.requires.push(inlineModule);
-            // console.warn('require("' + inlineModule + '")');
+            //console.warn('require("' + inlineModule + '")');
         }
         result.convertedName = converted.name;
-        // result.moduleName = converted.name;
+        //result.moduleName = converted.name;
         result.AMD = converted.isModule;
         
         result.min = converted.min;
@@ -258,33 +258,8 @@ var amdProc = {
     }
 };
 
-function blankOneLineComments(input) {
-    var stringBuffer = input.split('');
-    var output = [];
-    var temp = '';
-    var blocked = false;
-    for (var c = 0; c < input.length; c++) {
-
-        if (temp.indexOf('//') !== -1) {
-            blocked = true;
-
-        } else {
-            temp += input[c];
-        }
-
-        if (input[c] === '\n' && blocked) {
-            blocked = false;
-            temp += '\n';
-            output = output.concat(temp);
-            temp = '';
-        }
-    }
-
-    return output.join('');
-}
-
 function getInlineRequires(input) {
-    var source = blankOneLineComments(input.source);
+    var source = input.source;
     var noSpaceRequire = source.indexOf("require(");
     var oneSpaceRequire = source.indexOf("require (");
     if (noSpaceRequire === -1 && oneSpaceRequire === -1) {
@@ -299,12 +274,12 @@ function getInlineRequires(input) {
         for (var index = 1; index < chunks.length; index++) {
             var chunk = chunks[index];
             var trimChunk = chunk.trim();
-            // console.warn(trimChunk);
+            //console.warn(trimChunk);
             var startChar = trimChunk.charAt(0);
-            // console.warn(startChar);
+            //console.warn(startChar);
             var splitter = trimChunk.split(startChar);
             var moduleName = splitter[1].trim();
-            // console.warn(moduleName);
+            //console.warn(moduleName);
             if (startChar === "'" || startChar === '"'){
                 output.push(moduleName);
             }
@@ -318,9 +293,9 @@ function getInlineRequires(input) {
         for (var index = 1; index < chunks.length; index++) {
             var chunk = chunks[index];
             var trimChunk = chunk.trim();
-            // console.warn(trimChunk);
+            //console.warn(trimChunk);
             var startChar = trimChunk.charAt(0);
-            // console.warn(startChar);
+            //console.warn(startChar);
             var splitter = trimChunk.split(startChar);
             var moduleName = splitter[1].trim();
             // console.warn(moduleName);
@@ -1369,8 +1344,7 @@ function processFile(modulePaths, baseDirectory, filePathName, outputDirectory,
     }
     output.mappedModuleName = mmn + output.fileName.split('.js')[0];
     
-    // console.warn('mappedModuleName: ', output.mappedModuleName, ' from ',
-	// output.packagePath);
+    //console.warn('mappedModuleName: ', output.mappedModuleName, ' from ', output.packagePath);
    // exit();
     
     var currentChainIndex = 0;
@@ -2029,10 +2003,9 @@ var jsDoc3PrepProc = {
                 continue;
             }
             // DO NOT REMOVE THESE!!! They are part of the jsDoc spec.
-// if (line.indexOf('* @method') !== -1 || line.indexOf('* @function') !== -1 ||
-// line.indexOf('* @memberOf') !== -1) {
-// lines[index] = '';
-// }
+//            if (line.indexOf('* @method') !== -1 || line.indexOf('* @function') !== -1 || line.indexOf('* @memberOf') !== -1) {
+//                lines[index] = '';
+//            }
             // if (line.indexOf('* @requires') !== -1) {
             // lines[index] = '';
             // }
@@ -2139,10 +2112,10 @@ var jsDoc3PrepProc = {
                 } else if (whereDefine !== -1 && source.indexOf('@module') === -1) {
                     var combiner = [];
                     // console.warn(JSON.stringify(input,null,2));
-// var packagePath = input.path.split('/');
-// packagePath.shift();
-// packagePath = packagePath.join('/');
-// packagePath = packagePath.split('.js')[0];
+//                    var packagePath = input.path.split('/');
+//                    packagePath.shift();
+//                    packagePath = packagePath.join('/');
+//                    packagePath = packagePath.split('.js')[0];
                     var packagePath = input.mappedModuleName;
                     // console.warn(packagePath);
                     source = ('/**\n * @module ' + packagePath + '\n' + getRequiresTags(input) + ' */\n') + source;
@@ -2153,7 +2126,7 @@ var jsDoc3PrepProc = {
             
             var originalHeader = input.source.substring(0, whereDefine);
             console.warn('jsDoc3PrepProc: splicing header');
-            // console.warn('originalHeader: "' + originalHeader + '"');
+            //console.warn('originalHeader: "' + originalHeader + '"');
             input.source = originalHeader + '\n' + source;
             // console.warn(input.source);
             

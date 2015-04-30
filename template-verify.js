@@ -15,6 +15,18 @@ var FILE_ENCODING = 'utf8';
 var SCAN_PATH = '';
 var stat;
 
+var Logger =  {
+        log : function(msg) {
+            //   console.log(msg);
+        },
+        warn : function(msg) {
+            //   console.warn(msg);
+        },
+        error : function(msg) {
+            //   console.error(msg);
+        }
+};
+
 
 try {
     ractive = require('ractive');
@@ -26,14 +38,14 @@ try {
     _esprima = require('esprima');
     main();
 } catch (npmErr) {
-    console.error(npmErr);
+    Logger.error(npmErr);
     var npmMod = require('npm');
     npmMod.load(null, function(er, npm) {
         // wait a sec...
         npm.install("ractive", "handlebars", "less", "wrench", "minimatch",
                 "jsonlint", "esprima", function(er) {
-                    main();
-                });
+            main();
+        });
 
     });
 
@@ -50,8 +62,8 @@ try {
  */
 function filterFiles(files, excludes) {
     var globOpts = {
-        matchBase : true,
-        dot : true
+            matchBase : true,
+            dot : true
     };
     excludes = excludes.map(function(val) {
         return _minimatch.makeRe(val, globOpts);
@@ -100,14 +112,75 @@ function run(options) {
     var fileLength = 0;
     var fileCount = 0;
 
-    var whenDone = function() {
+    function formatError(err){
+        var output = {};
+        for (var e in err){
+            output[e] = err[e];
+        }
+        output.message = err.message;
+        if (err.lineNumber){
+            output.lineNumber = err.lineNumber;
+        }
+        if (err.name){
+            output.name = err.name;
+        }
+        if (err.columnNumber){
+            output.columnNumber = err.columnNumber;
+        }
+//      if (err.stack){
+//      output.stack = err.stack;
+//      }
+        return output;
+    }
+    
+    
+    /**
+     * Safe create dir.
+     * 
+     * @name safeCreateDir
+     * @method safeCreateDir
+     * @param dir
+     */
+    function safeCreateDir(dir) {
+        if (!_fs.existsSync(dir)) {
+            // // // logger.log("does not exist");
+            _wrench.mkdirSyncRecursive(dir);
+        }
+    }
+    /**
+     * Write file.
+     * 
+     * @name writeFile
+     * @method writeFile
+     * @param filePathName
+     * @param source
+     */
+    function writeFile(filePathName, source) {
+        filePathName = _path.normalize(filePathName);
+        safeCreateFileDir(filePathName);
+        _fs.writeFileSync(filePathName, source);
+    }
+
+
+    var errors = [];
+    
+    var whenDone = function(err) {
+        if (err){
+            var printErr = formatError(err);
+            //console.error(JSON.stringify(printErr, null, 2));
+            errors.push(err);
+        }
+        //Logger.log(total + ',' + good + ',' + bad + ',' + fileCount + '/' + fileLength);
         if (fileLength === fileCount) {
-            // console.log(total + ',' + good + ',' + bad);
+            //Logger.log(total + ',' + good + ',' + bad);
             if (total === (good + bad)) {
-                console.log(templateType + ' source check of ' + total
+                Logger.log(templateType + ' source check of ' + total
                         + ' files is complete. Found ' + bad
                         + ' files with errors.');
                 then = new Date().getTime();
+                
+                //console.error(JSON.stringify(errors, null, 2));
+                
             }
         }
 
@@ -117,7 +190,7 @@ function run(options) {
         templateType = 'RACTIVE';
     }
     if (templateType.toUpperCase() === 'HANDLEBARS'
-            || templateType.toUpperCase() === 'HBS') {
+        || templateType.toUpperCase() === 'HBS') {
         templateType = "Handlebars";
     } else if (templateType.toUpperCase() === 'RACTIVE') {
         templateType = "Ractive";
@@ -126,13 +199,13 @@ function run(options) {
     } else if (templateType.toUpperCase() === 'JSON') {
         templateType = "JSON";
     } else if (templateType.toUpperCase() === 'JAVASCRIPT'
-            || templateType.toUpperCase() === 'JS'
+        || templateType.toUpperCase() === 'JS'
             || templateType.toUpperCase() === 'ECMASCRIPT') {
         templateType = "JavaScript";
     }
-    console.log('Starting ' + templateType + ' template check: ' + SCAN_PATH);
+    Logger.log('Starting ' + templateType + ' template check: ' + SCAN_PATH);
     if (!_fs.existsSync(SCAN_PATH)) {
-        console.warn('No such directory "' + SCAN_PATH + '". Oh well.');
+        Logger.warn('No such directory "' + SCAN_PATH + '". Oh well.');
         return;
     }
     var files = _wrench.readdirSyncRecursive(SCAN_PATH);
@@ -155,162 +228,179 @@ function run(options) {
                                 '{**/,}.html' ]);
     fileLength = files.length;
     files
-            .forEach(function(path) {
-                path = _path.normalize(SCAN_PATH + '/' + path);
-                stat = _fs.statSync(path);
-                fileCount++;
-                if (stat.isFile()
-                        && (path.indexOf('.html') !== -1 || path
-                                .indexOf('.hbs') !== -1)
+    .forEach(function(path) {
+        path = _path.normalize(SCAN_PATH + '/' + path);
+        stat = _fs.statSync(path);
+        fileCount++;
+        if (stat.isFile()
+                && (path.indexOf('.html') !== -1 || path
+                        .indexOf('.hbs') !== -1)
                         || path.indexOf('.oft') !== -1
                         || path.indexOf('.less') !== -1
                         || path.indexOf('.json') !== -1
                         || path.indexOf('.js') !== -1) {
-                    if (_path.extname(path) === '.html'
-                            || _path.extname(path) === '.hbs'
-                            || _path.extname(path) === '.oft'
-                            || _path.extname(path) === '.less'
+            if (_path.extname(path) === '.html'
+                || _path.extname(path) === '.hbs'
+                    || _path.extname(path) === '.oft'
+                        || _path.extname(path) === '.less'
                             || _path.extname(path) === '.json'
-                            || _path.extname(path) === '.js') {
-                        total++;
-                        var fileName = _path.basename(path);
-                        var pathName = _path.dirname(path);
-                        var source = readFile(path);
-                        var parseResult = null;
-                        if (templateType.toUpperCase() === 'RACTIVE') {
-                            try {
-                                parseResult = ractive.parse(source);
-                                good++;
-                            } catch (parseError) {
+                                || _path.extname(path) === '.js') {
+                total++;
+                var fileName = _path.basename(path);
+                var pathName = _path.dirname(path);
+                var source = readFile(path);
+                var parseResult = null;
+                if (templateType.toUpperCase() === 'RACTIVE') {
+                    try {
+                        parseResult = ractive.parse(source);
+                        good++;
+                        whenDone();
+                    } catch (parseError) {
+                        parseError.fileName = path;
+                        parseError.fileType = templateType.toUpperCase();
+                        bad++;
+                        Logger.warn(parseError);
+                        whenDone(parseError);
+                    }
+                } else if (templateType.toUpperCase() === 'HANDLEBARS') {
+                    // FIXME: use HBS compiler
+                    try {
+                        parseResult = handlebars.compile(source);
+                        good++;
+                        whenDone();
+                    } catch (parseError) {
+                        parseError.fileName = path;
+                        parseError.fileType = templateType.toUpperCase();
+                        bad++;
+                        Logger.warn(parseError);
+                        whenDone(parseError);
+                    }
+
+                } else if (templateType.toUpperCase() === 'LESS') {
+                    // FIXME: use LESS compiler
+                    var opts = {
+                            filename : fileName,
+                            paths : [ pathName ]
+                    };
+                    try {
+                        less.render(source, opts, function(parseError,
+                                css) {
+                            if (parseError != null) {
                                 parseError.fileName = path;
+                                parseError.fileType = templateType.toUpperCase();
                                 bad++;
-                                console.warn(parseError);
-                            }
-                            whenDone();
-                        } else if (templateType.toUpperCase() === 'HANDLEBARS') {
-                            // FIXME: use HBS compiler
-                            try {
-                                parseResult = handlebars.compile(source);
-                                good++;
-                            } catch (parseError) {
-                                parseError.fileName = path;
-                                bad++;
-                                console.warn(parseError);
-                            }
-                            whenDone();
-                        } else if (templateType.toUpperCase() === 'LESS') {
-                            // FIXME: use LESS compiler
-                            var opts = {
-                                filename : fileName,
-                                paths : [ pathName ]
-                            };
-                            try {
-                                less.render(source, opts, function(parseError,
-                                        css) {
-                                    if (parseError != null) {
-                                        parseError.fileName = path;
-                                        bad++;
-                                        console.warn(parseError);
-                                    } else {
-                                        // audit output here:
-                                        // console.log(css);
-                                        good++;
-                                    }
-                                    whenDone();
-                                });
-                            } catch (parseError) {
-                                parseError.fileName = path;
-                                bad++;
-                                console.warn(parseError);
-                                whenDone();
-                            }
-                        } else if (templateType.toUpperCase() === 'JSON') {
-                            if (_path.extname(path) === '.js') {
+                                Logger.warn(parseError);
+                                whenDone(parseError);
+                            } else {
+                                // audit output here:
+                                // Logger.log(css);
                                 good++;
                                 whenDone();
-                                return;
-                            }
-                            // Does this provide useful information?
-                            // console.log(path);
-                            try {
-                                var temp = jsonlint.parse(source);
-                                good++;
-                                whenDone();
-                            } catch (parseError) {
-                                parseError.fileName = path;
-                                bad++;
-                                console.warn(parseError);
-                                whenDone();
-                            }
-                        } else if (templateType.toUpperCase() === 'JAVASCRIPT') {
-                            if (_path.extname(path) === '.json') {
-                                good++;
-                                whenDone();
-                                return;
-                            }
-                            // Does this provide useful information?
-                            // console.log(path);
-
-                            var ast = {};
-                            try {
-
-                                ast = _esprima.parse(source, {
-                                    comment : true,
-                                    tolerant : true,
-                                    range : true,
-                                    raw : true,
-                                    tokens : true
-                                });
-
-                                good++;
-                                whenDone();
-
-                            } catch (esError) {
-
-                                esError.fileName = path;
-                                bad++;
-                                console.warn(esError);
-                                whenDone();
-
                             }
 
-                        }
+                        });
+                    } catch (parseError) {
+                        parseError.fileName = path;
+                        parseError.fileType = templateType.toUpperCase();
+                        bad++;
+                        Logger.warn(parseError);
+                        whenDone(parseError);
+                    }
+                } else if (templateType.toUpperCase() === 'JSON') {
+                    if (_path.extname(path) === '.js') {
+                        good++;
+                        whenDone();
+                        return;
+                    }
+                    // Does this provide useful information?
+                    // Logger.log(path);
+                    try {
+                        var temp = jsonlint.parse(source);
+                        good++;
+                        whenDone();
+                    } catch (parseError) {
+                        parseError.fileName = path;
+                        parseError.fileType = templateType.toUpperCase();
+                        bad++;
+                        Logger.warn(parseError);
+                        whenDone(parseError);
+                    }
+                } else if (templateType.toUpperCase() === 'JAVASCRIPT') {
+                    if (_path.extname(path) === '.json') {
+                        good++;
+                        whenDone();
+                        return;
+                    }
+                    // Does this provide useful information?
+                    // Logger.log(path);
+
+                    var ast = {};
+                    try {
+
+                        ast = _esprima.parse(source, {
+                            comment : true,
+                            tolerant : true,
+                            range : true,
+                            raw : true,
+                            tokens : true
+                        });
+
+                        good++;
+                        whenDone();
+
+                    } catch (esError) {
+
+                        esError.fileName = path;
+                        esError.fileType = templateType.toUpperCase();
+                        bad++;
+                        Logger.warn(esError);
+                        whenDone(esError);
 
                     }
+
+                }
+                else{
+                    whenDone();
                 }
 
-            });
+            }
+        }
+        else{
+            whenDone();
+        }
+
+    });
 
 }
 
 function main() {
 
-    // auth
-    run({
-        templateType : 'Ractive',
-        // Supply app name:
-        app : 'logon',
-        // Supply the path to scan here.
-        scanPath : 'template'
-    });
+//  // auth
+//  run({
+//  templateType : 'Ractive',
+//  // Supply app name:
+//  app : 'logon',
+//  // Supply the path to scan here.
+//  scanPath : 'template'
+//  });
 
-    run({
-        templateType : 'Handlebars',
-        // Supply app name:
-        app : 'logon',
-        // Supply the path to scan here.
-        scanPath : 'hbs'
-    });
+//  run({
+//  templateType : 'Handlebars',
+//  // Supply app name:
+//  app : 'logon',
+//  // Supply the path to scan here.
+//  scanPath : 'hbs'
+//  });
 
-    run({
-        templateType : 'LESS',
-        // Supply app name:
-        app : 'logon',
-        // Supply the path to scan here.
-        scanPath : 'less'
-    });
+//  run({
+//  templateType : 'LESS',
+//  // Supply app name:
+//  app : 'logon',
+//  // Supply the path to scan here.
+//  scanPath : 'less'
+//  });
 
-    // accounts
+//  accounts
     run({
         templateType : 'Ractive',
         // Supply app name:
@@ -319,13 +409,13 @@ function main() {
         scanPath : 'template'
     });
 
-    run({
-        templateType : 'Handlebars',
-        // Supply app name:
-        app : 'dashboard',
-        // Supply the path to scan here.
-        scanPath : 'hbs'
-    });
+//  run({
+//  templateType : 'Handlebars',
+//  // Supply app name:
+//  app : 'dashboard',
+//  // Supply the path to scan here.
+//  scanPath : 'hbs'
+//  });
 
     run({
         templateType : 'LESS',

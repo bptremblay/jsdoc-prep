@@ -16,7 +16,7 @@ function HealthCheckServer() {
  * @copyright 2013 btremblay@me.com LLC
  */
 
-var port = 9000;
+var port = 9999;
 var serverUrl = "127.0.0.1";
 
 var http = require("http");
@@ -203,7 +203,7 @@ http
 
 							res.statusCode = 200;
 							res.end(contents);
-							console.log(newSource);
+							//console.log(newSource);
 						}
 
 						var outPath = 'test-output';
@@ -211,7 +211,7 @@ http
                         var docPath = 'test-jsdocs';
                         var resultsPath = 'test-results';
                         
-                        
+                        var realSource = '// Source not found!!!';
                         
                         
 
@@ -232,8 +232,8 @@ http
 								res.end(JSON.stringify(contents));
 								return;
 							}
-							
-							sfp.writeFile(tempFilePath, unescape(opts.source));
+							realSource = unescape(opts.source);
+							sfp.writeFile(tempFilePath, realSource);
 							
 							healthCheck.run({
 								callBack : healthCheckCallback,
@@ -259,7 +259,104 @@ http
 						}
 
 						return;
-					}
+					} else if (filename == "/getSingleAndCheck") {
+                        var paramsBlock = {};
+                        var realSource = '// Source not found!!!';
+
+                        if (params.length > 0) {
+                            var paramsSplit = params.split("&");
+
+                            for (var index = 0; index < paramsSplit.length; index++) {
+                                var kv = paramsSplit[index];
+                                kv = kv.split("=");
+                                paramsBlock[kv[0]] = unescape(kv[1]);
+                            }
+                        }
+
+                        var tempFilePath = 'temp-input/temp.js';
+                        console.warn('>>>>>>>>> getSingleAndCheck', paramsBlock);
+                        /**
+                         * Completion callback for processor tasks.
+                         * 
+                         * @inner
+                         * @param healthCheckResults
+                         */
+                        function healthCheckCallback(healthCheckResults) {
+                            console.log("Results are ready.");
+                            var newSource = sfp.readFile('test-output/temp.js');
+//                            healthCheckResults.source = sfp.readFile(tempFilePath);
+                            healthCheckResults.source = realSource;
+                            healthCheckResults.processedSource = newSource;
+                            var contents = (JSON.stringify(healthCheckResults));
+                            
+                            
+                            res.setHeader("Content-Type", "application/json");
+
+                            // FIXME: Why doesn't Content-Length work here? The number is
+                            // too
+                            // small.
+                            // res.setHeader("Content-Length", contents.length);
+
+                            res.statusCode = 200;
+                            res.end(contents);
+                            console.log(newSource);
+                        }
+
+                        var outPath = 'test-output';
+                        var testPath = 'test-jstests';
+                        var docPath = 'test-jsdocs';
+                        var resultsPath = 'test-results';
+                        
+                        if (paramsBlock.options != null) {
+                            var opts = JSON.parse(paramsBlock.options);
+
+                            if (opts.processingChain.length === 0) {
+                                console
+                                        .warn("Error: must have at least one proc in the processing chain.");
+                                var contents = {
+                                    "error" : "Select at least one processor chain item."
+                                };
+
+                                res.setHeader("Content-Type",
+                                        "application/json");
+
+                                res.statusCode = 200;
+                                res.end(JSON.stringify(contents));
+                                return;
+                            }
+                            
+                            var realFilePath = opts.file;
+                            console.warn('READ THE REAL FILE: ', realFilePath);
+                            opts.source = sfp.readFile(realFilePath);
+                            
+                            realSource = unescape(opts.source);
+                            sfp.writeFile(tempFilePath, realSource);
+
+                            healthCheck.run({
+                                callBack : healthCheckCallback,
+                                scanPath : opts.scanPath,
+                                writePath : outPath,
+                                writeTestPath : testPath,
+                                writeDocPath : docPath,
+                                writeResultsPath : resultsPath,
+                                writeEnable : opts.writeEnable,
+                                processingChain : opts.processingChain
+                            });
+                        } else {
+                            console.warn(paramsBlock);
+                            console.warn("Error: invalid request params.");
+                            var contents = {
+                                "error" : "no options parameter"
+                            };
+
+                            res.setHeader("Content-Type", "application/json");
+
+                            res.statusCode = 200;
+                            res.end(JSON.stringify(contents));
+                        }
+
+                        return;
+                    }
 					var validExtensions = {
 						".html" : "text/html",
 						".js" : "application/javascript",
