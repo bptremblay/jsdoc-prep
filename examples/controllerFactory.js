@@ -2,7 +2,7 @@ define([ 'when' ],
 /**
  * @exports controllerFactory
  * @requires when
- * @copyright &copy; JPMorgan Chase & Co. All rights reserved.
+ * 
  * @description Wire.js plugin for a Controller Factory. Usage:
  * @example Configuration // Defining wire log module for app $plugins : [ {
  *          module : 'blue/wire/log', trace : true }, { module :

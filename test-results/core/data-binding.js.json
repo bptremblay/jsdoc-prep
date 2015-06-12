@@ -1,0 +1,267 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "logger",
+        "jquery"
+      ],
+      "moduleName": "data-binding",
+      "AMD": true,
+      "webPath": "/core",
+      "convertedName": "data_binding",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "JSONFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'DataBinding'.",
+        "code": "wfJD",
+        "evidence": "function DataBinding() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'DataBinding'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'dataBind'.",
+        "code": "wfJD",
+        "evidence": "function dataBind(objectMap, map) {",
+        "line": 19,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'dataBind'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'transformText'.",
+        "code": "wfJD",
+        "evidence": "function transformText(stringValues, template) {",
+        "line": 101,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'transformText'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'renderDataBoundChanges'.",
+        "code": "wfJD",
+        "evidence": "function renderDataBoundChanges(component) {",
+        "line": 114,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'renderDataBoundChanges'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'quoteIfString'.",
+        "code": "wfJD",
+        "evidence": "function quoteIfString(input) {",
+        "line": 145,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'quoteIfString'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/core/data-binding.js",
+  "folderPath": "test-source/core",
+  "fileName": "data-binding.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/core",
+  "webPath": "/core",
+  "libFile": false,
+  "min": false,
+  "realName": "data-binding",
+  "name": "data_binding",
+  "camelName": "DataBinding",
+  "processedFilePath": "test-output/core/data-binding.js",
+  "mappedModuleName": "core/data-binding",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "core/data-binding~DataBinding": {
+      "todos": [],
+      "memberOf": "",
+      "returnType": "",
+      "ctor": true,
+      "lineNumber": 14,
+      "line": "function DataBinding() {",
+      "comment": -1,
+      "range": [
+        212,
+        368
+      ],
+      "name": "DataBinding",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": ""
+      },
+      "jsDoc": "/**\n * @constructor\n */"
+    }
+  },
+  "checkForRequiresMismatch": false,
+  "preprocessed": true,
+  "moduleName": "core/data-binding",
+  "jsDoccerProcData": {
+    "lines": 171,
+    "requires": [
+      "logger",
+      "jquery"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/core",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 6148,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./data-binding",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "DataBinding": 2642
+    },
+    "methods": [
+      {
+        "name": "DataBinding",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function DataBinding() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "dataBind",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 19,
+        "memberOf": "",
+        "doclet": "/**\n * Data bind.\n * @param objectMap\n * @param map\n * @return {function}\n */",
+        "args": [
+          "objectMap",
+          "map"
+        ],
+        "description": "",
+        "return": "{function}",
+        "classDeclarationFlag": false,
+        "line": "function dataBind(objectMap, map) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "transformText",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 101,
+        "memberOf": "",
+        "doclet": "/**\n * Transform text.\n * @param stringValues\n * @param template\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
+        "args": [
+          "stringValues",
+          "template"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function transformText(stringValues, template) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "renderDataBoundChanges",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 114,
+        "memberOf": "",
+        "doclet": "/**\n * Render data bound changes.\n * @param component\n */",
+        "args": [
+          "component"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function renderDataBoundChanges(component) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "quoteIfString",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 145,
+        "memberOf": "",
+        "doclet": "/**\n * Quote if string.\n * @param input\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
+        "args": [
+          "input"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function quoteIfString(input) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getInstance",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 163,
+        "memberOf": "",
+        "doclet": "/**\n * Get instance.\n * @method _getInstance\n * @private\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
+        "description": "\n Get instance.\n",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function _getInstance() {",
+        "originalJsDocDescription": {
+          "method": {
+            "tag": "method",
+            "line": 3,
+            "lastLine": 3,
+            "textStartsOnSameLine": true,
+            "text": "_getInstance"
+          },
+          "private": {
+            "tag": "private",
+            "line": 4,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/core",
+    "fileName": "data-binding.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 193
+}

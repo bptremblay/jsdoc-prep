@@ -1,0 +1,446 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "backbone",
+        "underscore"
+      ],
+      "moduleName": "base-ui-component",
+      "AMD": false,
+      "webPath": "/core",
+      "convertedName": "base_ui_component",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "JSONFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/core/base-ui-component.js",
+  "folderPath": "test-source/core",
+  "fileName": "base-ui-component.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/core",
+  "webPath": "/core",
+  "libFile": false,
+  "min": false,
+  "realName": "base-ui-component",
+  "name": "base_ui_component",
+  "camelName": "BaseUiComponent",
+  "processedFilePath": "test-output/core/base-ui-component.js",
+  "mappedModuleName": "core/base-ui-component",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "core/base-ui-component~BaseUiComponent": {
+      "todos": [],
+      "memberOf": "",
+      "returnType": "",
+      "ctor": true,
+      "lineNumber": 4,
+      "line": "function BaseUiComponent() {",
+      "comment": 0,
+      "range": [
+        24,
+        180
+      ],
+      "name": "BaseUiComponent",
+      "commentBody": "/**\n * @constructor\n */",
+      "oldComment": {
+        "type": "Block",
+        "value": "*\n * @constructor\n ",
+        "range": [
+          0,
+          23
+        ],
+        "commentBody": "/**\n * @constructor\n */",
+        "lineNumber": 1
+      },
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "tags": [
+          {
+            "tag": "constructor",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        ],
+        "requiresList": [
+          "jquery",
+          "backbone",
+          "underscore"
+        ],
+        "moduleName": "base_ui_component",
+        "camelName": "BaseUiComponent",
+        "freeText": "",
+        "@constructor": "",
+        "preamble": "",
+        "nodeType": "CLASS"
+      },
+      "jsDoc": "/**\n * @constructor\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "moduleName": "core/base-ui-component",
+  "jsDoccerProcData": {
+    "lines": 94,
+    "requires": [
+      "jquery",
+      "backbone",
+      "underscore"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/core",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 2126,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./base-ui-component",
+    "uses_console_log": false,
+    "uses_backbone": true,
+    "classes": {
+      "BaseUiComponent": 717
+    },
+    "methods": [
+      {
+        "name": "BaseUiComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function BaseUiComponent() {",
+        "originalJsDocDescription": {
+          "constructor": {
+            "tag": "constructor",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "addElementSelection",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 18,
+        "memberOf": "BaseUiComponent.prototype",
+        "doclet": "/**\n * Stores a reference to a jQuery selection.\n * @param {String} selector  \n * @param {Boolean} compile  \n * @return {$element}\n */",
+        "args": [
+          "selector",
+          "compile"
+        ],
+        "description": "\n Stores a reference to a jQuery selection.\n",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "BaseUiComponent.prototype.addElementSelection = function (selector, compile) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "{string} selector"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "{boolean} compile"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 5,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{$element}\n"
+          }
+        }
+      },
+      {
+        "name": "getKeyName",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 33,
+        "memberOf": "BaseUiComponent.prototype",
+        "doclet": "/**\n * @param {String} selector  \n * @return {string}\n */",
+        "args": [
+          "selector"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "BaseUiComponent.prototype.getKeyName = function (selector) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "{string} selector"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{string}\n"
+          }
+        }
+      },
+      {
+        "name": "getElementByKeyName",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 48,
+        "memberOf": "BaseUiComponent.prototype",
+        "doclet": "/**\n * @param keyName\n */",
+        "args": [
+          "keyName"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "BaseUiComponent.prototype.getElementByKeyName = function (keyName) {};",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "keyName\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "getElementBySelector",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 53,
+        "memberOf": "BaseUiComponent.prototype",
+        "doclet": "/**\n * @param selector\n */",
+        "args": [
+          "selector"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "BaseUiComponent.prototype.getElementBySelector = function (selector) {};",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "selector\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "getCookie",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 58,
+        "memberOf": "BaseUiComponent.prototype",
+        "doclet": "/**\n * @param cookieId\n */",
+        "args": [
+          "cookieId"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "BaseUiComponent.prototype.getCookie = function (cookieId) {};",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "cookieId\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "setCookie",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 64,
+        "memberOf": "BaseUiComponent.prototype",
+        "doclet": "/**\n * @param cookieId  \n * @param cookieValue\n */",
+        "args": [
+          "cookieId",
+          "cookieValue"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "BaseUiComponent.prototype.setCookie = function (cookieId, cookieValue) {};",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "cookieId"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "cookieValue\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "getSubCookie",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 70,
+        "memberOf": "BaseUiComponent.prototype",
+        "doclet": "/**\n * @param cookieId  \n * @param cookieField\n */",
+        "args": [
+          "cookieId",
+          "cookieField"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "BaseUiComponent.prototype.getSubCookie = function (cookieId, cookieField) {};",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "cookieId"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "cookieField\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "setSubCookie",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 77,
+        "memberOf": "BaseUiComponent.prototype",
+        "doclet": "/**\n * @param cookieId  \n * @param cookieField  \n * @param cookieValue\n */",
+        "args": [
+          "cookieId",
+          "cookieField",
+          "cookieValue"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "BaseUiComponent.prototype.setSubCookie = function (cookieId, cookieField,",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "cookieId"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "cookieField"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "cookieValue\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "compileTemplate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 84,
+        "memberOf": "BaseUiComponent.prototype",
+        "doclet": "/**\n * @param selector  \n */",
+        "args": [
+          "selector"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "BaseUiComponent.prototype.compileTemplate = function (selector) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "selector"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/core",
+    "fileName": "base-ui-component.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 84
+}

@@ -1,6 +1,6 @@
 /**
- * @author Julio Stanley
- * @copyright &copy; JPMorgan Chase & Co. All rights reserved.
+ * @author Zog Holstein
+ * 
  * @module blue/template/helper/lpString
  * @requires handlebars
  * @example

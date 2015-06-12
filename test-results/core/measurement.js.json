@@ -1,0 +1,420 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "logger",
+        "jquery",
+        "backbone",
+        "configuration",
+        "underscore"
+      ],
+      "moduleName": "measurement",
+      "AMD": true,
+      "webPath": "/core",
+      "convertedName": "measurement",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "JSONFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_attempt'.",
+        "code": "wfJD",
+        "evidence": "function _attempt(instance, name, method, args, defaultResult) {",
+        "line": 54,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_attempt'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isFunction'.",
+        "code": "wfJD",
+        "evidence": "var isFunction = function (obj) {",
+        "line": 80,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isFunction'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'on'.",
+        "code": "wfJD",
+        "evidence": "$.fn.on = function () {",
+        "line": 86,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'on'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'newFn'.",
+        "code": "wfJD",
+        "evidence": "var newFn = function () {",
+        "line": 104,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'newFn'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'off'.",
+        "code": "wfJD",
+        "evidence": "$.fn.off = function () {",
+        "line": 115,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'off'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/core/measurement.js",
+  "folderPath": "test-source/core",
+  "fileName": "measurement.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/core",
+  "webPath": "/core",
+  "libFile": false,
+  "min": false,
+  "realName": "measurement",
+  "name": "measurement",
+  "camelName": "Measurement",
+  "processedFilePath": "test-output/core/measurement.js",
+  "mappedModuleName": "core/measurement",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "core/measurement~Measurement": {
+      "todos": [],
+      "memberOf": "",
+      "returnType": "",
+      "ctor": true,
+      "lineNumber": 35,
+      "line": "function Measurement() {",
+      "comment": 2,
+      "range": [
+        633,
+        841
+      ],
+      "name": "Measurement",
+      "commentBody": "/**\n   * Instantiates a new Measurement.\n   *\n   * @class Measurement\n   * @constructor\n   * @public\n   */",
+      "oldComment": {
+        "type": "Block",
+        "value": "*\n   * Instantiates a new Measurement.\n   *\n   * @class Measurement\n   * @constructor\n   * @public\n   ",
+        "range": [
+          524,
+          630
+        ],
+        "commentBody": "/**\n   * Instantiates a new Measurement.\n   *\n   * @class Measurement\n   * @constructor\n   * @public\n   */",
+        "lineNumber": 28
+      },
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "tags": [
+          {
+            "tag": "class",
+            "line": 3,
+            "lastLine": 3,
+            "textStartsOnSameLine": true,
+            "text": "Measurement"
+          },
+          {
+            "tag": "constructor",
+            "line": 4,
+            "lastLine": 4,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          {
+            "tag": "public",
+            "line": 5,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        ],
+        "requiresList": [
+          "logger",
+          "jquery",
+          "backbone",
+          "configuration",
+          "underscore"
+        ],
+        "moduleName": "measurement",
+        "camelName": "Measurement",
+        "freeText": "\n Instantiates a new Measurement.\n",
+        "@constructor": "",
+        "@public": "",
+        "preamble": "\n Instantiates a new Measurement.\n",
+        "constructor": "Measurement",
+        "className": "Measurement",
+        "nodeType": "CLASS"
+      },
+      "jsDoc": "/**\n * Instantiates a new Measurement.\n * @class Measurement\n * @constructor\n * @public\n */"
+    }
+  },
+  "checkForRequiresMismatch": false,
+  "preprocessed": true,
+  "moduleName": "core/measurement",
+  "jsDoccerProcData": {
+    "lines": 169,
+    "requires": [
+      "logger",
+      "jquery",
+      "backbone",
+      "configuration",
+      "underscore"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/core",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 4406,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./measurement",
+    "uses_console_log": true,
+    "uses_backbone": true,
+    "classes": {
+      "Measurement": 1684
+    },
+    "methods": [
+      {
+        "name": "Measurement",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 35,
+        "memberOf": "",
+        "doclet": "/**\n * Instantiates a new Measurement.\n * @class Measurement\n * @constructor\n * @public\n */",
+        "description": "\n Instantiates a new Measurement.\n",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function Measurement() {",
+        "originalJsDocDescription": {
+          "class": {
+            "tag": "class",
+            "line": 3,
+            "lastLine": 3,
+            "textStartsOnSameLine": true,
+            "text": "Measurement"
+          },
+          "constructor": {
+            "tag": "constructor",
+            "line": 4,
+            "lastLine": 4,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "public": {
+            "tag": "public",
+            "line": 5,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_log",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 48,
+        "memberOf": "",
+        "doclet": "/**\n * Log.\n * @method _log\n * @private\n * @param msg\n */",
+        "args": [
+          "msg"
+        ],
+        "description": "\n Log.\n",
+        "classDeclarationFlag": false,
+        "line": "function _log(msg) {",
+        "originalJsDocDescription": {
+          "method": {
+            "tag": "method",
+            "line": 3,
+            "lastLine": 3,
+            "textStartsOnSameLine": true,
+            "text": "_log"
+          },
+          "private": {
+            "tag": "private",
+            "line": 4,
+            "lastLine": 4,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "params": [
+            {
+              "tag": "param",
+              "line": 5,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "msg\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_attempt",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 54,
+        "memberOf": "",
+        "doclet": "/**\n * Attempt.\n * @param instance\n * @param name\n * @param method\n * @param args\n * @param defaultResult\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
+        "args": [
+          "instance",
+          "name",
+          "method",
+          "args",
+          "defaultResult"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function _attempt(instance, name, method, args, defaultResult) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_addJQInstrumentation",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 78,
+        "memberOf": "",
+        "doclet": "/**\n * Add instrumentation to jQuery.\n * @method _addJQInstrumentation\n * @private\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
+        "description": "\n Add instrumentation to jQuery.\n",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function _addJQInstrumentation() {",
+        "originalJsDocDescription": {
+          "method": {
+            "tag": "method",
+            "line": 3,
+            "lastLine": 3,
+            "textStartsOnSameLine": true,
+            "text": "_addJQInstrumentation"
+          },
+          "private": {
+            "tag": "private",
+            "line": 4,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "isFunction",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 80,
+        "memberOf": "",
+        "doclet": "/**\n * Is function.\n * @param obj\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
+        "args": [
+          "obj"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "var isFunction = function (obj) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "on",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 86,
+        "memberOf": "$.fn",
+        "doclet": "/**\n * On.\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "$.fn.on = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "newFn",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 104,
+        "memberOf": "",
+        "doclet": "/**\n * New fn.\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "var newFn = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "off",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 115,
+        "memberOf": "$.fn",
+        "doclet": "/**\n * Off.\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "$.fn.off = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getInstance",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 161,
+        "memberOf": "",
+        "doclet": "/**\n * Get instance.\n * @method _getInstance\n * @private\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
+        "description": "\n Get instance.\n",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function _getInstance() {",
+        "originalJsDocDescription": {
+          "method": {
+            "tag": "method",
+            "line": 3,
+            "lastLine": 3,
+            "textStartsOnSameLine": true,
+            "text": "_getInstance"
+          },
+          "private": {
+            "tag": "private",
+            "line": 4,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/core",
+    "fileName": "measurement.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 197
+}

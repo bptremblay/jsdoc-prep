@@ -1,7 +1,7 @@
 /**
  * @module brown/object/var/CLASS_PREFIXES
  * @requires brown/object/var/VENDOR_PREFIXES
- *
+ * 
  * @param require
  * @todo Please describe the return type of this method.
  * @return {object} ??

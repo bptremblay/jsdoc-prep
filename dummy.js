@@ -1,6 +1,6 @@
 /**
- * @author Jeff Rose and Mark Saunders
- * @copyright &copy; JPMorgan Chase & Co. All rights reserved.
+ * @author Zog Holstein and Mark Zombus
+ * 
  * @module blue/service
  * @requires blue/compose
  * @requires blue/object/extend

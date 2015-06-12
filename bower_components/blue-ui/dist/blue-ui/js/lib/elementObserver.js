@@ -1,5 +1,5 @@
 /**
- * @copyright &copy; JPMorgan Chase & Co. All rights reserved.
+ * 
  * @module myProfile/ElementObserver
  */
 define(function(require) {

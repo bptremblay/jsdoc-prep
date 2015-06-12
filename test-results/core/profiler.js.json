@@ -1,0 +1,272 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "profiler",
+      "AMD": true,
+      "webPath": "/core",
+      "convertedName": "profiler",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "JSONFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setSpanOffset'.",
+        "code": "wfJD",
+        "evidence": "function setSpanOffset(n) {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setSpanOffset'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'startProfile'.",
+        "code": "wfJD",
+        "evidence": "function startProfile(label) {",
+        "line": 18,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'startProfile'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'stopProfile'.",
+        "code": "wfJD",
+        "evidence": "function stopProfile(label) {",
+        "line": 35,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'stopProfile'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'avgSpan'.",
+        "code": "wfJD",
+        "evidence": "function avgSpan(spans) {",
+        "line": 45,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'avgSpan'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initProfile'.",
+        "code": "wfJD",
+        "evidence": "function initProfile() {",
+        "line": 57,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initProfile'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'displayProfiles'.",
+        "code": "wfJD",
+        "evidence": "function displayProfiles() {",
+        "line": 63,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'displayProfiles'."
+      }
+    ]
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/core/profiler.js",
+  "folderPath": "test-source/core",
+  "fileName": "profiler.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/core",
+  "webPath": "/core",
+  "libFile": false,
+  "min": false,
+  "realName": "profiler",
+  "name": "profiler",
+  "camelName": "Profiler",
+  "processedFilePath": "test-output/core/profiler.js",
+  "mappedModuleName": "core/profiler",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "moduleName": "core/profiler",
+  "jsDoccerProcData": {
+    "lines": 118,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/core",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 2982,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./profiler",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "setSpanOffset",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "doclet": "/**\n * Set span offset.\n * @param n\n */",
+        "args": [
+          "n"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function setSpanOffset(n) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "startProfile",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 18,
+        "memberOf": "",
+        "doclet": "/**\n * Start profile.\n * @param label\n */",
+        "args": [
+          "label"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function startProfile(label) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "stopProfile",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 35,
+        "memberOf": "",
+        "doclet": "/**\n * Stop profile.\n * @param label\n */",
+        "args": [
+          "label"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function stopProfile(label) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "avgSpan",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 45,
+        "memberOf": "",
+        "doclet": "/**\n * Avg span.\n * @param spans\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
+        "args": [
+          "spans"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function avgSpan(spans) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "initProfile",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 57,
+        "memberOf": "",
+        "doclet": "/**\n * Init profile.\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function initProfile() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "displayProfiles",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 63,
+        "memberOf": "",
+        "doclet": "/**\n * Display profiles.\n * @todo Please describe the return type of this method.\n * @return {object} ??\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function displayProfiles() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "getInstance",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 103,
+        "memberOf": "",
+        "doclet": "/**\n * Get instance.\n * @memberOf {Logger}\n * @method getInstance\n * @private\n * @return {Logger}\n */",
+        "description": "\n Get instance.\n",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function getInstance() {",
+        "originalJsDocDescription": {
+          "memberOf": {
+            "tag": "memberOf",
+            "line": 3,
+            "lastLine": 3,
+            "textStartsOnSameLine": true,
+            "text": "{Logger}"
+          },
+          "method": {
+            "tag": "method",
+            "line": 4,
+            "lastLine": 4,
+            "textStartsOnSameLine": true,
+            "text": "getInstance"
+          },
+          "private": {
+            "tag": "private",
+            "line": 5,
+            "lastLine": 5,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "return": {
+            "tag": "return",
+            "line": 6,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Logger}\n"
+          }
+        }
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/core",
+    "fileName": "profiler.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 137
+}

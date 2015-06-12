@@ -1,0 +1,218 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "configuration",
+      "AMD": true,
+      "webPath": "/core",
+      "convertedName": "configuration",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "JSONFilter": [],
+    "jsBeautifyProc": [],
+    "jsDoccerProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/core/configuration.js",
+  "folderPath": "test-source/core",
+  "fileName": "configuration.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/core",
+  "webPath": "/core",
+  "libFile": false,
+  "min": false,
+  "realName": "configuration",
+  "name": "configuration",
+  "camelName": "Configuration",
+  "processedFilePath": "test-output/core/configuration.js",
+  "mappedModuleName": "core/configuration",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "moduleName": "core/configuration",
+  "jsDoccerProcData": {
+    "lines": 104,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/core",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 2313,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./configuration",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "isDevMode",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 22,
+        "memberOf": "",
+        "doclet": "/**\n * Is dev mode.\n * @private\n * @method\n * @return {Boolean} if dev mode is true.\n */",
+        "description": "\n Is dev mode.\n",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function isDevMode() {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 3,
+            "lastLine": 3,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "method": {
+            "tag": "method",
+            "line": 4,
+            "lastLine": 4,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "return": {
+            "tag": "return",
+            "line": 5,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Boolean} if dev mode is true.\n"
+          }
+        }
+      },
+      {
+        "name": "namespace",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 44,
+        "memberOf": "",
+        "doclet": "/**\n * namespace\n * .\n * @public\n * @method\n * @param {Array} arguments  \n * @return {Object} reference to wf namespace object\n */",
+        "description": "\n namespace\n\n\n namespace\n.",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "namespace: function () {",
+        "originalJsDocDescription": {
+          "public": {
+            "tag": "public",
+            "line": 3,
+            "lastLine": 3,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "method": {
+            "tag": "method",
+            "line": 4,
+            "lastLine": 4,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "params": [
+            {
+              "tag": "param",
+              "line": 5,
+              "lastLine": 5,
+              "textStartsOnSameLine": true,
+              "text": "{Array} arguments"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 6,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} reference to wf namespace object\n"
+          }
+        }
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 72,
+        "memberOf": "",
+        "doclet": "/**\n * init\n * .\n * @public\n * @method\n */",
+        "description": "\n init\n\n\n init\n.",
+        "classDeclarationFlag": false,
+        "line": "init: function () {",
+        "originalJsDocDescription": {
+          "public": {
+            "tag": "public",
+            "line": 3,
+            "lastLine": 3,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "method": {
+            "tag": "method",
+            "line": 4,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "getInstance",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 93,
+        "memberOf": "",
+        "doclet": "/**\n * Get instance.\n * @method getInstance\n * @private\n * @return {Configuration}\n */",
+        "description": "\n Get instance.\n",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function getInstance() {",
+        "originalJsDocDescription": {
+          "method": {
+            "tag": "method",
+            "line": 3,
+            "lastLine": 3,
+            "textStartsOnSameLine": true,
+            "text": "getInstance"
+          },
+          "private": {
+            "tag": "private",
+            "line": 4,
+            "lastLine": 4,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "return": {
+            "tag": "return",
+            "line": 5,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Configuration}\n"
+          }
+        }
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/core",
+    "fileName": "configuration.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 102
+}

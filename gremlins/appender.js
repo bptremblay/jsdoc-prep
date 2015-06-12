@@ -1,6 +1,6 @@
 /**
- * @author Jeff Rose
- * @copyright &copy; JPMorgan Chase & Co. All rights reserved.
+ * @author Zog Holstein
+ * 
  * @module blue/log/appender
  * @requires blue/declare
  * @requires blue/log/layout/null

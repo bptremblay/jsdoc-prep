@@ -1,0 +1,4 @@
+/**
+ * @constructor
+ */
+function BaseDataProvider() {}
