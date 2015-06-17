@@ -2186,6 +2186,25 @@ function addMissingComments(walkerObj, errors) {
     }
 
     var moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
+    
+    if (input.indexOf('angular.module') !== -1){
+		// var leaderBoard = angular.module('leaderBoard', []);
+		var ngSplit = input.split('angular.module')[1];
+		ngSplit = ngSplit.split(']')[0];
+		//FOUND NG Module!!!  ('widgetModule', ['dataVisualizationTrend', 'leaderBoard', 'scoreCard'
+		var ngModName = ngSplit.split(',')[0];
+		ngModName = ngModName.split('(')[1].trim();
+		var deps = ngSplit.split('[')[1].trim();
+		deps = deps.split('\'').join('');
+		deps = deps.split(',');
+		ngModName = ngModName.split('\'').join('');
+		walkerObj.NG = true;
+		walkerObj.ngModule = ngModName;
+		walkerObj.ngDeps = deps;
+		
+		console.warn('FOUND NG Module!!! (', ngModName, ')', deps);
+	}
+    
     // console.warn(moduleName);
     // exit;
     if (input.indexOf('@exports') !== -1) {
@@ -2203,9 +2222,24 @@ function addMissingComments(walkerObj, errors) {
         moduleName = 'module:' + modChunk;
         console.warn('Infer module name from @module definition.');
     } else {
+    	//console.warn(walkerObj.results.amdProc);
+//    	{ requires: [],
+//    		  moduleName: 'widget',
+//    		  AMD: false,
+//    		  webPath: '/views',
+//    		  convertedName: 'widget',
+//    		  min: false,
+//    		  main: 0,
+//    		  'uses_$': false,
+//    		  uses_Y: false,
+//    		  uses_alert: false,
+//    		  strict: false }
         moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
-        console.warn('Infer module name from file or AMD definition.');
+        if (!walkerObj.NG){
+        	console.warn('Infer module name from file or AMD definition.');
+        }
     }
+    
     walkerObj.moduleName = moduleName;
     // console.warn('USE THIS AS THE MODULE NAME??? ' + moduleName);
     // console.warn('OR, USE THIS AS THE MODULE NAME??? module:' +
@@ -2213,6 +2247,11 @@ function addMissingComments(walkerObj, errors) {
     walkerObj.moduleName = walkerObj.mappedModuleName;
     // console.warn(walkerObj.moduleName);
     // exit
+    
+    if (walkerObj.NG){
+    	moduleName = 'module:' + walkerObj.ngModule;
+    }
+    
     var hasLends = getCommentWith(input, ast.comments, '@lends');
     if (hasLends != null && incompleteLends == null) {
 
@@ -2304,6 +2343,7 @@ function addMissingComments(walkerObj, errors) {
 
     // writeFile("dump.json", JSON.stringify(ast, null, 2));
     var moduleAtTop = input.indexOf('@exports') === -1;
+    
     var defineModuleInTopOfFile = moduleAtTop;
     var newFile = '';
     var cursor = 0;
@@ -2576,6 +2616,29 @@ function addMissingComments(walkerObj, errors) {
         spliceInlineConstructor = null;
 
     }
+    var ngClassName = null;
+    
+    if (newFile.indexOf('@module') === -1){
+    	if (walkerObj.NG){
+    		ngClassName = capitalize(walkerObj.ngModule);
+    		var ngHeader = '/**\n * ';
+    		ngHeader += '@module ' + walkerObj.ngModule + '\n *';
+    		var ngDeps = walkerObj.ngDeps;
+    		for (var ngd = 0; ngd < ngDeps.length; ngd++){
+    			var dep = ngDeps[ngd].trim();
+    			if (dep.length){
+    				ngHeader += ' @requires ' + dep + '\n *';
+    			}
+    		}
+    		ngHeader += '/\n';
+    	}
+    	//console.warn('Insert module header: ', ngHeader);
+    	//TODO: include correct jsDoc metadata for each constructor
+    	
+    	newFile = ngHeader + newFile;
+    }
+    
+    
 
     var jsDoccerBlob = {
             "lines" : lines.length,
@@ -2585,13 +2648,13 @@ function addMissingComments(walkerObj, errors) {
             "directoryPath" : dir,
             "uses_Y" : false,
             "no_lib" : true,
-            "inferencedClassName" : "n/a",
+            "inferencedClassName" : (ngClassName ? ngClassName : "n/a"),
             "uses_$" : false,
             "chars" : input.length,
             "uses_YUI" : false,
+            "uses_NG": walkerObj.NG,
             "fields" : [],
-            "moduleName" : _path.dirname(walkerObj.fileName) + '/'
-            + fileNameMinusExt,
+            "moduleName" : _path.dirname(walkerObj.fileName) + '/' + fileNameMinusExt,
             "uses_console_log" : false,
             "uses_backbone" : false,
             "classes" : allMethods.classes,
@@ -2673,6 +2736,7 @@ function getMethodOnLine(methodArray, lineNumber, ast, input) {
  * @param doclet
  */
 function mergeRequires(doclet) {
+	console.warn('mergeRequires');
     // logger.log(doclet);
     var needToMerge = false;
     var allRequires = searchTags(doclet, 'requires');
@@ -2686,16 +2750,19 @@ function mergeRequires(doclet) {
     if (requiresList == null) {
         requiresList = [];
     }
+    
+    
+    
     // logger.log(requiresList);
 
     var diffRequires = getValuesNotInTags(allRequires, requiresList);
 
     if (diffRequires.length > 0) {
 
-       //logger.warn(diffRequires);
+       logger.warn(diffRequires);
         
-        // logger.log('These require modules were not included: '
-        // + diffRequires.toString());
+         logger.warn('These require modules were not included: '
+         + diffRequires.toString());
         // // put any items in requiresList after allRequires if they are not
         // already
         // listed
