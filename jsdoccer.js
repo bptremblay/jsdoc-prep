@@ -2187,6 +2187,8 @@ function addMissingComments(walkerObj, errors) {
 
     var moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
     
+    walkerObj.NG = false;
+    
     if (input.indexOf('angular.module') !== -1){
 		// var leaderBoard = angular.module('leaderBoard', []);
 		var ngSplit = input.split('angular.module')[1];
@@ -2204,6 +2206,15 @@ function addMissingComments(walkerObj, errors) {
 		
 		console.warn('FOUND NG Module!!! (', ngModName, ')', deps);
 	}
+    
+    walkerObj.NODEJS = false;
+    
+    if (!walkerObj.NG && !walkerObj.results.amdProc.AMD){
+    	if (input.indexOf('require(') !== -1 || input.indexOf('.exports') !== -1){
+    		console.warn('Possibly this is a node.js module?');
+    		walkerObj.NODEJS = true;
+    	}
+    }
     
     // console.warn(moduleName);
     // exit;
@@ -2631,11 +2642,29 @@ function addMissingComments(walkerObj, errors) {
     			}
     		}
     		ngHeader += '/\n';
+    		newFile = ngHeader + newFile;
+    	}
+    	else if (walkerObj.NODEJS){
+    		//walkerObj.NODEJS = false;
+    		
+    		nodeModName = (walkerObj.moduleName);
+    		var nodeHeader = '/**\n * ';
+    		nodeHeader += '@module ' + nodeModName + '\n *';
+    		// TODO: scrape deps like a normal AMD module
+    		var ngDeps = [];
+    		for (var ngd = 0; ngd < ngDeps.length; ngd++){
+    			var dep = ngDeps[ngd].trim();
+    			if (dep.length){
+    				nodeHeader += ' @requires ' + dep + '\n *';
+    			}
+    		}
+    		nodeHeader += '/\n';
+    		newFile = nodeHeader + newFile;
     	}
     	//console.warn('Insert module header: ', ngHeader);
     	//TODO: include correct jsDoc metadata for each constructor
     	
-    	newFile = ngHeader + newFile;
+    	
     }
     
     
