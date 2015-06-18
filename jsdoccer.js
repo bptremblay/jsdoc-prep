@@ -825,6 +825,59 @@ function getRequiresTags(input) {
     }
     return output;
 }
+
+function getInlineRequires(input) {
+    var source = input.source;
+    var noSpaceRequire = source.indexOf("require(");
+    var oneSpaceRequire = source.indexOf("require (");
+    if (noSpaceRequire === -1 && oneSpaceRequire === -1) {
+        return [];
+    }
+    var output = [];
+    // console.warn('dig for inline requires() in ' + input.name);
+    var chunks = [];
+    if (noSpaceRequire > -1) {
+        chunks = source.split("require(");
+        // console.warn(chunks.length);
+        for (var index = 1; index < chunks.length; index++) {
+            var chunk = chunks[index];
+            var trimChunk = chunk.trim();
+            //console.warn(trimChunk);
+            var startChar = trimChunk.charAt(0);
+            //console.warn(startChar);
+            var splitter = trimChunk.split(startChar);
+            var moduleName = splitter[1].trim();
+            //console.warn(moduleName);
+            if (startChar === "'" || startChar === '"'){
+                output.push(moduleName);
+            }
+            else{
+                console.warn('getInlineRequires() skipped: ' + moduleName);
+            }
+        }
+    } else if (oneSpaceRequire > -1) {
+        chunks = source.split("require (");
+        // console.warn(chunks.length);
+        for (var index = 1; index < chunks.length; index++) {
+            var chunk = chunks[index];
+            var trimChunk = chunk.trim();
+            //console.warn(trimChunk);
+            var startChar = trimChunk.charAt(0);
+            //console.warn(startChar);
+            var splitter = trimChunk.split(startChar);
+            var moduleName = splitter[1].trim();
+            // console.warn(moduleName);
+            if (startChar === "'" || startChar === '"'){
+                output.push(moduleName);
+            }
+            else{
+                console.warn('getInlineRequires() skipped: ' + moduleName);
+            }
+        }
+    }
+    return output;
+}
+
 var firstDoclet = null;
 var typesMap = {
         'function' : 'Function',
@@ -2210,7 +2263,7 @@ function addMissingComments(walkerObj, errors) {
     walkerObj.NODEJS = false;
     
     if (!walkerObj.NG && !walkerObj.results.amdProc.AMD){
-    	if (input.indexOf('require(') !== -1 || input.indexOf('.exports') !== -1){
+    	if (input.indexOf('require(') !== -1 || input.indexOf('exports.') !== -1){
     		console.warn('Possibly this is a node.js module?');
     		walkerObj.NODEJS = true;
     	}
@@ -2630,11 +2683,13 @@ function addMissingComments(walkerObj, errors) {
     var ngClassName = null;
     
     if (newFile.indexOf('@module') === -1){
+    	var inlineDeps = getInlineRequires(walkerObj);
+    	//console.warn(inlineDeps);
     	if (walkerObj.NG){
     		ngClassName = capitalize(walkerObj.ngModule);
     		var ngHeader = '/**\n * ';
-    		ngHeader += '@module ' + walkerObj.ngModule + '\n *';
-    		var ngDeps = walkerObj.ngDeps;
+    		ngHeader += '@module ' + walkerObj.moduleName + '\n *';
+    		var ngDeps = walkerObj.ngDeps.concat(inlineDeps);
     		for (var ngd = 0; ngd < ngDeps.length; ngd++){
     			var dep = ngDeps[ngd].trim();
     			if (dep.length){
@@ -2651,7 +2706,7 @@ function addMissingComments(walkerObj, errors) {
     		var nodeHeader = '/**\n * ';
     		nodeHeader += '@module ' + nodeModName + '\n *';
     		// TODO: scrape deps like a normal AMD module
-    		var ngDeps = [];
+    		var ngDeps = inlineDeps;
     		for (var ngd = 0; ngd < ngDeps.length; ngd++){
     			var dep = ngDeps[ngd].trim();
     			if (dep.length){
