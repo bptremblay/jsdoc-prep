@@ -2831,6 +2831,7 @@ function addMissingComments(walkerObj, errors) {
 
     if (newFile.indexOf('@module') === -1) {
         var inlineDeps = getInlineRequires(walkerObj);
+        walkerObj.inlineDeps = inlineDeps;
         //console.warn(inlineDeps);
         if (walkerObj.NG) {
             ngClassName = capitalize(walkerObj.ngModule);
@@ -2846,6 +2847,7 @@ function addMissingComments(walkerObj, errors) {
             ngHeader += '/\n';
             newFile = ngHeader + newFile;
         } else if (walkerObj.NODEJS) {
+        	
             //walkerObj.NODEJS = false;
 
             nodeModName = (walkerObj.moduleName);

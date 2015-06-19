@@ -144,21 +144,35 @@ var fixJSDocFormattingProc = {
 };
 
 function createJavaClass(input, amdProcData) {
+	var AMD = amdProcData.AMD;
     var exportPath = 'javasrc';
     var classFileName = input.camelName + '.java';
-    var packageSubpath = amdProcData.webPath;
+    var packageSubpath = AMD ? amdProcData.webPath : input.packagePath;
+    var deps = []; 
+    if (AMD){
+    	deps = amdProcData.requires;
+    }
+    else if (input.NG){
+    	deps = input.ngDeps;
+    }
+    else{
+    	deps = input.inlineDeps;
+    }
     var subPackage = packageSubpath.split('/')
         .join('.');
     var buffer = [];
     buffer.push('package amd.modules' + subPackage + ';');
     buffer.push('import amd.Module;');
     buffer.push('public class ' + input.camelName + ' extends Module {');
-    for (var index = 0; index < amdProcData.requires.length; index++) {
-        var moduleName = amdProcData.requires[index];
+    for (var index = 0; index < deps.length; index++) {
+        var moduleName = deps[index];
         if (typeof moduleName !== 'string') {
             continue;
         }
         if (moduleName.length === 0) {
+            continue;
+        }
+        if (moduleName.indexOf('.json') !== -1) {
             continue;
         }
         var camelName = camelize(moduleName);
@@ -166,6 +180,7 @@ function createJavaClass(input, amdProcData) {
         memberName = memberName.split('');
         memberName[0] = memberName[0].toLowerCase();
         memberName = memberName.join('');
+        // FIXME: camel name MUST be a valid package name.
         buffer.push('  public ' + camelName + ' ' + memberName + ' = null;');
     }
     buffer.push('  public ' + input.camelName + '() {');
@@ -184,9 +199,9 @@ var generateJavaProc = {
             input.errors[this.id] = [];
         }
         var amdProcData = input.results.amdProc;
-        if (amdProcData.AMD) {
+        //if (amdProcData.AMD) {
             createJavaClass(input, amdProcData);
-        }
+        //}
         doneCallback(input);
     }
 };
