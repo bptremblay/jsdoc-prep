@@ -1889,7 +1889,7 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                     packagePath = packagePath.join('/');
                     packagePath = packagePath.split('.js')[0];
                     var foundNode = false;
-                    
+
                     // Ony if it's really AMD...
                     if (walkerObj.results.amdProc.AMD) {
                         if (textMinusReturn.charAt(0) === '{') {
@@ -1920,10 +1920,36 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                             // foundNode = true;
                         }
                     }
-//                    else{
-//                    	console.warn(JSON.stringify(returnNode));
-//                        exit;
-//                    }
+                    else{
+                    	console.warn('Found a return block needing a @lends doclet: ' + walkerObj.moduleName);
+                    	//console.warn(JSON.stringify(obj, null, 2));
+                    	if (textMinusReturn.charAt(0) === '{') {
+                            // logger.log('module "' + packagePath
+                            // + '" has an object literal for its exports value');
+                            // /**@alias
+                            // module:js/component/myAccounts/depositAccounts*/
+                    		
+                    		//var line = lineFromOffset(input, rrange[0]);
+                    		//console.warn(line);
+                    		var textBefore = input.substring(0, rrange[0]).trim();
+                    		textBefore = textBefore.split('\n');
+                    		textBefore = textBefore[textBefore.length-1];
+                    		textBefore = textBefore.split('(')[1];
+                    		textBefore = textBefore.split(',')[0];
+                    		var ngClassName = textBefore.split('"').join('').split("'").join('').trim();
+
+                    		//console.warn(ngClassName);
+                    		// TODO: test for other similar structures
+                    		if (walkerObj.NG){
+                    			 returnBody = 'return /**@lends module:' + packagePath + '~' + ngClassName + '#' + ' */ ' + textMinusReturn;
+                                 //console.warn('returnBody = ' + returnBody);
+                                 foundNode = true;
+                    		}
+                           
+                    	}
+                    	
+                    	//exit;
+                    }
 
                     if (foundNode) {
                         walkerObj.rewrittenReturnBody = returnBody;
@@ -2207,15 +2233,15 @@ function lastLineOf(input) {
  * @return {String} the last line
  */
 function lineFromOffset(input, offset) {
-    console.warn('lineFromOffset');
+   // console.warn('lineFromOffset');
     if (input.length === 0) {
         console.warn('lineFromOffset: input was empty, returning empty string');
         return '';
     }
 
     input = input.substring(0, offset);
-    console.warn(input);
-    exit;
+    //console.warn(input);
+    //exit;
     var lines = input.split('\n');
     var lastLineNumber = lines.length - 1;
     return lines[lastLineNumber];
@@ -2317,14 +2343,15 @@ function addMissingComments(walkerObj, errors) {
             errors, walkerObj);
         return 'ERROR';
     }
-    
+
     //writeFile('ast.json', JSON.stringify(ast, null, 2));
-    
+
     var moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
 
-    walkerObj.NG = false;
 
-    if (input.indexOf('angular.module') !== -1) {
+
+    if (!walkerObj.NG && input.indexOf('angular.module') !== -1) {
+
         // var leaderBoard = angular.module('leaderBoard', []);
         var ngSplit = input.split('angular.module')[1];
         ngSplit = ngSplit.split(']')[0];
@@ -2348,6 +2375,13 @@ function addMissingComments(walkerObj, errors) {
         input = commentAngularClasses(input, ngModName, 'filter');
         input = commentAngularClasses(input, ngModName, 'factory');
         input = commentAngularClasses(input, ngModName, 'provider');
+
+        walkerObj.source = input;
+        // Reboot!
+        logger.log('>>>>> Need to recalculate NG module: ' + walkerObj.name + '.');
+        //walkerObj.checkForRequiresMismatch = false;
+
+        return addMissingComments(walkerObj, errors);
     }
 
     walkerObj.NODEJS = false;
@@ -2358,7 +2392,7 @@ function addMissingComments(walkerObj, errors) {
             if (input.indexOf("require('express')") !== -1) {
                 console.warn('Express.js');
                 var expressOffset = input.indexOf('= express(');
-                if (expressOffset !== -1) {
+                if (expressOffset !== -1 && !walkerObj.EXPRESS) {
                     // maybe?
 
                     var expressSplit = input.split('= express(')[0];
@@ -2366,7 +2400,18 @@ function addMissingComments(walkerObj, errors) {
                     expressSplit = lastWordOf(expressSplit);
                     console.warn('App derived from Express: ', expressSplit);
                     var constructorDoc = '/**\n * @constructor\n * @extends express\n */';
+                    // insert comment
                     input = prependLineByOffset(input, expressOffset, constructorDoc);
+                    // re-sync logical model
+                    walkerObj.source = input;
+
+                    // Reboot!
+                    logger.log('>>>>> Need to recalculate node module: ' + walkerObj.name + '.');
+
+                    //walkerObj.checkForRequiresMismatch = false;
+                    walkerObj.EXPRESS = true;
+                    return addMissingComments(walkerObj, errors);
+
                 }
             }
 
