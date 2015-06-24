@@ -98,7 +98,7 @@ var processingChain = [
 //                       'jsDoc3PrepProc',
                        
                        'jsBeautifyProc',
-                      // 'generateJavaProc'
+                       //'generateJavaProc'
                        ];
 
 //var processingChain = [

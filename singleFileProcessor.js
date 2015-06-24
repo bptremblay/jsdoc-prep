@@ -12,6 +12,7 @@ var newJsDoccerEngine = require('./jsdoccer');
 var parseDoclet = docletEngine.parseDoclet;
 var printDoclet = docletEngine.printDoclet;
 var addMissingComments = newJsDoccerEngine.addMissingComments;
+var FILE_IS_EMPTY = false;
 
 
 function mapModuleName(mappedModuleName, modulePaths){
@@ -161,9 +162,9 @@ function createJavaClass(input, amdProcData) {
     var subPackage = packageSubpath.split('/')
         .join('.');
     var buffer = [];
-    buffer.push('package amd.modules' + subPackage + ';');
-    buffer.push('import amd.Module;');
-    buffer.push('public class ' + input.camelName + ' extends Module {');
+    buffer.push('package com.fmr.perfhub.client' + subPackage + ';');
+    buffer.push('import ng.Module;');
+    buffer.push('public class ' + capitalize(input.camelName) + ' extends Module {');
     for (var index = 0; index < deps.length; index++) {
         var moduleName = deps[index];
         if (typeof moduleName !== 'string') {
@@ -181,10 +182,10 @@ function createJavaClass(input, amdProcData) {
         memberName[0] = memberName[0].toLowerCase();
         memberName = memberName.join('');
         // FIXME: camel name MUST be a valid package name.
-        buffer.push('  public ' + camelName + ' ' + memberName + ' = null;');
+        buffer.push('  public ' + capitalize(camelName) + ' ' + memberName + ' = null;');
     }
-    buffer.push('  public ' + input.camelName + '() {');
-    buffer.push('  super("' + input.name + '");');
+    buffer.push('  public ' + capitalize(input.camelName) + '() {');
+    buffer.push('  super("' + capitalize(input.name) + '");');
     buffer.push('  }');
     buffer.push('}');
     var src = buffer.join('\n');
@@ -1151,6 +1152,27 @@ var jsDoccerProc = {
             var basePath = _path.normalize(input.outputDirectory + '/' + input.packagePath);
             var name = input.fileName;
             var internalErrors = [];
+            var inputSource = input.source;
+            var stripped = stripOneLineComments(inputSource);
+            stripped = stripCComments(stripped).trim();
+            if (stripped.length === 0){
+            	var lineNumber = 0;
+                var reason = 'File does not contain JavaScript.';
+                var error = {
+                    'id': '(empty)',
+                    'raw': 'emptyFileError',
+                    'code': 'addMissingComments',
+                    'evidence': '',
+                    'line': 0,
+                    'character': 0,
+                    'scope': '(main)',
+                    'a': '',
+                    'reason': reason
+                };
+                input.errors[id].push(error);
+                FILE_IS_EMPTY = true;
+            }
+            
             var stdout = addMissingComments(input, internalErrors);
             
             if (internalErrors.length > 0) {
@@ -1295,6 +1317,7 @@ function setWriteEnable(val) {
 function processFile(modulePaths, baseDirectory, filePathName, outputDirectory,
     testDirectory, docDirectory, processorChain, completionCallback,
     writeEnable) {
+	FILE_IS_EMPTY = false;
     var output = {};
     output.results = {};
     output.errors = {};
@@ -1421,6 +1444,7 @@ function processFile(modulePaths, baseDirectory, filePathName, outputDirectory,
             }
         }
         output.rawSource = null;
+        output.EMPTY = FILE_IS_EMPTY;
         delete output.rawSource;
         completionCallback(output);
     }

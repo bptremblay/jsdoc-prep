@@ -31,6 +31,7 @@ var modules = {};
 var allSource = '';
 var totalFiles = [];
 var modulePaths = {};
+var emptyFiles = [];
 
 /**
  * Filter files.
@@ -89,6 +90,9 @@ function __nextFile() {
                     console.error('HALTED');
                     return;
                 }
+                if (result.EMPTY){
+                	emptyFiles.push(result.fileName);
+                }
                 results.push(result);
                 delete result.undoBuffer;
                 result.source = result.rawSource;
@@ -119,6 +123,9 @@ function __nextFile() {
                     var now = new Date().getTime() - then;
                     console.log('Processed ' + results.length + ' files. Took '
                             + now / 1000 + ' seconds.');
+                    if (emptyFiles.length){
+                    	console.warn('Some script files were EMPTY: \n' + emptyFiles.join('\n'));
+                    }
                     var resultsBlock = {};
                     resultsBlock.results = results;
                     resultsBlock.path = SCAN_PATH;
@@ -164,6 +171,7 @@ function run(options) {
     queue = [];
     results = [];
     then = 0;
+    emptyFiles = [];
 
     /**
      * Get procs.
