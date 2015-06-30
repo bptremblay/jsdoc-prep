@@ -809,7 +809,7 @@ function getRequiresTags(input) {
 
     for (var index = 0; index < amdProcData.requires.length; index++) {
         var moduleName = amdProcData.requires[index];
-        // logger.log(moduleName);
+        //console.warn(moduleName);
         if (typeof moduleName !== 'string') {
             continue;
         }
@@ -821,8 +821,15 @@ function getRequiresTags(input) {
     return output;
 }
 
+/**
+ * Gets all the instances of require() in the code body.
+ * @todo: Not robust! Not comment-proof!
+ * @param {String} input The source script.
+ * @returns {Array}
+ */
 function getInlineRequires(input) {
     var source = input.source;
+    source = stripOneLineComments(stripCComments(source));
     var noSpaceRequire = source.indexOf("require(");
     var oneSpaceRequire = source.indexOf("require (");
     if (noSpaceRequire === -1 && oneSpaceRequire === -1) {
@@ -842,6 +849,8 @@ function getInlineRequires(input) {
             //logger.log(startChar);
             var splitter = trimChunk.split(startChar);
             var moduleName = splitter[1].trim();
+            // quick fix... TODO: make more robust
+            moduleName = moduleName.split('*/').join('');
             //logger.log(moduleName);
             if (startChar === "'" || startChar === '"') {
                 output.push(moduleName);
@@ -860,6 +869,8 @@ function getInlineRequires(input) {
             //logger.log(startChar);
             var splitter = trimChunk.split(startChar);
             var moduleName = splitter[1].trim();
+            // quick fix... TODO: make more robust
+            moduleName = moduleName.split('*/').join('');
             // logger.log(moduleName);
             if (startChar === "'" || startChar === '"') {
                 output.push(moduleName);
@@ -1921,7 +1932,7 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                         }
                     }
                     else{
-                    	logger.log('Found a return block needing a @lends doclet: ' + walkerObj.moduleName);
+                    	console.warn('Found a return block needing a @lends doclet: ' + walkerObj.moduleName);
                     	//logger.log(JSON.stringify(obj, null, 2));
                     	if (textMinusReturn.charAt(0) === '{') {
                             // logger.log('module "' + packagePath
@@ -1941,7 +1952,7 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                     		//logger.log(ngClassName);
                     		// TODO: test for other similar structures
                     		if (walkerObj.NG){
-                    			 returnBody = 'return /**@lends module:' + packagePath + '~' + ngClassName + '#' + ' */ ' + textMinusReturn;
+                    			 returnBody = 'return /**@lends module:' + packagePath + '~' + capitalize(ngClassName) + '#' + ' */ ' + textMinusReturn;
                                  //logger.log('returnBody = ' + returnBody);
                                  foundNode = true;
                     		}
@@ -2268,19 +2279,33 @@ function lastWordOf(input) {
  * @param {String} input 
  * @param {Number} offset
  * @param {String} comment 
+ * @param {String} lendsDoc 
  * @return {String} modified input
  */
-function prependLineByOffset(input, offset, comment) {
-    var lines = input.split('\n');
-    var linesUpTo = input.substring(0, offset);
-    var lineOffset = linesUpTo.split('\n').length - 1;
-    if (lineOffset < 0) {
-        logger.log('prependLineByOffset: invalid offset');
-    }
-    //console.log('prependLineByOffset: insert comment before line ' + lineOffset);
-    lines.splice(lineOffset, 0, comment);
-    input = lines.join('\n');
-    return input;
+function prependLineByOffset(input, offset, comment, lendsDoc) {
+	var lines = input.split('\n');
+	var linesUpTo = input.substring(0, offset);
+	var lineOffset = linesUpTo.split('\n').length - 1;
+	if (lineOffset < 0) {
+		logger.log('prependLineByOffset: invalid offset');
+	}
+	//console.warn('prependLineByOffset: insert comment before line ' + lineOffset);
+	//console.warn(lines[lineOffset+1]);
+	var nextLine = lines[lineOffset+1];
+	if (lendsDoc){
+		if (nextLine.indexOf('return') !== -1){
+			//return /**@lends module:service~TrendService# */ {
+			//returnBody = 'return /**@lends module:' + packagePath + '~' + capitalize(ngClassName) + '#' + ' */ ' + textMinusReturn;
+			lines[lineOffset+1] = '  return ' + lendsDoc + ' {';
+		}
+		else{
+			console.warn('WARNING: prependLineByOffset could not find a return block!!!!');
+		}
+	}
+
+	lines.splice(lineOffset, 0, comment);
+	input = lines.join('\n');
+	return input;
 }
 
 /**
@@ -2290,19 +2315,66 @@ function prependLineByOffset(input, offset, comment) {
  * @param {String} ngBaseClass
  * @returns {String}
  */
-function commentAngularClasses(input, ngModName, ngBaseClass) {
-    var chunkToSearch = ngModName + '.' + ngBaseClass + '(';
+function commentAngularClasses(input, ngModName, ngBaseClass, packagePath) {
+	
+	
+	 
+	//console.warn('commentAngularClasses ', arguments);
+	var chunkToSearch = '.' + ngBaseClass + '(';
+	//console.warn('commentAngularClasses: ', chunkToSearch);
+	//var offset = input.indexOf(chunkToSearch);
+	var offset = input.indexOf(chunkToSearch);
+	
+	if (offset !== -1) {
+		input = stripOneLineComments(stripCComments(input));
+//		var ngChunkSplit = input.split(chunkToSearch)[1];
+//		ngChunkSplit = ngChunkSplit.split(',')[0];
+//		ngChunkSplit = ngChunkSplit.split('"').join('').split("'").join('')
+//				.trim();
+//		var constructorDoc = '/**\n * @class ' + ngChunkSplit
+//				+ '\n * @extends ' + ngBaseClass + '\n */';
+//		input = prependLineByOffset(input, offset, constructorDoc);
+		
+		var allSplits = input.split(chunkToSearch);
+		var tempInput = input;
+		for (var index = 1; index<allSplits.length; index++){
+			var ngChunkSplit = allSplits[index];
+			//console.warn('CHUNK: ', index, ngChunkSplit);
+			
+//			var ngChunkSplit = input.split(chunkToSearch)[1];
+			ngChunkSplit = ngChunkSplit.split(',')[0];
+			ngChunkSplit = ngChunkSplit.split('"').join('').split("'").join('')
+					.trim();
+			var constructorDoc = '/**\n * @class ' + capitalize(ngChunkSplit)
+					+ '\n * @extends ' + ngBaseClass + '\n */';
+			
+			//console.warn('CHUNK: ', index, constructorDoc);
+			
+			var originalChunk = allSplits[index];
+			//console.warn('CHUNK: ', index, originalChunk);
+			
+			var newOffset = tempInput.indexOf(originalChunk);
+			//console.warn('CHUNK: ', index, newOffset);
+			//returnBody = 'return /**@lends module:' + packagePath + '~' + capitalize(ngClassName) + '#' + ' */ ' + textMinusReturn;
 
-    var offset = input.indexOf(chunkToSearch);
-    if (offset !== -1) {
-        var ngChunkSplit = input.split(chunkToSearch)[1];
-        ngChunkSplit = ngChunkSplit.split(',')[0];
-        ngChunkSplit = ngChunkSplit.split('"').join('').split("'").join('').trim();
-        var constructorDoc = '/**\n * @class ' + ngChunkSplit + '\n * @extends ' + ngBaseClass + '\n */';
-        input = prependLineByOffset(input, offset, constructorDoc);
-    }
-    return input;
+			var lendsDoc = '/** @lends module:' + packagePath + '~' + capitalize(ngChunkSplit) + '# */';
+			//console.warn(lendsDoc);
+			tempInput = prependLineByOffset(tempInput, newOffset, constructorDoc, lendsDoc);
+			
+			
+			
+			//return /**@lends module:service~TrendService# */ {
+			
+		}
+		//console.warn(tempInput);
+		console.warn('WARNING: swapping JS source for comment-stripped version');
+		input = tempInput;
+		
+	};
+	
+	return input;
 }
+
 
 var incompleteLends = null;
 var spliceInlineConstructor = null;
@@ -2348,7 +2420,10 @@ function addMissingComments(walkerObj, errors) {
 
     var moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
 
-
+    var packagePath = walkerObj.path.split('/');
+    packagePath.shift();
+    packagePath = packagePath.join('/');
+    packagePath = packagePath.split('.js')[0];
 
     if (!walkerObj.NG && input.indexOf('angular.module') !== -1) {
 
@@ -2360,21 +2435,31 @@ function addMissingComments(walkerObj, errors) {
         ngModName = ngModName.split('(')[1].trim();
         var deps = ngSplit.split('[')[1].trim();
         deps = deps.split('\'').join('');
+        
+        deps = stripOneLineComments(stripCComments(deps));
+        //console.warn(deps);
+        
         deps = deps.split(',');
         ngModName = ngModName.split('\'').join('');
+        for (var d = 0; d<deps.length; d++){
+        	var dep = deps[d];
+        	deps[d] = dep.trim();
+        }
         walkerObj.NG = true;
         walkerObj.ngModule = ngModName;
         walkerObj.ngDeps = deps;
 
-        logger.log('FOUND NG Module!!! (', ngModName, ')', deps);
+        //console.warn('FOUND NG Module!!! (', ngModName, ')', deps);
         //dataVisualizationBar.directive('dvBarChart', function () {
+        
+        
 
-        input = commentAngularClasses(input, ngModName, 'directive');
-        input = commentAngularClasses(input, ngModName, 'controller');
-        input = commentAngularClasses(input, ngModName, 'service');
-        input = commentAngularClasses(input, ngModName, 'filter');
-        input = commentAngularClasses(input, ngModName, 'factory');
-        input = commentAngularClasses(input, ngModName, 'provider');
+        input = commentAngularClasses(input, ngModName, 'directive', packagePath);
+        input = commentAngularClasses(input, ngModName, 'controller', packagePath);
+        input = commentAngularClasses(input, ngModName, 'service', packagePath);
+        input = commentAngularClasses(input, ngModName, 'filter', packagePath);
+        input = commentAngularClasses(input, ngModName, 'factory', packagePath);
+        input = commentAngularClasses(input, ngModName, 'provider', packagePath);
 
         walkerObj.source = input;
         // Reboot!
@@ -2383,12 +2468,40 @@ function addMissingComments(walkerObj, errors) {
 
         return addMissingComments(walkerObj, errors);
     }
+    
+   // if (!walkerObj.NG && input.indexOf('.factory(') !== -1 && input.indexOf('&http') !== -1) {
+    if (!walkerObj.NG && input.indexOf('.factory(') !== -1 && input.indexOf('$http') !== -1) {
+    	var deps = [];
+    	var ngModName = walkerObj.results.amdProc.moduleName;
+        walkerObj.NG = true;
+        walkerObj.ngModule = ngModName;
+        walkerObj.ngDeps = deps;
+
+        //console.warn('FOUND NG Module!!! (', ngModName, ')', deps);
+        //dataVisualizationBar.directive('dvBarChart', function () {
+
+        input = commentAngularClasses(input, ngModName, 'directive', packagePath);
+        input = commentAngularClasses(input, ngModName, 'controller', packagePath);
+        input = commentAngularClasses(input, ngModName, 'service', packagePath);
+        input = commentAngularClasses(input, ngModName, 'filter', packagePath);
+        input = commentAngularClasses(input, ngModName, 'factory', packagePath);
+        input = commentAngularClasses(input, ngModName, 'provider', packagePath);
+
+        walkerObj.source = input;
+        // Reboot!
+        console.warn('>>>>> Need to recalculate NG module: ' + walkerObj.name + '.');
+        //walkerObj.checkForRequiresMismatch = false;
+
+        return addMissingComments(walkerObj, errors);
+    }
+
 
     walkerObj.NODEJS = false;
+    
 
     if (!walkerObj.NG && !walkerObj.results.amdProc.AMD) {
-        if (input.indexOf('require(') !== -1 || input.indexOf('exports.') !== -1) {
-            logger.log('Possibly this is a node.js module?');
+        if (input.indexOf('require(') !== -1 || input.indexOf('.exports') !== -1) {
+           // console.warn('Possibly this is a node.js module? >> ', walkerObj.results.amdProc.moduleName);
             if (input.indexOf("require('express')") !== -1) {
                 logger.log('Express.js');
                 var expressOffset = input.indexOf('= express(');
@@ -2410,12 +2523,37 @@ function addMissingComments(walkerObj, errors) {
 
                     //walkerObj.checkForRequiresMismatch = false;
                     walkerObj.EXPRESS = true;
+                    walkerObj.NODEJS = true;
                     return addMissingComments(walkerObj, errors);
 
                 }
             }
-
-
+            else if (input.indexOf('module.exports') !== -1 && !walkerObj.NODE_EXPORTS){
+            	var exportsOffset = input.indexOf('module.exports');
+            	var exportsSplit = input.split('module.exports')[1].trim();
+            	exportsSplit = exportsSplit.split('=')[1].trim();
+            	exportsSplit = exportsSplit.split(';').join('');
+            	if (exportsSplit.split('\n').length < 2){
+	            	console.warn('Module exports: ', exportsSplit);
+	                var constructorDoc = '/**\n * @constructor\n */';
+	                // insert comment
+	                var ctorOffset = input.indexOf(exportsSplit);
+	                input = prependLineByOffset(input, ctorOffset, constructorDoc);
+	                // re-sync logical model
+	                walkerObj.source = input;
+	
+	                // Reboot!
+	                logger.log('>>>>> Need to recalculate node module: ' + walkerObj.name + '.');
+	
+	                //walkerObj.checkForRequiresMismatch = false;
+	                walkerObj.NODEJS = true;
+	                walkerObj.NODE_EXPORTS = exportsSplit;
+	                return addMissingComments(walkerObj, errors);
+            	}
+            	else{
+            		console.warn('Module exports some code expression. Don\'t go there.');
+            	}
+            }
             walkerObj.NODEJS = true;
         }
     }
@@ -2846,13 +2984,17 @@ function addMissingComments(walkerObj, errors) {
             }
             ngHeader += '/\n';
             newFile = ngHeader + newFile;
+            //console.warn('Insert module header: ', ngHeader);
         } else if (walkerObj.NODEJS) {
-        	
+        	//
             //walkerObj.NODEJS = false;
 
             nodeModName = (walkerObj.moduleName);
             var nodeHeader = '/**\n * ';
             nodeHeader += '@module ' + nodeModName + '\n *';
+            if (walkerObj.NODE_EXPORTS){
+            	nodeHeader += ' @exports ' + walkerObj.NODE_EXPORTS + '\n *';
+            }
             // TODO: scrape deps like a normal AMD module
             var ngDeps = inlineDeps;
             for (var ngd = 0; ngd < ngDeps.length; ngd++) {
@@ -2863,8 +3005,12 @@ function addMissingComments(walkerObj, errors) {
             }
             nodeHeader += '/\n';
             newFile = nodeHeader + newFile;
+           // console.warn('Insert module header: ', nodeHeader);
         }
-        //logger.log('Insert module header: ', ngHeader);
+        else{
+        	console.warn('NOT A MODULE? ', walkerObj.results.amdProc.moduleName);
+        }
+       
         //TODO: include correct jsDoc metadata for each constructor
 
 

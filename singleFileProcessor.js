@@ -210,6 +210,7 @@ var AMD_DATA = {
     paths: {},
     shim: {}
 };
+
 var amdProc = {
     id: 'amdProc',
     type: 'processor',
@@ -253,7 +254,7 @@ var amdProc = {
         for (var ir = 0; ir < inlineRequires.length; ir++) {
             var inlineModule = inlineRequires[ir];
             result.requires.push(inlineModule);
-            //console.warn('require("' + inlineModule + '")');
+            // console.warn('require("' + inlineModule + '")');
         }
         result.convertedName = converted.name;
         //result.moduleName = converted.name;
@@ -274,52 +275,61 @@ var amdProc = {
     }
 };
 
+/**
+ * Gets all the instances of require() in the code body.
+ * @todo: Not robust! Not comment-proof!
+ * @param {String} input The source script.
+ * @returns {Array}
+ */
 function getInlineRequires(input) {
     var source = input.source;
+    source = stripOneLineComments(stripCComments(source));
     var noSpaceRequire = source.indexOf("require(");
     var oneSpaceRequire = source.indexOf("require (");
     if (noSpaceRequire === -1 && oneSpaceRequire === -1) {
         return [];
     }
     var output = [];
-    // console.warn('dig for inline requires() in ' + input.name);
+    // logger.log('dig for inline requires() in ' + input.name);
     var chunks = [];
     if (noSpaceRequire > -1) {
         chunks = source.split("require(");
-        // console.warn(chunks.length);
+        // logger.log(chunks.length);
         for (var index = 1; index < chunks.length; index++) {
             var chunk = chunks[index];
             var trimChunk = chunk.trim();
-            //console.warn(trimChunk);
+            //logger.log(trimChunk);
             var startChar = trimChunk.charAt(0);
-            //console.warn(startChar);
+            //logger.log(startChar);
             var splitter = trimChunk.split(startChar);
             var moduleName = splitter[1].trim();
-            //console.warn(moduleName);
-            if (startChar === "'" || startChar === '"'){
+            // quick fix... TODO: make more robust
+            moduleName = moduleName.split('*/').join('');
+            //logger.log(moduleName);
+            if (startChar === "'" || startChar === '"') {
                 output.push(moduleName);
-            }
-            else{
-                console.warn('getInlineRequires() skipped: ' + moduleName);
+            } else {
+                logger.log('getInlineRequires() skipped: ' + moduleName);
             }
         }
     } else if (oneSpaceRequire > -1) {
         chunks = source.split("require (");
-        // console.warn(chunks.length);
+        // logger.log(chunks.length);
         for (var index = 1; index < chunks.length; index++) {
             var chunk = chunks[index];
             var trimChunk = chunk.trim();
-            //console.warn(trimChunk);
+            //logger.log(trimChunk);
             var startChar = trimChunk.charAt(0);
-            //console.warn(startChar);
+            //logger.log(startChar);
             var splitter = trimChunk.split(startChar);
             var moduleName = splitter[1].trim();
-            // console.warn(moduleName);
-            if (startChar === "'" || startChar === '"'){
+            // quick fix... TODO: make more robust
+            moduleName = moduleName.split('*/').join('');
+            // logger.log(moduleName);
+            if (startChar === "'" || startChar === '"') {
                 output.push(moduleName);
-            }
-            else{
-                console.warn('getInlineRequires() skipped: ' + moduleName);
+            } else {
+                logger.log('getInlineRequires() skipped: ' + moduleName);
             }
         }
     }

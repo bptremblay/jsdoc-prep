@@ -215,6 +215,10 @@ function run(options) {
             }
         }
     });
+    if (queue.length === 0){
+    	console.warn('no files found, bailing');
+    	return;
+    }
     console.log('walking source directory...');
     then = new Date().getTime();
     nextFile();
