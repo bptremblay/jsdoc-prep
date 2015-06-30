@@ -165,6 +165,9 @@ function createJavaClass(input, amdProcData) {
     buffer.push('package com.fmr.perfhub.client' + subPackage + ';');
     buffer.push('import ng.Module;');
     buffer.push('public class ' + capitalize(input.camelName) + ' extends Module {');
+    if (deps == null){
+    	deps = [];
+    }
     for (var index = 0; index < deps.length; index++) {
         var moduleName = deps[index];
         if (typeof moduleName !== 'string') {

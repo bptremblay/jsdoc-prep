@@ -2381,7 +2381,7 @@ function commentAngularClasses(input, ngModName, ngBaseClass, packagePath) {
         input = tempInput;
 
     };
-    writeFile('audit_' + ngBaseClass + '.js', input);
+    //writeFile('audit_' + ngBaseClass + '.js', input);
     return input;
 }
 
