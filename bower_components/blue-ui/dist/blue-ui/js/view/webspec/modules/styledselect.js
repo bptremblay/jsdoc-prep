@@ -1,4 +1,0 @@
-define({
- "name": "styledselect",
- "triggers": {}
-});

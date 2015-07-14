@@ -1,7 +1,0 @@
-# Helpful aliases for the VM shell
-
-alias ls='ls -F --color=auto'
-alias ll='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias whereami='basename $(git config --file /vagrant/.git/config --get remote.origin.url) .git'
