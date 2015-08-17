@@ -9,7 +9,7 @@ var docPath = 'test-jsdocs';
 var resultsPath = 'test-results';
 var scanPath = 'test-source';
 ///Users/benjamintremblay/jsdoc-prep
-var projectPath = '~/';
+var projectPath = '/Users/btremblay/git/';
 
 function healthCheckCallback(healthCheckResults) {
     console.log('ALL DONE');
@@ -41,6 +41,7 @@ function healthCheckCallback(healthCheckResults) {
                     if (USE_HARUKI) {
                         cmdLine += ' -r -l -t templates/../../experimental_template/haruki -d ' + reportPath + '/jsDocModel.json' + ' -q format=json'
                         + ' ' + sourceDirectory + '';
+                        console.warn('Haruki Duki Du!!!');
                     } else {
 //                      cmdLine += ' -r -l -d ' + docPath + ' '
 //                      + sourceDirectory + '';
@@ -91,6 +92,7 @@ var processingChain = [
 //                     'jsBeautifyProc',
                        'JSONFilter',
                        'jsBeautifyProc',
+                       'splitModulesProc',
                        'amdProc',
                        'jsDoccerProc',
 //                       'jsDocNameFixerProc',
@@ -98,7 +100,7 @@ var processingChain = [
 //                       'jsDoc3PrepProc',
                        
                        'jsBeautifyProc',
-                       'generateJavaProc'
+//                      'generateJavaProc'
                        ];
 
 //var processingChain = [
@@ -146,3 +148,4 @@ if (justDoc) {
         });
     });
 }
+
