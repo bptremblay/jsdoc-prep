@@ -21,7 +21,7 @@ function mapModuleName(mappedModuleName, modulePaths){
       var pattern = modulePaths[p];
       if (mappedModuleName.indexOf(pattern) !== -1){
         mappedModuleName = mappedModuleName.split(pattern).join(p);
-        // stop, don't apply every match 
+        // stop, don't apply every match
         break; 
       }
 
@@ -203,9 +203,9 @@ var generateJavaProc = {
         input.errors[this.id] = [];
       }
       var amdProcData = input.results.amdProc;
-      //if (amdProcData.AMD) {
+      // if (amdProcData.AMD) {
       createJavaClass(input, amdProcData);
-      //}
+      // }
       doneCallback(input);
     }
 };
@@ -250,9 +250,9 @@ var amdProc = {
         }
         return result;
       }
-      //console.warn(converted.requires);
+      // console.warn(converted.requires);
       result.requires = fixRequires(converted.requires);
-      //console.warn(result.requires);
+      // console.warn(result.requires);
       var inlineRequires = fixRequires(getInlineRequires(input));
       for (var ir = 0; ir < inlineRequires.length; ir++) {
         var inlineModule = inlineRequires[ir];
@@ -260,7 +260,7 @@ var amdProc = {
         // console.warn('require("' + inlineModule + '")');
       }
       result.convertedName = converted.name;
-      //result.moduleName = converted.name;
+      // result.moduleName = converted.name;
       result.AMD = converted.isModule;
 
       result.min = converted.min;
@@ -280,8 +280,10 @@ var amdProc = {
 
 /**
  * Gets all the instances of require() in the code body.
+ * 
  * @todo: Not robust! Not comment-proof!
- * @param {String} input The source script.
+ * @param {String}
+ *          input The source script.
  * @returns {Array}
  */
 function getInlineRequires(input) {
@@ -301,14 +303,14 @@ function getInlineRequires(input) {
     for (var index = 1; index < chunks.length; index++) {
       var chunk = chunks[index];
       var trimChunk = chunk.trim();
-      //logger.log(trimChunk);
+      // logger.log(trimChunk);
       var startChar = trimChunk.charAt(0);
-      //logger.log(startChar);
+      // logger.log(startChar);
       var splitter = trimChunk.split(startChar);
       var moduleName = splitter[1].trim();
       // quick fix... TODO: make more robust
       moduleName = moduleName.split('*/').join('');
-      //logger.log(moduleName);
+      // logger.log(moduleName);
       if (startChar === "'" || startChar === '"') {
         output.push(moduleName);
       } else {
@@ -321,9 +323,9 @@ function getInlineRequires(input) {
     for (var index = 1; index < chunks.length; index++) {
       var chunk = chunks[index];
       var trimChunk = chunk.trim();
-      //logger.log(trimChunk);
+      // logger.log(trimChunk);
       var startChar = trimChunk.charAt(0);
-      //logger.log(startChar);
+      // logger.log(startChar);
       var splitter = trimChunk.split(startChar);
       var moduleName = splitter[1].trim();
       // quick fix... TODO: make more robust
@@ -1395,7 +1397,7 @@ function processFile(modulePaths, baseDirectory, filePathName, outputDirectory,
   }
   output.mappedModuleName = mmn + output.fileName.split('.js')[0];
 
-  //console.warn('mappedModuleName: ', output.mappedModuleName, ' from ', output.packagePath);
+  // console.warn('mappedModuleName: ', output.mappedModuleName, ' from ', output.packagePath);
   // exit();
 
   var currentChainIndex = 0;
@@ -2055,9 +2057,9 @@ var jsDoc3PrepProc = {
           continue;
         }
         // DO NOT REMOVE THESE!!! They are part of the jsDoc spec.
-//      if (line.indexOf('* @method') !== -1 || line.indexOf('* @function') !== -1 || line.indexOf('* @memberOf') !== -1) {
-//      lines[index] = '';
-//      }
+// if (line.indexOf('* @method') !== -1 || line.indexOf('* @function') !== -1 || line.indexOf('* @memberOf') !== -1) {
+// lines[index] = '';
+// }
         // if (line.indexOf('* @requires') !== -1) {
         // lines[index] = '';
         // }
@@ -2164,10 +2166,10 @@ var jsDoc3PrepProc = {
           } else if (whereDefine !== -1 && source.indexOf('@module') === -1) {
             var combiner = [];
             // console.warn(JSON.stringify(input,null,2));
-//          var packagePath = input.path.split('/');
-//          packagePath.shift();
-//          packagePath = packagePath.join('/');
-//          packagePath = packagePath.split('.js')[0];
+// var packagePath = input.path.split('/');
+// packagePath.shift();
+// packagePath = packagePath.join('/');
+// packagePath = packagePath.split('.js')[0];
             var packagePath = input.mappedModuleName;
             // console.warn(packagePath);
             source = ('/**\n * @module ' + packagePath + '\n' + getRequiresTags(input) + ' */\n') + source;
@@ -2178,7 +2180,7 @@ var jsDoc3PrepProc = {
 
         var originalHeader = input.source.substring(0, whereDefine);
         console.warn('jsDoc3PrepProc: splicing header');
-        //console.warn('originalHeader: "' + originalHeader + '"');
+        // console.warn('originalHeader: "' + originalHeader + '"');
         input.source = originalHeader + '\n' + source;
         // console.warn(input.source);
 
@@ -2248,17 +2250,17 @@ var splitModulesProc = {
     description: 'Split concatenated modules into individual files.',
     process: function (input, doneCallback) {
       var tempSource = input.source;
-//      writeFile(input.processedFilePath, tempSource);
-//      exit();
+// writeFile(input.processedFilePath, tempSource);
+// exit();
       var splitter = tempSource.split('@module');
-      if (splitter.length>2){
-        console.warn('!!!!!!!!! More than one module in this file!!!!!');
-        finishedProcessingChain();
+      if (splitter.length > 2){
+        console.warn('!!!!!!!!! More than one module in this file!!!!!', splitter.length);
+        doneCallback(input);
       }
       else{
         doneCallback(input);
       }
-      
+
     }
 };
 
