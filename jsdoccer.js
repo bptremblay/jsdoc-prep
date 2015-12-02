@@ -166,8 +166,9 @@ function getModuleName(filePathName) {
  * 
  * @name capitalize
  * @method capitalize
- * @param {Object}
+ * @param {string}
  *            input
+ * @return {string}
  */
 function capitalize(input) {
   if (input == null) {
@@ -178,6 +179,27 @@ function capitalize(input) {
     return '';
   }
   input[0] = input[0].toUpperCase();
+  return input.join('');
+}
+
+/**
+ * De-capitalize.
+ * 
+ * @name decapitalize
+ * @method decapitalize
+ * @param {string}
+ *            input
+ * @return {string}
+ */
+function decapitalize(input) {
+  if (input == null) {
+    return '';
+  }
+  input = input.split('');
+  if (input.length === 0) {
+    return '';
+  }
+  input[0] = input[0].toLowerCase();
   return input.join('');
 }
 /**
@@ -400,130 +422,130 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
   var has_description = false;
   // // logger.log('>>>>>>>>>>>>>>>>>>>>>>>>>> printDoclet');
   var printableTags = {
-    'abstract' : 1,
-    // This member must be implemented (or overridden) by the inheritor.
-    'access' : 1,
-    // Specify the access level of this member - private, public, or
-    // protected.
-    'alias' : 1,
-    // Treat a member as if it had a different name.
-    'augments' : 1,
-    // This object adds onto a parent object.
-    'extends' : 1,
-    // This object adds onto a parent object.
-    'author' : 1,
-    // Identify the author of an item.
-    'borrows' : 1,
-    // This object uses something from another object.
-    'callback' : 1,
-    // Document a callback function.
-    'classdesc' : 1,
-    // Use the following text to describe the entire class.
-    'constant' : 1,
-    'const' : 1,
-    // Document an object as a constant.
-    // 'constructor': 1,
-    // This function is intended to be called with the "new" keyword.
-    'constructs' : 1,
-    // This function member will be the constructor for the previous class.
-    'copyright' : 1,
-    // Document some copyright information.
-    'default' : 1,
-    // Document the default value.
-    'deprecated' : 1,
-    // Document that this is no longer the preferred way.
-    'desc' : 1,
-    // Describe a symbol.
-    'enum' : 1,
-    // Document a collection of related properties.
-    'event' : 1,
-    // Document an event.
-    'example' : 1,
-    // Provide an example of how to use a documented item.
-    'exports' : 1,
-    // Identify the member that is exported by a JavaScript module.
-    'external' : 1,
-    // Document an external class/namespace/module.
-    'file' : 1,
-    // Describe a file.
-    'fires' : 1,
-    // Describe the events this method may fire.
-    'global' : 1,
-    // Document a global object.
-    'ignore' : 1,
-    // [todo] Remove this from the final output.
-    'inner' : 1,
-    // Document an inner object.
-    'instance' : 1,
-    // Document an instance member.
-    'kind' : 1,
-    // What kind of symbol is this?
-    'lends' : 1,
-    // Document properties on an object literal as if they belonged to a
-    // symbol
-    // with a given name.
-    'license' : 1,
-    // [todo] Document the software license that applies to this code.
-    'link' : 1,
-    // Inline tag - create a link.
-    'member' : 1,
-    // Document a member.
-    // 'memberof': 1,
-    // 'memberOf': 1,
-    // This symbol belongs to a parent symbol.
-    // 'method': 1,
-    // Describe a method or function.
-    'mixes' : 1,
-    // This object mixes in all the members from another object.
-    'mixin' : 1,
-    // Document a mixin object.
-    'module' : 1,
-    // Document a JavaScript module.
-    'name' : 1,
-    // Document the name of an object.
-    'namespace' : 1,
-    // Document a namespace object.
-    // 'param': 1,
-    // Document the parameter to a function.
-    'private' : 1,
-    // This symbol is meant to be private.
-    'property' : 1,
-    // Document a property of an object.
-    'protected' : 1,
-    // This member is meant to be protected.
-    'public' : 1,
-    // This symbol is meant to be public.
-    'readonly' : 1,
-    // This symbol is meant to be read-only.
-    // 'requires': 1,
-    // This file requires a JavaScript module.
-    'returns' : 1,
-    'return' : 1,
-    // Document the return value of a function.
-    'see' : 1,
-    // Refer to some other documentation for more information.
-    'since' : 1,
-    // When was this feature added?
-    'static' : 1,
-    // Document a static member.
-    'summary' : 1,
-    // A shorter version of the full description.
-    'this' : 1,
-    // What does the 'this' keyword refer to here?
-    'throws' : 1,
-    // Describe what errors could be thrown.
-    'todo' : 1,
-    // Document tasks to be completed.
-    'tutorial' : 1,
-    // Insert a link to an included tutorial file.
-    'type' : 1,
-    // Document the type of an object.
-    'typedef' : 1,
-    // Document a custom type.
-    'variation' : 1,
-    // Distinguish different objects with the same name.
-    'version' : 1
-  // Documents the version number of an item.
+      'abstract' : 1,
+      // This member must be implemented (or overridden) by the inheritor.
+      'access' : 1,
+      // Specify the access level of this member - private, public, or
+      // protected.
+      'alias' : 1,
+      // Treat a member as if it had a different name.
+      'augments' : 1,
+      // This object adds onto a parent object.
+      'extends' : 1,
+      // This object adds onto a parent object.
+      'author' : 1,
+      // Identify the author of an item.
+      'borrows' : 1,
+      // This object uses something from another object.
+      'callback' : 1,
+      // Document a callback function.
+      'classdesc' : 1,
+      // Use the following text to describe the entire class.
+      'constant' : 1,
+      'const' : 1,
+      // Document an object as a constant.
+      // 'constructor': 1,
+      // This function is intended to be called with the "new" keyword.
+      'constructs' : 1,
+      // This function member will be the constructor for the previous class.
+      'copyright' : 1,
+      // Document some copyright information.
+      'default' : 1,
+      // Document the default value.
+      'deprecated' : 1,
+      // Document that this is no longer the preferred way.
+      'desc' : 1,
+      // Describe a symbol.
+      'enum' : 1,
+      // Document a collection of related properties.
+      'event' : 1,
+      // Document an event.
+      'example' : 1,
+      // Provide an example of how to use a documented item.
+      'exports' : 1,
+      // Identify the member that is exported by a JavaScript module.
+      'external' : 1,
+      // Document an external class/namespace/module.
+      'file' : 1,
+      // Describe a file.
+      'fires' : 1,
+      // Describe the events this method may fire.
+      'global' : 1,
+      // Document a global object.
+      'ignore' : 1,
+      // [todo] Remove this from the final output.
+      'inner' : 1,
+      // Document an inner object.
+      'instance' : 1,
+      // Document an instance member.
+      'kind' : 1,
+      // What kind of symbol is this?
+      'lends' : 1,
+      // Document properties on an object literal as if they belonged to a
+      // symbol
+      // with a given name.
+      'license' : 1,
+      // [todo] Document the software license that applies to this code.
+      'link' : 1,
+      // Inline tag - create a link.
+      'member' : 1,
+      // Document a member.
+      // 'memberof': 1,
+      // 'memberOf': 1,
+      // This symbol belongs to a parent symbol.
+      // 'method': 1,
+      // Describe a method or function.
+      'mixes' : 1,
+      // This object mixes in all the members from another object.
+      'mixin' : 1,
+      // Document a mixin object.
+      'module' : 1,
+      // Document a JavaScript module.
+      'name' : 1,
+      // Document the name of an object.
+      'namespace' : 1,
+      // Document a namespace object.
+      // 'param': 1,
+      // Document the parameter to a function.
+      'private' : 1,
+      // This symbol is meant to be private.
+      'property' : 1,
+      // Document a property of an object.
+      'protected' : 1,
+      // This member is meant to be protected.
+      'public' : 1,
+      // This symbol is meant to be public.
+      'readonly' : 1,
+      // This symbol is meant to be read-only.
+      // 'requires': 1,
+      // This file requires a JavaScript module.
+      'returns' : 1,
+      'return' : 1,
+      // Document the return value of a function.
+      'see' : 1,
+      // Refer to some other documentation for more information.
+      'since' : 1,
+      // When was this feature added?
+      'static' : 1,
+      // Document a static member.
+      'summary' : 1,
+      // A shorter version of the full description.
+      'this' : 1,
+      // What does the 'this' keyword refer to here?
+      'throws' : 1,
+      // Describe what errors could be thrown.
+      'todo' : 1,
+      // Document tasks to be completed.
+      'tutorial' : 1,
+      // Insert a link to an included tutorial file.
+      'type' : 1,
+      // Document the type of an object.
+      'typedef' : 1,
+      // Document a custom type.
+      'variation' : 1,
+      // Distinguish different objects with the same name.
+      'version' : 1
+      // Documents the version number of an item.
   };
   var buffer = [];
   var hasAttributes = false;
@@ -885,16 +907,16 @@ function getInlineRequires(input) {
 
 var firstDoclet = null;
 var typesMap = {
-  'function' : 'Function',
-  'number' : 'Number',
-  'int' : 'Number',
-  'float' : 'Number',
-  'long' : 'Number',
-  'bool' : 'Boolean',
-  'boolean' : 'Boolean',
-  'string' : 'String',
-  'array' : 'Array',
-  'object' : 'Object'
+    'function' : 'Function',
+    'number' : 'Number',
+    'int' : 'Number',
+    'float' : 'Number',
+    'long' : 'Number',
+    'bool' : 'Boolean',
+    'boolean' : 'Boolean',
+    'string' : 'String',
+    'array' : 'Array',
+    'object' : 'Object'
 };
 
 function getType(input) {
@@ -1183,9 +1205,9 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode, chu
         lastTag = docletData.tags[docletData.tags.length - 1];
       }
       var newTag = {
-        tag : tag,
-        line : index,
-        lastLine : -1
+          tag : tag,
+          line : index,
+          lastLine : -1
       };
       if (lastTag !== null) {
         lastTag.lastLine = index - 1;
@@ -1227,10 +1249,10 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode, chu
           }
         }
         var paramObject = {
-          tagName : tag,
-          name : paramName,
-          type : paramType,
-          description : paramDescription
+            tagName : tag,
+            name : paramName,
+            type : paramType,
+            description : paramDescription
         };
         currentTagObject = paramObject;
         docletData.params.push(paramObject);
@@ -1270,11 +1292,11 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode, chu
           }
         }
         var returnObject = {
-          // name : returnName,
-          tagName : tag,
-          type : returnType,
-          description : returnDescription,
-          line : line
+            // name : returnName,
+            tagName : tag,
+            type : returnType,
+            description : returnDescription,
+            line : line
         };
         currentTagObject = returnObject;
         docletData['@return'] = currentTagObject;
@@ -1454,7 +1476,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode, chu
 function walk(node, attr, val, results, parentNode) {
   if (parentNode == null) {
     parentNode = {
-      type : 'ROOT'
+        type : 'ROOT'
     };
     parentNode.uid = -1;
   }
@@ -1839,8 +1861,8 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
     if (true) {
       var obj = map[index];
       var functionWrapper = {
-        name : '',
-        todos : []
+          name : '',
+          todos : []
       };
       if (obj.id !== null) {
         // // logger.log("dumpNamedFunctions " + obj.id.name);
@@ -2075,11 +2097,11 @@ function dumpNamedVariables(walkerObj, map, ast, output) {
     var initVal = decl.init;
     //  logger.log("dumpNamedVariables " + JSON.stringify(obj, null, 2));
     var varWrapper = {
-      name : '?',
-      kind : '?',
-      type : '',
-      range : null,
-      decamelizedName : ''
+        name : '?',
+        kind : '?',
+        type : '',
+        range : null,
+        decamelizedName : ''
 
     };
     //  console.log('initVal', initVal);
@@ -2094,9 +2116,9 @@ function dumpNamedVariables(walkerObj, map, ast, output) {
       }
     }
     else{
-       console.log('var has no init: ', decl);
+      console.log('var has no init: ', decl);
     }
-   
+
 
     if (decl.id !== null) {
       logger.log("dumpNamedVariables " + decl.id.name);
@@ -2718,7 +2740,7 @@ function addMissingComments(walkerObj, errors) {
       //           logger.log(doclet);
 
       var statusCheck = {
-        merge : false
+          merge : false
       };
       var newComment = generateComment(null, ast, walkerObj, input, nodeWithRequiresBlock, statusCheck);
 
@@ -2833,13 +2855,13 @@ function addMissingComments(walkerObj, errors) {
       var newComment = '';
       if (itemToComment != null && itemToComment.comment === -1) {
         // logger.warn(lineIndex + ',' + itemToComment.name);
-         newComment = generateComment(itemToComment, ast, walkerObj, input);
+        newComment = generateComment(itemToComment, ast, walkerObj, input);
         itemToComment.jsDoc = newComment;
         newFileLines.push(newComment);
         newFileLines.push(line);
       } else if (itemToComment != null && itemToComment.comment !== -1) {
         // logger.warn(lineIndex + ',' + itemToComment.name);
-         newComment = generateComment(itemToComment, ast, walkerObj, input);
+        newComment = generateComment(itemToComment, ast, walkerObj, input);
         itemToComment.jsDoc = newComment;
         // logger.warn(itemToComment.name + " >>>" + itemToComment.comment);
         // logger.warn(itemToComment.name + " >>>" + newComment);
@@ -3103,31 +3125,31 @@ function addMissingComments(walkerObj, errors) {
   }
 
   var jsDoccerBlob = {
-    "lines" : lines.length,
-    "requires" : [],
-    "className" : "n/a",
-    "packagePath" : "",
-    "directoryPath" : dir,
-    "uses_Y" : false,
-    "no_lib" : true,
-    "inferencedClassName" : (ngClassName ? ngClassName : "n/a"),
-    "uses_$" : false,
-    "chars" : input.length,
-    "uses_YUI" : false,
-    "uses_NG" : walkerObj.NG,
-    "fields" : [],
-    "moduleName" : _path.dirname(walkerObj.fileName) + '/' + fileNameMinusExt,
-    "uses_console_log" : false,
-    "uses_backbone" : false,
-    "classes" : allMethods.classes,
-    "methods" : wrappedMethods,
-    "is_module" : false,
-    "uses_alert" : false,
-    "uses_y_log" : false,
-    "requiresRaw" : [],
-    "basePath" : basePath,
-    "fileName" : fileNameOnly,
-    "strict" : false
+      "lines" : lines.length,
+      "requires" : [],
+      "className" : "n/a",
+      "packagePath" : "",
+      "directoryPath" : dir,
+      "uses_Y" : false,
+      "no_lib" : true,
+      "inferencedClassName" : (ngClassName ? ngClassName : "n/a"),
+      "uses_$" : false,
+      "chars" : input.length,
+      "uses_YUI" : false,
+      "uses_NG" : walkerObj.NG,
+      "fields" : [],
+      "moduleName" : _path.dirname(walkerObj.fileName) + '/' + fileNameMinusExt,
+      "uses_console_log" : false,
+      "uses_backbone" : false,
+      "classes" : allMethods.classes,
+      "methods" : wrappedMethods,
+      "is_module" : false,
+      "uses_alert" : false,
+      "uses_y_log" : false,
+      "requiresRaw" : [],
+      "basePath" : basePath,
+      "fileName" : fileNameOnly,
+      "strict" : false
   };
   outputArray.push(JSON.stringify(jsDoccerBlob, null, 2));
   outputArray.push(newFile);
@@ -3239,11 +3261,11 @@ function mergeRequires(doclet) {
     for (var i = 0; i < diffRequires.length; i++) {
       var diffRequire = diffRequires[i];
       var newTag = {
-        tag : 'requires',
-        line : line,
-        lastLine : lastLine,
-        textStartsOnSameLine : true,
-        text : diffRequire
+          tag : 'requires',
+          line : line,
+          lastLine : lastLine,
+          textStartsOnSameLine : true,
+          text : diffRequire
       };
       line++;
       lastLine++;
@@ -3294,6 +3316,28 @@ function getTextFromTags(tagList) {
 }
 
 /**
+ * 
+ * @param doclet
+ * @param tagName
+ * @returns {___anonymous102869_102874}
+ */
+function searchAndDestroy (doclet, tagName){
+  if (doclet && doclet.tags){
+    var revised = [];
+    for (var t = 0; t<doclet.tags.length; t++){
+      var tag = doclet.tags[t];
+      if (tag.tag !== tagName){
+        revised.push(tag);
+      }else{
+        console.log('searchAndDestroy deleted tag ', tagName);
+      }
+    }
+    doclet.tags = revised;
+  }
+  return doclet;
+}
+
+/**
  * Generate a new comment, or fix an existing one.
  * 
  * @param functionWrapper
@@ -3316,7 +3360,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
       params : [],
       returnValue : '',
       tags: []
-    };
+  };
   var tags = [];
   var oldComment = null;
   if (statusCheck == null) {
@@ -3348,7 +3392,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
         // logger.log(commentText);
         doclet = parseDoclet(walkerObj, commentText, false, '', 0, functionWrapper);
         functionWrapper.oldComment = oldComment;
-       //console.log("Parsed a doclet! ", doclet);
+        //console.log("Parsed a doclet! ", doclet);
       }
     }
   } else {
@@ -3366,20 +3410,20 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
   }
 
   // // logger.log(funkyName + ' << ' + functionWrapper.name);
-  
+
   if (doclet != null && doclet.tags) {
     //console.log('DOCLET', doclet);
     tags = doclet.tags;
     var descText = '';
-        
+
     if (kind !== '') {
       descText = funkyName;
       if (kind === 'const') {
         kind = 'constant';
       }
       else if (kind === 'let' || kind === 'var') {
-        
-        
+
+
         if (functionWrapper && functionWrapper.type){
           kind = 'type';
           descText = '{' + functionWrapper.type + '}';
@@ -3388,19 +3432,19 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
           kind = '';
         }
       }
+      if (kind !== '') {
+        if (!searchTags(doclet, kind)) {
+          var pseudoTag = {
+              "tag" : kind,
+              "line" : 0,
+              "lastLine" : -1,
+              "textStartsOnSameLine" : true,
+              "text" : descText
+          };
+          console.log('ADDING TAG ', pseudoTag);
+          tags.push(pseudoTag);
 
-      
-      //console.warn("@CONSTANT");
-      if (!searchTags(doclet, kind)) {
-
-        tags.push({
-          "tag" : kind,
-          "line" : 0,
-          "lastLine" : -1,
-          "textStartsOnSameLine" : true,
-          "text" : descText
-        });
-        
+        }
       }
     }
     var ft = '';
@@ -3411,10 +3455,33 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
       }
     }
     else{
-     // logger.log('>>>>>>>>>>generateComment doclet with no freetext ' + JSON.stringify(doclet, null, 2));
-      doclet.freeText = funkyName + '. ' + ft;
+      var commentContext = 'normal';
+      if (functionWrapper.line.indexOf('function') !== -1){
+        commentContext = 'function';
+        if (functionWrapper.name.indexOf('is') === 0){
+          doclet.freeText = 'Returns true if ' + decapitalize(funkyName) + '.';
+          if (functionWrapper.todos && functionWrapper.todos.RETURNWHAT){
+            delete functionWrapper.todos.RETURNWHAT;
+          }
+          functionWrapper.returnType = 'boolean';
+        }
+      }
+      else if (functionWrapper.line.indexOf('for (') !== -1){
+        commentContext = 'loop';
+        
+        doclet = searchAndDestroy(doclet, 'type');
+        functionWrapper.kind = '';
+        functionWrapper.type = '';
+        //console.log('>>>>>>>>>>LOOP intializer ' + JSON.stringify(functionWrapper, null, 2), JSON.stringify(doclet, null, 2));
+        //console.log(funkyName);
+      }
+      else{
+        doclet.freeText = 'The ' + decapitalize(funkyName) + '.';
+      }
+      //logger.log('>>>>>>>>>>generateComment doclet with no freetext ' + JSON.stringify(functionWrapper, null, 2));
+      
     }
-    
+
     //logger.log('>>>>>>>>>>generateComment  doclet ' + JSON.stringify(doclet, null, 2));
   }
   else{
@@ -3513,8 +3580,8 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     }
   } else {
     doclet = {
-      params : [],
-      returnValue : ''
+        params : [],
+        returnValue : ''
     };
     logger.warn('Non-tag lines: ' + funkyName);
     if (funkyName.trim().length > 0) {
@@ -3681,24 +3748,24 @@ function isDigit(input) {
 }
 
 module.exports = {
-  'addMissingComments' : addMissingComments
+    'addMissingComments' : addMissingComments
 };
 if (false) {
   var testFileName = 'index.js';
   var input = {
-    name : getModuleName(testFileName),
-    source : '',
-    fileName : testFileName,
-    folderPath : 'test-source',
-    camelName : camelize(getModuleName(testFileName)),
-    results : {
-      "amdProc" : {
-        "requires" : [],
-        "moduleName" : testFileName,
-        "AMD" : false,
-        "webPath" : ""
+      name : getModuleName(testFileName),
+      source : '',
+      fileName : testFileName,
+      folderPath : 'test-source',
+      camelName : camelize(getModuleName(testFileName)),
+      results : {
+        "amdProc" : {
+          "requires" : [],
+          "moduleName" : testFileName,
+          "AMD" : false,
+          "webPath" : ""
+        }
       }
-    }
   };
   var source = readFile(input.folderPath + _path.sep + testFileName);
   input.source = source;
