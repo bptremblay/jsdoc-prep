@@ -3403,8 +3403,9 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
         
       }
     }
+    var ft = '';
     if (doclet.freeText != null){
-      var ft = doclet.freeText;
+      ft = doclet.freeText;
       if (ft.indexOf(funkyName) === -1){
         doclet.freeText = funkyName + '. ' + ft;
       }
