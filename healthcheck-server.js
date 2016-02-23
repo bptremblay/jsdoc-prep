@@ -16,8 +16,10 @@ function HealthCheckServer() {
  * @copyright 2013 btremblay@me.com LLC
  */
 
-var port = 9999;
-var serverUrl = "127.0.0.1";
+var DEBUG = false;
+
+var port = 8181;
+var serverUrl = !DEBUG ? "80.83.117.100" : "127.0.0.1";
 
 var http = require("http");
 var path = require("path");

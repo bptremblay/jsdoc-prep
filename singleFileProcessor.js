@@ -14,6 +14,20 @@ var printDoclet = docletEngine.printDoclet;
 var addMissingComments = newJsDoccerEngine.addMissingComments;
 var FILE_IS_EMPTY = false;
 
+var Logger = function() {
+	  this.log = function(msg) {
+	    console.log(msg);
+	  };
+	  this.warn = function(msg) {
+	    logger.log(msg);
+	  };
+	  this.error = function(msg) {
+	    console.error(msg);
+	  };
+	};
+
+	var logger = new Logger();
+
 
 function mapModuleName(mappedModuleName, modulePaths){
   for (var p in modulePaths){
