@@ -26,6 +26,7 @@ var path = require("path");
 var fs = require("fs");
 var healthCheck = require('./fileSystemProcessor');
 var sfp = require('./singleFileProcessor');
+var rimraf = require('rimraf');
 console
 		.log("Starting healthcheck web application at " + serverUrl + ":"
 				+ port);
@@ -194,8 +195,7 @@ http
 							var newSource = sfp.readFile('test-output/temp.js');
 							healthCheckResults.source = newSource;
 							var contents = (JSON.stringify(healthCheckResults));
-							
-							
+
 							res.setHeader("Content-Type", "application/json");
 
 							// FIXME: Why doesn't Content-Length work here? The number is
@@ -209,13 +209,11 @@ http
 						}
 
 						var outPath = 'test-output';
-                        var testPath = 'test-jstests';
-                        var docPath = 'test-jsdocs';
-                        var resultsPath = 'test-results';
-                        
-                        var realSource = '// Source not found!!!';
-                        
-                        
+						var testPath = 'test-jstests';
+						var docPath = 'test-jsdocs';
+						var resultsPath = 'test-results';
+
+						var realSource = '// Source not found!!!';
 
 						if (paramsBlock.options != null) {
 							var opts = JSON.parse(paramsBlock.options);
@@ -236,7 +234,7 @@ http
 							}
 							realSource = unescape(opts.source);
 							sfp.writeFile(tempFilePath, realSource);
-							
+
 							healthCheck.run({
 								callBack : healthCheckCallback,
 								scanPath : opts.scanPath,
@@ -262,103 +260,197 @@ http
 
 						return;
 					} else if (filename == "/getSingleAndCheck") {
-                        var paramsBlock = {};
-                        var realSource = '// Source not found!!!';
+						var paramsBlock = {};
+						var realSource = '// Source not found!!!';
 
-                        if (params.length > 0) {
-                            var paramsSplit = params.split("&");
+						if (params.length > 0) {
+							var paramsSplit = params.split("&");
 
-                            for (var index = 0; index < paramsSplit.length; index++) {
-                                var kv = paramsSplit[index];
-                                kv = kv.split("=");
-                                paramsBlock[kv[0]] = unescape(kv[1]);
-                            }
-                        }
+							for (var index = 0; index < paramsSplit.length; index++) {
+								var kv = paramsSplit[index];
+								kv = kv.split("=");
+								paramsBlock[kv[0]] = unescape(kv[1]);
+							}
+						}
 
-                        var tempFilePath = 'temp-input/temp.js';
-                        console.warn('>>>>>>>>> getSingleAndCheck', paramsBlock);
-                        /**
-                         * Completion callback for processor tasks.
-                         * 
-                         * @inner
-                         * @param healthCheckResults
-                         */
-                        function healthCheckCallback(healthCheckResults) {
-                            console.log("Results are ready.");
-                            var newSource = sfp.readFile('test-output/temp.js');
-//                            healthCheckResults.source = sfp.readFile(tempFilePath);
-                            healthCheckResults.source = realSource;
-                            healthCheckResults.processedSource = newSource;
-                            var contents = (JSON.stringify(healthCheckResults));
-                            
-                            
-                            res.setHeader("Content-Type", "application/json");
+						var tempFilePath = 'temp-input/temp.js';
+						console
+								.warn('>>>>>>>>> getSingleAndCheck',
+										paramsBlock);
+						
+						var projectPath = process.cwd();
 
-                            // FIXME: Why doesn't Content-Length work here? The number is
-                            // too
-                            // small.
-                            // res.setHeader("Content-Length", contents.length);
+						function respond(healthCheckResults) {
+							var contents = (JSON.stringify(healthCheckResults));
 
-                            res.statusCode = 200;
-                            res.end(contents);
-                            console.log(newSource);
-                        }
+							res.setHeader("Content-Type", "application/json");
 
-                        var outPath = 'test-output';
-                        var testPath = 'test-jstests';
-                        var docPath = 'test-jsdocs';
-                        var resultsPath = 'test-results';
-                        
-                        if (paramsBlock.options != null) {
-                            var opts = JSON.parse(paramsBlock.options);
+							// FIXME: Why doesn't Content-Length work here? The number is
+							// too
+							// small.
+							//res.writeHeader("Content-Length", contents.length);
 
-                            if (opts.processingChain.length === 0) {
-                                console
-                                        .warn("Error: must have at least one proc in the processing chain.");
-                                var contents = {
-                                    "error" : "Select at least one processor chain item."
-                                };
+							res.statusCode = 200;
+							res.write(contents);
+							res.end();
+							// console.log(newSource);
+						}
+						/**
+						 * Completion callback for processor tasks.
+						 * 
+						 * @inner
+						 * @param healthCheckResults
+						 */
+						function healthCheckCallback(healthCheckResults) {
+							console.log("Results are ready.");
+							var newSource = sfp.readFile('test-output/temp.js');
+							//                            healthCheckResults.source = sfp.readFile(tempFilePath);
+							healthCheckResults.source = realSource;
+							healthCheckResults.processedSource = newSource;
+							
+							function runJsDoc(sourceDirectory) {
 
-                                res.setHeader("Content-Type",
-                                        "application/json");
+								// var docPath = projectPath + '/test-jsdocs';
+								console
+										.log('Delete the test-jsdocs directory? '
+												+ docPath);
+								rimraf(
+										path.normalize(docPath),
+										function() {
+											var USE_HARUKI = false;
 
-                                res.statusCode = 200;
-                                res.end(JSON.stringify(contents));
-                                return;
-                            }
-                            
-                            var realFilePath = opts.file;
-                            console.warn('READ THE REAL FILE: ', realFilePath);
-                            opts.source = sfp.readFile(realFilePath);
-                            
-                            realSource = unescape(opts.source);
-                            sfp.writeFile(tempFilePath, realSource);
+											// console.warn(arguments);
+											// return;
 
-                            healthCheck.run({
-                                callBack : healthCheckCallback,
-                                scanPath : opts.scanPath,
-                                writePath : outPath,
-                                writeTestPath : testPath,
-                                writeDocPath : docPath,
-                                writeResultsPath : resultsPath,
-                                writeEnable : opts.writeEnable,
-                                processingChain : opts.processingChain
-                            });
-                        } else {
-                            console.warn(paramsBlock);
-                            console.warn("Error: invalid request params.");
-                            var contents = {
-                                "error" : "no options parameter"
-                            };
+											// sourceDirectory = path.normalize(sourceDirectory);
+											var exePath = path
+													.normalize(projectPath
+															+ '/node_modules/.bin/jsdoc');
+											// console.warn('runJsDoc: ' + exePath + ' <> ' +
+											// sourceDirectory);
+											// $ jsdoc -r -l -d ~/workspace/jsdoc-prep/out
+											// ~/workspace/jsdoc-prep/processed/framework
+											var exec = require('child_process').exec;
+											var cmdLine = exePath;
+											var docPath = projectPath
+													+ '/test-jsdocs';
+											var reportPath = projectPath
+													+ '/test-results';
 
-                            res.setHeader("Content-Type", "application/json");
+											if (USE_HARUKI) {
+												cmdLine += ' -r -l -t templates/../../experimental_template/haruki -d '
+														+ reportPath
+														+ '/jsDocModel.json'
+														+ ' -q format=json'
+														+ ' '
+														+ sourceDirectory
+														+ '';
+												console
+														.warn('Haruki Duki Du!!!');
+											} else {
+												//                                              cmdLine += ' -r -l -d ' + docPath + ' '
+												//                                              + sourceDirectory + '';
+												// exePath + ' -r -l -d ' + projectPath
+												// + '/test-jsdocs ' + sourceDirectory + '';
 
-                            res.statusCode = 200;
-                            res.end(JSON.stringify(contents));
-                        }
+												cmdLine += ' -r -l -t templates/../../experimental_template/default -d '
+														+ docPath
+														+ ''
+														+ ' -q format=json'
+														+ ' '
+														+ sourceDirectory
+														+ '';
+											}
 
-                        return;
-                    }
+											console.log(cmdLine);
+											var child = exec(cmdLine, function(
+													error, stdout, stderr) {
+												// normal
+												if (stderr) {
+													console.error(stderr);
+												} else {
+													console.log(stdout);
+												}
+											});
+											/**
+											 * Handler for close event.
+											 * 
+											 * @function
+											 * @name close
+											 * @method close
+											 * @param code
+											 */
+											child
+													.on(
+															'close',
+															function(code) {
+																console
+																		.log('child process "node jsdoc" exited with code '
+																				+ code);
+
+																respond(healthCheckResults);
+															});
+										});
+							}
+							runJsDoc(projectPath + '/test-output');
+
+						}
+
+						var outPath = 'test-output';
+						var testPath = 'test-jstests';
+						var docPath = 'test-jsdocs';
+						var resultsPath = 'test-results';
+
+						if (paramsBlock.options != null) {
+							var opts = JSON.parse(paramsBlock.options);
+
+							if (opts.processingChain.length === 0) {
+								console
+										.warn("Error: must have at least one proc in the processing chain.");
+								var contents = {
+									"error" : "Select at least one processor chain item."
+								};
+
+								res.setHeader("Content-Type",
+										"application/json");
+
+								res.statusCode = 200;
+								res.end(JSON.stringify(contents));
+								return;
+							}
+
+							var realFilePath = opts.file;
+							console.warn('READ THE REAL FILE: ', realFilePath);
+							opts.source = sfp.readFile(realFilePath);
+
+							realSource = unescape(opts.source);
+							sfp.writeFile(tempFilePath, realSource);
+
+							healthCheck.run({
+								callBack : healthCheckCallback,
+								scanPath : opts.scanPath,
+								writePath : outPath,
+								writeTestPath : testPath,
+								writeDocPath : docPath,
+								writeResultsPath : resultsPath,
+								writeEnable : opts.writeEnable,
+								processingChain : opts.processingChain
+							});
+						} else {
+							console.warn(paramsBlock);
+							console.warn("Error: invalid request params.");
+							var contents = {
+								"error" : "no options parameter"
+							};
+
+							res.setHeader("Content-Type", "application/json");
+
+							res.statusCode = 200;
+							res.end(JSON.stringify(contents));
+						}
+
+						return;
+					}
 					var validExtensions = {
 						".html" : "text/html",
 						".js" : "application/javascript",
@@ -413,9 +505,10 @@ function getFile(localPath, res, mimeType) {
 	fs.readFile(localPath, function(err, contents) {
 		if (!err) {
 			res.setHeader("Content-Length", contents.length);
-			res.setHeader("Content-Type", mimeType);
+			res.writeHeader("Content-Type", mimeType);
 			res.statusCode = 200;
-			res.end(contents);
+			res.write(contents);
+			res.end();
 		} else {
 			res.writeHead(500);
 			res.end();
