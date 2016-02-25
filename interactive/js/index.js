@@ -325,7 +325,14 @@ function process(pickedFile) {
     .html('');
     
     if (results.jsDocOutput){
-      $("#results").html(unescape(results.jsDocOutput));
+      var raw = unescape(results.jsDocOutput);
+      raw = raw.split("<body")[1];
+      raw = raw.split("</body>")[0];
+      raw = raw.trim();
+      raw = raw.split(">");
+      raw.shift();
+      raw = raw.join("/");
+      $("#results").html(raw);
     }
     report('Results: ');
     report('Completed in ' + results.timeInSeconds + ' seconds.');
