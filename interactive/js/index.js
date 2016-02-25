@@ -343,7 +343,7 @@ function process(pickedFile) {
       for (var h = 0; h<links.length; h++){
         var hlink = $(links[h]);
         var theLink = hlink.attr("href");
-        theLink = "../test-jsdocs" + theLink;
+        theLink = "../test-jsdocs/" + theLink;
         hlink.attr("href", theLink);
       }
     }
