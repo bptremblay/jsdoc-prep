@@ -3728,12 +3728,12 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     if (returnValue !== '?') {
       commentBlock.push(' * @return ' + returnValue);
     } else {
-      commentBlock.push(' * @todo Please describe the return type of this method.');
-      commentBlock.push(' * @return {object} ??');
+      // commentBlock.push(' * @todo Please describe the return type of this method.');
+      // commentBlock.push(' * @return {object} ??');
     }
   }
   if (commentBlock.length === 1) {
-    commentBlock.push(' * @todo Add some jsDoc comments here!');
+    // commentBlock.push(' * @todo Add some jsDoc comments here!');
   }
   commentBlock.push(" */");
   return commentBlock.join('\n');
