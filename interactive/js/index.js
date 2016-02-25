@@ -289,6 +289,7 @@ function loadFile(file) {
   process(file);
 }
 
+var rawDoc = null;
 function process(pickedFile) {
   var processingChain = ['jsBeautifyProc', 'amdProc',
                          'jsDoccerProc','jsBeautifyProc'];
@@ -332,7 +333,8 @@ function process(pickedFile) {
       raw = raw.split(">");
       raw.shift();
       raw = raw.join("/");
-      $("#results").html(raw);
+      rawDoc = raw.trim();
+      $("#results").html(rawDoc);
     }
     report('Results: ');
     report('Completed in ' + results.timeInSeconds + ' seconds.');
