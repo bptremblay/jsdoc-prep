@@ -332,7 +332,7 @@ function process(pickedFile) {
       raw = raw.trim();
       raw = raw.split(">");
       raw.shift();
-      raw = raw.join("/");
+      raw = raw.join(">");
       rawDoc = raw.trim();
       $("#results").html(rawDoc);
     }
