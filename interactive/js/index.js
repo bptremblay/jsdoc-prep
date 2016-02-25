@@ -323,6 +323,10 @@ function process(pickedFile) {
     .val(decodeURI(results.processedSource));
     $('#report')
     .html('');
+    
+    if (results.jsDocOutput){
+      $("#results").html(unescape(results.jsDocOutput));
+    }
     report('Results: ');
     report('Completed in ' + results.timeInSeconds + ' seconds.');
     if (results.results.length) {
