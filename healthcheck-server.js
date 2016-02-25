@@ -48,6 +48,7 @@ http.createServer(
         filename = "/index.html";
       }
       var ext = path.extname(filename);
+      
       var localPath = __dirname;
       console.log(filename);
 
@@ -427,7 +428,8 @@ http.createServer(
         ".ico" : "image/ico"
       };
 
-      var isValidExt = validExtensions[ext];
+      var realExt = ext.split('?')[0];
+      var isValidExt = validExtensions[realExt];
 
       if (isValidExt) {
 
@@ -440,7 +442,7 @@ http.createServer(
         fs.exists(localPath, function(exists) {
           if (exists) {
             // console.log("Serving file: " + localPath);
-            getFile(localPath, res, ext);
+            getFile(localPath, res, realExt);
           } else {
             console.log("File not found: " + localPath);
             res.writeHead(404);
@@ -448,7 +450,7 @@ http.createServer(
           }
         });
       } else {
-        console.log("Invalid file extension detected: " + filename + "," + ext);
+        console.log("Invalid file extension detected: " + filename + "," + realExt);
       }
     }).listen(port, serverUrl);
 
