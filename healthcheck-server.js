@@ -352,7 +352,7 @@ http.createServer(
                */
               child.on('close', function(code) {
                 console.log('child process "node jsdoc" exited with code ' + code);
-                var tempHtml = sfp.readFile(projectPath + '/test-jsdocs/temp.html');
+                var tempHtml = sfp.readFile(projectPath + '/test-jsdocs/index.html');
                 healthCheckResults.jsDocOutput = escape(tempHtml);
                 respond(healthCheckResults);
               });
