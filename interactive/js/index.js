@@ -334,7 +334,18 @@ function process(pickedFile) {
       raw.shift();
       raw = raw.join(">");
       rawDoc = raw.trim();
+      
+      
+      
       $("#results").html(rawDoc);
+      
+      var links = $("#results").find("a");
+      for (var h = 0; h<links.length; h++){
+        var hlink = links[h];
+        var theLink = hlink.attr("href");
+        theLink = "../test-jsdocs" + theLink;
+        hlink.attr("href", theLink);
+      }
     }
     report('Results: ');
     report('Completed in ' + results.timeInSeconds + ' seconds.');
