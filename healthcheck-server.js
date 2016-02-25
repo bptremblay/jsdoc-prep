@@ -448,7 +448,7 @@ http.createServer(
           }
         });
       } else {
-        console.log("Invalid file extension detected: " + filename);
+        console.log("Invalid file extension detected: " + filename + "," + ext);
       }
     }).listen(port, serverUrl);
 
