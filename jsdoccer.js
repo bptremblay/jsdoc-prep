@@ -3734,9 +3734,13 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
   }
   if (commentBlock.length === 1) {
     // commentBlock.push(' * @todo Add some jsDoc comments here!');
+    return '';
   }
-  commentBlock.push(" */");
-  return commentBlock.join('\n');
+  else{
+    commentBlock.push(" */");
+    return commentBlock.join('\n');
+  }
+  
 }
 
 function isAlpha(input) {
