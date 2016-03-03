@@ -388,7 +388,7 @@ var sendFile = function (filename, req, res) {
     res.on("close", function () {
         filestream.destroy();
     });
-    console.log("Sending file " + filename);
+    // console.log("Sending file " + filename);
 };
 /**
  * Get file.
