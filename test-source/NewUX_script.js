@@ -1,50 +1,47 @@
 /*
-* JavaScript helper code for NextGen New UX Project. @2016 BNYM
-*/
- 
+ * JavaScript helper code for NextGen New UX Project. @2016 BNYM
+ */
 // The following global variables are NOT constants.
 /**
-* Handle to the JS timeout for message box auto-close duration.
-* @type {Number}
-*/
+ * Handle to the JS timeout for message box auto-close duration.
+ * @type {Number}
+ */
 var mbxTimeout = -1;
 /**
-* The context path from the JSP servlet.
-* @type {String}
-*/
+ * The context path from the JSP servlet.
+ * @type {String}
+ */
 var contextPath = '';
 /**
-* The JSP org code.
-* @type {String}
-*/
+ * The JSP org code.
+ * @type {String}
+ */
 var orgCode = 'gis';
 /**
-* JS file version number.
-* @type {String}
-*/
+ * JS file version number.
+ * @type {String}
+ */
 var nxv = '0.5.5';
 /**
-* The JSP runtime environment id.
-* @type {String}
-*/
+ * The JSP runtime environment id.
+ * @type {String}
+ */
 var runtime = '';
 /**
-* An alias to _showErrMsg
-* @type {Function}
-*/
+ * An alias to _showErrMsg
+ * @type {Function}
+ */
 var showErrMsg = _showErrMsg;
 /**
-* An alias to _hideErrMsg
-* @type {Function}
-*/
+ * An alias to _hideErrMsg
+ * @type {Function}
+ */
 var hideErrMsg = _hideErrMsg;
- 
- 
 /**
-* Very simple logging. No-op in production environment.
-* @param msg 
+ * Very simple logging. No-op in production environment.
+ * @param msg 
  * @param severity
-*/
+ */
 function report(msg, severity) {
     if (window.console == null) {
         /**
@@ -75,7 +72,6 @@ function report(msg, severity) {
     }
     // don't print stuff to the console in the wild
     if (runtime === ("dev") || runtime === ("int") || runtime === ("test")) {
- 
         var detect = navigator.userAgent.toLowerCase();
         if (detect.search("msie") > 0) {
             if (window.console != null) {
@@ -86,7 +82,6 @@ function report(msg, severity) {
         }
     }
 }
- 
 //shim populateDevicePrint to avoid script errors
 if (!populateDevicePrint) {
     /**
@@ -94,53 +89,50 @@ if (!populateDevicePrint) {
      */
     var populateDevicePrint = function () {};
 }
- 
 /**
-* Set org code.
-* @param code
-*/
+ * Set org code.
+ * @param code
+ */
 function setOrgCode(code) {
-   report('Setting the org code to "' + code + '".');
+    report('Setting the org code to "' + code + '".');
     orgCode = code.toLowerCase();
 }
 /**
-* Get org code.
-* @return {String}
-*/
+ * Get org code.
+ * @return {String}
+ */
 function getOrgCode() {
     return orgCode;
 }
 /**
-* Set runtime.
-* @param env
-*/
+ * Set runtime.
+ * @param env
+ */
 function setRuntime(env) {
     runtime = env.toLowerCase();
     report('Setting the runtime to "' + env + '".');
 }
 /**
-* Set context path.
-* @param path
-*/
+ * Set context path.
+ * @param path
+ */
 function setContextPath(path) {
     report('Setting the context path to "' + path + '".');
     contextPath = path;
 }
 /**
-* Get context path.
-* @return {String}
-*/
+ * Get context path.
+ * @return {String}
+ */
 function getContextPath() {
     return contextPath;
 }
 /**
-* Get root url for the browser. (varies between deployed and dev modes)
-* @return {String}
-*/
+ * Get root url for the browser. (varies between deployed and dev modes)
+ * @return {String}
+ */
 var getRootUrl = function () {
- 
     var loc = window.location;
- 
     var rootUrl = loc.protocol + '//' + loc.hostname;
     if (loc.port) {
         rootUrl += ':' + loc.port;
@@ -149,9 +141,9 @@ var getRootUrl = function () {
 };
 ///////////////////////////////// WIDGETS ////////////////////////////////
 /**
-* Slide switch.
-* @constructor
-*/
+ * Slide switch.
+ * @constructor
+ */
 function SlideSwitch() {
     this.el = null;
     this.state = false;
@@ -162,20 +154,18 @@ function SlideSwitch() {
     this.borderElement = null;
 }
 /**
-* @property {Number} cid A static counter for all instances of slideswitch.
-* YAGNI... we don't use multiple slide switches anywhere.
-*/
+ * @property {Number} cid A static counter for all instances of slideswitch.
+ * YAGNI... we don't use multiple slide switches anywhere.
+ */
 SlideSwitch.prototype.cid = 0;
 /**
-* Set state.
-* @param {String} state It's a color: red/green/gray
-*/
+ * Set state.
+ * @param {String} state It's a color: red/green/gray
+ */
 SlideSwitch.prototype.setState = function (state) {
     report('SlideSwitch.setState(' + state + ')');
     this.state = state;
- 
     var whichState = this.states[state];
- 
     var newLeft = '';
     if (state) {
         // motion
@@ -191,11 +181,9 @@ SlideSwitch.prototype.setState = function (state) {
     }
     // report(newLeft);
     // this.sliderElement.css('left', newLeft);
- 
     var cfg = {
         'left': newLeft
     };
- 
     var me = this;
     this.sliderElement.animate(cfg, 50, function () {
         if (state) {
@@ -216,9 +204,9 @@ SlideSwitch.prototype.setState = function (state) {
     }
 };
 /**
-* @param {Object} config
-* @param {jQueryElement} parent Where to insert the DOM element of this widget
-*/
+ * @param {Object} config
+ * @param {jQueryElement} parent Where to insert the DOM element of this widget
+ */
 SlideSwitch.prototype.init = function (config, parent) {
     this.states = config;
     if (!this.el) {
@@ -266,9 +254,7 @@ SlideSwitch.prototype.init = function (config, parent) {
         src.push('</div>');
         src.push('</div>');
         this.el = $(src.join('\n'));
- 
         var trueState = this.states["true"];
- 
         var me = this;
         this.trueStateElement = this.el.find(trueState.id);
         this.trueStateElement.bind("click", function (event) {
@@ -278,7 +264,6 @@ SlideSwitch.prototype.init = function (config, parent) {
             me.setState(true);
         });
         this.el.find(trueState.id + ' span').html(trueState.label);
- 
         var falseState = this.states["false"];
         this.falseStateElement = this.el.find(falseState.id);
         this.falseStateElement.bind("click", function (event) {
@@ -312,18 +297,18 @@ SlideSwitch.prototype.init = function (config, parent) {
 };
 ///////////// TOOLTIP API /////////////////
 /**
-* Current tool tip.
-* @type {ToolTip} The global used for the ToolTip Singleton
-*/
+ * Current tool tip.
+ * @type {ToolTip} The global used for the ToolTip Singleton
+ */
 var currentToolTip = null;
 /**
-* Get tool tip.
+ * Get tool tip.
  * ToolTip Singleton Factory
-* Populates global currentToolTip with the one and only ToolTip instance.
-* @example getToolTip().init().showToolTip('#accountNumber', 'Hello');
-*
+ * Populates global currentToolTip with the one and only ToolTip instance.
+ * @example getToolTip().init().showToolTip('#accountNumber', 'Hello');
+ *
  * @return {ToolTip} currentToolTip
-*/
+ */
 var getToolTip = function () {
     /**
      * Tool tip.
@@ -390,7 +375,7 @@ var getToolTip = function () {
      * Find pos.
      * @author taken from quirksmode.org
      * @param {DOMElement} obj 
-     * @return {left {Number}, top {Number}}
+     * @return {Object}
      */
     function findPos(obj) {
         var curtop = 0;
@@ -434,13 +419,11 @@ var getToolTip = function () {
             this.el.find("#u927_img").attr('src', contextPath + '/imagesv4/tooltip.png');
             this.el.find("#u927_img").css('height', '56px');
         }
- 
         var pos = $(targetEl).offset();
         pos = findPos($(targetEl)[0]);
         // report(pos);
         // var w = $(targetEl).parent().find('.x-form-invalid-msg').width() + 16;
         // if (w === 3){
- 
         var w = $(targetEl).width() + 32;
         // }
         this.el.find('#content').html(content);
@@ -457,7 +440,6 @@ var getToolTip = function () {
             this.el.find("#u930").css('width', '125px');
             this.el.find("#u930 li").css('line-height', '16px');
         }
- 
         var locEl = $('#u926');
         var myHeightOffset = locEl.height() / 2;
         // report(myHeightOffset);
@@ -475,23 +457,23 @@ var getToolTip = function () {
 };
 //////////////////PROGRESS BAR ///////////////////////////
 /**
-* Chevron progress.
+ * Chevron progress.
  * ChevronProgress is a dynamic progress bar capable of drawing itself using configuration data.
-* All the dom elements for this widget are emitted from JavaScript.
-* @constructor
-*/
+ * All the dom elements for this widget are emitted from JavaScript.
+ * @constructor
+ */
 function ChevronProgress() {
     this.el = null;
     this.step = -1;
     this.steps = [];
 }
 /**
-* Init.
+ * Init.
  * Construct DOM elements of this widget. Until init() is called, the widget has no DOM presence.
-* @param {Array<Object>} steps The step elements for each step in the progress bar.
+ * @param {Array<Object>} steps The step elements for each step in the progress bar.
  * @param {JQueryElement} parent The element we append this widget's element to.
  * @return {ChevronProgress}
-*/
+ */
 ChevronProgress.prototype.init = function (steps, parent) {
     if (!this.el) {
         this.el = $('<div id="chevronProgress" class="chevron-progress"></div>');
@@ -502,7 +484,6 @@ ChevronProgress.prototype.init = function (steps, parent) {
         }
     }
     this.steps = steps;
- 
     /**
      * Enable/Disable a Chevron Progress Bar Step.
      * @param {Number} stepNumber
@@ -510,11 +491,8 @@ ChevronProgress.prototype.init = function (steps, parent) {
      */
     this.setStepEnabled = function (stepNumber, state) {
         this.steps[stepNumber].enabled = (state === true);
- 
         this.el.empty();
- 
         for (var n = 0; n < this.steps.length; n++) {
- 
             var theStep = this.steps[n];
             addStep(this.el, n, theStep);
         }
@@ -529,25 +507,19 @@ ChevronProgress.prototype.init = function (steps, parent) {
      */
     function addStep(el, number, stepObj) {
         stepObj.sequence = number;
- 
         var whichChevron = 'chevron';
         if (number > 0) {
             whichChevron = 'chevron_mid';
         }
- 
         var imageRez = stepObj.enabled ? whichChevron : 'chevron_disabled';
- 
-       var stepState = stepObj.enabled ? 'chevron-step' : 'chevron-step-disabled';
+        var stepState = stepObj.enabled ? 'chevron-step' : 'chevron-step-disabled';
         stepObj.image = imageRez;
         stepObj.style = stepState;
- 
         var linkEnabled = (stepObj.link != null) ? 'chevron-step-link-enabled' : 'chevron-step-link-disabled';
- 
         var labelElementSrc = '<span class="chevron-step-label">' + stepObj.label + '</span>';
         if (stepObj.enabled && stepObj.link) {
             labelElementSrc = '<span class="chevron-step-label"><a class="' + linkEnabled + '" href="javascript:void(0);">' + stepObj.label + '</a></span>';
         }
- 
         var step = $('<span id="step_' + number + '" class="' + stepState + '" ><img src="' + contextPath + '/imagesv4/' + imageRez + '.png">' + labelElementSrc + '</span>');
         // <span style="font-family:'ArialMT',
         // 'Arial';font-weight:400;font-style:normal;font-size:11px;text-decoration:none;color:#169BD5;">Enter User
@@ -558,13 +530,10 @@ ChevronProgress.prototype.init = function (steps, parent) {
             });
         }
         el.append(step);
- 
         var CHEV_OFFSET = 12;
         step.css("left", "-" + (CHEV_OFFSET * number) + "px");
     }
- 
     for (var n = 0; n < steps.length; n++) {
- 
         var theStep = steps[n];
         addStep(this.el, n, theStep);
     }
@@ -573,22 +542,22 @@ ChevronProgress.prototype.init = function (steps, parent) {
 };
 ///////////////////// Message Bar API ///////////////////////////
 /**
-* Message bar.
-* @constructor
-*/
+ * Message bar.
+ * @constructor
+ */
 function MessageBar() {
     this.el = null;
 }
 /**
-* Close every instance of MessageBar
-* @static
-*/
+ * Close every instance of MessageBar
+ * @static
+ */
 MessageBar.closeAll = closeAllMessages;
 /**
-* Show the message bar with the desired message and color.
-* @param {String} message Any HTML you wish to display, within sane limits.
+ * Show the message bar with the desired message and color.
+ * @param {String} message Any HTML you wish to display, within sane limits.
  * @param {String} type Could be info/success/error or gray/green/red. Default is red.
-*/
+ */
 MessageBar.prototype.show = function (message, type) {
     if (message == null) {
         report("Error: MessageBar.show() called with null message.");
@@ -608,8 +577,8 @@ MessageBar.prototype.show = function (message, type) {
     this.el = NewUX_showMessage(message, type);
 };
 /**
-* Hide the message bar, using the default fadeout.
-*/
+ * Hide the message bar, using the default fadeout.
+ */
 MessageBar.prototype.hide = function () {
     if (this.el) {
         NewUX_closeMessage(false, this.el);
@@ -619,46 +588,39 @@ MessageBar.prototype.hide = function () {
     //        report("Error: MessageBar.hide() called when MessageBar was not shown.");
     //    }
 };
- 
- 
- 
 /*
-* message bar "API" is a set of procedures used to manage the Message Bar.
-* "Message Bar Object" here is a normal jQuery Element.
-*/
+ * message bar "API" is a set of procedures used to manage the Message Bar.
+ * "Message Bar Object" here is a normal jQuery Element.
+ */
 /**
-* Message boxes.
-* @type {Array<jQueryElement>} The global used for maintaining the current list of Message Bars
-*/
+ * Message boxes.
+ * @type {Array<jQueryElement>} The global used for maintaining the current list of Message Bars
+ */
 var messageBoxes = [];
- 
 /**
-* Pending error message.
-* @type {String} The global used for the next error message to be displayed. Note only one next message can be displayed.
-*/
+ * Pending error message.
+ * @type {String} The global used for the next error message to be displayed. Note only one next message can be displayed.
+ */
 var pendingErrorMessage = '';
- 
 /**
-* Pending success message.
-* @type {String} The global used for the next success message to be displayed. Note only one next message can be displayed.
-*/
+ * Pending success message.
+ * @type {String} The global used for the next success message to be displayed. Note only one next message can be displayed.
+ */
 var pendingSuccessMessage = '';
 /**
-* Hide message.
-* @alias {Function} hideMessage A copy of hideErrMsg
-*/
+ * Hide message.
+ * @alias {Function} hideMessage A copy of hideErrMsg
+ */
 var hideMessage = hideErrMsg;
- 
 /**
-* Generic error message box.
-* @type {jQueryElement} genericErrorMessageBox A reference to the last-created existing Message Bar
-*/
+ * Generic error message box.
+ * @type {jQueryElement} genericErrorMessageBox A reference to the last-created existing Message Bar
+ */
 var genericErrorMessageBox = null;
- 
 /**
-* @description Get the scroll vertical offset.
-* @return {Number}
-*/
+ * @description Get the scroll vertical offset.
+ * @return {Number}
+ */
 function getScrollVOffset() {
     var detect = navigator.userAgent.toLowerCase();
     if (detect.search("msie") > 0) {
@@ -666,28 +628,23 @@ function getScrollVOffset() {
     }
     return 0;
 }
- 
 /**
-* Center absolute message.
-* @param messageBox
-*/
+ * Center absolute message.
+ * @param messageBox
+ */
 function centerAbsoluteMessage(messageBox) {
- 
     var msgWidth = messageBox.width();
     // Should we use the document width?
- 
     var windowWidth = $('body').innerWidth();
     // report('window is ' + windowWidth);
     // report('bar is ' + msgWidth);
- 
     var offsetCenter = (windowWidth / 2) - (msgWidth / 2);
     messageBox.css("left", offsetCenter);
 }
- 
 /**
-* Restack message boxes.
+ * Restack message boxes.
  * Re-order message boxes after delete.
-*/
+ */
 function restackMessageBoxes() {
     // report('restackMessageBoxes');
     /**
@@ -728,7 +685,6 @@ function restackMessageBoxes() {
      * @type {array}
      */
     var newTops = [];
- 
     var m = 0;
     for (m = 0; m < messageBoxes.length; m++) {
         //report('message box ' + m);
@@ -751,12 +707,11 @@ function restackMessageBoxes() {
     }
     report('Add the vertical offsets of the previous bars: ' + (verticalSum));
 }
- 
 /**
-* Newux closemessage.
-* @param noAnimate 
+ * Newux closemessage.
+ * @param noAnimate 
  * @param whichMessageBox
-*/
+ */
 function NewUX_closeMessage(noAnimate, whichMessageBox) {
     /**
      * message boxm jQuery selection.
@@ -826,13 +781,12 @@ function NewUX_closeMessage(noAnimate, whichMessageBox) {
         mbxTimeout = -1;
     }
 }
- 
 /**
-* Close all messages.
+ * Close all messages.
  * Dismiss all message bars.
-* @param dontFadeOut
+ * @param dontFadeOut
  * @return {Object} The jQuery selection for the message bar.
-*/
+ */
 function closeAllMessages(dontFadeOut) {
     /**
      * @type {Object}
@@ -863,10 +817,10 @@ function closeAllMessages(dontFadeOut) {
     }
 }
 /**
-* Get non IMS messages.
+ * Get non IMS messages.
  * Get red and green message bars.
-* @return array of message bars
-*/
+ * @return array of message bars
+ */
 function getNonIMSMessages() {
     /**
      * result.
@@ -891,18 +845,17 @@ function getNonIMSMessages() {
     return result;
 }
 /**
-* Close non IMS messages.
+ * Close non IMS messages.
  * Close red and green message bars, immediately.
-* Use to reset the status upon submit.
-* @param {Boolean} dontFadeOut True if we want the message bars to close instantly.
-*/
+ * Use to reset the status upon submit.
+ * @param {Boolean} dontFadeOut True if we want the message bars to close instantly.
+ */
 function closeNonIMSMessages(dontFadeOut) {
     /**
      * temp message bar.
      * @type {Object}
      */
     var tempMessageBar = null;
- 
     var m = 0;
     for (m = 0; m < messageBoxes.length; m++) {
         tempMessageBar = messageBoxes[m];
@@ -912,18 +865,17 @@ function closeNonIMSMessages(dontFadeOut) {
     }
 }
 /**
-* Is message box created.
+ * Is message box created.
  * Search existing message boxes for this message.
-* @param {String} msg 
+ * @param {String} msg 
  * @return {Boolean}
-*/
+ */
 function isMessageBoxCreated(msg) {
     /**
      * The last message bar.
      * @type {Object}
      */
     var lastMessageBar = null;
- 
     var m = 0;
     for (m = 0; m < messageBoxes.length; m++) {
         lastMessageBar = messageBoxes[m];
@@ -934,18 +886,17 @@ function isMessageBoxCreated(msg) {
     return false;
 }
 /**
-* Get message box created.
+ * Get message box created.
  * Get the messaage box if it already exists.
-* @param {String} msg 
+ * @param {String} msg 
  * @return {jQuerySelection}
-*/
+ */
 function getMessageBoxCreated(msg) {
     /**
      * The last message bar.
      * @type {Object}
      */
     var lastMessageBar = null;
- 
     var m = 0;
     for (m = 0; m < messageBoxes.length; m++) {
         lastMessageBar = messageBoxes[m];
@@ -956,15 +907,15 @@ function getMessageBoxCreated(msg) {
     return null;
 }
 /**
-* Newux showmessage.
-* @example NewUX_showMessage("hello", "green", 5000)
-* @param {String} msg 
+ * Newux showmessage.
+ * @example NewUX_showMessage("hello", "green", 5000)
+ * @param {String} msg 
  * @param {String} severity 
  * @param {Number} duration 
  * @param {Boolean} noAnimate 
  * @param {Function} clickHandler 
  * @param (boolean) noClose -- no closebox! beware!
-*/
+ */
 function NewUX_showMessage(msg, severity, duration, noAnimate, clickHandler, noClose) {
     /**
      * args.
@@ -1195,7 +1146,6 @@ function NewUX_showMessage(msg, severity, duration, noAnimate, clickHandler, noC
              * @type {Number}
              */
             var lastMessageBoxTop = 0;
- 
             for (var m = 0; m < messageBoxes.length - 1; m++) {
                 report('message box ' + m);
                 lastMessageBar = messageBoxes[m];
@@ -1270,25 +1220,25 @@ function NewUX_showMessage(msg, severity, duration, noAnimate, clickHandler, noC
 }
 //Override the error message UI:
 /**
-* @param noAnimate
-*/
+ * @param noAnimate
+ */
 function _hideErrMsg(noAnimate) {
     $("#errMsg").hide();
     NewUX_closeMessage(noAnimate, genericErrorMessageBox);
     genericErrorMessageBox = null;
 }
 /**
-* Show err msg.
+ * Show err msg.
  * Wrapper for showing an error message. Looks for standard elements in "NewUX_" JSP pages containing message data:<br />
-*
+ *
  * $("#errMsg") - The holder for a server-side errors.<br />
-*
+ *
  * $(".clsNextGenError") - Holder used on some screens for additional server-side messages.<br />
-*
+ *
  * $("#defaultErrMsg") - Holder for generic client-side message. "Please correct the following..."<br />
-* .
-* @param noAnimate
-*/
+ * .
+ * @param noAnimate
+ */
 function _showErrMsg(noAnimate) {
     hideErrMsg(true);
     $("#errMsg").hide();
@@ -1340,10 +1290,10 @@ function _showErrMsg(noAnimate) {
     }
 }
 /**
-* Display message.
-* @deprecated
-* @param txt
-*/
+ * Display message.
+ * @deprecated
+ * @param txt
+ */
 function displayMessage(txt) {
     if (txt) {
         if ((txt.indexOf('The information you entered was incorrect.') !== -1) || (txt.indexOf("Forgot Password") !== -1)) {
@@ -1354,10 +1304,10 @@ function displayMessage(txt) {
     }
 }
 /**
-* Messsagebox test.
-* @test
-* @description Simple unit test for Message Bar API.
-*
+ * Messsagebox test.
+ * @test
+ * @description Simple unit test for Message Bar API.
+ *
  */
 function messsageBox_test() {
     /**
@@ -1371,7 +1321,7 @@ function messsageBox_test() {
     /**
      * red.
      */
-   var red = new MessageBar();
+    var red = new MessageBar();
     NewUX_showMessage("should only show the same message one time", "green");
     // should not show this next message
     NewUX_showMessage("should only show the same message one time", "red");
@@ -1409,10 +1359,10 @@ function messsageBox_test() {
 ///////////////////// END Message Box API ///////////////////////////
 //////////////validations //////////////////
 /**
-* Is numeric.
-* @param {Object} obj 
+ * Is numeric.
+ * @param {Object} obj 
  * @return {Boolean}
-*/
+ */
 var isNumeric = function (obj) {
     return (obj != null && obj.join == null) && (obj - parseFloat(obj) + 1) >= 0;
 };
@@ -1440,13 +1390,12 @@ $(function () {
          * @type {Boolean}
          */
         var resizingFlag = false;
- 
         for (var m = 0; m < messageBoxes.length; m++) {
             messageBox = messageBoxes[m];
             if (!resizing && messageBox.css("display") !== "none") {
                 resizingFlag = true;
                 centerAbsoluteMessage(messageBox);
-           }
+            }
         }
         if (resizingFlag) {
             resizing = true;
@@ -1459,8 +1408,8 @@ $(function () {
     showErrMsg = _showErrMsg;
 });
 /**
-* @param messageText
-*/
+ * @param messageText
+ */
 function ux_showInfoMsg(messageText) {
     /**
      * all messages.
@@ -1478,8 +1427,8 @@ function ux_showInfoMsg(messageText) {
     }
 }
 /*
-* We may be inserting too many <br> in here.
-*/
+ * We may be inserting too many <br> in here.
+ */
 // Snippet for fixing the text with embedded <br>.
 //var warning = responseObj[1].data.result;
 //warning = warning.split('<br/>');
@@ -1488,8 +1437,8 @@ function ux_showInfoMsg(messageText) {
 //}
 //warning = warning.join('&nbsp;');
 /**
-* @param messageText
-*/
+ * @param messageText
+ */
 function ux_showErrMsg(messageText) {
     /**
      * decoded.
@@ -1499,8 +1448,8 @@ function ux_showErrMsg(messageText) {
     pendingErrorMessage = decoded;
 }
 /**
-* @param messageText
-*/
+ * @param messageText
+ */
 function ux_showSuccessMsg(messageText) {
     /**
      * decoded.
@@ -1510,54 +1459,54 @@ function ux_showSuccessMsg(messageText) {
     pendingSuccessMessage = decoded;
 }
 /**
-* Another alias for _hideErrMsg.
-*/
+ * Another alias for _hideErrMsg.
+ */
 function ux_hideMsg() {
     _hideErrMsg();
 }
 /**
-* Ux showimsselectivemessage.
+ * Ux showimsselectivemessage.
  * Show a message and supply some optional handlers.
-* @param message 
+ * @param message 
  * @param {Function} closeHandler 
  * @param {Function} okayHandler 
  * @param {Function} cancelHandler
-*/
+ */
 function ux_showIMSSelectiveMessage(message, closeHandler, okayHandler, cancelHandler) {
     NewUX_showMessage(message, 'gray');
 }
 /* Array for holding IMS Selective Message data */
 /**
-* IMS array.
-*/
+ * IMS array.
+ */
 var IMSArray = [];
 /**
-* Ux handleimsmessages.
+ * Ux handleimsmessages.
  * Setter for IMSArray.
-* @param {Array<String>} messageArray
-*/
+ * @param {Array<String>} messageArray
+ */
 function ux_handleImsMessages(messageArray) {
     report('handleImsMessages');
     IMSArray = messageArray;
 }
 /**
-* popup showing
-* @type {Boolean}
-*/
+ * popup showing
+ * @type {Boolean}
+ */
 var popupShowing = false;
 /**
-* Are any message bars present?
-* @return {Boolean}
-*/
+ * Are any message bars present?
+ * @return {Boolean}
+ */
 function noMessageWidgets() {
     return ((!popupShowing) && IMSArray.length === 0 && messageBoxes.length === 0);
 }
 /**
-* Handle message bar triggers.
+ * Handle message bar triggers.
  * Handle all types of messages. This happens asynchronously because the script tags all load at different times.
-* @todo: Possible to show >1 message at one time. Need to stack message bars of different colors.
-* DONE! now all 3 could be invoked at once
-*
+ * @todo: Possible to show >1 message at one time. Need to stack message bars of different colors.
+ * DONE! now all 3 could be invoked at once
+ *
  */
 function handleMessageBarTriggers() {
     /**
@@ -1691,18 +1640,16 @@ function handleMessageBarTriggers() {
 $(function () {
     window.setTimeout(handleMessageBarTriggers, 250);
 });
- 
- 
 /*
-* PLACHOLDERS etc.
-* placeholder code here is just a polyfill for IE browsers.
-* It is not used for Chrome or Firefox, etc.
-*/
+ * PLACHOLDERS etc.
+ * placeholder code here is just a polyfill for IE browsers.
+ * It is not used for Chrome or Firefox, etc.
+ */
 var fieldsToCheck = {};
 /**
-* @description Initialize events and render PlaceHolder shim for IE.
+ * @description Initialize events and render PlaceHolder shim for IE.
  * @see handleDefault below
-*/
+ */
 function activatePlaceholders() {
     var detect = navigator.userAgent.toLowerCase();
     if (detect.search("msie") > 0) {
@@ -1751,9 +1698,9 @@ function activatePlaceholders() {
     }
 }
 /**
-* Trick ExtJS into getting the real value for a placeholder instead of the placeholder text.
-* @param {String} fieldName
-*/
+ * Trick ExtJS into getting the real value for a placeholder instead of the placeholder text.
+ * @param {String} fieldName
+ */
 function placeHolderValidate(fieldName) {
     var detect = navigator.userAgent.toLowerCase();
     if (detect.search("msie") > 0) {
@@ -1772,10 +1719,10 @@ function placeHolderValidate(fieldName) {
     }
 }
 /**
-* Returns true if placeholder shim element is default or empty.
-* @param fieldName
-* @return {Boolean}
-*/
+ * Returns true if placeholder shim element is default or empty.
+ * @param fieldName
+ * @return {Boolean}
+ */
 function isDefaultOrEmpty(fieldName) {
     var obj = fieldsToCheck[fieldName];
     if (obj) {
@@ -1784,10 +1731,10 @@ function isDefaultOrEmpty(fieldName) {
     return false;
 }
 /**
-* Returns true if placeholder shim element is default.
-* @param fieldName
-* @return {Boolean}
-*/
+ * Returns true if placeholder shim element is default.
+ * @param fieldName
+ * @return {Boolean}
+ */
 function isDefault(fieldName) {
     var obj = fieldsToCheck[fieldName];
     if (!obj) {
@@ -1796,20 +1743,18 @@ function isDefault(fieldName) {
     return (obj.el.val() === obj["default"]);
 }
 /**
-* Handle default.
+ * Handle default.
  * Used to intitialize placeholder logic on form fields.
-* @param {String} elementName 
+ * @param {String} elementName 
  * @param {String} defaultValue 
  * @param {Object} extComponent
-*/
+ */
 function handleDefault(elementName, defaultValue, extComponent) {
     report('handleDefault: "' + elementName + '", ' + defaultValue);
- 
     var el = document.getElementsByName(elementName);
     if (el.length === 0) {
         report('elment ' + elementName + ' not found');
     }
- 
     var jqEl = $(el[0]);
     // jqEl.val(defaultValue);
     jqEl.prop('placeholder', defaultValue);
@@ -1820,22 +1765,22 @@ function handleDefault(elementName, defaultValue, extComponent) {
     };
 }
 /**
-* Dump field, for diagnostic purposes.
+ * Dump field, for diagnostic purposes.
  * This uses report(), which is disabled in production.
-* Dump the contents of this form input to the console.
-* @param {String} name
-*/
+ * Dump the contents of this form input to the console.
+ * @param {String} name
+ */
 function dumpField(name) {
     report('Field "' + name + '" >> ' + getField(name));
 }
 /**
-* Get field. Get the contents of this form input.
-*
+ * Get field. Get the contents of this form input.
+ *
  * @fixme This does not scope the search to a specific form. Consider the case of multiple forms on a page with fields
-*        having the same names.
-* @param {String} name
-* @return {String} The value of the element.
-*/
+ *        having the same names.
+ * @param {String} name
+ * @return {String} The value of the element.
+ */
 function getField(name) {
     try {
         var field = document.getElementsByName(name)[0];
@@ -1847,11 +1792,11 @@ function getField(name) {
 }
 ///////////////////////////// General Utilities ///////////////////////////////
 /**
-* Trim.
+ * Trim.
  * Polyfill for String.trim().
-* @param {String} input 
+ * @param {String} input 
  * @return {String}
-*/
+ */
 function trim(input) {
     if (input == null) {
         return "";
