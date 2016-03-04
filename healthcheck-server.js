@@ -34,7 +34,7 @@ http.createServer(
     function (req, res) {
         var now = new Date();
         var filename = req.url;
-        if (filename == "/") {
+        if (filename === "/") {
             filename = "/index.html";
         }
         var ext = path.extname(filename);
@@ -45,6 +45,75 @@ http.createServer(
         var params = "";
         if (queryStringSplit.length > 1) {
             params = queryStringSplit[1];
+        }
+
+        function respond(healthCheckResults) {
+            var contents = (JSON.stringify(healthCheckResults));
+            //res.setHeader("Content-Type", "application/json");
+            // FIXME: Why doesn't Content-Length work here? The number is
+            // too
+            // small.
+            // res.writeHeader("Content-Length", contents.length);
+            // res.statusCode = 200;
+            res.writeHead(200, {
+                'Content-Type': "application/json"
+            });
+            res.write(contents);
+            res.end();
+            // console.log(newSource);
+        }
+
+        function runJsDoc(sourceDirectory, healthCheckResults) {
+            // var docPath = projectPath + '/test-jsdocs';
+            console.log('Delete the test-jsdocs directory? ' + docPath);
+            rimraf(path.normalize(docPath), function () {
+                var USE_HARUKI = false;
+                // console.warn(arguments);
+                // return;
+                // sourceDirectory = path.normalize(sourceDirectory);
+                var exePath = path.normalize(projectPath + '/node_modules/.bin/jsdoc');
+                // console.warn('runJsDoc: ' + exePath + ' <> ' +
+                // sourceDirectory);
+                // $ jsdoc -r -l -d ~/workspace/jsdoc-prep/out
+                // ~/workspace/jsdoc-prep/processed/framework
+                var exec = require('child_process').exec;
+                var cmdLine = exePath;
+                var docPath = projectPath + '/test-jsdocs';
+                var reportPath = projectPath + '/test-results';
+                if (USE_HARUKI) {
+                    cmdLine += ' -r -l -t templates/../../experimental_template/haruki -d ' + reportPath + '/jsDocModel.json' + ' -q format=json' + ' ' + sourceDirectory + '';
+                    console.warn('Haruki Duki Du!!!');
+                } else {
+                    // cmdLine += ' -r -l -d ' + docPath + ' '
+                    // + sourceDirectory + '';
+                    // exePath + ' -r -l -d ' + projectPath
+                    // + '/test-jsdocs ' + sourceDirectory + '';
+                    cmdLine += ' -r -l -t templates/../../experimental_template/default -d ' + docPath + '' + ' -q format=json' + ' ' + sourceDirectory + '';
+                }
+                console.log(cmdLine);
+                var child = exec(cmdLine, function (error, stdout, stderr) {
+                    // normal
+                    if (stderr) {
+                        console.error(stderr);
+                    } else {
+                        console.log(stdout);
+                    }
+                });
+                /**
+                 * Handler for close event.
+                 * 
+                 * @function
+                 * @name close
+                 * @method close
+                 * @param code
+                 */
+                child.on('close', function (code) {
+                    console.log('child process "node jsdoc" exited with code ' + code);
+                    var tempHtml = sfp.readFile(projectPath + '/test-jsdocs/index.html');
+                    healthCheckResults.jsDocOutput = escape(tempHtml);
+                    respond(healthCheckResults);
+                });
+            });
         }
         // Compare filename to determine endpoint ops.
         // TODO: replace with Backbone.Router.
@@ -150,17 +219,25 @@ http.createServer(
             function healthCheckCallback(healthCheckResults) {
                 console.log("Results are ready.");
                 var newSource = sfp.readFile('test-output/temp.js');
-                healthCheckResults.source = newSource;
-                var contents = (JSON.stringify(healthCheckResults));
-                res.setHeader("Content-Type", "application/json");
-                // FIXME: Why doesn't Content-Length work here? The number is
-                // too
-                // small.
-                // res.setHeader("Content-Length", contents.length);
-                res.statusCode = 200;
-                res.end(contents);
-                // console.log(newSource);
+                // healthCheckResults.source = sfp.readFile(tempFilePath);
+                healthCheckResults.source = realSource;
+                healthCheckResults.processedSource = newSource;
+                runJsDoc(projectPath + '/test-output', healthCheckResults);
             }
+            //            function healthCheckCallback(healthCheckResults) {
+            //                console.log("Results are ready.");
+            //                var newSource = sfp.readFile('test-output/temp.js');
+            //                healthCheckResults.source = newSource;
+            //                var contents = (JSON.stringify(healthCheckResults));
+            //                res.setHeader("Content-Type", "application/json");
+            //                // FIXME: Why doesn't Content-Length work here? The number is
+            //                // too
+            //                // small.
+            //                // res.setHeader("Content-Length", contents.length);
+            //                res.statusCode = 200;
+            //                res.end(contents);
+            //                // console.log(newSource);
+            //            }
             var outPath = 'test-output';
             var testPath = 'test-jstests';
             var docPath = 'test-jsdocs';
@@ -215,19 +292,6 @@ http.createServer(
             var tempFilePath = 'temp-input/temp.js';
             console.warn('>>>>>>>>> getSingleAndCheck', paramsBlock);
             var projectPath = process.cwd();
-
-            function respond(healthCheckResults) {
-                var contents = (JSON.stringify(healthCheckResults));
-                res.setHeader("Content-Type", "application/json");
-                // FIXME: Why doesn't Content-Length work here? The number is
-                // too
-                // small.
-                // res.writeHeader("Content-Length", contents.length);
-                res.statusCode = 200;
-                res.write(contents);
-                res.end();
-                // console.log(newSource);
-            }
             /**
              * Completion callback for processor tasks.
              * 
@@ -240,60 +304,7 @@ http.createServer(
                 // healthCheckResults.source = sfp.readFile(tempFilePath);
                 healthCheckResults.source = realSource;
                 healthCheckResults.processedSource = newSource;
-
-                function runJsDoc(sourceDirectory) {
-                    // var docPath = projectPath + '/test-jsdocs';
-                    console.log('Delete the test-jsdocs directory? ' + docPath);
-                    rimraf(path.normalize(docPath), function () {
-                        var USE_HARUKI = false;
-                        // console.warn(arguments);
-                        // return;
-                        // sourceDirectory = path.normalize(sourceDirectory);
-                        var exePath = path.normalize(projectPath + '/node_modules/.bin/jsdoc');
-                        // console.warn('runJsDoc: ' + exePath + ' <> ' +
-                        // sourceDirectory);
-                        // $ jsdoc -r -l -d ~/workspace/jsdoc-prep/out
-                        // ~/workspace/jsdoc-prep/processed/framework
-                        var exec = require('child_process').exec;
-                        var cmdLine = exePath;
-                        var docPath = projectPath + '/test-jsdocs';
-                        var reportPath = projectPath + '/test-results';
-                        if (USE_HARUKI) {
-                            cmdLine += ' -r -l -t templates/../../experimental_template/haruki -d ' + reportPath + '/jsDocModel.json' + ' -q format=json' + ' ' + sourceDirectory + '';
-                            console.warn('Haruki Duki Du!!!');
-                        } else {
-                            // cmdLine += ' -r -l -d ' + docPath + ' '
-                            // + sourceDirectory + '';
-                            // exePath + ' -r -l -d ' + projectPath
-                            // + '/test-jsdocs ' + sourceDirectory + '';
-                            cmdLine += ' -r -l -t templates/../../experimental_template/default -d ' + docPath + '' + ' -q format=json' + ' ' + sourceDirectory + '';
-                        }
-                        console.log(cmdLine);
-                        var child = exec(cmdLine, function (error, stdout, stderr) {
-                            // normal
-                            if (stderr) {
-                                console.error(stderr);
-                            } else {
-                                console.log(stdout);
-                            }
-                        });
-                        /**
-                         * Handler for close event.
-                         * 
-                         * @function
-                         * @name close
-                         * @method close
-                         * @param code
-                         */
-                        child.on('close', function (code) {
-                            console.log('child process "node jsdoc" exited with code ' + code);
-                            var tempHtml = sfp.readFile(projectPath + '/test-jsdocs/index.html');
-                            healthCheckResults.jsDocOutput = escape(tempHtml);
-                            respond(healthCheckResults);
-                        });
-                    });
-                }
-                runJsDoc(projectPath + '/test-output');
+                runJsDoc(projectPath + '/test-output', healthCheckResults);
             }
             var outPath = 'test-output';
             var testPath = 'test-jstests';
