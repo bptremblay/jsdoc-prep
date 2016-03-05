@@ -46,6 +46,10 @@ http.createServer(
         if (queryStringSplit.length > 1) {
             params = queryStringSplit[1];
         }
+        var outPath = 'test-output';
+        var testPath = 'test-jstests';
+        var docPath = 'test-jsdocs';
+        var resultsPath = 'test-results';
 
         function respond(healthCheckResults) {
             var contents = (JSON.stringify(healthCheckResults));
@@ -161,10 +165,6 @@ http.createServer(
                 });
                 res.end(contents);
             }
-            var outPath = 'test-output';
-            var testPath = 'test-jstests';
-            var docPath = 'test-jsdocs';
-            var resultsPath = 'test-results';
             if (paramsBlock.options != null) {
                 var opts = JSON.parse(paramsBlock.options);
                 if (opts.processingChain.length === 0) {
@@ -177,15 +177,17 @@ http.createServer(
                     res.end(JSON.stringify(contents));
                     return;
                 }
-                healthCheck.run({
-                    callBack: healthCheckCallback,
-                    scanPath: opts.scanPath,
-                    writePath: outPath,
-                    writeTestPath: testPath,
-                    writeDocPath: docPath,
-                    writeResultsPath: resultsPath,
-                    writeEnable: opts.writeEnable,
-                    processingChain: opts.processingChain
+                rimraf(outPath, function () {
+                    healthCheck.run({
+                        callBack: healthCheckCallback,
+                        scanPath: opts.scanPath,
+                        writePath: outPath,
+                        writeTestPath: testPath,
+                        writeDocPath: docPath,
+                        writeResultsPath: resultsPath,
+                        writeEnable: opts.writeEnable,
+                        processingChain: opts.processingChain
+                    });
                 });
             } else {
                 console.warn(paramsBlock);
@@ -238,10 +240,6 @@ http.createServer(
             //                res.end(contents);
             //                // console.log(newSource);
             //            }
-            var outPath = 'test-output';
-            var testPath = 'test-jstests';
-            var docPath = 'test-jsdocs';
-            var resultsPath = 'test-results';
             var realSource = '// Source not found!!!';
             if (paramsBlock.options != null) {
                 var opts = JSON.parse(paramsBlock.options);
@@ -257,15 +255,17 @@ http.createServer(
                 }
                 realSource = unescape(opts.source);
                 sfp.writeFile(tempFilePath, realSource);
-                healthCheck.run({
-                    callBack: healthCheckCallback,
-                    scanPath: opts.scanPath,
-                    writePath: outPath,
-                    writeTestPath: testPath,
-                    writeDocPath: docPath,
-                    writeResultsPath: resultsPath,
-                    writeEnable: opts.writeEnable,
-                    processingChain: opts.processingChain
+                rimraf(outPath, function () {
+                    healthCheck.run({
+                        callBack: healthCheckCallback,
+                        scanPath: opts.scanPath,
+                        writePath: outPath,
+                        writeTestPath: testPath,
+                        writeDocPath: docPath,
+                        writeResultsPath: resultsPath,
+                        writeEnable: opts.writeEnable,
+                        processingChain: opts.processingChain
+                    });
                 });
             } else {
                 console.warn(paramsBlock);
@@ -306,10 +306,6 @@ http.createServer(
                 healthCheckResults.processedSource = newSource;
                 runJsDoc(projectPath + '/test-output', healthCheckResults);
             }
-            var outPath = 'test-output';
-            var testPath = 'test-jstests';
-            var docPath = 'test-jsdocs';
-            var resultsPath = 'test-results';
             if (paramsBlock.options != null) {
                 var opts = JSON.parse(paramsBlock.options);
                 if (opts.processingChain.length === 0) {
@@ -327,15 +323,17 @@ http.createServer(
                 opts.source = sfp.readFile(realFilePath);
                 realSource = unescape(opts.source);
                 sfp.writeFile(tempFilePath, realSource);
-                healthCheck.run({
-                    callBack: healthCheckCallback,
-                    scanPath: opts.scanPath,
-                    writePath: outPath,
-                    writeTestPath: testPath,
-                    writeDocPath: docPath,
-                    writeResultsPath: resultsPath,
-                    writeEnable: opts.writeEnable,
-                    processingChain: opts.processingChain
+                rimraf(outPath, function () {
+                    healthCheck.run({
+                        callBack: healthCheckCallback,
+                        scanPath: opts.scanPath,
+                        writePath: outPath,
+                        writeTestPath: testPath,
+                        writeDocPath: docPath,
+                        writeResultsPath: resultsPath,
+                        writeEnable: opts.writeEnable,
+                        processingChain: opts.processingChain
+                    });
                 });
             } else {
                 console.warn(paramsBlock);
