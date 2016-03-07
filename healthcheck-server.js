@@ -46,6 +46,7 @@ http.createServer(
         if (queryStringSplit.length > 1) {
             params = queryStringSplit[1];
         }
+        var projectPath = process.cwd();
         var outPath = 'test-output';
         var testPath = 'test-jstests';
         var docPath = 'test-jsdocs';
@@ -68,9 +69,9 @@ http.createServer(
         }
 
         function runJsDoc(sourceDirectory, healthCheckResults) {
-            // var docPath = projectPath + '/test-jsdocs';
+            //docPath = projectPath + '/test-jsdocs';
             console.log('Delete the test-jsdocs directory? ' + docPath);
-            rimraf(path.normalize(docPath), function () {
+            rimraf(path.normalize(projectPath + '/test-jsdocs'), function () {
                 var USE_HARUKI = false;
                 // console.warn(arguments);
                 // return;
@@ -224,7 +225,7 @@ http.createServer(
                 // healthCheckResults.source = sfp.readFile(tempFilePath);
                 healthCheckResults.source = realSource;
                 healthCheckResults.processedSource = newSource;
-                runJsDoc(projectPath + '/test-output', healthCheckResults);
+                runJsDoc('test-output', healthCheckResults);
             }
             //            function healthCheckCallback(healthCheckResults) {
             //                console.log("Results are ready.");
@@ -256,6 +257,7 @@ http.createServer(
                 realSource = unescape(opts.source);
                 sfp.writeFile(tempFilePath, realSource);
                 rimraf(outPath, function () {
+                    console.log("outPath: " + outPath);
                     healthCheck.run({
                         callBack: healthCheckCallback,
                         scanPath: opts.scanPath,
@@ -291,7 +293,6 @@ http.createServer(
             }
             var tempFilePath = 'temp-input/temp.js';
             console.warn('>>>>>>>>> getSingleAndCheck', paramsBlock);
-            var projectPath = process.cwd();
             /**
              * Completion callback for processor tasks.
              * 
