@@ -6,7 +6,10 @@ var nodes = [];
 //Doctor the comment. Can cause problems.
 var FIX_COMMENT_GRAMMAR = false;
 //Try to normalize module names so hand-coded ones match. Can cause problems.
-var FIX_MODULE_NAMES = true;
+var FIX_MODULE_NAMES = false;
+
+// YUI wants every module, method and class annotated, with a name.
+var YUIDOC_MODE = false;
 
 var Logger = function() {
   this.log = function(msg) {
@@ -598,7 +601,7 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
       docletData.moduleName = docletData["@module"];
       delete docletData["@module"];
     }
-    if (defineModuleInTopOfFile) {
+    if (defineModuleInTopOfFile || YUIDOC_MODE) {
       correctNodeName = 'module';
       buffer.push(' * @' + correctNodeName + ' ' + docletData.moduleName);
       atCount++;
@@ -2043,6 +2046,13 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
               functionWrapper.returnType = '';
               output.classes[functionWrapper.name] = obj.uid;
             }
+            else{
+              ctor = true;
+              // logger.log('Constructor for ' +
+              // walkerObj.camelName + '? ', functionWrapper);
+              functionWrapper.returnType = '';
+              output.classes[functionWrapper.name] = obj.uid;
+            }
 
           }
         }
@@ -2104,7 +2114,7 @@ function dumpNamedVariables(walkerObj, map, ast, output) {
         decamelizedName : ''
 
     };
-    //  console.log('initVal', initVal);
+    //console.log('initVal', initVal);
     if (initVal){
       if (initVal.type === 'Literal') {
         //console.log('initVal is Literal');
@@ -3116,6 +3126,44 @@ function addMissingComments(walkerObj, errors) {
       nodeHeader += '/\n';
       newFile = nodeHeader + newFile;
       // console.warn('Insert module header: ', nodeHeader);
+    } else if (walkerObj.results.amdProc.AMD && YUIDOC_MODE) {
+      
+//      { requires: [ 'logger', 'jquery', 'underscore', 'backbone' ],
+//        moduleName: 'test_functions',
+//        AMD: true,
+//        webPath: '',
+//        convertedName: 'test_functions',
+//        min: false,
+//        main: 0,
+//        'uses_$': false,
+//        uses_Y: false,
+//        uses_alert: false,
+//        strict: false }
+      
+      
+      //console.log("AMD??????");
+      //console.log(walkerObj.results.amdProc);
+      //ddd();
+      //
+      //walkerObj.NODEJS = false;
+
+      nodeModName = (walkerObj.moduleName);
+      var nodeHeader = '/**\n * ';
+      nodeHeader += '@module ' + nodeModName + '\n *';
+//      if (walkerObj.NODE_EXPORTS) {
+//        nodeHeader += ' @exports ' + walkerObj.NODE_EXPORTS + '\n *';
+//      }
+      // TODO: scrape deps like a normal AMD module
+      var ngDeps = walkerObj.results.amdProc.requires;
+      for (var ngd = 0; ngd < ngDeps.length; ngd++) {
+        var dep = ngDeps[ngd].trim();
+        if (dep.length) {
+          nodeHeader += ' @requires ' + dep + '\n *';
+        }
+      }
+      nodeHeader += '/\n';
+      newFile = nodeHeader + newFile;
+      // console.warn('Insert module header: ', nodeHeader);
     } else {
       console.warn('NOT A MODULE? ', walkerObj.results.amdProc.moduleName);
     }
@@ -3374,15 +3422,20 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     funkyName = funkyName.join(' ');
     //funkyName += '.';
     //logger.warn('The name we use: ' + funkyName);
+    if (funkyName.indexOf('.') !== -1) {
+      funkyName = '';
+      console.log("funkyName 2: " + funkyName);
+    }
     if (functionWrapper.ctor) {
       funkyName = 'Creates a new instance of class ' + functionWrapper.name + '.';
+      console.log("funkyName 0: " + funkyName);
     }
     if (funkyName.indexOf('[') !== -1) {
       funkyName = '';
+      console.log("funkyName 1: " + funkyName);
     }
-    if (funkyName.indexOf('.') !== -1) {
-      funkyName = '';
-    }
+    
+    console.log("funkyName: " + funkyName);
     if (functionWrapper.comment !== -1) {
       oldComment = ast.comments[functionWrapper.comment];
       var range = oldComment.range;
@@ -3501,6 +3554,18 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     hasConstructsTag = searchTags(doclet, 'constructs');
     hasConstructorTag = searchTags(doclet, 'constructor');
     hasLendsTag = searchTags(doclet, 'lends');
+    //console.log(doclet, functionWrapper);
+    if (functionWrapper.kind == null){
+      if (YUIDOC_MODE && !hasConstructsTag && !hasConstructorTag && !hasLendsTag && !functionWrapper.ctor){
+        //console.log(doclet, functionWrapper);
+        //zzz();
+        commentBlock.push(' * @method ' + functionWrapper.name);
+        if (functionWrapper.memberOf){
+          commentBlock.push(' * @memberOf ' + functionWrapper.memberOf);
+        }
+      }
+    }
+    
 
     // if (hasConstructorTag) {
     // logger.log('hasConstructorTag: ' +
@@ -3678,7 +3743,13 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
       }
       logger.log('What is left of this "constructor" ? ' + context);
       if (walkerObj.namedConstructors[moduleName + '~' + context] == null) {
-        commentBlock.push(' * @constructor');
+        if (YUIDOC_MODE){
+          commentBlock.push(' * @class ' + context);
+        }
+        else{
+          commentBlock.push(' * @constructor');
+        }
+        
         functionWrapper.ctorType = '@constructor';
         walkerObj.namedConstructors[moduleName + '~' + context] = functionWrapper;
       } else {
@@ -3726,7 +3797,13 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     commentBlock.push(' * ' + doclet['@return'].line.trim());
   } else if (returnValue !== '') {
     if (returnValue !== '?') {
-      commentBlock.push(' * @return ' + returnValue);
+      if (returnValue.indexOf("{") === -1){
+        commentBlock.push(' * @return {object} ' + returnValue);
+      }
+      else{
+        commentBlock.push(' * @return ' + returnValue);
+      }
+      
     } else {
       // commentBlock.push(' * @todo Please describe the return type of this method.');
       // commentBlock.push(' * @return {object} ??');
