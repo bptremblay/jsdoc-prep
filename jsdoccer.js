@@ -7,27 +7,24 @@ var nodes = [];
 var FIX_COMMENT_GRAMMAR = false;
 //Try to normalize module names so hand-coded ones match. Can cause problems.
 var FIX_MODULE_NAMES = false;
-
 // YUI wants every module, method and class annotated, with a name.
 var YUIDOC_MODE = false;
-
-var Logger = function() {
-  this.log = function(msg) {
+var Logger = function () {
+  this.log = function (msg) {
     console.log(msg);
   };
-  this.warn = function(msg) {
+  this.warn = function (msg) {
     logger.log(msg);
   };
-  this.error = function(msg) {
+  this.error = function (msg) {
     console.error(msg);
   };
 };
-
 var logger = new Logger();
 
 function mapModuleName(mappedModuleName, walkerObj) {
   var modulePaths = walkerObj.modulePaths;
-  for ( var p in modulePaths) {
+  for (var p in modulePaths) {
     if (modulePaths.hasOwnProperty(p)) {
       var pattern = modulePaths[p];
       if (mappedModuleName.indexOf(pattern) !== -1) {
@@ -35,49 +32,40 @@ function mapModuleName(mappedModuleName, walkerObj) {
         // stop, don't apply every match
         break;
       }
-
     }
   }
-
   if (mappedModuleName.charAt(0) === '/') {
     mappedModuleName = mappedModuleName.substring(1);
   }
-
   return mappedModuleName;
 }
 
 function fixModuleNameInText(text, walkerObj) {
-
   //logger.log('Fix reference to module name "' + text + '".');
   var splitter = text.split('module:');
   splitter.shift();
   var moduleName = splitter.join('module:').trim();
   moduleName = moduleName.split(' ')[0];
-
   //var newModuleName = inferModuleName(moduleName, walkerObj);
   // logger.log('Fix moduleName: "' + moduleName + '" >>> "' + newModuleName +
   // '".');
   text = 'module:' + mapModuleName(moduleName, walkerObj);
   //logger.log('fixModuleNameInText Fixed text: "' + text + '".');
-
   return text;
 }
 
 function inferModuleName(walkerObj) {
   var usedModuleName = walkerObj.fileName.split('.js')[0];
-
   var packagePath = walkerObj.path.split('/');
   packagePath.shift();
   packagePath = packagePath.join('/');
   packagePath = packagePath.split('.js')[0];
-
   usedModuleName = packagePath;
-
   return usedModuleName;
 }
 /**
  * Read file.
- * 
+ *
  * @name readFile
  * @method readFile
  * @param filePathName
@@ -98,11 +86,11 @@ function readFile(filePathName) {
 }
 /**
  * Decamelize.
- * 
+ *
  * @name decamelize
  * @method decamelize
- * @param {Object}
- *            input
+ * @param {String} input
+ * @return {String}
  */
 function decamelize(input) {
   // BEGIN_LOADING_FOO
@@ -122,19 +110,29 @@ function decamelize(input) {
   }
   var words = [];
   var word = '';
+  var previousCharUC = false;
   for (var c = 0; c < input.length; c++) {
     var chararcter = input.charAt(c);
     if (chararcter == '_') {
       chararcter = ' ';
     }
     if (isUpperCase(chararcter)) {
-      // break it
-      chararcter = chararcter.toLowerCase();
-      words.push(trim(word));
-      word = '';
-      word += chararcter;
+      if (!previousCharUC) {
+        // break it
+        chararcter = chararcter.toLowerCase();
+        words.push(trim(word));
+        word = '';
+        word += chararcter;
+      } else {
+        word = word.toUpperCase();
+        word += chararcter;
+        previousCharUC = false;
+      }
+
+      previousCharUC = true;
     } else {
       word += chararcter;
+      previousCharUC = false;
     }
   }
   if (trim(word).length > 0) {
@@ -146,7 +144,7 @@ function decamelize(input) {
 }
 /**
  * Get module name.
- * 
+ *
  * @name getModuleName
  * @method getModuleName
  * @param filePathName
@@ -166,7 +164,7 @@ function getModuleName(filePathName) {
 }
 /**
  * Capitalize.
- * 
+ *
  * @name capitalize
  * @method capitalize
  * @param {string}
@@ -184,10 +182,9 @@ function capitalize(input) {
   input[0] = input[0].toUpperCase();
   return input.join('');
 }
-
 /**
  * De-capitalize.
- * 
+ *
  * @name decapitalize
  * @method decapitalize
  * @param {string}
@@ -207,7 +204,7 @@ function decapitalize(input) {
 }
 /**
  * Trim.
- * 
+ *
  * @name trim
  * @method trim
  * @param {Object}
@@ -219,7 +216,7 @@ function trim(input) {
 }
 /**
  * Trim right.
- * 
+ *
  * @name trimRight
  * @method trimRight
  * @param s
@@ -229,7 +226,7 @@ function trimRight(s) {
 }
 /**
  * Camelize.
- * 
+ *
  * @name camelize
  * @method camelize
  * @param {Object}
@@ -254,7 +251,7 @@ function camelize(input) {
 }
 /**
  * Camelize variable.
- * 
+ *
  * @name camelizeVariable
  * @method camelizeVariable
  * @param {Object}
@@ -284,7 +281,7 @@ function camelizeVariable(input) {
 }
 /**
  * Is upper case.
- * 
+ *
  * @name isUpperCase
  * @method isUpperCase
  * @param aCharacter
@@ -295,7 +292,7 @@ function isUpperCase(aCharacter) {
 }
 /**
  * Normalize name.
- * 
+ *
  * @name normalizeName
  * @method normalizeName
  * @param {Object}
@@ -306,7 +303,7 @@ function normalizeName(input) {
 }
 /**
  * Safe create file dir.
- * 
+ *
  * @name safeCreateFileDir
  * @method safeCreateFileDir
  * @param path
@@ -323,7 +320,7 @@ function safeCreateFileDir(path) {
 }
 /**
  * Safe create dir.
- * 
+ *
  * @name safeCreateDir
  * @method safeCreateDir
  * @param dir
@@ -339,7 +336,7 @@ function safeCreateDir(dir) {
 }
 /**
  * Strip 'C'-style comments.
- * 
+ *
  * @name stripCComments
  * @method stripCComments
  * @param {Object}
@@ -365,7 +362,7 @@ function stripCComments(input) {
 }
 /**
  * Strip one line comments.
- * 
+ *
  * @name stripOneLineComments
  * @method stripOneLineComments
  * @param {Object}
@@ -382,7 +379,7 @@ function stripOneLineComments(input) {
 }
 /**
  * Safe create file dir.
- * 
+ *
  * @name safeCreateFileDir
  * @method safeCreateFileDir
  * @param path
@@ -396,7 +393,7 @@ function safeCreateFileDir(path) {
 }
 /**
  * Safe create dir.
- * 
+ *
  * @name safeCreateDir
  * @method safeCreateDir
  * @param dir
@@ -409,7 +406,7 @@ function safeCreateDir(dir) {
 }
 /**
  * Write file.
- * 
+ *
  * @name writeFile
  * @method writeFile
  * @param filePathName
@@ -425,134 +422,134 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
   var has_description = false;
   // // logger.log('>>>>>>>>>>>>>>>>>>>>>>>>>> printDoclet');
   var printableTags = {
-      'abstract' : 1,
-      // This member must be implemented (or overridden) by the inheritor.
-      'access' : 1,
-      // Specify the access level of this member - private, public, or
-      // protected.
-      'alias' : 1,
-      // Treat a member as if it had a different name.
-      'augments' : 1,
-      // This object adds onto a parent object.
-      'extends' : 1,
-      // This object adds onto a parent object.
-      'author' : 1,
-      // Identify the author of an item.
-      'borrows' : 1,
-      // This object uses something from another object.
-      'callback' : 1,
-      // Document a callback function.
-      'classdesc' : 1,
-      // Use the following text to describe the entire class.
-      'constant' : 1,
-      'const' : 1,
-      // Document an object as a constant.
-      // 'constructor': 1,
-      // This function is intended to be called with the "new" keyword.
-      'constructs' : 1,
-      // This function member will be the constructor for the previous class.
-      'copyright' : 1,
-      // Document some copyright information.
-      'default' : 1,
-      // Document the default value.
-      'deprecated' : 1,
-      // Document that this is no longer the preferred way.
-      'desc' : 1,
-      // Describe a symbol.
-      'enum' : 1,
-      // Document a collection of related properties.
-      'event' : 1,
-      // Document an event.
-      'example' : 1,
-      // Provide an example of how to use a documented item.
-      'exports' : 1,
-      // Identify the member that is exported by a JavaScript module.
-      'external' : 1,
-      // Document an external class/namespace/module.
-      'file' : 1,
-      // Describe a file.
-      'fires' : 1,
-      // Describe the events this method may fire.
-      'global' : 1,
-      // Document a global object.
-      'ignore' : 1,
-      // [todo] Remove this from the final output.
-      'inner' : 1,
-      // Document an inner object.
-      'instance' : 1,
-      // Document an instance member.
-      'kind' : 1,
-      // What kind of symbol is this?
-      'lends' : 1,
-      // Document properties on an object literal as if they belonged to a
-      // symbol
-      // with a given name.
-      'license' : 1,
-      // [todo] Document the software license that applies to this code.
-      'link' : 1,
-      // Inline tag - create a link.
-      'member' : 1,
-      // Document a member.
-      // 'memberof': 1,
-      // 'memberOf': 1,
-      // This symbol belongs to a parent symbol.
-      // 'method': 1,
-      // Describe a method or function.
-      'mixes' : 1,
-      // This object mixes in all the members from another object.
-      'mixin' : 1,
-      // Document a mixin object.
-      'module' : 1,
-      // Document a JavaScript module.
-      'name' : 1,
-      // Document the name of an object.
-      'namespace' : 1,
-      // Document a namespace object.
-      // 'param': 1,
-      // Document the parameter to a function.
-      'private' : 1,
-      // This symbol is meant to be private.
-      'property' : 1,
-      // Document a property of an object.
-      'protected' : 1,
-      // This member is meant to be protected.
-      'public' : 1,
-      // This symbol is meant to be public.
-      'readonly' : 1,
-      // This symbol is meant to be read-only.
-      // 'requires': 1,
-      // This file requires a JavaScript module.
-      'returns' : 1,
-      'return' : 1,
-      // Document the return value of a function.
-      'see' : 1,
-      // Refer to some other documentation for more information.
-      'since' : 1,
-      // When was this feature added?
-      'static' : 1,
-      // Document a static member.
-      'summary' : 1,
-      // A shorter version of the full description.
-      'this' : 1,
-      // What does the 'this' keyword refer to here?
-      'throws' : 1,
-      // Describe what errors could be thrown.
-      'todo' : 1,
-      // Document tasks to be completed.
-      'tutorial' : 1,
-      // Insert a link to an included tutorial file.
-      'type' : 1,
-      // Document the type of an object.
-      'typedef' : 1,
-      // Document a custom type.
-      'variation' : 1,
-      // Distinguish different objects with the same name.
-      'version' : 1
+    'abstract': 1,
+    // This member must be implemented (or overridden) by the inheritor.
+    'access': 1,
+    // Specify the access level of this member - private, public, or
+    // protected.
+    'alias': 1,
+    // Treat a member as if it had a different name.
+    'augments': 1,
+    // This object adds onto a parent object.
+    'extends': 1,
+    // This object adds onto a parent object.
+    'author': 1,
+    // Identify the author of an item.
+    'borrows': 1,
+    // This object uses something from another object.
+    'callback': 1,
+    // Document a callback function.
+    'classdesc': 1,
+    // Use the following text to describe the entire class.
+    'constant': 1,
+    'const': 1,
+    // Document an object as a constant.
+    // 'constructor': 1,
+    // This function is intended to be called with the "new" keyword.
+    'constructs': 1,
+    // This function member will be the constructor for the previous class.
+    'copyright': 1,
+    // Document some copyright information.
+    'default': 1,
+    // Document the default value.
+    'deprecated': 1,
+    // Document that this is no longer the preferred way.
+    'desc': 1,
+    // Describe a symbol.
+    'enum': 1,
+    // Document a collection of related properties.
+    'event': 1,
+    // Document an event.
+    'example': 1,
+    // Provide an example of how to use a documented item.
+    'exports': 1,
+    // Identify the member that is exported by a JavaScript module.
+    'external': 1,
+    // Document an external class/namespace/module.
+    'file': 1,
+    // Describe a file.
+    'fires': 1,
+    // Describe the events this method may fire.
+    'global': 1,
+    // Document a global object.
+    'ignore': 1,
+    // [todo] Remove this from the final output.
+    'inner': 1,
+    // Document an inner object.
+    'instance': 1,
+    // Document an instance member.
+    'kind': 1,
+    // What kind of symbol is this?
+    'lends': 1,
+    // Document properties on an object literal as if they belonged to a
+    // symbol
+    // with a given name.
+    'license': 1,
+    // [todo] Document the software license that applies to this code.
+    'link': 1,
+    // Inline tag - create a link.
+    'member': 1,
+    // Document a member.
+    // 'memberof': 1,
+    // 'memberOf': 1,
+    // This symbol belongs to a parent symbol.
+    // 'method': 1,
+    // Describe a method or function.
+    'mixes': 1,
+    // This object mixes in all the members from another object.
+    'mixin': 1,
+    // Document a mixin object.
+    'module': 1,
+    // Document a JavaScript module.
+    'name': 1,
+    // Document the name of an object.
+    'namespace': 1,
+    // Document a namespace object.
+    // 'param': 1,
+    // Document the parameter to a function.
+    'private': 1,
+    // This symbol is meant to be private.
+    'property': 1,
+    // Document a property of an object.
+    'protected': 1,
+    // This member is meant to be protected.
+    'public': 1,
+    // This symbol is meant to be public.
+    'readonly': 1,
+    // This symbol is meant to be read-only.
+    // 'requires': 1,
+    // This file requires a JavaScript module.
+    'returns': 1,
+    'return': 1,
+    // Document the return value of a function.
+    'see': 1,
+    // Refer to some other documentation for more information.
+    'since': 1,
+    // When was this feature added?
+    'static': 1,
+    // Document a static member.
+    'summary': 1,
+    // A shorter version of the full description.
+    'this': 1,
+    // What does the 'this' keyword refer to here?
+    'throws': 1,
+    // Describe what errors could be thrown.
+    'todo': 1,
+    // Document tasks to be completed.
+    'tutorial': 1,
+    // Insert a link to an included tutorial file.
+    'type': 1,
+    // Document the type of an object.
+    'typedef': 1,
+    // Document a custom type.
+    'variation': 1,
+    // Distinguish different objects with the same name.
+    'version': 1
       // Documents the version number of an item.
   };
   var buffer = [];
   var hasAttributes = false;
-  for ( var a in docletData) {
+  for (var a in docletData) {
     if (a.charAt(0) === '@') {
       hasAttributes = true;
     }
@@ -621,7 +618,7 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
       }
     } else if (docletData['@exports'] != null) {
       // merge firstDoclet
-      for ( var f in firstDoclet) {
+      for (var f in firstDoclet) {
         if (f.indexOf('@') === 0) {
           docletData[f] = firstDoclet[f];
         }
@@ -631,7 +628,7 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
   // logger.log(docletData.tagName);
   var returnTag = '';
   // get secondary details
-  for ( var e in docletData) {
+  for (var e in docletData) {
     var rawName = e;
     if (e.indexOf('@') === 0) {
       rawName = e.substring(1);
@@ -750,7 +747,7 @@ function getLines(lines, x, y, buffer) {
 /**
  * Gets the non-tag lines _around_ a tag. Where tag = {tag : 'param',line :
  * 0,lastLine: -1 }.
- * 
+ *
  * @param {Array
  *            <String>} buffer
  * @param {Array
@@ -832,7 +829,6 @@ function replace(source, original, token) {
 function getRequiresTags(input) {
   var output = '';
   var amdProcData = input.results.amdProc;
-
   for (var index = 0; index < amdProcData.requires.length; index++) {
     var moduleName = amdProcData.requires[index];
     //console.warn(moduleName);
@@ -846,7 +842,6 @@ function getRequiresTags(input) {
   }
   return output;
 }
-
 /**
  * Gets all the instances of require() in the code body.
  * @todo: Not robust! Not comment-proof!
@@ -907,19 +902,18 @@ function getInlineRequires(input) {
   }
   return output;
 }
-
 var firstDoclet = null;
 var typesMap = {
-    'function' : 'Function',
-    'number' : 'Number',
-    'int' : 'Number',
-    'float' : 'Number',
-    'long' : 'Number',
-    'bool' : 'Boolean',
-    'boolean' : 'Boolean',
-    'string' : 'String',
-    'array' : 'Array',
-    'object' : 'Object'
+  'function': 'Function',
+  'number': 'Number',
+  'int': 'Number',
+  'float': 'Number',
+  'long': 'Number',
+  'bool': 'Boolean',
+  'boolean': 'Boolean',
+  'string': 'String',
+  'array': 'Array',
+  'object': 'Object'
 };
 
 function getType(input) {
@@ -1022,7 +1016,7 @@ function fixTypes(input, dontCuddle) {
   return '{' + input + '}';
 }
 /**
- * 
+ *
  * @param {String}
  *            input
  * @return {String}
@@ -1037,7 +1031,7 @@ function stripStars(input) {
 }
 /**
  * Add * to a line in a doclet.
- * 
+ *
  * @param input
  * @returns
  */
@@ -1051,14 +1045,14 @@ function addStars(input) {
 }
 /**
  * Add * to each line in a block of doclet text.
- * 
+ *
  * @param lines
  * @returns
  */
 function addStarLines(lines, tag) {
   lines = lines.split('\n');
   var linesLength = lines.length;
-  for (index = 0; index < linesLength; index++) {
+  for (var index = 0; index < linesLength; index++) {
     if (index === 0) {
       if (!tag.textStartsOnSameLine) {
         var line = lines[index];
@@ -1076,14 +1070,14 @@ function addStarLines(lines, tag) {
   return lines;
 }
 /**
- * 
+ *
  * @param {Array
  *            <String>} lines
  * @return {Array<String>}
  */
 function stripStarLines(lines) {
   var linesLength = lines.length;
-  for (index = 0; index < linesLength; index++) {
+  for (var index = 0; index < linesLength; index++) {
     var line = lines[index].trim();
     line = stripStars(line);
     lines[index] = line;
@@ -1091,13 +1085,13 @@ function stripStarLines(lines) {
   return lines;
 }
 /**
- * 
+ *
  * @param lines
  * @return {boolean}
  */
 function linesAreEmpty(lines) {
   var linesLength = lines.length;
-  for (index = 0; index < linesLength; index++) {
+  for (var index = 0; index < linesLength; index++) {
     var line = lines[index].trim();
     if (stripStars(line).length !== 0) {
       return false;
@@ -1208,9 +1202,9 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode, chu
         lastTag = docletData.tags[docletData.tags.length - 1];
       }
       var newTag = {
-          tag : tag,
-          line : index,
-          lastLine : -1
+        tag: tag,
+        line: index,
+        lastLine: -1
       };
       if (lastTag !== null) {
         lastTag.lastLine = index - 1;
@@ -1252,10 +1246,10 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode, chu
           }
         }
         var paramObject = {
-            tagName : tag,
-            name : paramName,
-            type : paramType,
-            description : paramDescription
+          tagName: tag,
+          name: paramName,
+          type: paramType,
+          description: paramDescription
         };
         currentTagObject = paramObject;
         docletData.params.push(paramObject);
@@ -1295,11 +1289,11 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode, chu
           }
         }
         var returnObject = {
-            // name : returnName,
-            tagName : tag,
-            type : returnType,
-            description : returnDescription,
-            line : line
+          // name : returnName,
+          tagName: tag,
+          type: returnType,
+          description: returnDescription,
+          line: line
         };
         currentTagObject = returnObject;
         docletData['@return'] = currentTagObject;
@@ -1369,9 +1363,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode, chu
   // Collate all the loose text fragments:
   // preamble is the text before any tags have been declared
   var preamble = [];
-
   // HOW DID THIS HAPPEN???
-
   if (docletData.tags.length > 0) {
     for (var index = 0; index < docletData.tags.length; index++) {
       var tag = docletData.tags[index];
@@ -1399,7 +1391,6 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode, chu
         var stringBuffer = tag.text.trim().split('');
         stringBuffer.shift();
         tag.text = stringBuffer.join('');
-
         tag.text = capitalize(decamelize(tag.text).split('_').join(' '));
         var lastChar = tag.text.charAt(tag.text.length - 1);
         if (lastChar !== '.' && lastChar !== '?' && lastChar !== '!' && lastChar !== ':') {
@@ -1424,7 +1415,6 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode, chu
     // logger.log("parseDoclet: getting freeText from preamble");
     // logger.log(docletData.preamble);
   }
-
   // logger.log('freeText: ' + docletData['freeText']);
   var nodeType = 'NONFUNCTION';
   if (docletData['@constructor'] != null) {
@@ -1470,16 +1460,14 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode, chu
   }
   // logger.log(doclet);
   // logger.log(JSON.stringify(docletData, null, 2));
-
   // logger.log(getRequiresTags(input));
-
   return docletData;
 }
 
 function walk(node, attr, val, results, parentNode) {
   if (parentNode == null) {
     parentNode = {
-        type : 'ROOT'
+      type: 'ROOT'
     };
     parentNode.uid = -1;
   }
@@ -1505,7 +1493,7 @@ function walk(node, attr, val, results, parentNode) {
   // comments: []
   // tokens: []
   // errors: []
-  for ( var e in node) {
+  for (var e in node) {
     if (attr === e) {
       continue;
     }
@@ -1533,7 +1521,6 @@ function walk(node, attr, val, results, parentNode) {
           if (elem != null) {
             walk(elem, attr, val, results, node);
           }
-
         }
       } else if (typeof child === 'object') {
         child.parentNode = node;
@@ -1581,11 +1568,9 @@ function getNodesByType(ast, nodeType) {
             } else {
               returnType = '{' + (typeof statement.value) + '}';
             }
-
           } else if (statement.type === 'Identifier') {
             returnType = '?';
             if (statement.name != null) {
-
               if (statement.name === 'null') {
                 returnType = '';
               } else if (statement.name === 'undefined') {
@@ -1596,7 +1581,6 @@ function getNodesByType(ast, nodeType) {
                 // "return ' + statement.name + '".');
                 returnType = '?';
               }
-
             }
           } else if (statement.type === 'CallExpression') {
             returnType = '?';
@@ -1666,13 +1650,13 @@ function stripWhite(input) {
   // var output = [];
   // var index = 0;
   // for (index = 0; index<input.length; index++){
-  //		
+  //
   // }
   // return output.join('');
 }
 /**
  * Return a single comment or null.
- * 
+ *
  * @param input
  * @param nodeStart
  * @param ast
@@ -1704,7 +1688,6 @@ function getClosestComment(input, nodeStart, ast, wrapper) {
       var corpus = (input.substring(commentEnd, nodeStart).trim());
       if (corpus.length === 0) {
         var lineNumber = getLineNumber(input, comment);
-
         // logger.log('getClosestComment() found ' + commentBody + '
         // for ' + wrapper.name);
         var block = getLines(lines, lineNumber - 1, wrapper.lineNumber - 1);
@@ -1729,7 +1712,7 @@ function getClosestComment(input, nodeStart, ast, wrapper) {
 }
 /**
  * getExistingComment must traverse from obj upwards through parent nodes
- * 
+ *
  * @param input
  * @param obj
  * @param ast
@@ -1826,7 +1809,7 @@ function unsquareName(input) {
 
 function getParentClass(obj, classes) {
   // logger.log('getParentClass: ' + obj.range);
-  for ( var e in classes) {
+  for (var e in classes) {
     if (classes.hasOwnProperty(e)) {
       var klass = classes[e];
       var classRange = klass.range;
@@ -1841,7 +1824,7 @@ function getParentClass(obj, classes) {
 }
 /**
  * Need to include anonymous functions too?
- * 
+ *
  * @param input
  * @param map
  * @param ast
@@ -1864,8 +1847,8 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
     if (true) {
       var obj = map[index];
       var functionWrapper = {
-          name : '',
-          todos : []
+        name: '',
+        todos: []
       };
       if (obj.id !== null) {
         // // logger.log("dumpNamedFunctions " + obj.id.name);
@@ -1913,7 +1896,7 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
           // logger.log(JSON.stringify(returnNode, null, 2));
           // // logger.log(functionWrapper);
           var rrange = returnNode.range;
-          var returnBody = input.substring(rrange[0], rrange[1])
+          var returnBody = input.substring(rrange[0], rrange[1]);
           // logger.log('returnNode = ' + returnBody);
           // returnNode = return {
           var textMinusReturn = returnBody.substring(6).trim();
@@ -1922,7 +1905,6 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
           packagePath = packagePath.join('/');
           packagePath = packagePath.split('.js')[0];
           var foundNode = false;
-
           // Ony if it's really AMD...
           if (walkerObj.results.amdProc.AMD) {
             if (textMinusReturn.charAt(0) === '{') {
@@ -1957,7 +1939,6 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
               // + '" has an object literal for its exports value');
               // /**@alias
               // module:js/component/myAccounts/depositAccounts*/
-
               //var line = lineFromOffset(input, rrange[0]);
               //logger.log(line);
               var textBefore = input.substring(0, rrange[0]).trim();
@@ -1966,7 +1947,6 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
               textBefore = textBefore.split('(')[1];
               textBefore = textBefore.split(',')[0];
               var ngClassName = textBefore.split('"').join('').split("'").join('').trim();
-
               //logger.log(ngClassName);
               // TODO: test for other similar structures
               if (walkerObj.NG) {
@@ -1974,12 +1954,9 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                 //logger.log('returnBody = ' + returnBody);
                 foundNode = true;
               }
-
             }
-
             //exit;
           }
-
           if (foundNode) {
             walkerObj.rewrittenReturnBody = returnBody;
             walkerObj.rewrittenReturnBodyNode = returnNode;
@@ -2033,7 +2010,6 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
           // logger.log('>>>>>>>> SQUARE >>>' +
           // functionWrapper.name, functionWrapper);
         } else {
-
           if (firstChar.toUpperCase() === firstChar) {
             // Make it a constructor just 'cause it's uppacase?
             // logger.log("Make it a constructor just 'cause it's
@@ -2045,18 +2021,15 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
               // walkerObj.camelName + '? ', functionWrapper);
               functionWrapper.returnType = '';
               output.classes[functionWrapper.name] = obj.uid;
-            }
-            else{
+            } else {
               ctor = true;
               // logger.log('Constructor for ' +
               // walkerObj.camelName + '? ', functionWrapper);
               functionWrapper.returnType = '';
               output.classes[functionWrapper.name] = obj.uid;
             }
-
           }
         }
-
         functionWrapper.ctor = ctor;
         var lineNumber = getLineNumber(input, obj);
         functionWrapper.lineNumber = lineNumber;
@@ -2071,23 +2044,19 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
         }
         functionWrapper.range = obj.range;
         output.methods[functionWrapper.name] = functionWrapper;
-
         // if (ctor){
         // logger.log('CONSTRUCTOR', functionWrapper);
         // }
-
         functionWrapper.name = null;
         delete functionWrapper.name;
-
       }
     }
   }
   return output;
 }
-
 /**
  * Dump variable declarations.
- * 
+ *
  * @param input
  * @param map
  * @param ast
@@ -2098,24 +2067,21 @@ function dumpNamedVariables(walkerObj, map, ast, output) {
   console.log('dumpNamedVariables');
   var input = walkerObj.source;
   var lines = input.split('\n');
-
   output = output != null ? output : [];
-
   for (var index = 0; index < map.length; index++) {
     var obj = map[index];
     var decl = obj.declarations[0];
     var initVal = decl.init;
     //  logger.log("dumpNamedVariables " + JSON.stringify(obj, null, 2));
     var varWrapper = {
-        name : '?',
-        kind : '?',
-        type : '',
-        range : null,
-        decamelizedName : ''
-
+      name: '?',
+      kind: '?',
+      type: '',
+      range: null,
+      decamelizedName: ''
     };
     //console.log('initVal', initVal);
-    if (initVal){
+    if (initVal) {
       if (initVal.type === 'Literal') {
         //console.log('initVal is Literal');
         varWrapper.type = typeof (initVal.value);
@@ -2124,24 +2090,19 @@ function dumpNamedVariables(walkerObj, map, ast, output) {
         console.log('skipping functions');
         continue;
       }
-    }
-    else{
+    } else {
       console.log('var has no init: ', decl);
     }
-
-
     if (decl.id !== null) {
       logger.log("dumpNamedVariables " + decl.id.name);
       varWrapper.name = decl.id.name;
       varWrapper.decamelizedName = capitalize(decamelize(varWrapper.name).split('_').join(' '));
     }
-
     if (obj.kind !== '') {
       varWrapper.kind = obj.kind;
     }
     varWrapper.range = obj.range;
     //var varTypeName = varWrapper.kind + 's';
-
     var lineNumber = getLineNumber(input, obj);
     varWrapper.lineNumber = lineNumber;
     varWrapper.line = trim(lines[lineNumber - 1]);
@@ -2150,15 +2111,13 @@ function dumpNamedVariables(walkerObj, map, ast, output) {
     if (comment !== -1) {
       varWrapper.comment = comment;
     }
-
     output.push(varWrapper);
     //console.log(varWrapper);
   }
   return output;
 }
-
 /**
- * 
+ *
  * @param doclet
  * @param name
  * @return the tag
@@ -2186,9 +2145,8 @@ function searchTags(doclet, name) {
     return tagHash;
   }
 }
-
 /**
- * 
+ *
  * @param doclet
  *            from parseDoclet()
  * @returns {Object} simple mapping of tags
@@ -2216,7 +2174,6 @@ function enumTags(doclet) {
         output.requires = requires;
       }
       requires.push(tag);
-
     } else if (tag.tag === 'augments') {
       var augments = output.augments;
       if (augments == null) {
@@ -2255,7 +2212,6 @@ function enumTags(doclet) {
     } else {
       output[tag.tag] = tag;
     }
-
   }
   return output;
 }
@@ -2264,36 +2220,27 @@ function getCommentWith(input, comments, whatTag) {
   // { type: 'Block',
   // value: '*\n * @module zero-test\n * @requires pruna\n ',
   // range: [ 2, 55 ] }
-
   for (var index = 0; index < comments.length; index++) {
     var comment = comments[index];
-
     var range = comment.range;
     // logger.log(comment);
-
     if (comment.type === 'Line') {
       continue;
     }
-
     var commentBody = input.substring(range[0], range[1]);
-
     if (commentBody.indexOf('/**') === -1) {
       continue;
     }
-
     comment.commentBody = commentBody;
-
     // logger.log(commentBody);
-
     if (commentBody.indexOf(whatTag) !== -1) {
       return comment;
     }
   }
   return null;
 }
-
 /**
- * 
+ *
  * @param message
  * @param error
  * @param errors
@@ -2345,7 +2292,6 @@ function lineFromOffset(input, offset) {
     logger.log('lineFromOffset: input was empty, returning empty string');
     return '';
   }
-
   input = input.substring(0, offset);
   //logger.log(input);
   //exit;
@@ -2353,7 +2299,6 @@ function lineFromOffset(input, offset) {
   var lastLineNumber = lines.length - 1;
   return lines[lastLineNumber];
 }
-
 /*
  * get the last word of a body of text
  * @param {String} input
@@ -2369,13 +2314,12 @@ function lastWordOf(input) {
   var lastWordNumber = words.length - 1;
   return words[lastWordNumber];
 }
-
 /**
  * Add a comment knowing only the index of the found pattern.
- * @param {String} input 
+ * @param {String} input
  * @param {Number} offset
- * @param {String} comment 
- * @param {String} lendsDoc 
+ * @param {String} comment
+ * @param {String} lendsDoc
  * @return {String} modified input
  */
 function prependLineByOffset(input, offset, comment, lendsDoc) {
@@ -2387,7 +2331,6 @@ function prependLineByOffset(input, offset, comment, lendsDoc) {
   }
   //console.warn('prependLineByOffset: insert comment before line ' + lineOffset);
   //console.warn(lines[lineOffset+1]);
-
   if (lendsDoc) {
     var nextLine = lines[lineOffset + 1];
     if (nextLine.indexOf('return') !== -1) {
@@ -2404,7 +2347,6 @@ function prependLineByOffset(input, offset, comment, lendsDoc) {
   //writeFile('audit.js', input);
   return input;
 }
-
 /**
  * Indicate that an Angular constructor/factory makes a class.
  * @param {String} input
@@ -2419,7 +2361,6 @@ function commentAngularClasses(input, ngModName, ngBaseClass, packagePath) {
   //console.warn('commentAngularClasses: ', chunkToSearch);
   //var offset = input.indexOf(chunkToSearch);
   var offset = input.indexOf(chunkToSearch);
-
   if (offset !== -1) {
     console.warn('commentAngularClasses: found', chunkToSearch);
     input = stripOneLineComments(stripCComments(input));
@@ -2430,17 +2371,14 @@ function commentAngularClasses(input, ngModName, ngBaseClass, packagePath) {
     //		var constructorDoc = '/**\n * @class ' + ngChunkSplit
     //				+ '\n * @extends ' + ngBaseClass + '\n */';
     //		input = prependLineByOffset(input, offset, constructorDoc);
-
     var allSplits = input.split(chunkToSearch);
     var tempInput = input;
     for (var index = 1; index < allSplits.length; index++) {
       var ngChunkSplit = allSplits[index];
       //console.warn('CHUNK: ', index, ngChunkSplit);
-
       //			var ngChunkSplit = input.split(chunkToSearch)[1];
       ngChunkSplit = ngChunkSplit.split(',')[0].trim();
       if (ngChunkSplit.indexOf('(') === -1) {
-
         console.warn('CHUNK: ', index, ngChunkSplit);
         ngChunkSplit = ngChunkSplit.split('"').join('').split("'").join('').trim();
         //console.warn('CHUNK: ', index, ngChunkSplit);
@@ -2449,40 +2387,42 @@ function commentAngularClasses(input, ngModName, ngBaseClass, packagePath) {
           constructorDoc = '/**\n * @module ' + ngChunkSplit + '\n */';
         }
         //console.warn('CHUNK: ', index, constructorDoc);
-
         var originalChunk = allSplits[index];
         //console.warn('CHUNK: ', index, originalChunk);
-
         var newOffset = tempInput.indexOf(originalChunk);
         //console.warn('CHUNK: ', index, newOffset);
         //returnBody = 'return /**@lends module:' + packagePath + '~' + capitalize(ngClassName) + '#' + ' */ ' + textMinusReturn;
-
         var lendsDoc = '/** @lends module:' + packagePath + '~' + capitalize(ngChunkSplit) + '# */';
         //console.warn(lendsDoc);
         tempInput = prependLineByOffset(tempInput, newOffset, constructorDoc, lendsDoc);
-
       } else {
         console.warn('commentAngularClasses: ' + ngBaseClass + '() does not conform to constructor pattern.');
         input = originalInput;
         tempInput = originalInput;
       }
       //return /**@lends module:service~TrendService# */ {
-
     }
     //console.warn(tempInput);
     console.warn('WARNING: swapping JS source for comment-stripped version');
     input = tempInput;
-
   }
-  ;
   //writeFile('audit_' + ngBaseClass + '.js', input);
   return input;
 }
-
 var incompleteLends = null;
 var spliceInlineConstructor = null;
+
+function deleteFile(filePathName) {
+  filePathName = _path.normalize(filePathName);
+  var success = false;
+  try {
+    _fs.unlinkSync(filePathName);
+    success = true;
+  } catch (er) {}
+  return success;
+}
 /**
- * 
+ *
  * @param walkerObj
  * @param errors
  * @returns
@@ -2507,29 +2447,82 @@ function addMissingComments(walkerObj, errors) {
   nodes = [];
   try {
     ast = _esprima.parse(input, {
-      comment : true,
-      tolerant : true,
-      range : true,
-      raw : true,
-      tokens : true
+      comment: true,
+      tolerant: true,
+      range: true,
+      raw: true,
+      tokens: true
     });
   } catch (esError) {
     reportError('ESPRIMA ERROR at top of addMissingComments', esError, errors, walkerObj);
     writeFile('error.js', input);
     return 'ERROR';
   }
-
-  writeFile('ast.json', JSON.stringify(ast, null, 2));
-
+  var expressionStatements = getNodesByType(ast, 'ExpressionStatement');
+  var defineBlocks = [];
+  var es = 0;
+  var defineCount = 0;
+  var firstDefineBlock = null;
+  for (es = 0; es < expressionStatements.length; es++) {
+    var oneDefine = expressionStatements[es];
+    if (oneDefine.expression.callee && oneDefine.expression.callee.name === "define") {
+      var defBlock = {};
+      if (defineCount === 0) {
+        firstDefineBlock = defBlock;
+      }
+      defineCount++;
+      if (defineCount > 1) {
+        break;
+      }
+    }
+  }
+  if (defineCount > 1) {
+    console.log("I found " + defineCount + " modules in this one file, so we're splitting it up!");
+    //fileName: testFileName,
+    //folderPath: 'test-source',
+    //deleteFile('test-source/' + walkerObj.fileName);
+    for (es = 0; es < expressionStatements.length; es++) {
+      var oneDefine = expressionStatements[es];
+      if (oneDefine.expression.callee && oneDefine.expression.callee.name === "define") {
+        var defBlock = {};
+        defBlock.name = oneDefine.expression.arguments[0].value;
+        defBlock.range = oneDefine.range;
+        defineBlocks.push(defBlock);
+        if (defBlock.name && defBlock.name.indexOf("/") === -1) {
+          console.log('writing out module ' + defBlock.name);
+          var tempModuleSource = input.substring(defBlock.range[0], defBlock.range[1]);
+          writeFile("test-source/" + defBlock.name + '.js', tempModuleSource);
+        } else {
+          console.log("SKIPPING " + defBlock.name);
+        }
+      }
+    }
+    return "REDO_FILE_TREE";
+  }
+  //var lines = input.split('\n');
+  if (firstDefineBlock) {
+    console.log("THIS IS AMD");
+    if (input.indexOf("// Generated by CoffeeScript") === 0) {
+      console.log("THIS IS MACHINE_GENRATED BY COFFEESCRIPT!!!!");
+      // relocate first lines
+      var whereDefine = input.indexOf('define(');
+      var boilerPlate = input.substring(0, whereDefine - 1);
+      //console.log(boilerPlate);
+      var remainder = input.substring(whereDefine);
+      //console.log(remainder);
+      var insideDefine = remainder.split("{")[1];
+      console.log(insideDefine);
+      // remove wrapper around define
+      // remove false re-declaration of classname and it's wrapper
+      return "BYEBYE";
+    }
+  }
   var moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
-
   var packagePath = walkerObj.path.split('/');
   packagePath.shift();
   packagePath = packagePath.join('/');
   packagePath = packagePath.split('.js')[0];
-
   if (!walkerObj.NG && input.indexOf('angular.module') !== -1) {
-
     // var leaderBoard = angular.module('leaderBoard', []);
     var ngSplit = input.split('angular.module')[1];
     ngSplit = ngSplit.split(']')[0];
@@ -2538,10 +2531,8 @@ function addMissingComments(walkerObj, errors) {
     ngModName = ngModName.split('(')[1].trim();
     var deps = ngSplit.split('[')[1].trim();
     deps = deps.split('\'').join('');
-
     deps = stripOneLineComments(stripCComments(deps));
     //console.warn(deps);
-
     deps = deps.split(',');
     ngModName = ngModName.split('\'').join('');
     for (var d = 0; d < deps.length; d++) {
@@ -2551,27 +2542,21 @@ function addMissingComments(walkerObj, errors) {
     walkerObj.NG = true;
     walkerObj.ngModule = ngModName;
     walkerObj.ngDeps = deps;
-
     console.warn('FOUND NG Module!!! (', ngModName, ')', deps);
     //dataVisualizationBar.directive('dvBarChart', function () {
-
     input = commentAngularClasses(input, ngModName, 'module', packagePath);
-
     input = commentAngularClasses(input, ngModName, 'directive', packagePath);
     input = commentAngularClasses(input, ngModName, 'controller', packagePath);
     input = commentAngularClasses(input, ngModName, 'service', packagePath);
     input = commentAngularClasses(input, ngModName, 'filter', packagePath);
     input = commentAngularClasses(input, ngModName, 'factory', packagePath);
     input = commentAngularClasses(input, ngModName, 'provider', packagePath);
-
     walkerObj.source = input;
     // Reboot!
     logger.log('>>>>> Need to recalculate NG module: ' + walkerObj.name + '.');
     //walkerObj.checkForRequiresMismatch = false;
-
     return addMissingComments(walkerObj, errors);
   }
-
   // if (!walkerObj.NG && input.indexOf('.factory(') !== -1 && input.indexOf('&http') !== -1) {
   if (!walkerObj.NG && input.indexOf('.factory(') !== -1 && input.indexOf('$http') !== -1) {
     var deps = [];
@@ -2579,29 +2564,22 @@ function addMissingComments(walkerObj, errors) {
     walkerObj.NG = true;
     walkerObj.ngModule = ngModName;
     walkerObj.ngDeps = deps;
-
     //console.warn('FOUND NG Module!!! (', ngModName, ')', deps);
     //dataVisualizationBar.directive('dvBarChart', function () {
-
     input = commentAngularClasses(input, ngModName, 'module', packagePath);
-
     input = commentAngularClasses(input, ngModName, 'directive', packagePath);
     input = commentAngularClasses(input, ngModName, 'controller', packagePath);
     input = commentAngularClasses(input, ngModName, 'service', packagePath);
     input = commentAngularClasses(input, ngModName, 'filter', packagePath);
     input = commentAngularClasses(input, ngModName, 'factory', packagePath);
     input = commentAngularClasses(input, ngModName, 'provider', packagePath);
-
     walkerObj.source = input;
     // Reboot!
     console.warn('>>>>> Need to recalculate NG module: ' + walkerObj.name + '.');
     //walkerObj.checkForRequiresMismatch = false;
-
     return addMissingComments(walkerObj, errors);
   }
-
   walkerObj.NODEJS = false;
-
   if (!walkerObj.NG && !walkerObj.results.amdProc.AMD) {
     if (input.indexOf('require(') !== -1 || input.indexOf('.exports') !== -1) {
       // console.warn('Possibly this is a node.js module? >> ', walkerObj.results.amdProc.moduleName);
@@ -2610,7 +2588,6 @@ function addMissingComments(walkerObj, errors) {
         var expressOffset = input.indexOf('= express(');
         if (expressOffset !== -1 && !walkerObj.EXPRESS) {
           // maybe?
-
           var expressSplit = input.split('= express(')[0];
           expressSplit = lastLineOf(expressSplit);
           expressSplit = lastWordOf(expressSplit);
@@ -2620,15 +2597,12 @@ function addMissingComments(walkerObj, errors) {
           input = prependLineByOffset(input, expressOffset, constructorDoc);
           // re-sync logical model
           walkerObj.source = input;
-
           // Reboot!
           logger.log('>>>>> Need to recalculate node module: ' + walkerObj.name + '.');
-
           //walkerObj.checkForRequiresMismatch = false;
           walkerObj.EXPRESS = true;
           walkerObj.NODEJS = true;
           return addMissingComments(walkerObj, errors);
-
         }
       } else if (input.indexOf('module.exports') !== -1 && !walkerObj.NODE_EXPORTS) {
         var exportsOffset = input.indexOf('module.exports');
@@ -2643,10 +2617,8 @@ function addMissingComments(walkerObj, errors) {
           input = prependLineByOffset(input, ctorOffset, constructorDoc);
           // re-sync logical model
           walkerObj.source = input;
-
           // Reboot!
           logger.log('>>>>> Need to recalculate node module: ' + walkerObj.name + '.');
-
           //walkerObj.checkForRequiresMismatch = false;
           walkerObj.NODEJS = true;
           walkerObj.NODE_EXPORTS = exportsSplit;
@@ -2658,21 +2630,18 @@ function addMissingComments(walkerObj, errors) {
       walkerObj.NODEJS = true;
     }
   }
-
   // logger.log(moduleName);
   // exit;
   if (input.indexOf('@exports') !== -1) {
     // get the module name given there...
     var modChunk = input.split('@exports')[1];
     modChunk = modChunk.split('\n')[0].trim();
-
     moduleName = 'module:' + modChunk;
     logger.log('Infer module name from @exports definition.');
   } else if (input.indexOf('@module') !== -1) {
     // get the module name given there...
     var modChunk = input.split('@module')[1];
     modChunk = modChunk.split('\n')[0].trim();
-
     moduleName = 'module:' + modChunk;
     logger.log('Infer module name from @module definition.');
   } else {
@@ -2693,7 +2662,6 @@ function addMissingComments(walkerObj, errors) {
       logger.log('Infer module name from file or AMD definition.');
     }
   }
-
   walkerObj.moduleName = moduleName;
   // logger.log('USE THIS AS THE MODULE NAME??? ' + moduleName);
   // logger.log('OR, USE THIS AS THE MODULE NAME??? module:' +
@@ -2701,19 +2669,15 @@ function addMissingComments(walkerObj, errors) {
   walkerObj.moduleName = walkerObj.mappedModuleName;
   // logger.log(walkerObj.moduleName);
   // exit
-
   if (walkerObj.NG) {
     moduleName = 'module:' + walkerObj.ngModule;
   }
-
   var hasLends = getCommentWith(input, ast.comments, '@lends');
   if (hasLends != null && incompleteLends == null) {
-
     // { type: 'Block',
     // value: '* @lends module:mvc/mav ',
     // range: [ 426, 454 ],
     // commentBody: '/** @lends module:mvc/mav */' }
-
     if (hasLends.value.indexOf('module:') !== -1) {
       if (hasLends.value.indexOf('~') === -1) {
         logger.warn('@lends used with a Module but not with a Class.');
@@ -2721,11 +2685,8 @@ function addMissingComments(walkerObj, errors) {
         incompleteLends = hasLends;
       }
     }
-
   }
-
   // logger.log(ast.comments);
-
   // TODO: patch the @exports or @module @requires tags and re-parse the
   // source!!!
   var nodeWithRequiresBlock = null;
@@ -2733,7 +2694,6 @@ function addMissingComments(walkerObj, errors) {
     console.log('Scanning the @requires tag to see if it matches inline require() invocations.');
     var hasModule = getCommentWith(input, ast.comments, '@module');
     var hasExports = getCommentWith(input, ast.comments, '@exports');
-
     if (hasExports != null) {
       logger.log('Found @exports.');
       nodeWithRequiresBlock = hasExports;
@@ -2741,31 +2701,25 @@ function addMissingComments(walkerObj, errors) {
       logger.log('Did not find @exports but found @module.');
       nodeWithRequiresBlock = hasModule;
     }
-
     if (nodeWithRequiresBlock != null) {
       //           var doclet = parseDoclet(walkerObj,
       //             nodeWithRequiresBlock.commentBody,
       //            false, '', 0, null);
-      //           
+      //
       //           logger.log(doclet);
-
       var statusCheck = {
-          merge : false
+        merge: false
       };
       var newComment = generateComment(null, ast, walkerObj, input, nodeWithRequiresBlock, statusCheck);
-
       var oldComment = nodeWithRequiresBlock.commentBody;
       //logger.log("ORIGINAL: \n", oldComment);
       //logger.log("NEW: \n", newComment);
-
       // logger.warn(walkerObj.source);
-
       // logger.warn("AST comment node we need to edit:");
       // logger.warn(nodeWithRequiresBlock);
       // logger.warn("Replace with new doclet:");
       // logger.warn(newComment);
       // logger.warn(walkerObj.results.amdProc.requires);
-
       if (statusCheck.merge) {
         //logger.warn("AST comment node we need to edit:");
         //logger.warn(nodeWithRequiresBlock);
@@ -2780,19 +2734,14 @@ function addMissingComments(walkerObj, errors) {
         // Reboot!
         logger.log('>>>>> Need to rewrite requires on ' + walkerObj.name + '.');
         walkerObj.checkForRequiresMismatch = false;
-
         return addMissingComments(walkerObj, errors);
-
       } else {
         logger.log('No need to rewrite requires on ' + walkerObj.name + '.');
       }
-
     }
   }
-
   // writeFile("dump.json", JSON.stringify(ast, null, 2));
   var moduleAtTop = input.indexOf('@exports') === -1;
-
   var defineModuleInTopOfFile = moduleAtTop;
   var newFile = '';
   var cursor = 0;
@@ -2801,15 +2750,12 @@ function addMissingComments(walkerObj, errors) {
   var expressionFunctions = dumpNamedFunctions(walkerObj, functionExpressions, ast);
   var allMethods = dumpNamedFunctions(walkerObj, functionDeclarations, ast, expressionFunctions);
   var methods = allMethods.methods;
-
   var varExpressions = getNodesByType(ast, 'VariableDeclaration');
-
   var varExpressionDeclarations = dumpNamedVariables(walkerObj, varExpressions, ast);
   //console.log('dumpNamedVariables', varExpressionDeclarations);
-
   // // logger.warn(JSON.stringify(methods, null, 2));
   var methodArray = [];
-  for ( var m in methods) {
+  for (var m in methods) {
     if (methods.hasOwnProperty(m)) {
       var method = methods[m];
       method.name = m;
@@ -2825,7 +2771,6 @@ function addMissingComments(walkerObj, errors) {
     }
     return 0;
   });
-
   varExpressionDeclarations = varExpressionDeclarations.sort(function compare(a, b) {
     if (a.range[0] < b.range[0]) {
       return -1;
@@ -2834,7 +2779,6 @@ function addMissingComments(walkerObj, errors) {
     }
     return 0;
   });
-
   // todo: replace code below
   // logger.log(JSON.stringify(methodArray, null, 2));
   var lines = input.split('\n');
@@ -2843,7 +2787,6 @@ function addMissingComments(walkerObj, errors) {
   var newFileLines = [];
   var rewriteLines = true;
   // logger.warn(input);
-
   for (var lineIndex = 0; lineIndex < lines.length; lineIndex++) {
     var line = lines[lineIndex];
     // logger.warn(lineIndex + ' --> ' + line);
@@ -2885,33 +2828,30 @@ function addMissingComments(walkerObj, errors) {
         newFileLines.push(line);
       }
       if (variable) {
-        console.log('Wrote this to comment a variable: \n',  newComment);
+        console.log('Wrote this to comment a variable: \n', newComment);
       }
     } else {
       newFileLines.push(line);
     }
-
   }
-
   newFile = newFileLines.join('\n');
-
   // logger.warn(newFile);
   newFile = beautify(newFile, {
-    'indent_size' : 2,
-    'indent_char' : ' ',
-    'indent_level' : 0,
-    'indent_with_tabs' : false,
-    'preserve_newlines' : true,
-    'max_preserve_newlines' : 1,
-    'jslint_happy' : true,
-    'brace_style' : 'collapse',
-    'keep_array_indentation' : false,
-    'keep_function_indentation' : false,
-    'space_before_conditional' : true,
-    'break_chained_methods' : false,
-    'eval_code' : false,
-    'unescape_strings' : false,
-    'wrap_line_length' : 200
+    'indent_size': 2,
+    'indent_char': ' ',
+    'indent_level': 0,
+    'indent_with_tabs': false,
+    'preserve_newlines': true,
+    'max_preserve_newlines': 1,
+    'jslint_happy': true,
+    'brace_style': 'collapse',
+    'keep_array_indentation': false,
+    'keep_function_indentation': false,
+    'space_before_conditional': true,
+    'break_chained_methods': false,
+    'eval_code': false,
+    'unescape_strings': false,
+    'wrap_line_length': 200
   });
   if (!walkerObj.preprocessed) {
     logger.warn("checking... re-written code");
@@ -2919,16 +2859,14 @@ function addMissingComments(walkerObj, errors) {
     walkerObj.preprocessed = true;
     try {
       ast = _esprima.parse(walkerObj.source, {
-        comment : true,
-        tolerant : true,
-        range : true,
-        raw : true,
-        tokens : true
+        comment: true,
+        tolerant: true,
+        range: true,
+        raw: true,
+        tokens: true
       });
     } catch (esError) {
-
       writeFile(walkerObj.processedFilePath, walkerObj.source);
-
       reportError('ESPRIMA ERROR 2nd time parse in addMissingComments', esError, errors, walkerObj);
       ex();
       return 'ERROR';
@@ -2946,7 +2884,6 @@ function addMissingComments(walkerObj, errors) {
     logger.warn('SKIPPING FILE ' + walkerObj.name + ' because it\'s got @typedef');
     walkerObj.skip = true;
   }
-
   var outputArray = [];
   // TODO: build a mockup of jsDoccer data.
   var builtPath = walkerObj.folderPath + _path.sep + walkerObj.fileName;
@@ -3009,27 +2946,24 @@ function addMissingComments(walkerObj, errors) {
         description = preamble + '\n' + description;
       }
     }
-
     // logger.warn(docletNode.tags);
     var doclet = realMethod.jsDoc != null ? realMethod.jsDoc : '';
-
     wrappedMethods.push({
-      "name" : realMethod.name,
-      "visibility" : visibility,
-      "static" : staticScope,
-      "lineNumber" : realMethod.lineNumber,
-      "memberOf" : realMethod.memberOf,
-      "doclet" : doclet,
-      "args" : realMethod.params,
-      "description" : description,
+      "name": realMethod.name,
+      "visibility": visibility,
+      "static": staticScope,
+      "lineNumber": realMethod.lineNumber,
+      "memberOf": realMethod.memberOf,
+      "doclet": doclet,
+      "args": realMethod.params,
+      "description": description,
       // "preamble" : preamble,
-      "return" : realMethod.returnType,
-      "classDeclarationFlag" : realMethod.ctor,
-      "line" : realMethod.line,
-      'originalJsDocDescription' : originalJsDocDescription
+      "return": realMethod.returnType,
+      "classDeclarationFlag": realMethod.ctor,
+      "line": realMethod.line,
+      'originalJsDocDescription': originalJsDocDescription
     });
   }
-
   if (incompleteLends != null && incompleteLends.possibleClassName != null) {
     var lendsPath = incompleteLends.value.trim();
     if (lendsPath.charAt(lendsPath.length - 1) === '#') {
@@ -3040,30 +2974,23 @@ function addMissingComments(walkerObj, errors) {
     } else {
       lendsPath += '~' + incompleteLends.possibleClassName;
     }
-
     // always add this for classes when using @lends
     lendsPath += '#';
-
     // logger.warn(incompleteLends);
-
     // incompleteLends.value.trim() + '~' +
     // incompleteLends.possibleClassName
     logger.warn('Added class to @lends: ' + lendsPath);
     newFile = newFile.split(incompleteLends.value).join(lendsPath);
     incompleteLends = null;
   }
-
   if (spliceInlineConstructor != null) {
     var ctorName = spliceInlineConstructor.name;
     // add module
-
     var ctorLine = spliceInlineConstructor.line;
     if (ctorLine.indexOf('(') !== -1) {
       ctorLine = ctorLine.split('(')[0];
     }
-
     // logger.warn("SPLICE IN CONSTRUCTOR TAG for " + ctorName);
-
     if (newFile.indexOf(ctorLine) !== -1) {
       var where = ctorLine.indexOf(':');
       var fixedCtorLine = ctorLine.substring(0, where + 1);
@@ -3074,19 +3001,15 @@ function addMissingComments(walkerObj, errors) {
       if (newFile.indexOf(ctorSimple) !== -1) {
         newFile = newFile.split(ctorSimple).join('@fixme: do not use the constructor tag unless it precedes directly a constructor function');
       }
-
       // newFile = newFile.split(ctorLine).join(fixedCtorLine);
       // logger.warn(newFile);
-
     } else {
       logger.log("SPLICE IN CONSTRUCTOR TAG for " + ctorName);
       logger.log('COULD NOT FIND ' + ctorLine);
     }
     spliceInlineConstructor = null;
-
   }
   var ngClassName = null;
-
   if (newFile.indexOf('@module') === -1) {
     var inlineDeps = getInlineRequires(walkerObj);
     walkerObj.inlineDeps = inlineDeps;
@@ -3108,8 +3031,7 @@ function addMissingComments(walkerObj, errors) {
     } else if (walkerObj.NODEJS) {
       //
       //walkerObj.NODEJS = false;
-
-      nodeModName = (walkerObj.moduleName);
+      var nodeModName = (walkerObj.moduleName);
       var nodeHeader = '/**\n * ';
       nodeHeader += '@module ' + nodeModName + '\n *';
       if (walkerObj.NODE_EXPORTS) {
@@ -3127,32 +3049,28 @@ function addMissingComments(walkerObj, errors) {
       newFile = nodeHeader + newFile;
       // console.warn('Insert module header: ', nodeHeader);
     } else if (walkerObj.results.amdProc.AMD && YUIDOC_MODE) {
-      
-//      { requires: [ 'logger', 'jquery', 'underscore', 'backbone' ],
-//        moduleName: 'test_functions',
-//        AMD: true,
-//        webPath: '',
-//        convertedName: 'test_functions',
-//        min: false,
-//        main: 0,
-//        'uses_$': false,
-//        uses_Y: false,
-//        uses_alert: false,
-//        strict: false }
-      
-      
+      //      { requires: [ 'logger', 'jquery', 'underscore', 'backbone' ],
+      //        moduleName: 'test_functions',
+      //        AMD: true,
+      //        webPath: '',
+      //        convertedName: 'test_functions',
+      //        min: false,
+      //        main: 0,
+      //        'uses_$': false,
+      //        uses_Y: false,
+      //        uses_alert: false,
+      //        strict: false }
       //console.log("AMD??????");
       //console.log(walkerObj.results.amdProc);
       //ddd();
       //
       //walkerObj.NODEJS = false;
-
-      nodeModName = (walkerObj.moduleName);
+      var nodeModName = (walkerObj.moduleName);
       var nodeHeader = '/**\n * ';
       nodeHeader += '@module ' + nodeModName + '\n *';
-//      if (walkerObj.NODE_EXPORTS) {
-//        nodeHeader += ' @exports ' + walkerObj.NODE_EXPORTS + '\n *';
-//      }
+      //      if (walkerObj.NODE_EXPORTS) {
+      //        nodeHeader += ' @exports ' + walkerObj.NODE_EXPORTS + '\n *';
+      //      }
       // TODO: scrape deps like a normal AMD module
       var ngDeps = walkerObj.results.amdProc.requires;
       for (var ngd = 0; ngd < ngDeps.length; ngd++) {
@@ -3167,37 +3085,34 @@ function addMissingComments(walkerObj, errors) {
     } else {
       console.warn('NOT A MODULE? ', walkerObj.results.amdProc.moduleName);
     }
-
     //TODO: include correct jsDoc metadata for each constructor
-
   }
-
   var jsDoccerBlob = {
-      "lines" : lines.length,
-      "requires" : [],
-      "className" : "n/a",
-      "packagePath" : "",
-      "directoryPath" : dir,
-      "uses_Y" : false,
-      "no_lib" : true,
-      "inferencedClassName" : (ngClassName ? ngClassName : "n/a"),
-      "uses_$" : false,
-      "chars" : input.length,
-      "uses_YUI" : false,
-      "uses_NG" : walkerObj.NG,
-      "fields" : [],
-      "moduleName" : _path.dirname(walkerObj.fileName) + '/' + fileNameMinusExt,
-      "uses_console_log" : false,
-      "uses_backbone" : false,
-      "classes" : allMethods.classes,
-      "methods" : wrappedMethods,
-      "is_module" : false,
-      "uses_alert" : false,
-      "uses_y_log" : false,
-      "requiresRaw" : [],
-      "basePath" : basePath,
-      "fileName" : fileNameOnly,
-      "strict" : false
+    "lines": lines.length,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": dir,
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": (ngClassName ? ngClassName : "n/a"),
+    "uses_$": false,
+    "chars": input.length,
+    "uses_YUI": false,
+    "uses_NG": walkerObj.NG,
+    "fields": [],
+    "moduleName": _path.dirname(walkerObj.fileName) + '/' + fileNameMinusExt,
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": allMethods.classes,
+    "methods": wrappedMethods,
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": basePath,
+    "fileName": fileNameOnly,
+    "strict": false
   };
   outputArray.push(JSON.stringify(jsDoccerBlob, null, 2));
   outputArray.push(newFile);
@@ -3212,7 +3127,7 @@ function addMissingComments(walkerObj, errors) {
  * This method scans the raw list of esprima comments. Note: some comments
  * should be ignored, so unless we use the same skip test everywhere, the
  * comments offsets could be wrong.
- * 
+ *
  * @param methodArray
  * @param lineNumber
  * @param ast
@@ -3234,15 +3149,11 @@ function getMethodOnLine(methodArray, lineNumber, ast, input) {
         // logger.log('SKIPPING LINE COMMENT');
         continue;
       }
-
       if (lineNumber === comment.lineNumber) {
-
         // @WARNING this is only true if the method is on the next
         // non-comment/non-whitespace line after this comment!!!
-
         // logger.log("Found ORIGINAL comment on line " + lineNumber
         // + ". " + method.name);
-
         method.commentBody = commentBody;
         method.oldComment = comment;
         // logger.log(method);
@@ -3260,10 +3171,9 @@ function getMethodOnLine(methodArray, lineNumber, ast, input) {
   // logger.log("Could not find a method on line " + lineNumber + ".");
   return null;
 }
-
 /**
  * Combine physical/logical requires so doclet will print with all.
- * 
+ *
  * @param doclet
  */
 function mergeRequires(doclet) {
@@ -3271,32 +3181,24 @@ function mergeRequires(doclet) {
   // logger.log(doclet);
   var needToMerge = false;
   var allRequires = searchTags(doclet, 'requires');
-
   if (allRequires == null) {
     allRequires = [];
   }
   // logger.log(allRequires);
-
   var requiresList = doclet.requiresList;
   if (requiresList == null) {
     requiresList = [];
   }
-
   // logger.log(requiresList);
-
   var diffRequires = getValuesNotInTags(allRequires, requiresList);
-
   if (diffRequires.length > 0) {
-
     logger.warn(diffRequires);
-
     logger.warn('These require modules were not included: ' + diffRequires.toString());
     // // put any items in requiresList after allRequires if they are not
     // already
     // listed
     var line = 1;
     var lastLine = 1;
-
     if (allRequires.length > 0) {
       var lastTag = allRequires[allRequires.length - 1];
       // logger.log("LAST TAG:");
@@ -3305,15 +3207,14 @@ function mergeRequires(doclet) {
       lastLine = lastTag.lastLine + 1;
       lastTag.text = lastTag.text.trim();
     }
-
     for (var i = 0; i < diffRequires.length; i++) {
       var diffRequire = diffRequires[i];
       var newTag = {
-          tag : 'requires',
-          line : line,
-          lastLine : lastLine,
-          textStartsOnSameLine : true,
-          text : diffRequire
+        tag: 'requires',
+        line: line,
+        lastLine: lastLine,
+        textStartsOnSameLine: true,
+        text: diffRequire
       };
       line++;
       lastLine++;
@@ -3324,9 +3225,8 @@ function mergeRequires(doclet) {
   }
   return needToMerge;
 }
-
 /**
- * 
+ *
  * @param tagList
  * @param valueList
  * @returns {Array}
@@ -3341,7 +3241,6 @@ function getValuesNotInTags(tagList, valueList) {
     if (leaf.indexOf('/') !== -1) {
       leaf = leaf.split('/').pop();
     }
-
     if (textValues.join(' ').indexOf(leaf) === -1) {
       logger.log("ADDING new REQUIRE: ", value);
       output.push(value);
@@ -3349,9 +3248,8 @@ function getValuesNotInTags(tagList, valueList) {
   }
   return output;
 }
-
 /**
- * 
+ *
  * @param tagList
  * @returns {Array}
  */
@@ -3362,21 +3260,20 @@ function getTextFromTags(tagList) {
   }
   return output;
 }
-
 /**
- * 
+ *
  * @param doclet
  * @param tagName
  * @returns {___anonymous102869_102874}
  */
-function searchAndDestroy (doclet, tagName){
-  if (doclet && doclet.tags){
+function searchAndDestroy(doclet, tagName) {
+  if (doclet && doclet.tags) {
     var revised = [];
-    for (var t = 0; t<doclet.tags.length; t++){
+    for (var t = 0; t < doclet.tags.length; t++) {
       var tag = doclet.tags[t];
-      if (tag.tag !== tagName){
+      if (tag.tag !== tagName) {
         revised.push(tag);
-      }else{
+      } else {
         console.log('searchAndDestroy deleted tag ', tagName);
       }
     }
@@ -3384,10 +3281,9 @@ function searchAndDestroy (doclet, tagName){
   }
   return doclet;
 }
-
 /**
  * Generate a new comment, or fix an existing one.
- * 
+ *
  * @param functionWrapper
  * @param ast
  * @param walkerObj
@@ -3402,12 +3298,11 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
       kind = functionWrapper.kind;
     }
   }
-
   var funkyName = '';
   var doclet = {
-      params : [],
-      returnValue : '',
-      tags: []
+    params: [],
+    returnValue: '',
+    tags: []
   };
   var tags = [];
   var oldComment = null;
@@ -3416,6 +3311,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
   }
   statusCheck.merge = false;
   if (functionWrapper != null) {
+    // console.log(functionWrapper);
     funkyName = decamelize(functionWrapper.name);
     funkyName = funkyName.split('_');
     funkyName[0] = capitalize(funkyName[0]);
@@ -3434,7 +3330,6 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
       funkyName = '';
       console.log("funkyName 1: " + funkyName);
     }
-    
     console.log("funkyName: " + funkyName);
     if (functionWrapper.comment !== -1) {
       oldComment = ast.comments[functionWrapper.comment];
@@ -3452,126 +3347,102 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     commentText = commentBodyOpt.commentBody;
     functionWrapper = {};
     doclet = parseDoclet(walkerObj, commentText, false, '', 0, functionWrapper);
-    // logger.log(doclet);
     if (mergeRequires(doclet)) {
-
       console.warn("Requires list needs to be re-printed. Start parse over now.");
       // logger.log(doclet);
       statusCheck.merge = true;
     }
-
   }
-
   // // logger.log(funkyName + ' << ' + functionWrapper.name);
-
   if (doclet != null && doclet.tags) {
     //console.log('DOCLET', doclet);
     tags = doclet.tags;
     var descText = '';
-
     if (kind !== '') {
       descText = funkyName;
       if (kind === 'const') {
         kind = 'constant';
-      }
-      else if (kind === 'let' || kind === 'var') {
-
-
-        if (functionWrapper && functionWrapper.type){
+      } else if (kind === 'let' || kind === 'var') {
+        if (functionWrapper && functionWrapper.type) {
           kind = 'type';
           descText = '{' + functionWrapper.type + '}';
-        }
-        else{
+        } else {
           kind = '';
         }
       }
       if (kind !== '') {
         if (!searchTags(doclet, kind)) {
           var pseudoTag = {
-              "tag" : kind,
-              "line" : 0,
-              "lastLine" : -1,
-              "textStartsOnSameLine" : true,
-              "text" : descText
+            "tag": kind,
+            "line": 0,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": descText
           };
           console.log('ADDING TAG ', pseudoTag);
           tags.push(pseudoTag);
-
         }
       }
     }
     var ft = '';
-    if (doclet.freeText != null){
+    if (doclet.freeText != null) {
       ft = doclet.freeText;
-      if (ft.indexOf(funkyName) === -1){
+      if (ft.indexOf(funkyName) === -1) {
         doclet.freeText = funkyName + '. ' + ft;
       }
-    }
-    else{
+    } else {
       var commentContext = 'normal';
-      if (functionWrapper.line.indexOf('function') !== -1){
+      if (functionWrapper.line.indexOf('function') !== -1) {
         commentContext = 'function';
-        if (functionWrapper.name.indexOf('is') === 0){
+        if (functionWrapper.name.indexOf('is') === 0) {
           doclet.freeText = 'Returns true if ' + decapitalize(funkyName) + '.';
-          if (functionWrapper.todos && functionWrapper.todos.RETURNWHAT){
+          if (functionWrapper.todos && functionWrapper.todos.RETURNWHAT) {
             delete functionWrapper.todos.RETURNWHAT;
           }
           functionWrapper.returnType = 'boolean';
         }
-      }
-      else if (functionWrapper.line.indexOf('for (') !== -1){
+      } else if (functionWrapper.line.indexOf('for (') !== -1) {
         commentContext = 'loop';
-        
         doclet = searchAndDestroy(doclet, 'type');
         functionWrapper.kind = '';
         functionWrapper.type = '';
         //console.log('>>>>>>>>>>LOOP intializer ' + JSON.stringify(functionWrapper, null, 2), JSON.stringify(doclet, null, 2));
         //console.log(funkyName);
-      }
-      else{
+      } else {
         doclet.freeText = 'The ' + decapitalize(funkyName) + '.';
       }
       //logger.log('>>>>>>>>>>generateComment doclet with no freetext ' + JSON.stringify(functionWrapper, null, 2));
-      
     }
-
     //logger.log('>>>>>>>>>>generateComment  doclet ' + JSON.stringify(doclet, null, 2));
-  }
-  else{
+  } else {
     console.log('NO DOCLET TAGS', doclet);
   }
-
   var hasConstructsTag = null;
   var hasConstructorTag = null;
   var hasLendsTag = null;
-
   // TODO: Rewrite this to dump the tags in the original order they were
   // declared.
   var commentBlock = [];
   commentBlock.push("/**");
   if (doclet != null) {
-
     hasConstructsTag = searchTags(doclet, 'constructs');
     hasConstructorTag = searchTags(doclet, 'constructor');
     hasLendsTag = searchTags(doclet, 'lends');
     //console.log(doclet, functionWrapper);
-    if (functionWrapper.kind == null){
-      if (YUIDOC_MODE && !hasConstructsTag && !hasConstructorTag && !hasLendsTag && !functionWrapper.ctor){
+    if (functionWrapper.kind == null) {
+      if (YUIDOC_MODE && !hasConstructsTag && !hasConstructorTag && !hasLendsTag && !functionWrapper.ctor) {
         //console.log(doclet, functionWrapper);
         //zzz();
         commentBlock.push(' * @method ' + functionWrapper.name);
-        if (functionWrapper.memberOf){
+        if (functionWrapper.memberOf) {
           commentBlock.push(' * @memberOf ' + functionWrapper.memberOf);
         }
       }
     }
-    
-
     // if (hasConstructorTag) {
     // logger.log('hasConstructorTag: ' +
     // JSON.stringify(hasConstructorTag));
     // }
-
     if (doclet.freeText && doclet.freeText != '') {
       // logger.log(doclet.freeText);
       // commentBlock.push(' * ' + doclet.freeText);
@@ -3579,20 +3450,15 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
       freeText = addStarLines(freeText, {});
       commentBlock.push(freeText);
     }
-
     // this loop skips over tags of type @return and @param... they get done
     // later
     for (var tIndex = 0; tIndex < tags.length; tIndex++) {
       var newTag = tags[tIndex];
       var t = '@' + newTag.tag;
-
       if (t !== '@return' && t !== '@param') {
         var tag = doclet[t];
-
         if (hasConstructsTag === newTag) {
-
           var text = hasConstructsTag.text.trim();
-
           if (text.indexOf(functionWrapper.name) === -1) {
             console.warn('>>>>>>>>>> @constructs pathname lacks class? ' + text + '~' + functionWrapper.name);
             hasConstructsTag.text = text + '~' + functionWrapper.name;
@@ -3601,10 +3467,8 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
             }
           }
         }
-
         // logger.log(tag);
         if (typeof tag === 'object') {
-
           // {
           // tagName: 'return',
           // type: '{String}',
@@ -3615,7 +3479,6 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
           // logger.log(tag);
           commentBlock.push(' * ' + tag.line);
         } else {
-
           // construct doclet tag
           // logger.log('JUST TEXT >>> ' +
           // JSON.stringify(newTag));
@@ -3630,14 +3493,12 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
               newTag.text = fixModuleNameInText(textOfTag, walkerObj);
               //logger.log('...TO:  ' + newTag.text);
             }
-
             newComment = ' * ' + t + ' ' + addStarLines(newTag.text, newTag);
             commentBlock.push(newComment);
           } else {
             newComment = ' * ' + t;
             commentBlock.push(newComment);
           }
-
         }
       }
       // }
@@ -3645,14 +3506,13 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     }
   } else {
     doclet = {
-        params : [],
-        returnValue : ''
+      params: [],
+      returnValue: ''
     };
     logger.warn('Non-tag lines: ' + funkyName);
     if (funkyName.trim().length > 0) {
       commentBlock.push(' * ' + funkyName + '.');
     }
-
   }
   var params = functionWrapper.params;
   if (params == null) {
@@ -3663,7 +3523,6 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     returnValue = '';
   }
   var ctor = functionWrapper.ctor;
-
   if (ctor && (incompleteLends != null)) {
     if (incompleteLends.possibleClassName == null) {
       console.warn('>>>>>>>>>> Guess: does the @lends tag point to this class? ' + functionWrapper.name);
@@ -3672,10 +3531,8 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
   }
   var moduleName = walkerObj.mappedModuleName;
   if (ctor && hasConstructorTag == null && hasConstructsTag == null) {
-
     // line: 'constructor: function ControllerRegistry(){',
     // name: 'ControllerRegistry'
-
     if (incompleteLends != null && incompleteLends.possibleClassName === functionWrapper.name) {
       var justPath = incompleteLends.value;
       if (justPath.indexOf('module:') !== -1) {
@@ -3687,22 +3544,16 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
           justPath += '~' + functionWrapper.name;
         }
         justPath = 'module:' + justPath;
-
         incompleteLends.fullClassName = justPath;
-
         // var prefix = incompleteLends.value.split('module:')[0];
         // incompleteLends.value = prefix + justPath;
         logger.log("!!! Add full path to constructor? " + incompleteLends.fullClassName);
       }
-
     }
-
     console.warn('Constructor FOUND, and we have not already declared it in @constructor or @constructs.');
-
     if (functionWrapper.line.indexOf('constructor: function') !== -1) {
       console.warn("Constructor, but it's to the RIGHT of \"constructor:\"");
       // logger.log(' "' + functionWrapper.line + '"');
-
       if (incompleteLends != null && incompleteLends.fullClassName != null) {
         if (walkerObj.namedConstructors[incompleteLends.fullClassName] == null) {
           functionWrapper.ctorType = '@constructs';
@@ -3718,7 +3569,6 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
       } else {
         // logger.log(walkerObj.results.amdProc.moduleName);
         var constructsMarkup = ' * @constructs ' + moduleName + '~' + functionWrapper.name;
-
         if (walkerObj.namedConstructors[moduleName + '~' + functionWrapper.name] == null) {
           functionWrapper.ctorType = '@constructs';
           walkerObj.namedConstructors[moduleName + '~' + functionWrapper.name] = functionWrapper;
@@ -3730,7 +3580,6 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
           console.warn('Constructor for ' + moduleName + '~' + functionWrapper.name + ' already found, so not adding extra @constructs tag');
         }
       }
-
       spliceInlineConstructor = functionWrapper;
     } else {
       var context = functionWrapper.line;
@@ -3743,33 +3592,26 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
       }
       logger.log('What is left of this "constructor" ? ' + context);
       if (walkerObj.namedConstructors[moduleName + '~' + context] == null) {
-        if (YUIDOC_MODE){
+        if (YUIDOC_MODE) {
           commentBlock.push(' * @class ' + context);
-        }
-        else{
+        } else {
           commentBlock.push(' * @constructor');
         }
-        
         functionWrapper.ctorType = '@constructor';
         walkerObj.namedConstructors[moduleName + '~' + context] = functionWrapper;
       } else {
         logger.log('Constructor for ' + moduleName + '~' + context + ' already found.');
       }
-
     }
-
     // commentBlock.push(' * @constructor');
     // logger.log(functionWrapper);
-
   } else if (ctor && (hasConstructorTag != null || hasConstructsTag != null)) {
     functionWrapper.ctorType = '@constructor';
     walkerObj.namedConstructors[moduleName + '~' + functionWrapper.name] = functionWrapper;
   }
-
   // if (hasConstructorTag != null){
   // logger.log(hasConstructorTag);
   // }
-
   functionWrapper.doclet = doclet;
   // param tags
   if (doclet.params.length > 0) {
@@ -3797,27 +3639,23 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     commentBlock.push(' * ' + doclet['@return'].line.trim());
   } else if (returnValue !== '') {
     if (returnValue !== '?') {
-      if (returnValue.indexOf("{") === -1){
+      if (returnValue.indexOf("{") === -1) {
         commentBlock.push(' * @return {object} ' + returnValue);
-      }
-      else{
+      } else {
         commentBlock.push(' * @return ' + returnValue);
       }
-      
     } else {
       // commentBlock.push(' * @todo Please describe the return type of this method.');
       // commentBlock.push(' * @return {object} ??');
     }
   }
   if (commentBlock.length === 1) {
-    // commentBlock.push(' * @todo Add some jsDoc comments here!');
+    //commentBlock.push(' * @todo Add some jsDoc comments here!');
     return '';
-  }
-  else{
+  } else {
     commentBlock.push(" */");
     return commentBlock.join('\n');
   }
-  
 }
 
 function isAlpha(input) {
@@ -3827,26 +3665,25 @@ function isAlpha(input) {
 function isDigit(input) {
   return (input >= '0' && input <= '9');
 }
-
 module.exports = {
-    'addMissingComments' : addMissingComments
+  'addMissingComments': addMissingComments
 };
 if (false) {
   var testFileName = 'index.js';
   var input = {
-      name : getModuleName(testFileName),
-      source : '',
-      fileName : testFileName,
-      folderPath : 'test-source',
-      camelName : camelize(getModuleName(testFileName)),
-      results : {
-        "amdProc" : {
-          "requires" : [],
-          "moduleName" : testFileName,
-          "AMD" : false,
-          "webPath" : ""
-        }
+    name: getModuleName(testFileName),
+    source: '',
+    fileName: testFileName,
+    folderPath: 'test-source',
+    camelName: camelize(getModuleName(testFileName)),
+    results: {
+      "amdProc": {
+        "requires": [],
+        "moduleName": testFileName,
+        "AMD": false,
+        "webPath": ""
       }
+    }
   };
   var source = readFile(input.folderPath + _path.sep + testFileName);
   input.source = source;
