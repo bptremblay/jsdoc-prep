@@ -83,7 +83,8 @@ function __nextFile() {
   var inPath = nextPath;
 
   sfp.processFile(modulePaths, basePath, inPath, outPath, testPath, docPath,
-    processingChain, function (result) {
+    processingChain,
+    function (result) {
       if (result.corrupted) {
         console.error('HALTED');
         return;
@@ -97,11 +98,9 @@ function __nextFile() {
       delete result.rawSource;
       var resultsPathFile = '';
       if (result.packagePath.length === 0) {
-        resultsPathFile = resultsPath + '/' + result.fileName
-          + '.json';
+        resultsPathFile = resultsPath + '/' + result.fileName + '.json';
       } else {
-        resultsPathFile = resultsPath + '/' + result.packagePath
-          + '/' + result.fileName + '.json';
+        resultsPathFile = resultsPath + '/' + result.packagePath + '/' + result.fileName + '.json';
       }
       var resultsJSON = "{}";
       try {
@@ -119,8 +118,7 @@ function __nextFile() {
         nextFile();
       } else {
         var now = new Date().getTime() - then;
-        console.log('Processed ' + results.length + ' files. Took '
-          + now / 1000 + ' seconds.');
+        console.log('Processed ' + results.length + ' files. Took ' + now / 1000 + ' seconds.');
         if (emptyFiles.length) {
           console.warn('Some script files were EMPTY: \n' + emptyFiles.join('\n'));
         }
@@ -137,8 +135,7 @@ function __nextFile() {
         var resultsJSON = '{}';
         try {
           resultsJSON = JSON.stringify(resultsBlock, null, 2);
-        }
-        catch (stringifyErr) {
+        } catch (stringifyErr) {
           console.warn(stringifyErr);
         }
 
@@ -154,6 +151,86 @@ var queue = [];
 var results = [];
 var then = 0;
 
+/**
+ * Gets the number of characters in an indentation.
+ * @param   {string}   input [[Description]]
+ * @returns {[[Type]]} [[Description]]
+ */
+function getIndent(input) {
+  var temp = input.split('');
+  for (var index = 0; index < temp.length; index++) {
+    var theChar = temp[index];
+    if (theChar !== ' ') {
+      return index;
+    }
+  }
+  return -1;
+}
+
+
+function joinLines(input, a, b) {
+  return input.slice(a, b).join('\n');
+}
+
+
+function spliceLinesBelow(lines, belowHere, a, b) {
+  var result = [];
+  var head = lines.slice(0, belowHere + 1);
+  var ctorChunk = lines.slice(a, b);
+
+  //  var firstHalf = lines.slice(0, a);
+  //  var secondHalf = lines.slice(b);
+  //lines = [].concat(a, b);
+  for (var index = a; index < b; index++) {
+    lines[index] = '';
+  }
+  var tail = lines.slice(belowHere + 1);
+  result = result.concat(head);
+  result = result.concat(ctorChunk);
+  result = result.concat(tail);
+  return result.join('\n');
+}
+
+/**
+ * Safe create file dir.
+ *
+ * @name safeCreateFileDir
+ * @method safeCreateFileDir
+ * @param path
+ */
+function safeCreateFileDir(path) {
+  var dir = _path.dirname(path);
+  if (!_fs.existsSync(dir)) {
+    // // // logger.log("does not exist");
+    _wrench.mkdirSyncRecursive(dir);
+  }
+}
+/**
+ * Safe create dir.
+ *
+ * @name safeCreateDir
+ * @method safeCreateDir
+ * @param dir
+ */
+function safeCreateDir(dir) {
+  if (!_fs.existsSync(dir)) {
+    // // // logger.log("does not exist");
+    _wrench.mkdirSyncRecursive(dir);
+  }
+}
+/**
+ * Write file.
+ *
+ * @name writeFile
+ * @method writeFile
+ * @param filePathName
+ * @param source
+ */
+function writeFile(filePathName, source) {
+  filePathName = _path.normalize(filePathName);
+  safeCreateFileDir(filePathName);
+  _fs.writeFileSync(filePathName, source);
+}
 /**
  * Run.
  *
@@ -211,6 +288,67 @@ function run(options) {
     if (stat.isFile() && path.indexOf('.js') != -1) {
       if (_path.extname(path) === '.js') {
         queue.push(path);
+      }
+    } else if (stat.isFile() && _path.extname(path) === '.coffee') {
+      console.log('>>>>>>>>>>>> FOUND COFFEE');
+      var coffeeCode = sfp.readFile(path);
+      if (coffeeCode.indexOf('#fixed constructor order in class') === -1) {
+        //console.log(coffeeCode);
+        var ctorStart = -1;
+        var ctorIndent = -1;
+        var ctorEnd = -1;
+        var currentIndent = -1;
+        var topOfClass = -1;
+        if (coffeeCode.indexOf('class ') !== -1) {
+          var lines = coffeeCode.split('\n');
+          var lineNumber = 0;
+
+          for (lineNumber = 0; lineNumber < lines.length; lineNumber++) {
+            var line = lines[lineNumber];
+            if (line.trim() && line.trim().charAt(0) === '#') {
+              continue;
+            }
+            currentIndent = getIndent(line);
+            if (line.trim().indexOf('class ') === 0) {
+              console.log('Found Coffee class def: ' + lineNumber);
+              topOfClass = lineNumber;
+            }
+            // console.log(currentIndent);
+            if (ctorStart > -1) {
+
+
+              if (currentIndent === ctorIndent || lineNumber === lines.length - 1) {
+                ctorEnd = lineNumber;
+                console.log('FOUND A CTOR BLOCK: ', ctorStart, ctorEnd);
+              //  console.log(joinLines(lines, ctorStart, ctorEnd));
+                break;
+              }
+            } else if (ctorStart === -1 && line.indexOf('constructor:') !== -1) {
+
+              ctorStart = lineNumber;
+              // get the indent level
+              ctorIndent = getIndent(line);
+              console.log('FOUND constructor', ctorStart, ctorIndent);
+
+            }
+
+          }
+          if (ctorStart > -1 && ctorEnd === -1) {
+            if (currentIndent === ctorIndent || lineNumber === lines.length - 1) {
+              ctorEnd = lineNumber;
+              console.log('FOUND A CTOR BLOCK: ', ctorStart, ctorEnd);
+            //  console.log(joinLines(lines, ctorStart, ctorEnd));
+            }
+          }
+          if (ctorStart > -1 && ctorEnd > -1) {
+            console.log('SPLICE NOW');
+            coffeeCode = spliceLinesBelow(lines, topOfClass, ctorStart, ctorEnd);
+            //console.log(coffeeCode);
+            //console.log(path + '.edit.coffee', coffeeCode);
+            coffeeCode = '#fixed constructor order in class\n' + coffeeCode;
+            writeFile(path, coffeeCode);
+          }
+        }
       }
     }
   });

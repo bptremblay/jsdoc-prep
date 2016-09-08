@@ -1,13 +1,16 @@
-var _fs = require('fs');
-var _path = require('path');
-var _wrench = require('wrench');
+var fileSystem = require('fs');
+var pathAPI = require('path');
+var wrenchTool = require('wrench');
 var uid = 0;
 var nodes = [];
-//Doctor the comment. Can cause problems.
+var COMMENT_VARIABLES = true;
+var COMMENT_EVERYTHING = true;
+// Doctor the comment. Can cause problems.
 var FIX_COMMENT_GRAMMAR = false;
-//Try to normalize module names so hand-coded ones match. Can cause problems.
+// Try to normalize module names so hand-coded ones match. Can cause problems.
 var FIX_MODULE_NAMES = false;
 // YUI wants every module, method and class annotated, with a name.
+var FIX_COFFEE = true;
 var YUIDOC_MODE = false;
 var Logger = function () {
   this.log = function (msg) {
@@ -41,16 +44,16 @@ function mapModuleName(mappedModuleName, walkerObj) {
 }
 
 function fixModuleNameInText(text, walkerObj) {
-  //logger.log('Fix reference to module name "' + text + '".');
+  // logger.log('Fix reference to module name "' + text + '".');
   var splitter = text.split('module:');
   splitter.shift();
   var moduleName = splitter.join('module:').trim();
   moduleName = moduleName.split(' ')[0];
-  //var newModuleName = inferModuleName(moduleName, walkerObj);
+  // var newModuleName = inferModuleName(moduleName, walkerObj);
   // logger.log('Fix moduleName: "' + moduleName + '" >>> "' + newModuleName +
   // '".');
   text = 'module:' + mapModuleName(moduleName, walkerObj);
-  //logger.log('fixModuleNameInText Fixed text: "' + text + '".');
+  // logger.log('fixModuleNameInText Fixed text: "' + text + '".');
   return text;
 }
 
@@ -71,13 +74,13 @@ function inferModuleName(walkerObj) {
  * @param filePathName
  */
 function readFile(filePathName) {
-  var _fs = require('fs');
-  var _path = require('path');
+  var fileSystem = require('fs');
+  var pathAPI = require('path');
   var FILE_ENCODING = 'utf8';
-  filePathName = _path.normalize(filePathName);
+  filePathName = pathAPI.normalize(filePathName);
   var source = '';
   try {
-    source = _fs.readFileSync(filePathName, FILE_ENCODING);
+    source = fileSystem.readFileSync(filePathName, FILE_ENCODING);
   } catch (er) {
     // logger.error(er.message);
     source = '';
@@ -312,10 +315,10 @@ function safeCreateFileDir(path) {
   if (!WRITE_ENABLED) {
     return;
   }
-  var dir = _path.dirname(path);
-  if (!_fs.existsSync(dir)) {
+  var dir = pathAPI.dirname(path);
+  if (!fileSystem.existsSync(dir)) {
     // // // logger.log("does not exist");
-    _wrench.mkdirSyncRecursive(dir);
+    wrenchTool.mkdirSyncRecursive(dir);
   }
 }
 /**
@@ -329,9 +332,9 @@ function safeCreateDir(dir) {
   if (!WRITE_ENABLED) {
     return;
   }
-  if (!_fs.existsSync(dir)) {
+  if (!fileSystem.existsSync(dir)) {
     // // // logger.log("does not exist");
-    _wrench.mkdirSyncRecursive(dir);
+    wrenchTool.mkdirSyncRecursive(dir);
   }
 }
 /**
@@ -385,10 +388,10 @@ function stripOneLineComments(input) {
  * @param path
  */
 function safeCreateFileDir(path) {
-  var dir = _path.dirname(path);
-  if (!_fs.existsSync(dir)) {
+  var dir = pathAPI.dirname(path);
+  if (!fileSystem.existsSync(dir)) {
     // // // logger.log("does not exist");
-    _wrench.mkdirSyncRecursive(dir);
+    wrenchTool.mkdirSyncRecursive(dir);
   }
 }
 /**
@@ -399,9 +402,9 @@ function safeCreateFileDir(path) {
  * @param dir
  */
 function safeCreateDir(dir) {
-  if (!_fs.existsSync(dir)) {
+  if (!fileSystem.existsSync(dir)) {
     // // // logger.log("does not exist");
-    _wrench.mkdirSyncRecursive(dir);
+    wrenchTool.mkdirSyncRecursive(dir);
   }
 }
 /**
@@ -413,9 +416,9 @@ function safeCreateDir(dir) {
  * @param source
  */
 function writeFile(filePathName, source) {
-  filePathName = _path.normalize(filePathName);
+  filePathName = pathAPI.normalize(filePathName);
   safeCreateFileDir(filePathName);
-  _fs.writeFileSync(filePathName, source);
+  fileSystem.writeFileSync(filePathName, source);
 }
 
 function printDoclet(docletData, defineModuleInTopOfFile) {
@@ -550,8 +553,10 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
   var buffer = [];
   var hasAttributes = false;
   for (var a in docletData) {
-    if (a.charAt(0) === '@') {
-      hasAttributes = true;
+    if (docletData.hasOwnProperty(a)) {
+      if (a.charAt(0) === '@') {
+        hasAttributes = true;
+      }
     }
   }
   if (!defineModuleInTopOfFile && docletData['@exports'] != null) {
@@ -594,9 +599,9 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
       buffer.push(' * @' + correctNodeName);
       atCount++;
     }
-    if (docletData["@module"] != null) {
-      docletData.moduleName = docletData["@module"];
-      delete docletData["@module"];
+    if (docletData['@module'] != null) {
+      docletData.moduleName = docletData['@module'];
+      delete docletData['@module'];
     }
     if (defineModuleInTopOfFile || YUIDOC_MODE) {
       correctNodeName = 'module';
@@ -614,7 +619,7 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
           atCount++;
         }
       } catch (reqEr) {
-        logger.error("ERROR BUILDING REQUIRES: " + reqEr);
+        logger.error('ERROR BUILDING REQUIRES: ' + reqEr);
       }
     } else if (docletData['@exports'] != null) {
       // merge firstDoclet
@@ -664,7 +669,7 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
         atCount++;
       }
     } catch (reqEr) {
-      logger.error("ERROR BUILDING REQUIRES for @exports: " + reqEr);
+      logger.error('ERROR BUILDING REQUIRES for @exports: ' + reqEr);
     }
   }
   // get params
@@ -727,7 +732,7 @@ function printDoclet(docletData, defineModuleInTopOfFile) {
     docletMarkup = '/**\n' + buffer.join('\n') + '\n */' + '';
   }
   if (docletMarkup.indexOf('@') === -1 && !has_description) {
-    logger.error("!!!!!!!!!!!!!!!!!!!!!!!!! empty doclet");
+    logger.error('!!!!!!!!!!!!!!!!!!!!!!!!! empty doclet');
     // logger.log(JSON.stringify(docletData));
     return '/** ' + '@todo Please add a description.' + ' */' + '';
   }
@@ -831,7 +836,7 @@ function getRequiresTags(input) {
   var amdProcData = input.results.amdProc;
   for (var index = 0; index < amdProcData.requires.length; index++) {
     var moduleName = amdProcData.requires[index];
-    //console.warn(moduleName);
+    // console.warn(moduleName);
     if (typeof moduleName !== 'string') {
       continue;
     }
@@ -851,8 +856,8 @@ function getRequiresTags(input) {
 function getInlineRequires(input) {
   var source = input.source;
   source = stripOneLineComments(stripCComments(source));
-  var noSpaceRequire = source.indexOf("require(");
-  var oneSpaceRequire = source.indexOf("require (");
+  var noSpaceRequire = source.indexOf('require(');
+  var oneSpaceRequire = source.indexOf('require (');
   if (noSpaceRequire === -1 && oneSpaceRequire === -1) {
     return [];
   }
@@ -860,19 +865,19 @@ function getInlineRequires(input) {
   // logger.log('dig for inline requires() in ' + input.name);
   var chunks = [];
   if (noSpaceRequire > -1) {
-    chunks = source.split("require(");
+    chunks = source.split('require(');
     // logger.log(chunks.length);
     for (var index = 1; index < chunks.length; index++) {
       var chunk = chunks[index];
       var trimChunk = chunk.trim();
-      //logger.log(trimChunk);
+      // logger.log(trimChunk);
       var startChar = trimChunk.charAt(0);
-      //logger.log(startChar);
+      // logger.log(startChar);
       var splitter = trimChunk.split(startChar);
       var moduleName = splitter[1].trim();
       // quick fix... TODO: make more robust
       moduleName = moduleName.split('*/').join('');
-      //logger.log(moduleName);
+      // logger.log(moduleName);
       if (startChar === "'" || startChar === '"') {
         output.push(moduleName);
       } else {
@@ -880,14 +885,14 @@ function getInlineRequires(input) {
       }
     }
   } else if (oneSpaceRequire > -1) {
-    chunks = source.split("require (");
+    chunks = source.split('require (');
     // logger.log(chunks.length);
     for (var index = 1; index < chunks.length; index++) {
       var chunk = chunks[index];
       var trimChunk = chunk.trim();
-      //logger.log(trimChunk);
+      // logger.log(trimChunk);
       var startChar = trimChunk.charAt(0);
-      //logger.log(startChar);
+      // logger.log(startChar);
       var splitter = trimChunk.split(startChar);
       var moduleName = splitter[1].trim();
       // quick fix... TODO: make more robust
@@ -1441,7 +1446,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode, chu
   } else if (docletData['@lends'] != null) {
     nodeType = 'LENDS';
   } else if (docletData['@mixes'] != null) {
-    //nodeType = 'MIXES';
+    // nodeType = 'MIXES';
     // logger.log(docletData);
   } else if (docletData['@var'] != null) {
     nodeType = 'VAR';
@@ -1476,7 +1481,7 @@ function walk(node, attr, val, results, parentNode) {
     node.uid = uid++;
   }
   if (node.length != null) {
-    logger.error("Walking an Array!!!");
+    logger.error('Walking an Array!!!');
   }
   if (results == null) {
     results = [];
@@ -1742,7 +1747,7 @@ function getExistingComment(input, obj, ast, wrapper) {
     if (nearComment === -1 && parentNode.parentNode != -1) {
       parentNode = getNodeByUid(parentNode.parentNode);
       if (parentNode == null) {
-        logger.error("getExistingComment fatal error");
+        logger.error('getExistingComment fatal error');
       }
       astNodeType = parentNode.type;
       // logger.log('look for comment in ' + astNodeType);
@@ -1780,7 +1785,7 @@ function getFunctionFullName(input, obj) {
     var range = parentNode.id.range;
     return input.substring(range[0], range[1]);
   }
-  return "";
+  return '';
 }
 
 function dumpParams(params) {
@@ -1890,7 +1895,7 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
             }
           }
         }
-        //if (!walkerObj.NG && !walkerObj.results.amdProc.AMD){
+        // if (!walkerObj.NG && !walkerObj.results.amdProc.AMD){
         // Added for AMD modules where most of the code is in a return block....
         if (returnNode) {
           // logger.log(JSON.stringify(returnNode, null, 2));
@@ -1913,7 +1918,7 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
               // /**@alias
               // module:js/component/myAccounts/depositAccounts*/
               returnBody = 'return /**@alias module:' + packagePath + ' */ ' + textMinusReturn;
-              //logger.warn('returnBody = ' + returnBody);
+              // logger.warn('returnBody = ' + returnBody);
               foundNode = true;
             } else if (returnNode.argument.id) {
               var constructorName = returnNode.argument.id.name;
@@ -1933,29 +1938,29 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
             }
           } else {
             console.warn('Found a return block needing a @lends doclet: ' + walkerObj.moduleName);
-            //logger.log(JSON.stringify(obj, null, 2));
+            // logger.log(JSON.stringify(obj, null, 2));
             if (textMinusReturn.charAt(0) === '{') {
               // logger.log('module "' + packagePath
               // + '" has an object literal for its exports value');
               // /**@alias
               // module:js/component/myAccounts/depositAccounts*/
-              //var line = lineFromOffset(input, rrange[0]);
-              //logger.log(line);
+              // var line = lineFromOffset(input, rrange[0]);
+              // logger.log(line);
               var textBefore = input.substring(0, rrange[0]).trim();
               textBefore = textBefore.split('\n');
               textBefore = textBefore[textBefore.length - 1];
               textBefore = textBefore.split('(')[1];
               textBefore = textBefore.split(',')[0];
               var ngClassName = textBefore.split('"').join('').split("'").join('').trim();
-              //logger.log(ngClassName);
+              // logger.log(ngClassName);
               // TODO: test for other similar structures
               if (walkerObj.NG) {
                 returnBody = 'return /**@lends module:' + packagePath + '~' + capitalize(ngClassName) + '#' + ' */ ' + textMinusReturn;
-                //logger.log('returnBody = ' + returnBody);
+                // logger.log('returnBody = ' + returnBody);
                 foundNode = true;
               }
             }
-            //exit;
+            // exit;
           }
           if (foundNode) {
             walkerObj.rewrittenReturnBody = returnBody;
@@ -1969,7 +1974,7 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
             // logger.log(endOfFile);
             // logger.log(returnBody);
             walkerObj.source = beginningOfFile + returnBody + endOfFile;
-            return "AMD_RETURN_BLOCK";
+            return 'AMD_RETURN_BLOCK';
           }
         }
       }
@@ -2080,10 +2085,10 @@ function dumpNamedVariables(walkerObj, map, ast, output) {
       range: null,
       decamelizedName: ''
     };
-    //console.log('initVal', initVal);
+    // console.log('initVal', initVal);
     if (initVal) {
       if (initVal.type === 'Literal') {
-        //console.log('initVal is Literal');
+        // console.log('initVal is Literal');
         varWrapper.type = typeof (initVal.value);
         // console.log(varWrapper);
       } else if (initVal.type === 'FunctionExpression') {
@@ -2094,7 +2099,7 @@ function dumpNamedVariables(walkerObj, map, ast, output) {
       console.log('var has no init: ', decl);
     }
     if (decl.id !== null) {
-      logger.log("dumpNamedVariables " + decl.id.name);
+      logger.log('dumpNamedVariables ' + decl.id.name);
       varWrapper.name = decl.id.name;
       varWrapper.decamelizedName = capitalize(decamelize(varWrapper.name).split('_').join(' '));
     }
@@ -2102,7 +2107,7 @@ function dumpNamedVariables(walkerObj, map, ast, output) {
       varWrapper.kind = obj.kind;
     }
     varWrapper.range = obj.range;
-    //var varTypeName = varWrapper.kind + 's';
+    // var varTypeName = varWrapper.kind + 's';
     var lineNumber = getLineNumber(input, obj);
     varWrapper.lineNumber = lineNumber;
     varWrapper.line = trim(lines[lineNumber - 1]);
@@ -2112,7 +2117,7 @@ function dumpNamedVariables(walkerObj, map, ast, output) {
       varWrapper.comment = comment;
     }
     output.push(varWrapper);
-    //console.log(varWrapper);
+    // console.log(varWrapper);
   }
   return output;
 }
@@ -2293,8 +2298,8 @@ function lineFromOffset(input, offset) {
     return '';
   }
   input = input.substring(0, offset);
-  //logger.log(input);
-  //exit;
+  // logger.log(input);
+  // exit;
   var lines = input.split('\n');
   var lastLineNumber = lines.length - 1;
   return lines[lastLineNumber];
@@ -2329,22 +2334,22 @@ function prependLineByOffset(input, offset, comment, lendsDoc) {
   if (lineOffset < 0) {
     logger.log('prependLineByOffset: invalid offset');
   }
-  //console.warn('prependLineByOffset: insert comment before line ' + lineOffset);
-  //console.warn(lines[lineOffset+1]);
+  // console.warn('prependLineByOffset: insert comment before line ' + lineOffset);
+  // console.warn(lines[lineOffset+1]);
   if (lendsDoc) {
     var nextLine = lines[lineOffset + 1];
     if (nextLine.indexOf('return') !== -1) {
-      //return /**@lends module:service~TrendService# */ {
-      //returnBody = 'return /**@lends module:' + packagePath + '~' + capitalize(ngClassName) + '#' + ' */ ' + textMinusReturn;
+      // return /**@lends module:service~TrendService# */ {
+      // returnBody = 'return /**@lends module:' + packagePath + '~' + capitalize(ngClassName) + '#' + ' */ ' + textMinusReturn;
       lines[lineOffset + 1] = '  return ' + lendsDoc + ' {';
     } else {
       console.warn('WARNING: prependLineByOffset could not find a return block for @lends!!!!');
     }
   }
-  //console.warn('splicing in comment: ', comment);
+  // console.warn('splicing in comment: ', comment);
   lines.splice(lineOffset, 0, comment);
   input = lines.join('\n');
-  //writeFile('audit.js', input);
+  // writeFile('audit.js', input);
   return input;
 }
 /**
@@ -2356,10 +2361,10 @@ function prependLineByOffset(input, offset, comment, lendsDoc) {
  */
 function commentAngularClasses(input, ngModName, ngBaseClass, packagePath) {
   var originalInput = input;
-  //console.warn('commentAngularClasses ', arguments);
+  // console.warn('commentAngularClasses ', arguments);
   var chunkToSearch = '.' + ngBaseClass + '(';
-  //console.warn('commentAngularClasses: ', chunkToSearch);
-  //var offset = input.indexOf(chunkToSearch);
+  // console.warn('commentAngularClasses: ', chunkToSearch);
+  // var offset = input.indexOf(chunkToSearch);
   var offset = input.indexOf(chunkToSearch);
   if (offset !== -1) {
     console.warn('commentAngularClasses: found', chunkToSearch);
@@ -2375,51 +2380,64 @@ function commentAngularClasses(input, ngModName, ngBaseClass, packagePath) {
     var tempInput = input;
     for (var index = 1; index < allSplits.length; index++) {
       var ngChunkSplit = allSplits[index];
-      //console.warn('CHUNK: ', index, ngChunkSplit);
+      // console.warn('CHUNK: ', index, ngChunkSplit);
       //			var ngChunkSplit = input.split(chunkToSearch)[1];
       ngChunkSplit = ngChunkSplit.split(',')[0].trim();
       if (ngChunkSplit.indexOf('(') === -1) {
         console.warn('CHUNK: ', index, ngChunkSplit);
         ngChunkSplit = ngChunkSplit.split('"').join('').split("'").join('').trim();
-        //console.warn('CHUNK: ', index, ngChunkSplit);
+        // console.warn('CHUNK: ', index, ngChunkSplit);
         var constructorDoc = '/**\n * @class ' + capitalize(ngChunkSplit) + '\n * @extends ' + ngBaseClass + '\n */';
         if (ngBaseClass === 'module') {
           constructorDoc = '/**\n * @module ' + ngChunkSplit + '\n */';
         }
-        //console.warn('CHUNK: ', index, constructorDoc);
+        // console.warn('CHUNK: ', index, constructorDoc);
         var originalChunk = allSplits[index];
-        //console.warn('CHUNK: ', index, originalChunk);
+        // console.warn('CHUNK: ', index, originalChunk);
         var newOffset = tempInput.indexOf(originalChunk);
-        //console.warn('CHUNK: ', index, newOffset);
-        //returnBody = 'return /**@lends module:' + packagePath + '~' + capitalize(ngClassName) + '#' + ' */ ' + textMinusReturn;
+        // console.warn('CHUNK: ', index, newOffset);
+        // returnBody = 'return /**@lends module:' + packagePath + '~' + capitalize(ngClassName) + '#' + ' */ ' + textMinusReturn;
         var lendsDoc = '/** @lends module:' + packagePath + '~' + capitalize(ngChunkSplit) + '# */';
-        //console.warn(lendsDoc);
+        // console.warn(lendsDoc);
         tempInput = prependLineByOffset(tempInput, newOffset, constructorDoc, lendsDoc);
       } else {
         console.warn('commentAngularClasses: ' + ngBaseClass + '() does not conform to constructor pattern.');
         input = originalInput;
         tempInput = originalInput;
       }
-      //return /**@lends module:service~TrendService# */ {
+      // return /**@lends module:service~TrendService# */ {
     }
-    //console.warn(tempInput);
+    // console.warn(tempInput);
     console.warn('WARNING: swapping JS source for comment-stripped version');
     input = tempInput;
   }
-  //writeFile('audit_' + ngBaseClass + '.js', input);
+  // writeFile('audit_' + ngBaseClass + '.js', input);
   return input;
 }
 var incompleteLends = null;
 var spliceInlineConstructor = null;
 
 function deleteFile(filePathName) {
-  filePathName = _path.normalize(filePathName);
+  filePathName = pathAPI.normalize(filePathName);
   var success = false;
   try {
-    _fs.unlinkSync(filePathName);
+    fileSystem.unlinkSync(filePathName);
     success = true;
   } catch (er) {}
   return success;
+}
+
+/**
+ * Return 0-based index of line number for char offset.
+ * @param   {string}   input [[Description]]
+ * @param   {[[Type]]} index [[Description]]
+ * @returns {[[Type]]} [[Description]]
+ */
+function getLineNumberForIndex(input, index) {
+
+  var temp = input.substring(0, index);
+  // console.log('getLineNumberForIndex: ' + index + '\n' + temp);
+  return temp.split('\n').length - 1;
 }
 /**
  *
@@ -2463,12 +2481,16 @@ function addMissingComments(walkerObj, errors) {
   var es = 0;
   var defineCount = 0;
   var firstDefineBlock = null;
+
+
   for (es = 0; es < expressionStatements.length; es++) {
     var oneDefine = expressionStatements[es];
-    if (oneDefine.expression.callee && oneDefine.expression.callee.name === "define") {
+    if (oneDefine.expression.callee && oneDefine.expression.callee.name === 'define') {
       var defBlock = {};
+      defBlock.name = oneDefine.expression.arguments[0].value;
+      defBlock.range = oneDefine.range;
       if (defineCount === 0) {
-        firstDefineBlock = defBlock;
+        firstDefineBlock = oneDefine;
       }
       defineCount++;
       if (defineCount > 1) {
@@ -2477,62 +2499,167 @@ function addMissingComments(walkerObj, errors) {
     }
   }
   if (defineCount > 1) {
-    console.log("I found " + defineCount + " modules in this one file, so we're splitting it up!");
-    //fileName: testFileName,
-    //folderPath: 'test-source',
-    //deleteFile('test-source/' + walkerObj.fileName);
+    console.log('I found ' + defineCount + " modules in this one file, so we're splitting it up!");
+    // fileName: testFileName,
+    // folderPath: 'test-source',
+    // deleteFile('test-source/' + walkerObj.fileName);
     for (es = 0; es < expressionStatements.length; es++) {
       var oneDefine = expressionStatements[es];
-      if (oneDefine.expression.callee && oneDefine.expression.callee.name === "define") {
+      if (oneDefine.expression.callee && oneDefine.expression.callee.name === 'define') {
         var defBlock = {};
         defBlock.name = oneDefine.expression.arguments[0].value;
         defBlock.range = oneDefine.range;
         defineBlocks.push(defBlock);
-        if (defBlock.name && defBlock.name.indexOf("/") === -1) {
+        if (defBlock.name && defBlock.name.indexOf('/') === -1) {
           console.log('writing out module ' + defBlock.name);
           var tempModuleSource = input.substring(defBlock.range[0], defBlock.range[1]);
-          writeFile("test-source/" + defBlock.name + '.js', tempModuleSource);
+          writeFile('test-source/' + defBlock.name + '.js', tempModuleSource);
         } else {
-          console.log("SKIPPING " + defBlock.name);
+          console.log('SKIPPING ' + defBlock.name);
         }
       }
     }
-    return "REDO_FILE_TREE";
+    return 'REDO_FILE_TREE';
   }
-  //var lines = input.split('\n');
-  if (firstDefineBlock) {
-    console.log("THIS IS AMD");
-    if (input.indexOf("// Generated by CoffeeScript") === 0) {
-      console.log("THIS IS MACHINE_GENRATED BY COFFEESCRIPT!!!!");
+  // var lines = input.split('\n');
+  if (firstDefineBlock && FIX_COFFEE) {
+    console.log('THIS IS AMD');
+    if (input.indexOf('// Generated by CoffeeScript') === 0) {
+      console.log('THIS IS MACHINE_GENRATED BY COFFEESCRIPT!!!!');
       // relocate first lines
       var whereDefine = input.indexOf('define(');
       var boilerPlate = input.substring(0, whereDefine - 1);
-      //console.log(boilerPlate);
+      // console.log(boilerPlate);
+      // console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
       var remainder = input.substring(whereDefine);
-      //console.log(remainder);
-      var insideDefine = remainder.split("{")[1];
-      console.log(insideDefine);
+
+      walkerObj.source = remainder;
+      //writeFile('test-source/' + walkerObj.packagePath + '/' + walkerObj.fileName, remainder);
+      //writeFile('test-source/' + walkerObj.fileName + '', remainder);
+
+      // console.log(remainder);
+      // var insideDefine = remainder.split('{')[1];
+      // console.log(insideDefine);
       // remove wrapper around define
-      // remove false re-declaration of classname and it's wrapper
-      return "BYEBYE";
+      // remove false re-declaration of classname and its wrapper
+
+      return addMissingComments(walkerObj, errors);
+    }
+
+    // console.log(firstDefineBlock.expression.arguments[0].body.body);
+    // Immediately-Invoked Function Expression, or IIFE for short.
+    // Look for IIFEs... they obfuscate scope!
+    try {
+      writeFile('ast.json', JSON.stringify(ast, null, 2));
+    } catch (writeJsonErr) {
+      console.warn(writeJsonErr);
+    }
+    var moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
+    var packagePath = walkerObj.path.split('/');
+    packagePath.shift();
+    packagePath = packagePath.join('/');
+    packagePath = packagePath.split('.js')[0];
+
+    if (firstDefineBlock.expression.arguments && firstDefineBlock.expression.arguments[0]) {
+      console.log('.........CHEKCING');
+      var exArgs = firstDefineBlock.expression.arguments[0];
+      if (exArgs.type === 'ArrayExpression') {
+        exArgs = firstDefineBlock.expression.arguments[1];
+      } else if (exArgs.type === 'StringExpression') {
+        exArgs = firstDefineBlock.expression.arguments[2];
+      }
+      //console.log(exArgs);
+      if (exArgs.type === 'FunctionExpression') {
+        console.log('Look at what is inside this AMD callback function.');
+        //console.log(exArgs.body.body[2]);
+        //console.log(JSON.stringify(exArgs.body.body, null, 2));
+
+        // walk through the main body of the root funtion and look for a return that returns a function!
+        var funcBody = exArgs.body.body;
+        var block = null;
+        for (var statement = 0; statement < funcBody.length; statement++) {
+          block = funcBody[statement];
+          if (block.type === 'ReturnStatement') {
+            break;
+          }
+        }
+
+        // a function that immediately returns
+        if (block.type === 'ReturnStatement') {
+          var lines = input.split('\n');
+          console.log('THIS IS AMD WITH AN IIFE!');
+          var iifeToken = 'return (function (';
+          var whereToEdit = input.indexOf(iifeToken);
+
+          if (whereToEdit === -1) {
+
+            iifeToken = ' = (function (';
+            whereToEdit = input.indexOf(iifeToken);
+            // hopefully this is the first instance of this pattern
+
+          }
+
+          if (whereToEdit === -1) {
+            console.log('---->Can\'t find non-annotated pattern. Move along.');
+            // console.log(input);
+          } else {
+            var whichLine = getLineNumberForIndex(input, whereToEdit);
+            //console.log('EDIT HERE ---->' + lines[whichLine]);
+            var editInput = '';
+            var classNameFromModule = capitalize(camelize(walkerObj.results.amdProc.moduleName));
+            var editedLine = lines[whichLine];
+            if (editedLine.indexOf(' = ') !== -1) {
+              var words = editedLine.trim().split(' ');
+              classNameFromModule = words[1];
+              console.log('>>>>>>>>>>>>> Using the REAL class name: ' + classNameFromModule);
+            }
+            var newCode = '/**@lends module:' + packagePath + '~' + classNameFromModule + '#' + ' */';
+            if (whereToEdit === -1 && input.indexOf('@lends module:') === -1) {
+              logger.error('>>>>> COULD NOT FIND IIFE!!!: ' + walkerObj.name + '.');
+              return 'ERROR';
+            }
+            if (input.indexOf('@lends module:') === -1) {
+              //              editInput = input.substring(0, whereToEdit - 1);
+              //              editInput += newCode;
+              //              editInput += input.substring(whereToEdit + (iifeToken.length));
+
+
+              editedLine = editedLine.split('function').join(newCode + ' function');
+
+              lines[whichLine] = editedLine;
+              editInput = lines.join('\n');
+              //console.log(editInput);
+              //eturn '';
+              //writeFile('editInput_1.js', editInput);
+              //editInput += input.substring(whereToEdit + 'return (function ('.length-1);
+
+              //writeFile('editInput_2.js', whereToEdit + 'return (function ('.length-1);
+              walkerObj.source = editInput;
+              //writeFile('editInput.js', editInput);
+              // Reboot!
+              logger.log('>>>>> Need to re-parse an IIFE-wrapped module: ' + walkerObj.name + '.');
+              return addMissingComments(walkerObj, errors);
+            } else {
+              console.log('Looks like the IIFE has been handled. Move along.');
+            }
+          }
+
+        }
+      }
     }
   }
-  var moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
-  var packagePath = walkerObj.path.split('/');
-  packagePath.shift();
-  packagePath = packagePath.join('/');
-  packagePath = packagePath.split('.js')[0];
+
   if (!walkerObj.NG && input.indexOf('angular.module') !== -1) {
     // var leaderBoard = angular.module('leaderBoard', []);
     var ngSplit = input.split('angular.module')[1];
     ngSplit = ngSplit.split(']')[0];
-    //FOUND NG Module!!!  ('widgetModule', ['dataVisualizationTrend', 'leaderBoard', 'scoreCard'
+    // FOUND NG Module!!!  ('widgetModule', ['dataVisualizationTrend', 'leaderBoard', 'scoreCard'
     var ngModName = ngSplit.split(',')[0];
     ngModName = ngModName.split('(')[1].trim();
     var deps = ngSplit.split('[')[1].trim();
     deps = deps.split('\'').join('');
     deps = stripOneLineComments(stripCComments(deps));
-    //console.warn(deps);
+    // console.warn(deps);
     deps = deps.split(',');
     ngModName = ngModName.split('\'').join('');
     for (var d = 0; d < deps.length; d++) {
@@ -2543,7 +2670,7 @@ function addMissingComments(walkerObj, errors) {
     walkerObj.ngModule = ngModName;
     walkerObj.ngDeps = deps;
     console.warn('FOUND NG Module!!! (', ngModName, ')', deps);
-    //dataVisualizationBar.directive('dvBarChart', function () {
+    // dataVisualizationBar.directive('dvBarChart', function () {
     input = commentAngularClasses(input, ngModName, 'module', packagePath);
     input = commentAngularClasses(input, ngModName, 'directive', packagePath);
     input = commentAngularClasses(input, ngModName, 'controller', packagePath);
@@ -2554,7 +2681,7 @@ function addMissingComments(walkerObj, errors) {
     walkerObj.source = input;
     // Reboot!
     logger.log('>>>>> Need to recalculate NG module: ' + walkerObj.name + '.');
-    //walkerObj.checkForRequiresMismatch = false;
+    // walkerObj.checkForRequiresMismatch = false;
     return addMissingComments(walkerObj, errors);
   }
   // if (!walkerObj.NG && input.indexOf('.factory(') !== -1 && input.indexOf('&http') !== -1) {
@@ -2564,8 +2691,8 @@ function addMissingComments(walkerObj, errors) {
     walkerObj.NG = true;
     walkerObj.ngModule = ngModName;
     walkerObj.ngDeps = deps;
-    //console.warn('FOUND NG Module!!! (', ngModName, ')', deps);
-    //dataVisualizationBar.directive('dvBarChart', function () {
+    // console.warn('FOUND NG Module!!! (', ngModName, ')', deps);
+    // dataVisualizationBar.directive('dvBarChart', function () {
     input = commentAngularClasses(input, ngModName, 'module', packagePath);
     input = commentAngularClasses(input, ngModName, 'directive', packagePath);
     input = commentAngularClasses(input, ngModName, 'controller', packagePath);
@@ -2576,7 +2703,7 @@ function addMissingComments(walkerObj, errors) {
     walkerObj.source = input;
     // Reboot!
     console.warn('>>>>> Need to recalculate NG module: ' + walkerObj.name + '.');
-    //walkerObj.checkForRequiresMismatch = false;
+    // walkerObj.checkForRequiresMismatch = false;
     return addMissingComments(walkerObj, errors);
   }
   walkerObj.NODEJS = false;
@@ -2599,7 +2726,7 @@ function addMissingComments(walkerObj, errors) {
           walkerObj.source = input;
           // Reboot!
           logger.log('>>>>> Need to recalculate node module: ' + walkerObj.name + '.');
-          //walkerObj.checkForRequiresMismatch = false;
+          // walkerObj.checkForRequiresMismatch = false;
           walkerObj.EXPRESS = true;
           walkerObj.NODEJS = true;
           return addMissingComments(walkerObj, errors);
@@ -2619,7 +2746,7 @@ function addMissingComments(walkerObj, errors) {
           walkerObj.source = input;
           // Reboot!
           logger.log('>>>>> Need to recalculate node module: ' + walkerObj.name + '.');
-          //walkerObj.checkForRequiresMismatch = false;
+          // walkerObj.checkForRequiresMismatch = false;
           walkerObj.NODEJS = true;
           walkerObj.NODE_EXPORTS = exportsSplit;
           return addMissingComments(walkerObj, errors);
@@ -2645,7 +2772,7 @@ function addMissingComments(walkerObj, errors) {
     moduleName = 'module:' + modChunk;
     logger.log('Infer module name from @module definition.');
   } else {
-    //logger.log(walkerObj.results.amdProc);
+    // logger.log(walkerObj.results.amdProc);
     //    	{ requires: [],
     //    		  moduleName: 'widget',
     //    		  AMD: false,
@@ -2712,8 +2839,8 @@ function addMissingComments(walkerObj, errors) {
       };
       var newComment = generateComment(null, ast, walkerObj, input, nodeWithRequiresBlock, statusCheck);
       var oldComment = nodeWithRequiresBlock.commentBody;
-      //logger.log("ORIGINAL: \n", oldComment);
-      //logger.log("NEW: \n", newComment);
+      // logger.log("ORIGINAL: \n", oldComment);
+      // logger.log("NEW: \n", newComment);
       // logger.warn(walkerObj.source);
       // logger.warn("AST comment node we need to edit:");
       // logger.warn(nodeWithRequiresBlock);
@@ -2721,16 +2848,16 @@ function addMissingComments(walkerObj, errors) {
       // logger.warn(newComment);
       // logger.warn(walkerObj.results.amdProc.requires);
       if (statusCheck.merge) {
-        //logger.warn("AST comment node we need to edit:");
-        //logger.warn(nodeWithRequiresBlock);
-        logger.warn("Replace with new doclet:");
+        // logger.warn("AST comment node we need to edit:");
+        // logger.warn(nodeWithRequiresBlock);
+        logger.warn('Replace with new doclet:');
         logger.warn(newComment);
         var head = walkerObj.source.substring(0, nodeWithRequiresBlock.range[0] - 1);
-        //logger.warn('head: ' + head);
+        // logger.warn('head: ' + head);
         var tail = walkerObj.source.substring(nodeWithRequiresBlock.range[1] + 1);
-        //logger.warn('tail: ' + tail);
+        // logger.warn('tail: ' + tail);
         walkerObj.source = (head + newComment + '\n' + tail);
-        //logger.warn(walkerObj.source);
+        // logger.warn(walkerObj.source);
         // Reboot!
         logger.log('>>>>> Need to rewrite requires on ' + walkerObj.name + '.');
         walkerObj.checkForRequiresMismatch = false;
@@ -2752,7 +2879,7 @@ function addMissingComments(walkerObj, errors) {
   var methods = allMethods.methods;
   var varExpressions = getNodesByType(ast, 'VariableDeclaration');
   var varExpressionDeclarations = dumpNamedVariables(walkerObj, varExpressions, ast);
-  //console.log('dumpNamedVariables', varExpressionDeclarations);
+  // console.log('dumpNamedVariables', varExpressionDeclarations);
   // // logger.warn(JSON.stringify(methods, null, 2));
   var methodArray = [];
   for (var m in methods) {
@@ -2797,7 +2924,11 @@ function addMissingComments(walkerObj, errors) {
       continue;
     }
     var method = getMethodOnLine(methodArray, lineIndex + 1, ast, input);
-    var variable = getMethodOnLine(varExpressionDeclarations, lineIndex + 1, ast, input);
+    var variable = null;
+    if (COMMENT_VARIABLES) {
+      variable = getMethodOnLine(varExpressionDeclarations, lineIndex + 1, ast, input);
+    }
+
     var itemToComment = null;
     if (method) {
       itemToComment = method;
@@ -2854,7 +2985,7 @@ function addMissingComments(walkerObj, errors) {
     'wrap_line_length': 200
   });
   if (!walkerObj.preprocessed) {
-    logger.warn("checking... re-written code");
+    logger.warn('checking... re-written code');
     walkerObj.source = newFile;
     walkerObj.preprocessed = true;
     try {
@@ -2886,17 +3017,17 @@ function addMissingComments(walkerObj, errors) {
   }
   var outputArray = [];
   // TODO: build a mockup of jsDoccer data.
-  var builtPath = walkerObj.folderPath + _path.sep + walkerObj.fileName;
-  var fileNamePath = _fs.realpathSync(builtPath);
-  var dir = _path.dirname(fileNamePath);
-  var fileNameOnly = _path.basename(fileNamePath);
+  var builtPath = walkerObj.folderPath + pathAPI.sep + walkerObj.fileName;
+  var fileNamePath = fileSystem.realpathSync(builtPath);
+  var dir = pathAPI.dirname(fileNamePath);
+  var fileNameOnly = pathAPI.basename(fileNamePath);
   var fileNameMinusExt = fileNameOnly.split('.')[0];
   // base path is full path minus local path...
-  var basePath = _path.normalize(fileNamePath.split(walkerObj.fileName)[0]);
-  var splitPath = basePath.split(_path.sep);
+  var basePath = pathAPI.normalize(fileNamePath.split(walkerObj.fileName)[0]);
+  var splitPath = basePath.split(pathAPI.sep);
   if (splitPath[splitPath.length - 1] === '') {
     splitPath.pop();
-    basePath = splitPath.join(_path.sep);
+    basePath = splitPath.join(pathAPI.sep);
   }
   // // logger.warn(dir);
   // // logger.warn(fileNameOnly);
@@ -2949,18 +3080,18 @@ function addMissingComments(walkerObj, errors) {
     // logger.warn(docletNode.tags);
     var doclet = realMethod.jsDoc != null ? realMethod.jsDoc : '';
     wrappedMethods.push({
-      "name": realMethod.name,
-      "visibility": visibility,
-      "static": staticScope,
-      "lineNumber": realMethod.lineNumber,
-      "memberOf": realMethod.memberOf,
-      "doclet": doclet,
-      "args": realMethod.params,
-      "description": description,
+      'name': realMethod.name,
+      'visibility': visibility,
+      'static': staticScope,
+      'lineNumber': realMethod.lineNumber,
+      'memberOf': realMethod.memberOf,
+      'doclet': doclet,
+      'args': realMethod.params,
+      'description': description,
       // "preamble" : preamble,
-      "return": realMethod.returnType,
-      "classDeclarationFlag": realMethod.ctor,
-      "line": realMethod.line,
+      'return': realMethod.returnType,
+      'classDeclarationFlag': realMethod.ctor,
+      'line': realMethod.line,
       'originalJsDocDescription': originalJsDocDescription
     });
   }
@@ -3004,7 +3135,7 @@ function addMissingComments(walkerObj, errors) {
       // newFile = newFile.split(ctorLine).join(fixedCtorLine);
       // logger.warn(newFile);
     } else {
-      logger.log("SPLICE IN CONSTRUCTOR TAG for " + ctorName);
+      logger.log('SPLICE IN CONSTRUCTOR TAG for ' + ctorName);
       logger.log('COULD NOT FIND ' + ctorLine);
     }
     spliceInlineConstructor = null;
@@ -3013,7 +3144,7 @@ function addMissingComments(walkerObj, errors) {
   if (newFile.indexOf('@module') === -1) {
     var inlineDeps = getInlineRequires(walkerObj);
     walkerObj.inlineDeps = inlineDeps;
-    //logger.log(inlineDeps);
+    // logger.log(inlineDeps);
     if (walkerObj.NG) {
       ngClassName = capitalize(walkerObj.ngModule);
       var ngHeader = '/**\n * ';
@@ -3027,10 +3158,10 @@ function addMissingComments(walkerObj, errors) {
       }
       ngHeader += '/\n';
       newFile = ngHeader + newFile;
-      //console.warn('Insert module header: ', ngHeader);
+      // console.warn('Insert module header: ', ngHeader);
     } else if (walkerObj.NODEJS) {
       //
-      //walkerObj.NODEJS = false;
+      // walkerObj.NODEJS = false;
       var nodeModName = (walkerObj.moduleName);
       var nodeHeader = '/**\n * ';
       nodeHeader += '@module ' + nodeModName + '\n *';
@@ -3060,11 +3191,11 @@ function addMissingComments(walkerObj, errors) {
       //        uses_Y: false,
       //        uses_alert: false,
       //        strict: false }
-      //console.log("AMD??????");
-      //console.log(walkerObj.results.amdProc);
-      //ddd();
+      // console.log("AMD??????");
+      // console.log(walkerObj.results.amdProc);
+      // ddd();
       //
-      //walkerObj.NODEJS = false;
+      // walkerObj.NODEJS = false;
       var nodeModName = (walkerObj.moduleName);
       var nodeHeader = '/**\n * ';
       nodeHeader += '@module ' + nodeModName + '\n *';
@@ -3085,34 +3216,34 @@ function addMissingComments(walkerObj, errors) {
     } else {
       console.warn('NOT A MODULE? ', walkerObj.results.amdProc.moduleName);
     }
-    //TODO: include correct jsDoc metadata for each constructor
+    // TODO: include correct jsDoc metadata for each constructor
   }
   var jsDoccerBlob = {
-    "lines": lines.length,
-    "requires": [],
-    "className": "n/a",
-    "packagePath": "",
-    "directoryPath": dir,
-    "uses_Y": false,
-    "no_lib": true,
-    "inferencedClassName": (ngClassName ? ngClassName : "n/a"),
-    "uses_$": false,
-    "chars": input.length,
-    "uses_YUI": false,
-    "uses_NG": walkerObj.NG,
-    "fields": [],
-    "moduleName": _path.dirname(walkerObj.fileName) + '/' + fileNameMinusExt,
-    "uses_console_log": false,
-    "uses_backbone": false,
-    "classes": allMethods.classes,
-    "methods": wrappedMethods,
-    "is_module": false,
-    "uses_alert": false,
-    "uses_y_log": false,
-    "requiresRaw": [],
-    "basePath": basePath,
-    "fileName": fileNameOnly,
-    "strict": false
+    'lines': lines.length,
+    'requires': [],
+    'className': 'n/a',
+    'packagePath': '',
+    'directoryPath': dir,
+    'uses_Y': false,
+    'no_lib': true,
+    'inferencedClassName': (ngClassName ? ngClassName : 'n/a'),
+    'uses_$': false,
+    'chars': input.length,
+    'uses_YUI': false,
+    'uses_NG': walkerObj.NG,
+    'fields': [],
+    'moduleName': pathAPI.dirname(walkerObj.fileName) + '/' + fileNameMinusExt,
+    'uses_console_log': false,
+    'uses_backbone': false,
+    'classes': allMethods.classes,
+    'methods': wrappedMethods,
+    'is_module': false,
+    'uses_alert': false,
+    'uses_y_log': false,
+    'requiresRaw': [],
+    'basePath': basePath,
+    'fileName': fileNameOnly,
+    'strict': false
   };
   outputArray.push(JSON.stringify(jsDoccerBlob, null, 2));
   outputArray.push(newFile);
@@ -3218,7 +3349,7 @@ function mergeRequires(doclet) {
       };
       line++;
       lastLine++;
-      //logger.warn(newTag);
+      // logger.warn(newTag);
       doclet.tags.push(newTag);
       needToMerge = true;
     }
@@ -3242,7 +3373,7 @@ function getValuesNotInTags(tagList, valueList) {
       leaf = leaf.split('/').pop();
     }
     if (textValues.join(' ').indexOf(leaf) === -1) {
-      logger.log("ADDING new REQUIRE: ", value);
+      logger.log('ADDING new REQUIRE: ', value);
       output.push(value);
     }
   }
@@ -3294,7 +3425,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
   var kind = '';
   if (functionWrapper) {
     if (functionWrapper.kind) {
-      //console.log('generateComment: ', functionWrapper);
+      // console.log('generateComment: ', functionWrapper);
       kind = functionWrapper.kind;
     }
   }
@@ -3316,21 +3447,21 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     funkyName = funkyName.split('_');
     funkyName[0] = capitalize(funkyName[0]);
     funkyName = funkyName.join(' ');
-    //funkyName += '.';
-    //logger.warn('The name we use: ' + funkyName);
+    // funkyName += '.';
+    // logger.warn('The name we use: ' + funkyName);
     if (funkyName.indexOf('.') !== -1) {
       funkyName = '';
-      console.log("funkyName 2: " + funkyName);
+      console.log('funkyName 2: ' + funkyName);
     }
     if (functionWrapper.ctor) {
       funkyName = 'Creates a new instance of class ' + functionWrapper.name + '.';
-      console.log("funkyName 0: " + funkyName);
+      console.log('funkyName 0: ' + funkyName);
     }
     if (funkyName.indexOf('[') !== -1) {
       funkyName = '';
-      console.log("funkyName 1: " + funkyName);
+      console.log('funkyName 1: ' + funkyName);
     }
-    console.log("funkyName: " + funkyName);
+    console.log('funkyName: ' + funkyName);
     if (functionWrapper.comment !== -1) {
       oldComment = ast.comments[functionWrapper.comment];
       var range = oldComment.range;
@@ -3340,7 +3471,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
         // logger.log(commentText);
         doclet = parseDoclet(walkerObj, commentText, false, '', 0, functionWrapper);
         functionWrapper.oldComment = oldComment;
-        //console.log("Parsed a doclet! ", doclet);
+        // console.log("Parsed a doclet! ", doclet);
       }
     }
   } else {
@@ -3348,14 +3479,14 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     functionWrapper = {};
     doclet = parseDoclet(walkerObj, commentText, false, '', 0, functionWrapper);
     if (mergeRequires(doclet)) {
-      console.warn("Requires list needs to be re-printed. Start parse over now.");
+      console.warn('Requires list needs to be re-printed. Start parse over now.');
       // logger.log(doclet);
       statusCheck.merge = true;
     }
   }
   // // logger.log(funkyName + ' << ' + functionWrapper.name);
   if (doclet != null && doclet.tags) {
-    //console.log('DOCLET', doclet);
+    // console.log('DOCLET', doclet);
     tags = doclet.tags;
     var descText = '';
     if (kind !== '') {
@@ -3373,11 +3504,11 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
       if (kind !== '') {
         if (!searchTags(doclet, kind)) {
           var pseudoTag = {
-            "tag": kind,
-            "line": 0,
-            "lastLine": -1,
-            "textStartsOnSameLine": true,
-            "text": descText
+            'tag': kind,
+            'line': 0,
+            'lastLine': -1,
+            'textStartsOnSameLine': true,
+            'text': descText
           };
           console.log('ADDING TAG ', pseudoTag);
           tags.push(pseudoTag);
@@ -3406,14 +3537,14 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
         doclet = searchAndDestroy(doclet, 'type');
         functionWrapper.kind = '';
         functionWrapper.type = '';
-        //console.log('>>>>>>>>>>LOOP intializer ' + JSON.stringify(functionWrapper, null, 2), JSON.stringify(doclet, null, 2));
-        //console.log(funkyName);
+        // console.log('>>>>>>>>>>LOOP intializer ' + JSON.stringify(functionWrapper, null, 2), JSON.stringify(doclet, null, 2));
+        // console.log(funkyName);
       } else {
         doclet.freeText = 'The ' + decapitalize(funkyName) + '.';
       }
-      //logger.log('>>>>>>>>>>generateComment doclet with no freetext ' + JSON.stringify(functionWrapper, null, 2));
+      // logger.log('>>>>>>>>>>generateComment doclet with no freetext ' + JSON.stringify(functionWrapper, null, 2));
     }
-    //logger.log('>>>>>>>>>>generateComment  doclet ' + JSON.stringify(doclet, null, 2));
+    // logger.log('>>>>>>>>>>generateComment  doclet ' + JSON.stringify(doclet, null, 2));
   } else {
     console.log('NO DOCLET TAGS', doclet);
   }
@@ -3423,16 +3554,16 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
   // TODO: Rewrite this to dump the tags in the original order they were
   // declared.
   var commentBlock = [];
-  commentBlock.push("/**");
+  commentBlock.push('/**');
   if (doclet != null) {
     hasConstructsTag = searchTags(doclet, 'constructs');
     hasConstructorTag = searchTags(doclet, 'constructor');
     hasLendsTag = searchTags(doclet, 'lends');
-    //console.log(doclet, functionWrapper);
+    // console.log(doclet, functionWrapper);
     if (functionWrapper.kind == null) {
       if (YUIDOC_MODE && !hasConstructsTag && !hasConstructorTag && !hasLendsTag && !functionWrapper.ctor) {
-        //console.log(doclet, functionWrapper);
-        //zzz();
+        // console.log(doclet, functionWrapper);
+        // zzz();
         commentBlock.push(' * @method ' + functionWrapper.name);
         if (functionWrapper.memberOf) {
           commentBlock.push(' * @memberOf ' + functionWrapper.memberOf);
@@ -3485,13 +3616,13 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
           // addStarLines(newTag.text, newTag));
           // logger.log(doclet);
           var newComment = '';
-          //logger.log(newTag);
+          // logger.log(newTag);
           if (newTag.text.trim().length > 0) {
             var textOfTag = newTag.text.trim();
             if (textOfTag.indexOf('module:') === 0) {
-              //logger.log('CHANGING ' + textOfTag);
+              // logger.log('CHANGING ' + textOfTag);
               newTag.text = fixModuleNameInText(textOfTag, walkerObj);
-              //logger.log('...TO:  ' + newTag.text);
+              // logger.log('...TO:  ' + newTag.text);
             }
             newComment = ' * ' + t + ' ' + addStarLines(newTag.text, newTag);
             commentBlock.push(newComment);
@@ -3547,7 +3678,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
         incompleteLends.fullClassName = justPath;
         // var prefix = incompleteLends.value.split('module:')[0];
         // incompleteLends.value = prefix + justPath;
-        logger.log("!!! Add full path to constructor? " + incompleteLends.fullClassName);
+        logger.log('!!! Add full path to constructor? ' + incompleteLends.fullClassName);
       }
     }
     console.warn('Constructor FOUND, and we have not already declared it in @constructor or @constructs.');
@@ -3639,21 +3770,29 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     commentBlock.push(' * ' + doclet['@return'].line.trim());
   } else if (returnValue !== '') {
     if (returnValue !== '?') {
-      if (returnValue.indexOf("{") === -1) {
+      if (returnValue.indexOf('{') === -1) {
         commentBlock.push(' * @return {object} ' + returnValue);
       } else {
         commentBlock.push(' * @return ' + returnValue);
       }
     } else {
-      // commentBlock.push(' * @todo Please describe the return type of this method.');
+      //      if (COMMENT_EVERYTHING) {
+      //        commentBlock.push(' * @todo Please describe the return type of this method.');
+      //      }
       // commentBlock.push(' * @return {object} ??');
     }
   }
   if (commentBlock.length === 1) {
-    //commentBlock.push(' * @todo Add some jsDoc comments here!');
-    return '';
+    if (COMMENT_EVERYTHING) {
+      commentBlock.push(' * @todo Add some jsDoc comments here!');
+      commentBlock.push(' */');
+      return commentBlock.join('\n');
+    } else {
+      return '';
+    }
+
   } else {
-    commentBlock.push(" */");
+    commentBlock.push(' */');
     return commentBlock.join('\n');
   }
 }
@@ -3677,19 +3816,19 @@ if (false) {
     folderPath: 'test-source',
     camelName: camelize(getModuleName(testFileName)),
     results: {
-      "amdProc": {
-        "requires": [],
-        "moduleName": testFileName,
-        "AMD": false,
-        "webPath": ""
+      'amdProc': {
+        'requires': [],
+        'moduleName': testFileName,
+        'AMD': false,
+        'webPath': ''
       }
     }
   };
-  var source = readFile(input.folderPath + _path.sep + testFileName);
+  var source = readFile(input.folderPath + pathAPI.sep + testFileName);
   input.source = source;
   // logger.log(input);
   var testResult = addMissingComments(input);
   testResult = testResult.split('/*jsdoc_prep_data*/')[1];
   // logger.log(testResult);
-  writeFile('test-output' + _path.sep + testFileName, testResult);
+  writeFile('test-output' + pathAPI.sep + testFileName, testResult);
 }
