@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: models/columns.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: models/columns.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>define(['underscore', 'backbone', 'column-and-block-layout-editor-path/constants', 'column-and-block-layout-editor-path/percentage-utils', 'column-and-block-layout-editor-path/models/column',
+    'column-and-block-layout-editor-path/models/converters/block-converter'
+  ],
+  /**
+   * @exports src/models/columns
+   * @requires underscore
+   * @requires backbone
+   * @requires column-and-block-layout-editor-path/constants
+   * @requires column-and-block-layout-editor-path/percentage-utils
+   * @requires column-and-block-layout-editor-path/models/column
+   * @requires column-and-block-layout-editor-path/models/converters/block-converter
+   */
+  function (_, Backbone, constants, percentageUtils, Column, BlockConverter) {
+    /**
+     * The columns.
+     */
+    var Columns, MAX_COLUMNS;
+    MAX_COLUMNS = 2;
+    return Columns = ( /**@lends module:src/models/columns~Columns# */ function (superClass) {
+      extend(Columns, superClass);
+      /**
+       * @constructor
+       */
+      function Columns() {
+        return Columns.__super__.constructor.apply(this, arguments);
+      }
+      Columns.prototype.model = Column;
+      /**
+       * @param models
+       * @param opts
+       */
+      Columns.prototype.initialize = function (models, opts) {
+        this.opts = opts;
+        this.layout = this.opts.layout;
+        this.contentEditorStateMap = this.opts.contentEditorStateMap;
+        return this.on('remove', this._checkIfColumnsShouldBeEventlySplit, this);
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      Columns.prototype.toState = function () {
+        return this.invoke('toState');
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      Columns.prototype.getNumBlocks = function () {
+        return this.reduce((function (sum, column) {
+          return sum + column.getBlocksCollection().length;
+        }), 0);
+      };
+      /**
+       * @param columns
+       * @param options
+       */
+      Columns.prototype.setColumns = function (columns, options) {
+        return this.set(columns, _.extend(this.opts, options));
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      Columns.prototype.resizeColumns = function () {
+        /**
+         * The set widths.
+         */
+        var setWidths, sumOfWidths, widths;
+        widths = 1 &lt;= arguments.length ? slice.call(arguments, 0) : [];
+        setWidths = this.pluck('columnWidth');
+        if (_(widths).isEqual(setWidths)) {
+          return;
+        }
+        if (widths.length !== this.length) {
+          throw new Error('Must specify the width of each column');
+        }
+        sumOfWidths = widths.reduce(function (prev, current) {
+          return prev + current;
+        });
+        if (sumOfWidths !== 1) {
+          throw new Error('Widths must add up to 1.00 (100%)');
+        }
+        this.each(function (model, index) {
+          return model.set({
+            columnWidth: widths[index]
+          });
+        });
+        this.opts.eventEmitter.trigger(constants.EVENTS.LAYOUT_CHANGED);
+        return this.opts.eventEmitter.trigger(constants.EVENTS.STATE_UPDATED);
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      Columns.prototype.evenlySplitColumns = function () {
+        /**
+         * The rounded widths.
+         */
+        var roundedWidths;
+        roundedWidths = percentageUtils.evenlySplit(this.length);
+        return this.each(function (column, index) {
+          return column.set({
+            columnWidth: roundedWidths[index]
+          });
+        });
+      };
+      /**
+       * @param model
+       * @param delta
+       * @return {Boolean}
+       */
+      Columns.prototype.applyDeltaToColumnWidth = function (model, delta) {
+        /**
+         * The column width is at max or min.
+         */
+        var columnWidthIsAtMaxOrMin, index, resizedWidths;
+        if (this.length === 1) {
+          throw new Error('Cannot change column width in single column layouts');
+        }
+        index = this.indexOf(model);
+        resizedWidths = percentageUtils.adjustValues({
+          arrayOfDecimals: this.pluck('columnWidth'),
+          addTo: index,
+          subtractFrom: index + 1,
+          delta: delta
+        });
+        columnWidthIsAtMaxOrMin = resizedWidths.every(function (width) {
+          return width > constants.COLUMN_WIDTH.MAX_DECIMAL || width &lt; constants.COLUMN_WIDTH.MIN_DECIMAL;
+        });
+        if (!columnWidthIsAtMaxOrMin) {
+          return this.resizeColumns.apply(this, resizedWidths);
+        }
+      };
+      /**
+       * @param decimal
+       */
+      Columns.prototype.resizeColumnFromHandle = function (decimal) {
+        /**
+         * The delta decimal.
+         */
+        var deltaDecimal, newColumnWidths;
+        if (this.length === 1) {
+          throw new Error('Cannot change column width in single column layouts');
+        }
+        deltaDecimal = percentageUtils.remainingDecimal([decimal]);
+        newColumnWidths = [deltaDecimal, decimal];
+        return this.resizeColumns.apply(this, newColumnWidths);
+      };
+      /**
+       * @param name
+       * @param contentJSON
+       */
+      Columns.prototype.createChildContent = function (name, contentJSON) {
+        /**
+         * The block.
+         */
+        var block, column, content;
+        column = this.find(function (column) {
+          return column.hasBlock(name);
+        });
+        block = column.blocks.get(name);
+        content = block.contents.find(function (content) {
+          return content.get('name') === name;
+        });
+        return content != null ? content.createChild(contentJSON) : void 0;
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      Columns.prototype.getContents = function () {
+        return _.flatten(this.invoke('getContents'));
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      Columns.prototype.getContentEditors = function () {
+        return _.flatten(this.invoke('getContentEditors'));
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      Columns.prototype.getLayoutInstanceId = function () {
+        return this.layout.instanceId;
+      };
+      /**
+       * @param name
+       */
+      Columns.prototype.findContentModelByName = function (name) {
+        /**
+         * The content.
+         */
+        var content, contents;
+        contents = this.getContents();
+        content = _.find(contents, function (content) {
+          return content.getName() === name;
+        });
+        return content || (function () {
+          throw new Error("Could not find content model: " + name);
+        })();
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      Columns.prototype.atMaxColumns = function () {
+        return this.length >= MAX_COLUMNS;
+      };
+      /**
+       * @param columnIdx
+       * @param position
+       * @param contentType
+       * @param content
+       */
+      Columns.prototype.reorderBlock = function (columnIdx, position, contentType, content) {
+        /**
+         * The block JSON.
+         */
+        var blockJSON, createdState, toColumn;
+        toColumn = this.at(columnIdx);
+        createdState = this.contentEditorStateMap.createState(content, contentType);
+        blockJSON = BlockConverter.convert(createdState, contentType);
+        toColumn.addBlock(position, blockJSON);
+        return this.layout.removeContent(content.id);
+      };
+      /**
+       * @param model
+       * @param collection
+       * @param options
+       */
+      Columns.prototype._checkIfColumnsShouldBeEventlySplit = function (model, collection, options) {
+        if (options.evenlySplit) {
+          return this.evenlySplitColumns();
+        }
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      Columns.prototype.getLayoutReadyPromise = function () {
+        return this.layout.getReadyPromise();
+      };
+      return Columns;
+    })(Backbone.Collection);
+  });</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-src_abstract-layout-generator.html">src/abstract-layout-generator</a></li><li><a href="module-src_column-and-block-layout-editor.html">src/column-and-block-layout-editor</a></li><li><a href="module-src_column-resize-manager.html">src/column-resize-manager</a></li><li><a href="module-src_constants.html">src/constants</a></li><li><a href="module-src_drag-drop_api.html">src/drag-drop/api</a></li><li><a href="module-src_drag-drop_block.html">src/drag-drop/block</a></li><li><a href="module-src_drag-drop_block-model-dispatcher.html">src/drag-drop/block-model-dispatcher</a></li><li><a href="module-src_drag-drop_blocks.html">src/drag-drop/blocks</a></li><li><a href="module-src_drag-drop_column.html">src/drag-drop/column</a></li><li><a href="module-src_drag-drop_columns.html">src/drag-drop/columns</a></li><li><a href="module-src_drag-drop_helpers.html">src/drag-drop/helpers</a></li><li><a href="module-src_drag-drop_insert-marker.html">src/drag-drop/insert-marker</a></li><li><a href="module-src_drag-drop_layout.html">src/drag-drop/layout</a></li><li><a href="module-src_import_importer.html">src/import/importer</a></li><li><a href="module-src_import_parser.html">src/import/parser</a></li><li><a href="module-src_index.html">src/index</a></li><li><a href="module-src_models_block.html">src/models/block</a></li><li><a href="module-src_models_blocks.html">src/models/blocks</a></li><li><a href="module-src_models_column.html">src/models/column</a></li><li><a href="module-src_models_columns.html">src/models/columns</a></li><li><a href="module-src_models_content.html">src/models/content</a></li><li><a href="module-src_models_content-editor-state-map.html">src/models/content-editor-state-map</a></li><li><a href="module-src_models_content-editors.html">src/models/content-editors</a></li><li><a href="module-src_models_contents.html">src/models/contents</a></li><li><a href="module-src_models_converters_block-converter.html">src/models/converters/block-converter</a></li><li><a href="module-src_models_converters_block-descriptor-to-block.html">src/models/converters/block-descriptor-to-block</a></li><li><a href="module-src_models_converters_block-descriptor-to-content-json.html">src/models/converters/block-descriptor-to-content-json</a></li><li><a href="module-src_models_converters_content-converter.html">src/models/converters/content-converter</a></li><li><a href="module-src_models_converters_content-to-block.html">src/models/converters/content-to-block</a></li><li><a href="module-src_models_converters_content-to-content-json.html">src/models/converters/content-to-content-json</a></li><li><a href="module-src_models_layout.html">src/models/layout</a></li><li><a href="module-src_nls_column-and-block-layout-editor.html">src/nls/column-and-block-layout-editor</a></li><li><a href="module-src_padding_calculator.html">src/padding/calculator</a></li><li><a href="module-src_padding_parser.html">src/padding/parser</a></li><li><a href="module-src_padding_renderer.html">src/padding/renderer</a></li><li><a href="module-src_percentage-utils.html">src/percentage-utils</a></li><li><a href="module-src_state-migrations.html">src/state-migrations</a></li><li><a href="module-src_state-validator.html">src/state-validator</a></li><li><a href="module-src_views_block.html">src/views/block</a></li><li><a href="module-src_views_column.html">src/views/column</a></li><li><a href="module-src_views_column-resize-handle.html">src/views/column-resize-handle</a></li><li><a href="module-src_views_column-resize-handle-IE.html">src/views/column-resize-handle-IE</a></li><li><a href="module-src_views_content.html">src/views/content</a></li><li><a href="module-src_views_import.html">src/views/import</a></li><li><a href="module-src_views_layout.html">src/views/layout</a></li><li><a href="module-src_views_move-handle.html">src/views/move-handle</a></li><li><a href="module-src_views_publish.html">src/views/publish</a></li><li><a href="module-src_views_vspace-flyout.html">src/views/vspace-flyout</a></li></ul><h3>Classes</h3><ul><li><a href="module-src_abstract-layout-generator-AbstractLayoutGenerator_-AbstractLayoutGenerator.html">AbstractLayoutGenerator</a></li><li><a href="module-src_column-resize-manager-=_-ColumnResizeManager.html">ColumnResizeManager</a></li><li><a href="module-src_drag-drop_api-DragDropApi_-DragDropApi.html">DragDropApi</a></li><li><a href="module-src_drag-drop_block-model-dispatcher-BlockModelDispatcher_-BlockModelDispatcher.html">BlockModelDispatcher</a></li><li><a href="module-src_drag-drop_blocks-DragDropBlocks_-DragDropBlocks.html">DragDropBlocks</a></li><li><a href="module-src_drag-drop_block-DragDropBlock_-DragDropBlock.html">DragDropBlock</a></li><li><a href="module-src_drag-drop_columns-DragDropColumns_-DragDropColumns.html">DragDropColumns</a></li><li><a href="module-src_drag-drop_column-DragDropColumn_-DragDropColumn.html">DragDropColumn</a></li><li><a href="module-src_drag-drop_insert-marker-InsertionMarker_-InsertionMarker.html">InsertionMarker</a></li><li><a href="module-src_drag-drop_layout-DragDropLayout_-DragDropLayout.html">DragDropLayout</a></li><li><a href="module-src_import_importer-=_-Importer.html">Importer</a></li><li><a href="module-src_import_parser-Parser_-Parser.html">Parser</a></li><li><a href="module-src_index-ColumnAndBlockLayoutEditor_-ColumnAndBlockLayoutEditor.html">ColumnAndBlockLayoutEditor</a></li><li><a href="module-src_models_blocks-Blocks_-Blocks.html">Blocks</a></li><li><a href="module-src_models_block-BlockModel_-BlockModel.html">BlockModel</a></li><li><a href="module-src_models_columns-Columns_-Columns.html">Columns</a></li><li><a href="module-src_models_column-ColumnModel_-ColumnModel.html">ColumnModel</a></li><li><a href="module-src_models_content-editor-state-map-ContentEditorStateMap_-ContentEditorStateMap.html">ContentEditorStateMap</a></li><li><a href="module-src_models_content-editors-ContentEditors_-ContentEditors.html">ContentEditors</a></li><li><a href="module-src_models_contents-Contents_-Contents.html">Contents</a></li><li><a href="module-src_models_content-ContentModel_-ContentModel.html">ContentModel</a></li><li><a href="module-src_models_converters_block-converter-BlockConverter_-BlockConverter.html">BlockConverter</a></li><li><a href="module-src_models_converters_block-descriptor-to-block-BlockDescriptorToBlock_-BlockDescriptorToBlock.html">BlockDescriptorToBlock</a></li><li><a href="module-src_models_converters_block-descriptor-to-content-json-BlockDescriptorToContent_-BlockDescriptorToContent.html">BlockDescriptorToContent</a></li><li><a href="module-src_models_converters_content-converter-ContentConverter_-ContentConverter.html">ContentConverter</a></li><li><a href="module-src_models_converters_content-to-block-ContentToBlock_-ContentToBlock.html">ContentToBlock</a></li><li><a href="module-src_models_converters_content-to-content-json-ContentToContentJson_-ContentToContentJson.html">ContentToContentJson</a></li><li><a href="module-src_models_layout-LayoutModel_-LayoutModel.html">LayoutModel</a></li><li><a href="module-src_padding_calculator-PaddingCalculator_-PaddingCalculator.html">PaddingCalculator</a></li><li><a href="module-src_padding_parser-PaddingParser_-PaddingParser.html">PaddingParser</a></li><li><a href="module-src_padding_renderer-PaddingRenderer_-PaddingRenderer.html">PaddingRenderer</a></li><li><a href="module-src_state-validator-=_-StateValidator.html">StateValidator</a></li><li><a href="module-src_views_block-BlockView_-BlockView.html">BlockView</a></li><li><a href="module-src_views_column-resize-handle-IE-ColumnResizeHandleIE_-ColumnResizeHandleIE.html">ColumnResizeHandleIE</a></li><li><a href="module-src_views_column-resize-handle-ColumnResizeHandle_-ColumnResizeHandle.html">ColumnResizeHandle</a></li><li><a href="module-src_views_column-ColumnView_-ColumnView.html">ColumnView</a></li><li><a href="module-src_views_content-ContentView_-ContentView.html">ContentView</a></li><li><a href="module-src_views_import-ImportView_-ImportView.html">ImportView</a></li><li><a href="module-src_views_layout-LayoutView_-LayoutView.html">LayoutView</a></li><li><a href="module-src_views_move-handle-MoveHandle_-MoveHandle.html">MoveHandle</a></li><li><a href="module-src_views_publish-PublishView_-PublishView.html">PublishView</a></li><li><a href="module-src_views_vspace-flyout-=_-VspaceFlyoutView.html">VspaceFlyoutView</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Sep 12 2016 15:47:20 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,449 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "template-engine",
+        "column-and-block-layout-editor-path/constants"
+      ],
+      "moduleName": "abstract-layout-generator",
+      "AMD": true,
+      "webPath": "/src",
+      "convertedName": "abstract_layout_generator",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'AbstractLayoutGenerator'.",
+        "code": "wfJD",
+        "evidence": "function AbstractLayoutGenerator(prototypeMarkupService) {",
+        "line": 4,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'AbstractLayoutGenerator'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getContentDecoratorName'.",
+        "code": "wfJD",
+        "evidence": "AbstractLayoutGenerator.prototype._getContentDecoratorName = function ($protoLayout, contentType) {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getContentDecoratorName'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getProtoLayoutFor'.",
+        "code": "wfJD",
+        "evidence": "AbstractLayoutGenerator.prototype._getProtoLayoutFor = function (contentType) {",
+        "line": 12,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getProtoLayoutFor'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_createProtoLayoutModel'.",
+        "code": "wfJD",
+        "evidence": "AbstractLayoutGenerator.prototype._createProtoLayoutModel = function (name, contentType) {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_createProtoLayoutModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_createProtoColumnModel'.",
+        "code": "wfJD",
+        "evidence": "AbstractLayoutGenerator.prototype._createProtoColumnModel = function (contentType) {",
+        "line": 23,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_createProtoColumnModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_createContentDecoratorModel'.",
+        "code": "wfJD",
+        "evidence": "AbstractLayoutGenerator.prototype._createContentDecoratorModel = function (name) {",
+        "line": 35,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_createContentDecoratorModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_createLayoutAttibutes'.",
+        "code": "wfJD",
+        "evidence": "AbstractLayoutGenerator.prototype._createLayoutAttibutes = function (protoLayout) {",
+        "line": 40,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_createLayoutAttibutes'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_addLayoutAttributes'.",
+        "code": "wfJD",
+        "evidence": "AbstractLayoutGenerator.prototype._addLayoutAttributes = function ($layout, attrs) {",
+        "line": 46,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_addLayoutAttributes'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_render'.",
+        "code": "wfJD",
+        "evidence": "AbstractLayoutGenerator.prototype._render = function (markup, model) {",
+        "line": 49,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_render'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isDocumentSupported'.",
+        "code": "wfJD",
+        "evidence": "AbstractLayoutGenerator.prototype.isDocumentSupported = function (documentFeatures) {",
+        "line": 52,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isDocumentSupported'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'createAbstractLayoutMarkup'.",
+        "code": "wfJD",
+        "evidence": "AbstractLayoutGenerator.prototype.createAbstractLayoutMarkup = function (name, contentType) {",
+        "line": 55,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'createAbstractLayoutMarkup'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'insertContentMarkup'.",
+        "code": "wfJD",
+        "evidence": "AbstractLayoutGenerator.prototype.insertContentMarkup = function (layoutMarkup, contentName, contentType, contentMarkup) {",
+        "line": 62,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'insertContentMarkup'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/abstract-layout-generator.js",
+  "folderPath": "test-source/src",
+  "fileName": "abstract-layout-generator.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/src",
+  "webPath": "/src",
+  "libFile": false,
+  "min": false,
+  "realName": "abstract-layout-generator",
+  "name": "abstract-layout-generator",
+  "camelName": "AbstractLayoutGenerator",
+  "processedFilePath": "test-output/src/abstract-layout-generator.js",
+  "mappedModuleName": "src/abstract-layout-generator",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "src/abstract-layout-generator~AbstractLayoutGenerator": {
+      "todos": [],
+      "params": [
+        "prototypeMarkupService"
+      ],
+      "memberOf": "",
+      "returnType": "",
+      "ctor": true,
+      "lineNumber": 4,
+      "line": "function AbstractLayoutGenerator(prototypeMarkupService) {",
+      "comment": -1,
+      "range": [
+        283,
+        407
+      ],
+      "name": "AbstractLayoutGenerator",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": "",
+        "tags": []
+      },
+      "jsDoc": "/**\n * @constructor\n * @param prototypeMarkupService\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "src/abstract-layout-generator",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 72,
+    "requires": [
+      "jquery",
+      "template-engine",
+      "column-and-block-layout-editor-path/constants"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/src",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 3398,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./abstract-layout-generator",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "AbstractLayoutGenerator": 2942
+    },
+    "methods": [
+      {
+        "name": "AbstractLayoutGenerator",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n * @param prototypeMarkupService\n */",
+        "args": [
+          "prototypeMarkupService"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function AbstractLayoutGenerator(prototypeMarkupService) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getContentDecoratorName",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "AbstractLayoutGenerator.prototype",
+        "doclet": "/**\n * @param $protoLayout\n * @param contentType\n * @return {boolean}\n */",
+        "args": [
+          "$protoLayout",
+          "contentType"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "AbstractLayoutGenerator.prototype._getContentDecoratorName = function ($protoLayout, contentType) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getProtoLayoutFor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 12,
+        "memberOf": "AbstractLayoutGenerator.prototype",
+        "doclet": "/**\n * @param contentType\n */",
+        "args": [
+          "contentType"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "AbstractLayoutGenerator.prototype._getProtoLayoutFor = function (contentType) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_createProtoLayoutModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "memberOf": "AbstractLayoutGenerator.prototype",
+        "doclet": "/**\n * @param name\n * @param contentType\n */",
+        "args": [
+          "name",
+          "contentType"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "AbstractLayoutGenerator.prototype._createProtoLayoutModel = function (name, contentType) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_createProtoColumnModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 23,
+        "memberOf": "AbstractLayoutGenerator.prototype",
+        "doclet": "/**\n * @param contentType\n * @return {array}\n */",
+        "args": [
+          "contentType"
+        ],
+        "description": "",
+        "return": "{array}",
+        "classDeclarationFlag": false,
+        "line": "AbstractLayoutGenerator.prototype._createProtoColumnModel = function (contentType) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_createContentDecoratorModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 35,
+        "memberOf": "AbstractLayoutGenerator.prototype",
+        "doclet": "/**\n * @param name\n */",
+        "args": [
+          "name"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "AbstractLayoutGenerator.prototype._createContentDecoratorModel = function (name) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_createLayoutAttibutes",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 40,
+        "memberOf": "AbstractLayoutGenerator.prototype",
+        "doclet": "/**\n * @param protoLayout\n */",
+        "args": [
+          "protoLayout"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "AbstractLayoutGenerator.prototype._createLayoutAttibutes = function (protoLayout) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_addLayoutAttributes",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 46,
+        "memberOf": "AbstractLayoutGenerator.prototype",
+        "doclet": "/**\n * @param $layout\n * @param attrs\n */",
+        "args": [
+          "$layout",
+          "attrs"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "AbstractLayoutGenerator.prototype._addLayoutAttributes = function ($layout, attrs) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 49,
+        "memberOf": "AbstractLayoutGenerator.prototype",
+        "doclet": "/**\n * @param markup\n * @param model\n */",
+        "args": [
+          "markup",
+          "model"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "AbstractLayoutGenerator.prototype._render = function (markup, model) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "isDocumentSupported",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 52,
+        "memberOf": "AbstractLayoutGenerator.prototype",
+        "doclet": "/**\n * Returns true if is document supported.\n * @param documentFeatures\n * @return {object} boolean\n */",
+        "args": [
+          "documentFeatures"
+        ],
+        "description": "Returns true if is document supported.",
+        "return": "boolean",
+        "classDeclarationFlag": false,
+        "line": "AbstractLayoutGenerator.prototype.isDocumentSupported = function (documentFeatures) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "createAbstractLayoutMarkup",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 55,
+        "memberOf": "AbstractLayoutGenerator.prototype",
+        "doclet": "/**\n * @param name\n * @param contentType\n */",
+        "args": [
+          "name",
+          "contentType"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "AbstractLayoutGenerator.prototype.createAbstractLayoutMarkup = function (name, contentType) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "insertContentMarkup",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 62,
+        "memberOf": "AbstractLayoutGenerator.prototype",
+        "doclet": "/**\n * @param layoutMarkup\n * @param contentName\n * @param contentType\n * @param contentMarkup\n */",
+        "args": [
+          "layoutMarkup",
+          "contentName",
+          "contentType",
+          "contentMarkup"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "AbstractLayoutGenerator.prototype.insertContentMarkup = function (layoutMarkup, contentName, contentType, contentMarkup) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/src",
+    "fileName": "abstract-layout-generator.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 143,
+  "EMPTY": false
+}

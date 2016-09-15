@@ -1,0 +1,247 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "galileo-lib/modules/events",
+        "galileo-lib/modules/services/usage-tracking"
+      ],
+      "moduleName": "column-resize-manager",
+      "AMD": true,
+      "webPath": "/src",
+      "convertedName": "column_resize_manager",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'ColumnResizeManager'.",
+        "code": "wfJD",
+        "evidence": "function ColumnResizeManager() {",
+        "line": 4,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'ColumnResizeManager'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'startResizing'.",
+        "code": "wfJD",
+        "evidence": "ColumnResizeManager.prototype.startResizing = function (_lastXValue, resizeFunction, resetFunction, _donePromise) {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'startResizing'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isResizing'.",
+        "code": "wfJD",
+        "evidence": "ColumnResizeManager.prototype.isResizing = function () {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isResizing'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_setupMousemove'.",
+        "code": "wfJD",
+        "evidence": "ColumnResizeManager.prototype._setupMousemove = function (resizeFunction, resetFunction) {",
+        "line": 17,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_setupMousemove'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_reset'.",
+        "code": "wfJD",
+        "evidence": "ColumnResizeManager.prototype._reset = function (resetFunction) {",
+        "line": 34,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_reset'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/column-resize-manager.js",
+  "folderPath": "test-source/src",
+  "fileName": "column-resize-manager.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/src",
+  "webPath": "/src",
+  "libFile": false,
+  "min": false,
+  "realName": "column-resize-manager",
+  "name": "column-resize-manager",
+  "camelName": "ColumnResizeManager",
+  "processedFilePath": "test-output/src/column-resize-manager.js",
+  "mappedModuleName": "src/column-resize-manager",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "src/column-resize-manager~ColumnResizeManager": {
+      "todos": [],
+      "memberOf": "",
+      "returnType": "",
+      "ctor": true,
+      "lineNumber": 4,
+      "line": "function ColumnResizeManager() {",
+      "comment": -1,
+      "range": [
+        260,
+        325
+      ],
+      "name": "ColumnResizeManager",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": "",
+        "tags": []
+      },
+      "jsDoc": "/**\n * @constructor\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "src/column-resize-manager",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 48,
+    "requires": [
+      "jquery",
+      "galileo-lib/modules/events",
+      "galileo-lib/modules/services/usage-tracking"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/src",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 1971,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./column-resize-manager",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "ColumnResizeManager": 1847
+    },
+    "methods": [
+      {
+        "name": "ColumnResizeManager",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function ColumnResizeManager() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "startResizing",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "ColumnResizeManager.prototype",
+        "doclet": "/**\n * @param _lastXValue\n * @param resizeFunction\n * @param resetFunction\n * @param _donePromise\n */",
+        "args": [
+          "_lastXValue",
+          "resizeFunction",
+          "resetFunction",
+          "_donePromise"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ColumnResizeManager.prototype.startResizing = function (_lastXValue, resizeFunction, resetFunction, _donePromise) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "isResizing",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "ColumnResizeManager.prototype",
+        "doclet": "/**\n * Returns true if is resizing.\n * @return {object} boolean\n */",
+        "description": "Returns true if is resizing.",
+        "return": "boolean",
+        "classDeclarationFlag": false,
+        "line": "ColumnResizeManager.prototype.isResizing = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_setupMousemove",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 17,
+        "memberOf": "ColumnResizeManager.prototype",
+        "doclet": "/**\n * @param resizeFunction\n * @param resetFunction\n * @return {function}\n */",
+        "args": [
+          "resizeFunction",
+          "resetFunction"
+        ],
+        "description": "",
+        "return": "{function}",
+        "classDeclarationFlag": false,
+        "line": "ColumnResizeManager.prototype._setupMousemove = function (resizeFunction, resetFunction) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_reset",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 34,
+        "memberOf": "ColumnResizeManager.prototype",
+        "doclet": "/**\n * @param resetFunction\n */",
+        "args": [
+          "resetFunction"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ColumnResizeManager.prototype._reset = function (resetFunction) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/src",
+    "fileName": "column-resize-manager.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 82,
+  "EMPTY": false
+}

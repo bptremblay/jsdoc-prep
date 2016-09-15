@@ -1,0 +1,169 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "column-and-block-layout-editor-path/constants"
+      ],
+      "moduleName": "block-model-dispatcher",
+      "AMD": true,
+      "webPath": "/src/drag-drop",
+      "convertedName": "block_model_dispatcher",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'BlockModelDispatcher'.",
+        "code": "wfJD",
+        "evidence": "function BlockModelDispatcher(eventEmitter) {",
+        "line": 4,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'BlockModelDispatcher'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'dispatch'.",
+        "code": "wfJD",
+        "evidence": "BlockModelDispatcher.prototype.dispatch = function (content, type, dropAction) {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'dispatch'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/drag-drop/block-model-dispatcher.js",
+  "folderPath": "test-source/src/drag-drop",
+  "fileName": "block-model-dispatcher.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/src/drag-drop",
+  "webPath": "/src/drag-drop",
+  "libFile": false,
+  "min": false,
+  "realName": "block-model-dispatcher",
+  "name": "block-model-dispatcher",
+  "camelName": "BlockModelDispatcher",
+  "processedFilePath": "test-output/src/drag-drop/block-model-dispatcher.js",
+  "mappedModuleName": "src/drag-drop/block-model-dispatcher",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "src/drag-drop/block-model-dispatcher~BlockModelDispatcher": {
+      "todos": [],
+      "params": [
+        "eventEmitter"
+      ],
+      "memberOf": "",
+      "returnType": "",
+      "ctor": true,
+      "lineNumber": 4,
+      "line": "function BlockModelDispatcher(eventEmitter) {",
+      "comment": -1,
+      "range": [
+        239,
+        330
+      ],
+      "name": "BlockModelDispatcher",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": "",
+        "tags": []
+      },
+      "jsDoc": "/**\n * @constructor\n * @param eventEmitter\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "src/drag-drop/block-model-dispatcher",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 27,
+    "requires": [
+      "column-and-block-layout-editor-path/constants"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/src/drag-drop",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1585,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./block-model-dispatcher",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "BlockModelDispatcher": 1564
+    },
+    "methods": [
+      {
+        "name": "BlockModelDispatcher",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n * @param eventEmitter\n */",
+        "args": [
+          "eventEmitter"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function BlockModelDispatcher(eventEmitter) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "dispatch",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "BlockModelDispatcher.prototype",
+        "doclet": "/**\n * @param content\n * @param type\n * @param dropAction\n */",
+        "args": [
+          "content",
+          "type",
+          "dropAction"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "BlockModelDispatcher.prototype.dispatch = function (content, type, dropAction) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/src/drag-drop",
+    "fileName": "block-model-dispatcher.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 47,
+  "EMPTY": false
+}

@@ -1,0 +1,252 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "underscore",
+        "jquery",
+        "column-and-block-layout-editor-path/models/column",
+        "column-and-block-layout-editor-path/import/parser"
+      ],
+      "moduleName": "importer",
+      "AMD": true,
+      "webPath": "/src/import",
+      "convertedName": "importer.js",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'Importer'.",
+        "code": "wfJD",
+        "evidence": "function Importer() {}",
+        "line": 4,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'Importer'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getBlocks'.",
+        "code": "wfJD",
+        "evidence": "Importer.prototype._getBlocks = function ($el) {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getBlocks'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_buildContentStates'.",
+        "code": "wfJD",
+        "evidence": "Importer.prototype._buildContentStates = function (contentStates, contentEditorResolvers) {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_buildContentStates'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getContentEditorResolvers'.",
+        "code": "wfJD",
+        "evidence": "Importer.prototype._getContentEditorResolvers = function ($container, contentEditors) {",
+        "line": 28,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getContentEditorResolvers'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'import'.",
+        "code": "wfJD",
+        "evidence": "Importer.prototype[\"import\"] = function (markup, contentEditors, actualCreate) {",
+        "line": 41,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'import'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/import/importer.js.js",
+  "folderPath": "test-source/src/import",
+  "fileName": "importer.js.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/src/import",
+  "webPath": "/src/import",
+  "libFile": false,
+  "min": false,
+  "realName": "importer.js",
+  "name": "importer",
+  "camelName": "Importer.js",
+  "processedFilePath": "test-output/src/import/importer.js.js",
+  "mappedModuleName": "src/import/importer",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "src/import/importer~Importer": {
+      "todos": [],
+      "memberOf": "",
+      "returnType": "",
+      "ctor": true,
+      "lineNumber": 4,
+      "line": "function Importer() {}",
+      "comment": -1,
+      "range": [
+        264,
+        286
+      ],
+      "name": "Importer",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": "",
+        "tags": []
+      },
+      "jsDoc": "/**\n * @constructor\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "src/import/importer",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 64,
+    "requires": [
+      "underscore",
+      "jquery",
+      "column-and-block-layout-editor-path/models/column",
+      "column-and-block-layout-editor-path/import/parser"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/src/import",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 2589,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./importer",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "Importer": 2798
+    },
+    "methods": [
+      {
+        "name": "Importer",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function Importer() {}",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getBlocks",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "Importer.prototype",
+        "doclet": "/**\n * @param $el\n */",
+        "args": [
+          "$el"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "Importer.prototype._getBlocks = function ($el) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_buildContentStates",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "memberOf": "Importer.prototype",
+        "doclet": "/**\n * @param contentStates\n * @param contentEditorResolvers\n */",
+        "args": [
+          "contentStates",
+          "contentEditorResolvers"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "Importer.prototype._buildContentStates = function (contentStates, contentEditorResolvers) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getContentEditorResolvers",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 28,
+        "memberOf": "Importer.prototype",
+        "doclet": "/**\n * @param $container\n * @param contentEditors\n */",
+        "args": [
+          "$container",
+          "contentEditors"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "Importer.prototype._getContentEditorResolvers = function ($container, contentEditors) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "import",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 41,
+        "memberOf": "Importer.prototype",
+        "doclet": "/**\n * @param markup\n * @param contentEditors\n * @param actualCreate\n * @return {function}\n */",
+        "args": [
+          "markup",
+          "contentEditors",
+          "actualCreate"
+        ],
+        "description": "",
+        "return": "{function}",
+        "classDeclarationFlag": false,
+        "line": "Importer.prototype[\"import\"] = function (markup, contentEditors, actualCreate) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/src/import",
+    "fileName": "importer.js.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 104,
+  "EMPTY": false
+}

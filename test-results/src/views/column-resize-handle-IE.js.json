@@ -1,0 +1,349 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "backbone",
+        "text!column-and-block-layout-editor-path/templates/column-resize-handle.html",
+        "column-and-block-layout-editor-path/percentage-utils",
+        "column-and-block-layout-editor-path/constants",
+        "column-and-block-layout-editor-path/column-resize-manager",
+        "underscore"
+      ],
+      "moduleName": "column-resize-handle-IE",
+      "AMD": true,
+      "webPath": "/src/views",
+      "convertedName": "column_resize_handle_ie",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'ColumnResizeHandleIE'.",
+        "code": "wfJD",
+        "evidence": "function ColumnResizeHandleIE() {",
+        "line": 8,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'ColumnResizeHandleIE'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initialize'.",
+        "code": "wfJD",
+        "evidence": "ColumnResizeHandleIE.prototype.initialize = function () {",
+        "line": 16,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initialize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_startResizingColumn'.",
+        "code": "wfJD",
+        "evidence": "ColumnResizeHandleIE.prototype._startResizingColumn = function (event) {",
+        "line": 19,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_startResizingColumn'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_finishResizingColumn'.",
+        "code": "wfJD",
+        "evidence": "ColumnResizeHandleIE.prototype._finishResizingColumn = function () {",
+        "line": 27,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_finishResizingColumn'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_dragHandle'.",
+        "code": "wfJD",
+        "evidence": "ColumnResizeHandleIE.prototype._dragHandle = function (deltaInPixels) {",
+        "line": 30,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_dragHandle'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getColumnPercentage'.",
+        "code": "wfJD",
+        "evidence": "ColumnResizeHandleIE.prototype._getColumnPercentage = function () {",
+        "line": 43,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getColumnPercentage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_setColumnPercentage'.",
+        "code": "wfJD",
+        "evidence": "ColumnResizeHandleIE.prototype._setColumnPercentage = function (newPercentage) {",
+        "line": 48,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_setColumnPercentage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_calculateNewColumnPercentage'.",
+        "code": "wfJD",
+        "evidence": "ColumnResizeHandleIE.prototype._calculateNewColumnPercentage = function (deltaInDecimal) {",
+        "line": 51,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_calculateNewColumnPercentage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'render'.",
+        "code": "wfJD",
+        "evidence": "ColumnResizeHandleIE.prototype.render = function () {",
+        "line": 59,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'render'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/views/column-resize-handle-IE.js",
+  "folderPath": "test-source/src/views",
+  "fileName": "column-resize-handle-IE.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/src/views",
+  "webPath": "/src/views",
+  "libFile": false,
+  "min": false,
+  "realName": "column-resize-handle-ie",
+  "name": "column-resize-handle-IE",
+  "camelName": "ColumnResizeHandleIe",
+  "processedFilePath": "test-output/src/views/column-resize-handle-IE.js",
+  "mappedModuleName": "src/views/column-resize-handle-IE",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "src/views/column-resize-handle-IE~ColumnResizeHandleIE": {
+      "todos": [],
+      "returnType": "",
+      "memberOf": "",
+      "ctor": true,
+      "lineNumber": 8,
+      "line": "function ColumnResizeHandleIE() {",
+      "comment": -1,
+      "range": [
+        576,
+        825
+      ],
+      "name": "ColumnResizeHandleIE",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": "",
+        "tags": []
+      },
+      "jsDoc": "/**\n * @constructor\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "src/views/column-resize-handle-IE",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 66,
+    "requires": [
+      "jquery",
+      "backbone",
+      "text!column-and-block-layout-editor-path/templates/column-resize-handle.html",
+      "column-and-block-layout-editor-path/percentage-utils",
+      "column-and-block-layout-editor-path/constants",
+      "column-and-block-layout-editor-path/column-resize-manager",
+      "underscore"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/src/views",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 3514,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./column-resize-handle-IE",
+    "uses_console_log": false,
+    "uses_backbone": true,
+    "classes": {
+      "ColumnResizeHandleIE": 2997
+    },
+    "methods": [
+      {
+        "name": "ColumnResizeHandleIE",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 8,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function ColumnResizeHandleIE() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "initialize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "memberOf": "ColumnResizeHandleIE.prototype",
+        "doclet": "/**\n * @return {object} AssignmentExpression\n */",
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "ColumnResizeHandleIE.prototype.initialize = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_startResizingColumn",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 19,
+        "memberOf": "ColumnResizeHandleIE.prototype",
+        "doclet": "/**\n * @param event\n */",
+        "args": [
+          "event"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "ColumnResizeHandleIE.prototype._startResizingColumn = function (event) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_finishResizingColumn",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 27,
+        "memberOf": "ColumnResizeHandleIE.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ColumnResizeHandleIE.prototype._finishResizingColumn = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_dragHandle",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 30,
+        "memberOf": "ColumnResizeHandleIE.prototype",
+        "doclet": "/**\n * @param deltaInPixels\n */",
+        "args": [
+          "deltaInPixels"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ColumnResizeHandleIE.prototype._dragHandle = function (deltaInPixels) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getColumnPercentage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 43,
+        "memberOf": "ColumnResizeHandleIE.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ColumnResizeHandleIE.prototype._getColumnPercentage = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_setColumnPercentage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 48,
+        "memberOf": "ColumnResizeHandleIE.prototype",
+        "doclet": "/**\n * @param newPercentage\n */",
+        "args": [
+          "newPercentage"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ColumnResizeHandleIE.prototype._setColumnPercentage = function (newPercentage) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_calculateNewColumnPercentage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 51,
+        "memberOf": "ColumnResizeHandleIE.prototype",
+        "doclet": "/**\n * @param deltaInDecimal\n */",
+        "args": [
+          "deltaInDecimal"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ColumnResizeHandleIE.prototype._calculateNewColumnPercentage = function (deltaInDecimal) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 59,
+        "memberOf": "ColumnResizeHandleIE.prototype",
+        "doclet": "/**\n * @return {object} ThisExpression\n */",
+        "description": "",
+        "return": "ThisExpression",
+        "classDeclarationFlag": false,
+        "line": "ColumnResizeHandleIE.prototype.render = function () {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/src/views",
+    "fileName": "column-resize-handle-IE.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 115,
+  "EMPTY": false
+}

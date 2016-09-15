@@ -1,0 +1,320 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "backbone",
+        "galileo-lib/modules/managers/error-manager",
+        "column-and-block-layout-editor-path/constants",
+        "underscore"
+      ],
+      "moduleName": "publish",
+      "AMD": true,
+      "webPath": "/src/views",
+      "convertedName": "publish",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'PublishView'.",
+        "code": "wfJD",
+        "evidence": "function PublishView() {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'PublishView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_containerMarkup'.",
+        "code": "wfJD",
+        "evidence": "PublishView.prototype._containerMarkup = function () {",
+        "line": 9,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_containerMarkup'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_removeUnpublishableElements'.",
+        "code": "wfJD",
+        "evidence": "PublishView.prototype._removeUnpublishableElements = function ($container) {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_removeUnpublishableElements'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_render'.",
+        "code": "wfJD",
+        "evidence": "PublishView.prototype._render = function () {",
+        "line": 18,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_render'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'callback'.",
+        "code": "wfJD",
+        "evidence": "callback = function (editor, content) {",
+        "line": 37,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'callback'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_onElementCreated'.",
+        "code": "wfJD",
+        "evidence": "PublishView.prototype._onElementCreated = function () {",
+        "line": 72,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_onElementCreated'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initialize'.",
+        "code": "wfJD",
+        "evidence": "PublishView.prototype.initialize = function (opts) {",
+        "line": 75,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initialize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'render'.",
+        "code": "wfJD",
+        "evidence": "PublishView.prototype.render = function () {",
+        "line": 79,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'render'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/views/publish.js",
+  "folderPath": "test-source/src/views",
+  "fileName": "publish.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/src/views",
+  "webPath": "/src/views",
+  "libFile": false,
+  "min": false,
+  "realName": "publish",
+  "name": "publish",
+  "camelName": "Publish",
+  "processedFilePath": "test-output/src/views/publish.js",
+  "mappedModuleName": "src/views/publish",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "src/views/publish~PublishView": {
+      "todos": [],
+      "returnType": "",
+      "memberOf": "",
+      "ctor": true,
+      "lineNumber": 6,
+      "line": "function PublishView() {",
+      "comment": -1,
+      "range": [
+        336,
+        437
+      ],
+      "name": "PublishView",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": "",
+        "tags": []
+      },
+      "jsDoc": "/**\n * @constructor\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "src/views/publish",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 88,
+    "requires": [
+      "jquery",
+      "backbone",
+      "galileo-lib/modules/managers/error-manager",
+      "column-and-block-layout-editor-path/constants",
+      "underscore"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/src/views",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 3535,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./publish",
+    "uses_console_log": true,
+    "uses_backbone": true,
+    "classes": {
+      "PublishView": 4321
+    },
+    "methods": [
+      {
+        "name": "PublishView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function PublishView() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_containerMarkup",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 9,
+        "memberOf": "PublishView.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "PublishView.prototype._containerMarkup = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_removeUnpublishableElements",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "PublishView.prototype",
+        "doclet": "/**\n * @param $container\n */",
+        "args": [
+          "$container"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "PublishView.prototype._removeUnpublishableElements = function ($container) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 18,
+        "memberOf": "PublishView.prototype",
+        "doclet": "/**\n * @return {boolean}\n */",
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "PublishView.prototype._render = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "callback",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 37,
+        "memberOf": "",
+        "doclet": "/**\n * @param editor\n * @param content\n */",
+        "args": [
+          "editor",
+          "content"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "callback = function (editor, content) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_onElementCreated",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 72,
+        "memberOf": "PublishView.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "PublishView.prototype._onElementCreated = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "initialize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 75,
+        "memberOf": "PublishView.prototype",
+        "doclet": "/**\n * @param opts\n */",
+        "args": [
+          "opts"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "PublishView.prototype.initialize = function (opts) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 79,
+        "memberOf": "PublishView.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "PublishView.prototype.render = function () {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/src/views",
+    "fileName": "publish.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 139,
+  "EMPTY": false
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: drag-drop/block.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: drag-drop/block.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>define(['column-and-block-layout-editor-path/constants', 'backbone'],
+  /**
+   * @exports src/drag-drop/block
+   * @requires column-and-block-layout-editor-path/constants
+   * @requires backbone
+   * @requires underscore
+   */
+  function (constants, Backbone) {
+    /**
+     * The drag drop block.
+     */
+    var DragDropBlock;
+    return DragDropBlock = ( /**@lends module:src/drag-drop/block~DragDropBlock# */ function (superClass) {
+      extend(DragDropBlock, superClass);
+      /**
+       * @constructor
+       */
+      function DragDropBlock() {
+        return DragDropBlock.__super__.constructor.apply(this, arguments);
+      }
+      DragDropBlock.prototype.ACTIONS = constants.DRAG_DROP.ACTIONS;
+      DragDropBlock.prototype.DIRECTIONS = constants.DRAG_DROP.DIRECTIONS;
+      DragDropBlock.prototype.SETTINGS = constants.DRAG_DROP.SETTINGS;
+      DragDropBlock.prototype.defaults = {
+        id: null,
+        height: null,
+        width: null,
+        lowerY: null,
+        upperY: null
+      };
+      /**
+       * Returns true if is move.
+       * @return {Object} boolean
+       */
+      DragDropBlock.prototype.isMove = function () {
+        return this.collection.isMove();
+      };
+      /**
+       * Returns true if is reorder.
+       * @return {Object} boolean
+       */
+      DragDropBlock.prototype.isReorder = function () {
+        return this.collection.isReorder();
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      DragDropBlock.prototype.getSourceColumnIndex = function () {
+        return this.collection.getSourceColumnIndex();
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      DragDropBlock.prototype.getSourceBlockIndex = function () {
+        return this.collection.getSourceBlockIndex();
+      };
+      /**
+       * @param x
+       * @param y
+       */
+      DragDropBlock.prototype.getAction = function (x, y) {
+        return {
+          action: this._getActionIdentifier(y),
+          columnId: this.collection.getColumnId(),
+          blockId: this._getBlockIndexForY(y),
+          markerColumnId: this.collection.getColumnId(),
+          markerBlockId: this.id,
+          markerDirection: this._getDirection(y)
+        };
+      };
+      /**
+       * @param y
+       */
+      DragDropBlock.prototype._getBlockIndexForY = function (y) {
+        /**
+         * The index modifier.
+         */
+        var indexModifier;
+        indexModifier = Math.max(this._getBlockIndexModifierForY(y), 0);
+        return this.id + indexModifier;
+      };
+      /**
+       * @param y
+       * @return {Object} UnaryExpression
+       */
+      DragDropBlock.prototype._getBlockIndexModifierForY = function (y) {
+        /**
+         * The direction.
+         */
+        var direction;
+        direction = this._getDirection(y);
+        switch (false) {
+        case !(direction === this.DIRECTIONS.ABOVE &amp;&amp; this._willChangeLayout()):
+          return -1;
+        case !(direction === this.DIRECTIONS.BELOW &amp;&amp; this._willChangeLayout()):
+          return 1;
+        default:
+          return 0;
+        }
+      };
+      /**
+       * @return {Boolean}
+       */
+      DragDropBlock.prototype._sourceContentInDifferentLayoutPosition = function () {
+        /**
+         * The different block.
+         */
+        var differentBlock, differentColumn;
+        differentColumn = this.getSourceColumnIndex() !== this.collection.getColumnId();
+        differentBlock = this.getSourceBlockIndex() !== this.id;
+        return differentColumn || differentBlock || this.collection.sourceIsChild();
+      };
+      /**
+       * @return {Boolean}
+       */
+      DragDropBlock.prototype._willChangeLayout = function () {
+        return !this.isReorder() || this._sourceContentInDifferentLayoutPosition();
+      };
+      /**
+       * @param y
+       */
+      DragDropBlock.prototype._getDirection = function (y) {
+        /**
+         * The col y.
+         */
+        var colY;
+        colY = y - this.get('lowerY');
+        if (colY &lt; this.get('height') / 2) {
+          return this.DIRECTIONS.ABOVE;
+        } else {
+          return this.DIRECTIONS.BELOW;
+        }
+      };
+      /**
+       * @param y
+       */
+      DragDropBlock.prototype._getActionIdentifier = function (y) {
+        switch (false) {
+        case !this._shouldDoNothing(y):
+          return this.ACTIONS.NULL;
+        case !this.isReorder():
+          return this.ACTIONS.REORDER_BLOCK;
+        case !this.isMove():
+          return this.ACTIONS.MOVE_BLOCK;
+        default:
+          return this.ACTIONS.INSERT_BLOCK;
+        }
+      };
+      /**
+       * @param y
+       * @return {Boolean}
+       */
+      DragDropBlock.prototype._shouldDoNothing = function (y) {
+        /**
+         * The same block.
+         */
+        var sameBlock, sameColumn;
+        sameColumn = this.getSourceColumnIndex() === this.collection.getColumnId();
+        sameBlock = this._sourceBlockIsDestinationBlock(y);
+        return this.collection.isReorder() &amp;&amp; sameColumn &amp;&amp; sameBlock;
+      };
+      /**
+       * @param y
+       */
+      DragDropBlock.prototype._sourceBlockIsDestinationBlock = function (y) {
+        return this.id + this._getBlockIndexModifierForY(y) === this.getSourceBlockIndex();
+      };
+      return DragDropBlock;
+    })(Backbone.Model);
+  });</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-src_abstract-layout-generator.html">src/abstract-layout-generator</a></li><li><a href="module-src_column-and-block-layout-editor.html">src/column-and-block-layout-editor</a></li><li><a href="module-src_column-resize-manager.html">src/column-resize-manager</a></li><li><a href="module-src_constants.html">src/constants</a></li><li><a href="module-src_drag-drop_api.html">src/drag-drop/api</a></li><li><a href="module-src_drag-drop_block.html">src/drag-drop/block</a></li><li><a href="module-src_drag-drop_block-model-dispatcher.html">src/drag-drop/block-model-dispatcher</a></li><li><a href="module-src_drag-drop_blocks.html">src/drag-drop/blocks</a></li><li><a href="module-src_drag-drop_column.html">src/drag-drop/column</a></li><li><a href="module-src_drag-drop_columns.html">src/drag-drop/columns</a></li><li><a href="module-src_drag-drop_helpers.html">src/drag-drop/helpers</a></li><li><a href="module-src_drag-drop_insert-marker.html">src/drag-drop/insert-marker</a></li><li><a href="module-src_drag-drop_layout.html">src/drag-drop/layout</a></li><li><a href="module-src_import_importer.html">src/import/importer</a></li><li><a href="module-src_import_parser.html">src/import/parser</a></li><li><a href="module-src_index.html">src/index</a></li><li><a href="module-src_models_block.html">src/models/block</a></li><li><a href="module-src_models_blocks.html">src/models/blocks</a></li><li><a href="module-src_models_column.html">src/models/column</a></li><li><a href="module-src_models_columns.html">src/models/columns</a></li><li><a href="module-src_models_content.html">src/models/content</a></li><li><a href="module-src_models_content-editor-state-map.html">src/models/content-editor-state-map</a></li><li><a href="module-src_models_content-editors.html">src/models/content-editors</a></li><li><a href="module-src_models_contents.html">src/models/contents</a></li><li><a href="module-src_models_converters_block-converter.html">src/models/converters/block-converter</a></li><li><a href="module-src_models_converters_block-descriptor-to-block.html">src/models/converters/block-descriptor-to-block</a></li><li><a href="module-src_models_converters_block-descriptor-to-content-json.html">src/models/converters/block-descriptor-to-content-json</a></li><li><a href="module-src_models_converters_content-converter.html">src/models/converters/content-converter</a></li><li><a href="module-src_models_converters_content-to-block.html">src/models/converters/content-to-block</a></li><li><a href="module-src_models_converters_content-to-content-json.html">src/models/converters/content-to-content-json</a></li><li><a href="module-src_models_layout.html">src/models/layout</a></li><li><a href="module-src_nls_column-and-block-layout-editor.html">src/nls/column-and-block-layout-editor</a></li><li><a href="module-src_padding_calculator.html">src/padding/calculator</a></li><li><a href="module-src_padding_parser.html">src/padding/parser</a></li><li><a href="module-src_padding_renderer.html">src/padding/renderer</a></li><li><a href="module-src_percentage-utils.html">src/percentage-utils</a></li><li><a href="module-src_state-migrations.html">src/state-migrations</a></li><li><a href="module-src_state-validator.html">src/state-validator</a></li><li><a href="module-src_views_block.html">src/views/block</a></li><li><a href="module-src_views_column.html">src/views/column</a></li><li><a href="module-src_views_column-resize-handle.html">src/views/column-resize-handle</a></li><li><a href="module-src_views_column-resize-handle-IE.html">src/views/column-resize-handle-IE</a></li><li><a href="module-src_views_content.html">src/views/content</a></li><li><a href="module-src_views_import.html">src/views/import</a></li><li><a href="module-src_views_layout.html">src/views/layout</a></li><li><a href="module-src_views_move-handle.html">src/views/move-handle</a></li><li><a href="module-src_views_publish.html">src/views/publish</a></li><li><a href="module-src_views_vspace-flyout.html">src/views/vspace-flyout</a></li></ul><h3>Classes</h3><ul><li><a href="module-src_abstract-layout-generator-AbstractLayoutGenerator_-AbstractLayoutGenerator.html">AbstractLayoutGenerator</a></li><li><a href="module-src_column-resize-manager-=_-ColumnResizeManager.html">ColumnResizeManager</a></li><li><a href="module-src_drag-drop_api-DragDropApi_-DragDropApi.html">DragDropApi</a></li><li><a href="module-src_drag-drop_block-model-dispatcher-BlockModelDispatcher_-BlockModelDispatcher.html">BlockModelDispatcher</a></li><li><a href="module-src_drag-drop_blocks-DragDropBlocks_-DragDropBlocks.html">DragDropBlocks</a></li><li><a href="module-src_drag-drop_block-DragDropBlock_-DragDropBlock.html">DragDropBlock</a></li><li><a href="module-src_drag-drop_columns-DragDropColumns_-DragDropColumns.html">DragDropColumns</a></li><li><a href="module-src_drag-drop_column-DragDropColumn_-DragDropColumn.html">DragDropColumn</a></li><li><a href="module-src_drag-drop_insert-marker-InsertionMarker_-InsertionMarker.html">InsertionMarker</a></li><li><a href="module-src_drag-drop_layout-DragDropLayout_-DragDropLayout.html">DragDropLayout</a></li><li><a href="module-src_import_importer-=_-Importer.html">Importer</a></li><li><a href="module-src_import_parser-Parser_-Parser.html">Parser</a></li><li><a href="module-src_index-ColumnAndBlockLayoutEditor_-ColumnAndBlockLayoutEditor.html">ColumnAndBlockLayoutEditor</a></li><li><a href="module-src_models_blocks-Blocks_-Blocks.html">Blocks</a></li><li><a href="module-src_models_block-BlockModel_-BlockModel.html">BlockModel</a></li><li><a href="module-src_models_columns-Columns_-Columns.html">Columns</a></li><li><a href="module-src_models_column-ColumnModel_-ColumnModel.html">ColumnModel</a></li><li><a href="module-src_models_content-editor-state-map-ContentEditorStateMap_-ContentEditorStateMap.html">ContentEditorStateMap</a></li><li><a href="module-src_models_content-editors-ContentEditors_-ContentEditors.html">ContentEditors</a></li><li><a href="module-src_models_contents-Contents_-Contents.html">Contents</a></li><li><a href="module-src_models_content-ContentModel_-ContentModel.html">ContentModel</a></li><li><a href="module-src_models_converters_block-converter-BlockConverter_-BlockConverter.html">BlockConverter</a></li><li><a href="module-src_models_converters_block-descriptor-to-block-BlockDescriptorToBlock_-BlockDescriptorToBlock.html">BlockDescriptorToBlock</a></li><li><a href="module-src_models_converters_block-descriptor-to-content-json-BlockDescriptorToContent_-BlockDescriptorToContent.html">BlockDescriptorToContent</a></li><li><a href="module-src_models_converters_content-converter-ContentConverter_-ContentConverter.html">ContentConverter</a></li><li><a href="module-src_models_converters_content-to-block-ContentToBlock_-ContentToBlock.html">ContentToBlock</a></li><li><a href="module-src_models_converters_content-to-content-json-ContentToContentJson_-ContentToContentJson.html">ContentToContentJson</a></li><li><a href="module-src_models_layout-LayoutModel_-LayoutModel.html">LayoutModel</a></li><li><a href="module-src_padding_calculator-PaddingCalculator_-PaddingCalculator.html">PaddingCalculator</a></li><li><a href="module-src_padding_parser-PaddingParser_-PaddingParser.html">PaddingParser</a></li><li><a href="module-src_padding_renderer-PaddingRenderer_-PaddingRenderer.html">PaddingRenderer</a></li><li><a href="module-src_state-validator-=_-StateValidator.html">StateValidator</a></li><li><a href="module-src_views_block-BlockView_-BlockView.html">BlockView</a></li><li><a href="module-src_views_column-resize-handle-IE-ColumnResizeHandleIE_-ColumnResizeHandleIE.html">ColumnResizeHandleIE</a></li><li><a href="module-src_views_column-resize-handle-ColumnResizeHandle_-ColumnResizeHandle.html">ColumnResizeHandle</a></li><li><a href="module-src_views_column-ColumnView_-ColumnView.html">ColumnView</a></li><li><a href="module-src_views_content-ContentView_-ContentView.html">ContentView</a></li><li><a href="module-src_views_import-ImportView_-ImportView.html">ImportView</a></li><li><a href="module-src_views_layout-LayoutView_-LayoutView.html">LayoutView</a></li><li><a href="module-src_views_move-handle-MoveHandle_-MoveHandle.html">MoveHandle</a></li><li><a href="module-src_views_publish-PublishView_-PublishView.html">PublishView</a></li><li><a href="module-src_views_vspace-flyout-=_-VspaceFlyoutView.html">VspaceFlyoutView</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Sep 12 2016 15:47:20 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

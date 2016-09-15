@@ -1,0 +1,298 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "backbone",
+        "template-engine",
+        "galileo-lib/modules/managers/error-manager",
+        "column-and-block-layout-editor-path/constants",
+        "underscore"
+      ],
+      "moduleName": "import",
+      "AMD": true,
+      "webPath": "/src/views",
+      "convertedName": "import",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'ImportView'.",
+        "code": "wfJD",
+        "evidence": "function ImportView() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'ImportView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_containerMarkup'.",
+        "code": "wfJD",
+        "evidence": "ImportView.prototype._containerMarkup = function () {",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_containerMarkup'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_removeActivationAttributes'.",
+        "code": "wfJD",
+        "evidence": "ImportView.prototype._removeActivationAttributes = function ($layout) {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_removeActivationAttributes'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_onElementCreated'.",
+        "code": "wfJD",
+        "evidence": "ImportView.prototype._onElementCreated = function () {",
+        "line": 16,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_onElementCreated'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initialize'.",
+        "code": "wfJD",
+        "evidence": "ImportView.prototype.initialize = function (opts) {",
+        "line": 19,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initialize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'render'.",
+        "code": "wfJD",
+        "evidence": "ImportView.prototype.render = function () {",
+        "line": 23,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'render'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'callback'.",
+        "code": "wfJD",
+        "evidence": "callback = function (editor, content) {",
+        "line": 41,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'callback'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/views/import.js",
+  "folderPath": "test-source/src/views",
+  "fileName": "import.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/src/views",
+  "webPath": "/src/views",
+  "libFile": false,
+  "min": false,
+  "realName": "import",
+  "name": "import",
+  "camelName": "Import",
+  "processedFilePath": "test-output/src/views/import.js",
+  "mappedModuleName": "src/views/import",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "src/views/import~ImportView": {
+      "todos": [],
+      "returnType": "",
+      "memberOf": "",
+      "ctor": true,
+      "lineNumber": 7,
+      "line": "function ImportView() {",
+      "comment": -1,
+      "range": [
+        362,
+        461
+      ],
+      "name": "ImportView",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": "",
+        "tags": []
+      },
+      "jsDoc": "/**\n * @constructor\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "src/views/import",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 68,
+    "requires": [
+      "jquery",
+      "backbone",
+      "template-engine",
+      "galileo-lib/modules/managers/error-manager",
+      "column-and-block-layout-editor-path/constants",
+      "underscore"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/src/views",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 2828,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./import",
+    "uses_console_log": false,
+    "uses_backbone": true,
+    "classes": {
+      "ImportView": 3452
+    },
+    "methods": [
+      {
+        "name": "ImportView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function ImportView() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_containerMarkup",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "ImportView.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ImportView.prototype._containerMarkup = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_removeActivationAttributes",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "ImportView.prototype",
+        "doclet": "/**\n * @param $layout\n */",
+        "args": [
+          "$layout"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ImportView.prototype._removeActivationAttributes = function ($layout) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_onElementCreated",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "memberOf": "ImportView.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ImportView.prototype._onElementCreated = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "initialize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 19,
+        "memberOf": "ImportView.prototype",
+        "doclet": "/**\n * @param opts\n */",
+        "args": [
+          "opts"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ImportView.prototype.initialize = function (opts) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 23,
+        "memberOf": "ImportView.prototype",
+        "doclet": "/**\n * @return {boolean}\n */",
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "ImportView.prototype.render = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "callback",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 41,
+        "memberOf": "",
+        "doclet": "/**\n * @param editor\n * @param content\n */",
+        "args": [
+          "editor",
+          "content"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "callback = function (editor, content) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/src/views",
+    "fileName": "import.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 114,
+  "EMPTY": false
+}

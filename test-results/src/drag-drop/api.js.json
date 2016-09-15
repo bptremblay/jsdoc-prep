@@ -1,0 +1,401 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "galileo-lib/modules/events",
+        "column-and-block-layout-editor-path/constants",
+        "column-and-block-layout-editor-path/drag-drop/helpers",
+        "column-and-block-layout-editor-path/drag-drop/layout",
+        "column-and-block-layout-editor-path/drag-drop/insert-marker",
+        "column-and-block-layout-editor-path/drag-drop/block-model-dispatcher"
+      ],
+      "moduleName": "api",
+      "AMD": true,
+      "webPath": "/src/drag-drop",
+      "convertedName": "api",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'DragDropApi'.",
+        "code": "wfJD",
+        "evidence": "function DragDropApi(layoutEditor, model, view) {",
+        "line": 6,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'DragDropApi'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'init'.",
+        "code": "wfJD",
+        "evidence": "DragDropApi.prototype.init = function () {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'init'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'acceptsContent'.",
+        "code": "wfJD",
+        "evidence": "DragDropApi.prototype.acceptsContent = function (content, type, uiEvent) {",
+        "line": 19,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'acceptsContent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_initEvents'.",
+        "code": "wfJD",
+        "evidence": "DragDropApi.prototype._initEvents = function () {",
+        "line": 25,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_initEvents'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_onDragenter'.",
+        "code": "wfJD",
+        "evidence": "DragDropApi.prototype._onDragenter = function (content, type, uiEvent) {",
+        "line": 31,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_onDragenter'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_onDragover'.",
+        "code": "wfJD",
+        "evidence": "DragDropApi.prototype._onDragover = function (content, type, uiEvent) {",
+        "line": 39,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_onDragover'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_onDrop'.",
+        "code": "wfJD",
+        "evidence": "DragDropApi.prototype._onDrop = function (content, type, uiEvent) {",
+        "line": 44,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_onDrop'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_onDragleave'.",
+        "code": "wfJD",
+        "evidence": "DragDropApi.prototype._onDragleave = function (content, type, uiEvent) {",
+        "line": 50,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_onDragleave'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getAction'.",
+        "code": "wfJD",
+        "evidence": "DragDropApi.prototype._getAction = function (uiEvent) {",
+        "line": 53,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getAction'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_actionableEvent'.",
+        "code": "wfJD",
+        "evidence": "DragDropApi.prototype._actionableEvent = function (uiEvent) {",
+        "line": 59,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_actionableEvent'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/drag-drop/api.js",
+  "folderPath": "test-source/src/drag-drop",
+  "fileName": "api.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/src/drag-drop",
+  "webPath": "/src/drag-drop",
+  "libFile": false,
+  "min": false,
+  "realName": "api",
+  "name": "api",
+  "camelName": "Api",
+  "processedFilePath": "test-output/src/drag-drop/api.js",
+  "mappedModuleName": "src/drag-drop/api",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "src/drag-drop/api~DragDropApi": {
+      "todos": [],
+      "params": [
+        "layoutEditor",
+        "model",
+        "view"
+      ],
+      "memberOf": "",
+      "returnType": "",
+      "ctor": true,
+      "lineNumber": 6,
+      "line": "function DragDropApi(layoutEditor, model, view) {",
+      "comment": -1,
+      "range": [
+        553,
+        844
+      ],
+      "name": "DragDropApi",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": "",
+        "tags": []
+      },
+      "jsDoc": "/**\n * @constructor\n * @param layoutEditor\n * @param model\n * @param view\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "src/drag-drop/api",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 68,
+    "requires": [
+      "galileo-lib/modules/events",
+      "column-and-block-layout-editor-path/constants",
+      "column-and-block-layout-editor-path/drag-drop/helpers",
+      "column-and-block-layout-editor-path/drag-drop/layout",
+      "column-and-block-layout-editor-path/drag-drop/insert-marker",
+      "column-and-block-layout-editor-path/drag-drop/block-model-dispatcher"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/src/drag-drop",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 3189,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./api",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "DragDropApi": 3265
+    },
+    "methods": [
+      {
+        "name": "DragDropApi",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n * @param layoutEditor\n * @param model\n * @param view\n */",
+        "args": [
+          "layoutEditor",
+          "model",
+          "view"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function DragDropApi(layoutEditor, model, view) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "DragDropApi.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropApi.prototype.init = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "acceptsContent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 19,
+        "memberOf": "DragDropApi.prototype",
+        "doclet": "/**\n * @param content\n * @param type\n * @param uiEvent\n * @return {boolean}\n */",
+        "args": [
+          "content",
+          "type",
+          "uiEvent"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "DragDropApi.prototype.acceptsContent = function (content, type, uiEvent) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_initEvents",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 25,
+        "memberOf": "DragDropApi.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropApi.prototype._initEvents = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_onDragenter",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 31,
+        "memberOf": "DragDropApi.prototype",
+        "doclet": "/**\n * @param content\n * @param type\n * @param uiEvent\n * @return {object} AssignmentExpression\n */",
+        "args": [
+          "content",
+          "type",
+          "uiEvent"
+        ],
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "DragDropApi.prototype._onDragenter = function (content, type, uiEvent) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_onDragover",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 39,
+        "memberOf": "DragDropApi.prototype",
+        "doclet": "/**\n * @param content\n * @param type\n * @param uiEvent\n */",
+        "args": [
+          "content",
+          "type",
+          "uiEvent"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropApi.prototype._onDragover = function (content, type, uiEvent) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_onDrop",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 44,
+        "memberOf": "DragDropApi.prototype",
+        "doclet": "/**\n * @param content\n * @param type\n * @param uiEvent\n */",
+        "args": [
+          "content",
+          "type",
+          "uiEvent"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropApi.prototype._onDrop = function (content, type, uiEvent) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_onDragleave",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 50,
+        "memberOf": "DragDropApi.prototype",
+        "doclet": "/**\n * @param content\n * @param type\n * @param uiEvent\n */",
+        "args": [
+          "content",
+          "type",
+          "uiEvent"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropApi.prototype._onDragleave = function (content, type, uiEvent) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getAction",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 53,
+        "memberOf": "DragDropApi.prototype",
+        "doclet": "/**\n * @param uiEvent\n */",
+        "args": [
+          "uiEvent"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropApi.prototype._getAction = function (uiEvent) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_actionableEvent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 59,
+        "memberOf": "DragDropApi.prototype",
+        "doclet": "/**\n * @param uiEvent\n */",
+        "args": [
+          "uiEvent"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropApi.prototype._actionableEvent = function (uiEvent) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/src/drag-drop",
+    "fileName": "api.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 138,
+  "EMPTY": false
+}

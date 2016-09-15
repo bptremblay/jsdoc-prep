@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: models/content.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: models/content.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>define(['underscore', 'jquery', 'backbone', 'debug', 'galileo-lib/modules/events', 'galileo-lib/modules/galileo-event', 'galileo-lib/modules/services/descriptors/block/block-descriptor',
+    'column-and-block-layout-editor-path/constants', 'galileo-lib/modules/services/editor-lifecycle-service'
+  ],
+  /**
+   * @exports src/models/content
+   * @requires underscore
+   * @requires jquery
+   * @requires backbone
+   * @requires debug
+   * @requires galileo-lib/modules/events
+   * @requires galileo-lib/modules/galileo-event
+   * @requires galileo-lib/modules/services/descriptors/block/block-descriptor
+   * @requires column-and-block-layout-editor-path/constants
+   * @requires galileo-lib/modules/services/editor-lifecycle-service
+   */
+  function (_, $, Backbone, Debug, galileoEvents, GalileoEvent, BlockDescriptor, constants, lifecycle) {
+    /**
+     * The content model.
+     */
+    var ContentModel, debug;
+    debug = Debug('ContentModel');
+    return ContentModel = ( /**@lends module:src/models/content~ContentModel# */ function (superClass) {
+      extend(ContentModel, superClass);
+      /**
+       * @constructor
+       */
+      function ContentModel() {
+        this._cleanup = bind(this._cleanup, this);
+        this.blockDescriptorProviderFn = bind(this.blockDescriptorProviderFn, this);
+        this._updateContents = bind(this._updateContents, this);
+        return ContentModel.__super__.constructor.apply(this, arguments);
+      }
+      ContentModel.prototype.idAttribute = 'name';
+      ContentModel.prototype.contentEditorStateMap = null;
+      ContentModel.prototype.editor = null;
+      ContentModel.prototype.editorReady = null;
+      /**
+       * @param options
+       */
+      ContentModel.prototype.initializeContentEditor = function (options) {
+        if (options == null) {
+          options = {};
+        }
+        return this._createContentEditor(options);
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype.toState = function () {
+        /**
+         * The state.
+         */
+        var state;
+        state = this.toJSON();
+        if (this.hasChild()) {
+          state.child = this.getChildContentModel().toState();
+        }
+        return state;
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype._editorState = function () {
+        return this.contentEditorStateMap.get(this.get('name')).state;
+      };
+      /**
+       * @param contentJSON
+       */
+      ContentModel.prototype.createChild = function (contentJSON) {
+        this.child = new ContentModel(contentJSON, {
+          eventEmitter: this.eventEmitter,
+          contentEditorFactory: this.contentEditorFactory,
+          contentEditorStateMap: this.contentEditorStateMap,
+          collection: this.collection,
+          parent: this
+        });
+        return this.trigger(constants.EVENTS.CHILD_CREATED);
+      };
+      /**
+       * @param options
+       * @return {Object} ThisExpression
+       */
+      ContentModel.prototype.remove = function (options) {
+        if (options == null) {
+          options = {};
+        }
+        _(options).defaults({
+          evenlySplit: true
+        });
+        if (this.isChild()) {
+          this.parent.removeChild(options);
+          return this;
+        } else {
+          return this.collection.remove(this, options);
+        }
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype.getName = function () {
+        return this.get('name');
+      };
+      /**
+       * @param options
+       */
+      ContentModel.prototype.removeChild = function (options) {
+        if (this.child) {
+          this.child.deactivate(options);
+          this.child = null;
+          this.set({
+            child: null
+          });
+          return this.trigger(constants.EVENTS.CHILD_REMOVED);
+        }
+      };
+      /**
+       * @return {Object} UnaryExpression
+       */
+      ContentModel.prototype.hasChild = function () {
+        return !!this.child;
+      };
+      /**
+       * Returns true if is child.
+       * @return {Object} boolean
+       */
+      ContentModel.prototype.isChild = function () {
+        return !!this.parent;
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype.getChildContentModel = function () {
+        return this.child;
+      };
+      /**
+       * @param state
+       */
+      ContentModel.prototype._updateContents = function (state) {
+        return this.contentEditorStateMap.set(this.get('name'), {
+          name: this.get('name'),
+          state: state
+        });
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype.getStateForBlockDescriptor = function () {
+        /**
+         * The state.
+         */
+        var state;
+        state = _.extend(this.toJSON(), this.contentEditorStateMap.get(this.get('name')));
+        if (this.hasChild()) {
+          state.child = this.getChildContentModel().getStateForBlockDescriptor();
+        }
+        return state;
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype.blockDescriptorProviderFn = function () {
+        /**
+         * The block descriptor.
+         */
+        var blockDescriptor, ref;
+        blockDescriptor = new BlockDescriptor(_.extend(this.collection.block.getMetadata(), {
+          id: this.get('name'),
+          sourceIsChildContent: !!this.parent,
+          sourceParentName: (ref = this.parent) != null ? ref.getName() : void 0,
+          payload: {
+            contents: [this.getStateForBlockDescriptor()]
+          }
+        }));
+        return blockDescriptor.stringify();
+      };
+      /**
+       * @param options
+       */
+      ContentModel.prototype._createContentEditor = function (options) {
+        if (options == null) {
+          options = {};
+        }
+        return this.contentEditorFactory.legacyCreate(this.get('type'), this.get('name'), this._editorState(), this.blockDescriptorProviderFn, this).then((function (_this) {
+          return function (editor) {
+            /**
+             * The actual create.
+             */
+            var actualCreate, ref, ref1;
+            actualCreate = options != null ? options.actualCreate : void 0;
+            if (!actualCreate) {
+              actualCreate = _this.get('actualCreate');
+            }
+            if (!actualCreate) {
+              actualCreate = (ref = editor.config) != null ? ref.copied : void 0;
+            }
+            if (!actualCreate) {
+              actualCreate = ((options != null ? (ref1 = options.previousAction) != null ? ref1.id : void 0 : void 0) === editor.name) || false;
+            }
+            debug("Creating editor " + editor.name + ", actualCreate = " + actualCreate);
+            return editor.init(actualCreate).then(function () {
+              return _this._onEditorInitialized(editor);
+            });
+          };
+        })(this));
+      };
+      /**
+       * @param editor1
+       */
+      ContentModel.prototype._onEditorInitialized = function (editor1) {
+        this.editor = editor1;
+        this._setDefaultVspace();
+        this.unset('actualCreate', {
+          silent: true
+        });
+        this.editor.on(constants.EVENTS.STATE_REPLACED, this._updateContents);
+        this.trigger(constants.EVENTS.CONTENT_EDITOR_CREATED);
+        return galileoEvents.on(galileoEvents.TYPES.EDITOR_REINIT, this._cleanup);
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype._cleanup = function () {
+        this.editor = null;
+        return galileoEvents.off(galileoEvents.TYPES.EDITOR_REINIT, this._cleanup);
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype._onEditorStateUpdated = function () {
+        return $.when(this.editor.getState()).then(this._updateContents);
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype.getEditor = function () {
+        return this.editor;
+      };
+      /**
+       * @return {array}
+       */
+      ContentModel.prototype.getEditors = function () {
+        if (this.hasChild()) {
+          return [this.editor, this.getChildContentModel().getEditor()];
+        } else {
+          return this.editor;
+        }
+      };
+      /**
+       * @return {array}
+       */
+      ContentModel.prototype.getContent = function () {
+        if (this.hasChild()) {
+          return [this, this.getChildContentModel()];
+        } else {
+          return this;
+        }
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype.whenEditorReady = function () {
+        return this.editorReady.promise();
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype.getWidthPx = function () {
+        return this.collection.getWidthPx();
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype.hasContentLeft = function () {
+        return this.collection.hasContentLeft();
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype.hasContentRight = function () {
+        return this.collection.hasContentRight();
+      };
+      /**
+       * @param totalBlockHorizontalPadding
+       */
+      ContentModel.prototype.triggerInsertedIntoBlock = function (totalBlockHorizontalPadding) {
+        /**
+         * The event.
+         */
+        var event, width;
+        width = this.getWidthPx() - totalBlockHorizontalPadding;
+        if (this.isChild()) {
+          if (this.get('childContentJustCreated') === true) {
+            event = new GalileoEvent(constants.DOWNSTREAM_EVENTS.INITIALIZE_AS_CHILD, {
+              async: true
+            });
+            this.set('childContentJustCreated', false);
+          } else {
+            event = new GalileoEvent(constants.DOWNSTREAM_EVENTS.INSERTED_INTO_BLOCK_AS_CHILD, {
+              async: true
+            });
+          }
+        } else {
+          event = new GalileoEvent(constants.DOWNSTREAM_EVENTS.INSERTED_INTO_BLOCK, {
+            async: true
+          });
+        }
+        return this.editor.trigger(event, {
+          width: width
+        }).then((function (_this) {
+          return function () {
+            lifecycle.when(lifecycle.EVENTS.INITIALIZATION_COMPLETE).then(function () {
+              return _this.eventEmitter.trigger(constants.EVENTS.CONTENT_INSERTED);
+            });
+            return _this.editorReady.resolve();
+          };
+        })(this));
+      };
+      /**
+       * @param options
+       */
+      ContentModel.prototype.deactivate = function (options) {
+        /**
+         * The actual delete.
+         */
+        var actualDelete;
+        if (options == null) {
+          options = {};
+        }
+        actualDelete = options.actualDelete || false;
+        if (options.previousAction != null) {
+          if ((options.previousAction != null) &amp;&amp; options.previousAction.id === this.editor.name) {
+            actualDelete = true;
+          }
+        }
+        return this.eventEmitter.trigger(constants.EVENTS.DEACTIVATE_EDITOR, this.editor, actualDelete);
+      };
+      /**
+       * @return {Boolean}
+       */
+      ContentModel.prototype.getDecoratorType = function () {
+        return this.get('decoratorType') || this.get('type');
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype.toggleVspace = function () {
+        /**
+         * The vspace.
+         */
+        var vspace;
+        vspace = !!this.get('vspace');
+        return this.set('vspace', !vspace);
+      };
+      /**
+       * @return {Boolean}
+       */
+      ContentModel.prototype.supportsContentVspace = function () {
+        /**
+         * The type supported.
+         */
+        var typeSupported;
+        typeSupported = constants.CONTENT_VSPACE.SUPPORT.indexOf(this.get('type')) !== -1;
+        return typeSupported &amp;&amp; !this.isChild();
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype._setVspace = function () {
+        if (this.get('vspace') === void 0) {
+          return this.set('vspace', true);
+        }
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype._setDefaultVspace = function () {
+        if (this.supportsContentVspace()) {
+          return this._setVspace();
+        }
+      };
+      /**
+       * @param state
+       * @param opts
+       */
+      ContentModel.prototype.initialize = function (state, opts) {
+        this.editorReady = $.Deferred();
+        this.eventEmitter = opts.eventEmitter;
+        this.contentEditorFactory = opts.contentEditorFactory;
+        this.contentEditorStateMap = opts.contentEditorStateMap;
+        this.on(constants.EVENTS.EDITOR_STATE_UPDATED, this._onEditorStateUpdated, this);
+        this._setChild();
+        this.parent = opts.parent;
+        return this.listenTo(this, 'change', this._setChild);
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ContentModel.prototype._setChild = function () {
+        /**
+         * The child.
+         */
+        var child;
+        child = this.get('child');
+        if (child) {
+          return this.createChild(child);
+        } else {
+          return this.removeChild();
+        }
+      };
+      return ContentModel;
+    })(Backbone.Model);
+  });</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-src_abstract-layout-generator.html">src/abstract-layout-generator</a></li><li><a href="module-src_column-and-block-layout-editor.html">src/column-and-block-layout-editor</a></li><li><a href="module-src_column-resize-manager.html">src/column-resize-manager</a></li><li><a href="module-src_constants.html">src/constants</a></li><li><a href="module-src_drag-drop_api.html">src/drag-drop/api</a></li><li><a href="module-src_drag-drop_block.html">src/drag-drop/block</a></li><li><a href="module-src_drag-drop_block-model-dispatcher.html">src/drag-drop/block-model-dispatcher</a></li><li><a href="module-src_drag-drop_blocks.html">src/drag-drop/blocks</a></li><li><a href="module-src_drag-drop_column.html">src/drag-drop/column</a></li><li><a href="module-src_drag-drop_columns.html">src/drag-drop/columns</a></li><li><a href="module-src_drag-drop_helpers.html">src/drag-drop/helpers</a></li><li><a href="module-src_drag-drop_insert-marker.html">src/drag-drop/insert-marker</a></li><li><a href="module-src_drag-drop_layout.html">src/drag-drop/layout</a></li><li><a href="module-src_import_importer.html">src/import/importer</a></li><li><a href="module-src_import_parser.html">src/import/parser</a></li><li><a href="module-src_index.html">src/index</a></li><li><a href="module-src_models_block.html">src/models/block</a></li><li><a href="module-src_models_blocks.html">src/models/blocks</a></li><li><a href="module-src_models_column.html">src/models/column</a></li><li><a href="module-src_models_columns.html">src/models/columns</a></li><li><a href="module-src_models_content.html">src/models/content</a></li><li><a href="module-src_models_content-editor-state-map.html">src/models/content-editor-state-map</a></li><li><a href="module-src_models_content-editors.html">src/models/content-editors</a></li><li><a href="module-src_models_contents.html">src/models/contents</a></li><li><a href="module-src_models_converters_block-converter.html">src/models/converters/block-converter</a></li><li><a href="module-src_models_converters_block-descriptor-to-block.html">src/models/converters/block-descriptor-to-block</a></li><li><a href="module-src_models_converters_block-descriptor-to-content-json.html">src/models/converters/block-descriptor-to-content-json</a></li><li><a href="module-src_models_converters_content-converter.html">src/models/converters/content-converter</a></li><li><a href="module-src_models_converters_content-to-block.html">src/models/converters/content-to-block</a></li><li><a href="module-src_models_converters_content-to-content-json.html">src/models/converters/content-to-content-json</a></li><li><a href="module-src_models_layout.html">src/models/layout</a></li><li><a href="module-src_nls_column-and-block-layout-editor.html">src/nls/column-and-block-layout-editor</a></li><li><a href="module-src_padding_calculator.html">src/padding/calculator</a></li><li><a href="module-src_padding_parser.html">src/padding/parser</a></li><li><a href="module-src_padding_renderer.html">src/padding/renderer</a></li><li><a href="module-src_percentage-utils.html">src/percentage-utils</a></li><li><a href="module-src_state-migrations.html">src/state-migrations</a></li><li><a href="module-src_state-validator.html">src/state-validator</a></li><li><a href="module-src_views_block.html">src/views/block</a></li><li><a href="module-src_views_column.html">src/views/column</a></li><li><a href="module-src_views_column-resize-handle.html">src/views/column-resize-handle</a></li><li><a href="module-src_views_column-resize-handle-IE.html">src/views/column-resize-handle-IE</a></li><li><a href="module-src_views_content.html">src/views/content</a></li><li><a href="module-src_views_import.html">src/views/import</a></li><li><a href="module-src_views_layout.html">src/views/layout</a></li><li><a href="module-src_views_move-handle.html">src/views/move-handle</a></li><li><a href="module-src_views_publish.html">src/views/publish</a></li><li><a href="module-src_views_vspace-flyout.html">src/views/vspace-flyout</a></li></ul><h3>Classes</h3><ul><li><a href="module-src_abstract-layout-generator-AbstractLayoutGenerator_-AbstractLayoutGenerator.html">AbstractLayoutGenerator</a></li><li><a href="module-src_column-resize-manager-=_-ColumnResizeManager.html">ColumnResizeManager</a></li><li><a href="module-src_drag-drop_api-DragDropApi_-DragDropApi.html">DragDropApi</a></li><li><a href="module-src_drag-drop_block-model-dispatcher-BlockModelDispatcher_-BlockModelDispatcher.html">BlockModelDispatcher</a></li><li><a href="module-src_drag-drop_blocks-DragDropBlocks_-DragDropBlocks.html">DragDropBlocks</a></li><li><a href="module-src_drag-drop_block-DragDropBlock_-DragDropBlock.html">DragDropBlock</a></li><li><a href="module-src_drag-drop_columns-DragDropColumns_-DragDropColumns.html">DragDropColumns</a></li><li><a href="module-src_drag-drop_column-DragDropColumn_-DragDropColumn.html">DragDropColumn</a></li><li><a href="module-src_drag-drop_insert-marker-InsertionMarker_-InsertionMarker.html">InsertionMarker</a></li><li><a href="module-src_drag-drop_layout-DragDropLayout_-DragDropLayout.html">DragDropLayout</a></li><li><a href="module-src_import_importer-=_-Importer.html">Importer</a></li><li><a href="module-src_import_parser-Parser_-Parser.html">Parser</a></li><li><a href="module-src_index-ColumnAndBlockLayoutEditor_-ColumnAndBlockLayoutEditor.html">ColumnAndBlockLayoutEditor</a></li><li><a href="module-src_models_blocks-Blocks_-Blocks.html">Blocks</a></li><li><a href="module-src_models_block-BlockModel_-BlockModel.html">BlockModel</a></li><li><a href="module-src_models_columns-Columns_-Columns.html">Columns</a></li><li><a href="module-src_models_column-ColumnModel_-ColumnModel.html">ColumnModel</a></li><li><a href="module-src_models_content-editor-state-map-ContentEditorStateMap_-ContentEditorStateMap.html">ContentEditorStateMap</a></li><li><a href="module-src_models_content-editors-ContentEditors_-ContentEditors.html">ContentEditors</a></li><li><a href="module-src_models_contents-Contents_-Contents.html">Contents</a></li><li><a href="module-src_models_content-ContentModel_-ContentModel.html">ContentModel</a></li><li><a href="module-src_models_converters_block-converter-BlockConverter_-BlockConverter.html">BlockConverter</a></li><li><a href="module-src_models_converters_block-descriptor-to-block-BlockDescriptorToBlock_-BlockDescriptorToBlock.html">BlockDescriptorToBlock</a></li><li><a href="module-src_models_converters_block-descriptor-to-content-json-BlockDescriptorToContent_-BlockDescriptorToContent.html">BlockDescriptorToContent</a></li><li><a href="module-src_models_converters_content-converter-ContentConverter_-ContentConverter.html">ContentConverter</a></li><li><a href="module-src_models_converters_content-to-block-ContentToBlock_-ContentToBlock.html">ContentToBlock</a></li><li><a href="module-src_models_converters_content-to-content-json-ContentToContentJson_-ContentToContentJson.html">ContentToContentJson</a></li><li><a href="module-src_models_layout-LayoutModel_-LayoutModel.html">LayoutModel</a></li><li><a href="module-src_padding_calculator-PaddingCalculator_-PaddingCalculator.html">PaddingCalculator</a></li><li><a href="module-src_padding_parser-PaddingParser_-PaddingParser.html">PaddingParser</a></li><li><a href="module-src_padding_renderer-PaddingRenderer_-PaddingRenderer.html">PaddingRenderer</a></li><li><a href="module-src_state-validator-=_-StateValidator.html">StateValidator</a></li><li><a href="module-src_views_block-BlockView_-BlockView.html">BlockView</a></li><li><a href="module-src_views_column-resize-handle-IE-ColumnResizeHandleIE_-ColumnResizeHandleIE.html">ColumnResizeHandleIE</a></li><li><a href="module-src_views_column-resize-handle-ColumnResizeHandle_-ColumnResizeHandle.html">ColumnResizeHandle</a></li><li><a href="module-src_views_column-ColumnView_-ColumnView.html">ColumnView</a></li><li><a href="module-src_views_content-ContentView_-ContentView.html">ContentView</a></li><li><a href="module-src_views_import-ImportView_-ImportView.html">ImportView</a></li><li><a href="module-src_views_layout-LayoutView_-LayoutView.html">LayoutView</a></li><li><a href="module-src_views_move-handle-MoveHandle_-MoveHandle.html">MoveHandle</a></li><li><a href="module-src_views_publish-PublishView_-PublishView.html">PublishView</a></li><li><a href="module-src_views_vspace-flyout-=_-VspaceFlyoutView.html">VspaceFlyoutView</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Sep 12 2016 15:47:20 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

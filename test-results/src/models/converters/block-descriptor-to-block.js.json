@@ -1,0 +1,188 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "underscore"
+      ],
+      "moduleName": "block-descriptor-to-block",
+      "AMD": true,
+      "webPath": "/src/models/converters",
+      "convertedName": "block_descriptor_to_block",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'BlockDescriptorToBlock'.",
+        "code": "wfJD",
+        "evidence": "function BlockDescriptorToBlock(descriptor1) {",
+        "line": 4,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'BlockDescriptorToBlock'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'convert'.",
+        "code": "wfJD",
+        "evidence": "BlockDescriptorToBlock.prototype.convert = function () {",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'convert'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getContents'.",
+        "code": "wfJD",
+        "evidence": "BlockDescriptorToBlock.prototype._getContents = function () {",
+        "line": 16,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getContents'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/models/converters/block-descriptor-to-block.js",
+  "folderPath": "test-source/src/models/converters",
+  "fileName": "block-descriptor-to-block.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/src/models/converters",
+  "webPath": "/src/models/converters",
+  "libFile": false,
+  "min": false,
+  "realName": "block-descriptor-to-block",
+  "name": "block-descriptor-to-block",
+  "camelName": "BlockDescriptorToBlock",
+  "processedFilePath": "test-output/src/models/converters/block-descriptor-to-block.js",
+  "mappedModuleName": "src/models/converters/block-descriptor-to-block",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "src/models/converters/block-descriptor-to-block~BlockDescriptorToBlock": {
+      "todos": [],
+      "params": [
+        "descriptor1"
+      ],
+      "memberOf": "",
+      "returnType": "",
+      "ctor": true,
+      "lineNumber": 4,
+      "line": "function BlockDescriptorToBlock(descriptor1) {",
+      "comment": -1,
+      "range": [
+        213,
+        302
+      ],
+      "name": "BlockDescriptorToBlock",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": "",
+        "tags": []
+      },
+      "jsDoc": "/**\n * @constructor\n * @param descriptor1\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "src/models/converters/block-descriptor-to-block",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 23,
+    "requires": [
+      "underscore"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/src/models/converters",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 986,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./block-descriptor-to-block",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "BlockDescriptorToBlock": 886
+    },
+    "methods": [
+      {
+        "name": "BlockDescriptorToBlock",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n * @param descriptor1\n */",
+        "args": [
+          "descriptor1"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function BlockDescriptorToBlock(descriptor1) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "convert",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "BlockDescriptorToBlock.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "BlockDescriptorToBlock.prototype.convert = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getContents",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "memberOf": "BlockDescriptorToBlock.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "BlockDescriptorToBlock.prototype._getContents = function () {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/src/models/converters",
+    "fileName": "block-descriptor-to-block.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 44,
+  "EMPTY": false
+}

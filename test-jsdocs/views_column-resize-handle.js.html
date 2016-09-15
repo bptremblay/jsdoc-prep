@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: views/column-resize-handle.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: views/column-resize-handle.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>define(['jquery', 'underscore', 'backbone', 'text!column-and-block-layout-editor-path/templates/column-resize-handle.html', 'column-and-block-layout-editor-path/percentage-utils',
+    'column-and-block-layout-editor-path/column-resize-manager', 'column-and-block-layout-editor-path/constants'
+  ],
+  /**
+   * @exports src/views/column-resize-handle
+   * @requires jquery
+   * @requires underscore
+   * @requires backbone
+   * @requires text!column-and-block-layout-editor-path/templates/column-resize-handle.html
+   * @requires column-and-block-layout-editor-path/percentage-utils
+   * @requires column-and-block-layout-editor-path/column-resize-manager
+   * @requires column-and-block-layout-editor-path/constants
+   */
+  function ($, _, Backbone, template, percentageUtils, columnResizeManager, constants) {
+    /**
+     * The column resize handle.
+     */
+    var ColumnResizeHandle;
+    return ColumnResizeHandle = ( /**@lends module:src/views/column-resize-handle~ColumnResizeHandle# */ function (superClass) {
+      extend(ColumnResizeHandle, superClass);
+      /**
+       * @constructor
+       */
+      function ColumnResizeHandle() {
+        this._onColumnResize = bind(this._onColumnResize, this);
+        return ColumnResizeHandle.__super__.constructor.apply(this, arguments);
+      }
+      ColumnResizeHandle.prototype.events = {
+        mousedown: '_startResizingColumn'
+      };
+      /**
+       * @return {Object} AssignmentExpression
+       */
+      ColumnResizeHandle.prototype.initialize = function () {
+        return this.layoutContainerWidth = this.model.getLayoutContainerWidth();
+      };
+      /**
+       * @param event
+       */
+      ColumnResizeHandle.prototype._startResizingColumn = function (event) {
+        event.preventDefault();
+        if (columnResizeManager.isResizing()) {
+          return;
+        }
+        this.$el.find('.grabber').addClass('is-resizing');
+        return columnResizeManager.startResizing(event.clientX, this._onColumnResize, this._finishResizingColumn, this.model.getLayoutReadyPromise);
+      };
+      /**
+       * @todo Add some jsDoc comments here!
+       */
+      ColumnResizeHandle.prototype._finishResizingColumn = function () {
+        return $('.grabber.is-resizing').removeClass('is-resizing');
+      };
+      /**
+       * @param deltaInPixels
+       */
+      ColumnResizeHandle.prototype._onColumnResize = function (deltaInPixels) {
+        /**
+         * The calculated delta.
+         */
+        var calculatedDelta, deltaInDecimal, numberOfSteps;
+        deltaInDecimal = percentageUtils.truncateDecimal(deltaInPixels / this.layoutContainerWidth);
+        if (Math.abs(deltaInDecimal) >= constants.COLUMN_WIDTH.INTERVAL) {
+          numberOfSteps = Math.floor(deltaInDecimal / constants.COLUMN_WIDTH.INTERVAL);
+          calculatedDelta = constants.COLUMN_WIDTH.INTERVAL * numberOfSteps;
+          return this.model.applyDeltaToColumnWidth(percentageUtils.truncateDecimal(calculatedDelta));
+        } else {
+          return false;
+        }
+      };
+      /**
+       * @return {Object} ThisExpression
+       */
+      ColumnResizeHandle.prototype.render = function () {
+        this.$el.html(template);
+        if (columnResizeManager.isResizing()) {
+          this.$el.find('.grabber').addClass('is-resizing');
+        }
+        return this;
+      };
+      return ColumnResizeHandle;
+    })(Backbone.View);
+  });</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-src_abstract-layout-generator.html">src/abstract-layout-generator</a></li><li><a href="module-src_column-and-block-layout-editor.html">src/column-and-block-layout-editor</a></li><li><a href="module-src_column-resize-manager.html">src/column-resize-manager</a></li><li><a href="module-src_constants.html">src/constants</a></li><li><a href="module-src_drag-drop_api.html">src/drag-drop/api</a></li><li><a href="module-src_drag-drop_block.html">src/drag-drop/block</a></li><li><a href="module-src_drag-drop_block-model-dispatcher.html">src/drag-drop/block-model-dispatcher</a></li><li><a href="module-src_drag-drop_blocks.html">src/drag-drop/blocks</a></li><li><a href="module-src_drag-drop_column.html">src/drag-drop/column</a></li><li><a href="module-src_drag-drop_columns.html">src/drag-drop/columns</a></li><li><a href="module-src_drag-drop_helpers.html">src/drag-drop/helpers</a></li><li><a href="module-src_drag-drop_insert-marker.html">src/drag-drop/insert-marker</a></li><li><a href="module-src_drag-drop_layout.html">src/drag-drop/layout</a></li><li><a href="module-src_import_importer.html">src/import/importer</a></li><li><a href="module-src_import_parser.html">src/import/parser</a></li><li><a href="module-src_index.html">src/index</a></li><li><a href="module-src_models_block.html">src/models/block</a></li><li><a href="module-src_models_blocks.html">src/models/blocks</a></li><li><a href="module-src_models_column.html">src/models/column</a></li><li><a href="module-src_models_columns.html">src/models/columns</a></li><li><a href="module-src_models_content.html">src/models/content</a></li><li><a href="module-src_models_content-editor-state-map.html">src/models/content-editor-state-map</a></li><li><a href="module-src_models_content-editors.html">src/models/content-editors</a></li><li><a href="module-src_models_contents.html">src/models/contents</a></li><li><a href="module-src_models_converters_block-converter.html">src/models/converters/block-converter</a></li><li><a href="module-src_models_converters_block-descriptor-to-block.html">src/models/converters/block-descriptor-to-block</a></li><li><a href="module-src_models_converters_block-descriptor-to-content-json.html">src/models/converters/block-descriptor-to-content-json</a></li><li><a href="module-src_models_converters_content-converter.html">src/models/converters/content-converter</a></li><li><a href="module-src_models_converters_content-to-block.html">src/models/converters/content-to-block</a></li><li><a href="module-src_models_converters_content-to-content-json.html">src/models/converters/content-to-content-json</a></li><li><a href="module-src_models_layout.html">src/models/layout</a></li><li><a href="module-src_nls_column-and-block-layout-editor.html">src/nls/column-and-block-layout-editor</a></li><li><a href="module-src_padding_calculator.html">src/padding/calculator</a></li><li><a href="module-src_padding_parser.html">src/padding/parser</a></li><li><a href="module-src_padding_renderer.html">src/padding/renderer</a></li><li><a href="module-src_percentage-utils.html">src/percentage-utils</a></li><li><a href="module-src_state-migrations.html">src/state-migrations</a></li><li><a href="module-src_state-validator.html">src/state-validator</a></li><li><a href="module-src_views_block.html">src/views/block</a></li><li><a href="module-src_views_column.html">src/views/column</a></li><li><a href="module-src_views_column-resize-handle.html">src/views/column-resize-handle</a></li><li><a href="module-src_views_column-resize-handle-IE.html">src/views/column-resize-handle-IE</a></li><li><a href="module-src_views_content.html">src/views/content</a></li><li><a href="module-src_views_import.html">src/views/import</a></li><li><a href="module-src_views_layout.html">src/views/layout</a></li><li><a href="module-src_views_move-handle.html">src/views/move-handle</a></li><li><a href="module-src_views_publish.html">src/views/publish</a></li><li><a href="module-src_views_vspace-flyout.html">src/views/vspace-flyout</a></li></ul><h3>Classes</h3><ul><li><a href="module-src_abstract-layout-generator-AbstractLayoutGenerator_-AbstractLayoutGenerator.html">AbstractLayoutGenerator</a></li><li><a href="module-src_column-resize-manager-=_-ColumnResizeManager.html">ColumnResizeManager</a></li><li><a href="module-src_drag-drop_api-DragDropApi_-DragDropApi.html">DragDropApi</a></li><li><a href="module-src_drag-drop_block-model-dispatcher-BlockModelDispatcher_-BlockModelDispatcher.html">BlockModelDispatcher</a></li><li><a href="module-src_drag-drop_blocks-DragDropBlocks_-DragDropBlocks.html">DragDropBlocks</a></li><li><a href="module-src_drag-drop_block-DragDropBlock_-DragDropBlock.html">DragDropBlock</a></li><li><a href="module-src_drag-drop_columns-DragDropColumns_-DragDropColumns.html">DragDropColumns</a></li><li><a href="module-src_drag-drop_column-DragDropColumn_-DragDropColumn.html">DragDropColumn</a></li><li><a href="module-src_drag-drop_insert-marker-InsertionMarker_-InsertionMarker.html">InsertionMarker</a></li><li><a href="module-src_drag-drop_layout-DragDropLayout_-DragDropLayout.html">DragDropLayout</a></li><li><a href="module-src_import_importer-=_-Importer.html">Importer</a></li><li><a href="module-src_import_parser-Parser_-Parser.html">Parser</a></li><li><a href="module-src_index-ColumnAndBlockLayoutEditor_-ColumnAndBlockLayoutEditor.html">ColumnAndBlockLayoutEditor</a></li><li><a href="module-src_models_blocks-Blocks_-Blocks.html">Blocks</a></li><li><a href="module-src_models_block-BlockModel_-BlockModel.html">BlockModel</a></li><li><a href="module-src_models_columns-Columns_-Columns.html">Columns</a></li><li><a href="module-src_models_column-ColumnModel_-ColumnModel.html">ColumnModel</a></li><li><a href="module-src_models_content-editor-state-map-ContentEditorStateMap_-ContentEditorStateMap.html">ContentEditorStateMap</a></li><li><a href="module-src_models_content-editors-ContentEditors_-ContentEditors.html">ContentEditors</a></li><li><a href="module-src_models_contents-Contents_-Contents.html">Contents</a></li><li><a href="module-src_models_content-ContentModel_-ContentModel.html">ContentModel</a></li><li><a href="module-src_models_converters_block-converter-BlockConverter_-BlockConverter.html">BlockConverter</a></li><li><a href="module-src_models_converters_block-descriptor-to-block-BlockDescriptorToBlock_-BlockDescriptorToBlock.html">BlockDescriptorToBlock</a></li><li><a href="module-src_models_converters_block-descriptor-to-content-json-BlockDescriptorToContent_-BlockDescriptorToContent.html">BlockDescriptorToContent</a></li><li><a href="module-src_models_converters_content-converter-ContentConverter_-ContentConverter.html">ContentConverter</a></li><li><a href="module-src_models_converters_content-to-block-ContentToBlock_-ContentToBlock.html">ContentToBlock</a></li><li><a href="module-src_models_converters_content-to-content-json-ContentToContentJson_-ContentToContentJson.html">ContentToContentJson</a></li><li><a href="module-src_models_layout-LayoutModel_-LayoutModel.html">LayoutModel</a></li><li><a href="module-src_padding_calculator-PaddingCalculator_-PaddingCalculator.html">PaddingCalculator</a></li><li><a href="module-src_padding_parser-PaddingParser_-PaddingParser.html">PaddingParser</a></li><li><a href="module-src_padding_renderer-PaddingRenderer_-PaddingRenderer.html">PaddingRenderer</a></li><li><a href="module-src_state-validator-=_-StateValidator.html">StateValidator</a></li><li><a href="module-src_views_block-BlockView_-BlockView.html">BlockView</a></li><li><a href="module-src_views_column-resize-handle-IE-ColumnResizeHandleIE_-ColumnResizeHandleIE.html">ColumnResizeHandleIE</a></li><li><a href="module-src_views_column-resize-handle-ColumnResizeHandle_-ColumnResizeHandle.html">ColumnResizeHandle</a></li><li><a href="module-src_views_column-ColumnView_-ColumnView.html">ColumnView</a></li><li><a href="module-src_views_content-ContentView_-ContentView.html">ContentView</a></li><li><a href="module-src_views_import-ImportView_-ImportView.html">ImportView</a></li><li><a href="module-src_views_layout-LayoutView_-LayoutView.html">LayoutView</a></li><li><a href="module-src_views_move-handle-MoveHandle_-MoveHandle.html">MoveHandle</a></li><li><a href="module-src_views_publish-PublishView_-PublishView.html">PublishView</a></li><li><a href="module-src_views_vspace-flyout-=_-VspaceFlyoutView.html">VspaceFlyoutView</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Sep 12 2016 15:47:20 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

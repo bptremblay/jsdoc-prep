@@ -1,0 +1,715 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "backbone",
+        "column-and-block-layout-editor-path/constants",
+        "column-and-block-layout-editor-path/drag-drop/helpers",
+        "column-and-block-layout-editor-path/drag-drop/blocks",
+        "underscore"
+      ],
+      "moduleName": "column",
+      "AMD": true,
+      "webPath": "/src/drag-drop",
+      "convertedName": "column",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'DragDropColumn'.",
+        "code": "wfJD",
+        "evidence": "function DragDropColumn() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'DragDropColumn'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initialize'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype.initialize = function (attributes, options) {",
+        "line": 21,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initialize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSourceColumnIndex'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype.getSourceColumnIndex = function () {",
+        "line": 30,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSourceColumnIndex'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getSourceBlockIndex'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype.getSourceBlockIndex = function () {",
+        "line": 33,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getSourceBlockIndex'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isMove'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype.isMove = function () {",
+        "line": 36,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isMove'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isReorder'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype.isReorder = function () {",
+        "line": 39,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isReorder'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'sourceIsChild'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype.sourceIsChild = function () {",
+        "line": 42,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'sourceIsChild'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getAction'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype.getAction = function (x, y) {",
+        "line": 45,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getAction'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getColX'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype.getColX = function (layoutXCoordinate) {",
+        "line": 54,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getColX'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'isStackable'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype.isStackable = function () {",
+        "line": 57,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'isStackable'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getColumnIndexForX'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype._getColumnIndexForX = function (x) {",
+        "line": 60,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getColumnIndexForX'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getColumnIndexModifierForX'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype._getColumnIndexModifierForX = function (x) {",
+        "line": 65,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getColumnIndexModifierForX'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_sourceContentInDifferentLayoutPosition'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype._sourceContentInDifferentLayoutPosition = function () {",
+        "line": 77,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_sourceContentInDifferentLayoutPosition'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_willChangeLayout'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype._willChangeLayout = function () {",
+        "line": 83,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_willChangeLayout'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_sourceColumnIsDestinationColumn'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype._sourceColumnIsDestinationColumn = function (x) {",
+        "line": 86,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_sourceColumnIsDestinationColumn'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_columnIsReorderable'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype._columnIsReorderable = function (x) {",
+        "line": 89,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_columnIsReorderable'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_shouldReorderColumn'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype._shouldReorderColumn = function (x) {",
+        "line": 92,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_shouldReorderColumn'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_shouldDoNothing'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype._shouldDoNothing = function (x) {",
+        "line": 95,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_shouldDoNothing'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getXOffset'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype._getXOffset = function (x) {",
+        "line": 98,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getXOffset'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getBlockAction'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype._getBlockAction = function (x, y) {",
+        "line": 105,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getBlockAction'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getColumnAction'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype._getColumnAction = function (x) {",
+        "line": 110,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getColumnAction'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getDirection'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype._getDirection = function (x) {",
+        "line": 118,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getDirection'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getActionIdentifier'.",
+        "code": "wfJD",
+        "evidence": "DragDropColumn.prototype._getActionIdentifier = function (x) {",
+        "line": 125,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getActionIdentifier'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/drag-drop/column.js",
+  "folderPath": "test-source/src/drag-drop",
+  "fileName": "column.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/src/drag-drop",
+  "webPath": "/src/drag-drop",
+  "libFile": false,
+  "min": false,
+  "realName": "column",
+  "name": "column",
+  "camelName": "Column",
+  "processedFilePath": "test-output/src/drag-drop/column.js",
+  "mappedModuleName": "src/drag-drop/column",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "src/drag-drop/column~DragDropColumn": {
+      "todos": [],
+      "returnType": "",
+      "memberOf": "",
+      "ctor": true,
+      "lineNumber": 7,
+      "line": "function DragDropColumn() {",
+      "comment": -1,
+      "range": [
+        419,
+        526
+      ],
+      "name": "DragDropColumn",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": "",
+        "tags": []
+      },
+      "jsDoc": "/**\n * @constructor\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "src/drag-drop/column",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 139,
+    "requires": [
+      "backbone",
+      "column-and-block-layout-editor-path/constants",
+      "column-and-block-layout-editor-path/drag-drop/helpers",
+      "column-and-block-layout-editor-path/drag-drop/blocks",
+      "underscore"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/src/drag-drop",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 5486,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./column",
+    "uses_console_log": false,
+    "uses_backbone": true,
+    "classes": {
+      "DragDropColumn": 5688
+    },
+    "methods": [
+      {
+        "name": "DragDropColumn",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function DragDropColumn() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "initialize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 21,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @param attributes\n * @param options\n */",
+        "args": [
+          "attributes",
+          "options"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype.initialize = function (attributes, options) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "getSourceColumnIndex",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 30,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype.getSourceColumnIndex = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "getSourceBlockIndex",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 33,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype.getSourceBlockIndex = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "isMove",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 36,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * Returns true if is move.\n * @return {object} boolean\n */",
+        "description": "Returns true if is move.",
+        "return": "boolean",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype.isMove = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "isReorder",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 39,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * Returns true if is reorder.\n * @return {object} boolean\n */",
+        "description": "Returns true if is reorder.",
+        "return": "boolean",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype.isReorder = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "sourceIsChild",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 42,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype.sourceIsChild = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "getAction",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 45,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @param x\n * @param y\n */",
+        "args": [
+          "x",
+          "y"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype.getAction = function (x, y) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "getColX",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 54,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @param layoutXCoordinate\n */",
+        "args": [
+          "layoutXCoordinate"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype.getColX = function (layoutXCoordinate) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "isStackable",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 57,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * Returns true if is stackable.\n * @return {object} boolean\n */",
+        "description": "Returns true if is stackable.",
+        "return": "boolean",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype.isStackable = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getColumnIndexForX",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 60,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @param x\n */",
+        "args": [
+          "x"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype._getColumnIndexForX = function (x) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getColumnIndexModifierForX",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 65,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @param x\n * @return {object} UnaryExpression\n */",
+        "args": [
+          "x"
+        ],
+        "description": "",
+        "return": "UnaryExpression",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype._getColumnIndexModifierForX = function (x) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_sourceContentInDifferentLayoutPosition",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 77,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @return {boolean}\n */",
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype._sourceContentInDifferentLayoutPosition = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_willChangeLayout",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 83,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @return {boolean}\n */",
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype._willChangeLayout = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_sourceColumnIsDestinationColumn",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 86,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @param x\n */",
+        "args": [
+          "x"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype._sourceColumnIsDestinationColumn = function (x) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_columnIsReorderable",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 89,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @param x\n * @return {boolean}\n */",
+        "args": [
+          "x"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype._columnIsReorderable = function (x) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_shouldReorderColumn",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 92,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @param x\n * @return {boolean}\n */",
+        "args": [
+          "x"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype._shouldReorderColumn = function (x) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_shouldDoNothing",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 95,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @param x\n * @return {boolean}\n */",
+        "args": [
+          "x"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype._shouldDoNothing = function (x) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getXOffset",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 98,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @param x\n */",
+        "args": [
+          "x"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype._getXOffset = function (x) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getBlockAction",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 105,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @param x\n * @param y\n */",
+        "args": [
+          "x",
+          "y"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype._getBlockAction = function (x, y) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getColumnAction",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 110,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @param x\n */",
+        "args": [
+          "x"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype._getColumnAction = function (x) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getDirection",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 118,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @param x\n */",
+        "args": [
+          "x"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype._getDirection = function (x) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getActionIdentifier",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 125,
+        "memberOf": "DragDropColumn.prototype",
+        "doclet": "/**\n * @param x\n */",
+        "args": [
+          "x"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "DragDropColumn.prototype._getActionIdentifier = function (x) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/src/drag-drop",
+    "fileName": "column.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 244,
+  "EMPTY": false
+}

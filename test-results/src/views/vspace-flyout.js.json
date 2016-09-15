@@ -1,0 +1,385 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "underscore",
+        "backbone",
+        "template-engine",
+        "column-and-block-layout-editor-path/constants",
+        "text!column-and-block-layout-editor-path/templates/vspace-flyout.html",
+        "css!column-and-block-layout-editor-path/css/flyout.css",
+        "i18n!column-and-block-layout-editor-path/nls/column-and-block-layout-editor",
+        "galileo-lib/modules/services/usage-tracking"
+      ],
+      "moduleName": "vspace-flyout",
+      "AMD": true,
+      "webPath": "/src/views",
+      "convertedName": "vspace_flyout",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'VspaceFlyoutView'.",
+        "code": "wfJD",
+        "evidence": "function VspaceFlyoutView() {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'VspaceFlyoutView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initialize'.",
+        "code": "wfJD",
+        "evidence": "VspaceFlyoutView.prototype.initialize = function (params) {",
+        "line": 21,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initialize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'render'.",
+        "code": "wfJD",
+        "evidence": "VspaceFlyoutView.prototype.render = function () {",
+        "line": 32,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'render'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showFlyout'.",
+        "code": "wfJD",
+        "evidence": "VspaceFlyoutView.prototype.showFlyout = function (event) {",
+        "line": 43,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showFlyout'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideFlyout'.",
+        "code": "wfJD",
+        "evidence": "VspaceFlyoutView.prototype.hideFlyout = function () {",
+        "line": 56,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideFlyout'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_appendToDOM'.",
+        "code": "wfJD",
+        "evidence": "VspaceFlyoutView.prototype._appendToDOM = function () {",
+        "line": 60,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_appendToDOM'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_eventTargetIsFlyout'.",
+        "code": "wfJD",
+        "evidence": "VspaceFlyoutView.prototype._eventTargetIsFlyout = function (event) {",
+        "line": 66,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_eventTargetIsFlyout'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_dismissFlyout'.",
+        "code": "wfJD",
+        "evidence": "VspaceFlyoutView.prototype._dismissFlyout = function (event) {",
+        "line": 69,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_dismissFlyout'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_toggleVspace'.",
+        "code": "wfJD",
+        "evidence": "VspaceFlyoutView.prototype._toggleVspace = function (event) {",
+        "line": 74,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_toggleVspace'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_trackUsage'.",
+        "code": "wfJD",
+        "evidence": "VspaceFlyoutView.prototype._trackUsage = function (identifier, value) {",
+        "line": 80,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_trackUsage'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/views/vspace-flyout.js",
+  "folderPath": "test-source/src/views",
+  "fileName": "vspace-flyout.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/src/views",
+  "webPath": "/src/views",
+  "libFile": false,
+  "min": false,
+  "realName": "vspace-flyout",
+  "name": "vspace-flyout",
+  "camelName": "VspaceFlyout",
+  "processedFilePath": "test-output/src/views/vspace-flyout.js",
+  "mappedModuleName": "src/views/vspace-flyout",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "src/views/vspace-flyout~VspaceFlyoutView": {
+      "todos": [],
+      "returnType": "",
+      "memberOf": "",
+      "ctor": true,
+      "lineNumber": 14,
+      "line": "function VspaceFlyoutView() {",
+      "comment": -1,
+      "range": [
+        757,
+        1094
+      ],
+      "name": "VspaceFlyoutView",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": "",
+        "tags": []
+      },
+      "jsDoc": "/**\n * @constructor\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "src/views/vspace-flyout",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 93,
+    "requires": [
+      "jquery",
+      "underscore",
+      "backbone",
+      "template-engine",
+      "column-and-block-layout-editor-path/constants",
+      "text!column-and-block-layout-editor-path/templates/vspace-flyout.html",
+      "css!column-and-block-layout-editor-path/css/flyout.css",
+      "i18n!column-and-block-layout-editor-path/nls/column-and-block-layout-editor",
+      "galileo-lib/modules/services/usage-tracking"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/src/views",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 3728,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./vspace-flyout",
+    "uses_console_log": false,
+    "uses_backbone": true,
+    "classes": {
+      "VspaceFlyoutView": 3889
+    },
+    "methods": [
+      {
+        "name": "VspaceFlyoutView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function VspaceFlyoutView() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "initialize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 21,
+        "memberOf": "VspaceFlyoutView.prototype",
+        "doclet": "/**\n * @param params\n */",
+        "args": [
+          "params"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "VspaceFlyoutView.prototype.initialize = function (params) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 32,
+        "memberOf": "VspaceFlyoutView.prototype",
+        "doclet": "/**\n * @return {object} ThisExpression\n */",
+        "description": "",
+        "return": "ThisExpression",
+        "classDeclarationFlag": false,
+        "line": "VspaceFlyoutView.prototype.render = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "showFlyout",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 43,
+        "memberOf": "VspaceFlyoutView.prototype",
+        "doclet": "/**\n * @param event\n */",
+        "args": [
+          "event"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "VspaceFlyoutView.prototype.showFlyout = function (event) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "hideFlyout",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 56,
+        "memberOf": "VspaceFlyoutView.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "VspaceFlyoutView.prototype.hideFlyout = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_appendToDOM",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 60,
+        "memberOf": "VspaceFlyoutView.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "VspaceFlyoutView.prototype._appendToDOM = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_eventTargetIsFlyout",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 66,
+        "memberOf": "VspaceFlyoutView.prototype",
+        "doclet": "/**\n * @param event\n */",
+        "args": [
+          "event"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "VspaceFlyoutView.prototype._eventTargetIsFlyout = function (event) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_dismissFlyout",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 69,
+        "memberOf": "VspaceFlyoutView.prototype",
+        "doclet": "/**\n * @param event\n */",
+        "args": [
+          "event"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "VspaceFlyoutView.prototype._dismissFlyout = function (event) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_toggleVspace",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 74,
+        "memberOf": "VspaceFlyoutView.prototype",
+        "doclet": "/**\n * @param event\n */",
+        "args": [
+          "event"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "VspaceFlyoutView.prototype._toggleVspace = function (event) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_trackUsage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 80,
+        "memberOf": "VspaceFlyoutView.prototype",
+        "doclet": "/**\n * @param identifier\n * @param value\n */",
+        "args": [
+          "identifier",
+          "value"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "VspaceFlyoutView.prototype._trackUsage = function (identifier, value) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/src/views",
+    "fileName": "vspace-flyout.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 151,
+  "EMPTY": false
+}

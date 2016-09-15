@@ -1,0 +1,357 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "underscore",
+        "backbone",
+        "galileo-lib/modules/services/descriptors/block/block-descriptor",
+        "utils",
+        "column-and-block-layout-editor-path/constants"
+      ],
+      "moduleName": "content-editor-state-map",
+      "AMD": true,
+      "webPath": "/src/models",
+      "convertedName": "content_editor_state_map",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'ContentEditorStateMap'.",
+        "code": "wfJD",
+        "evidence": "function ContentEditorStateMap() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'ContentEditorStateMap'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getContents'.",
+        "code": "wfJD",
+        "evidence": "ContentEditorStateMap.prototype.getContents = function () {",
+        "line": 10,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getContents'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setContents'.",
+        "code": "wfJD",
+        "evidence": "ContentEditorStateMap.prototype.setContents = function (contents) {",
+        "line": 13,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setContents'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_createStateFromBlockDescriptor'.",
+        "code": "wfJD",
+        "evidence": "ContentEditorStateMap.prototype._createStateFromBlockDescriptor = function (blockDescriptor) {",
+        "line": 16,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_createStateFromBlockDescriptor'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_createStateFromContentEditorState'.",
+        "code": "wfJD",
+        "evidence": "ContentEditorStateMap.prototype._createStateFromContentEditorState = function (ceState) {",
+        "line": 27,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_createStateFromContentEditorState'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'createState'.",
+        "code": "wfJD",
+        "evidence": "ContentEditorStateMap.prototype.createState = function (state, contentType) {",
+        "line": 37,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'createState'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_randomizeContentEditorStateName'.",
+        "code": "wfJD",
+        "evidence": "ContentEditorStateMap.prototype._randomizeContentEditorStateName = function (content) {",
+        "line": 44,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_randomizeContentEditorStateName'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'refresh'.",
+        "code": "wfJD",
+        "evidence": "ContentEditorStateMap.prototype.refresh = function (contentEditors) {",
+        "line": 51,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'refresh'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'onStateReady'.",
+        "code": "wfJD",
+        "evidence": "onStateReady = function (editor, state) {",
+        "line": 56,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'onStateReady'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/models/content-editor-state-map.js",
+  "folderPath": "test-source/src/models",
+  "fileName": "content-editor-state-map.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/src/models",
+  "webPath": "/src/models",
+  "libFile": false,
+  "min": false,
+  "realName": "content-editor-state-map",
+  "name": "content-editor-state-map",
+  "camelName": "ContentEditorStateMap",
+  "processedFilePath": "test-output/src/models/content-editor-state-map.js",
+  "mappedModuleName": "src/models/content-editor-state-map",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "src/models/content-editor-state-map~ContentEditorStateMap": {
+      "todos": [],
+      "returnType": "",
+      "memberOf": "",
+      "ctor": true,
+      "lineNumber": 7,
+      "line": "function ContentEditorStateMap() {",
+      "comment": -1,
+      "range": [
+        440,
+        561
+      ],
+      "name": "ContentEditorStateMap",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": "",
+        "tags": []
+      },
+      "jsDoc": "/**\n * @constructor\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "src/models/content-editor-state-map",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 77,
+    "requires": [
+      "underscore",
+      "backbone",
+      "galileo-lib/modules/services/descriptors/block/block-descriptor",
+      "utils",
+      "column-and-block-layout-editor-path/constants"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/src/models",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 3165,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./content-editor-state-map",
+    "uses_console_log": false,
+    "uses_backbone": true,
+    "classes": {
+      "ContentEditorStateMap": 3250
+    },
+    "methods": [
+      {
+        "name": "ContentEditorStateMap",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function ContentEditorStateMap() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "getContents",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "ContentEditorStateMap.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ContentEditorStateMap.prototype.getContents = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "setContents",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "ContentEditorStateMap.prototype",
+        "doclet": "/**\n * @param contents\n */",
+        "args": [
+          "contents"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ContentEditorStateMap.prototype.setContents = function (contents) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_createStateFromBlockDescriptor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "memberOf": "ContentEditorStateMap.prototype",
+        "doclet": "/**\n * @param blockDescriptor\n */",
+        "args": [
+          "blockDescriptor"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ContentEditorStateMap.prototype._createStateFromBlockDescriptor = function (blockDescriptor) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_createStateFromContentEditorState",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 27,
+        "memberOf": "ContentEditorStateMap.prototype",
+        "doclet": "/**\n * @param ceState\n */",
+        "args": [
+          "ceState"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ContentEditorStateMap.prototype._createStateFromContentEditorState = function (ceState) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "createState",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 37,
+        "memberOf": "ContentEditorStateMap.prototype",
+        "doclet": "/**\n * @param state\n * @param contentType\n */",
+        "args": [
+          "state",
+          "contentType"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ContentEditorStateMap.prototype.createState = function (state, contentType) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_randomizeContentEditorStateName",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 44,
+        "memberOf": "ContentEditorStateMap.prototype",
+        "doclet": "/**\n * @param content\n */",
+        "args": [
+          "content"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ContentEditorStateMap.prototype._randomizeContentEditorStateName = function (content) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "refresh",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 51,
+        "memberOf": "ContentEditorStateMap.prototype",
+        "doclet": "/**\n * @param contentEditors\n */",
+        "args": [
+          "contentEditors"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "ContentEditorStateMap.prototype.refresh = function (contentEditors) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "onStateReady",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 56,
+        "memberOf": "",
+        "doclet": "/**\n * @param editor\n * @param state\n */",
+        "args": [
+          "editor",
+          "state"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "onStateReady = function (editor, state) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/src/models",
+    "fileName": "content-editor-state-map.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 132,
+  "EMPTY": false
+}

@@ -1,0 +1,212 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "column-and-block-layout-editor-path/padding/parser"
+      ],
+      "moduleName": "calculator",
+      "AMD": true,
+      "webPath": "/src/padding",
+      "convertedName": "calculator",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'PaddingCalculator'.",
+        "code": "wfJD",
+        "evidence": "function PaddingCalculator(config) {",
+        "line": 4,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'PaddingCalculator'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'calculate'.",
+        "code": "wfJD",
+        "evidence": "PaddingCalculator.prototype.calculate = function () {",
+        "line": 15,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'calculate'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getLeftPadding'.",
+        "code": "wfJD",
+        "evidence": "PaddingCalculator.prototype._getLeftPadding = function () {",
+        "line": 21,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getLeftPadding'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_getRightPadding'.",
+        "code": "wfJD",
+        "evidence": "PaddingCalculator.prototype._getRightPadding = function () {",
+        "line": 28,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_getRightPadding'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/padding/calculator.js",
+  "folderPath": "test-source/src/padding",
+  "fileName": "calculator.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/src/padding",
+  "webPath": "/src/padding",
+  "libFile": false,
+  "min": false,
+  "realName": "calculator",
+  "name": "calculator",
+  "camelName": "Calculator",
+  "processedFilePath": "test-output/src/padding/calculator.js",
+  "mappedModuleName": "src/padding/calculator",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "src/padding/calculator~PaddingCalculator": {
+      "todos": [],
+      "params": [
+        "config"
+      ],
+      "memberOf": "",
+      "returnType": "",
+      "ctor": true,
+      "lineNumber": 4,
+      "line": "function PaddingCalculator(config) {",
+      "comment": -1,
+      "range": [
+        225,
+        408
+      ],
+      "name": "PaddingCalculator",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": "",
+        "tags": []
+      },
+      "jsDoc": "/**\n * @constructor\n * @param config\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "src/padding/calculator",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 37,
+    "requires": [
+      "column-and-block-layout-editor-path/padding/parser"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/src/padding",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1216,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./calculator",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "PaddingCalculator": 1155
+    },
+    "methods": [
+      {
+        "name": "PaddingCalculator",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 4,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n * @param config\n */",
+        "args": [
+          "config"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function PaddingCalculator(config) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "calculate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 15,
+        "memberOf": "PaddingCalculator.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "PaddingCalculator.prototype.calculate = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getLeftPadding",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 21,
+        "memberOf": "PaddingCalculator.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "PaddingCalculator.prototype._getLeftPadding = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_getRightPadding",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 28,
+        "memberOf": "PaddingCalculator.prototype",
+        "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "PaddingCalculator.prototype._getRightPadding = function () {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/src/padding",
+    "fileName": "calculator.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 58,
+  "EMPTY": false
+}
