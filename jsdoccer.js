@@ -10,7 +10,7 @@ var FIX_COMMENT_GRAMMAR = false;
 // Try to normalize module names so hand-coded ones match. Can cause problems.
 var FIX_MODULE_NAMES = false;
 // YUI wants every module, method and class annotated, with a name.
-var FIX_COFFEE = true;
+var FIX_COFFEE = false;
 var YUIDOC_MODE = false;
 var Logger = function () {
   this.log = function (msg) {
@@ -2369,19 +2369,19 @@ function commentAngularClasses(input, ngModName, ngBaseClass, packagePath) {
   if (offset !== -1) {
     console.warn('commentAngularClasses: found', chunkToSearch);
     input = stripOneLineComments(stripCComments(input));
-    //		var ngChunkSplit = input.split(chunkToSearch)[1];
-    //		ngChunkSplit = ngChunkSplit.split(',')[0];
-    //		ngChunkSplit = ngChunkSplit.split('"').join('').split("'").join('')
-    //				.trim();
-    //		var constructorDoc = '/**\n * @class ' + ngChunkSplit
-    //				+ '\n * @extends ' + ngBaseClass + '\n */';
-    //		input = prependLineByOffset(input, offset, constructorDoc);
+    //        var ngChunkSplit = input.split(chunkToSearch)[1];
+    //        ngChunkSplit = ngChunkSplit.split(',')[0];
+    //        ngChunkSplit = ngChunkSplit.split('"').join('').split("'").join('')
+    //                .trim();
+    //        var constructorDoc = '/**\n * @class ' + ngChunkSplit
+    //                + '\n * @extends ' + ngBaseClass + '\n */';
+    //        input = prependLineByOffset(input, offset, constructorDoc);
     var allSplits = input.split(chunkToSearch);
     var tempInput = input;
     for (var index = 1; index < allSplits.length; index++) {
       var ngChunkSplit = allSplits[index];
       // console.warn('CHUNK: ', index, ngChunkSplit);
-      //			var ngChunkSplit = input.split(chunkToSearch)[1];
+      //            var ngChunkSplit = input.split(chunkToSearch)[1];
       ngChunkSplit = ngChunkSplit.split(',')[0].trim();
       if (ngChunkSplit.indexOf('(') === -1) {
         console.warn('CHUNK: ', index, ngChunkSplit);
@@ -2773,17 +2773,17 @@ function addMissingComments(walkerObj, errors) {
     logger.log('Infer module name from @module definition.');
   } else {
     // logger.log(walkerObj.results.amdProc);
-    //    	{ requires: [],
-    //    		  moduleName: 'widget',
-    //    		  AMD: false,
-    //    		  webPath: '/views',
-    //    		  convertedName: 'widget',
-    //    		  min: false,
-    //    		  main: 0,
-    //    		  'uses_$': false,
-    //    		  uses_Y: false,
-    //    		  uses_alert: false,
-    //    		  strict: false }
+    //        { requires: [],
+    //              moduleName: 'widget',
+    //              AMD: false,
+    //              webPath: '/views',
+    //              convertedName: 'widget',
+    //              min: false,
+    //              main: 0,
+    //              'uses_$': false,
+    //              uses_Y: false,
+    //              uses_alert: false,
+    //              strict: false }
     moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
     if (!walkerObj.NG) {
       logger.log('Infer module name from file or AMD definition.');

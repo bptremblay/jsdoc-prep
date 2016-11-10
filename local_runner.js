@@ -84,12 +84,17 @@ var processingChain = [
   'jsBeautifyProc',
   // 'fixMyJsProc',
   //'splitModulesProc',
-  'amdProc',
-  'jsDoccerProc',
-  'jsDocNameFixerProc',
-  'fixClassDeclarationsProc',
-  'jsDoc3PrepProc',
-  'jsBeautifyProc'
+  
+  
+//  'amdProc',
+//  'jsDoccerProc',
+//  'jsDocNameFixerProc',
+//  'fixClassDeclarationsProc',
+//  'jsDoc3PrepProc',
+//  'jsBeautifyProc'
+  
+  
+  
 //'generateJavaProc'
 ];
 //var processingChain = [
