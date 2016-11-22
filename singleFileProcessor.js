@@ -13,7 +13,6 @@ var parseDoclet = docletEngine.parseDoclet;
 var printDoclet = docletEngine.printDoclet;
 var addMissingComments = newJsDoccerEngine.addMissingComments;
 var FILE_IS_EMPTY = false;
-
 var Logger = function () {
   this.log = function (msg) {
     console.log(msg);
@@ -25,9 +24,7 @@ var Logger = function () {
     console.error(msg);
   };
 };
-
 var logger = new Logger();
-
 
 function mapModuleName(mappedModuleName, modulePaths) {
   for (var p in modulePaths) {
@@ -38,17 +35,13 @@ function mapModuleName(mappedModuleName, modulePaths) {
         // stop, don't apply every match
         break;
       }
-
     }
   }
-
   if (mappedModuleName.charAt(0) === '/') {
     mappedModuleName = mappedModuleName.substring(1);
   }
-
   return mappedModuleName;
 }
-
 var headerProc = {
   id: 'headerProc',
   type: 'processor',
@@ -58,8 +51,6 @@ var headerProc = {
     doneCallback(input);
   }
 };
-
-
 var singleJsDocProc = {
   id: 'singleJsDocProc',
   type: 'processor',
@@ -70,19 +61,339 @@ var singleJsDocProc = {
     doneCallback(input);
   }
 };
+var uid = 0;
+var nodes = [];
 
+function walk(node, attr, val, results, parentNode) {
+  if (parentNode == null) {
+    parentNode = {
+      type: 'ROOT'
+    };
+    parentNode.uid = -1;
+  }
+  if (node.type != null) {
+    node.parentNode = parentNode.uid;
+    node.uid = uid++;
+  }
+  if (node.length != null) {
+    logger.error('Walking an Array!!!');
+  }
+  if (results == null) {
+    results = [];
+  }
+  nodes.push(node);
+  if (node.hasOwnProperty(attr)) {
+    if (node[attr] === val) {
+      results.push(node);
+    }
+  }
+  // type: Program
+  // body: []
+  // range: []
+  // comments: []
+  // tokens: []
+  // errors: []
+  for (var e in node) {
+    if (attr === e) {
+      continue;
+    }
+    if (e === 'comments') {
+      continue;
+    }
+    if (e === 'uid') {
+      continue;
+    }
+    if (e === 'parentNode') {
+      continue;
+    }
+    if (node.hasOwnProperty(e)) {
+      var child = node[e];
+      if (child == null) {
+        continue;
+      }
+      // // logger.log(child);
+      if (typeof child === 'object' && child.length != null) {
+        // array?
+        // // logger.log(e + ': ' + '[]');
+        for (var index = 0; index < child.length; index++) {
+          // logger.log(child);
+          var elem = child[index];
+          if (elem != null) {
+            walk(elem, attr, val, results, node);
+          }
+        }
+      } else if (typeof child === 'object') {
+        child.parentNode = node;
+        // obj?
+        // // logger.log(e + ': ' + '{}'); //JSON.stringify(child));
+        walk(child, attr, val, results, node);
+      } else if (typeof child === 'string') {
+        // string?
+        // logger.log(e + ': ' + child);
+      } else {
+        // string?
+        // logger.log(e + ': ' + typeof child);
+      }
+    }
+  }
+  return results;
+}
 
+function getNodeByUid(uid) {
+  for (var index = 0; index < nodes.length; index++) {
+    var node = nodes[index];
+    if (node.uid === uid) {
+      return node;
+    }
+  }
+  // logger.log('getNodeByUid(' + uid + ') >>> null');
+  return null;
+}
+
+function getNodesByType(ast, nodeType) {
+  var results = walk(ast, 'type', nodeType);
+  for (var index = 0; index < results.length; index++) {
+    var node = results[index];
+    var returnType = '';
+    if (node.body != null) {
+      var returnStatements = getNodesByType(node.body, 'ReturnStatement');
+      if (returnStatements.length > 0) {
+        if (returnStatements[0].argument != null) {
+          var statement = returnStatements[0].argument;
+          if (statement.type === 'Literal') {
+            if (statement.raw === 'null') {
+              returnType = '';
+            } else if (statement.raw === 'undefined') {
+              returnType = '';
+            } else {
+              returnType = '{' + (typeof statement.value) + '}';
+            }
+          } else if (statement.type === 'Identifier') {
+            returnType = '?';
+            if (statement.name != null) {
+              if (statement.name === 'null') {
+                returnType = '';
+              } else if (statement.name === 'undefined') {
+                returnType = '';
+              } else {
+                // returnType = statement.name;
+                // logger.warn('Cannot derive meaning from
+                // "return ' + statement.name + '".');
+                returnType = '?';
+              }
+            }
+          } else if (statement.type === 'CallExpression') {
+            returnType = '?';
+            if (statement.name != null) {
+              returnType = statement.name;
+            }
+          } else if (statement.type === 'LogicalExpression') {
+            returnType = '{boolean}';
+          } else if (statement.type === 'FunctionExpression') {
+            returnType = '{function}';
+          } else if (statement.type === 'BinaryExpression') {
+            returnType = '?';
+          } else if (statement.type === 'MemberExpression') {
+            returnType = '?';
+          } else if (statement.type === 'ObjectExpression') {
+            returnType = '?';
+          } else if (statement.type === 'ArrayExpression') {
+            returnType = '{array}';
+          } else {
+            // logger.warn(statement);
+            returnType = '';
+            if (statement.name != null) {
+              returnType = statement.name;
+            } else if (statement.type != null) {
+              returnType = statement.type;
+            } else {
+              logger.warn(statement);
+            }
+          }
+          // if (statement.name != null) {
+          // logger.warn(statement.type + ':' + statement.name + ':'
+          // + returnType);
+          // } else {
+          // logger.warn(statement.type + ':' + returnType);
+          // //logger.warn(statement);
+          // }
+        } else {
+          returnType = '';
+        }
+      }
+    }
+    node.returnType = returnType;
+    // if (returnType === 'undefined') {
+    // logger.warn(statement);
+    // }
+    // logger.warn(returnType);
+  }
+  return results;
+}
+var fixDecaffeinateProc = {
+  id: 'fixDecaffeinateProc',
+  type: 'processor',
+  description: 'Any fixes we consider mandatory for post-processing decaf files.',
+  process: function (input, doneCallback) {
+    var source = input.source;
+    var lines = source.split('\n');
+    for (var index = 0; index < lines.length; index++) {
+      var line = lines[index];
+      if (line.indexOf('return ') !== -1 && line.indexOf('.initClass();') !== -1) {
+        console.log('DO NOT RETURN initClass()');
+        line = line.split('return ').join('');
+        var theClass = line.split('.')[0];
+        line = line.trim() + '\n' + 'return ' + theClass;
+        lines[index] = line;
+      }
+    }
+    input.source = lines.join('\n');
+    // strip out AMD and replace with ES6 module
+    var amdProcData = input.results.amdProc;
+    var importPaths = amdProcData.requires;
+    var importNames = amdProcData.usedAs;
+    //console.log(amdProcData.moduleName);
+    var ast = null;
+    // do an esprima parse NOW
+    try {
+      var _esprima = require('esprima');
+      ast = _esprima.parse(input.source, {
+        comment: true,
+        tolerant: true,
+        range: true,
+        raw: true,
+        tokens: true
+      });
+    } catch (esError) {
+      console.error(esError);
+    }
+    var expressionStatements = getNodesByType(ast, 'ExpressionStatement');
+    var defineBlocks = [];
+    var es = 0;
+    var defineCount = 0;
+    var firstDefineBlock = null;
+    var oneDefine = null;
+    var importPaths = [];
+    var exportReturned = null;
+    var exportReturnedNode = null;
+    for (es = 0; es < expressionStatements.length; es++) {
+      oneDefine = expressionStatements[es];
+      if (oneDefine.expression.callee && oneDefine.expression.callee.name === 'define') {
+        var imports = oneDefine.expression.arguments[0].elements;
+        var importedAs = oneDefine.expression.arguments[1].params;
+        exportReturnedNode = oneDefine.expression.arguments[1];
+        for (var index = 0; index < imports.length; index++) {
+          var path = imports[index].value;
+          importPaths.push({
+            path: path,
+            name: ''
+          });
+        }
+        for (var index = 0; index < importedAs.length; index++) {
+          var name = importedAs[index].name;
+          if (importPaths.length > index) {
+            importPaths[index].name = name;
+          }
+        }
+        //console.log(importPaths);
+        //        {
+        //            type: 'ExpressionStatement',
+        //            expression: {
+        //                type: 'CallExpression',
+        //                callee: {
+        //                    type: 'Identifier',
+        //                    name: 'define',
+        //                    range: [Object],
+        //                    parentNode: 2,
+        //                    uid: 3
+        //                },
+        //                arguments: [
+        //                    [Object],
+        //                    [Object]
+        //                ],
+        //                range: [0, 12618],
+        //                parentNode: 1,
+        //                uid: 2
+        //            },
+        //            range: [0, 12619],
+        //            parentNode: 0,
+        //            uid: 1,
+        //            returnType: ''
+        //        }
+        //console.log(imports);
+        //console.log(importedAs);
+        break;
+      }
+    }
+    if (oneDefine) {
+      var exactReturn = null;
+      //console.log(exportReturned.body.body);
+      var body = exportReturnedNode.body.body;
+      for (var index = 0; index < body.length; index++) {
+        var node = body[index];
+        // console.log(node.type);
+        if (node.type === 'ReturnStatement') {
+          //console.log(node.argument);
+          var range = node.range;
+          exactReturn = input.source.substring(range[0], range[1]).trim();
+          // console.log(">>>" + codeBody);
+          exportReturned = node.argument.name;
+          break;
+        }
+      }
+      // console.log(exportReturnedNode);
+      var codeNode = exportReturnedNode.body;
+      var range = codeNode.range;
+      var codeBody = input.source.substring(range[0], range[1]).trim();
+      //console.log(codeBody);
+      codeBody = codeBody.substring(1, (codeBody.length - 1)).trim();
+      codeBody = codeBody.split(exactReturn).join('export default ' + exportReturned);
+      var codeHeader = '';
+      //        /**
+      //   * @module state-model
+      //   * @exports StateModel
+      //   * @requires blue/is
+      //   * @requires blue/view
+      //   * @requires blue/observable
+      //   * @requires blue/declare
+      //   * @requires blue/with/viewResolution
+      //   * @requires ../deferred
+      //   */
+      codeHeader += '/**\n';
+      codeHeader += ' * @module ' + amdProcData.moduleName + '\n';
+      codeHeader += ' * @exports ' + exportReturned + '\n';
+      for (var index = 0; index < importPaths.length; index++) {
+        var importItem = importPaths[index];
+        codeHeader += ' * @requires ' + importItem.path + '\n';
+      }
+      codeHeader += ' */\n\n';
+      for (var index = 0; index < importPaths.length; index++) {
+        var importItem = importPaths[index];
+        if (importItem.name) {
+          codeHeader += 'import ' + importItem.name + ' from \'' + importItem.path + '\';\n';
+        } else {
+          codeHeader += 'import \'' + importItem.path + '\';\n';
+        }
+      }
+      codeHeader += '\n'
+      var newSource = codeHeader + codeBody + '\n';
+      input.source = newSource;
+      //  console.log(newSource);
+      // now search/delete the EXACT return block
+      // get imports
+      // get return
+    }
+    writeFile(input.processedFilePath, input.source);
+    doneCallback(input);
+  }
+};
 var fixMyJsProc = {
   id: 'fixMyJsProc',
   type: 'processor',
   description: 'Runs fixmyjs.',
   process: function (input, doneCallback) {
-
     var jshint = require('jshint').JSHINT
     var fixmyjs = require('fixmyjs')
-
-
-
     if (input.errors[this.id] == null) {
       input.errors[this.id] = [];
     }
@@ -108,23 +419,15 @@ var fixMyJsProc = {
       'OA_output': false
     };
     JSHINT.errors = null;
-
-
-
-
     var success = JSHINT(input.source, options, globals);
     input.errors[this.id] = JSHINT.errors;
     input.source = fixmyjs(jshint.data(), input.source, options).run();
     success = JSHINT(input.source, options, globals);
     input.errors[this.id] = JSHINT.errors;
     JSHINT.errors = null;
-
-
     doneCallback(input);
   }
 };
-
-
 var uglifyProc = {
   id: 'uglifyProc',
   type: 'processor',
@@ -163,7 +466,6 @@ function createJavaClass(input, amdProcData, classData) {
   //console.log(classData);
   var AMD = amdProcData.AMD;
   var ctorData = classData.namedConstructors;
-
   //  "namedConstructors": {
   //        "js/app/modules/galileo-event~GalileoEvent": {
   //          "todos": [],
@@ -190,18 +492,12 @@ function createJavaClass(input, amdProcData, classData) {
   //          },
   //          "jsDoc": "/**\n * @constructor\n * @param name\n * @param options\n */"
   //        }
-
   var methods = [];
-
   if (classData.jsDoccerProcData) {
     methods = classData.jsDoccerProcData.methods;
   } else {
     console.error("ERROR: no jsDoccerProcData");
   }
-
-
-
-
   //  {
   //            "name": "_initEvents",
   //            "visibility": "public",
@@ -215,7 +511,6 @@ function createJavaClass(input, amdProcData, classData) {
   //            "line": "_initEvents: function () {",
   //            "originalJsDocDescription": {}
   //          },
-
   var exportPath = 'javasrc';
   if (input.camelName.indexOf('/') !== -1) {
     input.camelName = input.camelName.split('/').join('_');
@@ -253,27 +548,19 @@ function createJavaClass(input, amdProcData, classData) {
     if (typeof moduleName !== 'string') {
       continue;
     }
-
     if (moduleName.indexOf('/') !== -1) {
       moduleName = moduleName.split('/').join('.');
-
     }
-
     if (moduleName.indexOf('.') !== -1) {
       pseudoClass = moduleName.split('.')[0].trim();
       moduleName = moduleName.split('.').join('_');
-
     }
-
     moduleName = moduleName.split('__').join('_');
     moduleName = moduleName.split('_').join('');
-
     moduleName = camelize(moduleName);
-
-    if (moduleName === 'Jquery'){
+    if (moduleName === 'Jquery') {
       moduleName = 'JQuery';
     }
-
     if (moduleName.length === 0) {
       continue;
     }
@@ -291,17 +578,14 @@ function createJavaClass(input, amdProcData, classData) {
   // methods!!!
   for (index = 0; index < methods.length; index++) {
     var method = methods[index];
-    if (method.name.indexOf(']') !== -1){
+    if (method.name.indexOf(']') !== -1) {
       continue;
     }
     if (method.name.indexOf('/') !== -1) {
       method.name = method.name.split('/').join('_');
-
     }
-
     if (method.name.indexOf('.') !== -1) {
       method.name = method.name.split('.').join('_');
-
     }
     method.name = method.name.split('__').join('_');
     method.name = method.name.split('__').join('_');
@@ -312,9 +596,7 @@ function createJavaClass(input, amdProcData, classData) {
     } else {
       buffer.push('public  void ' + method.name + '(){}');
     }
-
   }
-
   buffer.push('  public ' + capitalize(input.camelName) + '() {');
   //buffer.push('  super("' + capitalize(input.name) + '");');
   buffer.push('  }');
@@ -341,7 +623,6 @@ var AMD_DATA = {
   paths: {},
   shim: {}
 };
-
 var amdProc = {
   id: 'amdProc',
   type: 'processor',
@@ -352,6 +633,7 @@ var amdProc = {
     }
     var result = input.results[this.id];
     result.requires = [];
+    result.usedAs = [];
     result.moduleName = input.fileName.split('.js')[0];
     result.AMD = false;
     result.webPath = input.webPath;
@@ -359,7 +641,7 @@ var amdProc = {
     // + '/' +
     // result.moduleName;
     var converted = convert(input.source, input.path);
-    // console.warn(converted);
+    //console.warn(converted);
     function fixRequires(inputArray) {
       var result = [];
       for (var index = 0; index < inputArray.length; index++) {
@@ -372,14 +654,13 @@ var amdProc = {
           continue;
         }
         temp = temp.split('\'').join('');
-
         result.push(trim(temp));
-
       }
       return result;
     }
     // console.warn(converted.requires);
     result.requires = fixRequires(converted.requires);
+    result.usedAs = converted.depVarnames;
     // console.warn(result.requires);
     var inlineRequires = fixRequires(getInlineRequires(input));
     for (var ir = 0; ir < inlineRequires.length; ir++) {
@@ -390,7 +671,6 @@ var amdProc = {
     result.convertedName = converted.name;
     // result.moduleName = converted.name;
     result.AMD = converted.isModule;
-
     result.min = converted.min;
     result.main = converted.isMain;
     result.uses_$ = input.source.indexOf('$(') !== -1;
@@ -399,13 +679,9 @@ var amdProc = {
     result.uses_alert = input.source.indexOf('alert(') !== -1;
     // FIXME: BUGGY
     result.strict = input.source.indexOf('use strict') !== -1;
-
-
-
     doneCallback(input);
   }
 };
-
 /**
  * Gets all the instances of require() in the code body.
  *
@@ -986,7 +1262,6 @@ var yuiFilter = {
     }
   }
 };
-
 var JSONFilter = {
   id: 'JSONFilter',
   type: 'filter',
@@ -1006,7 +1281,6 @@ var JSONFilter = {
     }
   }
 };
-
 var amdFilter = {
   id: 'amdFilter',
   type: 'filter',
@@ -1103,8 +1377,8 @@ var jsBeautifyProc = {
         }
       } while (found);
       var unpackers = [P_A_C_K_E_R, Urlencoded, JavascriptObfuscator,
-                         MyObfuscate
-                         ];
+        MyObfuscate
+      ];
       for (var i = 0; i < unpackers.length; i++) {
         if (unpackers[i].detect(source)) {
           unpacked = unpackers[i].unpack(source);
@@ -1315,9 +1589,7 @@ var jsDoccerProc = {
         input.errors[id].push(error);
         FILE_IS_EMPTY = true;
       }
-
       var stdout = addMissingComments(input, internalErrors);
-
       if (internalErrors.length > 0) {
         var lineNumber = -1;
         var reason = 'Parse error. Aborted.';
@@ -1334,7 +1606,6 @@ var jsDoccerProc = {
         };
         input.errors[id].push(error);
       }
-
       // var child = exec(exePath + ' ' + basePath + ' ' +
       // name, function
       // (error, stdout, stderr) {
@@ -1345,8 +1616,6 @@ var jsDoccerProc = {
         var amdProcData = input.results.amdProc;
         input.jsDoccerProcData.requires = amdProcData.requires;
         input.jsDoccerProcData.is_module = amdProcData.AMD;
-
-
         input.jsDoccerProcData.min = amdProcData.min;
         input.jsDoccerProcData.main = amdProcData.main;
         input.jsDoccerProcData.uses_$ = amdProcData.uses_$;
@@ -1355,7 +1624,6 @@ var jsDoccerProc = {
         input.jsDoccerProcData.strict = amdProcData.strict;
         input.jsDoccerProcData.uses_console_log = input.source.indexOf('console.') !== -1;
         input.jsDoccerProcData.uses_backbone = input.source.indexOf('Backbone.') !== -1;
-
         var classes = input.jsDoccerProcData.classes;
         if (classes[input.camelName] == null) {
           var classArray = [];
@@ -1472,7 +1740,6 @@ function processFile(modulePaths, baseDirectory, filePathName, outputDirectory,
   var pathDelim = filePathName.indexOf('/') == -1 ? '\\' : '/';
   WRITE_ENABLED = writeEnable = writeEnable != null ? writeEnable : false;
   finishedProcessingChain = _finishedProcessingChain;
-
   var outputfilePathName = '';
   baseDirectory = _path.normalize(baseDirectory);
   filePathName = _path.normalize(filePathName);
@@ -1524,10 +1791,8 @@ function processFile(modulePaths, baseDirectory, filePathName, outputDirectory,
     mmn += '/';
   }
   output.mappedModuleName = mmn + output.fileName.split('.js')[0];
-
   // console.warn('mappedModuleName: ', output.mappedModuleName, ' from ', output.packagePath);
   // exit();
-
   var currentChainIndex = 0;
 
   function runNextProcessor() {
@@ -2305,13 +2570,11 @@ var jsDoc3PrepProc = {
           console.warn('jsDoc3PrepProc: whereVar??: ' + whereVar + ',' + whereFunction + ',' + whereFunctionNoSpace);
         }
       }
-
       var originalHeader = input.source.substring(0, whereDefine);
       console.warn('jsDoc3PrepProc: splicing header');
       // console.warn('originalHeader: "' + originalHeader + '"');
       input.source = originalHeader + '\n' + source;
       // console.warn(input.source);
-
       if (!canParseSource(input.source)) {
         input.source = input.undoBuffer;
       }
@@ -2364,14 +2627,13 @@ var jsDoc3PrepProc = {
       }
     }
     var splitter = input.source.split('@class');
-    input.source = splitter.join('@constructor');
+    //input.source = splitter.join('@constructor');
     splitter = input.source.split('@extends');
-    input.source = splitter.join('@augments');
+    //input.source = splitter.join('@augments');
     writeFile(input.processedFilePath, input.source);
     doneCallback(input);
   }
 };
-
 var splitModulesProc = {
   id: 'splitModulesProc',
   type: 'processor',
@@ -2387,10 +2649,8 @@ var splitModulesProc = {
     } else {
       doneCallback(input);
     }
-
   }
 };
-
 var plugins = {
   'trimProc': trimProc,
   'headerProc': headerProc,
@@ -2419,7 +2679,8 @@ var plugins = {
   'fixJSDocFormattingProc': fixJSDocFormattingProc,
   'JSONFilter': JSONFilter,
   'singleJsDocProc': singleJsDocProc,
-  'splitModulesProc': splitModulesProc
+  'splitModulesProc': splitModulesProc,
+  'fixDecaffeinateProc': fixDecaffeinateProc
 };
 
 function getAmdConfig() {

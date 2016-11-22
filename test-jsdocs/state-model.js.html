@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: state-model.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: state-model.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module state-model
+ * @exports StateModel
+ * @requires jquery
+ * @requires underscore
+ * @requires backbone
+ * @requires immutable
+ * @requires image-editor-basic-path/constants
+ * @requires image-editor-basic-path/lib/image-helpers
+ * @requires galileo-lib/modules/services/url-validator-service
+ * @requires galileo-lib/modules/services/usage-tracking
+ * @requires galileo-lib/modules/services/customer-service
+ * @requires galileo-lib/modules/services/placeholder-service
+ */
+import $ from 'jquery';
+import _ from 'underscore';
+import Backbone from 'backbone';
+import Immutable from 'immutable';
+import constants from 'image-editor-basic-path/constants';
+import imageHelpers from 'image-editor-basic-path/lib/image-helpers';
+import UrlValidator from 'galileo-lib/modules/services/url-validator-service';
+import usageTracking from 'galileo-lib/modules/services/usage-tracking';
+import customerService from 'galileo-lib/modules/services/customer-service';
+import placeholderService from 'galileo-lib/modules/services/placeholder-service';
+// Shared Image State - Basic &amp; Canvas Image Editor - v2.0.0
+//
+//  * height - number
+//  * width - number
+//  * imageUrl - string
+//  * imageAlt - string
+//  * imageWidth - number (new)
+//  * imageHeight - number (new)
+//  * maxWidth - number
+//  * magnification - number
+//  * linkType - string
+//  * link - object or null
+//     * href - string
+//     * track - string
+//  * source - string
+//  * offsetX - number [not used in the Basic Image Editor]
+//  * offsetY - number [not used in the Basic Image Editor]
+//  * cdnUrl - string [not used in the Basic Image Editor]
+//
+// This state version can not be migrated to.  It requires the image be loaded
+// to determine its dimensions.  Compatible with State 2.0.0
+// Customer Service Helpers
+/**
+ * Returns true if has logo.
+ * @param service
+ * @return {Object} boolean
+ */
+let hasLogo = function (service) {
+  let logo = service.getLogo();
+  return Immutable.Map.isMap(logo) &amp;&amp; logo.get('url');
+};
+/**
+ * @param service
+ */
+let getLogo = function (service) {
+  let map = {
+    url: 'imageUrl',
+    width: 'imageWidth',
+    height: 'imageHeight',
+    altText: 'imageAlt'
+  };
+  return service.getLogo()
+    .filter((value, key) => _(map).keys().includes(key)) // filter down to map keys
+    .mapKeys((key, value) => map[key]) // mutate keys
+    .toJS(); // return a JS object
+};
+/**
+ * The class StateModel.
+ * @extends Backbone.Model
+ */
+class StateModel extends Backbone.Model {
+  static initClass() {
+      this.prototype.defaults = {
+        name: '',
+        type: '',
+        imageType: '',
+        imageUrl: '',
+        externalUrl: '',
+        imageAlt: '',
+        imageWidth: 0,
+        imageHeight: 0,
+        maxWidth: null,
+        link: null,
+        linkType: 'web',
+        source: null,
+        width: 0,
+        height: 0,
+        magnification: 1,
+        offsetX: 0,
+        offsetY: 0,
+        cdnUrl: null,
+        container: {},
+        image: {
+          hasHeight: false
+        }
+      };
+      // These attributes are not serialized into the state saved by the platform
+      this.prototype.editorAttributes = ['dragHover', 'maxWidth'];
+    }
+    /**
+     * @param attrs
+     * @param options
+     * @return {Object} AssignmentExpression
+     */
+  initialize(attrs, options) {
+      this._transformImageUrlToEntity();
+      return this.eventEmitter = options.eventEmitter;
+    }
+    /**
+     * @param attrs
+     * @param options
+     */
+  validate(attrs, options) {
+    if (__guard__(attrs.link, x => x.href)) {
+      let urlValidator = new UrlValidator(attrs.link.href);
+      if (!urlValidator.isValid()) {
+        return urlValidator.getError();
+      }
+    }
+  }
+  getError() {
+      if (!this.isValid()) {
+        return this.validationError;
+      }
+    }
+    // Sets the link and applys the user affordance of inserting a http:// or
+    // mailto: when omitted
+    /**
+     * @param val
+     */
+  setLink(val) {
+    if (!val) {
+      this.set('link', null);
+      return;
+    }
+    if (/^.+:/.test(val)) {
+      return this.set('link', {
+        href: val,
+        track: 'on'
+      });
+    } else if (/^[\w\.-]+@[\w\.-]+\.\w+/.test(val)) {
+      return this.set('link', {
+        href: `mailto:${val}`,
+        track: 'on'
+      });
+    } else {
+      return this.set('link', {
+        href: `http://${val}`,
+        track: 'on'
+      });
+    }
+  }
+  getLink() {
+    if (this.get('link') &amp;&amp; this.get('link').href) {
+      return this.get('link').href;
+    } else {
+      return null;
+    }
+  }
+  getLinkType() {
+      return this.get('linkType');
+    }
+    /**
+     * @param linkType
+     */
+  setLinkType(linkType) {
+      return this.set('linkType', linkType);
+    }
+    // Converts the model to an object for rendering
+    // @return [Object]
+  toContext() {
+      let context = {
+        link: this.getLink()
+      };
+      // Use customer data?
+      if (this.isPlaceholderImage() &amp;&amp; this.isLogo() &amp;&amp; hasLogo(customerService)) {
+        _(context).extend(getLogo(customerService));
+      } else {
+        _(context).extend(this._toImageContext());
+      }
+      // Calculate image fit
+      if (!imageHelpers.isVariableImage(context.imageUrl)) {
+        let magnification = this._getMagnificationForContext(context);
+        context.width = Math.ceil(context.imageWidth * magnification);
+        context.height = Math.ceil(context.imageHeight * magnification);
+      } else {
+        context.width = context.imageWidth;
+        context.height = context.imageHeight;
+      }
+      return context;
+    }
+    // Converts the model to an object for rendering image views
+    // @return [Object]
+  toImageViewRenderingContext() {
+      let context = this.toContext();
+      return {
+        name: this.get('name'),
+        type: this.get('type'),
+        container: this.get('container'),
+        link: this.get('link'),
+        image: {
+          type: this.get('imageType'),
+          url: context.imageUrl,
+          alt: context.imageAlt,
+          width: context.width,
+          height: context.height,
+          hasHeight: this.get('image').hasHeight,
+          class: this.get('image').class,
+          style: this.get('image').style
+        }
+      };
+    }
+    /**
+     * @private 
+     */
+  _toImageContext() {
+      let context = this.pick('imageWidth', 'imageHeight', 'imageAlt');
+      context.imageUrl = this.getImageUrlForEdit();
+      return context;
+    }
+    /**
+     * @private 
+     * @param context
+     */
+  _getMagnificationForContext(context) {
+      return imageHelpers.fitMagnification(
+        context.imageWidth,
+        context.imageHeight,
+        this.get('width'),
+        this.get('height')
+      );
+    }
+    // Whether this editor is display default content (either a placeholder, or an unset logo)
+    /**
+     * Returns true if is default content.
+     * @return {Object} boolean
+     */
+  isDefaultContent() {
+      if (this.isLogo()) {
+        return !this.getLogoUrl() &amp;&amp; this.isPlaceholderImage();
+      } else {
+        return this.isPlaceholderImage();
+      }
+    }
+    /**
+     * Returns true if is placeholder image.
+     * @return {Object} boolean
+     */
+  isPlaceholderImage() {
+      let resolvedUrl = this.getImageUrlForEdit();
+      return imageHelpers.isPlaceholderImage(resolvedUrl);
+    }
+    /**
+     * Returns true if is logo.
+     * @return {Object} boolean
+     */
+  isLogo() {
+    return this.getImageType() === 'logo-image';
+  }
+  getLogoUrl() {
+    return hasLogo(customerService);
+  }
+  getEditorName() {
+    return this.get('name');
+  }
+  getEditorType() {
+    return this.get('type');
+  }
+  getImageType() {
+      return this.get('imageType');
+    }
+    /**
+     * @param editor
+     * @param layoutEditor
+     */
+  toDescriptor(editor, layoutEditor) {
+      let json = this.toJSON();
+      let descriptor = {
+        name: editor.name,
+        layoutInstanceId: __guardMethod__(layoutEditor, '_getInstanceId', o => o._getInstanceId()),
+        src: json['imageUrl'],
+        alt: json['imageAlt'],
+        width: json['imageWidth'],
+        height: json['imageHeight'],
+        isMove: true
+      };
+      if (this.hasLink()) {
+        descriptor['link'] = this.getLink();
+      }
+      // TODO: VN-5961 Hack to enable moving of logos
+      if (this.getImageType()) {
+        descriptor['imageType'] = this.getImageType();
+      }
+      return descriptor;
+    }
+    // Updates the state model image.
+    // @return [Deferred]
+    /**
+     * @param imageData
+     */
+  setImage(imageData) {
+      let externalUrl = '';
+      if (imageData.externalUrl &amp;&amp; !imageHelpers.hasStaleExternalUrl(imageData)) {
+        externalUrl = imageHelpers.makeHttps(imageData.externalUrl);
+      }
+      this.set({
+        imageUrl: imageData.src,
+        imageAlt: imageData.alt,
+        externalUrl
+      });
+      this._transformImageUrlToEntity();
+      if (imageData.width &amp;&amp; imageData.height) {
+        this.set({
+          imageWidth: imageData.width,
+          imageHeight: imageData.height
+        });
+      } else {
+        // Clear out any existing dimensions
+        this.set({
+          imageWidth: null,
+          imageHeight: null
+        });
+      }
+      if (imageData.source) {
+        this.set({
+          source: imageData.source
+        });
+      }
+      return $.when(this.setMagnification());
+    }
+    // Resize the image well
+    /**
+     * @param dimensions
+     */
+  resizeWell(dimensions) {
+      return this.set({
+        width: dimensions.width,
+        height: dimensions.height
+      });
+    }
+    /**
+     * @param maxWidth
+     */
+  setMaxWidth(maxWidth) {
+      this.set({
+        maxWidth
+      });
+      return this.eventEmitter.trigger(constants.EVENTS.MAX_WIDTH_SET, maxWidth);
+    }
+    // Limits the width of the image to the widthLimit
+    // @return [Boolean] True if the image width has be limited
+    /**
+     * @param widthLimit
+     * @return {Boolean}
+     */
+  limitImageWidth(widthLimit) {
+      let currentWidth = this.get('width');
+      let currentHeight = this.get('height');
+      if (currentWidth &lt;= widthLimit) {
+        return false;
+      }
+      let limitedDimensions = {
+        width: widthLimit,
+        height: currentHeight * (widthLimit / currentWidth)
+      };
+      this.resizeWell(limitedDimensions);
+      return true;
+    }
+    // The magnification is the ratio between the image size and the well size.
+    // In the Basic Image Editor all images are sized to 'fit'. If the width and
+    // height are known the magnification is set and the deferred is resolved.
+    // Otherwise the image is loaded and the width and the height are set.
+    //
+    // Required for compatability with layout carousel and state that does not
+    // have image dimensions set.
+    //
+    // @return [Promise]
+  setMagnification() {
+      if (!this.get('imageWidth') || !this.get('imageHeight')) {
+        var deferred = this._setImageDimensions();
+      } else {
+        var deferred = $.Deferred().resolve();
+      }
+      return deferred.done(() => {
+        return this._setMagnification();
+      });
+    }
+    // Calculate magnification once all attributes are known
+    /**
+     * @private 
+     */
+  _setMagnification() {
+      return this.set({
+        magnification: imageHelpers.fitMagnification(
+          this.get('imageWidth'), this.get('imageHeight'), this.get('width'), this.get('height')
+        )
+      });
+    }
+    /**
+     * @private 
+     */
+  _setImageDimensions() {
+      let deferred = $.Deferred();
+      if (this.hasImageUrl() &amp;&amp; !this._imageUrlIsPassthroughEntity()) {
+        let img = new Image();
+        img.onload = () => {
+          let imageDimensions = imageHelpers.getImageDimensions(img);
+          this.set({
+            imageWidth: imageDimensions.width,
+            imageHeight: imageDimensions.height
+          });
+          return deferred.resolve();
+        };
+        img.src = this.getImageUrlForEdit();
+        // Avoid stalling the editor if the image fails to load within 5 seconds
+        setTimeout(() => deferred.resolve(), 5000);
+      } else {
+        this.set({
+          imageWidth: this.get('width'),
+          imageHeight: this.get('height')
+        });
+        deferred.resolve();
+      }
+      return deferred;
+    }
+    /**
+     * Returns true if has link.
+     * @return {Object} boolean
+     */
+  hasLink() {
+    return (__guard__(this.get('link'), x => x.href) != null) &amp;&amp; this.get('link').href !== '';
+  }
+  triggerImageOverlay() {
+    return this.eventEmitter.trigger(constants.EVENTS.SET_IMAGE_HOVER);
+  }
+  triggerRemoveImageOverlay() {
+      return this.eventEmitter.trigger(constants.EVENTS.REMOVE_IMAGE_HOVER);
+    }
+    /**
+     * @param value
+     */
+  setReplaceImageHover(value) {
+      this.set({
+        replaceImageHover: value
+      });
+      return this.eventEmitter.trigger(constants.EVENTS.REPLACE_IMAGE_HOVER);
+    }
+    /**
+     * Returns true if has replace image hover.
+     * @return {Object} boolean
+     */
+  hasReplaceImageHover() {
+    return !!this.get('replaceImageHover');
+  }
+  toPlatformState() {
+      let platformState = this.toJSON();
+      platformState.imageUrl = this.getImageUrlForState();
+      this.editorAttributes.forEach(attribute => delete platformState[attribute]);
+      return platformState;
+    }
+    /**
+     * @param newState
+     */
+  setState(newState) {
+    this.set(newState);
+    return this._transformImageUrlToEntity();
+  }
+  getImageUrlForEdit() {
+    return this.imageUrlEntity.valueForEditAttribute();
+  }
+  getImageUrlForState() {
+      return this.imageUrlEntity.valueForState();
+    }
+    /**
+     * Returns true if has image url.
+     * @return {Object} boolean
+     */
+  hasImageUrl() {
+      return this.getImageUrlForEdit() !== '';
+    }
+    /**
+     * @param url
+     */
+  setImageUrl(url) {
+      this.set({
+        imageUrl: url
+      });
+      return this._transformImageUrlToEntity();
+    }
+    /**
+     * @private 
+     * @return {Object} AssignmentExpression
+     */
+  _transformImageUrlToEntity() {
+      let imageUrl = this.get('imageUrl') || '';
+      this.unset('imageUrl');
+      return this.imageUrlEntity = placeholderService.lookup(imageUrl);
+    }
+    /**
+     * @private 
+     * @return {Boolean}
+     */
+  _imageUrlIsPassthroughEntity() {
+    let isVariable = imageHelpers.isVariableImage(this.getImageUrlForEdit());
+    let isPassthrough = this.getImageUrlForState() === this.getImageUrlForEdit();
+    return isVariable &amp;&amp; isPassthrough;
+  }
+}
+StateModel.initClass();
+export default StateModel</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-state-model.html">state-model</a></li></ul><h3>Classes</h3><ul><li><a href="module-state-model-StateModel.html">StateModel</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Tue Nov 22 2016 16:39:07 GMT-0500 (EST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

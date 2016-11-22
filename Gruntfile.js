@@ -1,11 +1,5 @@
     /**
      * Gruntfile.js.
-     *
-     * @module gruntfile
-     */
-    /**
-     * Exports.
-     * @param grunt
      */
     module.exports = function (grunt) {
         'use strict';

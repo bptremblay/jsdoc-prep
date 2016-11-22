@@ -3,8 +3,8 @@ var pathAPI = require('path');
 var wrenchTool = require('wrench');
 var uid = 0;
 var nodes = [];
-var COMMENT_VARIABLES = true;
-var COMMENT_EVERYTHING = true;
+var COMMENT_VARIABLES = false;
+var COMMENT_EVERYTHING = false;
 // Doctor the comment. Can cause problems.
 var FIX_COMMENT_GRAMMAR = false;
 // Try to normalize module names so hand-coded ones match. Can cause problems.
@@ -131,7 +131,6 @@ function decamelize(input) {
         word += chararcter;
         previousCharUC = false;
       }
-
       previousCharUC = true;
     } else {
       word += chararcter;
@@ -1851,6 +1850,33 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
     // if (map.hasOwnProperty(f)) {
     if (true) {
       var obj = map[index];
+      if (obj.key) {
+        function getParentClassDeclaration(method) {
+          var parentNode = method;
+          var type;
+          while (true) {
+            parentNode = getNodeByUid(parentNode.parentNode);
+            type = parentNode.type;
+            if (type === 'ClassDeclaration') {
+              return parentNode;
+            }
+          }
+        }
+        var ownerClass = null;
+        if (obj.kind === 'method') {
+          parent = getParentClassDeclaration(obj);
+          ownerClass = parent.id.name;
+        }
+        var key = obj.key;
+        var static = obj.static;
+        var kind = obj.kind;
+        obj = obj.value;
+        obj.static = static;
+        //obj.kind = 'class';
+        obj.id = key;
+        //console.log("******************");
+        //console.log(obj);
+      }
       var functionWrapper = {
         name: '',
         todos: []
@@ -1870,6 +1896,18 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
       if (obj.returnType !== '') {
         // // logger.log(obj.returnType);
         functionWrapper.returnType = obj.returnType;
+      }
+      if (obj.static) {
+        // // logger.log(obj.returnType);
+        functionWrapper.static = obj.static;
+      }
+      if (obj.kind) {
+        // // logger.log(obj.returnType);
+        functionWrapper.kind = obj.kind;
+      }
+      if (obj.type) {
+        // // logger.log(obj.returnType);
+        functionWrapper.type = obj.type;
       }
       // if (index === 0 && walkerObj.preprocessed
       // && functionWrapper.name === '') {
@@ -2036,6 +2074,7 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
           }
         }
         functionWrapper.ctor = ctor;
+        functionWrapper.ctor = functionWrapper.name.indexOf('constructor') !== -1;
         var lineNumber = getLineNumber(input, obj);
         functionWrapper.lineNumber = lineNumber;
         functionWrapper.line = trim(lines[lineNumber - 1]);
@@ -2048,6 +2087,9 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
           functionWrapper.todos.push('RETURNWHAT');
         }
         functionWrapper.range = obj.range;
+        if (ownerClass) {
+          functionWrapper.memberOf = ownerClass;
+        }
         output.methods[functionWrapper.name] = functionWrapper;
         // if (ctor){
         // logger.log('CONSTRUCTOR', functionWrapper);
@@ -2056,6 +2098,51 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
         delete functionWrapper.name;
       }
     }
+  }
+  return output;
+}
+
+function dumpNamedClassDeclarations(walkerObj, map, ast, output) {
+  //console.log('dumpNamedClassDeclarations', map);
+  var input = walkerObj.source;
+  var lines = input.split('\n');
+  output = output != null ? output : [];
+  for (var index = 0; index < map.length; index++) {
+    var obj = map[index];
+    //console.log("dumpNamedClassDeclarations ", obj);
+    var varWrapper = {
+      name: '?',
+      type: '',
+      range: null,
+      decamelizedName: ''
+    };
+    // console.log('initVal', initVal);
+    if (obj.id !== null) {
+      // logger.log('dumpNamedVariables ' + decl.id.name);
+      varWrapper.name = obj.id.name;
+      varWrapper.decamelizedName = capitalize(decamelize(varWrapper.name).split('_').join(' '));
+    }
+    if (obj.type) {
+      varWrapper.type = obj.type;
+    }
+    if (obj.kind) {
+      varWrapper.kind = obj.kind;
+    }
+    if (obj.static) {
+      varWrapper.static = obj.static;
+    }
+    varWrapper.range = obj.range;
+    // var varTypeName = varWrapper.kind + 's';
+    var lineNumber = getLineNumber(input, obj);
+    varWrapper.lineNumber = lineNumber;
+    varWrapper.line = trim(lines[lineNumber - 1]);
+    varWrapper.comment = -1;
+    var comment = getExistingComment(input, obj, ast, varWrapper);
+    if (comment !== -1) {
+      varWrapper.comment = comment;
+    }
+    output.push(varWrapper);
+    // console.log(varWrapper);
   }
   return output;
 }
@@ -2069,7 +2156,7 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
  * @returns {array}
  */
 function dumpNamedVariables(walkerObj, map, ast, output) {
-  console.log('dumpNamedVariables');
+  //  console.log('dumpNamedVariables');
   var input = walkerObj.source;
   var lines = input.split('\n');
   output = output != null ? output : [];
@@ -2092,14 +2179,14 @@ function dumpNamedVariables(walkerObj, map, ast, output) {
         varWrapper.type = typeof (initVal.value);
         // console.log(varWrapper);
       } else if (initVal.type === 'FunctionExpression') {
-        console.log('skipping functions');
+        // console.log('skipping functions');
         continue;
       }
     } else {
       console.log('var has no init: ', decl);
     }
     if (decl.id !== null) {
-      logger.log('dumpNamedVariables ' + decl.id.name);
+      // logger.log('dumpNamedVariables ' + decl.id.name);
       varWrapper.name = decl.id.name;
       varWrapper.decamelizedName = capitalize(decamelize(varWrapper.name).split('_').join(' '));
     }
@@ -2426,7 +2513,6 @@ function deleteFile(filePathName) {
   } catch (er) {}
   return success;
 }
-
 /**
  * Return 0-based index of line number for char offset.
  * @param   {string}   input [[Description]]
@@ -2434,7 +2520,6 @@ function deleteFile(filePathName) {
  * @returns {[[Type]]} [[Description]]
  */
 function getLineNumberForIndex(input, index) {
-
   var temp = input.substring(0, index);
   // console.log('getLineNumberForIndex: ' + index + '\n' + temp);
   return temp.split('\n').length - 1;
@@ -2459,6 +2544,7 @@ function addMissingComments(walkerObj, errors) {
   // logger.log(walkerObj.source);
   var beautify = require('js-beautify');
   var input = walkerObj.source;
+  //return StateModel.initClass();
   var _esprima = require('esprima');
   var ast = {};
   uid = 0;
@@ -2476,13 +2562,16 @@ function addMissingComments(walkerObj, errors) {
     writeFile('error.js', input);
     return 'ERROR';
   }
+  try {
+    writeFile('ast.json', JSON.stringify(ast, null, 2));
+  } catch (writeJsonErr) {
+    console.warn(writeJsonErr);
+  }
   var expressionStatements = getNodesByType(ast, 'ExpressionStatement');
   var defineBlocks = [];
   var es = 0;
   var defineCount = 0;
   var firstDefineBlock = null;
-
-
   for (es = 0; es < expressionStatements.length; es++) {
     var oneDefine = expressionStatements[es];
     if (oneDefine.expression.callee && oneDefine.expression.callee.name === 'define') {
@@ -2532,34 +2621,24 @@ function addMissingComments(walkerObj, errors) {
       // console.log(boilerPlate);
       // console.log('^^^^^^^^^^^^^^^^^^^^^^^^^^^^');
       var remainder = input.substring(whereDefine);
-
       walkerObj.source = remainder;
       //writeFile('test-source/' + walkerObj.packagePath + '/' + walkerObj.fileName, remainder);
       //writeFile('test-source/' + walkerObj.fileName + '', remainder);
-
       // console.log(remainder);
       // var insideDefine = remainder.split('{')[1];
       // console.log(insideDefine);
       // remove wrapper around define
       // remove false re-declaration of classname and its wrapper
-
       return addMissingComments(walkerObj, errors);
     }
-
     // console.log(firstDefineBlock.expression.arguments[0].body.body);
     // Immediately-Invoked Function Expression, or IIFE for short.
     // Look for IIFEs... they obfuscate scope!
-    try {
-      writeFile('ast.json', JSON.stringify(ast, null, 2));
-    } catch (writeJsonErr) {
-      console.warn(writeJsonErr);
-    }
     var moduleName = 'module:' + walkerObj.results.amdProc.moduleName;
     var packagePath = walkerObj.path.split('/');
     packagePath.shift();
     packagePath = packagePath.join('/');
     packagePath = packagePath.split('.js')[0];
-
     if (firstDefineBlock.expression.arguments && firstDefineBlock.expression.arguments[0]) {
       console.log('.........CHEKCING');
       var exArgs = firstDefineBlock.expression.arguments[0];
@@ -2573,7 +2652,6 @@ function addMissingComments(walkerObj, errors) {
         console.log('Look at what is inside this AMD callback function.');
         //console.log(exArgs.body.body[2]);
         //console.log(JSON.stringify(exArgs.body.body, null, 2));
-
         // walk through the main body of the root funtion and look for a return that returns a function!
         var funcBody = exArgs.body.body;
         var block = null;
@@ -2583,22 +2661,17 @@ function addMissingComments(walkerObj, errors) {
             break;
           }
         }
-
         // a function that immediately returns
         if (block.type === 'ReturnStatement') {
           var lines = input.split('\n');
           console.log('THIS IS AMD WITH AN IIFE!');
           var iifeToken = 'return (function (';
           var whereToEdit = input.indexOf(iifeToken);
-
           if (whereToEdit === -1) {
-
             iifeToken = ' = (function (';
             whereToEdit = input.indexOf(iifeToken);
             // hopefully this is the first instance of this pattern
-
           }
-
           if (whereToEdit === -1) {
             console.log('---->Can\'t find non-annotated pattern. Move along.');
             // console.log(input);
@@ -2622,17 +2695,13 @@ function addMissingComments(walkerObj, errors) {
               //              editInput = input.substring(0, whereToEdit - 1);
               //              editInput += newCode;
               //              editInput += input.substring(whereToEdit + (iifeToken.length));
-
-
               editedLine = editedLine.split('function').join(newCode + ' function');
-
               lines[whichLine] = editedLine;
               editInput = lines.join('\n');
               //console.log(editInput);
               //eturn '';
               //writeFile('editInput_1.js', editInput);
               //editInput += input.substring(whereToEdit + 'return (function ('.length-1);
-
               //writeFile('editInput_2.js', whereToEdit + 'return (function ('.length-1);
               walkerObj.source = editInput;
               //writeFile('editInput.js', editInput);
@@ -2643,12 +2712,10 @@ function addMissingComments(walkerObj, errors) {
               console.log('Looks like the IIFE has been handled. Move along.');
             }
           }
-
         }
       }
     }
   }
-
   if (!walkerObj.NG && input.indexOf('angular.module') !== -1) {
     // var leaderBoard = angular.module('leaderBoard', []);
     var ngSplit = input.split('angular.module')[1];
@@ -2817,6 +2884,7 @@ function addMissingComments(walkerObj, errors) {
   // TODO: patch the @exports or @module @requires tags and re-parse the
   // source!!!
   var nodeWithRequiresBlock = null;
+  //&& input.indexOf('import ') === -1 BPT
   if (walkerObj.checkForRequiresMismatch) {
     console.log('Scanning the @requires tag to see if it matches inline require() invocations.');
     var hasModule = getCommentWith(input, ast.comments, '@module');
@@ -2876,10 +2944,31 @@ function addMissingComments(walkerObj, errors) {
   var functionDeclarations = getNodesByType(ast, 'FunctionDeclaration');
   var expressionFunctions = dumpNamedFunctions(walkerObj, functionExpressions, ast);
   var allMethods = dumpNamedFunctions(walkerObj, functionDeclarations, ast, expressionFunctions);
+  console.log('Number of named functions: ' + Object.keys(allMethods.methods).length + '.');
+  // 
+  var classDeclarations = getNodesByType(ast, 'ClassDeclaration');
+  console.log('Number of ES6 class declarations: ' + classDeclarations.length + '.');
+  //console.log('FOUND ' + classDeclarations.length + ' classes.');
+  //console.log('FOUND ' + classDeclarations.length + ' classes.');
+  var methodDefinitions = getNodesByType(ast, 'MethodDefinition');
+  console.log('Number of class methods: ' + methodDefinitions.length + '.');
+  //console.log('FOUND ' + methodDefinitions.length + ' class methods.');
+  allMethods = dumpNamedFunctions(walkerObj, methodDefinitions, ast, allMethods);
+  //console.log(allMethods.classes);
+  //console.log(classDeclarations);
+  for (var c in classDeclarations) {
+    if (classDeclarations.hasOwnProperty(c)) {
+      var classObj = classDeclarations[c];
+      allMethods.classes[c] = classObj.uid;
+    }
+  }
+  console.log('Number of named functions including class methods: ' + Object.keys(allMethods.methods).length + '.');
   var methods = allMethods.methods;
   var varExpressions = getNodesByType(ast, 'VariableDeclaration');
   var varExpressionDeclarations = dumpNamedVariables(walkerObj, varExpressions, ast);
-  // console.log('dumpNamedVariables', varExpressionDeclarations);
+  // console.log('convert class declarations to walker nodes');
+  var classExpressionDeclarations = dumpNamedClassDeclarations(walkerObj, classDeclarations, ast);
+  //console.log('dumpNamedClassDeclarations', classExpressionDeclarations);
   // // logger.warn(JSON.stringify(methods, null, 2));
   var methodArray = [];
   for (var m in methods) {
@@ -2928,12 +3017,17 @@ function addMissingComments(walkerObj, errors) {
     if (COMMENT_VARIABLES) {
       variable = getMethodOnLine(varExpressionDeclarations, lineIndex + 1, ast, input);
     }
-
+    var classDeclaration = null;
+    if (!method && !variable) {
+      classDeclaration = getMethodOnLine(classExpressionDeclarations, lineIndex + 1, ast, input);
+    }
     var itemToComment = null;
     if (method) {
       itemToComment = method;
     } else if (variable) {
       itemToComment = variable;
+    } else if (classDeclaration) {
+      itemToComment = classDeclaration;
     }
     if (rewriteLines) {
       var newComment = '';
@@ -2959,7 +3053,7 @@ function addMissingComments(walkerObj, errors) {
         newFileLines.push(line);
       }
       if (variable) {
-        console.log('Wrote this to comment a variable: \n', newComment);
+        //console.log('Wrote this to comment a variable: \n', newComment);
       }
     } else {
       newFileLines.push(line);
@@ -3001,6 +3095,11 @@ function addMissingComments(walkerObj, errors) {
       reportError('ESPRIMA ERROR 2nd time parse in addMissingComments', esError, errors, walkerObj);
       ex();
       return 'ERROR';
+    }
+    try {
+      writeFile('ast.json', JSON.stringify(ast, null, 2));
+    } catch (writeJsonErr) {
+      console.warn(writeJsonErr);
     }
     functionExpressions = getNodesByType(ast, 'FunctionExpression');
     functionDeclarations = getNodesByType(ast, 'FunctionDeclaration');
@@ -3218,6 +3317,8 @@ function addMissingComments(walkerObj, errors) {
     }
     // TODO: include correct jsDoc metadata for each constructor
   }
+  // newFile
+  if (newFile.indexOf('class ') !== -1) {}
   var jsDoccerBlob = {
     'lines': lines.length,
     'requires': [],
@@ -3423,10 +3524,18 @@ function searchAndDestroy(doclet, tagName) {
  */
 function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt, statusCheck) {
   var kind = '';
+  var type = '';
   if (functionWrapper) {
     if (functionWrapper.kind) {
       // console.log('generateComment: ', functionWrapper);
       kind = functionWrapper.kind;
+    }
+    if (functionWrapper.type) {
+      // console.log('generateComment: ', functionWrapper);
+      type = functionWrapper.type;
+      //      if (type === 'ClassDeclaration') {
+      //        console.log('generateComment: ', functionWrapper);
+      //      }
     }
   }
   var funkyName = '';
@@ -3451,17 +3560,17 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     // logger.warn('The name we use: ' + funkyName);
     if (funkyName.indexOf('.') !== -1) {
       funkyName = '';
-      console.log('funkyName 2: ' + funkyName);
+      //  console.log('funkyName 2: ' + funkyName);
     }
     if (functionWrapper.ctor) {
       funkyName = 'Creates a new instance of class ' + functionWrapper.name + '.';
-      console.log('funkyName 0: ' + funkyName);
+      //  console.log('funkyName 0: ' + funkyName);
     }
     if (funkyName.indexOf('[') !== -1) {
       funkyName = '';
-      console.log('funkyName 1: ' + funkyName);
+      //  console.log('funkyName 1: ' + funkyName);
     }
-    console.log('funkyName: ' + funkyName);
+    // console.log('funkyName: ' + funkyName);
     if (functionWrapper.comment !== -1) {
       oldComment = ast.comments[functionWrapper.comment];
       var range = oldComment.range;
@@ -3484,7 +3593,8 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
       statusCheck.merge = true;
     }
   }
-  // // logger.log(funkyName + ' << ' + functionWrapper.name);
+  // console.log(doclet);
+  //logger.log(funkyName + ' << ' + functionWrapper.name);
   if (doclet != null && doclet.tags) {
     // console.log('DOCLET', doclet);
     tags = doclet.tags;
@@ -3510,7 +3620,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
             'textStartsOnSameLine': true,
             'text': descText
           };
-          console.log('ADDING TAG ', pseudoTag);
+          //   console.log('ADDING TAG ', pseudoTag);
           tags.push(pseudoTag);
         }
       }
@@ -3523,9 +3633,9 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
       }
     } else {
       var commentContext = 'normal';
-      if (functionWrapper.line.indexOf('function') !== -1) {
+      if (functionWrapper.line.indexOf('function') !== -1 || functionWrapper.type === 'FunctionExpression') {
         commentContext = 'function';
-        if (functionWrapper.name.indexOf('is') === 0) {
+        if (functionWrapper.name.indexOf('is') === 0 || functionWrapper.name.indexOf('has') === 0) {
           doclet.freeText = 'Returns true if ' + decapitalize(funkyName) + '.';
           if (functionWrapper.todos && functionWrapper.todos.RETURNWHAT) {
             delete functionWrapper.todos.RETURNWHAT;
@@ -3539,7 +3649,17 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
         functionWrapper.type = '';
         // console.log('>>>>>>>>>>LOOP intializer ' + JSON.stringify(functionWrapper, null, 2), JSON.stringify(doclet, null, 2));
         // console.log(funkyName);
+      } else if (functionWrapper.type === 'ClassDeclaration') {
+        //console.log(functionWrapper);
+        // doclet.freeText = 'The ' + decapitalize(funkyName) + '.';
+        doclet.freeText = 'The class ' + functionWrapper.name + '.';
+      } else if (functionWrapper.memberOf) {
+        console.log(functionWrapper);
+        //doclet.freeText = 'THIS IS A METHOD';
+        // doclet.freeText = 'The ' + decapitalize(funkyName) + '.';
+        // doclet.freeText = 'The class ' + functionWrapper.name + '.';
       } else {
+        //console.log(functionWrapper);
         doclet.freeText = 'The ' + decapitalize(funkyName) + '.';
       }
       // logger.log('>>>>>>>>>>generateComment doclet with no freetext ' + JSON.stringify(functionWrapper, null, 2));
@@ -3559,7 +3679,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     hasConstructsTag = searchTags(doclet, 'constructs');
     hasConstructorTag = searchTags(doclet, 'constructor');
     hasLendsTag = searchTags(doclet, 'lends');
-    // console.log(doclet, functionWrapper);
+    //console.log(doclet, functionWrapper);
     if (functionWrapper.kind == null) {
       if (YUIDOC_MODE && !hasConstructsTag && !hasConstructorTag && !hasLendsTag && !functionWrapper.ctor) {
         // console.log(doclet, functionWrapper);
@@ -3568,6 +3688,8 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
         if (functionWrapper.memberOf) {
           commentBlock.push(' * @memberOf ' + functionWrapper.memberOf);
         }
+      } else if (functionWrapper.memberOf) {
+        //   commentBlock.push(' * @memberOf ' + functionWrapper.memberOf);
       }
     }
     // if (hasConstructorTag) {
@@ -3740,10 +3862,30 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     functionWrapper.ctorType = '@constructor';
     walkerObj.namedConstructors[moduleName + '~' + functionWrapper.name] = functionWrapper;
   }
+  if (type === 'ClassDeclaration') {
+    //console.log('generateComment: ', functionWrapper, doclet);
+    //commentBlock.push(' * @class ' + functionWrapper.name);
+    var srcLine = functionWrapper.line;
+    if (srcLine.indexOf('extends ') !== -1) {
+      srcLine = srcLine.split('extends ')[1];
+      srcLine = srcLine.split('{').join('');
+      srcLine = srcLine.trim();
+      //console.log(srcLine);
+      commentBlock.push(' * @extends ' + srcLine);
+      //      /**
+      //       * The class StateModel.
+      //       * @constructor StateModel
+      //       * @augments Backbone.Model
+      //       */
+    }
+  }
   // if (hasConstructorTag != null){
   // logger.log(hasConstructorTag);
   // }
   functionWrapper.doclet = doclet;
+  if (functionWrapper.name.charAt(0) === '_') {
+    commentBlock.push(' * @private ');
+  }
   // param tags
   if (doclet.params.length > 0) {
     for (var index = 0; index < doclet.params.length; index++) {
@@ -3790,7 +3932,6 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     } else {
       return '';
     }
-
   } else {
     commentBlock.push(' */');
     return commentBlock.join('\n');
