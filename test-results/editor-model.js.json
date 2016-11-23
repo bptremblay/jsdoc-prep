@@ -1,0 +1,172 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "backbone",
+        "backbone",
+        "underscore"
+      ],
+      "usedAs": [
+        "Backbone"
+      ],
+      "moduleName": "editor-model",
+      "AMD": true,
+      "webPath": "",
+      "convertedName": "editor_model",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initClass'.",
+        "code": "wfJD",
+        "evidence": "static initClass() {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initClass'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'doneWasClicked'.",
+        "code": "wfJD",
+        "evidence": "doneWasClicked(val) {",
+        "line": 11,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'doneWasClicked'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'linkWasTested'.",
+        "code": "wfJD",
+        "evidence": "linkWasTested(val) {",
+        "line": 18,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'linkWasTested'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/editor-model.js",
+  "folderPath": "test-source",
+  "fileName": "editor-model.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "",
+  "webPath": "",
+  "libFile": false,
+  "min": false,
+  "realName": "editor-model",
+  "name": "editor-model",
+  "camelName": "EditorModel",
+  "processedFilePath": "test-output/editor-model.js",
+  "mappedModuleName": "editor-model",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "editor-model",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 27,
+    "requires": [
+      "backbone",
+      "backbone",
+      "underscore"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 618,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./editor-model",
+    "uses_console_log": false,
+    "uses_backbone": true,
+    "classes": {
+      "0": 1037
+    },
+    "methods": [
+      {
+        "name": "initClass",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "ButtonEditorModel",
+        "doclet": "",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "static initClass() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "doneWasClicked",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 11,
+        "memberOf": "ButtonEditorModel",
+        "doclet": "/**\n * @param val\n */",
+        "args": [
+          "val"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "doneWasClicked(val) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "linkWasTested",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 18,
+        "memberOf": "ButtonEditorModel",
+        "doclet": "/**\n * @param val\n */",
+        "args": [
+          "val"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "linkWasTested(val) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source",
+    "fileName": "editor-model.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 40,
+  "EMPTY": false
+}

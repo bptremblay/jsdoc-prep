@@ -1,0 +1,566 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "galileo-jquery-ui-mobile-shim",
+      "AMD": false,
+      "webPath": "/src/lib",
+      "convertedName": "galileo_jquery_ui_mobile_shim",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'mobileFriendly'.",
+        "code": "wfJD",
+        "evidence": "$.fn.mobileFriendly = function (pluginName, options) {",
+        "line": 18,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'mobileFriendly'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'createShim'.",
+        "code": "wfJD",
+        "evidence": "var createShim = function ($input, pluginName, options = {}) {",
+        "line": 30,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'createShim'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'constructor'.",
+        "code": "wfJD",
+        "evidence": "constructor($input, options = {}) {",
+        "line": 75,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'constructor'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'constructPlugin'.",
+        "code": "wfJD",
+        "evidence": "constructPlugin(options) {",
+        "line": 107,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'constructPlugin'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'dropdownTemplate'.",
+        "code": "wfJD",
+        "evidence": "dropdownTemplate() {",
+        "line": 113,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'dropdownTemplate'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'optionTemplate'.",
+        "code": "wfJD",
+        "evidence": "optionTemplate(optionValue) {",
+        "line": 125,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'optionTemplate'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'render'.",
+        "code": "wfJD",
+        "evidence": "render() {",
+        "line": 139,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'render'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'selectOptionElement'.",
+        "code": "wfJD",
+        "evidence": "selectOptionElement(element) {",
+        "line": 189,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'selectOptionElement'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'val'.",
+        "code": "wfJD",
+        "evidence": "val(val) {",
+        "line": 204,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'val'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'positionDropdown'.",
+        "code": "wfJD",
+        "evidence": "positionDropdown() {",
+        "line": 218,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'positionDropdown'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'scrollToSelectOption'.",
+        "code": "wfJD",
+        "evidence": "scrollToSelectOption() {",
+        "line": 229,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'scrollToSelectOption'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showDropdown'.",
+        "code": "wfJD",
+        "evidence": "showDropdown(element) {",
+        "line": 236,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showDropdown'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'hideDropdown'.",
+        "code": "wfJD",
+        "evidence": "hideDropdown() {",
+        "line": 244,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'hideDropdown'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'onFocusOut'.",
+        "code": "wfJD",
+        "evidence": "onFocusOut() {",
+        "line": 248,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'onFocusOut'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '__range__'.",
+        "code": "wfJD",
+        "evidence": "function __range__(left, right, inclusive) {",
+        "line": 257,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '__range__'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '__guardMethod__'.",
+        "code": "wfJD",
+        "evidence": "function __guardMethod__(obj, methodName, transform) {",
+        "line": 267,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '__guardMethod__'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '__guard__'.",
+        "code": "wfJD",
+        "evidence": "function __guard__(value, transform) {",
+        "line": 275,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '__guard__'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/lib/galileo-jquery-ui-mobile-shim.js",
+  "folderPath": "test-source/src/lib",
+  "fileName": "galileo-jquery-ui-mobile-shim.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/src/lib",
+  "webPath": "/src/lib",
+  "libFile": false,
+  "min": false,
+  "realName": "galileo-jquery-ui-mobile-shim",
+  "name": "galileo-jquery-ui-mobile-shim",
+  "camelName": "GalileoJqueryUiMobileShim",
+  "processedFilePath": "test-output/src/lib/galileo-jquery-ui-mobile-shim.js",
+  "mappedModuleName": "src/lib/galileo-jquery-ui-mobile-shim",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "src/lib/galileo-jquery-ui-mobile-shim~constructor($input, options": {
+      "todos": [
+        "RETURNWHAT"
+      ],
+      "params": [
+        "$input",
+        null
+      ],
+      "returnType": "?",
+      "type": "FunctionExpression",
+      "memberOf": "",
+      "ctor": true,
+      "lineNumber": 75,
+      "line": "constructor($input, options = {}) {",
+      "comment": -1,
+      "range": [
+        2358,
+        3377
+      ],
+      "name": "constructor",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": "",
+        "tags": []
+      },
+      "jsDoc": "/**\n * @constructor\n * @param $input\n * @param undefined\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "src/lib/galileo-jquery-ui-mobile-shim",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 277,
+    "requires": [
+      "jquery"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/src/lib",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 8637,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./galileo-jquery-ui-mobile-shim",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "0": 11692
+    },
+    "methods": [
+      {
+        "name": "mobileFriendly",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 18,
+        "memberOf": "$.fn",
+        "doclet": "/**\n * @param pluginName\n * @param options\n * @return {object} ThisExpression\n */",
+        "args": [
+          "pluginName",
+          "options"
+        ],
+        "description": "",
+        "return": "ThisExpression",
+        "classDeclarationFlag": false,
+        "line": "$.fn.mobileFriendly = function (pluginName, options) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "createShim",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 30,
+        "memberOf": "",
+        "doclet": "/**\n * @param $input\n * @param pluginName\n * @param undefined\n * @return {object} NewExpression\n */",
+        "args": [
+          "$input",
+          "pluginName",
+          null
+        ],
+        "description": "",
+        "return": "NewExpression",
+        "classDeclarationFlag": false,
+        "line": "var createShim = function ($input, pluginName, options = {}) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "constructor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 75,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n * @param $input\n * @param undefined\n */",
+        "args": [
+          "$input",
+          null
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": true,
+        "line": "constructor($input, options = {}) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "constructPlugin",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 107,
+        "memberOf": "SpinnerView",
+        "doclet": "/**\n * @param options\n */",
+        "args": [
+          "options"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "constructPlugin(options) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "dropdownTemplate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 113,
+        "memberOf": "SpinnerView",
+        "doclet": "",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "dropdownTemplate() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "optionTemplate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 125,
+        "memberOf": "SpinnerView",
+        "doclet": "/**\n * @param optionValue\n */",
+        "args": [
+          "optionValue"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "optionTemplate(optionValue) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 139,
+        "memberOf": "SpinnerView",
+        "doclet": "",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "render() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "selectOptionElement",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 189,
+        "memberOf": "SpinnerView",
+        "doclet": "/**\n * @param element\n * @return {object} ThisExpression\n */",
+        "args": [
+          "element"
+        ],
+        "description": "",
+        "return": "ThisExpression",
+        "classDeclarationFlag": false,
+        "line": "selectOptionElement(element) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "val",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 204,
+        "memberOf": "SpinnerView",
+        "doclet": "/**\n * @param val\n */",
+        "args": [
+          "val"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "val(val) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "positionDropdown",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 218,
+        "memberOf": "SpinnerView",
+        "doclet": "/**\n * @return {object} ThisExpression\n */",
+        "description": "",
+        "return": "ThisExpression",
+        "classDeclarationFlag": false,
+        "line": "positionDropdown() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "scrollToSelectOption",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 229,
+        "memberOf": "SpinnerView",
+        "doclet": "/**\n * @return {object} ThisExpression\n */",
+        "description": "",
+        "return": "ThisExpression",
+        "classDeclarationFlag": false,
+        "line": "scrollToSelectOption() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "showDropdown",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 236,
+        "memberOf": "SpinnerView",
+        "doclet": "/**\n * @param element\n * @return {object} ThisExpression\n */",
+        "args": [
+          "element"
+        ],
+        "description": "",
+        "return": "ThisExpression",
+        "classDeclarationFlag": false,
+        "line": "showDropdown(element) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "hideDropdown",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 244,
+        "memberOf": "SpinnerView",
+        "doclet": "/**\n * @return {object} ThisExpression\n */",
+        "description": "",
+        "return": "ThisExpression",
+        "classDeclarationFlag": false,
+        "line": "hideDropdown() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "onFocusOut",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 248,
+        "memberOf": "SpinnerView",
+        "doclet": "",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "onFocusOut() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "__range__",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 257,
+        "memberOf": "",
+        "doclet": "/**\n * @private \n * @param left\n * @param right\n * @param inclusive\n */",
+        "args": [
+          "left",
+          "right",
+          "inclusive"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function __range__(left, right, inclusive) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "__guardMethod__",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 267,
+        "memberOf": "",
+        "doclet": "/**\n * @private \n * @param obj\n * @param methodName\n * @param transform\n */",
+        "args": [
+          "obj",
+          "methodName",
+          "transform"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function __guardMethod__(obj, methodName, transform) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "__guard__",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 275,
+        "memberOf": "",
+        "doclet": "/**\n * @private \n * @param value\n * @param transform\n * @return {object} ConditionalExpression\n */",
+        "args": [
+          "value",
+          "transform"
+        ],
+        "description": "",
+        "return": "ConditionalExpression",
+        "classDeclarationFlag": false,
+        "line": "function __guard__(value, transform) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/src/lib",
+    "fileName": "galileo-jquery-ui-mobile-shim.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 377,
+  "EMPTY": false
+}

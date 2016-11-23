@@ -1,0 +1,31 @@
+#galileo {
+    .button-editor-tools {
+        /* Font Family control overrides */
+        #fontfamily-dropdown-group {
+            //width: 191px;
+            button#fontfamily-dropdown {
+                width: 249px;
+                min-width: 249px;
+            }
+            ul.dropdown-menu {
+                min-width: 281px;
+            }
+        }
+        /* End Font Family control */
+
+        /* Insert Link input override */
+        .insert-link input.g-text-input {
+            width: 297px;
+        }
+        .content-center {
+            position: relative;
+            left: 50%;
+            width: auto;
+        }
+        .content-center > div {
+            position: relative;
+            left: -50%;
+            float: left;
+        }
+    }
+}

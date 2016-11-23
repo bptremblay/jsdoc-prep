@@ -1,0 +1,73 @@
+#galileo .button-editor-tools #fontfamily-dropdown-group button#fontfamily-dropdown {
+    width: 223px;
+    min-width: 223px;
+}
+#galileo .button-editor-tools #fontfamily-dropdown-group ul.dropdown-menu {
+    min-width: 250px;
+    max-height: 264px;
+    overflow-y: scroll;
+}
+#galileo .dropdown-menu-header {
+    color: #606d78;
+    font-weight: 600;
+    font-size: .83125rem;
+    text-transform: uppercase;
+    padding: .5rem .9375rem;
+}
+#galileo .seperator {
+    height: 1px;
+    background-color: #bbbbbb;
+}
+#galileo .button-editor-tools .insert-link input.g-text-input {
+    width: 354px;
+}
+#galileo .button-editor-tools .content-center {
+    position: relative;
+    left: 50%;
+    width: auto;
+}
+#galileo .button-editor-tools .content-center > div {
+    position: relative;
+    left: -50%;
+    float: left;
+}
+#galileo .button-editor-tools .input-prepend.error {
+    box-shadow: inset 0 0 0 2px #E34E36;
+}
+#galileo [data-editor-type=button] .MainTextFullWidth {
+    position: relative;
+    z-index: 21;
+}
+#galileo .gl-button-move-handle {
+    position: absolute;
+    z-index: 20;
+    cursor: move;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#galileo #fontsize-dropdown-btn-group ul.dropdown-menu {
+    min-width: 65px;
+    max-height: 264px;
+    overflow-y: scroll;
+}
+#galileo #fontsize-dropdown-btn-group .dropdown-toggle:first-child {
+    padding-left: 12px;
+    padding-right: 9px;
+    width: 38px;
+}
+#galileo #fontsize-dropdown-btn-group > .btn + .dropdown-toggle,
+#galileo #alignment-dropdown-btn-group > .btn + .dropdown-toggle,
+#galileo .link .e-btn  {
+    width: auto;
+}
+#galileo #alignment-dropdown-btn-group ul.dropdown-menu {
+    min-width: 50px;
+    max-height: 264px;
+}
+#galileo #alignment-dropdown-btn-group .dropdown-toggle:first-child {
+    padding-left: 12px;
+    padding-right: 9px;
+    width: 38px;
+}

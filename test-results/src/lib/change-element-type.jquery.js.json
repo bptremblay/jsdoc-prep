@@ -1,0 +1,117 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "usedAs": [
+        "$"
+      ],
+      "moduleName": "change-element-type.jquery",
+      "AMD": true,
+      "webPath": "/src/lib",
+      "convertedName": "change_element_type.jquery",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'changeElementType'.",
+        "code": "wfJD",
+        "evidence": "$.fn.changeElementType = function (newType) {",
+        "line": 2,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'changeElementType'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/src/lib/change-element-type.jquery.js",
+  "folderPath": "test-source/src/lib",
+  "fileName": "change-element-type.jquery.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/src/lib",
+  "webPath": "/src/lib",
+  "libFile": false,
+  "min": false,
+  "realName": "change-element-type.jquery",
+  "name": "change-element-type.jquery",
+  "camelName": "ChangeElementType.jquery",
+  "processedFilePath": "test-output/src/lib/change-element-type.jquery.js",
+  "mappedModuleName": "src/lib/change-element-type.jquery",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "src/lib/change-element-type.jquery",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 13,
+    "requires": [
+      "jquery"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/src/lib",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 394,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./change-element-type",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "changeElementType",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 2,
+        "memberOf": "$.fn",
+        "doclet": "/**\n * @param newType\n */",
+        "args": [
+          "newType"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "$.fn.changeElementType = function (newType) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/src/lib",
+    "fileName": "change-element-type.jquery.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "possibleClassname": "",
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 26,
+  "EMPTY": false
+}

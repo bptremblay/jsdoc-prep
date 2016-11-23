@@ -289,7 +289,7 @@ function run(options) {
       if (_path.extname(path) === '.js') {
         queue.push(path);
       }
-    } else if (stat.isFile() && _path.extname(path) === '.coffee') {
+    } else if (stat.isFile() && _path.extname(path) === '.coffeeXXX') {
       console.log('>>>>>>>>>>>> FOUND COFFEE');
       var coffeeCode = sfp.readFile(path);
       if (coffeeCode.indexOf('#fixed constructor order in class') === -1) {

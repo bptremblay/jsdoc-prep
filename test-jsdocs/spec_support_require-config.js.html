@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: spec/support/require-config.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: spec/support/require-config.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* Regex for proxy checking */
+/**
+ * Returns true if is localhost.
+ * @param hostname
+ * @return {Object} boolean
+ */
+function isLocalhost(hostname) {
+  if (typeof window.requireConfig.localhosts !== 'object') {
+    warn('You are missing the "localhosts" config section in /spec/index.coffee. You cannot view specs on any localhosts not in that list');
+    return false;
+  }
+  /**
+   * The localhosts.
+   */
+  var localhosts = window.requireConfig.localhosts.slice(0);
+  /**
+   * @type {Number}
+   */
+  for (var i = 0; i &lt; localhosts.length; i++) {
+    localhosts[i] = escapeRegExp(localhosts[i]);
+  };
+  /**
+   * The pattern.
+   */
+  var pattern = '(' + localhosts.join('|') + '|^\/)';
+  /**
+   * The proxy regex.
+   */
+  var proxy_regex = new RegExp(pattern, 'i');
+  if (proxy_regex.test(hostname) === true) {
+    return true;
+  } else {
+    warn(hostname + ' is not in your localhosts list. Add it to /spec/index.coffee to enable access');
+    return false;
+  }
+}
+/**
+ * @param str
+ */
+function escapeRegExp(str) {
+  return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&amp;");
+}
+/**
+ * @param msg
+ */
+function warn(msg) {
+  if (console &amp;&amp; console.warn)
+    console.warn(msg);
+}
+window.Galileo = {
+  path: ''
+};
+window.requireConfig = {
+  localhosts: [],
+  baseUrl: './',
+  map: {
+    '*': {
+      'backbone': 'backbone-private',
+    },
+    'backbone-private': {
+      'backbone': 'backbone'
+    }
+  },
+  paths: {
+    // root path for this project
+    'button-editor-path': '/src',
+    /* Files for all projects */
+    'i18n': '/src/lib/i18n',
+    'specs': '/spec/javascripts',
+    'text': '/src/lib/text',
+    'css': '/src/lib/require-css/css',
+    'css-builder': '/src/lib/require-css/css-builder',
+    'normalize': '/src/lib/require-css/normalize',
+    'vendor': '/src/vendor',
+    'uiBasePath': 'https://ui.l1.constantcontact.com/',
+    /* jQuery from their CDN */
+    'jquery': '//code.jquery.com/jquery-2.0.3.min',
+    'jquery-ui': '//code.jquery.com/ui/1.11.0/jquery-ui.min',
+    /* Editor to map paths that were loader-related living in platform */
+    'galileo-editor': '//static.ctctcdn.com/h/galileo-editor/1.0.1/galileo-editor-min',
+    /* Locally hosted engine downloaded from an app config */
+    'galileo-engine': '/tmp/galileo-engine'
+  },
+  shim: {
+    'sanitize': {
+      exports: 'Sanitize'
+    },
+    'underscore': {
+      exports: '_',
+      init: function () {
+        return this._.noConflict();
+      }
+    },
+    'galileo-editor': {
+      deps: ['jquery']
+    },
+    'galileo-engine': {
+      deps: ['jquery', 'jquery-ui', 'galileo-editor']
+    },
+    'jquery-ui': {
+      deps: ['jquery']
+    }
+  },
+  locale: 'none',
+  /* Don't use a locale so the main bundle is used */
+  config: {
+    /* Configure the text plugin to properly download *.html from the platform */
+    text: {
+      /**
+       * @param url
+       * @param protocol
+       * @param hostname
+       * @param port
+       */
+      useXhr: function (url, protocol, hostname, port) {
+        return isLocalhost(hostname);
+      },
+      /* From: https://github.roving.com/ES/auth-platform/blob/development/auth-platform-webapp/app/assets/javascripts/modules/galileo-init.js.coffee.erb#L49 */
+      createXhr: function () {
+        /**
+         * The build proxied url.
+         */
+        var buildProxiedUrl, xdr, xhr, _xhrOpen;
+        /**
+         * @param url
+         */
+        buildProxiedUrl = function (url) {
+          if (!isLocalhost(url)) {
+            return "https://auth-platform.d1.constantcontact.com/cors_light/proxy?asset_url=" + url + "&amp;referrer_url=" + window.location.origin;
+          }
+          return url;
+        };
+        if (window.XDomainRequest) {
+          xdr = new XDomainRequest();
+          xhr = {
+            open: function (method, url) {
+              url = buildProxiedUrl(url);
+              xdr.open(method, url, true);
+              xdr.onload = function () {
+                xhr.readyState = 4;
+                xhr.responseText = xdr.responseText;
+                return xhr.onreadystatechange();
+              };
+              xdr.onerror = function () {
+                throw "Error loading " + url + " with requireJS text plugin.";
+              };
+              xdr.onprogress = function () {};
+              return xdr.ontimeout = function () {
+                throw "Timeout loading " + url + " with requireJS text plugin.";
+              };
+            },
+            send: function () {
+              return setTimeout(function () {
+                return xdr.send(null);
+              }, 0);
+            }
+          };
+        } else {
+          xhr = new XMLHttpRequest();
+          _xhrOpen = xhr.open;
+          /**
+           * @param method
+           * @param url
+           */
+          xhr.open = function (method, url) {
+            return _xhrOpen.call(xhr, method, buildProxiedUrl(url), true);
+          };
+        }
+        return xhr;
+      }
+    }
+  },
+  waitSeconds: 15
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="change-element-type.module_jquery.html">jquery</a></li><li><a href="module-button-editor-view.html">button-editor-view</a></li><li><a href="module-button-model.html">button-model</a></li><li><a href="module-button-view.html">button-view</a></li><li><a href="module-editor-model.html">editor-model</a></li><li><a href="module-legacy-color-check.html">legacy-color-check</a></li><li><a href="module-move-handle-view.html">move-handle-view</a></li><li><a href="module-state-migrations.html">state-migrations</a></li></ul><h3>Classes</h3><ul><li><a href="ButtonEditor.html">ButtonEditor</a></li><li><a href="module-button-editor-view-ButtonEditorView.html">ButtonEditorView</a></li><li><a href="module-button-model-ButtonModel.html">ButtonModel</a></li><li><a href="module-button-view-ButtonView.html">ButtonView</a></li><li><a href="module-editor-model-ButtonEditorModel.html">ButtonEditorModel</a></li><li><a href="module-legacy-color-check-LegacyColorCheck.html">LegacyColorCheck</a></li><li><a href="module-move-handle-view-MoveHandleView.html">MoveHandleView</a></li><li><a href="SpinnerView.html">SpinnerView</a></li></ul><h3>Global</h3><ul><li><a href="global.html#allViewInstances">allViewInstances</a></li><li><a href="global.html#createShim">createShim</a></li><li><a href="global.html#DEVICE_WIDTH_THRESHOLD_PX">DEVICE_WIDTH_THRESHOLD_PX</a></li><li><a href="global.html#escapeRegExp">escapeRegExp</a></li><li><a href="global.html#isLocalhost">isLocalhost</a></li><li><a href="global.html#Layout">Layout</a></li><li><a href="global.html#Telescope">Telescope</a></li><li><a href="global.html#warn">warn</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Tue Nov 22 2016 19:56:51 GMT-0500 (EST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "underscore",
+        "backbone",
+        "plugins/drag"
+      ],
+      "usedAs": [
+        "_",
+        "Backbone"
+      ],
+      "moduleName": "move-handle-view",
+      "AMD": true,
+      "webPath": "",
+      "convertedName": "move_handle_view",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initClass'.",
+        "code": "wfJD",
+        "evidence": "static initClass() {",
+        "line": 7,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initClass'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initialize'.",
+        "code": "wfJD",
+        "evidence": "initialize(params) {",
+        "line": 18,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initialize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'render'.",
+        "code": "wfJD",
+        "evidence": "render() {",
+        "line": 22,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'render'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_preventDefault'.",
+        "code": "wfJD",
+        "evidence": "_preventDefault(event) {",
+        "line": 39,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_preventDefault'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '__guardMethod__'.",
+        "code": "wfJD",
+        "evidence": "function __guardMethod__(obj, methodName, transform) {",
+        "line": 46,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '__guardMethod__'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/move-handle-view.js",
+  "folderPath": "test-source",
+  "fileName": "move-handle-view.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "",
+  "webPath": "",
+  "libFile": false,
+  "min": false,
+  "realName": "move-handle-view",
+  "name": "move-handle-view",
+  "camelName": "MoveHandleView",
+  "processedFilePath": "test-output/move-handle-view.js",
+  "mappedModuleName": "move-handle-view",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "move-handle-view",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 52,
+    "requires": [
+      "underscore",
+      "backbone",
+      "plugins/drag"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 1473,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./move-handle-view",
+    "uses_console_log": false,
+    "uses_backbone": true,
+    "classes": {
+      "0": 2539
+    },
+    "methods": [
+      {
+        "name": "initClass",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "MoveHandleView",
+        "doclet": "",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "static initClass() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "initialize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 18,
+        "memberOf": "MoveHandleView",
+        "doclet": "/**\n * @param params\n * @return {object} AssignmentExpression\n */",
+        "args": [
+          "params"
+        ],
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "initialize(params) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 22,
+        "memberOf": "MoveHandleView",
+        "doclet": "",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "render() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_preventDefault",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 39,
+        "memberOf": "MoveHandleView",
+        "doclet": "/**\n * @private \n * @param event\n */",
+        "args": [
+          "event"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "_preventDefault(event) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "__guardMethod__",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 46,
+        "memberOf": "",
+        "doclet": "/**\n * @private \n * @param obj\n * @param methodName\n * @param transform\n */",
+        "args": [
+          "obj",
+          "methodName",
+          "transform"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function __guardMethod__(obj, methodName, transform) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source",
+    "fileName": "move-handle-view.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 73,
+  "EMPTY": false
+}

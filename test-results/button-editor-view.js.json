@@ -1,0 +1,1174 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "text!button-editor-path/tmpl/button-editor.html",
+        "template-engine",
+        "i18n!button-editor-path/nls/button-editor",
+        "galileo-lib/modules/services/usage-tracking",
+        "underscore",
+        "galileo-lib/modules/services/activation-service",
+        "galileo-lib/modules/util/console",
+        "galileo-lib/modules/events",
+        "backbone",
+        "galileo-lib/modules/fed-components/views/modal-view",
+        "galileo-lib/modules/views/link-modal/link-modal-view",
+        "galileo-lib/modules/services/font-management-service",
+        "galileo-lib/modules/services/color-picker-service",
+        "galileo-lib/modules/utils",
+        "uiBasePath/core/components/ccTools/ctct.src",
+        "jquery-ui",
+        "button-editor-path/lib/galileo-jquery-ui-mobile-shim"
+      ],
+      "usedAs": [
+        "template",
+        "mustache",
+        "i18n",
+        "usageTracking",
+        "_",
+        "activationService",
+        "utilConsole",
+        "galileoEvents",
+        "Backbone",
+        "ModalView",
+        "LinkModalView",
+        "fontManagementService",
+        "colorPickerService",
+        "utils"
+      ],
+      "moduleName": "button-editor-view",
+      "AMD": true,
+      "webPath": "",
+      "convertedName": "button_editor_view",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'constructor'.",
+        "code": "wfJD",
+        "evidence": "constructor(...args) {",
+        "line": 47,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'constructor'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initClass'.",
+        "code": "wfJD",
+        "evidence": "static initClass() {",
+        "line": 55,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initClass'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'initialize'.",
+        "code": "wfJD",
+        "evidence": "initialize(options = {}) {",
+        "line": 85,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'initialize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_cleanup'.",
+        "code": "wfJD",
+        "evidence": "_cleanup() {",
+        "line": 91,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_cleanup'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'justDont'.",
+        "code": "wfJD",
+        "evidence": "justDont(e) {",
+        "line": 97,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'justDont'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'toggleBold'.",
+        "code": "wfJD",
+        "evidence": "toggleBold() {",
+        "line": 102,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'toggleBold'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'toggleItalic'.",
+        "code": "wfJD",
+        "evidence": "toggleItalic() {",
+        "line": 105,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'toggleItalic'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'stopSubmitOnEnter'.",
+        "code": "wfJD",
+        "evidence": "stopSubmitOnEnter(e) {",
+        "line": 108,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'stopSubmitOnEnter'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setButtonModel'.",
+        "code": "wfJD",
+        "evidence": "setButtonModel(model) {",
+        "line": 115,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setButtonModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setModel'.",
+        "code": "wfJD",
+        "evidence": "setModel(model) {",
+        "line": 135,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setEditor'.",
+        "code": "wfJD",
+        "evidence": "setEditor(editor) {",
+        "line": 138,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setEditor'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setButtonView'.",
+        "code": "wfJD",
+        "evidence": "setButtonView(buttonView) {",
+        "line": 141,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setButtonView'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getCalculatedCssProperties'.",
+        "code": "wfJD",
+        "evidence": "getCalculatedCssProperties() {",
+        "line": 144,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getCalculatedCssProperties'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'update'.",
+        "code": "wfJD",
+        "evidence": "update(attributes = this.buttonModel.toJSON()) {",
+        "line": 147,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'update'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'delayedPoliteUpdateModel'.",
+        "code": "wfJD",
+        "evidence": "delayedPoliteUpdateModel() {",
+        "line": 219,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'delayedPoliteUpdateModel'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateModelLink'.",
+        "code": "wfJD",
+        "evidence": "updateModelLink() {",
+        "line": 223,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateModelLink'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateModelFontSize'.",
+        "code": "wfJD",
+        "evidence": "updateModelFontSize(e) {",
+        "line": 227,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateModelFontSize'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'updateModelFontFamily'.",
+        "code": "wfJD",
+        "evidence": "updateModelFontFamily(e) {",
+        "line": 232,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'updateModelFontFamily'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_selectAlignmentButton'.",
+        "code": "wfJD",
+        "evidence": "_selectAlignmentButton(theButton) {",
+        "line": 238,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_selectAlignmentButton'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_setAlignmentIcon'.",
+        "code": "wfJD",
+        "evidence": "_setAlignmentIcon(justify) {",
+        "line": 244,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_setAlignmentIcon'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'justifyLeft'.",
+        "code": "wfJD",
+        "evidence": "justifyLeft() {",
+        "line": 249,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'justifyLeft'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'justifyCenter'.",
+        "code": "wfJD",
+        "evidence": "justifyCenter() {",
+        "line": 255,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'justifyCenter'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'justifyRight'.",
+        "code": "wfJD",
+        "evidence": "justifyRight() {",
+        "line": 261,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'justifyRight'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'done'.",
+        "code": "wfJD",
+        "evidence": "done() {",
+        "line": 267,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'done'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'render'.",
+        "code": "wfJD",
+        "evidence": "render() {",
+        "line": 274,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'render'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'testLink'.",
+        "code": "wfJD",
+        "evidence": "testLink() {",
+        "line": 329,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'testLink'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'trackUsage'.",
+        "code": "wfJD",
+        "evidence": "trackUsage(action, detail) {",
+        "line": 338,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'trackUsage'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'extendBSDropdown'.",
+        "code": "wfJD",
+        "evidence": "extendBSDropdown($o) {",
+        "line": 380,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'extendBSDropdown'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'placeholderShim'.",
+        "code": "wfJD",
+        "evidence": "placeholderShim($o) {",
+        "line": 410,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'placeholderShim'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'val'.",
+        "code": "wfJD",
+        "evidence": "$o.val = function (value) {",
+        "line": 423,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'val'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setupDeleteAtomicContent'.",
+        "code": "wfJD",
+        "evidence": "setupDeleteAtomicContent(dac, galileoEvents, layoutEditor, editorName) {",
+        "line": 443,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setupDeleteAtomicContent'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'triggerRemoveBlock'.",
+        "code": "wfJD",
+        "evidence": "triggerRemoveBlock() {",
+        "line": 449,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'triggerRemoveBlock'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_highlightBlock'.",
+        "code": "wfJD",
+        "evidence": "_highlightBlock(evt) {",
+        "line": 455,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_highlightBlock'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'showLinkModal'.",
+        "code": "wfJD",
+        "evidence": "showLinkModal(event) {",
+        "line": 459,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'showLinkModal'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'addOrUpdateLink'.",
+        "code": "wfJD",
+        "evidence": "addOrUpdateLink(link, text, type, style) {",
+        "line": 474,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'addOrUpdateLink'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'removeLink'.",
+        "code": "wfJD",
+        "evidence": "removeLink() {",
+        "line": 480,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'removeLink'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_trashcanVisibility'.",
+        "code": "wfJD",
+        "evidence": "_trashcanVisibility() {",
+        "line": 492,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_trashcanVisibility'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '__guard__'.",
+        "code": "wfJD",
+        "evidence": "function __guard__(value, transform) {",
+        "line": 503,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '__guard__'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '__guardMethod__'.",
+        "code": "wfJD",
+        "evidence": "function __guardMethod__(obj, methodName, transform) {",
+        "line": 507,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '__guardMethod__'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/button-editor-view.js",
+  "folderPath": "test-source",
+  "fileName": "button-editor-view.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "",
+  "webPath": "",
+  "libFile": false,
+  "min": false,
+  "realName": "button-editor-view",
+  "name": "button-editor-view",
+  "camelName": "ButtonEditorView",
+  "processedFilePath": "test-output/button-editor-view.js",
+  "mappedModuleName": "button-editor-view",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "button-editor-view~constructor": {
+      "todos": [],
+      "params": [
+        null
+      ],
+      "type": "FunctionExpression",
+      "memberOf": "",
+      "ctor": true,
+      "lineNumber": 47,
+      "line": "constructor(...args) {",
+      "comment": -1,
+      "range": [
+        1776,
+        2095
+      ],
+      "name": "constructor",
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "returnValue": "",
+        "tags": []
+      },
+      "jsDoc": "/**\n * @constructor\n * @param undefined\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "button-editor-view",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 513,
+    "requires": [
+      "text!button-editor-path/tmpl/button-editor.html",
+      "template-engine",
+      "i18n!button-editor-path/nls/button-editor",
+      "galileo-lib/modules/services/usage-tracking",
+      "underscore",
+      "galileo-lib/modules/services/activation-service",
+      "galileo-lib/modules/util/console",
+      "galileo-lib/modules/events",
+      "backbone",
+      "galileo-lib/modules/fed-components/views/modal-view",
+      "galileo-lib/modules/views/link-modal/link-modal-view",
+      "galileo-lib/modules/services/font-management-service",
+      "galileo-lib/modules/services/color-picker-service",
+      "galileo-lib/modules/utils",
+      "uiBasePath/core/components/ccTools/ctct.src",
+      "jquery-ui",
+      "button-editor-path/lib/galileo-jquery-ui-mobile-shim"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 19225,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./button-editor-view",
+    "uses_console_log": false,
+    "uses_backbone": true,
+    "classes": {
+      "0": 28467
+    },
+    "methods": [
+      {
+        "name": "constructor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 47,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n * @param undefined\n */",
+        "args": [
+          null
+        ],
+        "description": "",
+        "classDeclarationFlag": true,
+        "line": "constructor(...args) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "initClass",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 55,
+        "memberOf": "ButtonEditorView",
+        "doclet": "",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "static initClass() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "initialize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 85,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param undefined\n */",
+        "args": [
+          null
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "initialize(options = {}) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_cleanup",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 91,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @private \n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "_cleanup() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "justDont",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 97,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param e\n * @return {boolean}\n */",
+        "args": [
+          "e"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "justDont(e) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "toggleBold",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 102,
+        "memberOf": "ButtonEditorView",
+        "doclet": "",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "toggleBold() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "toggleItalic",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 105,
+        "memberOf": "ButtonEditorView",
+        "doclet": "",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "toggleItalic() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "stopSubmitOnEnter",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 108,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param e\n */",
+        "args": [
+          "e"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "stopSubmitOnEnter(e) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "setButtonModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 115,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param model\n */",
+        "args": [
+          "model"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "setButtonModel(model) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "setModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 135,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param model\n * @return {object} AssignmentExpression\n */",
+        "args": [
+          "model"
+        ],
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "setModel(model) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "setEditor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 138,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param editor\n * @return {object} AssignmentExpression\n */",
+        "args": [
+          "editor"
+        ],
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "setEditor(editor) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "setButtonView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 141,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param buttonView\n * @return {object} AssignmentExpression\n */",
+        "args": [
+          "buttonView"
+        ],
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "setButtonView(buttonView) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "getCalculatedCssProperties",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 144,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @return {boolean}\n */",
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "getCalculatedCssProperties() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "update",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 147,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param undefined\n */",
+        "args": [
+          null
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "update(attributes = this.buttonModel.toJSON()) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "delayedPoliteUpdateModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 219,
+        "memberOf": "ButtonEditorView",
+        "doclet": "",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "delayedPoliteUpdateModel() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "updateModelLink",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 223,
+        "memberOf": "ButtonEditorView",
+        "doclet": "",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "updateModelLink() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "updateModelFontSize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 227,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param e\n */",
+        "args": [
+          "e"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "updateModelFontSize(e) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "updateModelFontFamily",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 232,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param e\n */",
+        "args": [
+          "e"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "updateModelFontFamily(e) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_selectAlignmentButton",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 238,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @private \n * @param theButton\n */",
+        "args": [
+          "theButton"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "_selectAlignmentButton(theButton) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_setAlignmentIcon",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 244,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @private \n * @param justify\n */",
+        "args": [
+          "justify"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "_setAlignmentIcon(justify) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "justifyLeft",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 249,
+        "memberOf": "ButtonEditorView",
+        "doclet": "",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "justifyLeft() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "justifyCenter",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 255,
+        "memberOf": "ButtonEditorView",
+        "doclet": "",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "justifyCenter() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "justifyRight",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 261,
+        "memberOf": "ButtonEditorView",
+        "doclet": "",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "justifyRight() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "done",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 267,
+        "memberOf": "ButtonEditorView",
+        "doclet": "",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "done() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 274,
+        "memberOf": "ButtonEditorView",
+        "doclet": "",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "render() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "testLink",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 329,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @return {boolean}\n */",
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "testLink() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "trackUsage",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 338,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param action\n * @param detail\n */",
+        "args": [
+          "action",
+          "detail"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "trackUsage(action, detail) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "extendBSDropdown",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 380,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param $o\n * @return {object} AssignmentExpression\n */",
+        "args": [
+          "$o"
+        ],
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "extendBSDropdown($o) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "placeholderShim",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 410,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param $o\n */",
+        "args": [
+          "$o"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "placeholderShim($o) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "val",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 423,
+        "memberOf": "$o",
+        "doclet": "/**\n * @param value\n */",
+        "args": [
+          "value"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "$o.val = function (value) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "setupDeleteAtomicContent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 443,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param dac\n * @param galileoEvents\n * @param layoutEditor\n * @param editorName\n * @return {object} AssignmentExpression\n */",
+        "args": [
+          "dac",
+          "galileoEvents",
+          "layoutEditor",
+          "editorName"
+        ],
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "setupDeleteAtomicContent(dac, galileoEvents, layoutEditor, editorName) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "triggerRemoveBlock",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 449,
+        "memberOf": "ButtonEditorView",
+        "doclet": "",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "triggerRemoveBlock() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_highlightBlock",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 455,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @private \n * @param evt\n */",
+        "args": [
+          "evt"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "_highlightBlock(evt) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "showLinkModal",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 459,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param event\n */",
+        "args": [
+          "event"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "showLinkModal(event) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "addOrUpdateLink",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 474,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @param link\n * @param text\n * @param type\n * @param style\n */",
+        "args": [
+          "link",
+          "text",
+          "type",
+          "style"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "addOrUpdateLink(link, text, type, style) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "removeLink",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 480,
+        "memberOf": "ButtonEditorView",
+        "doclet": "",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "removeLink() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_trashcanVisibility",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 492,
+        "memberOf": "ButtonEditorView",
+        "doclet": "/**\n * @private \n * @return {string}\n */",
+        "description": "",
+        "return": "{string}",
+        "classDeclarationFlag": false,
+        "line": "_trashcanVisibility() {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "__guard__",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 503,
+        "memberOf": "",
+        "doclet": "/**\n * @private \n * @param value\n * @param transform\n * @return {object} ConditionalExpression\n */",
+        "args": [
+          "value",
+          "transform"
+        ],
+        "description": "",
+        "return": "ConditionalExpression",
+        "classDeclarationFlag": false,
+        "line": "function __guard__(value, transform) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "__guardMethod__",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 507,
+        "memberOf": "",
+        "doclet": "/**\n * @private \n * @param obj\n * @param methodName\n * @param transform\n */",
+        "args": [
+          "obj",
+          "methodName",
+          "transform"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function __guardMethod__(obj, methodName, transform) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source",
+    "fileName": "button-editor-view.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 686,
+  "EMPTY": false
+}

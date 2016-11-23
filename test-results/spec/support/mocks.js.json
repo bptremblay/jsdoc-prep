@@ -1,0 +1,506 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "mocks",
+      "AMD": false,
+      "webPath": "/spec/support",
+      "convertedName": "mocks",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "jsBeautifyProc": [],
+    "jsDoccerProc": [
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'greaterThan'.",
+        "code": "wfJD",
+        "evidence": "greaterThan: function (versionA, versionB) {",
+        "line": 5,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'greaterThan'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'setVersion'.",
+        "code": "wfJD",
+        "evidence": "setVersion: function (state, version) {",
+        "line": 14,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'setVersion'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'getVersion'.",
+        "code": "wfJD",
+        "evidence": "getVersion: function (state) {",
+        "line": 17,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'getVersion'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'versionAsString'.",
+        "code": "wfJD",
+        "evidence": "versionAsString: function (version) {",
+        "line": 20,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'versionAsString'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'majorMinorVersionAsString'.",
+        "code": "wfJD",
+        "evidence": "majorMinorVersionAsString: function (version) {",
+        "line": 23,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'majorMinorVersionAsString'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'majorVersionAsString'.",
+        "code": "wfJD",
+        "evidence": "majorVersionAsString: function (version) {",
+        "line": 26,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'majorVersionAsString'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_removeMigratorFromMigrations'.",
+        "code": "wfJD",
+        "evidence": "Migrator.prototype._removeMigratorFromMigrations = function (migrator) {",
+        "line": 33,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_removeMigratorFromMigrations'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_isForwardMigration'.",
+        "code": "wfJD",
+        "evidence": "Migrator.prototype._isForwardMigration = function (migrator) {",
+        "line": 36,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_isForwardMigration'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_selectMigrator'.",
+        "code": "wfJD",
+        "evidence": "Migrator.prototype._selectMigrator = function () {",
+        "line": 39,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_selectMigrator'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_determineMigrator'.",
+        "code": "wfJD",
+        "evidence": "Migrator.prototype._determineMigrator = function () {",
+        "line": 47,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_determineMigrator'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_createMigrations'.",
+        "code": "wfJD",
+        "evidence": "Migrator.prototype._createMigrations = function (migrators) {",
+        "line": 56,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_createMigrations'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_updateStateVersions'.",
+        "code": "wfJD",
+        "evidence": "Migrator.prototype._updateStateVersions = function () {",
+        "line": 65,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_updateStateVersions'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method '_migrate'.",
+        "code": "wfJD",
+        "evidence": "Migrator.prototype._migrate = function () {",
+        "line": 70,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method '_migrate'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'migrate'.",
+        "code": "wfJD",
+        "evidence": "Migrator.prototype.migrate = function (state) {",
+        "line": 83,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'migrate'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'Migrator'.",
+        "code": "wfJD",
+        "evidence": "function Migrator(editor) {",
+        "line": 97,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'Migrator'."
+      },
+      {
+        "id": "(error)",
+        "raw": "No jsDoc Comments for method 'migrateToLatestStateVersion'.",
+        "code": "wfJD",
+        "evidence": "Migrator.migrateToLatestStateVersion = function (editor, state) {",
+        "line": 103,
+        "character": -1,
+        "scope": "(main)",
+        "a": "",
+        "reason": "No jsDoc Comments for method 'migrateToLatestStateVersion'."
+      }
+    ],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/spec/support/mocks.js",
+  "folderPath": "test-source/spec/support",
+  "fileName": "mocks.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/spec/support",
+  "webPath": "/spec/support",
+  "libFile": false,
+  "min": false,
+  "realName": "mocks",
+  "name": "mocks",
+  "camelName": "Mocks",
+  "processedFilePath": "test-output/spec/support/mocks.js",
+  "mappedModuleName": "spec/support/mocks",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "moduleName": "spec/support/mocks",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 118,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/spec/support",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 4740,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./mocks",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "Migrator": 6027
+    },
+    "methods": [
+      {
+        "name": "greaterThan",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "",
+        "doclet": "/**\n * @param versionA\n * @param versionB\n */",
+        "args": [
+          "versionA",
+          "versionB"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "greaterThan: function (versionA, versionB) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "setVersion",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "doclet": "/**\n * @param state\n * @param version\n * @return {object} AssignmentExpression\n */",
+        "args": [
+          "state",
+          "version"
+        ],
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "setVersion: function (state, version) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "getVersion",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 17,
+        "memberOf": "",
+        "doclet": "/**\n * @param state\n */",
+        "args": [
+          "state"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getVersion: function (state) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "versionAsString",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 20,
+        "memberOf": "",
+        "doclet": "/**\n * @param version\n */",
+        "args": [
+          "version"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "versionAsString: function (version) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "majorMinorVersionAsString",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 23,
+        "memberOf": "",
+        "doclet": "/**\n * @param version\n */",
+        "args": [
+          "version"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "majorMinorVersionAsString: function (version) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "majorVersionAsString",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 26,
+        "memberOf": "",
+        "doclet": "/**\n * @param version\n */",
+        "args": [
+          "version"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "majorVersionAsString: function (version) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_removeMigratorFromMigrations",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 33,
+        "memberOf": "Migrator.prototype",
+        "doclet": "/**\n * @private \n * @param migrator\n * @return {object} UnaryExpression\n */",
+        "args": [
+          "migrator"
+        ],
+        "description": "",
+        "return": "UnaryExpression",
+        "classDeclarationFlag": false,
+        "line": "Migrator.prototype._removeMigratorFromMigrations = function (migrator) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_isForwardMigration",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 36,
+        "memberOf": "Migrator.prototype",
+        "doclet": "/**\n * @private \n * @param migrator\n */",
+        "args": [
+          "migrator"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "Migrator.prototype._isForwardMigration = function (migrator) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_selectMigrator",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 39,
+        "memberOf": "Migrator.prototype",
+        "doclet": "/**\n * @private \n * @return {object} ConditionalExpression\n */",
+        "description": "",
+        "return": "ConditionalExpression",
+        "classDeclarationFlag": false,
+        "line": "Migrator.prototype._selectMigrator = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_determineMigrator",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 47,
+        "memberOf": "Migrator.prototype",
+        "doclet": "/**\n * @private \n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "Migrator.prototype._determineMigrator = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_createMigrations",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 56,
+        "memberOf": "Migrator.prototype",
+        "doclet": "/**\n * @private \n * @param migrators\n * @return {object} UnaryExpression\n */",
+        "args": [
+          "migrators"
+        ],
+        "description": "",
+        "return": "UnaryExpression",
+        "classDeclarationFlag": false,
+        "line": "Migrator.prototype._createMigrations = function (migrators) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_updateStateVersions",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 65,
+        "memberOf": "Migrator.prototype",
+        "doclet": "/**\n * @private \n * @return {object} AssignmentExpression\n */",
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "Migrator.prototype._updateStateVersions = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "_migrate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 70,
+        "memberOf": "Migrator.prototype",
+        "doclet": "/**\n * @private \n * @return {object} AssignmentExpression\n */",
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "Migrator.prototype._migrate = function () {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "migrate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 83,
+        "memberOf": "Migrator.prototype",
+        "doclet": "/**\n * @param state\n */",
+        "args": [
+          "state"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "Migrator.prototype.migrate = function (state) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "Migrator",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 97,
+        "memberOf": "",
+        "doclet": "/**\n * @param editor\n */",
+        "args": [
+          "editor"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": false,
+        "line": "function Migrator(editor) {",
+        "originalJsDocDescription": {}
+      },
+      {
+        "name": "migrateToLatestStateVersion",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 103,
+        "memberOf": "Migrator",
+        "doclet": "/**\n * @param editor\n * @param state\n */",
+        "args": [
+          "editor",
+          "state"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "Migrator.migrateToLatestStateVersion = function (editor, state) {",
+        "originalJsDocDescription": {}
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/spec/support",
+    "fileName": "mocks.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 201,
+  "EMPTY": false
+}
