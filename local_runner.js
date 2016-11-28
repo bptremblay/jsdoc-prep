@@ -75,7 +75,7 @@ function healthCheckCallback(healthCheckResults) {
 var processingChain = [
   // 'trimProc',
   // 'thirdPartyFilter',
-  // 'minFilter',
+   'minFilter',
   // 'badCharactersProc',
   // 'trimProc',
   // 'amdFilter',

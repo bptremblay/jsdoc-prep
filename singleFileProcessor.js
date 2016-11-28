@@ -248,6 +248,12 @@ var fixDecaffeinateProc = {
             }
         }
         input.source = lines.join('\n');
+        var isSpec = (input.source.indexOf('describe(') !== -1);
+        if (isSpec) {
+            input.source = input.source.split('return it').join('it');
+            input.source = input.source.split('return expect').join('expect');
+            input.source = input.source.split('return describe').join('describe');
+        }
         // strip out AMD and replace with ES6 module
         var amdProcData = input.results.amdProc;
         var importPaths = amdProcData.requires;
@@ -282,7 +288,10 @@ var fixDecaffeinateProc = {
             if (someNode.expression.callee && someNode.expression.callee.name === 'define') {
                 oneDefine = someNode;
                 //console.log(oneDefine.expression.arguments);
-                if (oneDefine.expression.arguments.length === 1) {
+                if (oneDefine.expression.arguments.length === 0) {
+                    throw (new Error('unknown define structure'));
+                } else if (oneDefine.expression.arguments.length === 1) {
+                    //console.log(oneDefine);
                     exportReturnedNode = oneDefine.expression.arguments[0];
                     //console.log(exportReturnedNode);
                 } else if (oneDefine.expression.arguments.length === 2) {
@@ -303,93 +312,123 @@ var fixDecaffeinateProc = {
                         }
                     }
                 }
-                //console.log(importPaths);
-                //        {
-                //            type: 'ExpressionStatement',
-                //            expression: {
-                //                type: 'CallExpression',
-                //                callee: {
-                //                    type: 'Identifier',
-                //                    name: 'define',
-                //                    range: [Object],
-                //                    parentNode: 2,
-                //                    uid: 3
-                //                },
-                //                arguments: [
-                //                    [Object],
-                //                    [Object]
-                //                ],
-                //                range: [0, 12618],
-                //                parentNode: 1,
-                //                uid: 2
-                //            },
-                //            range: [0, 12619],
-                //            parentNode: 0,
-                //            uid: 1,
-                //            returnType: ''
-                //        }
-                //console.log(imports);
-                //console.log(importedAs);
                 break;
             }
         }
         if (oneDefine) {
             var exactReturn = null;
-            //console.log(exportReturned.body.body);
-            var body = exportReturnedNode.body.body;
-            for (var index = 0; index < body.length; index++) {
-                var node = body[index];
-                // console.log(node.type);
-                if (node.type === 'ReturnStatement') {
-                    //console.log(node.argument);
-                    var range = node.range;
-                    exactReturn = input.source.substring(range[0], range[1]).trim();
-                    console.log(">>>" + exactReturn);
-                    //exportReturned = node.argument.name;
-                    range = node.argument.range;
+            var body = exportReturnedNode.body;
+            if (body.body) {
+                body = body.body;
+            }
+            var explicit_return = false;
+            var node = exportReturnedNode;
+            if (exportReturnedNode.type === 'ArrowFunctionExpression') {
+                //console.log(exportReturnedNode);
+                //node = body;
+                //console.log(node.argument);
+                //console.log(node);
+                var range = node.range;
+                exactReturn = input.source.substring(range[0], range[1]).trim();
+                //console.log(">>>" + exactReturn);
+                //exactReturn = exactReturn.split('=>')[1].trim();
+                console.log(">>>EXACT: " + exactReturn);
+                node = node.body;
+                var codeBody = null;
+                if (node.type === 'ObjectExpression') {
+                    range = node.properties[0].range;
                     exportReturned = input.source.substring(range[0], range[1]).trim();
-                    console.log(">>>", exportReturned);
-                    break;
-                }
-            }
-            // console.log(exportReturnedNode);
-            var codeNode = exportReturnedNode.body;
-            var range = codeNode.range;
-            var codeBody = input.source.substring(range[0], range[1]).trim();
-            //console.log(codeBody);
-            codeBody = codeBody.substring(1, (codeBody.length - 1)).trim();
-            codeBody = codeBody.split(exactReturn).join('export default ' + exportReturned + ';');
-            var codeHeader = '';
-            //        /**
-            //   * @module state-model
-            //   * @exports StateModel
-            //   * @requires blue/is
-            //   * @requires blue/view
-            //   * @requires blue/observable
-            //   * @requires blue/declare
-            //   * @requires blue/with/viewResolution
-            //   * @requires ../deferred
-            //   */
-            codeHeader += '/**\n';
-            codeHeader += ' * @module ' + amdProcData.moduleName + '\n';
-            codeHeader += ' * @exports ' + exportReturned + '\n';
-            for (var index = 0; index < importPaths.length; index++) {
-                var importItem = importPaths[index];
-                codeHeader += ' * @requires ' + importItem.path + '\n';
-            }
-            codeHeader += ' */\n\n';
-            for (var index = 0; index < importPaths.length; index++) {
-                var importItem = importPaths[index];
-                if (importItem.name) {
-                    codeHeader += 'import ' + importItem.name + ' from \'' + importItem.path + '\';\n';
+                    exportReturned = '{\n' + exportReturned + '\n}';
+                    console.log(">>>EXPORTED: ", exportReturned);
                 } else {
-                    codeHeader += 'import \'' + importItem.path + '\';\n';
+                    //throw (new Error('Unknown structure in ArrowFunctionExpression'));
+                    range = node.range;
+                    exportReturned = input.source.substring(range[0], range[1]).trim();
+                    //exportReturned = '{\n' + exportReturned + '\n}';
+                    console.log(">>>EXPORTED: ", exportReturned);
                 }
+                var exportedValue = null;
+                try {
+                    exportedValue = JSON.parse(exportReturned);
+                } catch (ex) {
+                    // console.log('Could not parse the exported expression.');
+                }
+                console.log('What kind? ', node);
+                if (exportedValue && exportedValue.root) {
+                    codeBody = 'export const root = ' + JSON.stringify(exportedValue.root, null, 2) + ';';
+                } else if (node.type === 'CallExpression') {
+                    codeBody = exportReturned + ';';
+                } else {
+                    codeBody = 'export default ' + exportReturned + ';';
+                }
+                // console.log(exportReturnedNode);
+                var codeHeader = '';
+                codeHeader += '/**\n';
+                codeHeader += ' * @module ' + amdProcData.moduleName + '\n';
+                codeHeader += ' */\n\n';
+                // only use exports if the expression is a NAME, like a class
+                codeHeader += '\n'
+                var newSource = codeHeader + codeBody + '\n';
+                input.source = newSource;
+            } else {
+                // console.log('Scanning body: ', body);
+                for (var index = 0; index < body.length; index++) {
+                    var node = body[index];
+                    if (node.type === 'ReturnStatement') {
+                        explicit_return = true;
+                        //console.log(node.argument);
+                        //console.log(node);
+                        var range = node.range;
+                        exactReturn = input.source.substring(range[0], range[1]).trim();
+                        console.log(">>>EXACT: " + exactReturn);
+                        //exportReturned = node.argument.name;
+                        range = node.argument.range;
+                        exportReturned = input.source.substring(range[0], range[1]).trim();
+                        console.log(">>>EXPORTED: ", exportReturned);
+                        break;
+                    }
+                }
+                // console.log(exportReturnedNode);
+                var codeNode = exportReturnedNode.body;
+                var range = codeNode.range;
+                var codeBody = input.source.substring(range[0], range[1]).trim();
+                //console.log("codeBody: ", codeBody);
+                codeBody = codeBody.substring(1, (codeBody.length - 1)).trim();
+                //console.log('What kind? ', node);
+                if (explicit_return) {
+                    if (node.type === 'CallExpression' || node.type === 'ExpressionStatement') {
+                        codeBody = exportReturned + ';';
+                    } else {
+                        //codeBody = 'export default ' + exportReturned + ';';
+                        codeBody = codeBody.split(exactReturn).join('export default ' + exportReturned + ';');
+                    }
+                } else {
+                    // console.log('Use this code body?', codeBody);
+                }
+                var codeHeader = '';
+                codeHeader += '/**\n';
+                codeHeader += ' * @module ' + amdProcData.moduleName + '\n';
+                // only use exports if the expression is a NAME, like a class
+                if (explicit_return) {
+                    //codeHeader += ' * @exports ' + exportReturned + '\n';
+                }
+                for (var index = 0; index < importPaths.length; index++) {
+                    var importItem = importPaths[index];
+                    codeHeader += ' * @requires ' + importItem.path + '\n';
+                }
+                codeHeader += ' */\n\n';
+                for (var index = 0; index < importPaths.length; index++) {
+                    var importItem = importPaths[index];
+                    if (importItem.name) {
+                        codeHeader += 'import ' + importItem.name + ' from \'' + importItem.path + '\';\n';
+                    } else {
+                        codeHeader += 'import \'' + importItem.path + '\';\n';
+                    }
+                }
+                codeHeader += '\n'
+                var newSource = codeHeader + codeBody + '\n';
+                input.source = newSource;
             }
-            codeHeader += '\n'
-            var newSource = codeHeader + codeBody + '\n';
-            input.source = newSource;
-            //  console.log(newSource);
             // now search/delete the EXACT return block
             // get imports
             // get return
