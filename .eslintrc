@@ -1,3 +1,14 @@
 {
-    "extends": "eslint-config-galileo/es5"
+
+ "env": {
+    "browser": true,
+    "node": true,
+    "amd": false,
+    "mocha": false,
+    "jasmine": false
+  },
+  "ecmaFeatures": {},
+  "globals": {},
+  "rules": {}
+
 }

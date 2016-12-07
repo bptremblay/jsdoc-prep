@@ -9,20 +9,6 @@ var _uglifyjs = require('uglify-js');
 var newJsDoccerEngine = require('./jsdoccer');
 var addMissingComments = newJsDoccerEngine.addMissingComments;
 var FILE_IS_EMPTY = false;
-// var Logger = function () {
-//     this.log = function (msg) {
-//         //    logger.log(msg);
-//         // console.log.apply(this, arguments);
-//     };
-//     this.warn = function (msg) {
-//         // logger.log(msg);
-//         //console.warn.apply(this, arguments);
-//     };
-//     this.error = function (msg) {
-//         //console.error(msg);
-//         console.error.apply(this, arguments);
-//     };
-// };
 var logger = require('./logger');
 
 function mapModuleName(mappedModuleName, modulePaths) {
@@ -31,7 +17,6 @@ function mapModuleName(mappedModuleName, modulePaths) {
             var pattern = modulePaths[p];
             if (mappedModuleName.indexOf(pattern) !== -1) {
                 mappedModuleName = mappedModuleName.split(pattern).join(p);
-                // stop, don't apply every match
                 break;
             }
         }
@@ -55,8 +40,6 @@ var singleJsDocProc = {
     type: 'processor',
     description: 'Stub for necessary proc: generate the JSDOC for a single file.',
     process: function (input, doneCallback) {
-        // does not modify source
-        // must be asynchronous
         doneCallback(input);
     }
 };
@@ -86,12 +69,6 @@ function walk(node, attr, val, results, parentNode) {
             results.push(node);
         }
     }
-    // type: Program
-    // body: []
-    // range: []
-    // comments: []
-    // tokens: []
-    // errors: []
     for (var e in node) {
         if (attr === e) {
             continue;
@@ -110,12 +87,8 @@ function walk(node, attr, val, results, parentNode) {
             if (child == null) {
                 continue;
             }
-            // // logger.log(child);
             if (typeof child === 'object' && child.length != null) {
-                // array?
-                // // logger.log(e + ': ' + '[]');
                 for (var index = 0; index < child.length; index++) {
-                    // logger.log(child);
                     var elem = child[index];
                     if (elem != null) {
                         walk(elem, attr, val, results, node);
@@ -123,16 +96,8 @@ function walk(node, attr, val, results, parentNode) {
                 }
             } else if (typeof child === 'object') {
                 child.parentNode = node;
-                // obj?
-                // // logger.log(e + ': ' + '{}'); //JSON.stringify(child));
                 walk(child, attr, val, results, node);
-            } else if (typeof child === 'string') {
-                // string?
-                // logger.log(e + ': ' + child);
-            } else {
-                // string?
-                // logger.log(e + ': ' + typeof child);
-            }
+            } else if (typeof child === 'string') {} else {}
         }
     }
     return results;
@@ -145,7 +110,6 @@ function getNodeByUid(uid) {
             return node;
         }
     }
-    // logger.log('getNodeByUid(' + uid + ') >>> null');
     return null;
 }
 
@@ -175,9 +139,6 @@ function getNodesByType(ast, nodeType) {
                             } else if (statement.name === 'undefined') {
                                 returnType = '';
                             } else {
-                                // returnType = statement.name;
-                                // logger.warn('Cannot derive meaning from
-                                // "return ' + statement.name + '".');
                                 returnType = '?';
                             }
                         }
@@ -199,7 +160,6 @@ function getNodesByType(ast, nodeType) {
                     } else if (statement.type === 'ArrayExpression') {
                         returnType = '{array}';
                     } else {
-                        // logger.warn(statement);
                         returnType = '';
                         if (statement.name != null) {
                             returnType = statement.name;
@@ -209,31 +169,19 @@ function getNodesByType(ast, nodeType) {
                             logger.warn(statement);
                         }
                     }
-                    // if (statement.name != null) {
-                    // logger.warn(statement.type + ':' + statement.name + ':'
-                    // + returnType);
-                    // } else {
-                    // logger.warn(statement.type + ':' + returnType);
-                    // //logger.warn(statement);
-                    // }
                 } else {
                     returnType = '';
                 }
             }
         }
         node.returnType = returnType;
-        // if (returnType === 'undefined') {
-        // logger.warn(statement);
-        // }
-        // logger.warn(returnType);
     }
     return results;
-};
+}
 
 function getParentOfType(nodeIn, typeName) {
     var parentNode = nodeIn;
     var type;
-    // warning, loop might not terminate
     while (true && parentNode) {
         parentNode = getNodeByUid(parentNode.parentNode);
         if (!parentNode) {
@@ -252,7 +200,6 @@ var fixDecaffeinateProc = {
     process: function (input, doneCallback) {
         logger.log('****************** fixDecaffeinateProc *******************');
         var source = input.source;
-        // strip out AMD and replace with ES6 module
         var amdProcData = input.results.amdProc;
         var isAMD = (source.indexOf('define (') !== -1 || source.indexOf('define(') !== -1);
         if (!isAMD) {
@@ -279,11 +226,8 @@ var fixDecaffeinateProc = {
             input.source = input.source.split('return expect').join('expect');
             input.source = input.source.split('return describe').join('describe');
         }
-        //importPaths = amdProcData.requires;
         var importNames = amdProcData.usedAs;
-        // logger.log('importPaths: ', importPaths);
         var ast = null;
-        // do an esprima parse NOW
         try {
             var _esprima = require('esprima');
             ast = _esprima.parse(input.source, {
@@ -313,11 +257,8 @@ var fixDecaffeinateProc = {
                 if (oneDefine.expression.arguments.length === 0) {
                     throw (new Error('unknown define structure'));
                 } else if (oneDefine.expression.arguments.length === 1) {
-                    //logger.log(oneDefine);
                     exportReturnedNode = oneDefine.expression.arguments[0];
-                    //logger.log(exportReturnedNode);
                 } else if (oneDefine.expression.arguments.length === 2) {
-                    //logger.log('fixDecaffeinateProc found define with 2 params');
                     var imports = oneDefine.expression.arguments[0].elements;
                     var importedAs = oneDefine.expression.arguments[1].params;
                     exportReturnedNode = oneDefine.expression.arguments[1];
@@ -334,16 +275,8 @@ var fixDecaffeinateProc = {
                             importPaths[index].name = name;
                         }
                     }
-                    // logger.log('fixDecaffeinateProc found define with 2 params: ', importPaths);
                 } else if (oneDefine.expression.arguments.length === 3) {
-                    //logger.log('fixDecaffeinateProc found define with 3 params');
                     var argZero = oneDefine.expression.arguments[0];
-                    //logger.log(argZero);
-                    //TODO: use this as the module name in doc?
-                    //                    if (typeof argZero.value === 'string') {
-                    //                        logger.log('Define names the module!', oneDefine.expression.arguments[0].value);
-                    //                    }
-                    //logger.log(oneDefine.expression.arguments);
                     var imports = oneDefine.expression.arguments[1].elements;
                     var importedAs = oneDefine.expression.arguments[2].params;
                     exportReturnedNode = oneDefine.expression.arguments[2];
@@ -360,7 +293,6 @@ var fixDecaffeinateProc = {
                             importPaths[index].name = name;
                         }
                     }
-                    // logger.log('fixDecaffeinateProc found define with params: ', importPaths);
                 }
                 break;
             }
@@ -372,10 +304,8 @@ var fixDecaffeinateProc = {
                 someNode = callExpressionStatements[es];
                 if (someNode.callee && someNode.callee.name === 'define') {
                     oneDefine = someNode;
-                    //logger.log(oneDefine.expression.arguments);
                     if (oneDefine.arguments.length === 1) {
                         exportReturnedNode = oneDefine.arguments[0];
-                        //logger.log(exportReturnedNode);
                     } else if (oneDefine.arguments.length === 2) {
                         var imports = oneDefine.arguments[0].elements;
                         var importedAs = oneDefine.arguments[1].params;
@@ -397,17 +327,10 @@ var fixDecaffeinateProc = {
                     break;
                 }
             }
-            //            if (oneDefine) {
-            //                // get the parent
-            //                var realDefine = getParentOfType(oneDefine, '');
-            //
-            //            }
         }
         var codeSandwich = null;
         if (oneDefine) {
             var exactReturn = null;
-            //logger.log('****************** fixDecaffeinateProc:oneDefine found', oneDefine);
-            // var parentOfMe = getParentOfType(oneDefine, 'CallExpression');
             var body = exportReturnedNode.body;
             if (body.body) {
                 body = body.body;
@@ -415,28 +338,18 @@ var fixDecaffeinateProc = {
             var explicit_return = false;
             var node = exportReturnedNode;
             if (exportReturnedNode.type === 'ArrowFunctionExpression') {
-                //logger.log(exportReturnedNode);
-                //node = body;
-                //logger.log(node.argument);
-                //logger.log(node);
                 var range = node.range;
                 exactReturn = input.source.substring(range[0], range[1]).trim();
-                //logger.log(">>>" + exactReturn);
-                //exactReturn = exactReturn.split('=>')[1].trim();
                 logger.log(">>>EXACT: " + exactReturn);
                 node = node.body;
                 var codeBody = null;
                 if (node.type === 'ObjectExpression') {
-                    //range = node.properties[0].range;
                     range = node.range;
                     exportReturned = input.source.substring(range[0], range[1]).trim();
-                    //exportReturned = '{\n' + exportReturned + '\n}';
                     logger.log(">>>EXPORTED from ObjectExpression: ", exportReturned);
                 } else {
-                    //throw (new Error('Unknown structure in ArrowFunctionExpression'));
                     range = node.range;
                     exportReturned = input.source.substring(range[0], range[1]).trim();
-                    //exportReturned = '{\n' + exportReturned + '\n}';
                     logger.log(">>>EXPORTED: ", exportReturned);
                 }
                 var exportedValue = null;
@@ -446,24 +359,22 @@ var fixDecaffeinateProc = {
                 } catch (ex) {
                     logger.log('Could not parse the exported expression.', ex);
                 }
-                //logger.log('What kind? ', node, exportedValue);
                 if (exportedValue && exportedValue.root) {
                     codeBody = 'export const root = ' + JSON.stringify(exportedValue.root, null, 2) + ';';
                 } else if (node.type === 'CallExpression') {
                     codeBody = exportReturned + ';';
                 } else if (node.type === 'ReturnStatement') {
-                    //codeBody = exportReturned + ';';
                     codeBody = codeBody.split(exactReturn).join('export default ' + exportReturned + ';');
                 } else {
                     codeBody = 'export default ' + exportReturned + ';';
                 }
-                // logger.log(exportReturnedNode);
-                // logger.log('fixDecaffeinateProc Build IMPORTS with params: ', importPaths);
                 var codeHeader = '';
                 codeHeader += '/**\n';
                 codeHeader += ' * @module ' + amdProcData.moduleName + '\n';
                 if (input.camelName === exportReturned) {
                     codeHeader += ' * @exports ' + exportReturned + '\n';
+                    amdProcData.exports = exportReturned;
+                    input.results.amdProc.exports = exportReturned;
                 }
                 for (var index = 0; index < importPaths.length; index++) {
                     var importItem = importPaths[index];
@@ -478,8 +389,7 @@ var fixDecaffeinateProc = {
                         codeHeader += 'import \'' + importItem.path + '\';\n';
                     }
                 }
-                // only use exports if the expression is a NAME, like a class
-                codeHeader += '\n'
+                codeHeader += '\n';
                 if (input.source.indexOf(codeHeader.trim()) !== -1) {
                     codeHeader = '';
                 }
@@ -488,29 +398,23 @@ var fixDecaffeinateProc = {
             } else {
                 for (var index = 0; index < body.length; index++) {
                     var node = body[index];
-                    // logger.log(node.type);
                     if (node.type === 'ReturnStatement') {
-                        //logger.log(node.argument);
                         var range = node.range;
                         exactReturn = input.source.substring(range[0], range[1]).trim();
                         logger.log(">>>exactReturn: " + exactReturn);
-                        //exportReturned = node.argument.name;
                         range = node.argument.range;
                         exportReturned = input.source.substring(range[0], range[1]).trim();
                         logger.log(">>>exportReturned: ", exportReturned);
                         break;
                     }
                 }
-                // logger.log(exportReturnedNode);
                 var codeNode = exportReturnedNode.body;
                 var range = codeNode.range;
                 var codeBody = input.source.substring(range[0], range[1]).trim();
                 codeSandwich = input.source.split(codeBody);
-                //logger.log(codeBody);
                 codeBody = codeBody.substring(1, (codeBody.length - 1)).trim();
                 logger.log('exportReturned: ', exportReturned);
                 if (exportReturned) {
-                    //codeBody = codeBody.split(exactReturn).join('export default ' + exportReturned + ';');
                     var exportedValue = null;
                     try {
                         eval('var foo = ' + exportReturned);
@@ -524,7 +428,6 @@ var fixDecaffeinateProc = {
                     } else if (node.type === 'CallExpression' || node.type === 'ExpressionStatement') {
                         codeBody = exportReturned + ';';
                     } else if (node.type === 'ReturnStatement') {
-                        //codeBody = exportReturned + ';';
                         codeBody = codeBody.split(exactReturn).join('export default ' + exportReturned + ';');
                     } else {
                         codeBody = 'export default ' + exportReturned + ';';
@@ -533,9 +436,10 @@ var fixDecaffeinateProc = {
                 var codeHeader = '';
                 codeHeader += '/**\n';
                 codeHeader += ' * @module ' + amdProcData.moduleName + '\n';
-                // logger.log('amdProcData >>>' + amdProcData);
                 if (input.camelName === exportReturned) {
                     codeHeader += ' * @exports ' + exportReturned + '\n';
+                    amdProcData.exports = exportReturned;
+                    input.results.amdProc.exports = exportReturned;
                 }
                 for (var index = 0; index < importPaths.length; index++) {
                     var importItem = importPaths[index];
@@ -550,17 +454,13 @@ var fixDecaffeinateProc = {
                         codeHeader += 'import \'' + importItem.path + '\';\n';
                     }
                 }
-                codeHeader += '\n'
-                    //logger.log(codeSandwich[0]);
+                codeHeader += '\n';
                 if (codeSandwich[0].indexOf('define(') !== -1) {
                     logger.log('>>>>>>> codeSandwich.length = ', codeSandwich.length);
-                    //logger.log('>>>>>>> codeSandwich[1] = ', codeSandwich[1]);
                     codeSandwich[0] = '';
                     var codeSandwichTail = codeSandwich[1].split('');
-                    //logger.log('>>>>>>> codeSandwichTail = ', codeSandwichTail);
                     for (var c = 0; c < codeSandwichTail.length; c++) {
                         var char = codeSandwichTail[c];
-                        // logger.log('codeSandwichTail: ', isAlpha(char));
                         if (char === ';' || char === ')' || char === ']' || char === '}') {
                             codeSandwichTail[c] = '';
                         } else {
@@ -568,45 +468,26 @@ var fixDecaffeinateProc = {
                         }
                     }
                     codeSandwich[1] = codeSandwichTail.join('');
-                    // logger.log('codeSandwichTail: ', codeSandwich[1]);
                 } else {
                     throw ('Irregular code sandwich!');
                 }
-                //console.log('>>>>>>>>>>>>> codeHeader', codeHeader);
                 if (input.source.indexOf(codeHeader.trim()) !== -1) {
                     codeHeader = '';
                 }
-                //console.log('>>>>>>>>>>>>> codeHeader', codeHeader);
                 codeBody = codeSandwich.join(codeBody);
                 var newSource = codeHeader + codeBody + '\n';
                 input.source = newSource;
             }
-            //  logger.log(newSource);
-            // now search/delete the EXACT return block
-            // get imports
-            // get return
         } else {
             console.log('fixDecaffeinateProc did not find AMD');
             var codeHeader = '';
             codeHeader += '/**\n';
             codeHeader += ' * @module ' + amdProcData.moduleName + '\n';
-            // logger.log('amdProcData >>>' + amdProcData);
-            //            if (input.camelName === exportReturned) {
-            //                codeHeader += ' * @exports ' + exportReturned + '\n';
-            //            }
-            //            for (var index = 0; index < importPaths.length; index++) {
-            //                var importItem = importPaths[index];
-            //                codeHeader += ' * @requires ' + importItem.path + '\n';
-            //            }
             codeHeader += ' */\n\n';
-            //if (input.source.indexOf('import ') !== -1 || input.source.indexOf('export ') !== -1 || input.source.indexOf(')();') !== -1){
             if (input.source.indexOf(codeHeader.trim()) === -1) {
                 input.source = codeHeader + '\n' + input.source;
             }
-            //}
         }
-        // Don't let an imported symbol be redefined...
-        //logger.log('Checking symbols...', importPaths);
         for (var index = 0; index < importPaths.length; index++) {
             var importItem = importPaths[index];
             var symbol = importItem.name;
@@ -615,13 +496,11 @@ var fixDecaffeinateProc = {
                 if (input.source.indexOf(assignmentTest) !== -1) {
                     logger.log('Attempting to re-assign a const: ', symbol);
                     input.source = input.source.split(assignmentTest).join('// ' + assignmentTest);
-                    //throw ('Attempting to re-assign a const: ', symbol);
                 }
                 assignmentTest = '\n' + symbol + ' = ';
                 if (input.source.indexOf(assignmentTest) !== -1) {
                     logger.log('Attempting to re-assign a const: ', symbol);
                     input.source = input.source.split(assignmentTest).join('\n// ' + symbol + ' = ');
-                    //throw ('Attempting to re-assign a const: ', symbol);
                 }
             }
         }
@@ -639,15 +518,14 @@ function buildES6Header(input) {
     var source = input.source;
     var someNode;
     var importPaths = [];
-    // strip out AMD and replace with ES6 module
     var amdProcData = input.results.amdProc;
+    var exportReturned = null;
     var isAMD = (source.indexOf('define (') !== -1 || source.indexOf('define(') !== -1);
     if (isAMD) {
         logger.log('buildES6Header BAILING; this file is AMD.');
         return input;
     }
     var ast = null;
-    // do an esprima parse NOW
     try {
         var _esprima = require('esprima');
         ast = _esprima.parse(input.source, {
@@ -661,14 +539,12 @@ function buildES6Header(input) {
         console.error(esError);
         throw (esError);
     }
-    //logger.log('Look for imports/exports.');
     var importStatements = getNodesByType(ast, 'ImportDeclaration');
     var es;
     for (es = 0; es < importStatements.length; es++) {
         someNode = importStatements[es];
         var symbol = someNode.specifiers[0].local.name;
         var path = someNode.source.value;
-        //console.log('@requires ' + path + ' as ' + symbol);
         importPaths.push({
             path: path,
             name: symbol
@@ -678,7 +554,6 @@ function buildES6Header(input) {
     exportReturned = '';
     if (exportStatements.length) {
         var exportsDefault = exportStatements[0];
-        //exportsDefault.declaration
         var whatExported = exportsDefault.declaration;
         var exportedSymbol = '';
         if (whatExported.type === 'ClassDeclaration') {
@@ -686,14 +561,12 @@ function buildES6Header(input) {
         } else if (whatExported.type === 'Identifier') {
             exportedSymbol = whatExported.name;
         }
-        // console.log(whatExported);
         exportReturned = exportedSymbol;
     }
     var exportSpecialStatements = getNodesByType(ast, 'ExportNamedDeclaration');
     var codeHeader = '';
     codeHeader += '/**\n';
     codeHeader += ' * @module ' + amdProcData.moduleName + '\n';
-    //console.log('NAMES', input.camelName, exportReturned);
     if (input.camelName === exportReturned) {
         codeHeader += ' * @exports ' + exportReturned + '\n';
     }
@@ -702,7 +575,7 @@ function buildES6Header(input) {
         codeHeader += ' * @requires ' + importItem.path + '\n';
     }
     codeHeader += ' */\n\n';
-    codeHeader += '\n'
+    codeHeader += '\n';
     return codeHeader;
 }
 var fixES6ModulesProc = {
@@ -712,7 +585,6 @@ var fixES6ModulesProc = {
     process: function (input, doneCallback) {
         logger.log('****************** fixES6ModulesProc *******************');
         var source = input.source;
-        // strip out AMD and replace with ES6 module
         var amdProcData = input.results.amdProc;
         var isAMD = (source.indexOf('define (') !== -1 || source.indexOf('define(') !== -1);
         if (isAMD) {
@@ -721,7 +593,6 @@ var fixES6ModulesProc = {
             return;
         }
         var header = buildES6Header(input);
-        // TODO: edit the doclet, and merge changes
         if (source.indexOf('@module ') === -1) {
             source = header + '\n' + source;
             input.source = source;
@@ -743,8 +614,8 @@ var fixMyJsProc = {
     type: 'processor',
     description: 'Runs fixmyjs.',
     process: function (input, doneCallback) {
-        var jshint = require('jshint').JSHINT
-        var fixmyjs = require('fixmyjs')
+        var jshint = require('jshint').JSHINT;
+        var fixmyjs = require('fixmyjs');
         if (input.errors[this.id] == null) {
             input.errors[this.id] = [];
         }
@@ -787,7 +658,6 @@ var esLintFixProc = {
     type: 'processor',
     description: 'Runs eslint --fix.',
     process: function (input, doneCallback) {
-        //writeFile(input.processedFilePath, input.source);
         var path = require('path');
         var exePath = path.normalize('node_modules/.bin/eslint --fix');
         var exec = require('child_process').exec;
@@ -798,10 +668,6 @@ var esLintFixProc = {
             if (stderr) {
                 console.error(stderr);
             }
-            //                if (stdout) {
-            //                    //grunt.log.errorlns(stdout);
-            //                    grunt.file.write(sourceFile + '.lint.txt', stdout);
-            //                }
         });
         /**
          * Close.
@@ -834,54 +700,14 @@ var uglifyProc = {
 
 function createJavaClass(input, amdProcData, classData) {
     var index = 0;
-    //logger.log(classData);
     var AMD = amdProcData.AMD;
     var ctorData = classData.namedConstructors;
-    //  "namedConstructors": {
-    //        "js/app/modules/galileo-event~GalileoEvent": {
-    //          "todos": [],
-    //          "params": [
-    //            "name",
-    //            "options"
-    //          ],
-    //          "memberOf": "",
-    //          "returnType": "",
-    //          "ctor": true,
-    //          "lineNumber": 4,
-    //          "line": "function GalileoEvent(name, options) {",
-    //          "comment": -1,
-    //          "range": [
-    //            160,
-    //            424
-    //          ],
-    //          "name": "GalileoEvent",
-    //          "ctorType": "@constructor",
-    //          "doclet": {
-    //            "params": [],
-    //            "returnValue": "",
-    //            "tags": []
-    //          },
-    //          "jsDoc": "/**\n * @constructor\n * @param name\n * @param options\n */"
-    //        }
     var methods = [];
     if (classData.jsDoccerProcData) {
         methods = classData.jsDoccerProcData.methods;
     } else {
         console.error("ERROR: no jsDoccerProcData");
     }
-    //  {
-    //            "name": "_initEvents",
-    //            "visibility": "public",
-    //            "static": false,
-    //            "lineNumber": 9,
-    //            "memberOf": "",
-    //            "doclet": "/**\n * @todo Add some jsDoc comments here!\n */",
-    //            "description": "",
-    //            "return": "?",
-    //            "classDeclarationFlag": false,
-    //            "line": "_initEvents: function () {",
-    //            "originalJsDocDescription": {}
-    //          },
     var exportPath = 'javasrc';
     if (input.camelName.indexOf('/') !== -1) {
         input.camelName = input.camelName.split('/').join('_');
@@ -904,7 +730,6 @@ function createJavaClass(input, amdProcData, classData) {
     var subPackage = packageSubpath.split('/').join('.');
     var buffer = [];
     buffer.push('package com.ctct.galileo' + subPackage + ';');
-    //buffer.push('import ng.Module;');
     buffer.push('public class ' + capitalize(input.camelName) + ' {');
     if (deps == null) {
         deps = [];
@@ -943,10 +768,8 @@ function createJavaClass(input, amdProcData, classData) {
         memberName = memberName.split('');
         memberName[0] = memberName[0].toLowerCase();
         memberName = memberName.join('');
-        // FIXME: camel name MUST be a valid package name.
         buffer.push('  public ' + capitalize(camelName) + ' ' + memberName + ' = null;');
     }
-    // methods!!!
     for (index = 0; index < methods.length; index++) {
         var method = methods[index];
         if (method.name.indexOf(']') !== -1) {
@@ -961,7 +784,6 @@ function createJavaClass(input, amdProcData, classData) {
         method.name = method.name.split('__').join('_');
         method.name = method.name.split('__').join('_');
         method.name = camelize(method.name);
-        // FIXME: camel name MUST be a valid package name.
         if (method.name.indexOf("_") === 0) {
             buffer.push('private  void ' + method.name.split('_').join('') + '(){}');
         } else {
@@ -969,7 +791,6 @@ function createJavaClass(input, amdProcData, classData) {
         }
     }
     buffer.push('  public ' + capitalize(input.camelName) + '() {');
-    //buffer.push('  super("' + capitalize(input.name) + '");');
     buffer.push('  }');
     buffer.push('}');
     var src = buffer.join('\n');
@@ -984,9 +805,7 @@ var generateJavaProc = {
             input.errors[this.id] = [];
         }
         var amdProcData = input.results.amdProc;
-        // if (amdProcData.AMD) {
         createJavaClass(input, amdProcData, input);
-        // }
         doneCallback(input);
     }
 };
@@ -1008,12 +827,8 @@ var amdProc = {
         result.moduleName = input.fileName.split('.js')[0];
         result.AMD = false;
         result.webPath = input.webPath;
-        // AMD_DATA.paths[result.moduleName] = 'v2' + result.webPath
-        // + '/' +
-        // result.moduleName;
-        //logger.log('amdProc', 0);
         var converted = convert(input.source, input.path);
-        //logger.warn(converted);
+
         function fixRequires(inputArray) {
             var result = [];
             for (var index = 0; index < inputArray.length; index++) {
@@ -1030,26 +845,20 @@ var amdProc = {
             }
             return result;
         }
-        // logger.warn(converted.requires);
         result.requires = fixRequires(converted.requires);
         result.usedAs = converted.depVarnames;
-        // logger.warn(result.requires);
         var inlineRequires = fixRequires(getInlineRequires(input));
         for (var ir = 0; ir < inlineRequires.length; ir++) {
             var inlineModule = inlineRequires[ir];
             result.requires.push(inlineModule);
-            // logger.warn('require("' + inlineModule + '")');
         }
         result.convertedName = converted.name;
-        // result.moduleName = converted.name;
         result.AMD = converted.isModule;
         result.min = converted.min;
         result.main = converted.isMain;
         result.uses_$ = input.source.indexOf('$(') !== -1;
         result.uses_Y = converted.callsYuiApi;
-        // FIXME: BUGGY
         result.uses_alert = input.source.indexOf('alert(') !== -1;
-        // FIXME: BUGGY
         result.strict = input.source.indexOf('use strict') !== -1;
         logger.log('amdProc', 'DONE');
         doneCallback(input);
@@ -1059,9 +868,8 @@ var amdProc = {
  * Gets all the instances of require() in the code body.
  *
  * @todo: Not robust! Not comment-proof!
- * @param {String}
  *          input The source script.
- * @returns {Array}
+ * @param input
  */
 function getInlineRequires(input) {
     var source = input.source;
@@ -1072,22 +880,16 @@ function getInlineRequires(input) {
         return [];
     }
     var output = [];
-    // logger.log('dig for inline requires() in ' + input.name);
     var chunks = [];
     if (noSpaceRequire > -1) {
         chunks = source.split("require(");
-        // logger.log(chunks.length);
         for (var index = 1; index < chunks.length; index++) {
             var chunk = chunks[index];
             var trimChunk = chunk.trim();
-            // logger.log(trimChunk);
             var startChar = trimChunk.charAt(0);
-            // logger.log(startChar);
             var splitter = trimChunk.split(startChar);
             var moduleName = splitter[1].trim();
-            // quick fix... TODO: make more robust
             moduleName = moduleName.split('*/').join('');
-            // logger.log(moduleName);
             if (startChar === "'" || startChar === '"') {
                 output.push(moduleName);
             } else {
@@ -1096,18 +898,13 @@ function getInlineRequires(input) {
         }
     } else if (oneSpaceRequire > -1) {
         chunks = source.split("require (");
-        // logger.log(chunks.length);
         for (var index = 1; index < chunks.length; index++) {
             var chunk = chunks[index];
             var trimChunk = chunk.trim();
-            // logger.log(trimChunk);
             var startChar = trimChunk.charAt(0);
-            // logger.log(startChar);
             var splitter = trimChunk.split(startChar);
             var moduleName = splitter[1].trim();
-            // quick fix... TODO: make more robust
             moduleName = moduleName.split('*/').join('');
-            // logger.log(moduleName);
             if (startChar === "'" || startChar === '"') {
                 output.push(moduleName);
             } else {
@@ -1634,7 +1431,6 @@ var JSONFilter = {
         temp = input.source;
         var stripped = stripOneLineComments(stripCComments(temp));
         var isJSON = stripped.trim().indexOf('{') === 0;
-        // TODO: add test for [] too?
         if (!isJSON) {
             doneCallback(input);
         } else {
@@ -1864,7 +1660,6 @@ var jsDoccerProc = {
         }
 
         function runJsDoccer(fileName, id) {
-            // logger.warn('runJsDoccer');
             var basePath = _path.normalize(input.outputDirectory + '/' + input.packagePath);
             var name = input.fileName;
             var internalErrors = [];
@@ -1910,10 +1705,6 @@ var jsDoccerProc = {
                 };
                 input.errors[id].push(error);
             }
-            // var child = exec(exePath + ' ' + basePath + ' ' +
-            // name, function
-            // (error, stdout, stderr) {
-            // if (error) {}
             var splitter = stdout.split('/*jsdoc_prep_data*/');
             try {
                 input.jsDoccerProcData = JSON.parse(unescape(splitter[0]));
@@ -1975,7 +1766,6 @@ var jsDoccerProc = {
             }
             input.source = unescape(splitter[1]);
             input.testStubs = unescape(splitter[2]);
-            // logger.warn(input.source);
             writeFile(input.processedFilePath, input.source);
             doneCallback(input);
         }
@@ -2009,11 +1799,6 @@ function readFile(filePathName) {
 }
 
 function writeFile(filePathName, source) {
-    // if (filePathName.indexOf('.json') === -1){
-    // logger.warn(arguments.callee.caller);
-    // logger.warn('writeFile: ' + filePathName);
-    // //logger.warn(source);
-    // }
     if (WRITE_ENABLED) {
         filePathName = _path.normalize(filePathName);
         safeCreateFileDir(filePathName);
@@ -2024,18 +1809,12 @@ function writeFile(filePathName, source) {
 function setWriteEnable(val) {
     WRITE_ENABLED = val;
 }
-//       var options = {
-//                sourceFile: sourceFile,
-//                processingChain: processingChain,
-//                moduleClassName: moduleClassName,
-//                moduleExport: moduleExport
-//            };
+
 function processSingleFile(options, completionCallback) {
     var filePathName = options.sourceFile;
     var processingChain = options.processingChain;
     var coffeeModuleClassName = options.moduleClassName;
     var coffeeModuleExport = options.moduleExport;
-    //logger.log('processSingleFile', 0, filePathName);
     var writeEnable = true;
     var outputfilePathName = filePathName;
     FILE_IS_EMPTY = false;
@@ -2093,7 +1872,6 @@ function processSingleFile(options, completionCallback) {
             currentChainIndex++;
             if (currentChainIndex >= processingChain.length) {
                 _finishedProcessingChain();
-                //logger.warn('>>>>>>>>>>>>>>>>>>>>>> SKIPPING THIS MODULE');
                 return;
             }
         }
@@ -2121,7 +1899,6 @@ function processSingleFile(options, completionCallback) {
     function _finishedProcessingChain() {
         logger.log('_finishedProcessingChain', 0);
         var VERIFY_PARSE = true;
-        // logger.warn(output.source);
         writeFile(outputfilePathName, output.source);
         output.couldParseProcessedSource = canParse(outputfilePathName,
             output.source, processor.id);
@@ -2221,8 +1998,6 @@ function processFile(modulePaths, baseDirectory, filePathName, outputDirectory,
         mmn += '/';
     }
     output.mappedModuleName = mmn + output.fileName.split('.js')[0];
-    // logger.warn('mappedModuleName: ', output.mappedModuleName, ' from ', output.packagePath);
-    // exit();
     var currentChainIndex = 0;
 
     function runNextProcessor() {
@@ -2238,7 +2013,9 @@ function processFile(modulePaths, baseDirectory, filePathName, outputDirectory,
                 return;
             }
         }
+        //console.log(processingChain, currentChainIndex);
         var processor = processingChain[currentChainIndex];
+        //  console.log(processor);
         logger.log(processor.id);
         processor.process(output, function (result) {
             currentChainIndex++;
@@ -2256,7 +2033,6 @@ function processFile(modulePaths, baseDirectory, filePathName, outputDirectory,
 
     function _finishedProcessingChain() {
         var VERIFY_PARSE = true;
-        // logger.warn(output.source);
         writeFile(outputfilePathName, output.source);
         output.couldParseProcessedSource = canParse(outputfilePathName,
             output.source, processor.id);
@@ -2670,7 +2446,6 @@ function convert(input, filePathname) {
         newBody += '\n});';
         temp = newBody;
     } else {
-        // logger.warn("convert--> AMD");
         logger.log('convert', 1.2);
         moduleName = getModuleName(filePathname);
         temp = input;
@@ -2682,8 +2457,6 @@ function convert(input, filePathname) {
         output.isModule = stripped.indexOf('define(') !== -1;
         var indexOfRequire = stripped.indexOf('require(');
         output.isMain = (output.isModule) & (indexOfRequire !== -1) && (indexOfRequire < indexOfDefine);
-        // logger.warn(indexOfRequire + ',' + indexOfDefine);
-        // logger.warn(output);
         var defineBlock = stripped.indexOf('define(') !== -1 && !libFile;
         logger.log('convert', 1.3);
         if (defineBlock && (!output.isMain)) {
@@ -2700,9 +2473,6 @@ function convert(input, filePathname) {
                     depsRaw = [];
                     depsRaw.push(tempDeps);
                 }
-                //logger.warn("define()--> " + depsRaw);
-                // logger.warn("convert--> depsRaw");
-                // logger.warn(depsRaw);
                 requires = depsRaw;
                 var afterDefineSplit = afterDefine.split('(');
                 if (afterDefineSplit.length > 1) {
@@ -2719,7 +2489,6 @@ function convert(input, filePathname) {
                 } else {
                     logger.warn('afterDefine: ' + afterDefine);
                     logger.warn('Problem file: ' + filePathname);
-                    // throw(new Error("Can't split afterDefine!"));
                 }
             }
             afterDefine = stripped.split('define(')[1];
@@ -2805,7 +2574,6 @@ function getRequiresTags(input) {
     if (!amdProcData.AMD) {
         return '';
     }
-    // logger.warn(amdProcData);
     for (var index = 0; index < amdProcData.requires.length; index++) {
         var moduleName = amdProcData.requires[index];
         if (typeof moduleName !== 'string') {
@@ -2861,13 +2629,7 @@ var jsDoc3PrepProc = {
             input.errors[this.id] = [];
         }
         input.name = input.fileName.split('.js')[0];
-        // logger.warn(input.name);
         var source = input.source;
-        // logger.warn(input.source);
-        // if (input.name === 'context'){
-        // //logger.warn(splitter[0]);
-        // logger.warn(source);
-        // }
         source = replace(source, '{string}', '{String}');
         source = replace(source, '{object}', '{Object}');
         source = replace(source, '{number}', '{Number}');
@@ -2879,7 +2641,6 @@ var jsDoc3PrepProc = {
         source = replace(source, '{function}', '{Function}');
         input.source = source;
         firstDoclet = null;
-        // logger.warn(getRequiresTags(input));
         var lines = input.source.split('\n');
         var index = 0;
         var linesLength = lines.length;
@@ -2890,18 +2651,8 @@ var jsDoc3PrepProc = {
                 .indexOf('//') === 0) {
                 continue;
             }
-            // DO NOT REMOVE THESE!!! They are part of the jsDoc spec.
-            // if (line.indexOf('* @method') !== -1 || line.indexOf('* @function') !== -1 || line.indexOf('* @memberOf') !== -1) {
-            // lines[index] = '';
-            // }
-            // if (line.indexOf('* @requires') !== -1) {
-            // lines[index] = '';
-            // }
-            // this is for Backbone stuff.
             if (line.indexOf('* @lends') !== -1 || line.indexOf('*@lends') !== -1) {
                 if (lastLine.indexOf('.extend') === -1) {
-                    // logger.warn('hacking a @lends tag: '
-                    // + line);
                     lines[index] = line;
                 } else {
                     if (line.indexOf('~') === -1) {
@@ -2919,47 +2670,30 @@ var jsDoc3PrepProc = {
             lastLine = line;
         }
         input.source = lines.join('\n');
-        // if (input.name === 'context'){
-        // logger.warn(input.source);
-        // }
         var whereDefine = input.source.indexOf('define(\'');
+        console.log('whereDefine', whereDefine);
         if (whereDefine === -1) {
             whereDefine = input.source.indexOf('define("');
         }
+        console.log('whereDefine', whereDefine);
         if (whereDefine === -1) {
             whereDefine = input.source.indexOf('define(');
         }
+        console.log('whereDefine', whereDefine);
         if (input.source.indexOf('define = function') !== -1) {
             whereDefine = -1;
         }
-        // HANDLE THIS:
-        // define( function( require ){
-        // var is = require( './is' ),
-        //
-        // Context = require( './declare' )( /** @lends
-        // module:fluffy/context#
-        // */ {
-        //
-        // /**
-        // * @constructs module:fluffy/context
-        // * @augments {null}
-        // */
-        // constructor: function Context(){
+        console.log('whereDefine', whereDefine);
+        var saveWhereDefine = whereDefine;
         if (whereDefine !== -1) {
-            // logger.warn('jsDoc3PrepProc: found define()
-            // in the module');
             var source = input.source.substring(whereDefine);
             var whereVar = source.indexOf('var ');
             var whereFunctionNoSpace = source.indexOf('function(');
             var whereFunction = source.indexOf('function ');
-            var whereDefine = source.indexOf('define(');
-            // Loosen out test here?
-            // if (source.indexOf('@exports ' + input.name)
-            // === -1) {
-            // define(function(require) {
+            var whereDefineLocal = source.indexOf('define(');
             if (source.indexOf('@exports ') === -1) {
                 if (whereVar > 0 || (whereFunction > 0 || whereFunctionNoSpace > 0)) {
-                    if (whereFunctionNoSpace === -1 && whereFunction === -1 && whereDefine === -1) {
+                    if (whereFunctionNoSpace === -1 && whereFunction === -1 && whereDefineLocal === -1) {
                         logger.warn('jsDoc3PrepProc: could not find a function or define() in the module?');
                     } else {
                         logger.warn('jsDoc3PrepProc: found @exports in the module');
@@ -2974,48 +2708,27 @@ var jsDoc3PrepProc = {
                             splitter = source.split('function (');
                         }
                         var combiner = [];
-                        // if (input.name === 'context'){
-                        // //logger.warn(splitter[0]);
-                        // logger.warn(source);
-                        // }
-                        // logger.warn(JSON.stringify(input,null,2));
                         var packagePath = input.mappedModuleName;
                         logger.warn(packagePath);
                         combiner.push(splitter[0] + '\n' + '/**\n * @exports ' + packagePath + '\n' + getRequiresTags(input) + ' */\n');
-                        // if (input.name === 'context'){
-                        // logger.warn(splitter[0]);
-                        // //logger.warn(source);
-                        // }
                         var splitterLength = splitter.length;
                         for (index = 1; index < splitterLength; index++) {
-                            // if (input.name ===
-                            // 'context'){
-                            // logger.warn(splitter[index]);
-                            // //logger.warn(source);
-                            // }
                             combiner.push(splitter[index]);
                         }
                         source = combiner.join('function(');
                     }
-                } else if (whereDefine !== -1 && source.indexOf('@module') === -1) {
+                } else if (whereDefineLocal !== -1 && source.indexOf('@module') === -1) {
                     var combiner = [];
-                    // logger.warn(JSON.stringify(input,null,2));
-                    // var packagePath = input.path.split('/');
-                    // packagePath.shift();
-                    // packagePath = packagePath.join('/');
-                    // packagePath = packagePath.split('.js')[0];
                     var packagePath = input.mappedModuleName;
-                    // logger.warn(packagePath);
                     source = ('/**\n * @module ' + packagePath + '\n' + getRequiresTags(input) + ' */\n') + source;
                 } else {
                     logger.warn('jsDoc3PrepProc: whereVar??: ' + whereVar + ',' + whereFunction + ',' + whereFunctionNoSpace);
                 }
             }
             var originalHeader = input.source.substring(0, whereDefine);
-            logger.warn('jsDoc3PrepProc: splicing header');
-            // logger.warn('originalHeader: "' + originalHeader + '"');
+            //logger.warn('jsDoc3PrepProc: splicing header', whereDefine, originalHeader);
             input.source = originalHeader + '\n' + source;
-            // logger.warn(input.source);
+            //console.log(source);
             if (!canParseSource(input.source)) {
                 input.source = input.undoBuffer;
             }
@@ -3029,11 +2742,6 @@ var jsDoc3PrepProc = {
                 prototypal = true;
             }
         }
-        // Loosen out test here?
-        // if (!prototypal
-        // && input.source.indexOf('@exports ' + input.name)
-        // !== -1) {
-        // logger.warn(input.fileName);
         if (!prototypal && input.source.indexOf('@exports ') !== -1) {
             if (input.source.indexOf('@constructor') !== -1) {
                 logger.warn('exports @constructor');
@@ -3068,9 +2776,7 @@ var jsDoc3PrepProc = {
             }
         }
         var splitter = input.source.split('@class');
-        //input.source = splitter.join('@constructor');
         splitter = input.source.split('@extends');
-        //input.source = splitter.join('@augments');
         writeFile(input.processedFilePath, input.source);
         doneCallback(input);
     }
@@ -3081,8 +2787,6 @@ var splitModulesProc = {
     description: 'Split concatenated modules into individual files.',
     process: function (input, doneCallback) {
         var tempSource = input.source;
-        // writeFile(input.processedFilePath, tempSource);
-        // exit();
         var splitter = tempSource.split('@module');
         if (splitter.length > 2) {
             logger.warn('!!!!!!!!! More than one module in this file!!!!!', splitter.length);
@@ -3108,23 +2812,18 @@ function getIndent(text) {
     }
     return buffer;
 }
-// process all one-line comments in a JS file
+
 function convertComments(input) {
-    // console.log('convertComments');
     var lines = input.split('\n');
-    //var indents = [];
     var inComment = false;
     var startOfComment = -1;
     for (var index = 0; index < lines.length; index++) {
         var line = lines[index];
         var originalLine = line;
         var indent = getIndent(line);
-        //indents.push(indent);
         line = line.trim();
-        // console.log('line: ' + line.length);
         if (!inComment && (line.indexOf('//') === 0)) {
             if (lines[index + 1].trim().indexOf('//') === -1) {
-                // console.log('One-line comment, skip!', line);
                 continue;
             }
         }
@@ -3133,12 +2832,10 @@ function convertComments(input) {
             if (!inComment) {
                 startOfComment = index;
                 inComment = true;
-                // add /**
                 line = indent + '/**\n' + indent + ' * ' + line;
             } else {
                 line = '<br />' + indent + ' * ' + line;
             }
-            // it begins with a comment
         } else {
             if (inComment) {
                 line = indent + ' */ \n' + line;
@@ -3149,7 +2846,6 @@ function convertComments(input) {
         }
         lines[index] = line;
     }
-    // console.log('convertComments END');
     lines = lines.join('\n');
     return lines;
 }
@@ -3159,6 +2855,46 @@ var convertCommentsProc = {
     description: 'Convert comments from one-line to jsdoc-style.',
     process: function (input, doneCallback) {
         input.source = convertComments(input.source);
+        doneCallback(input);
+    }
+};
+var allModules = {};
+var exportAMDData = {
+    id: 'exportAMDData',
+    type: 'processor',
+    description: 'Exports the AMD data for analysis.',
+    process: function (input, doneCallback) {
+        if (input.errors[this.id] == null) {
+            input.errors[this.id] = [];
+        }
+        var amdProcData = input.results.amdProc;
+        //      {
+        //        "requires": [
+        //          "jquery"
+        //        ],
+        //        "moduleName": "state-migrations",
+        //        "AMD": true,
+        //        "webPath": "/cheeks",
+        //        "convertedName": "state_migrations",
+        //        "min": false,
+        //        "main": 0,
+        //        "uses_$": true,
+        //        "uses_Y": false,
+        //        "uses_alert": false,
+        //        "strict": false
+        //      }
+        var depends = {
+            'requires': {},
+            //name: amdProcData.moduleName,
+            exports: amdProcData.exports ? amdProcData.exports : null
+        };
+        for (var index = 0; index < amdProcData.requires.length; index++) {
+            var module = amdProcData.requires[index];
+            depends.requires[module] = 1;
+        }
+        allModules[amdProcData.moduleName] = depends;
+        writeFile(input.processedFilePath + '.amd.json', JSON.stringify(depends, null, 2));
+        writeFile('./modules.json', JSON.stringify(allModules, null, 2));
         doneCallback(input);
     }
 };
@@ -3201,6 +2937,7 @@ var plugins = {
     'esLintFixProc': esLintFixProc,
     'fixES6ModulesProc': fixES6ModulesProc,
     'convertCommentsProc': convertCommentsProc,
+    'exportAMDData': exportAMDData,
     'stripCommentsProc': stripCommentsProc
 };
 /**

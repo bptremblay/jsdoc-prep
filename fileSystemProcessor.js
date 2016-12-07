@@ -8,7 +8,7 @@ var _path = require('path');
 var _wrench = require('wrench');
 var _minimatch = require('minimatch');
 var sfp = require('./singleFileProcessor');
-var sys = require('sys');
+var sys = require('util');
 var FILE_ENCODING = 'utf8';
 /**
  * Cb.
@@ -32,46 +32,37 @@ var allSource = '';
 var totalFiles = [];
 var modulePaths = {};
 var emptyFiles = [];
-
 /**
  * Filter files.
  *
  * @param files
  * @param excludes
  */
-
 function filterFiles(files, excludes) {
   var globOpts = {
     matchBase: true,
     dot: true
   };
-
   excludes = excludes.map(function (val) {
     return _minimatch.makeRe(val, globOpts);
   });
-
   files = files.map(function (filePath) {
     return _path.normalize(filePath).replace(/\\/g, '/');
   });
-
   return files.filter(function (filePath) {
-
     return !excludes.some(function (glob) {
       return glob.test(filePath);
     });
   });
 }
-
 /**
  * Normalize name.
  *
  * @param input
  */
-
 function normalizeName(input) {
   return input.split('_').join('-');
 }
-
 /** Next file. */
 function nextFile() {
   setTimeout(__nextFile, 50);
@@ -81,7 +72,6 @@ function __nextFile() {
   var nextPath = queue.shift();
   var basePath = SCAN_PATH;
   var inPath = nextPath;
-
   sfp.processFile(modulePaths, basePath, inPath, outPath, testPath, docPath,
     processingChain,
     function (result) {
@@ -112,7 +102,6 @@ function __nextFile() {
       } catch (jsonError) {
         console.warn(jsonError);
       }
-
       sfp.writeFile(resultsPathFile, resultsJSON);
       if (queue.length > 0) {
         nextFile();
@@ -131,15 +120,12 @@ function __nextFile() {
         resultsBlock.docPath = docPath;
         resultsBlock.resultsPath = resultsPath;
         sfp.setWriteEnable(true);
-
         var resultsJSON = '{}';
         try {
           resultsJSON = JSON.stringify(resultsBlock, null, 2);
         } catch (stringifyErr) {
           console.warn(stringifyErr);
         }
-
-
         sfp.writeFile(resultsPath + '/jsdoc-prep.json', resultsJSON);
         if (cb != null) {
           cb(resultsBlock);
@@ -150,11 +136,10 @@ function __nextFile() {
 var queue = [];
 var results = [];
 var then = 0;
-
 /**
  * Gets the number of characters in an indentation.
- * @param   {string}   input [[Description]]
- * @returns {[[Type]]} [[Description]]
+ * @param   {string}   input
+ * @returns {number}
  */
 function getIndent(input) {
   var temp = input.split('');
@@ -167,20 +152,14 @@ function getIndent(input) {
   return -1;
 }
 
-
 function joinLines(input, a, b) {
   return input.slice(a, b).join('\n');
 }
-
 
 function spliceLinesBelow(lines, belowHere, a, b) {
   var result = [];
   var head = lines.slice(0, belowHere + 1);
   var ctorChunk = lines.slice(a, b);
-
-  //  var firstHalf = lines.slice(0, a);
-  //  var secondHalf = lines.slice(b);
-  //lines = [].concat(a, b);
   for (var index = a; index < b; index++) {
     lines[index] = '';
   }
@@ -190,7 +169,6 @@ function spliceLinesBelow(lines, belowHere, a, b) {
   result = result.concat(tail);
   return result.join('\n');
 }
-
 /**
  * Safe create file dir.
  *
@@ -201,7 +179,6 @@ function spliceLinesBelow(lines, belowHere, a, b) {
 function safeCreateFileDir(path) {
   var dir = _path.dirname(path);
   if (!_fs.existsSync(dir)) {
-    // // // logger.log("does not exist");
     _wrench.mkdirSyncRecursive(dir);
   }
 }
@@ -214,7 +191,6 @@ function safeCreateFileDir(path) {
  */
 function safeCreateDir(dir) {
   if (!_fs.existsSync(dir)) {
-    // // // logger.log("does not exist");
     _wrench.mkdirSyncRecursive(dir);
   }
 }
@@ -232,11 +208,24 @@ function writeFile(filePathName, source) {
   _fs.writeFileSync(filePathName, source);
 }
 /**
+ * Get procs.
+ *
+ * @param procList
+ * @return {Object}
+ */
+function getProcs(procList) {
+  var output = [];
+  for (var index = 0; index < procList.length; index++) {
+    var procId = procList[index];
+    output.push(sfp.plugins[procId]);
+  }
+  return output;
+}
+/**
  * Run.
  *
  * @param options
  */
-
 function run(options) {
   processingChain = [];
   outputPath = '';
@@ -247,23 +236,6 @@ function run(options) {
   results = [];
   then = 0;
   emptyFiles = [];
-
-  /**
-   * Get procs.
-   *
-   * @param procList
-   * @return {Object}
-   */
-
-  function getProcs(procList) {
-    var output = [];
-    for (var index = 0; index < procList.length; index++) {
-      var procId = procList[index];
-      output.push(sfp.plugins[procId]);
-    }
-    return output;
-  }
-
   cb = options.callBack;
   modulePaths = options.modulePaths;
   SCAN_PATH = options.scanPath;
@@ -281,7 +253,6 @@ function run(options) {
      * ', <br />
      */
   ]);
-
   files.forEach(function (path) {
     path = _path.normalize(SCAN_PATH + '/' + path);
     stat = _fs.statSync(path);
@@ -293,7 +264,6 @@ function run(options) {
       console.log('>>>>>>>>>>>> FOUND COFFEE');
       var coffeeCode = sfp.readFile(path);
       if (coffeeCode.indexOf('#fixed constructor order in class') === -1) {
-        //console.log(coffeeCode);
         var ctorStart = -1;
         var ctorIndent = -1;
         var ctorEnd = -1;
@@ -302,7 +272,6 @@ function run(options) {
         if (coffeeCode.indexOf('class ') !== -1) {
           var lines = coffeeCode.split('\n');
           var lineNumber = 0;
-
           for (lineNumber = 0; lineNumber < lines.length; lineNumber++) {
             var line = lines[lineNumber];
             if (line.trim() && line.trim().charAt(0) === '#') {
@@ -313,38 +282,27 @@ function run(options) {
               console.log('Found Coffee class def: ' + lineNumber);
               topOfClass = lineNumber;
             }
-            // console.log(currentIndent);
             if (ctorStart > -1) {
-
-
               if (currentIndent === ctorIndent || lineNumber === lines.length - 1) {
                 ctorEnd = lineNumber;
                 console.log('FOUND A CTOR BLOCK: ', ctorStart, ctorEnd);
-              //  console.log(joinLines(lines, ctorStart, ctorEnd));
                 break;
               }
             } else if (ctorStart === -1 && line.indexOf('constructor:') !== -1) {
-
               ctorStart = lineNumber;
-              // get the indent level
               ctorIndent = getIndent(line);
               console.log('FOUND constructor', ctorStart, ctorIndent);
-
             }
-
           }
           if (ctorStart > -1 && ctorEnd === -1) {
             if (currentIndent === ctorIndent || lineNumber === lines.length - 1) {
               ctorEnd = lineNumber;
               console.log('FOUND A CTOR BLOCK: ', ctorStart, ctorEnd);
-            //  console.log(joinLines(lines, ctorStart, ctorEnd));
             }
           }
           if (ctorStart > -1 && ctorEnd > -1) {
             console.log('SPLICE NOW');
             coffeeCode = spliceLinesBelow(lines, topOfClass, ctorStart, ctorEnd);
-            //console.log(coffeeCode);
-            //console.log(path + '.edit.coffee', coffeeCode);
             coffeeCode = '#fixed constructor order in class\n' + coffeeCode;
             writeFile(path, coffeeCode);
           }
@@ -356,11 +314,9 @@ function run(options) {
     console.warn('no files found, bailing');
     return;
   }
-  console.log('walking source directory...');
   then = new Date().getTime();
   nextFile();
 }
-
 /**
  * Get plugins.
  *
@@ -386,5 +342,6 @@ function getPlugins() {
 module.exports = {
   'run': run,
   'getPlugins': getPlugins,
-  'rimraf': require('rimraf')
+  'rimraf': require('rimraf'),
+  'getProcs': getProcs
 };

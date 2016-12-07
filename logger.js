@@ -3,17 +3,16 @@ var out = (function getConsole() {
 }());
 var Logger = {
   log: function log() {
-   // out.log.apply(console, arguments);
+  out.log.apply(console, arguments);
   },
   debug: function debug() {
-    //out.warn.apply(console, arguments);
+  out.log.apply(console, arguments);
   },
   warn: function warn() {
-  	out.warn.apply(console, arguments);
+    out.warn.apply(console, arguments);
   },
   error: function error() {
     out.error.apply(console, arguments);
   }
 };
-
 module.exports = Logger;
