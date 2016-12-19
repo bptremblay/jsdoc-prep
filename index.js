@@ -2,7 +2,7 @@ var forever = require('forever-monitor');
 
 // @see https://npmjs.org/package/forever-monitor
 var ForeverMonitor = (forever.Monitor);
-var child = new ForeverMonitor('healthcheck-server.js', {
+var child = new ForeverMonitor('./tasks/lib/healthcheck-server.js', {
   max: 1,
   silent: false,
   options: []

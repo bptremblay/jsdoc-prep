@@ -1,15 +1,15 @@
 var path = require('path');
 var fs = require('fs');
-var healthCheck = require('./fileSystemProcessor');
+var healthCheck = require('./tasks/lib/fileSystemProcessor');
 var rimraf = require('rimraf');
 var outPath = 'test-output';
 var testPath = 'test-jstests';
 var docPath = 'test-jsdocs';
 var resultsPath = 'test-results';
 var scanPath = 'test-source';
-var readFile = require('./singleFileProcessor').readFile;
-var writeFile = require('./singleFileProcessor').writeFile;
-var exportedProcs = require('./singleFileProcessor').plugins;
+var readFile = require('./tasks/lib/singleFileProcessor').readFile;
+var writeFile = require('./tasks/lib/singleFileProcessor').writeFile;
+var exportedProcs = require('./tasks/lib/singleFileProcessor').plugins;
 ///Users/benjamintremblay/jsdoc-prep
 var projectPath = process.cwd();
 //console.log(exportedProcs);
@@ -164,6 +164,7 @@ var processingChain = [
     'amdProc',
     'exportAMDData',
     'jsDoccerProc',
+    'esNextProc',
     'esLintFixProc',
     //   'fixES6ModulesProc',
     //   'fixDecaffeinateProc',

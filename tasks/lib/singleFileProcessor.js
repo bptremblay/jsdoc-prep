@@ -1480,6 +1480,25 @@ var thirdPartyFilter = {
         }
     }
 };
+var libFilesFilter = {
+    id: 'libFilesFilter',
+    type: 'filter',
+    description: 'Filters out js files in defined 3rd party directories.',
+    process: function (input, doneCallback) {
+        if (input.errors[this.id] == null) {
+            input.errors[this.id] = [];
+        }
+        var temp = input.path;
+        var pathDelim = temp.indexOf('/') == -1 ? '\\' : '/';
+        var pathParse = temp.split(pathDelim);
+        if (pathParse.pop() === 'lib') {
+            input.errors[this.id] = 'In a designated 3rd party folder.';
+            finishedProcessingChain();
+        } else {
+            doneCallback(input);
+        }
+    }
+};
 var amdOrYuiFilter = {
     id: 'amdOrYuiFilter',
     type: 'filter',
@@ -2671,19 +2690,19 @@ var jsDoc3PrepProc = {
         }
         input.source = lines.join('\n');
         var whereDefine = input.source.indexOf('define(\'');
-        console.log('whereDefine', whereDefine);
+        // console.log('whereDefine', whereDefine);
         if (whereDefine === -1) {
             whereDefine = input.source.indexOf('define("');
         }
-        console.log('whereDefine', whereDefine);
+        // console.log('whereDefine', whereDefine);
         if (whereDefine === -1) {
             whereDefine = input.source.indexOf('define(');
         }
-        console.log('whereDefine', whereDefine);
+        //console.log('whereDefine', whereDefine);
         if (input.source.indexOf('define = function') !== -1) {
             whereDefine = -1;
         }
-        console.log('whereDefine', whereDefine);
+        // console.log('whereDefine', whereDefine);
         var saveWhereDefine = whereDefine;
         if (whereDefine !== -1) {
             var source = input.source.substring(whereDefine);
@@ -2893,7 +2912,7 @@ var exportAMDData = {
             depends.requires[module] = 1;
         }
         allModules[amdProcData.moduleName] = depends;
-        writeFile(input.processedFilePath + '.amd.json', JSON.stringify(depends, null, 2));
+        //writeFile(input.processedFilePath + '.amd.json', JSON.stringify(depends, null, 2));
         writeFile('./modules.json', JSON.stringify(allModules, null, 2));
         doneCallback(input);
     }
@@ -2907,7 +2926,39 @@ var stripCommentsProc = {
         doneCallback(input);
     }
 };
+var esNextProc = {
+    id: 'esNextProc',
+    type: 'processor',
+    description: 'Runs esnext -I file.js',
+    process: function (input, doneCallback) {
+        var path = require('path');
+        var exePath = path.normalize('node_modules/.bin/esnext  -I');
+        var exec = require('child_process').exec;
+        var cmdLine = exePath;
+        cmdLine += ' ' + input.processedFilePath;
+        logger.log(cmdLine);
+        var child = exec(cmdLine, function (error, stdout, stderr) {
+            if (stderr) {
+                console.error(stderr);
+            }
+        });
+        /**
+         * Close.
+         * @param code
+         */
+        child.on('close', function (code) {
+            logger.log('esnext process exited with code ' + code);
+            var newSource = readFile(input.processedFilePath);
+            input.source = newSource;
+            doneCallback(input);
+        });
+        child.on('error', function (code) {
+            logger.log('esnext process errored with code ' + code);
+        });
+    }
+};
 var plugins = {
+    'esNextProc': esNextProc,
     'trimProc': trimProc,
     'headerProc': headerProc,
     'fixMyJsProc': fixMyJsProc,
@@ -2938,7 +2989,8 @@ var plugins = {
     'fixES6ModulesProc': fixES6ModulesProc,
     'convertCommentsProc': convertCommentsProc,
     'exportAMDData': exportAMDData,
-    'stripCommentsProc': stripCommentsProc
+    'stripCommentsProc': stripCommentsProc,
+    'libFilesFilter': libFilesFilter
 };
 /**
  * Get procs.

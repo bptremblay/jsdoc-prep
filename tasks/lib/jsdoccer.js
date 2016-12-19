@@ -1144,7 +1144,7 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode, chu
                 }
             }
             currentTag = tag;
-        } else {}
+        }
     }
     var preamble = [];
     if (docletData.tags.length > 0) {
@@ -1273,7 +1273,7 @@ function walk(node, attr, val, results, parentNode) {
             } else if (typeof child === 'object') {
                 child.parentNode = node;
                 walk(child, attr, val, results, node);
-            } else if (typeof child === 'string') {} else {}
+            } else if (typeof child === 'string') {}
         }
     }
     return results;
@@ -1765,7 +1765,7 @@ function dumpNamedVariables(walkerObj, map, ast, output) {
             } else if (initVal.type === 'FunctionExpression') {
                 continue;
             }
-        } else {}
+        }
         var lineNumber = getLineNumber(input, obj);
         varWrapper.lineNumber = lineNumber;
         varWrapper.line = trim(lines[lineNumber - 1]);
@@ -1773,7 +1773,7 @@ function dumpNamedVariables(walkerObj, map, ast, output) {
             if (decl.id.type === 'Identifier') {
                 varWrapper.name = decl.id.name;
                 varWrapper.decamelizedName = capitalize(decamelize(varWrapper.name).split('_').join(' '));
-            } else {}
+            }
         }
         if (obj.kind !== '') {
             varWrapper.kind = obj.kind;
@@ -1992,7 +1992,7 @@ function prependLineByOffset(input, offset, comment, lendsDoc) {
         var nextLine = lines[lineOffset + 1];
         if (nextLine.indexOf('return') !== -1) {
             lines[lineOffset + 1] = '  return ' + lendsDoc + ' {';
-        } else {}
+        }
     }
     lines.splice(lineOffset, 0, comment);
     input = lines.join('\n');
@@ -2127,7 +2127,7 @@ function addMissingComments(walkerObj, errors) {
                 if (defBlock.name && defBlock.name.indexOf('/') === -1) {
                     var tempModuleSource = input.substring(defBlock.range[0], defBlock.range[1]);
                     writeFile('test-source/' + defBlock.name + '.js', tempModuleSource);
-                } else {}
+                }
             }
         }
         return 'REDO_FILE_TREE';
@@ -2196,7 +2196,7 @@ function addMissingComments(walkerObj, errors) {
                             walkerObj.source = editInput;
                             logger.log('>>>>> Need to re-parse an IIFE-wrapped module: ' + walkerObj.name + '.');
                             return addMissingComments(walkerObj, errors);
-                        } else {}
+                        }
                     }
                 }
             }
@@ -2280,7 +2280,7 @@ function addMissingComments(walkerObj, errors) {
                     walkerObj.NODEJS = true;
                     walkerObj.NODE_EXPORTS = exportsSplit;
                     return addMissingComments(walkerObj, errors);
-                } else {}
+                }
             }
             walkerObj.NODEJS = true;
         }
@@ -2465,7 +2465,6 @@ function addMissingComments(walkerObj, errors) {
             } else {
                 newFileLines.push(line);
             }
-            if (variable) {}
         } else {
             newFileLines.push(line);
         }
@@ -2661,7 +2660,7 @@ function addMissingComments(walkerObj, errors) {
             }
             nodeHeader += '/\n';
             newFile = nodeHeader + newFile;
-        } else {}
+        }
     }
     var jsDoccerBlob = {
         'lines': lines.length,
@@ -2823,7 +2822,7 @@ function searchAndDestroy(doclet, tagName) {
             var tag = doclet.tags[t];
             if (tag.tag !== tagName) {
                 revised.push(tag);
-            } else {}
+            }
         }
         doclet.tags = revised;
     }
@@ -2972,13 +2971,27 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
         hasConstructsTag = searchTags(doclet, 'constructs');
         hasConstructorTag = searchTags(doclet, 'constructor');
         hasLendsTag = searchTags(doclet, 'lends');
+        //      { todos: [ 'RETURNWHAT' ],
+        //  returnType: '?',
+        //  type: 'FunctionExpression',
+        //  memberOf: 'FooterService.prototype',
+        //  realName: 'FooterService.prototype.ready',
+        //  longName: 'FooterService.prototype.ready',
+        //  ctor: false,
+        //  lineNumber: 13,
+        //  line: 'FooterService.prototype.ready = function () {',
+        //  comment: -1,
+        //  range: [ 579, 641 ],
+        //  name: 'ready' }
         if (functionWrapper.kind == null) {
             if (YUIDOC_MODE && !hasConstructsTag && !hasConstructorTag && !hasLendsTag && !functionWrapper.ctor) {
                 commentBlock.push(' * @method ' + functionWrapper.name);
                 if (functionWrapper.memberOf) {
                     commentBlock.push(' * @memberOf ' + functionWrapper.memberOf);
                 }
-            } else if (functionWrapper.memberOf) {}
+            } else if (functionWrapper.memberOf) {
+                //  commentBlock.push(' * @memberOf ' + functionWrapper.memberOf);
+            }
         }
         if (doclet.freeText && doclet.freeText != '') {
             var freeText = doclet.freeText.trim();
@@ -3042,6 +3055,14 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
         }
     }
     var moduleName = walkerObj.mappedModuleName;
+    if (!moduleName) {
+        moduleName = walkerObj.results.amdProc.moduleName;
+        if (!moduleName) {
+            console.log(walkerObj);
+            moduleNameNotFound();
+        }
+    }
+    //console.log(functionWrapper);
     if (ctor && hasConstructorTag == null && hasConstructsTag == null) {
         if (incompleteLends != null && incompleteLends.possibleClassName === functionWrapper.name) {
             var justPath = incompleteLends.value;
@@ -3064,7 +3085,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
                     walkerObj.namedConstructors[incompleteLends.fullClassName] = functionWrapper;
                     commentBlock.push(' * @constructs ' + incompleteLends.fullClassName);
                     logger.log(' * @constructs ' + incompleteLends.fullClassName);
-                } else {}
+                }
                 incompleteLends.fullClassName = null;
                 delete incompleteLends.fullClassName;
             } else {
@@ -3074,7 +3095,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
                     walkerObj.namedConstructors[moduleName + '~' + functionWrapper.name] = functionWrapper;
                     logger.log('ZZZZZZZZZZZ ' + constructsMarkup);
                     commentBlock.push(constructsMarkup);
-                } else {}
+                }
             }
             spliceInlineConstructor = functionWrapper;
         } else {
@@ -3086,7 +3107,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
             } else {
                 context = functionWrapper.name;
             }
-            logger.log('What is left of this "constructor" ? ' + context);
+            logger.log('What is left of this "constructor" ? ' + context, walkerObj.results.amdProc.moduleName);
             if (walkerObj.namedConstructors[moduleName + '~' + context] == null) {
                 if (YUIDOC_MODE) {
                     commentBlock.push(' * @class ' + context);
@@ -3154,7 +3175,11 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
             } else {
                 commentBlock.push(' * @return ' + returnValue);
             }
-        } else {}
+        }
+    }
+    // add a simple comment
+    if (functionWrapper.comment === -1 && commentBlock.join('\n').indexOf(functionWrapper.name) === -1) {
+        commentBlock.push(' * ' + functionWrapper.name);
     }
     if (commentBlock.length === 1) {
         if (COMMENT_EVERYTHING) {

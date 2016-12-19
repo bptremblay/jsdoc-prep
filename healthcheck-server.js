@@ -18,8 +18,8 @@ var serverUrl = !DEBUG ? "benjamintremblay.com" : "127.0.0.1";
 var http = require("http");
 var path = require("path");
 var fs = require("fs");
-var healthCheck = require('./fileSystemProcessor');
-var sfp = require('./singleFileProcessor');
+var healthCheck = require('./tasks/lib/fileSystemProcessor');
+var sfp = require('./tasks/lib/singleFileProcessor');
 var rimraf = require('rimraf');
 console.log("Starting healthcheck web application at " + serverUrl + ":" + port);
 /**
