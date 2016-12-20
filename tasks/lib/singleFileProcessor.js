@@ -2926,13 +2926,44 @@ var stripCommentsProc = {
         doneCallback(input);
     }
 };
-var esNextProc = {
+var esNextCommonJSProc = {
     id: 'esNextProc',
     type: 'processor',
     description: 'Runs esnext -I file.js',
     process: function (input, doneCallback) {
         var path = require('path');
         var exePath = path.normalize('node_modules/.bin/esnext  -I -b modules.commonjs');
+        var exec = require('child_process').exec;
+        var cmdLine = exePath;
+        cmdLine += ' ' + input.processedFilePath;
+        logger.log(cmdLine);
+        var child = exec(cmdLine, function (error, stdout, stderr) {
+            if (stderr) {
+                console.error(stderr);
+            }
+        });
+        /**
+         * Close.
+         * @param code
+         */
+        child.on('close', function (code) {
+            logger.log('esnext process exited with code ' + code);
+            var newSource = readFile(input.processedFilePath);
+            input.source = newSource;
+            doneCallback(input);
+        });
+        child.on('error', function (code) {
+            logger.log('esnext process errored with code ' + code);
+        });
+    }
+};
+var esNextProc = {
+    id: 'esNextProc',
+    type: 'processor',
+    description: 'Runs esnext -I file.js',
+    process: function (input, doneCallback) {
+        var path = require('path');
+        var exePath = path.normalize('node_modules/.bin/esnext  -I');
         var exec = require('child_process').exec;
         var cmdLine = exePath;
         cmdLine += ' ' + input.processedFilePath;
