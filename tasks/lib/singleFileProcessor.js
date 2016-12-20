@@ -2932,7 +2932,7 @@ var esNextProc = {
     description: 'Runs esnext -I file.js',
     process: function (input, doneCallback) {
         var path = require('path');
-        var exePath = path.normalize('node_modules/.bin/esnext  -I');
+        var exePath = path.normalize('node_modules/.bin/esnext  -I -b modules.commonjs');
         var exec = require('child_process').exec;
         var cmdLine = exePath;
         cmdLine += ' ' + input.processedFilePath;
