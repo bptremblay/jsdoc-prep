@@ -2261,7 +2261,7 @@ function addMissingComments(walkerObj, errors) {
                     var constructorDoc = '/**\n * @constructor\n * @extends express\n */';
                     input = prependLineByOffset(input, expressOffset, constructorDoc);
                     walkerObj.source = input;
-                    logger.log('>>>>> Need to recalculate node module: ' + walkerObj.name + '.');
+                    logger.log('>>>>> 1)Need to recalculate node module: ' + walkerObj.name + '.');
                     walkerObj.EXPRESS = true;
                     walkerObj.NODEJS = true;
                     return addMissingComments(walkerObj, errors);
@@ -2271,12 +2271,14 @@ function addMissingComments(walkerObj, errors) {
                 var exportsSplit = input.split('module.exports')[1].trim();
                 exportsSplit = exportsSplit.split('=')[1].trim();
                 exportsSplit = exportsSplit.split(';').join('');
-                if (exportsSplit.split('\n').length < 2) {
+                console.log('I think the node module exports a symbol: ', exportsSplit);
+                if (exportsSplit.split('\n').length < 2 && input.indexOf('@constructor') === -1) {
                     var constructorDoc = '/**\n * @constructor\n */';
+                    // FIXME: ctorOffset fails if exportsSplit is in a comment!!!
                     var ctorOffset = input.indexOf(exportsSplit);
                     input = prependLineByOffset(input, ctorOffset, constructorDoc);
                     walkerObj.source = input;
-                    logger.log('>>>>> Need to recalculate node module: ' + walkerObj.name + '.');
+                    logger.log('>>>>> 2)Need to recalculate node module: ' + walkerObj.name + '.');
                     walkerObj.NODEJS = true;
                     walkerObj.NODE_EXPORTS = exportsSplit;
                     return addMissingComments(walkerObj, errors);
@@ -3190,10 +3192,27 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
             return '';
         }
     } else {
+        var hasConstructor = false;
+        if (commentBlock.join(' ').indexOf('@constructor') !== -1) {
+            //console.log(commentBlock);
+            hasConstructor = true;
+        }
         commentBlock.push(' */');
-        for (var cb = 0; cb < commentBlock.length; cb++) {
-            var cbx = commentBlock[cb];
-            commentBlock[cb] = cbx.split('\n * ').join('');
+        if (hasConstructor) {
+            for (var cb = 0; cb < commentBlock.length; cb++) {
+                var cbx = commentBlock[cb];
+                if (commentBlock[cb].indexOf('@constant') !== -1) {
+                    console.warn('@@@@@@@@@@@@@@@ skipping comment ', commentBlock[cb]);
+                    commentBlock[cb] = ' * ';
+                } else {
+                    commentBlock[cb] = cbx.split('\n * ').join('');
+                }
+            }
+        } else {
+            for (var cb = 0; cb < commentBlock.length; cb++) {
+                var cbx = commentBlock[cb];
+                commentBlock[cb] = cbx.split('\n * ').join('');
+            }
         }
         return commentBlock.join('\n');
     }

@@ -1,14 +1,12 @@
 {
-
- "env": {
-    "browser": true,
-    "node": true,
-    "amd": false,
-    "mocha": false,
-    "jasmine": false
-  },
-  "ecmaFeatures": {},
-  "globals": {},
-  "rules": {}
-
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "semi": 2
+    }
 }
