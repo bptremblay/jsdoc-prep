@@ -2927,9 +2927,9 @@ var stripCommentsProc = {
     }
 };
 var esNextCommonJSProc = {
-    id: 'esNextProc',
+    id: 'esNextCommonJSProc',
     type: 'processor',
-    description: 'Runs esnext -I file.js',
+    description: 'Runs esnext  -I -b modules.commonjs',
     process: function (input, doneCallback) {
         var path = require('path');
         var exePath = path.normalize('node_modules/.bin/esnext  -I -b modules.commonjs');

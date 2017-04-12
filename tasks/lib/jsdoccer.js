@@ -2271,8 +2271,8 @@ function addMissingComments(walkerObj, errors) {
                 var exportsSplit = input.split('module.exports')[1].trim();
                 exportsSplit = exportsSplit.split('=')[1].trim();
                 exportsSplit = exportsSplit.split(';').join('');
-                console.log('I think the node module exports a symbol: ', exportsSplit);
-                if (exportsSplit.split('\n').length < 2 && input.indexOf('@constructor') === -1) {
+                logger.log('I think the node module exports a symbol: ', exportsSplit);
+                if (exportsSplit.split('\n').length < 2 && (input.indexOf('@constructor') === -1 && input.indexOf('@class') === -1)) {
                     var constructorDoc = '/**\n * @constructor\n */';
                     // FIXME: ctorOffset fails if exportsSplit is in a comment!!!
                     var ctorOffset = input.indexOf(exportsSplit);
