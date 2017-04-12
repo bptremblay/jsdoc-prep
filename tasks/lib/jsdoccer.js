@@ -3,7 +3,8 @@ var pathAPI = require('path');
 var wrenchTool = require('wrench');
 var uid = 0;
 var nodes = [];
-var COMMENT_VARIABLES = true;
+// TODO only comment variables if they are PUBLIC... what does that even mean?
+var COMMENT_VARIABLES = false;
 var COMMENT_EVERYTHING = false;
 var FIX_COMMENT_GRAMMAR = false;
 var FIX_MODULE_NAMES = false;
@@ -2097,6 +2098,31 @@ function addMissingComments(walkerObj, errors) {
         writeFile('ast.json', JSON.stringify(ast, null, 2));
     } catch (writeJsonErr) {}
     var expressionStatements = getNodesByType(ast, 'ExpressionStatement');
+    var callExpressions = getNodesByType(ast, 'CallExpression');
+    var isAMD = (input.indexOf('define (') !== -1 || input.indexOf('define(') !== -1);
+    var beforeDefine = '';
+    if (isAMD) {
+        beforeDefine = input.split('define(')[0].trim();
+        //    beforeDefine = beforeDefine.trim();
+        //    if (input.indexOf(beforeDefine) !== -1) {
+        //        input = beforeDefine + '\n\n' + input;
+        //    }
+    }
+    for (var index = 0; index < callExpressions.length; index++) {
+        var ce = callExpressions[index];
+        if (ce.callee.name === '__initClass__') {
+            // WARNING this is the class body WITHOUT anything else!!
+            // WE ONLY WANT TO REMOVE THE INITCLASS INVOCATION
+            var cb = ce.arguments[0];
+            var newBody = input.substring(cb.range[0], cb.range[1]);
+            var a = input.substring(0, ce.range[0]);
+            var b = input.substring(ce.range[1]);
+            input = '// Removed the __initClass__()\n' + a + newBody + '\n// Call .initClass() here??? \n' + b;
+            //console.log(input);
+            walkerObj.source = input;
+            return addMissingComments(walkerObj, errors);
+        }
+    }
     var defineBlocks = [];
     var es = 0;
     var defineCount = 0;
@@ -2359,6 +2385,7 @@ function addMissingComments(walkerObj, errors) {
     var allMethods = dumpNamedFunctions(walkerObj, functionDeclarations, ast, expressionFunctions);
     var classDeclarations = getNodesByType(ast, 'ClassDeclaration');
     var methodDefinitions = getNodesByType(ast, 'MethodDefinition');
+    var lastConstructor = null;
     allMethods = dumpNamedFunctions(walkerObj, methodDefinitions, ast, allMethods);
     for (var c in classDeclarations) {
         if (classDeclarations.hasOwnProperty(c)) {
@@ -2371,7 +2398,7 @@ function addMissingComments(walkerObj, errors) {
     var varExpressionDeclarations = dumpNamedVariables(walkerObj, varExpressions, ast);
     var classExpressionDeclarations = dumpNamedClassDeclarations(walkerObj, classDeclarations, ast);
     if (classExpressionDeclarations.length > 1) {
-        console.log('THIS es6 MODULE HAS MORE THAN ONE CLASS!!!!');
+        console.warn('THIS es6 MODULE HAS MORE THAN ONE CLASS!!!!');
     } else if (classExpressionDeclarations.length === 1) {
         walkerObj.ES6 = true;
         var lines = input.split('\n');
@@ -2443,12 +2470,55 @@ function addMissingComments(walkerObj, errors) {
             classDeclaration = getMethodOnLine(classExpressionDeclarations, lineIndex + 1, ast, input);
         }
         var itemToComment = null;
+        if (lastConstructor && lastConstructor.superInvocation) {
+            if (lastConstructor.moved && trimLine === lastConstructor.superInvocation.trim()) {
+                logger.log('Comment out a super() invocation.');
+                line = '// NOT HERE ' + line;
+                lastConstructor = null;
+            } else {
+                if (trimLine === lastConstructor.superInvocation.trim()) {
+                    logger.log('super() invocation is already in the right place. We are done!');
+                    lastConstructor = null;
+                } else {
+                    if (!lastConstructor.moved) {
+                        line = '// Moved super() up here!\n' + lastConstructor.superInvocation + '\n' + line;
+                        lastConstructor.moved = true;
+                    }
+                }
+            }
+        }
         if (method) {
             itemToComment = method;
         } else if (variable) {
             itemToComment = variable;
         } else if (classDeclaration) {
             itemToComment = classDeclaration;
+        }
+        if (lastConstructor === null && itemToComment && itemToComment.name === 'constructor') {
+            var range = itemToComment.range;
+            var codeBody = input.substring(range[0], range[1]).trim();
+            if (codeBody.indexOf('super(') !== -1) {
+                logger.log('Make sure super() is at top of the the constructor body!!!', itemToComment, codeBody);
+                lastConstructor = {
+                    data: itemToComment,
+                    lineNumber: lineIndex,
+                    body: codeBody,
+                    superInvocation: null,
+                    moved: false
+                };
+                var superInvocation = null;
+                var subLines = lastConstructor.body.split('\n');
+                for (var sL = 0; sL < subLines.length; sL++) {
+                    var subLine = subLines[sL].trim();
+                    if (subLine.indexOf('super(') === 0) {
+                        superInvocation = subLines[sL];
+                        lastConstructor.superInvocation = superInvocation;
+                    }
+                }
+                if (!lastConstructor.superInvocation) {
+                    lastConstructor = null;
+                }
+            }
         }
         if (rewriteLines) {
             var newComment = '';
@@ -2959,7 +3029,9 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
                 functionWrapper.type = '';
             } else if (functionWrapper.type === 'ClassDeclaration') {
                 doclet.freeText = 'The class ' + functionWrapper.name + '.';
-            } else if (functionWrapper.memberOf) {} else {
+            } else if (functionWrapper.memberOf) {
+                // ???
+            } else {
                 doclet.freeText = 'The ' + decapitalize(funkyName) + '.';
             }
         }
@@ -3181,7 +3253,10 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     }
     // add a simple comment
     if (functionWrapper.comment === -1 && commentBlock.join('\n').indexOf(functionWrapper.name) === -1) {
-        commentBlock.push(' * ' + functionWrapper.name);
+        //commentBlock.push(' * ' + functionWrapper.name);
+        if (commentBlock.length === 1) {
+            commentBlock.push(' * ' + '@function');
+        }
     }
     if (commentBlock.length === 1) {
         if (COMMENT_EVERYTHING) {
