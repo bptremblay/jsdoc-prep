@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/button-model.js | galileo-button-editor@1.11.4 API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.roving.com/ES/galileo-button-editor">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-editor-view.js~ButtonEditorView.html">ButtonEditorView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-editor.js~ButtonEditor.html">ButtonEditor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-model.js~ButtonModel.html">ButtonModel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-view.js~ButtonView.html">ButtonView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/editor-model.js~ButtonEditorModel.html">ButtonEditorModel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/legacy-color-check.js~LegacyColorCheck.html">LegacyColorCheck</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/move-handle-view.js~MoveHandleView.html">MoveHandleView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-legacyColorCheck">legacyColorCheck</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">nls</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-root">root</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/button-model.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @module button-model
+ * @requires underscore
+ * @requires backbone
+ * @requires button-editor-path/legacy-color-check
+ * @requires i18n!button-editor-path/nls/button-editor
+ * @requires galileo-lib/modules/services/url-validator-service
+ */
+import _ from &apos;underscore&apos;;
+import Backbone from &apos;backbone&apos;;
+import legacyColorCheck from &apos;button-editor-path/legacy-color-check&apos;;
+import i18n from &apos;i18n!button-editor-path/nls/button-editor&apos;;
+import UrlValidator from &apos;galileo-lib/modules/services/url-validator-service&apos;;
+// Can&apos;t redefine module values, they are const!! _ ?= window._
+/**
+ * The set color attr.
+ * setColorAttr
+ */
+let setColorAttr = undefined;
+/**
+ * The class ButtonModel.
+ * @constructor
+ * @memberOf module:button-model
+ * @extends Backbone.Model
+ */
+class ButtonModel extends Backbone.Model {
+    /**
+     * initClass
+     */
+    static initClass() {
+            this.prototype.FONT_SIZE_MAX_VALUE = 48;
+            this.prototype.defaults = {
+                link: null,
+                linkType: &apos;web&apos;,
+                text: i18n.placeholder_text,
+                backgroundColor: {
+                    global: &apos;#494&apos;,
+                    local: &apos;transparent&apos;
+                },
+                height: 24,
+                alignment: &apos;center&apos;,
+                fontColor: &apos;&apos;,
+                fontFamily: &apos;&apos;,
+                fontSize: &apos;&apos;,
+                fontWeight: &apos;normal&apos;,
+                fontStyle: &apos;normal&apos;
+            };
+            /**
+             * @param that
+             * @param colorAttr
+             * @param type
+             * @param newColor
+             * @param options
+             * setColorAttr
+             */
+            setColorAttr = function(that, colorAttr, type, newColor, options) {
+                /**
+                 * The bg color.
+                 * @constant Bg color
+                 * bgColor
+                 */
+                const bgColor = _.clone(that.get(colorAttr)); // ensures change event is triggered
+                bgColor[type] = newColor;
+                return that.set(colorAttr, bgColor, options);
+            };
+        }
+        /**
+         * @constructor
+         * @memberOf module:button-model
+         */
+    constructor() {
+            super(...arguments);
+            /**
+             * method
+             */
+            for (let method of Array.from(_.keys(ButtonModel.prototype.defaults))) {
+                if (this[method] == null) {
+                    this[method] = this._makeGetOrSet(method);
+                }
+            }
+            /**
+             * @param val
+             * @param options
+             * fontSize
+             */
+            this.fontSize = function(val, options) {
+                if (val != null) {
+                    /**
+                     * The newval.
+                     * @constant Newval
+                     */
+                    const newval = !isNaN(parseInt(val)) ?
+                        Math.max(0, Math.min(val, this.FONT_SIZE_MAX_VALUE)) : undefined;
+                    if (newval !== val) {
+                        this.trigger(&apos;limit:fontSize&apos;, this);
+                        val = newval;
+                    }
+                    return this.set(&apos;fontSize&apos;, val, options);
+                } else {
+                    return this.get(&apos;fontSize&apos;);
+                }
+            };
+        }
+        /**
+         * @private
+         * @param attr
+         * @return {Function}
+         * _makeGetOrSet
+         */
+    _makeGetOrSet(attr) {
+            return function(val, options) {
+                if (val != null) {
+                    return this.set(attr, val, options);
+                } else {
+                    return this.get(attr, val);
+                }
+            };
+        }
+        /**
+         * @private
+         * @param url
+         * _cleanURL
+         */
+    _cleanURL(url) {
+            url = url.replace(/^http:\/\//, &apos;&apos;).trim();
+            // decode first because &apos; &apos; becomes &apos;%20&apos; otherwise
+            if (url.indexOf(&apos; &apos; === !-1)) {
+                return encodeURI(decodeURI(url));
+            }
+        }
+        /**
+         * @param attrs
+         * @param options
+         * validate
+         */
+    validate(attrs, options) {
+            if (attrs.link != null) {
+                /**
+                 * The url validator.
+                 * @constant Url validator
+                 * urlValidator
+                 */
+                const urlValidator = new UrlValidator(attrs.link);
+                if (!urlValidator.isValid()) {
+                    return urlValidator.getError();
+                }
+            }
+        }
+        /**
+         * getError
+         */
+    getError() {
+            if (!this.isValid()) {
+                return this.validationError;
+            }
+        }
+        /**
+         * @param val
+         * @param options
+         * setLink
+         */
+    setLink(val, options) {
+            if (!val) {
+                this.set(&apos;link&apos;, null, options);
+                return;
+            }
+            val = val.trim();
+            if (!__guard__(options, x =&gt; x.noProtocol)) {
+                val = this._cleanURL(val);
+            }
+            if (__guard__(options, x1 =&gt; x1.noProtocol)) {
+                return this.set(&apos;link&apos;, val, options);
+            } else if (/^.+:/.test(val)) {
+                return this.set(&apos;link&apos;, val, options);
+            } else if (/^[\w\.-]+@[\w\.-]+\.\w+/.test(val)) {
+                return this.set(&apos;link&apos;, `mailto:${val}`, options);
+            } else {
+                return this.set(&apos;link&apos;, `http://${val}`, options);
+            }
+        }
+        /**
+         * toggleBold
+         */
+    toggleBold() {
+            return this._toggle(&apos;fontWeight&apos;, [&apos;bold&apos;, &apos;normal&apos;]);
+        }
+        /**
+         * toggleItalic
+         */
+    toggleItalic() {
+            return this._toggle(&apos;fontStyle&apos;, [&apos;italic&apos;, &apos;normal&apos;]);
+        }
+        /**
+         * @private
+         * @param propertyName
+         * @param options
+         * _toggle
+         */
+    _toggle(propertyName, options) {
+            /**
+             * The property.
+             * @constant Property
+             */
+            const property = this.get(propertyName);
+            if (property === options[0]) {
+                return this.set(propertyName, options[1]);
+            } else {
+                return this.set(propertyName, options[0]);
+            }
+        }
+        /**
+         * usingLocalColors
+         */
+    usingLocalColors() {
+            return this.backgroundColor().local !== &apos;transparent&apos;;
+        }
+        /**
+         * getBackgroundColor
+         */
+    getBackgroundColor() {
+            if (this.usingLocalColors()) {
+                return this.backgroundColor().local;
+            } else if (legacyColorCheck.usesLegacyGlobalColors($(this.get(&apos;markup&apos;)))) {
+                return this.backgroundColor().global;
+            } else {
+                return &apos;&apos;;
+            }
+        }
+        /**
+         * @param newColor
+         * @param options
+         * setGlobalBackgroundColor
+         */
+    setGlobalBackgroundColor(newColor, options) {
+            return setColorAttr(this, &apos;backgroundColor&apos;, &apos;global&apos;, newColor, options);
+        }
+        /**
+         * @param newColor
+         * setLocalBackgroundColor
+         */
+    setLocalBackgroundColor(newColor) {
+        return setColorAttr(this, &apos;backgroundColor&apos;, &apos;local&apos;, newColor);
+    }
+}
+ButtonModel.initClass();
+// Added explicit return to exports at EOF:
+export default ButtonModel;
+/**
+ * @private
+ * @param value
+ * @param transform
+ * @return {Object} ConditionalExpression
+ * __guard__
+ */
+function __guard__(value, transform) {
+    return (typeof value !== &apos;undefined&apos; &amp;&amp; value !== null) ? transform(value) : undefined;
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/state-migrations.js | galileo-button-editor@1.11.4 API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.roving.com/ES/galileo-button-editor">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-editor-view.js~ButtonEditorView.html">ButtonEditorView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-editor.js~ButtonEditor.html">ButtonEditor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-model.js~ButtonModel.html">ButtonModel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-view.js~ButtonView.html">ButtonView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/editor-model.js~ButtonEditorModel.html">ButtonEditorModel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/legacy-color-check.js~LegacyColorCheck.html">LegacyColorCheck</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/move-handle-view.js~MoveHandleView.html">MoveHandleView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-legacyColorCheck">legacyColorCheck</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">nls</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-root">root</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/state-migrations.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @module state-migrations
+ */
+/**
+ * The migration100 110.
+ * @constant Migration100 110
+ * migration100_110
+ */
+const migration100_110 = {
+    fromVersion() {
+        return {
+            major: 1,
+            minor: 0,
+            patch: 0
+        };
+    },
+    toVersion() {
+        return {
+            major: 1,
+            minor: 1,
+            patch: 0
+        };
+    },
+    migrate(state) {
+        state.backgroundColor = {
+            global: state.color,
+            local: &apos;transparent&apos;
+        };
+        delete state.color;
+        return state;
+    }
+};
+/**
+ * The migration110 120.
+ * @constant Migration110 120
+ * migration110_120
+ */
+const migration110_120 = {
+    /**
+     * fromVersion
+     */
+    fromVersion() {
+        return {
+            major: 1,
+            minor: 1,
+            patch: 0
+        };
+    },
+    /**
+     * toVersion
+     */
+    toVersion() {
+        return {
+            major: 1,
+            minor: 2,
+            patch: 0
+        };
+    },
+    /**
+     * @param state
+     * migrate
+     */
+    migrate(state) {
+        /**
+         * The $old editor markup.
+         * @constant $old editor markup
+         * $old_editor_markup
+         */
+        const $old_editor_markup = $(state.markup);
+        /**
+         * The content type.
+         * @constant Content type
+         * content_type
+         */
+        const content_type = $old_editor_markup.data(&apos;editor-type&apos;);
+        /**
+         * The content name.
+         * @constant Content name
+         * content_name
+         */
+        const content_name = $old_editor_markup.data(&apos;editor-name&apos;);
+        $old_editor_markup.removeAttr(&apos;data-editor-type data-editor-name&apos;);
+        /**
+         * The $new editor markup.
+         * @constant $new editor markup
+         * $new_editor_markup
+         */
+        const $new_editor_markup = $(&apos;&lt;table&gt;&lt;tr&gt;&lt;/tr&gt;&lt;/table&gt;&apos;);
+        $new_editor_markup
+            .attr(&apos;data-editor-type&apos;, content_type)
+            .attr(&apos;data-editor-name&apos;, content_name);
+        $new_editor_markup.find(&apos;tr&apos;).append($old_editor_markup);
+        $new_editor_markup.attr(&apos;width&apos;, &apos;100%&apos;);
+        state.markup = $new_editor_markup.get(0).outerHTML;
+        return state;
+    }
+};
+export default [migration100_110, migration110_120];
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

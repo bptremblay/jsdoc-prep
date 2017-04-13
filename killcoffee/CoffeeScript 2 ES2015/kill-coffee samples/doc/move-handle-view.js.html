@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: move-handle-view.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: move-handle-view.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module move-handle-view
+ * @requires underscore
+ * @requires backbone
+ * @requires plugins/drag
+ */
+import _ from 'underscore';
+import Backbone from 'backbone';
+import 'plugins/drag';
+/**
+ * The class MoveHandleView.
+ * @extends Backbone.View
+ */
+class MoveHandleView extends Backbone.View {
+    /**
+     * initClass
+     */
+    static initClass() {
+            this.prototype.tagName = 'a';
+            this.prototype.attributes = {
+                href: '#',
+                draggable: true,
+                class: 'gl-button-move-handle'
+            };
+            this.prototype.events = {
+                click: '_preventDefault'
+            };
+        }
+        /**
+         * @param params
+         * @return {Object} AssignmentExpression
+         * initialize
+         */
+    initialize(params) {
+            this.descriptorProviderFn = params.descriptorProviderFn;
+            return this.$elToGhost = params.$elToGhost;
+        }
+        /**
+         * render
+         */
+    render() {
+            this.$el.attr('data-gl-remove-on-publish', true);
+            this.$el.drag({
+                type: 'block',
+                data: this.descriptorProviderFn,
+                start: event => {
+                    /**
+                     * The ui event.
+                     * @constant Ui event
+                     * uiEvent
+                     */
+                    const uiEvent = event.originalEvent;
+                    /**
+                     * The offset.
+                     * @constant Offset
+                     */
+                    const offset = $(event.target).offset();
+                    /**
+                     * The x offset.
+                     * @constant X offset
+                     * xOffset
+                     */
+                    const xOffset = uiEvent.pageX - offset.left;
+                    /**
+                     * The y offset.
+                     * @constant Y offset
+                     * yOffset
+                     */
+                    const yOffset = uiEvent.pageY - offset.top;
+                    return __guardMethod__(uiEvent.dataTransfer, 'setDragImage', o => o.setDragImage(
+                        this.$elToGhost.get(0), xOffset, yOffset
+                    ));
+                }
+            });
+            return this;
+        }
+        /**
+         * @private
+         * @param event
+         * _preventDefault
+         */
+    _preventDefault(event) {
+        return event.preventDefault();
+    }
+}
+MoveHandleView.initClass();
+// Added explicit return to exports at EOF:
+export default MoveHandleView;
+/**
+ * @private
+ * @param obj
+ * @param methodName
+ * @param transform
+ * __guardMethod__
+ */
+function __guardMethod__(obj, methodName, transform) {
+    if (typeof obj !== 'undefined' &amp;&amp; obj !== null &amp;&amp; typeof obj[methodName] === 'function') {
+        return transform(obj, methodName);
+    } else {
+        return undefined;
+    }
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-button-editor.html">button-editor</a></li><li><a href="module-button-editor-view.html">button-editor-view</a></li><li><a href="module-button-model.html">button-model</a></li><li><a href="module-button-view.html">button-view</a></li><li><a href="module-editor-model.html">editor-model</a></li><li><a href="module-galileo-jquery-ui-mobile-shim.html">galileo-jquery-ui-mobile-shim</a></li><li><a href="module-legacy-color-check.html">legacy-color-check</a></li><li><a href="module-move-handle-view.html">move-handle-view</a></li><li><a href="module-state-migrations.html">state-migrations</a></li></ul><h3>Classes</h3><ul><li><a href="module-button-editor-view-ButtonEditorView.html">ButtonEditorView</a></li><li><a href="module-button-editor-ButtonEditor.html">ButtonEditor</a></li><li><a href="module-button-model.ButtonModel.html">ButtonModel</a></li><li><a href="module-button-view-ButtonView.html">ButtonView</a></li><li><a href="module-editor-model-ButtonEditorModel.html">ButtonEditorModel</a></li><li><a href="module-galileo-jquery-ui-mobile-shim-SpinnerView.html">SpinnerView</a></li><li><a href="module-legacy-color-check-LegacyColorCheck.html">LegacyColorCheck</a></li><li><a href="module-move-handle-view-MoveHandleView.html">MoveHandleView</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Jan 19 2017 15:24:25 GMT-0500 (EST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

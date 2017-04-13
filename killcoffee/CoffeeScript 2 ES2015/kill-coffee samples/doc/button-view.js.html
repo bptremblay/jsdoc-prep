@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: button-view.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: button-view.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module button-view
+ * @requires underscore
+ * @requires button-editor-path/button-model
+ * @requires button-editor-path/move-handle-view
+ * @requires backbone
+ * @requires button-editor-path/lib/change-element-type.jquery
+ */
+import _ from 'underscore';
+import ButtonModel from 'button-editor-path/button-model';
+import MoveHandleView from 'button-editor-path/move-handle-view';
+import Backbone from 'backbone';
+import 'button-editor-path/lib/change-element-type.jquery';
+/**
+ * The key code tab.
+ * @constant Key code tab
+ * KEY_CODE_TAB
+ */
+const KEY_CODE_TAB = 9;
+/**
+ * The key code end.
+ * @constant Key code end
+ * KEY_CODE_END
+ */
+const KEY_CODE_END = 35;
+/**
+ * The key code home.
+ * @constant Key code home
+ * KEY_CODE_HOME
+ */
+const KEY_CODE_HOME = 36;
+/**
+ * The key code up.
+ * @constant Key code up
+ * KEY_CODE_UP
+ */
+const KEY_CODE_UP = 38;
+/**
+ * The key code down.
+ * @constant Key code down
+ * KEY_CODE_DOWN
+ */
+const KEY_CODE_DOWN = 40;
+/**
+ * The key code insert.
+ * @constant Key code insert
+ * KEY_CODE_INSERT
+ */
+const KEY_CODE_INSERT = 45;
+/**
+ * The key code b.
+ * @constant Key code b
+ * KEY_CODE_B
+ */
+const KEY_CODE_B = 66;
+/**
+ * The key code i.
+ * @constant Key code i
+ * KEY_CODE_I
+ */
+const KEY_CODE_I = 73;
+// Can't redefine module values, they are const!! # Can't redefine module values, they are const!! _ ?= window._
+/**
+ * stripHTML
+ */
+$.fn.stripHTML = function() {
+    return this.html(this.text());
+};
+/**
+ * The class ButtonView.
+ * @extends Backbone.View
+ */
+class ButtonView extends Backbone.View {
+    /**
+     * @constructor
+     * @memberOf module:button-view
+     * @param {...*} args
+     */
+    constructor(...args) {
+            // Moved super() up here!
+            super(...args);
+            this.onKeyDown = this.onKeyDown.bind(this);
+            this.saveText = this.saveText.bind(this);
+            this.update = this.update.bind(this);
+            this.highlightBlock = this.highlightBlock.bind(this);
+            // NOT HERE       super(...args);
+        }
+        /**
+         * initClass
+         */
+    static initClass() {
+            this.prototype.events = {
+                'focusout': 'deactivate'
+            };
+        }
+        /**
+         * @param params
+         * initialize
+         */
+    initialize(params) {
+            this.editor = params.editor;
+            this.contentMovable = params.contentMovable;
+            this.descriptorProviderFn = params.descriptorProviderFn;
+            this.listenTo(this.model, 'change', this.update);
+            return this.listenTo(this.editor.events, 'highlight-block', this.highlightBlock);
+        }
+        /**
+         * deactivate
+         */
+    deactivate() {
+            if (this.editableContent().length === 0) {
+                return this.editableContent(ButtonModel.prototype.defaults.text);
+            }
+        }
+        /**
+         * @param e
+         * onPossibleTextChange
+         */
+    onPossibleTextChange(e) {
+            if (e.type === 'paste') {
+                return $(e.target).stripHTML();
+            }
+        }
+        /**
+         * @param e
+         * onKeyDown
+         */
+    onKeyDown(e) {
+            /**
+             * The is meta key.
+             * @constant Is meta key
+             * isMetaKey
+             */
+            const isMetaKey = keyCode => [
+                KEY_CODE_TAB,
+                KEY_CODE_END,
+                KEY_CODE_HOME,
+                KEY_CODE_UP,
+                KEY_CODE_DOWN,
+                KEY_CODE_INSERT
+            ].includes(keyCode);
+            this.preventSystemFormatting(e);
+            if (this.isBoldAccelerator(e)) {
+                this.model.toggleBold();
+                return this.findTextContainer().focus();
+            } else if (this.isItalicAccelerator(e)) {
+                this.model.toggleItalic();
+                return this.findTextContainer().focus();
+            } else if (isMetaKey(e.keyCode)) {
+                e.preventDefault();
+                e.returnValue = false; // Thanks, IE
+                return false;
+            }
+        }
+        /**
+         * Returns true if is bold accelerator.
+         * @param e
+         * @return {Object} boolean
+         * isBoldAccelerator
+         */
+    isBoldAccelerator(e) {
+            return this.isAccelerator(e) &amp;&amp; (e.keyCode === KEY_CODE_B);
+        }
+        /**
+         * Returns true if is italic accelerator.
+         * @param e
+         * @return {Object} boolean
+         * isItalicAccelerator
+         */
+    isItalicAccelerator(e) {
+            return this.isAccelerator(e) &amp;&amp; (e.keyCode === KEY_CODE_I);
+        }
+        /**
+         * Returns true if is accelerator.
+         * @param e
+         * @return {Object} boolean
+         * isAccelerator
+         */
+    isAccelerator(e) {
+            return e.ctrlKey || e.metaKey;
+        }
+        // The system bold and italic functions only operate on the
+        // selected text, similar to how the text editor works. In the case
+        // of button, we want the formatting to apply across the entire button text.
+        /**
+         * @param e
+         * preventSystemFormatting
+         */
+    preventSystemFormatting(e) {
+            if (this.isBoldAccelerator(e) || this.isItalicAccelerator(e)) {
+                return e.preventDefault();
+            }
+        }
+        /**
+         * saveText
+         */
+    saveText() {
+            /**
+             * The new text.
+             * @constant New text
+             * newText
+             */
+            const newText = this.editableContent();
+            if (newText !== this.model.text()) {
+                return this.model.text(newText);
+            }
+        }
+        /**
+         * @param val
+         * editableContent
+         */
+    editableContent(val) {
+            if (val != null) {
+                return this.findTextContainer().text(val);
+            } else {
+                return this.findTextContainer().text();
+            }
+        }
+        /**
+         * @param model
+         * @param options
+         * update
+         */
+    update(model, options) {
+            /**
+             * The ?.
+             * @constant ?
+             */
+            const {
+                changed
+            } = this.model;
+            if (__guard__(options, x => x.changedByGalileo) ||
+                (changed.text == null)) {
+                return this.render();
+            }
+        }
+        /**
+         * @return {Object} ThisExpression
+         * render
+         */
+    render() {
+            /**
+             * The json.
+             * @constant Json
+             */
+            const json = this.model.toJSON();
+            /**
+             * The button text.
+             * @constant Button text
+             * buttonText
+             */
+            const buttonText = _.escape(json.text).trim();
+            this.$el.css({
+                'background-color': this.model.getBackgroundColor()
+            });
+            this.$el.parent().attr('align', json.alignment);
+            /**
+             * The text style object.
+             * @constant Text style object
+             * textStyleObject
+             */
+            const textStyleObject = {};
+            /**
+             * The $text container.
+             * @constant $text container
+             * $textContainer
+             */
+            const $textContainer = this.findTextContainer();
+            textStyleObject['color'] = json.fontColor;
+            textStyleObject['font-size'] = json.fontSize ? `${json.fontSize}px` : '';
+            textStyleObject['font-family'] = json.fontFamily;
+            textStyleObject['font-weight'] = json.fontWeight;
+            textStyleObject['font-style'] = json.fontStyle;
+            $textContainer.html(buttonText)
+                .css(textStyleObject)
+                .attr({
+                    'contentEditable': 'true',
+                    'data-original-href': json.link
+                })
+                .changeElementType('div') // NOTE: returns a new, distinct JQuery selector object!
+                .on('keydown', this.onKeyDown)
+                .on('keydown paste blur', (_.debounce(this.onPossibleTextChange, 100)))
+                .on('keydown paste blur', (_.debounce(this.saveText, 1000)));
+            if (this.contentMovable &amp;&amp; _.isFunction(this.descriptorProviderFn)) {
+                /**
+                 * The move handle.
+                 * @constant Move handle
+                 * moveHandle
+                 */
+                const moveHandle = new MoveHandleView({
+                    descriptorProviderFn: this.descriptorProviderFn,
+                    $elToGhost: this.$el
+                });
+                this.$('td').append(moveHandle.render().$el);
+            }
+            return this;
+        }
+        /**
+         * @param $textContainer
+         * @return {Object} AssignmentExpression
+         * getCalculatedCssProperties
+         */
+    getCalculatedCssProperties($textContainer) {
+            /**
+             * The properties.
+             */
+            let properties;
+            if ($textContainer == null) {
+                $textContainer = this.findTextContainer();
+            }
+            return properties = {
+                fontColor: $textContainer.css('color'),
+                fontSize: $textContainer.css('font-size'),
+                fontFamily: $textContainer.css('font-family'),
+                backgroundColor: this.$el.css('background-color')
+            };
+        }
+        /**
+         * findTextContainer
+         */
+    findTextContainer() {
+            return this.$('.MainTextFullWidth > a, .MainTextFullWidth > div');
+        }
+        // A way that wouldn't depend on how the markup is written but doesn't
+        // seem to work in some situations:
+        // textNodeFilter = -> @nodeType is 3
+        // @$el.contents().filter(textNodeFilter).parent()
+        /**
+         * @param toggle
+         * highlightBlock
+         */
+    highlightBlock(toggle) {
+            return this.$el.toggleClass('delete-hover', toggle);
+        }
+        /**
+         * publishHTML
+         */
+    publishHTML() {
+        return this.el.outerHTML;
+    }
+}
+ButtonView.initClass();
+// Added explicit return to exports at EOF:
+export default ButtonView;
+/**
+ * @private
+ * @param value
+ * @param transform
+ * @return {Object} ConditionalExpression
+ * __guard__
+ */
+function __guard__(value, transform) {
+    return (typeof value !== 'undefined' &amp;&amp; value !== null) ? transform(value) : undefined;
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-button-editor.html">button-editor</a></li><li><a href="module-button-editor-view.html">button-editor-view</a></li><li><a href="module-button-model.html">button-model</a></li><li><a href="module-button-view.html">button-view</a></li><li><a href="module-editor-model.html">editor-model</a></li><li><a href="module-galileo-jquery-ui-mobile-shim.html">galileo-jquery-ui-mobile-shim</a></li><li><a href="module-legacy-color-check.html">legacy-color-check</a></li><li><a href="module-move-handle-view.html">move-handle-view</a></li><li><a href="module-state-migrations.html">state-migrations</a></li></ul><h3>Classes</h3><ul><li><a href="module-button-editor-view-ButtonEditorView.html">ButtonEditorView</a></li><li><a href="module-button-editor-ButtonEditor.html">ButtonEditor</a></li><li><a href="module-button-model.ButtonModel.html">ButtonModel</a></li><li><a href="module-button-view-ButtonView.html">ButtonView</a></li><li><a href="module-editor-model-ButtonEditorModel.html">ButtonEditorModel</a></li><li><a href="module-galileo-jquery-ui-mobile-shim-SpinnerView.html">SpinnerView</a></li><li><a href="module-legacy-color-check-LegacyColorCheck.html">LegacyColorCheck</a></li><li><a href="module-move-handle-view-MoveHandleView.html">MoveHandleView</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Jan 19 2017 15:24:25 GMT-0500 (EST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+  "document-renderer.js": {
+    "requires": {
+      "./logger": 1,
+      "./document": 1,
+      "./util": 1,
+      "./document-data": 1,
+      "./template-data": 1
+    },
+    "exports": null
+  },
+  "document.js": {
+    "requires": {
+      "./logger": 1,
+      "./util": 1,
+      "./rendering": 1,
+      "htmlEncode": 1,
+      "../../bower_components/mustache/mustache": 1,
+      "underscore": 1
+    },
+    "exports": null
+  },
+  "logger.js": {
+    "requires": {
+      "underscore": 1,
+      "./util": 1
+    },
+    "exports": null
+  },
+  "rendering.js": {
+    "requires": {
+      "./util": 1,
+      "htmlEncode": 1,
+      "./logger": 1,
+      "../../bower_components/mustache/mustache": 1,
+      "../../bower_components/underscore/underscore-min": 1
+    },
+    "exports": null
+  },
+  "test.js": {
+    "requires": {
+      "./logger.js": 1,
+      "./document-renderer": 1,
+      "jquery": 1
+    },
+    "exports": null
+  },
+  "util.js": {
+    "requires": {
+      "underscore": 1
+    },
+    "exports": null
+  }
+}

@@ -1224,6 +1224,14 @@ function parseDoclet(input, doclet, defineModuleInTopOfFile, nextLineOfCode, chu
 }
 
 function walk(node, attr, val, results, parentNode) {
+    if (results == null) {
+        results = [];
+    }
+    if (typeof node !== 'object') {
+        // console.error('NODE???', node);
+        // throw(new Error('walk: working with primitive node??'));
+        return results;
+    }
     if (parentNode == null) {
         parentNode = {
             type: 'ROOT'
@@ -1232,13 +1240,13 @@ function walk(node, attr, val, results, parentNode) {
     }
     if (node.type != null) {
         node.parentNode = parentNode.uid;
-        node.uid = uid++;
+        if (!node.uid) {
+            node.uid = uid++;
+            //console.log(node.type, uid);
+        }
     }
     if (node.length != null) {
         logger.error('Walking an Array!!!');
-    }
-    if (results == null) {
-        results = [];
     }
     nodes.push(node);
     if (node.hasOwnProperty(attr)) {
@@ -1247,19 +1255,22 @@ function walk(node, attr, val, results, parentNode) {
         }
     }
     for (var e in node) {
-        if (attr === e) {
-            continue;
-        }
-        if (e === 'comments') {
-            continue;
-        }
-        if (e === 'uid') {
-            continue;
-        }
-        if (e === 'parentNode') {
-            continue;
-        }
         if (node.hasOwnProperty(e)) {
+            if (attr === e) {
+                continue;
+            }
+            if (e === 'comments') {
+                continue;
+            }
+            if (e === 'uid') {
+                continue;
+            }
+            if (e === 'parentNode') {
+                continue;
+            }
+            if (e === 'range') {
+                continue;
+            }
             var child = node[e];
             if (child == null) {
                 continue;
@@ -1281,6 +1292,9 @@ function walk(node, attr, val, results, parentNode) {
 }
 
 function getNodeByUid(uid) {
+    if (nodes.length === 0) {
+        console.warn('getNodeByUid called with empty buffer');
+    }
     for (var index = 0; index < nodes.length; index++) {
         var node = nodes[index];
         if (node.uid === uid) {
@@ -1543,7 +1557,9 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                 var ownerClass = null;
                 if (obj.kind === 'method') {
                     parent = getParentClassDeclaration(obj);
-                    ownerClass = parent.id.name;
+                    if (parent) {
+                        ownerClass = parent.id.name;
+                    }
                 }
                 var key = obj.key;
                 var staticVal = obj.static;
@@ -1576,6 +1592,12 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
             }
             if (obj.type) {
                 functionWrapper.type = obj.type;
+            }
+            if (obj.uid) {
+                functionWrapper.uid = obj.uid;
+            }
+            if (obj.parentNode) {
+                functionWrapper.parentNode = obj.parentNode;
             }
             if (index === 0 && checkForReturnNode && walkerObj.preprocessed && functionWrapper.name === '') {
                 var bodyNodes = obj.body.body;
@@ -1672,8 +1694,12 @@ function dumpNamedFunctions(walkerObj, map, ast, output) {
                         }
                     }
                 }
+                //              if (ctor){
+                //                console.log(functionWrapper.name);
+                //                sksks();
+                //              }
                 functionWrapper.ctor = ctor;
-                functionWrapper.ctor = functionWrapper.name.indexOf('constructor') !== -1;
+                // functionWrapper.ctor = functionWrapper.name.indexOf('constructor') !== -1;
                 var lineNumber = getLineNumber(input, obj);
                 functionWrapper.lineNumber = lineNumber;
                 functionWrapper.line = trim(lines[lineNumber - 1]);
@@ -2201,7 +2227,9 @@ function addMissingComments(walkerObj, errors) {
                         iifeToken = ' = (function (';
                         whereToEdit = input.indexOf(iifeToken);
                     }
-                    if (whereToEdit === -1) {} else {
+                    if (whereToEdit === -1) {
+                        //
+                    } else {
                         var whichLine = getLineNumberForIndex(input, whereToEdit);
                         var editInput = '';
                         var classNameFromModule = capitalize(camelize(walkerObj.results.amdProc.moduleName));
@@ -2734,6 +2762,26 @@ function addMissingComments(walkerObj, errors) {
             newFile = nodeHeader + newFile;
         }
     }
+    if (newFile.indexOf('util.extendProto(') !== -1 && newFile.indexOf('var methods = {') !== -1) {
+        var splitDecl = newFile.indexOf('var methods = {');
+        var a = newFile.substring(0, splitDecl);
+        var offsetS = splitDecl + 'var methods = {'.length;
+        var b = newFile.substring(offsetS);
+        var lendsTag = '/**\n';
+        var parentClass = '';
+        for (var nc in walkerObj.namedConstructors) {
+            if (walkerObj.namedConstructors.hasOwnProperty(nc)) {
+                if (nc.indexOf(walkerObj.moduleName) !== -1) {
+                    //TODO: use the range object here to confirm
+                    parentClass = nc;
+                    break;
+                }
+            }
+        }
+        lendsTag += ' * @lends module:' + parentClass + '.prototype\n';
+        lendsTag += ' */';
+        newFile = a + '\n' + lendsTag + 'var methods = {' + b;
+    }
     var jsDoccerBlob = {
         'lines': lines.length,
         'requires': [],
@@ -2936,6 +2984,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     statusCheck.merge = false;
     if (functionWrapper != null) {
         if (functionWrapper.name.charAt(0) === functionWrapper.name.charAt(0).toUpperCase()) {
+            //  || (input.indexOf('util.extendProto(' + functionWrapper.name) !== -1)
             if (input.indexOf(functionWrapper.name + '.prototype') !== -1) {
                 //functionWrapper.ctor = true;
                 if (functionWrapper.line.trim().indexOf('function ' + functionWrapper.name) === -1) {
@@ -2959,6 +3008,39 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
                 funkyName = 'Creates a new instance of class ' + functionWrapper.name + '.';
             }
         }
+        //      else {
+        //            if (input.indexOf('util.extendProto(') !== -1) {
+        //                var parentNode = getNodeByUid(functionWrapper.parentNode);
+        //                //var astNode = getNodeByUid(functionWrapper.uid);
+        //                //console.log(functionWrapper.uid, functionWrapper.parentNode, astNode, parentNode);
+        //                //writeFile('./nodes.json', JSON.stringify(nodes, null, 2));
+        //                //console.log(parentNode);
+        //                function getParentDeclaration(method) {
+        //                    var parentNode = method;
+        //                    var type;
+        //                    while (parentNode) {
+        //                        parentNode = getNodeByUid(parentNode.parentNode);
+        //                        if (parentNode) {
+        //                            type = parentNode.type;
+        //                            if (type === 'FunctionDeclaration') {
+        //                                return parentNode;
+        //                            }
+        //                        } else {
+        //                            return null;
+        //                        }
+        //                    }
+        //                }
+        //                var grandPappy = getParentDeclaration(functionWrapper);
+        //                if (grandPappy) {
+        //                    functionWrapper.memberOf = grandPappy.id.name;
+        //                    functionWrapper.parentObject = grandPappy.id.name;
+        //                    //console.log(functionWrapper.name, functionWrapper.memberOf);
+        //                    //ses();
+        //                }
+        //                //console.log(grandPappy);
+        //                //ses();
+        //            }
+        //        }
         if (funkyName.indexOf('[') !== -1) {
             funkyName = '';
         }
@@ -3045,28 +3127,19 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
         hasConstructsTag = searchTags(doclet, 'constructs');
         hasConstructorTag = searchTags(doclet, 'constructor');
         hasLendsTag = searchTags(doclet, 'lends');
-        //      { todos: [ 'RETURNWHAT' ],
-        //  returnType: '?',
-        //  type: 'FunctionExpression',
-        //  memberOf: 'FooterService.prototype',
-        //  realName: 'FooterService.prototype.ready',
-        //  longName: 'FooterService.prototype.ready',
-        //  ctor: false,
-        //  lineNumber: 13,
-        //  line: 'FooterService.prototype.ready = function () {',
-        //  comment: -1,
-        //  range: [ 579, 641 ],
-        //  name: 'ready' }
         if (functionWrapper.kind == null) {
             if (YUIDOC_MODE && !hasConstructsTag && !hasConstructorTag && !hasLendsTag && !functionWrapper.ctor) {
                 commentBlock.push(' * @method ' + functionWrapper.name);
                 if (functionWrapper.memberOf) {
-                    commentBlock.push(' * @memberOf ' + functionWrapper.memberOf);
+                    commentBlock.push(' * @memberof ' + functionWrapper.memberOf);
                 }
             } else if (functionWrapper.memberOf) {
-                //  commentBlock.push(' * @memberOf ' + functionWrapper.memberOf);
+                // commentBlock.push(' * @memberof ' + functionWrapper.memberOf);
             }
         }
+        //        if (functionWrapper.parentObject) {
+        //            commentBlock.push(' * @memberof! ' + functionWrapper.parentObject);
+        //        }
         if (doclet.freeText && doclet.freeText != '') {
             var freeText = doclet.freeText.trim();
             freeText = addStarLines(freeText, {});
@@ -3188,7 +3261,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
                 } else {
                     commentBlock.push(' * @constructor');
                 }
-                commentBlock.push(' * @memberOf module:' + moduleName);
+                //commentBlock.push(' * @memberof module:' + moduleName);
                 functionWrapper.ctorType = '@constructor';
                 walkerObj.namedConstructors[moduleName + '~' + context] = functionWrapper;
             } else {
@@ -3208,6 +3281,21 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
             var extendsTags = searchTags(doclet, 'extends');
             if (!extendsTags) {
                 commentBlock.push(' * @extends ' + srcLine);
+            }
+        }
+    } else if (functionWrapper.ctor && input.indexOf('util.extendProto(') !== -1) {
+        if (input.indexOf('.prototype = new ') !== -1) {
+            var whichLineNumber = getLineNumberForIndex(input, input.indexOf('.prototype = new '));
+            var newLines = input.split('\n');
+            var theLine = newLines[whichLineNumber].trim();
+            var splitLine = theLine.split('.prototype = new ');
+            var theClass = splitLine[0];
+            var theBaseClass = splitLine[1].split('()')[0].trim();
+            //console.log(theBaseClass);
+            //sisi();
+            if (commentBlock.join('\n').indexOf('@extends') === -1) {
+              var pseudoModdule = decamelize(theBaseClass).toLowerCase();
+              commentBlock.push(' * @extends module:' + pseudoModdule + '~' + theBaseClass);
             }
         }
     }
@@ -3254,6 +3342,7 @@ function generateComment(functionWrapper, ast, walkerObj, input, commentBodyOpt,
     // add a simple comment
     if (functionWrapper.comment === -1 && commentBlock.join('\n').indexOf(functionWrapper.name) === -1) {
         //commentBlock.push(' * ' + functionWrapper.name);
+        // console.log(functionWrapper);
         if (commentBlock.length === 1) {
             commentBlock.push(' * ' + '@function');
         }

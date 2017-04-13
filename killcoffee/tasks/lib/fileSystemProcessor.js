@@ -72,6 +72,9 @@ function __nextFile() {
   var nextPath = queue.shift();
   var basePath = SCAN_PATH;
   var inPath = nextPath;
+  if (modulePaths == null){
+    modulePaths = {};
+  }
   sfp.processFile(modulePaths, basePath, inPath, outPath, testPath, docPath,
     processingChain,
     function (result) {

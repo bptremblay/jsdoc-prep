@@ -1,0 +1,2486 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "Identifier",
+          "name": "define",
+          "range": [
+            0,
+            6
+          ]
+        },
+        "arguments": [
+          {
+            "type": "ArrayExpression",
+            "elements": [
+              {
+                "type": "Literal",
+                "value": "underscore",
+                "raw": "'underscore'",
+                "range": [
+                  8,
+                  20
+                ]
+              }
+            ],
+            "range": [
+              7,
+              21
+            ]
+          },
+          {
+            "type": "FunctionExpression",
+            "id": null,
+            "params": [
+              {
+                "type": "Identifier",
+                "name": "_",
+                "range": [
+                  35,
+                  36
+                ]
+              }
+            ],
+            "body": {
+              "type": "BlockStatement",
+              "body": [
+                {
+                  "type": "ExpressionStatement",
+                  "expression": {
+                    "type": "Literal",
+                    "value": "use strict",
+                    "raw": "\"use strict\"",
+                    "range": [
+                      44,
+                      56
+                    ]
+                  },
+                  "directive": "use strict",
+                  "range": [
+                    44,
+                    57
+                  ]
+                },
+                {
+                  "type": "FunctionDeclaration",
+                  "id": {
+                    "type": "Identifier",
+                    "name": "merge",
+                    "range": [
+                      127,
+                      132
+                    ]
+                  },
+                  "params": [
+                    {
+                      "type": "Identifier",
+                      "name": "dest",
+                      "range": [
+                        133,
+                        137
+                      ]
+                    },
+                    {
+                      "type": "Identifier",
+                      "name": "source",
+                      "range": [
+                        139,
+                        145
+                      ]
+                    }
+                  ],
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ReturnStatement",
+                        "argument": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "_",
+                              "range": [
+                                162,
+                                163
+                              ]
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "extend",
+                              "range": [
+                                164,
+                                170
+                              ]
+                            },
+                            "range": [
+                              162,
+                              170
+                            ]
+                          },
+                          "arguments": [
+                            {
+                              "type": "Identifier",
+                              "name": "dest",
+                              "range": [
+                                171,
+                                175
+                              ]
+                            },
+                            {
+                              "type": "Identifier",
+                              "name": "source",
+                              "range": [
+                                177,
+                                183
+                              ]
+                            }
+                          ],
+                          "range": [
+                            162,
+                            184
+                          ]
+                        },
+                        "range": [
+                          155,
+                          185
+                        ]
+                      }
+                    ],
+                    "range": [
+                      147,
+                      191
+                    ]
+                  },
+                  "generator": false,
+                  "expression": false,
+                  "range": [
+                    118,
+                    191
+                  ]
+                },
+                {
+                  "type": "FunctionDeclaration",
+                  "id": {
+                    "type": "Identifier",
+                    "name": "isArray",
+                    "range": [
+                      306,
+                      313
+                    ]
+                  },
+                  "params": [
+                    {
+                      "type": "Identifier",
+                      "name": "input",
+                      "range": [
+                        314,
+                        319
+                      ]
+                    }
+                  ],
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ReturnStatement",
+                        "argument": {
+                          "type": "LogicalExpression",
+                          "operator": "&&",
+                          "left": {
+                            "type": "LogicalExpression",
+                            "operator": "&&",
+                            "left": {
+                              "type": "LogicalExpression",
+                              "operator": "&&",
+                              "left": {
+                                "type": "Identifier",
+                                "name": "input",
+                                "range": [
+                                  336,
+                                  341
+                                ]
+                              },
+                              "right": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "input",
+                                  "range": [
+                                    345,
+                                    350
+                                  ]
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "length",
+                                  "range": [
+                                    351,
+                                    357
+                                  ]
+                                },
+                                "range": [
+                                  345,
+                                  357
+                                ]
+                              },
+                              "range": [
+                                336,
+                                357
+                              ]
+                            },
+                            "right": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "input",
+                                "range": [
+                                  361,
+                                  366
+                                ]
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "pop",
+                                "range": [
+                                  367,
+                                  370
+                                ]
+                              },
+                              "range": [
+                                361,
+                                370
+                              ]
+                            },
+                            "range": [
+                              336,
+                              370
+                            ]
+                          },
+                          "right": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "Identifier",
+                              "name": "input",
+                              "range": [
+                                374,
+                                379
+                              ]
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "concat",
+                              "range": [
+                                380,
+                                386
+                              ]
+                            },
+                            "range": [
+                              374,
+                              386
+                            ]
+                          },
+                          "range": [
+                            336,
+                            386
+                          ]
+                        },
+                        "range": [
+                          329,
+                          387
+                        ]
+                      }
+                    ],
+                    "range": [
+                      321,
+                      393
+                    ]
+                  },
+                  "generator": false,
+                  "expression": false,
+                  "range": [
+                    297,
+                    393
+                  ]
+                },
+                {
+                  "type": "FunctionDeclaration",
+                  "id": {
+                    "type": "Identifier",
+                    "name": "hashCode",
+                    "range": [
+                      505,
+                      513
+                    ]
+                  },
+                  "params": [
+                    {
+                      "type": "Identifier",
+                      "name": "s",
+                      "range": [
+                        514,
+                        515
+                      ]
+                    }
+                  ],
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "ReturnStatement",
+                        "argument": {
+                          "type": "CallExpression",
+                          "callee": {
+                            "type": "MemberExpression",
+                            "computed": false,
+                            "object": {
+                              "type": "CallExpression",
+                              "callee": {
+                                "type": "MemberExpression",
+                                "computed": false,
+                                "object": {
+                                  "type": "Identifier",
+                                  "name": "s",
+                                  "range": [
+                                    532,
+                                    533
+                                  ]
+                                },
+                                "property": {
+                                  "type": "Identifier",
+                                  "name": "split",
+                                  "range": [
+                                    534,
+                                    539
+                                  ]
+                                },
+                                "range": [
+                                  532,
+                                  539
+                                ]
+                              },
+                              "arguments": [
+                                {
+                                  "type": "Literal",
+                                  "value": "",
+                                  "raw": "\"\"",
+                                  "range": [
+                                    540,
+                                    542
+                                  ]
+                                }
+                              ],
+                              "range": [
+                                532,
+                                543
+                              ]
+                            },
+                            "property": {
+                              "type": "Identifier",
+                              "name": "reduce",
+                              "range": [
+                                544,
+                                550
+                              ]
+                            },
+                            "range": [
+                              532,
+                              550
+                            ]
+                          },
+                          "arguments": [
+                            {
+                              "type": "FunctionExpression",
+                              "id": null,
+                              "params": [
+                                {
+                                  "type": "Identifier",
+                                  "name": "a",
+                                  "range": [
+                                    561,
+                                    562
+                                  ]
+                                },
+                                {
+                                  "type": "Identifier",
+                                  "name": "b",
+                                  "range": [
+                                    564,
+                                    565
+                                  ]
+                                }
+                              ],
+                              "body": {
+                                "type": "BlockStatement",
+                                "body": [
+                                  {
+                                    "type": "ExpressionStatement",
+                                    "expression": {
+                                      "type": "AssignmentExpression",
+                                      "operator": "=",
+                                      "left": {
+                                        "type": "Identifier",
+                                        "name": "a",
+                                        "range": [
+                                          577,
+                                          578
+                                        ]
+                                      },
+                                      "right": {
+                                        "type": "BinaryExpression",
+                                        "operator": "+",
+                                        "left": {
+                                          "type": "BinaryExpression",
+                                          "operator": "-",
+                                          "left": {
+                                            "type": "BinaryExpression",
+                                            "operator": "<<",
+                                            "left": {
+                                              "type": "Identifier",
+                                              "name": "a",
+                                              "range": [
+                                                583,
+                                                584
+                                              ]
+                                            },
+                                            "right": {
+                                              "type": "Literal",
+                                              "value": 5,
+                                              "raw": "5",
+                                              "range": [
+                                                588,
+                                                589
+                                              ]
+                                            },
+                                            "range": [
+                                              583,
+                                              589
+                                            ]
+                                          },
+                                          "right": {
+                                            "type": "Identifier",
+                                            "name": "a",
+                                            "range": [
+                                              593,
+                                              594
+                                            ]
+                                          },
+                                          "range": [
+                                            582,
+                                            594
+                                          ]
+                                        },
+                                        "right": {
+                                          "type": "CallExpression",
+                                          "callee": {
+                                            "type": "MemberExpression",
+                                            "computed": false,
+                                            "object": {
+                                              "type": "Identifier",
+                                              "name": "b",
+                                              "range": [
+                                                598,
+                                                599
+                                              ]
+                                            },
+                                            "property": {
+                                              "type": "Identifier",
+                                              "name": "charCodeAt",
+                                              "range": [
+                                                600,
+                                                610
+                                              ]
+                                            },
+                                            "range": [
+                                              598,
+                                              610
+                                            ]
+                                          },
+                                          "arguments": [
+                                            {
+                                              "type": "Literal",
+                                              "value": 0,
+                                              "raw": "0",
+                                              "range": [
+                                                611,
+                                                612
+                                              ]
+                                            }
+                                          ],
+                                          "range": [
+                                            598,
+                                            613
+                                          ]
+                                        },
+                                        "range": [
+                                          581,
+                                          613
+                                        ]
+                                      },
+                                      "range": [
+                                        577,
+                                        613
+                                      ]
+                                    },
+                                    "range": [
+                                      577,
+                                      614
+                                    ]
+                                  },
+                                  {
+                                    "type": "ReturnStatement",
+                                    "argument": {
+                                      "type": "BinaryExpression",
+                                      "operator": "&",
+                                      "left": {
+                                        "type": "Identifier",
+                                        "name": "a",
+                                        "range": [
+                                          630,
+                                          631
+                                        ]
+                                      },
+                                      "right": {
+                                        "type": "Identifier",
+                                        "name": "a",
+                                        "range": [
+                                          634,
+                                          635
+                                        ]
+                                      },
+                                      "range": [
+                                        630,
+                                        635
+                                      ]
+                                    },
+                                    "range": [
+                                      623,
+                                      636
+                                    ]
+                                  }
+                                ],
+                                "range": [
+                                  567,
+                                  644
+                                ]
+                              },
+                              "generator": false,
+                              "expression": false,
+                              "range": [
+                                551,
+                                644
+                              ]
+                            },
+                            {
+                              "type": "Literal",
+                              "value": 0,
+                              "raw": "0",
+                              "range": [
+                                646,
+                                647
+                              ]
+                            }
+                          ],
+                          "range": [
+                            532,
+                            648
+                          ]
+                        },
+                        "range": [
+                          525,
+                          649
+                        ]
+                      }
+                    ],
+                    "range": [
+                      517,
+                      655
+                    ]
+                  },
+                  "generator": false,
+                  "expression": false,
+                  "range": [
+                    496,
+                    655
+                  ]
+                },
+                {
+                  "type": "FunctionDeclaration",
+                  "id": {
+                    "type": "Identifier",
+                    "name": "extendProto",
+                    "range": [
+                      726,
+                      737
+                    ]
+                  },
+                  "params": [
+                    {
+                      "type": "Identifier",
+                      "name": "parent",
+                      "range": [
+                        738,
+                        744
+                      ]
+                    },
+                    {
+                      "type": "Identifier",
+                      "name": "props",
+                      "range": [
+                        746,
+                        751
+                      ]
+                    }
+                  ],
+                  "body": {
+                    "type": "BlockStatement",
+                    "body": [
+                      {
+                        "type": "VariableDeclaration",
+                        "declarations": [
+                          {
+                            "type": "VariableDeclarator",
+                            "id": {
+                              "type": "Identifier",
+                              "name": "proto",
+                              "range": [
+                                765,
+                                770
+                              ]
+                            },
+                            "init": {
+                              "type": "MemberExpression",
+                              "computed": false,
+                              "object": {
+                                "type": "Identifier",
+                                "name": "parent",
+                                "range": [
+                                  773,
+                                  779
+                                ]
+                              },
+                              "property": {
+                                "type": "Identifier",
+                                "name": "prototype",
+                                "range": [
+                                  780,
+                                  789
+                                ]
+                              },
+                              "range": [
+                                773,
+                                789
+                              ]
+                            },
+                            "range": [
+                              765,
+                              789
+                            ]
+                          }
+                        ],
+                        "kind": "var",
+                        "range": [
+                          761,
+                          790
+                        ]
+                      },
+                      {
+                        "type": "ForInStatement",
+                        "left": {
+                          "type": "VariableDeclaration",
+                          "declarations": [
+                            {
+                              "type": "VariableDeclarator",
+                              "id": {
+                                "type": "Identifier",
+                                "name": "p",
+                                "range": [
+                                  806,
+                                  807
+                                ]
+                              },
+                              "init": null,
+                              "range": [
+                                806,
+                                807
+                              ]
+                            }
+                          ],
+                          "kind": "var",
+                          "range": [
+                            802,
+                            807
+                          ]
+                        },
+                        "right": {
+                          "type": "Identifier",
+                          "name": "props",
+                          "range": [
+                            811,
+                            816
+                          ]
+                        },
+                        "body": {
+                          "type": "BlockStatement",
+                          "body": [
+                            {
+                              "type": "IfStatement",
+                              "test": {
+                                "type": "CallExpression",
+                                "callee": {
+                                  "type": "MemberExpression",
+                                  "computed": false,
+                                  "object": {
+                                    "type": "Identifier",
+                                    "name": "props",
+                                    "range": [
+                                      832,
+                                      837
+                                    ]
+                                  },
+                                  "property": {
+                                    "type": "Identifier",
+                                    "name": "hasOwnProperty",
+                                    "range": [
+                                      838,
+                                      852
+                                    ]
+                                  },
+                                  "range": [
+                                    832,
+                                    852
+                                  ]
+                                },
+                                "arguments": [
+                                  {
+                                    "type": "Identifier",
+                                    "name": "p",
+                                    "range": [
+                                      853,
+                                      854
+                                    ]
+                                  }
+                                ],
+                                "range": [
+                                  832,
+                                  855
+                                ]
+                              },
+                              "consequent": {
+                                "type": "BlockStatement",
+                                "body": [
+                                  {
+                                    "type": "ExpressionStatement",
+                                    "expression": {
+                                      "type": "AssignmentExpression",
+                                      "operator": "=",
+                                      "left": {
+                                        "type": "MemberExpression",
+                                        "computed": true,
+                                        "object": {
+                                          "type": "Identifier",
+                                          "name": "proto",
+                                          "range": [
+                                            869,
+                                            874
+                                          ]
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "p",
+                                          "range": [
+                                            875,
+                                            876
+                                          ]
+                                        },
+                                        "range": [
+                                          869,
+                                          877
+                                        ]
+                                      },
+                                      "right": {
+                                        "type": "MemberExpression",
+                                        "computed": true,
+                                        "object": {
+                                          "type": "Identifier",
+                                          "name": "props",
+                                          "range": [
+                                            880,
+                                            885
+                                          ]
+                                        },
+                                        "property": {
+                                          "type": "Identifier",
+                                          "name": "p",
+                                          "range": [
+                                            886,
+                                            887
+                                          ]
+                                        },
+                                        "range": [
+                                          880,
+                                          888
+                                        ]
+                                      },
+                                      "range": [
+                                        869,
+                                        888
+                                      ]
+                                    },
+                                    "range": [
+                                      869,
+                                      889
+                                    ]
+                                  }
+                                ],
+                                "range": [
+                                  857,
+                                  899
+                                ]
+                              },
+                              "alternate": null,
+                              "range": [
+                                828,
+                                899
+                              ]
+                            }
+                          ],
+                          "range": [
+                            818,
+                            907
+                          ]
+                        },
+                        "each": false,
+                        "range": [
+                          797,
+                          907
+                        ]
+                      }
+                    ],
+                    "range": [
+                      753,
+                      913
+                    ]
+                  },
+                  "generator": false,
+                  "expression": false,
+                  "range": [
+                    717,
+                    913
+                  ]
+                },
+                {
+                  "type": "VariableDeclaration",
+                  "declarations": [
+                    {
+                      "type": "VariableDeclarator",
+                      "id": {
+                        "type": "Identifier",
+                        "name": "exports",
+                        "range": [
+                          922,
+                          929
+                        ]
+                      },
+                      "init": {
+                        "type": "ObjectExpression",
+                        "properties": [
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "merge",
+                              "range": [
+                                940,
+                                945
+                              ]
+                            },
+                            "computed": false,
+                            "value": {
+                              "type": "Identifier",
+                              "name": "merge",
+                              "range": [
+                                947,
+                                952
+                              ]
+                            },
+                            "kind": "init",
+                            "method": false,
+                            "shorthand": false,
+                            "range": [
+                              940,
+                              952
+                            ]
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "isArray",
+                              "range": [
+                                960,
+                                967
+                              ]
+                            },
+                            "computed": false,
+                            "value": {
+                              "type": "Identifier",
+                              "name": "isArray",
+                              "range": [
+                                969,
+                                976
+                              ]
+                            },
+                            "kind": "init",
+                            "method": false,
+                            "shorthand": false,
+                            "range": [
+                              960,
+                              976
+                            ]
+                          },
+                          {
+                            "type": "Property",
+                            "key": {
+                              "type": "Identifier",
+                              "name": "extendProto",
+                              "range": [
+                                984,
+                                995
+                              ]
+                            },
+                            "computed": false,
+                            "value": {
+                              "type": "Identifier",
+                              "name": "extendProto",
+                              "range": [
+                                997,
+                                1008
+                              ]
+                            },
+                            "kind": "init",
+                            "method": false,
+                            "shorthand": false,
+                            "range": [
+                              984,
+                              1008
+                            ]
+                          }
+                        ],
+                        "range": [
+                          932,
+                          1014
+                        ]
+                      },
+                      "range": [
+                        922,
+                        1014
+                      ]
+                    }
+                  ],
+                  "kind": "var",
+                  "range": [
+                    918,
+                    1015
+                  ]
+                },
+                {
+                  "type": "ReturnStatement",
+                  "argument": {
+                    "type": "Identifier",
+                    "name": "exports",
+                    "range": [
+                      1027,
+                      1034
+                    ]
+                  },
+                  "range": [
+                    1020,
+                    1035
+                  ]
+                }
+              ],
+              "range": [
+                38,
+                1039
+              ]
+            },
+            "generator": false,
+            "expression": false,
+            "range": [
+              25,
+              1039
+            ]
+          }
+        ],
+        "range": [
+          0,
+          1040
+        ]
+      },
+      "range": [
+        0,
+        1041
+      ]
+    }
+  ],
+  "sourceType": "script",
+  "range": [
+    0,
+    1041
+  ],
+  "comments": [
+    {
+      "type": "Block",
+      "value": "*\n     * @param dest\n     * @param source\n     ",
+      "range": [
+        62,
+        113
+      ]
+    },
+    {
+      "type": "Block",
+      "value": "*\n     * Returns true if is array.\n     * @param input\n     * @return {object} boolean\n     ",
+      "range": [
+        196,
+        292
+      ]
+    },
+    {
+      "type": "Block",
+      "value": "*\n     * Returns true if hash code.\n     * @param s\n     * @return {object} boolean\n     ",
+      "range": [
+        398,
+        491
+      ]
+    },
+    {
+      "type": "Block",
+      "value": "*\n     * @param parent\n     * @param props\n     ",
+      "range": [
+        660,
+        712
+      ]
+    }
+  ],
+  "tokens": [
+    {
+      "type": "Identifier",
+      "value": "define",
+      "range": [
+        0,
+        6
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        6,
+        7
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "[",
+      "range": [
+        7,
+        8
+      ]
+    },
+    {
+      "type": "String",
+      "value": "'underscore'",
+      "range": [
+        8,
+        20
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "]",
+      "range": [
+        20,
+        21
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ",",
+      "range": [
+        21,
+        22
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "function",
+      "range": [
+        25,
+        33
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        34,
+        35
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "_",
+      "range": [
+        35,
+        36
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        36,
+        37
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        38,
+        39
+      ]
+    },
+    {
+      "type": "String",
+      "value": "\"use strict\"",
+      "range": [
+        44,
+        56
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        56,
+        57
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "function",
+      "range": [
+        118,
+        126
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "merge",
+      "range": [
+        127,
+        132
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        132,
+        133
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "dest",
+      "range": [
+        133,
+        137
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ",",
+      "range": [
+        137,
+        138
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "source",
+      "range": [
+        139,
+        145
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        145,
+        146
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        147,
+        148
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "return",
+      "range": [
+        155,
+        161
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "_",
+      "range": [
+        162,
+        163
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ".",
+      "range": [
+        163,
+        164
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "extend",
+      "range": [
+        164,
+        170
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        170,
+        171
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "dest",
+      "range": [
+        171,
+        175
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ",",
+      "range": [
+        175,
+        176
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "source",
+      "range": [
+        177,
+        183
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        183,
+        184
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        184,
+        185
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        190,
+        191
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "function",
+      "range": [
+        297,
+        305
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "isArray",
+      "range": [
+        306,
+        313
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        313,
+        314
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "input",
+      "range": [
+        314,
+        319
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        319,
+        320
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        321,
+        322
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "return",
+      "range": [
+        329,
+        335
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "input",
+      "range": [
+        336,
+        341
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "&&",
+      "range": [
+        342,
+        344
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "input",
+      "range": [
+        345,
+        350
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ".",
+      "range": [
+        350,
+        351
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "length",
+      "range": [
+        351,
+        357
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "&&",
+      "range": [
+        358,
+        360
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "input",
+      "range": [
+        361,
+        366
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ".",
+      "range": [
+        366,
+        367
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "pop",
+      "range": [
+        367,
+        370
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "&&",
+      "range": [
+        371,
+        373
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "input",
+      "range": [
+        374,
+        379
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ".",
+      "range": [
+        379,
+        380
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "concat",
+      "range": [
+        380,
+        386
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        386,
+        387
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        392,
+        393
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "function",
+      "range": [
+        496,
+        504
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "hashCode",
+      "range": [
+        505,
+        513
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        513,
+        514
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "s",
+      "range": [
+        514,
+        515
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        515,
+        516
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        517,
+        518
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "return",
+      "range": [
+        525,
+        531
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "s",
+      "range": [
+        532,
+        533
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ".",
+      "range": [
+        533,
+        534
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "split",
+      "range": [
+        534,
+        539
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        539,
+        540
+      ]
+    },
+    {
+      "type": "String",
+      "value": "\"\"",
+      "range": [
+        540,
+        542
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        542,
+        543
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ".",
+      "range": [
+        543,
+        544
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "reduce",
+      "range": [
+        544,
+        550
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        550,
+        551
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "function",
+      "range": [
+        551,
+        559
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        560,
+        561
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "a",
+      "range": [
+        561,
+        562
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ",",
+      "range": [
+        562,
+        563
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "b",
+      "range": [
+        564,
+        565
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        565,
+        566
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        567,
+        568
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "a",
+      "range": [
+        577,
+        578
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "=",
+      "range": [
+        579,
+        580
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        581,
+        582
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        582,
+        583
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "a",
+      "range": [
+        583,
+        584
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "<<",
+      "range": [
+        585,
+        587
+      ]
+    },
+    {
+      "type": "Numeric",
+      "value": "5",
+      "range": [
+        588,
+        589
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        589,
+        590
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "-",
+      "range": [
+        591,
+        592
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "a",
+      "range": [
+        593,
+        594
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        594,
+        595
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "+",
+      "range": [
+        596,
+        597
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "b",
+      "range": [
+        598,
+        599
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ".",
+      "range": [
+        599,
+        600
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "charCodeAt",
+      "range": [
+        600,
+        610
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        610,
+        611
+      ]
+    },
+    {
+      "type": "Numeric",
+      "value": "0",
+      "range": [
+        611,
+        612
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        612,
+        613
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        613,
+        614
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "return",
+      "range": [
+        623,
+        629
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "a",
+      "range": [
+        630,
+        631
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "&",
+      "range": [
+        632,
+        633
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "a",
+      "range": [
+        634,
+        635
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        635,
+        636
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        643,
+        644
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ",",
+      "range": [
+        644,
+        645
+      ]
+    },
+    {
+      "type": "Numeric",
+      "value": "0",
+      "range": [
+        646,
+        647
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        647,
+        648
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        648,
+        649
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        654,
+        655
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "function",
+      "range": [
+        717,
+        725
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "extendProto",
+      "range": [
+        726,
+        737
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        737,
+        738
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "parent",
+      "range": [
+        738,
+        744
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ",",
+      "range": [
+        744,
+        745
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "props",
+      "range": [
+        746,
+        751
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        751,
+        752
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        753,
+        754
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "var",
+      "range": [
+        761,
+        764
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "proto",
+      "range": [
+        765,
+        770
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "=",
+      "range": [
+        771,
+        772
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "parent",
+      "range": [
+        773,
+        779
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ".",
+      "range": [
+        779,
+        780
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "prototype",
+      "range": [
+        780,
+        789
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        789,
+        790
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "for",
+      "range": [
+        797,
+        800
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        801,
+        802
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "var",
+      "range": [
+        802,
+        805
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "p",
+      "range": [
+        806,
+        807
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "in",
+      "range": [
+        808,
+        810
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "props",
+      "range": [
+        811,
+        816
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        816,
+        817
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        818,
+        819
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "if",
+      "range": [
+        828,
+        830
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        831,
+        832
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "props",
+      "range": [
+        832,
+        837
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ".",
+      "range": [
+        837,
+        838
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "hasOwnProperty",
+      "range": [
+        838,
+        852
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "(",
+      "range": [
+        852,
+        853
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "p",
+      "range": [
+        853,
+        854
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        854,
+        855
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        855,
+        856
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        857,
+        858
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "proto",
+      "range": [
+        869,
+        874
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "[",
+      "range": [
+        874,
+        875
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "p",
+      "range": [
+        875,
+        876
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "]",
+      "range": [
+        876,
+        877
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "=",
+      "range": [
+        878,
+        879
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "props",
+      "range": [
+        880,
+        885
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "[",
+      "range": [
+        885,
+        886
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "p",
+      "range": [
+        886,
+        887
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "]",
+      "range": [
+        887,
+        888
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        888,
+        889
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        898,
+        899
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        906,
+        907
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        912,
+        913
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "var",
+      "range": [
+        918,
+        921
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "exports",
+      "range": [
+        922,
+        929
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "=",
+      "range": [
+        930,
+        931
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "{",
+      "range": [
+        932,
+        933
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "merge",
+      "range": [
+        940,
+        945
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ":",
+      "range": [
+        945,
+        946
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "merge",
+      "range": [
+        947,
+        952
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ",",
+      "range": [
+        952,
+        953
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "isArray",
+      "range": [
+        960,
+        967
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ":",
+      "range": [
+        967,
+        968
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "isArray",
+      "range": [
+        969,
+        976
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ",",
+      "range": [
+        976,
+        977
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "extendProto",
+      "range": [
+        984,
+        995
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ":",
+      "range": [
+        995,
+        996
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "extendProto",
+      "range": [
+        997,
+        1008
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        1013,
+        1014
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        1014,
+        1015
+      ]
+    },
+    {
+      "type": "Keyword",
+      "value": "return",
+      "range": [
+        1020,
+        1026
+      ]
+    },
+    {
+      "type": "Identifier",
+      "value": "exports",
+      "range": [
+        1027,
+        1034
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        1034,
+        1035
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": "}",
+      "range": [
+        1038,
+        1039
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ")",
+      "range": [
+        1039,
+        1040
+      ]
+    },
+    {
+      "type": "Punctuator",
+      "value": ";",
+      "range": [
+        1040,
+        1041
+      ]
+    }
+  ],
+  "errors": []
+}
