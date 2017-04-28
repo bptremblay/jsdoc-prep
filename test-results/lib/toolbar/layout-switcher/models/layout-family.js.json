@@ -1,0 +1,253 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "backbone",
+        "toolbar/layout-switcher/models/layout",
+        "underscore"
+      ],
+      "usedAs": [
+        "Backbone",
+        "Layout"
+      ],
+      "moduleName": "layout-family",
+      "AMD": true,
+      "webPath": "/lib/toolbar/layout-switcher/models",
+      "convertedName": "layout_family",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/lib/toolbar/layout-switcher/models/layout-family.js",
+  "folderPath": "test-source/lib/toolbar/layout-switcher/models",
+  "fileName": "layout-family.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/lib/toolbar/layout-switcher/models",
+  "webPath": "/lib/toolbar/layout-switcher/models",
+  "libFile": false,
+  "min": false,
+  "realName": "layout-family",
+  "name": "layout-family",
+  "camelName": "LayoutFamily",
+  "processedFilePath": "test-output/lib/toolbar/layout-switcher/models/layout-family.js",
+  "mappedModuleName": "lib/toolbar/layout-switcher/models/layout-family",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "lib/toolbar/layout-switcher/models/layout-family~LayoutFamily": {
+      "todos": [],
+      "returnType": "",
+      "type": "FunctionDeclaration",
+      "uid": 98,
+      "parentNode": 92,
+      "memberOf": "",
+      "ctor": true,
+      "lineNumber": 36,
+      "line": "function LayoutFamily() {",
+      "comment": 4,
+      "range": [
+        1045,
+        1156
+      ],
+      "name": "LayoutFamily",
+      "commentBody": "/**\n         * @constructor\n         */",
+      "oldComment": {
+        "type": "Block",
+        "value": "*\n         * @constructor\n         ",
+        "range": [
+          997,
+          1036
+        ],
+        "commentBody": "/**\n         * @constructor\n         */",
+        "lineNumber": 33
+      },
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "tags": [
+          {
+            "tag": "constructor",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        ],
+        "requiresList": [
+          "backbone",
+          "toolbar/layout-switcher/models/layout",
+          "underscore"
+        ],
+        "moduleName": "layout_family",
+        "camelName": "LayoutFamily",
+        "freeText": "",
+        "@constructor": "",
+        "preamble": "",
+        "nodeType": "CLASS"
+      },
+      "jsDoc": "/**\n * @constructor\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": false,
+  "moduleName": "lib/toolbar/layout-switcher/models/layout-family",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 51,
+    "requires": [
+      "backbone",
+      "toolbar/layout-switcher/models/layout",
+      "underscore"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/lib/toolbar/layout-switcher/models",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 1548,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./layout-family",
+    "uses_console_log": false,
+    "uses_backbone": true,
+    "classes": {
+      "LayoutFamily": 98
+    },
+    "methods": [
+      {
+        "name": "extend",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "doclet": "/**\n * @param child  \n * @param parent\n */",
+        "args": [
+          "child",
+          "parent"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "var extend = function (child, parent) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "child"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "parent\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "ctor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function ctor() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "LayoutFamily",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 36,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function LayoutFamily() {",
+        "originalJsDocDescription": {
+          "constructor": {
+            "tag": "constructor",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "findLayoutFor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 43,
+        "memberOf": "LayoutFamily.prototype",
+        "doclet": "/**\n * @param thumbnail\n */",
+        "args": [
+          "thumbnail"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutFamily.prototype.findLayoutFor = function (thumbnail) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "thumbnail\n"
+            }
+          ]
+        }
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/lib/toolbar/layout-switcher/models",
+    "fileName": "layout-family.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 47,
+  "EMPTY": false
+}

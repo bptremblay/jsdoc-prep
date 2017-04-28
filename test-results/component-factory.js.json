@@ -1,0 +1,280 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "component-factory",
+      "AMD": false,
+      "webPath": "",
+      "convertedName": "component_factory",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component-factory.js",
+  "folderPath": "test-source",
+  "fileName": "component-factory.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "",
+  "webPath": "",
+  "libFile": false,
+  "min": false,
+  "realName": "component-factory",
+  "name": "component-factory",
+  "camelName": "ComponentFactory",
+  "processedFilePath": "test-output/component-factory.js",
+  "mappedModuleName": "component-factory",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": true,
+  "moduleName": "component-factory",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 144,
+    "requires": [
+      "jquery"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 3811,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./component-factory",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {
+      "0": 356
+    },
+    "methods": [
+      {
+        "name": "createOrModifyNameSpace",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "doclet": "/**\n * @param dataIn  \n * @param pathForClonedData  \n * @param dataNode\n */",
+        "args": [
+          "dataIn",
+          "pathForClonedData",
+          "dataNode"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function createOrModifyNameSpace(dataIn, pathForClonedData, dataNode) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "dataIn"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "pathForClonedData"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "dataNode\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "cloneDataNode",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 48,
+        "memberOf": "",
+        "doclet": "/**\n * @param dataIn  \n * @param pathIn\n */",
+        "args": [
+          "dataIn",
+          "pathIn"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function cloneDataNode(dataIn, pathIn) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "dataIn"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "pathIn\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "constructor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 91,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "constructor() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "setDomParent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 99,
+        "memberOf": "ComponentFactory",
+        "doclet": "/**\n * @param parentIn\n */",
+        "args": [
+          "parentIn"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setDomParent(parentIn) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "parentIn\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "createComponent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 108,
+        "memberOf": "ComponentFactory",
+        "doclet": "/**\n * @param dataIn  \n * @param pathIn  \n * @param templateIn  \n * @param parentComponent\n */",
+        "args": [
+          "dataIn",
+          "pathIn",
+          "templateIn",
+          "parentComponent"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "createComponent(dataIn, pathIn, templateIn, parentComponent) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "dataIn"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "pathIn"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "templateIn"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "parentComponent\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 131,
+        "memberOf": "ComponentFactory",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "render() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source",
+    "fileName": "component-factory.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 153,
+  "EMPTY": false
+}

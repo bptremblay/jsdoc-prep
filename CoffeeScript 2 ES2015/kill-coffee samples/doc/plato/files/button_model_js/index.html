@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Plato - button-model.js</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="http://github.com/es-analysis/plato">Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>button-model.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"  data-container="body"></i></a></h2>
+      <p class="stat">73.38</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h2>
+      <p class="stat">257</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty" data-container="body"></i></a></h2>
+      <p class="stat">40.46</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs" data-container="body"></i></a></h2>
+      <p class="stat">1.37</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity" data-container="body"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC" data-container="body"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">/**
+ * @module button-model
+ * @requires underscore
+ * @requires backbone
+ * @requires button-editor-path/legacy-color-check
+ * @requires i18n!button-editor-path/nls/button-editor
+ * @requires galileo-lib/modules/services/url-validator-service
+ */
+import _ from &#039;underscore&#039;;
+import Backbone from &#039;backbone&#039;;
+import legacyColorCheck from &#039;button-editor-path/legacy-color-check&#039;;
+import i18n from &#039;i18n!button-editor-path/nls/button-editor&#039;;
+import UrlValidator from &#039;galileo-lib/modules/services/url-validator-service&#039;;
+// Can&#039;t redefine module values, they are const!! _ ?= window._
+/**
+ * The set color attr.
+ * setColorAttr
+ */
+let setColorAttr = undefined;
+/**
+ * The class ButtonModel.
+ * @constructor
+ * @memberOf module:button-model
+ * @extends Backbone.Model
+ */
+class ButtonModel extends Backbone.Model {
+    /**
+     * initClass
+     */
+    static initClass() {
+            this.prototype.FONT_SIZE_MAX_VALUE = 48;
+            this.prototype.defaults = {
+                link: null,
+                linkType: &#039;web&#039;,
+                text: i18n.placeholder_text,
+                backgroundColor: {
+                    global: &#039;#494&#039;,
+                    local: &#039;transparent&#039;
+                },
+                height: 24,
+                alignment: &#039;center&#039;,
+                fontColor: &#039;&#039;,
+                fontFamily: &#039;&#039;,
+                fontSize: &#039;&#039;,
+                fontWeight: &#039;normal&#039;,
+                fontStyle: &#039;normal&#039;
+            };
+            /**
+             * @param that
+             * @param colorAttr
+             * @param type
+             * @param newColor
+             * @param options
+             * setColorAttr
+             */
+            setColorAttr = function(that, colorAttr, type, newColor, options) {
+                /**
+                 * The bg color.
+                 * @constant Bg color
+                 * bgColor
+                 */
+                const bgColor = _.clone(that.get(colorAttr)); // ensures change event is triggered
+                bgColor[type] = newColor;
+                return that.set(colorAttr, bgColor, options);
+            };
+        }
+        /**
+         * @constructor
+         * @memberOf module:button-model
+         */
+    constructor() {
+            super(...arguments);
+            /**
+             * method
+             */
+            for (let method of Array.from(_.keys(ButtonModel.prototype.defaults))) {
+                if (this[method] == null) {
+                    this[method] = this._makeGetOrSet(method);
+                }
+            }
+            /**
+             * @param val
+             * @param options
+             * fontSize
+             */
+            this.fontSize = function(val, options) {
+                if (val != null) {
+                    /**
+                     * The newval.
+                     * @constant Newval
+                     */
+                    const newval = !isNaN(parseInt(val)) ?
+                        Math.max(0, Math.min(val, this.FONT_SIZE_MAX_VALUE)) : undefined;
+                    if (newval !== val) {
+                        this.trigger(&#039;limit:fontSize&#039;, this);
+                        val = newval;
+                    }
+                    return this.set(&#039;fontSize&#039;, val, options);
+                } else {
+                    return this.get(&#039;fontSize&#039;);
+                }
+            };
+        }
+        /**
+         * @private
+         * @param attr
+         * @return {Function}
+         * _makeGetOrSet
+         */
+    _makeGetOrSet(attr) {
+            return function(val, options) {
+                if (val != null) {
+                    return this.set(attr, val, options);
+                } else {
+                    return this.get(attr, val);
+                }
+            };
+        }
+        /**
+         * @private
+         * @param url
+         * _cleanURL
+         */
+    _cleanURL(url) {
+            url = url.replace(/^http:\/\//, &#039;&#039;).trim();
+            // decode first because &#039; &#039; becomes &#039;%20&#039; otherwise
+            if (url.indexOf(&#039; &#039; === !-1)) {
+                return encodeURI(decodeURI(url));
+            }
+        }
+        /**
+         * @param attrs
+         * @param options
+         * validate
+         */
+    validate(attrs, options) {
+            if (attrs.link != null) {
+                /**
+                 * The url validator.
+                 * @constant Url validator
+                 * urlValidator
+                 */
+                const urlValidator = new UrlValidator(attrs.link);
+                if (!urlValidator.isValid()) {
+                    return urlValidator.getError();
+                }
+            }
+        }
+        /**
+         * getError
+         */
+    getError() {
+            if (!this.isValid()) {
+                return this.validationError;
+            }
+        }
+        /**
+         * @param val
+         * @param options
+         * setLink
+         */
+    setLink(val, options) {
+            if (!val) {
+                this.set(&#039;link&#039;, null, options);
+                return;
+            }
+            val = val.trim();
+            if (!__guard__(options, x =&gt; x.noProtocol)) {
+                val = this._cleanURL(val);
+            }
+            if (__guard__(options, x1 =&gt; x1.noProtocol)) {
+                return this.set(&#039;link&#039;, val, options);
+            } else if (/^.+:/.test(val)) {
+                return this.set(&#039;link&#039;, val, options);
+            } else if (/^[\w\.-]+@[\w\.-]+\.\w+/.test(val)) {
+                return this.set(&#039;link&#039;, `mailto:${val}`, options);
+            } else {
+                return this.set(&#039;link&#039;, `http://${val}`, options);
+            }
+        }
+        /**
+         * toggleBold
+         */
+    toggleBold() {
+            return this._toggle(&#039;fontWeight&#039;, [&#039;bold&#039;, &#039;normal&#039;]);
+        }
+        /**
+         * toggleItalic
+         */
+    toggleItalic() {
+            return this._toggle(&#039;fontStyle&#039;, [&#039;italic&#039;, &#039;normal&#039;]);
+        }
+        /**
+         * @private
+         * @param propertyName
+         * @param options
+         * _toggle
+         */
+    _toggle(propertyName, options) {
+            /**
+             * The property.
+             * @constant Property
+             */
+            const property = this.get(propertyName);
+            if (property === options[0]) {
+                return this.set(propertyName, options[1]);
+            } else {
+                return this.set(propertyName, options[0]);
+            }
+        }
+        /**
+         * usingLocalColors
+         */
+    usingLocalColors() {
+            return this.backgroundColor().local !== &#039;transparent&#039;;
+        }
+        /**
+         * getBackgroundColor
+         */
+    getBackgroundColor() {
+            if (this.usingLocalColors()) {
+                return this.backgroundColor().local;
+            } else if (legacyColorCheck.usesLegacyGlobalColors($(this.get(&#039;markup&#039;)))) {
+                return this.backgroundColor().global;
+            } else {
+                return &#039;&#039;;
+            }
+        }
+        /**
+         * @param newColor
+         * @param options
+         * setGlobalBackgroundColor
+         */
+    setGlobalBackgroundColor(newColor, options) {
+            return setColorAttr(this, &#039;backgroundColor&#039;, &#039;global&#039;, newColor, options);
+        }
+        /**
+         * @param newColor
+         * setLocalBackgroundColor
+         */
+    setLocalBackgroundColor(newColor) {
+        return setColorAttr(this, &#039;backgroundColor&#039;, &#039;local&#039;, newColor);
+    }
+}
+ButtonModel.initClass();
+// Added explicit return to exports at EOF:
+export default ButtonModel;
+/**
+ * @private
+ * @param value
+ * @param transform
+ * @return {Object} ConditionalExpression
+ * __guard__
+ */
+function __guard__(value, transform) {
+    return (typeof value !== &#039;undefined&#039; &amp;&amp; value !== null) ? transform(value) : undefined;
+}</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ cyclomatic }} <br>
+    Length : {{ halstead.length }} <br>
+    Difficulty : {{ halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>

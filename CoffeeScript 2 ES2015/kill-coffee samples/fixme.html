@@ -1,0 +1,426 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <title>Things to fix after trying to get rid of CoffeeScript</title><style>table {padding: 2px;} pre {padding: 2px; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; white-space: pre-wrap; word-wrap: break-word; font-size: 8pt;}
+ html {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px;}
+ body{ background:rgb(204,204,204); padding: 12px 1em 0; }</style></head><body>
+<table border="1">
+<tr>
+<th>
+FILE
+</th>
+<th>
+TASK
+</th>
+<th width="800">
+MESSAGE
+</th>
+</tr>
+<tr>
+<td>
+galileo-divider-editor/src/divider-view.coffee
+</td>
+<td>
+convertCoffee
+</td>
+<td width="800">
+
+<pre>
+/Users/btremblay/src/galileo-divider-editor/src/divider-view.coffee: Cannot automatically convert a subclass that uses bound methods.
+
+JavaScript requires all subclass constructors to call `super` and to do so
+before the first use of `this`, so the following cases cannot be converted
+automatically:
+* Constructors in subclasses that use `this` before `super`.
+* Constructors in subclasses that omit the `super` call.
+* Subclasses that use `=>` method syntax to automatically bind methods.
+
+To convert these cases to JavaScript anyway, run decaffeinate with
+--allow-invalid-constructors. You will then need to fix these cases after the
+conversion to JavaScript. Alternatively, you may want to first edit your
+CoffeeScript code to avoid the above cases, so that decaffeinate can run without
+this error message.
+
+If you are using babel, you can run decaffeinate with
+--enable-babel-constructor-workaround to generate babel-specific code to allow
+constructors that don't call `super`. Note that this approach is fragile and
+may break in future versions of babel.
+    4 | ], (Backbone, galileoEvents) ->
+    5 |   class DividerView extends Backbone.View
+>   6 |     initialize: (params) ->
+>   7 |       @listenTo(@model, 'change', @update)
+>   8 |       @listenTo(params.editor.events, 'highlight-block', @highlightBlock)
+>   9 |       @listenTo(galileoEvents, 'galileo.previewTheme', @_previewTheme)
+>  10 |       @listenTo(galileoEvents, 'galileo.applyTheme', @_applyTheme)
+>  11 |       @listenTo(galileoEvents, galileoEvents.TYPES.EDITOR_REINIT, @_cleanup)
+>  12 |       @descriptorProviderFn = params.descriptorProviderFn
+>  13 |       @draggable = params.draggable
+>  14 |       @editor = params.editor
+>  15 | 
+>  16 |     update: (model, options) ->
+>  17 |       @render()
+>  18 | 
+>  19 |     _cleanup: ->
+>  20 |       @stopListening()
+>  21 |       @editor = null
+>  22 | 
+>  23 |     _previewTheme: (colors) ->
+>  24 |       @_applyTheme(colors.colors)
+>  25 | 
+>  26 |     _applyTheme: (colors) ->
+>  27 |       @themeColor = colors.tertiary
+>  28 |       if @model.get('borderStyle') is 'dashed'
+>  29 |         unless @_usingLocalColor() then @$border.css('border-bottom-color', @themeColor)
+>  30 | 
+>  31 |     _usingLocalColor: ->
+>  32 |       borderColor = @model.get('borderColor')
+>  33 |       borderColor.local and borderColor.local isnt 'transparent'
+>  34 | 
+>  35 |     _borderColor: (borderColor) ->
+>  36 |       if @_usingLocalColor() then borderColor.local else borderColor.global
+>  37 | 
+>  38 |     setElement: (element) ->
+>  39 |       super(element)
+>  40 | 
+>  41 |       if @draggable
+>  42 |         @$el.attr('draggable', true)
+>  43 |         @$el.css('cursor', 'move')
+>  44 |         @$el.drag?(
+>  45 |           data: @descriptorProviderFn
+>  46 |           type: 'block'
+>  47 |         )
+>  48 | 
+>  49 |       @$dividerBase = @$el.find('.divider-base')
+>  50 |       @$borderParent = @$dividerBase.find('table')
+>  51 |       @$border = @$dividerBase.find('td')
+>  52 | 
+>  53 |       this
+>  54 | 
+>  55 |     getCssStyles: ->
+>  56 |       height: null
+>  57 |       borderStyle = @model.get('borderStyle')
+>  58 |       if borderStyle is 'dashed'
+>  59 |         height = parseInt(@$border.css('border-bottom-width'))
+>  60 |       else
+>  61 |         height = parseInt(@$border.css('padding-bottom')) + 1
+>  62 | 
+>  63 |       # We need the width in percent, but css('width') returns it in pixels,
+>  64 |       # so calculate the width percent.
+>  65 |       height: height
+>  66 |       width:  Math.round((parseInt(@$borderParent.css('width')) / parseInt(@$dividerBase.css('width'))) * 100)
+>  67 |       marginTop: parseInt(@$dividerBase.css('padding-top'), 10)
+>  68 |       marginBottom: parseInt(@$dividerBase.css('padding-bottom'), 10)
+>  69 | 
+>  70 |     applyColors: (colors, preview) ->
+>  71 |       if @_usingLocalColor() then return true
+>  72 |       colorId = @$el
+>  73 |         .parent()
+>  74 |         .find('[data-style-background-color]')
+>  75 |         .data('style-background-color')
+>  76 | 
+>  77 |       colorId = colorId?.toLowerCase()
+>  78 | 
+>  79 |       color = colors[colorId]
+>  80 | 
+>  81 |       # if we can't find color info, let's bail
+>  82 |       unless colorId? and color? then return true
+>  83 |       if preview
+>  84 |         border = "#{@model.get('height')}px #{@model.get('borderStyle')} #{color}"
+>  85 |         switch @model.get('borderStyle')
+>  86 |           when 'solid' then @$border.css('background-color', color)
+>  87 |           when 'dashed' then @$border.css('border-bottom', border)
+>  88 |       else
+>  89 |         borderColor = @model.get('borderColor')
+>  90 |         borderColor.global = color
+>  91 |         @model.set('borderColor', borderColor, silent: true)
+>  92 |         @render()
+>  93 |       true
+>  94 | 
+>  95 |     render: ->
+>  96 |       state = @model.toJSON()
+>  97 | 
+>  98 |       borderColor = @_borderColor(state.borderColor)
+>  99 | 
+> 100 |       # Clear any inlined background color. This is so we can find the
+> 101 |       # color applied by the CSS.
+> 102 |       @$borderParent.css('background-color', '')
+> 103 |       @$border.css('background-color', '')
+> 104 | 
+> 105 |       @$el.attr('data-editor-name', @editor._getName())
+> 106 | 
+> 107 |       if state.borderStyle is 'solid'
+> 108 |         @_renderSolidBorder(borderColor, state)
+> 109 |       else
+> 110 |         @_renderDashedBorder(borderColor, state)
+> 111 | 
+> 112 |       @$borderParent.attr('align', state.align)
+> 113 | 
+> 114 |       if state.width
+> 115 |         @$borderParent.css('width', "#{state.width}%")
+> 116 |       else
+> 117 |         @$borderParent.css('width', '')
+> 118 | 
+> 119 |       # Fix existing docs whose marginTop and marginBottom
+> 120 |       # are still stored as strings with 'px' in the state
+> 121 |       ['marginTop', 'marginBottom'].forEach((property) ->
+> 122 |         if typeof state[property] is 'string'
+> 123 |           state[property] = parseInt(state[property], 10)
+> 124 |       )
+> 125 | 
+> 126 |       @$dividerBase.css(
+> 127 |         'padding-top': "#{state.marginTop}px"
+> 128 |         'padding-bottom': "#{state.marginBottom}px"
+> 129 |       )
+> 130 | 
+> 131 |       this
+> 132 | 
+> 133 |     _renderSolidBorder: (borderColor, state) ->
+> 134 |       # for solid borders, we're to emulate a border using a colored
+> 135 |       # table and increasing the size of the TD (using padding) for
+> 136 |       # better client rendering
+> 137 |       @$dividerBase.removeClass('divider-dashed')
+> 138 |       if state.borderStyle is 'solid'
+> 139 |         if @_usingLocalColor() or borderColor isnt ''
+> 140 |           @$border.css('background-color', borderColor)
+> 141 |         @$dividerBase.addClass('divider-solid')
+> 142 |       else
+> 143 |         @$borderParent.css('background-color', 'transparent')
+> 144 |         @$border.css('background-color', 'transparent')
+> 145 | 
+> 146 |       # the TD will always have a base height of 1px,
+> 147 |       # so subtract 1 from the height to get the true height
+> 148 |       @$border.css(
+> 149 |         'padding-bottom': "#{state.height - 1}px"
+> 150 |         'border-bottom': 'none'
+> 151 |       )
+> 152 | 
+> 153 |     _renderDashedBorder: (borderColor, state) ->
+> 154 |       # Unless there's already a color specified, find the color being
+> 155 |       # applied by CSS.
+> 156 |       unless borderColor or @_usingLocalColor()
+> 157 |         borderColor = @_getDividerColor('background-color')
+> 158 | 
+> 159 |       @$dividerBase
+> 160 |         .removeClass('divider-solid')
+> 161 |         .addClass('divider-dashed')
+> 162 | 
+> 163 |       @$border.css(
+> 164 |         'background-color': 'transparent'
+> 165 |         'padding-bottom': '0px'
+> 166 |         'border-bottom-style': state.borderStyle
+> 167 |         'border-bottom-width': "#{state.height}px"
+> 168 |       )
+> 169 | 
+> 170 |       if borderColor
+> 171 |         @$border.css('border-bottom-color', borderColor)
+> 172 | 
+> 173 |       @$borderParent.css('background-color', 'transparent')
+> 174 | 
+> 175 |     # Gets the effective current color. If available, the color will be tak
+</pre>
+
+</td>
+</tr>
+<tr>
+<td>
+galileo-divider-editor/src/divider-editor-toolbar-view.coffee
+</td>
+<td>
+convertCoffee
+</td>
+<td width="800">
+
+<pre>
+/Users/btremblay/src/galileo-divider-editor/src/divider-editor-toolbar-view.coffee: Cannot automatically convert a subclass that uses bound methods.
+
+JavaScript requires all subclass constructors to call `super` and to do so
+before the first use of `this`, so the following cases cannot be converted
+automatically:
+* Constructors in subclasses that use `this` before `super`.
+* Constructors in subclasses that omit the `super` call.
+* Subclasses that use `=>` method syntax to automatically bind methods.
+
+To convert these cases to JavaScript anyway, run decaffeinate with
+--allow-invalid-constructors. You will then need to fix these cases after the
+conversion to JavaScript. Alternatively, you may want to first edit your
+CoffeeScript code to avoid the above cases, so that decaffeinate can run without
+this error message.
+
+If you are using babel, you can run decaffeinate with
+--enable-babel-constructor-workaround to generate babel-specific code to allow
+constructors that don't call `super`. Note that this approach is fragile and
+may break in future versions of babel.
+   18 | 
+   19 |   class DividerEditorToolbarView extends Backbone.View
+>  20 |     @initClass: ->
+>  21 | 
+>  22 |       @prototype.events =
+>  23 |         'click .alignment a': '_changeAlignment'
+>  24 |         'click #divider_borderStyle-btn-group .dropdown-menu li a': '_changeBorderStyle'
+>  25 |         'click #done': '_doneEditing'
+>  26 |         'click [data-js=delete-button]': '_deleteDivider'
+>  27 |         'mouseenter [data-js=delete-button]': '_highlightBlock'
+>  28 |         'mouseleave [data-js=delete-button]': '_highlightBlock'
+>  29 |       return
+>  30 | 
+>  31 |     _cleanup: =>
+>  32 |       @editorInstance = null
+>  33 |       galileoEvents.off(galileoEvents.TYPES.EDITOR_REINIT, @_cleanup)
+>  34 | 
+>  35 |     create: (editorInstance) ->
+>  36 |       @editorInstance = editorInstance
+>  37 |       @_initSpinners()
+>  38 |       @_initColorPicker()
+>  39 |       @_applyState(@editorInstance.dividerModel)
+>  40 |       galileoEvents.on(galileoEvents.TYPES.EDITOR_REINIT, @_cleanup)
+>  41 | 
+>  42 |     update: (editorInstance) ->
+>  43 |       @editorInstance = editorInstance
+>  44 |       @_getCssStyles()
+>  45 |       @_applyState(@editorInstance.dividerModel)
+>  46 |       @$delete.css('visibility', @_deleteButtonVisibility())
+>  47 | 
+>  48 |     render: ->
+>  49 |       @$el.html(Mustache.render(template, i18n))
+>  50 |       @_cacheSelectors()
+>  51 |       this
+>  52 | 
+>  53 |     setModel: (model) ->
+>  54 |       @model = model
+>  55 | 
+>  56 |     setDividerView: (dividerView) ->
+>  57 |       @dividerView = dividerView
+>  58 | 
+>  59 |     _getCssStyles: ->
+>  60 |       @editorInstance.dividerModel.set(@editorInstance.dividerView.getCssStyles())
+>  61 | 
+>  62 |     _deleteButtonVisibility: ->
+>  63 |       if @editorInstance?.config?.featureSupport?.contentDeletion
+>  64 |         'visible'
+>  65 |       else
+>  66 |         'hidden'
+>  67 | 
+>  68 |     _deleteDivider: ->
+>  69 |       @editorInstance.events.trigger('remove-block')
+>  70 |       activationService.deactivateLayout()
+>  71 |       galileoToolbar.hide()
+>  72 |       DividerUsageTracking.trackDelete()
+>  73 | 
+>  74 |     _highlightBlock: (evt) ->
+>  75 |       toggle = evt.type is 'mouseenter'
+>  76 |       @editorInstance.events.trigger('highlight-block', toggle)
+>  77 | 
+>  78 |     _applyState: (model) ->
+>  79 |       state = model.toJSON()
+>  80 | 
+>  81 |       $.each(['marginTop', 'marginBottom', 'width', 'height'], (index, key) =>
+>  82 |         val = state[key]
+>  83 |         if typeof val isnt 'undefined'
+>  84 |           if typeof val is 'string'
+>  85 |             val = val.replace('px', '')
+>  86 |           $tool = @$el.find("#divider_#{key}")
+>  87 |           $tool.val(val)
+>  88 |       )
+>  89 | 
+>  90 |       borderStyles = @$borderStyleDropdown.find('li a')
+>  91 |       borderStyles.removeClass('active')
+>  92 |       self = this
+>  93 |       borderStyles.each(->
+>  94 |         $t = $(this)
+>  95 |         if $t.data('val') is state.borderStyle
+>  96 |           $t.addClass('active')
+>  97 |           self.$borderStyle.find('span').text($t.text())
+>  98 |           # data-val used to style selected border style image
+>  99 |           self.$borderStyle.attr('data-val', $t.data('val'))
+> 100 |       )
+> 101 | 
+> 102 |       @$alignment.removeClass('e-btn-selected')
+> 103 |       @$alignment.each(->
+> 104 |         $t = $(this)
+> 105 |         if $t.data('align') is state.align
+> 106 |           $t.addClass('e-btn-selected')
+> 107 |       )
+> 108 | 
+> 109 |       @_updateColorPicker(@editorInstance.dividerView.getCurrentColor())
+> 110 | 
+> 111 |     # Caches the toolbar's UI elements for later use by other methods.
+> 112 |     _cacheSelectors: ->
+> 113 |       @$colorPicker = @$el.find('#divider_backgroundColorContainer')
+> 114 |       @$borderStyle = @$el.find('#divider_borderStyle')
+> 115 |       @$borderStyleDropdown = @$el.find('#divider_borderStyle-btn-group .dropdown-menu')
+> 116 |       @$marginTop = @$el.find('#divider_marginTop')
+> 117 |       @$marginBottom = @$el.find('#divider_marginBottom')
+> 118 |       @$width = @$el.find('#divider_width')
+> 119 |       @$height = @$el.find('#divider_height')
+> 120 |       @$alignment = @$el.find('.alignment a')
+> 121 |       @$delete = @$el.find('[data-js=delete-button]')
+> 122 |       @$done = @$el.find('#done')
+> 123 | 
+> 124 |     # Changes the divider's alignment based on the button that was
+> 125 |     # clicked.
+> 126 |     #
+> 127 |     # @param [Event] e The click event that fired
+> 128 |     _changeAlignment: (e) ->
+> 129 |       e.preventDefault()
+> 130 |       $t = $(e.currentTarget)
+> 131 |       @$alignment.removeClass('e-btn-selected')
+> 132 |       $t.addClass('e-btn-selected')
+> 133 |       @model.set('align', $t.data('align'))
+> 134 | 
+> 135 |       DividerUsageTracking.trackChangeAlignment($t.data('align'))
+> 136 | 
+> 137 |     # Changes the divider's border style based on the value selected
+> 138 |     # in the drop-down menu.
+> 139 |     #
+> 140 |     # @param [Event] e The click event that fired
+> 141 |     _changeBorderStyle: (e) ->
+> 142 |       e.preventDefault()
+> 143 |       $t = $(e.target)
+> 144 | 
+> 145 |       @$borderStyleDropdown.find('li a').removeClass('active')
+> 146 |       $t.addClass('active')
+> 147 |       @$borderStyle.find('span').text($t.text())
+> 148 |       # data-val used to style selected border style image
+> 149 |       @$borderStyle.attr('data-val', $t.data('val'))
+> 150 |       @model.set('borderStyle', $t.data('val'))
+> 151 | 
+> 152 |       DividerUsageTracking.trackChangeBorderStyle($t.data('val'))
+> 153 | 
+> 154 |     # Called when the user clicks the 'Done' button on the toolbar.
+> 155 |     #
+> 156 |     # @param [Event] e The click event that fired
+> 157 |     _doneEditing: (e) ->
+> 158 |       galileoToolbar.hide()
+> 159 |       activationService.deactivateLayout()
+> 160 | 
+> 161 |       DividerUsageTracking.trackDone()
+> 162 | 
+> 163 |     # Initializes the color picker service for the divider toolbar.
+> 164 |     _initColorPicker: ->
+> 165 |       colorPickerService.setupColorPicker(
+> 166 |         $clickTarget: @$colorPicker
+> 167 |         $colorTarget: $('#divider_backgroundColor')
+> 168 |         onColorPicked: (values) =>
+> 169 |           @model.set('borderColor',
+> 170 |             local:
+> 171 |               values.color
+> 172 |           )
+> 173 |           @_updateColorPicker(values.color)
+> 174 |           DividerUsageTracking.trackChangeColor("#{values.originatedFrom}:#{values.color}")
+> 175 |       )
+> 176 | 
+> 177 |       # IE9 and the color picker don't get along.  This prevents the
+> 178 |       # "are you sure you want to leave" message
+> 179 |       $(document).on(
+> 180 |         'click',
+> 181 |         '#colorPicker #moreColors, #colorPicker .colorswatch, #colorPicker #advDone',
+> 182 |         (e) ->
+> 183 |           e.preventDefault()
+> 184 |       )
+> 185 | 
+> 186 |     # Initializes the spinner controls on the divider toolbar.
+> 187 |     _initSpinners: ->
+> 188 |       # border height
+> 189 |       @$height.mobileFriendly('
+</pre>
+
+</td>
+</tr>
+</table></body></html>

@@ -5,6 +5,7 @@ module.exports = function (grunt) {
     'use strict';
     var scanPath = null;
     var logger = require('./lib/logger');
+    logger.setGrunt(grunt);
     grunt.registerTask('jsdoc', function () {
         function getTitle(sourcePath) {
             try {
@@ -21,7 +22,7 @@ module.exports = function (grunt) {
                 var path = require('path');
                 var docPath = projectPath + '/doc/esdoc';
 
-                function dependoHandler() {
+                function esDocHandler() {
                     var title = getTitle(projectPath);
                     var exePath = './node_modules/.bin/esdoc ';
                     var exec = require('child_process').exec;
@@ -39,8 +40,12 @@ module.exports = function (grunt) {
                     logger.log(cmdLine);
                     var child = exec(cmdLine, function (error, stdout, stderr) {
                         if (stderr) {
-                            console.error(stderr);
-                        } else {}
+                            console.error('runEsdoc', stderr);
+                            //reject(stderr);
+                            resolve(stderr);
+                        } else {
+                          console.log('runEsdoc', arguments);
+                        }
                     });
                     child
                         .on(
@@ -49,15 +54,18 @@ module.exports = function (grunt) {
                                 if (code !== 0) {
                                     console
                                         .log('child process "node esdoc" exited with code ' + code);
-                                    reject(code);
+                                    //reject(code);
+                                    resolve(code);
                                 } else {
                                     resolve(0);
                                 }
                             });
                 }
                 try {
-                    dependoHandler();
+                    esDocHandler();
                 } catch (e) {
+               // reject(e);
+                    resolve(e);
                     logger.log(e.stack);
                 }
             });
@@ -80,9 +88,9 @@ module.exports = function (grunt) {
                     cmdLine += '-t ' + title + ' -f es6 ' + (projectPath + '/' + sourceDirectory) + ' > ' + reportPath;
                     var child = exec(cmdLine, function (error, stdout, stderr) {
                         if (stderr) {
-                            console.error(stderr);
+                            logger.error('runDependo', stderr);
                         } else {
-                            logger.log(stdout);
+                            logger.log('runDependo', stdout);
                         }
                     });
                     child
@@ -112,6 +120,7 @@ module.exports = function (grunt) {
             var completion = new Promise(function (resolve, reject) {
                 var path = require('path');
                 var docPath = projectPath + '/doc';
+                var saveLog = console.log;
 
                 function platoHandler() {
                     var plato = require('plato');
@@ -123,17 +132,41 @@ module.exports = function (grunt) {
                     grunt.file.recurse(projectPath + '/' + sourceDirectory, cb);
                     var outputDir = projectPath + '/doc/plato';
                     var options = {
-                        title: title
+                        title: title,
+                        recurse: true,
+                        date: new Date().getTime()
                     };
+                    var file = '';
+                    var task = 'jsdoc';
+                    var message = ''
                     var callback = function (report) {
+                        // NOTE: report is all the JSON data
+                        //console.log('runPlato DONE', report);
                         resolve(0);
+                        console.log = saveLog;
+                    };
+
+                    console.log = function (a, b) {
+                        // saveLog('runPlato ERROR');
+                        //saveLog('0', a);
+                        //saveLog('1', b);
+                        //saveLog('END runPlato ERROR');
+                        //
+                        if (b) {
+                            file = b;
+                        } else {
+                            message = a;
+                            grunt.addToDoItem(file, task, message);
+                        }
                     };
                     plato.inspect(files, outputDir, options, callback);
+
                 }
                 try {
                     platoHandler();
+                    resolve(0);
                 } catch (e) {
-                    logger.log(e.stack);
+                    grunt.log.writeln('runPlato', e.stack);
                     reject(e);
                 }
             });
@@ -154,9 +187,13 @@ module.exports = function (grunt) {
             rimraf(
                 path.normalize(docPath),
                 function jsdocHandler() {
+                    grunt.log.writeln('runDependo');
                     runDependo(projectPath, sourceDirectory).then(function (code) {
+                        grunt.log.writeln('runPlato');
                         runPlato(projectPath, sourceDirectory).then(function (code) {
+                            grunt.log.writeln('runEsdoc');
                             runEsdoc(projectPath, sourceDirectory).then(function (code) {
+                                grunt.log.writeln('runJsDoc');
                                 var USE_HARUKI = false;
                                 var exePath = './node_modules/.bin/jsdoc ';
                                 var exec = require('child_process').exec;
@@ -172,9 +209,11 @@ module.exports = function (grunt) {
                                 }
                                 var child = exec(cmdLine, function (error, stdout, stderr) {
                                     if (stderr) {
-                                        console.error(stderr);
+                                        grunt.file.write(projectPath + '/jsdoc.log.txt', stderr);
+                                        logger.debug('Read jsdoc.log.txt to see what happened.');
                                     } else {
-                                        logger.log(stdout);
+                                        grunt.file.write(projectPath + '/jsdoc.log.txt', stdout);
+                                        logger.debug('Read jsdoc.log.txt to see what happened.');
                                     }
                                 });
                                 /**

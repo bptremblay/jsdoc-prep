@@ -1,0 +1,155 @@
+<div class='editor-buttons toolbar-row left clear'>
+    <!-- Font Family -->
+    <div class='left tool-spacing' data-js='font-dropdown'>
+        <div class='input-append btn-group' data-js='font-family-dropdown' id='fontfamily-dropdown-group'>
+            <button class='btn btn-tertiary dropdown-toggle' data-js='primary-button' data-type='kind' data-xtoggle='dropdown' id='fontfamily-dropdown' name='fontfamily-dropdown' tabindex='1' title='{{nls.edit_font_face}}' type='button'>Arial</button>
+            <button class='btn btn-tertiary dropdown-toggle' data-xtoggle='dropdown' type='button'>
+                <span class='icon-caret-open-down'></span>
+            </button>
+        </div>
+    </div>
+    <div class='left tool-spacing'>
+        <!-- Font Size -->
+        <div class="input-append btn-group" data-js="font-size-dropdown" id="fontsize-dropdown-btn-group">
+            <button class="btn btn-tertiary e-btn dropdown-toggle" data-js='primary-button' data-xtoggle="dropdown" data-type="kind" id="fontsize-dropdown" name="fontsize-dropdown" tabindex="5" title="{{nls.edit_font_size}}" type="button"></button>
+            <button class="btn btn-tertiary e-btn dropdown-toggle" data-xtoggle="dropdown" type="button">
+                <i class="icon-caret-open-down"></i>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a data-val="8" href="#">8</a>
+                </li>
+                <li>
+                    <a data-val="9" href="#">9</a>
+                </li>
+                <li>
+                    <a data-val="10" href="#">10</a>
+                </li>
+                <li>
+                    <a data-val="11" href="#">11</a>
+                </li>
+                <li>
+                    <a data-val="12" href="#">12</a>
+                </li>
+                <li>
+                    <a data-val="14" href="#">14</a>
+                </li>
+                <li>
+                    <a data-val="16" href="#">16</a>
+                </li>
+                <li>
+                    <a data-val="18" href="#">18</a>
+                </li>
+                <li>
+                    <a data-val="20" href="#">20</a>
+                </li>
+                <li>
+                    <a data-val="22" href="#">22</a>
+                </li>
+                <li>
+                    <a data-val="24" href="#">24</a>
+                </li>
+                <li>
+                    <a data-val="26" href="#">26</a>
+                </li>
+                <li>
+                    <a data-val="28" href="#">28</a>
+                </li>
+                <li>
+                    <a data-val="36" href="#">36</a>
+                </li>
+                <li>
+                    <a data-val="48" href="#">48</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Font Color -->
+    <div class='left tool-spacing input-append btn-group' data-js='text-color-dropdown' id='fontcolor-dropdown-btn-group' title='{{nls.edit_font_color}}'>
+        <button class='btn btn-tertiary dropdown-toggle' data-type='kind' id='fontcolor-dropdown' type='button'>
+            <i class='icon-font-select'>
+                <b data-js='font-color-preview-area' style='background-color: {{fontColor}};'></b>
+            </i>
+        </button>
+        <button class='btn btn-tertiary dropdown-toggle' data-type='kind' type='button'>
+            <i class='icon-caret-open-down'></i>
+        </button>
+    </div>
+    <!-- Bold/Italics -->
+    <div class="b-i-u">
+        <ul class="last-one">
+            <li>
+                <a class="e-btn br-left-4" data-action="bold" href="javascript:" id="aloha-bold-advanced" title="{{nls.bold}}">
+                    <span class="ic icon-font-weight-select" data-test-id="bold"></span>
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a class="e-btn br-right-4" data-action="italic" href="javascript:" id="aloha-italic-advanced" title="{{nls.italic}}">
+                    <span class="ic icon-font-italic" data-test-id="italic"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class='editor-buttons toolbar-row left clear'>
+    <!-- Alignment -->
+    <div class="alignment left tool-spacing">
+        <div class="input-append btn-group" id="alignment-dropdown-btn-group">
+            <button class="btn btn-tertiary e-btn dropdown-toggle" data-js="primary-button" data-toggle="dropdown" data-type="kind" id="alignment-dropdown" name="alignment-dropdown" tabindex="5" title="{{nls.button_alignment}}" type="button"><span class="icon-left-justify" data-test-id="justifyleft"></span></button>
+            <button class="btn btn-tertiary e-btn dropdown-toggle" data-toggle="dropdown" type="button">
+                <i class="icon-caret-open-down"></i>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a data-action="justifyleft" data-align="left" data-test-id="left" href="#" id="aloha-justifyleft" title="{{nls.align_left}}">
+                        <span class="icon-left-justify" data-test-id="justifyleft"></span>
+                    </a>
+                </li>
+                <li>
+                    <a data-action="justifycenter" data-align="center" data-test-id="center" href="#" id="aloha-justifycenter" title="{{nls.align_center}}">
+                        <span class="icon-center-justify" data-test-id="justifycenter"></span>
+                    </a>
+                </li>
+                <li>
+                    <a data-action="justifyright" data-align="right" data-test-id="right" href="#" id="aloha-justifyright" title="{{nls.align_right}}">
+                        <span class="icon-right-justify" data-test-id="justifyright"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Background Color -->
+    <div class='background-color-control input-append btn-group left tool-spacing' data-js='color-dropdown' title='{{nls.edit_color}}'>
+        <button class='btn btn-tertiary dropdown-toggle' data-type='kind' type='button'>
+            <b class='bgColor' data-js='color-preview-area' style='background-color: {{color}};'></b>
+        </button>
+        <button class='btn btn-tertiary dropdown-toggle' data-type='kind' type='button'>
+            <i class='icon-caret-open-down'></i>
+        </button>
+    </div>
+    <!-- Insert Link -->
+    <div class="link left">
+        <ul>
+            <li>
+                <a data-js="link-button" class="e-btn br-all-4" data-action="hyperlink" href="#" id="aloha-hyperlink" title="{{nls.text_insert_link}}">
+                    <span class="ic icon-link" data-test-id="hyperlink"></span><span class="txtbtn">{{nls.link}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class='editor-actions right'>
+        <!-- Delete button -->
+        <div class="remove-button left">
+            <ul>
+                <li>
+                    <a data-js="delete-button" href="javascript:" title="{{delete_button_tooltip}}" class="e-btn delete-btn br-all-4" style="visibility: {{trashcanVisibility}};">
+                        <span class="ic icon-trash"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Done button -->
+        <button class='btn btn-primary last-one' data-js='done-button' href='javascript:' title='{{nls.title_done_button}}'>{{nls.text_done_button}}</button>
+    </div>
+</div>

@@ -1,0 +1,418 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "toolbar",
+      "AMD": false,
+      "webPath": "",
+      "convertedName": "toolbar",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/toolbar.js",
+  "folderPath": "test-source",
+  "fileName": "toolbar.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "",
+  "webPath": "",
+  "libFile": false,
+  "min": false,
+  "realName": "toolbar",
+  "name": "toolbar",
+  "camelName": "Toolbar",
+  "processedFilePath": "test-output/toolbar.js",
+  "mappedModuleName": "toolbar",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": true,
+  "moduleName": "toolbar",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 199,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 4962,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./toolbar",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {
+      "0": 71
+    },
+    "methods": [
+      {
+        "name": "positionNearTarget",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 26,
+        "memberOf": "Toolbar",
+        "doclet": "/**\n * @param targ\n */",
+        "args": [
+          "targ"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "positionNearTarget(targ) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "targ\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "constructor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 35,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "constructor() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_setupPositioning",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 47,
+        "memberOf": "Toolbar",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "_setupPositioning() {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "setTitle",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 57,
+        "memberOf": "",
+        "doclet": "/**\n * @param theTitle\n */",
+        "args": [
+          "theTitle"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "let setTitle = function (theTitle) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "theTitle\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "offset",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 68,
+        "memberOf": "",
+        "doclet": "/**\n * @param pos\n */",
+        "args": [
+          "pos"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "offset(pos) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "pos\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "onUpdate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 83,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "onUpdate() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_setupChildren",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 91,
+        "memberOf": "Toolbar",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "_setupChildren() {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "setVisible",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 129,
+        "memberOf": "Toolbar",
+        "doclet": "/**\n * @param visibleIn  \n * @param targetComponent\n */",
+        "args": [
+          "visibleIn",
+          "targetComponent"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setVisible(visibleIn, targetComponent) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "visibleIn"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "targetComponent\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "getVisible",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 144,
+        "memberOf": "Toolbar",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getVisible() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "applyProperties",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 151,
+        "memberOf": "Toolbar",
+        "doclet": "/**\n * @param properties  \n * @param bindings\n */",
+        "args": [
+          "properties",
+          "bindings"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "applyProperties(properties, bindings) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "properties"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "bindings\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "onDomAdd",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 165,
+        "memberOf": "Toolbar",
+        "doclet": "/**\n * @param domParent\n */",
+        "args": [
+          "domParent"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "onDomAdd(domParent) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "domParent\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "doneClick",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 171,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "doneClick = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "deleteClick",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 177,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "deleteClick = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "getToolbar",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 191,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function getToolbar() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source",
+    "fileName": "toolbar.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 215,
+  "EMPTY": false
+}

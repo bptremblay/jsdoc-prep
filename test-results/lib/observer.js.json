@@ -1,0 +1,471 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "observer",
+      "AMD": false,
+      "webPath": "/lib",
+      "convertedName": "observer",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/lib/observer.js",
+  "folderPath": "test-source/lib",
+  "fileName": "observer.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/lib",
+  "webPath": "/lib",
+  "libFile": false,
+  "min": false,
+  "realName": "observer",
+  "name": "observer",
+  "camelName": "Observer",
+  "processedFilePath": "test-output/lib/observer.js",
+  "mappedModuleName": "lib/observer",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": false,
+  "moduleName": "lib/observer",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 192,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/lib",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 5055,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./observer",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "weakReference",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 10,
+        "memberOf": "",
+        "doclet": "/**\n * @param obj  \n * @return {Boolean}\n */",
+        "args": [
+          "obj"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "weakReference(obj) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "obj"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 2,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Boolean}\n"
+          }
+        }
+      },
+      {
+        "name": "cleanupWeakReference",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 27,
+        "memberOf": "",
+        "doclet": "/**\n * @param ref  \n * @param id  \n * @return {Object} UnaryExpression\n */",
+        "args": [
+          "ref",
+          "id"
+        ],
+        "description": "",
+        "return": "UnaryExpression",
+        "classDeclarationFlag": false,
+        "line": "cleanupWeakReference(ref, id) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "ref"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "id"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} UnaryExpression\n"
+          }
+        }
+      },
+      {
+        "name": "stubFunction",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 39,
+        "memberOf": "",
+        "doclet": "/**\n * @param obj  \n * @param fn  \n * @return {Object} AssignmentExpression\n */",
+        "args": [
+          "obj",
+          "fn"
+        ],
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "stubFunction(obj, fn) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "obj"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "fn"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} AssignmentExpression\n"
+          }
+        }
+      },
+      {
+        "name": "obj[fn]",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 48,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "return obj[fn] = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "observeMutations",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 64,
+        "memberOf": "",
+        "doclet": "/**\n * @param obj  \n * @param ref  \n * @param keypath\n */",
+        "args": [
+          "obj",
+          "ref",
+          "keypath"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "observeMutations(obj, ref, keypath) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "obj"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "ref"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "keypath\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "unobserveMutations",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 87,
+        "memberOf": "",
+        "doclet": "/**\n * @param obj  \n * @param ref  \n * @param keypath\n */",
+        "args": [
+          "obj",
+          "ref",
+          "keypath"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "unobserveMutations(obj, ref, keypath) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "obj"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "ref"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "keypath\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "observe",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 110,
+        "memberOf": "",
+        "doclet": "/**\n * @param obj  \n * @param keypath  \n * @param callback\n */",
+        "args": [
+          "obj",
+          "keypath",
+          "callback"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "observe(obj, keypath, callback) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "obj"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "keypath"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "callback\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "unobserve",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 157,
+        "memberOf": "",
+        "doclet": "/**\n * @param obj  \n * @param keypath  \n * @param callback\n */",
+        "args": [
+          "obj",
+          "keypath",
+          "callback"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "unobserve(obj, keypath, callback) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "obj"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "keypath"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "callback\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "get",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 178,
+        "memberOf": "",
+        "doclet": "/**\n * @param obj  \n * @param keypath\n */",
+        "args": [
+          "obj",
+          "keypath"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "get(obj, keypath) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "obj"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "keypath\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "set",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 187,
+        "memberOf": "",
+        "doclet": "/**\n * @param obj  \n * @param keypath  \n * @param value  \n * @return {Object} AssignmentExpression\n */",
+        "args": [
+          "obj",
+          "keypath",
+          "value"
+        ],
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "set(obj, keypath, value) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "obj"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "keypath"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "value"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 4,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} AssignmentExpression\n"
+          }
+        }
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/lib",
+    "fileName": "observer.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 196,
+  "EMPTY": false
+}

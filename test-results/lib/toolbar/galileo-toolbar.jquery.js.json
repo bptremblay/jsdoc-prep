@@ -1,0 +1,646 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "utils",
+        "template-engine",
+        "galileo-lib/modules/events",
+        "root/engine/editor-events",
+        "i18n!galileo-lib/modules/nls/engine",
+        "text!root/templates/editor-tools.html",
+        "plugins/position-affix.jquery"
+      ],
+      "usedAs": [
+        "$",
+        "utils",
+        "Mustache",
+        "galileoEvents",
+        "events",
+        "i18n",
+        "template"
+      ],
+      "moduleName": "galileo-toolbar.jquery",
+      "AMD": true,
+      "webPath": "/lib/toolbar",
+      "convertedName": "galileo_toolbar.jquery",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/lib/toolbar/galileo-toolbar.jquery.js",
+  "folderPath": "test-source/lib/toolbar",
+  "fileName": "galileo-toolbar.jquery.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/lib/toolbar",
+  "webPath": "/lib/toolbar",
+  "libFile": false,
+  "min": false,
+  "realName": "galileo-toolbar.jquery",
+  "name": "galileo-toolbar.jquery",
+  "camelName": "GalileoToolbar.jquery",
+  "processedFilePath": "test-output/lib/toolbar/galileo-toolbar.jquery.js",
+  "mappedModuleName": "lib/toolbar/galileo-toolbar.jquery",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": false,
+  "moduleName": "lib/toolbar/galileo-toolbar.jquery",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 266,
+    "requires": [
+      "jquery",
+      "utils",
+      "template-engine",
+      "galileo-lib/modules/events",
+      "root/engine/editor-events",
+      "i18n!galileo-lib/modules/nls/engine",
+      "text!root/templates/editor-tools.html",
+      "plugins/position-affix.jquery"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/lib/toolbar",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 8265,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./galileo-toolbar",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "renderTemplate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 27,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "renderTemplate = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "renderToolbar",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 33,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "renderToolbar = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "offset",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 42,
+        "memberOf": "",
+        "doclet": "/**\n * @param pos\n */",
+        "args": [
+          "pos"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "offset: function (pos) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "pos\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "onUpdate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 57,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "onUpdate: function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "eventClickWasToolbarRelated",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 73,
+        "memberOf": "",
+        "doclet": "/**\n * @param evt  \n * @return {Boolean}\n */",
+        "args": [
+          "evt"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "eventClickWasToolbarRelated = function (evt) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "evt"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 2,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Boolean}\n"
+          }
+        }
+      },
+      {
+        "name": "bindToWindowEvents",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 90,
+        "memberOf": "",
+        "doclet": "/**\n * @return {Boolean}\n */",
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "bindToWindowEvents = function () {",
+        "originalJsDocDescription": {
+          "return": {
+            "tag": "return",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Boolean}\n"
+          }
+        }
+      },
+      {
+        "name": "clickedMainToolbar",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 96,
+        "memberOf": "",
+        "doclet": "/**\n * @param evt  \n * @return {Boolean}\n */",
+        "args": [
+          "evt"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "clickedMainToolbar = function (evt) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "evt"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 2,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Boolean}\n"
+          }
+        }
+      },
+      {
+        "name": "showTools",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 128,
+        "memberOf": "",
+        "doclet": "/**\n * @param theToolsClass\n */",
+        "args": [
+          "theToolsClass"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "showTools = function (theToolsClass) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "theToolsClass\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "runShow",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 136,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "runShow = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "registerToolbarEventCondition",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 164,
+        "memberOf": "",
+        "doclet": "/**\n * @param condition\n */",
+        "args": [
+          "condition"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "registerToolbarEventCondition: function (condition) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "condition\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "getTitle",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 170,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getTitle: function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "setTitle",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 176,
+        "memberOf": "",
+        "doclet": "/**\n * @param theTitle\n */",
+        "args": [
+          "theTitle"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "setTitle: function (theTitle) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "theTitle\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "getToolbar",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 182,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getToolbar: function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "getTools",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 193,
+        "memberOf": "",
+        "doclet": "/**\n * @param theToolsClass  \n * @param theTemplateHTML\n */",
+        "args": [
+          "theToolsClass",
+          "theTemplateHTML"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getTools: function (theToolsClass, theTemplateHTML) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "theToolsClass"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "theTemplateHTML\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "show",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 216,
+        "memberOf": "",
+        "doclet": "/**\n * @param theToolsClass  \n * @param theTitle  \n * @param callback  \n * @return {Object} ConditionalExpression\n */",
+        "args": [
+          "theToolsClass",
+          "theTitle",
+          "callback"
+        ],
+        "description": "",
+        "return": "ConditionalExpression",
+        "classDeclarationFlag": false,
+        "line": "show: function (theToolsClass, theTitle, callback) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "theToolsClass"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "theTitle"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "callback"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 4,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} ConditionalExpression\n"
+          }
+        }
+      },
+      {
+        "name": "updateAndShow",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 233,
+        "memberOf": "",
+        "doclet": "/**\n * @param $theTarget  \n * @param theToolsClass  \n * @param theTitle  \n * @param callback  \n * @return {Object} ConditionalExpression\n */",
+        "args": [
+          "$theTarget",
+          "theToolsClass",
+          "theTitle",
+          "callback"
+        ],
+        "description": "",
+        "return": "ConditionalExpression",
+        "classDeclarationFlag": false,
+        "line": "updateAndShow: function ($theTarget, theToolsClass, theTitle, callback) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "$theTarget"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "theToolsClass"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "theTitle"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "callback"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 5,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} ConditionalExpression\n"
+          }
+        }
+      },
+      {
+        "name": "hide",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 246,
+        "memberOf": "",
+        "doclet": "/**\n * @param callback\n */",
+        "args": [
+          "callback"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "hide: function (callback) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "callback\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "updatePosition",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 252,
+        "memberOf": "",
+        "doclet": "/**\n * @param preferredPosition\n */",
+        "args": [
+          "preferredPosition"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "updatePosition: function (preferredPosition) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "preferredPosition\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "updateTarget",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 259,
+        "memberOf": "",
+        "doclet": "/**\n * @param $target\n */",
+        "args": [
+          "$target"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "updateTarget: function ($target) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "$target\n"
+            }
+          ]
+        }
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/lib/toolbar",
+    "fileName": "galileo-toolbar.jquery.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 260,
+  "EMPTY": false
+}

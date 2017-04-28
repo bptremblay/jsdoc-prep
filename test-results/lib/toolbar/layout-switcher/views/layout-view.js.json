@@ -1,0 +1,359 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "backbone",
+        "template-engine",
+        "text!root/templates/layout.html",
+        "underscore"
+      ],
+      "usedAs": [
+        "$",
+        "Backbone",
+        "Mustache",
+        "template"
+      ],
+      "moduleName": "layout-view",
+      "AMD": true,
+      "webPath": "/lib/toolbar/layout-switcher/views",
+      "convertedName": "layout_view",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/lib/toolbar/layout-switcher/views/layout-view.js",
+  "folderPath": "test-source/lib/toolbar/layout-switcher/views",
+  "fileName": "layout-view.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/lib/toolbar/layout-switcher/views",
+  "webPath": "/lib/toolbar/layout-switcher/views",
+  "libFile": false,
+  "min": false,
+  "realName": "layout-view",
+  "name": "layout-view",
+  "camelName": "LayoutView",
+  "processedFilePath": "test-output/lib/toolbar/layout-switcher/views/layout-view.js",
+  "mappedModuleName": "lib/toolbar/layout-switcher/views/layout-view",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "lib/toolbar/layout-switcher/views/layout-view~LayoutView": {
+      "todos": [],
+      "returnType": "",
+      "type": "FunctionDeclaration",
+      "uid": 102,
+      "parentNode": 96,
+      "memberOf": "",
+      "ctor": true,
+      "lineNumber": 38,
+      "line": "function LayoutView() {",
+      "comment": 4,
+      "range": [
+        1120,
+        1227
+      ],
+      "name": "LayoutView",
+      "commentBody": "/**\n         * @constructor\n         */",
+      "oldComment": {
+        "type": "Block",
+        "value": "*\n         * @constructor\n         ",
+        "range": [
+          1072,
+          1111
+        ],
+        "commentBody": "/**\n         * @constructor\n         */",
+        "lineNumber": 35
+      },
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "tags": [
+          {
+            "tag": "constructor",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        ],
+        "requiresList": [
+          "jquery",
+          "backbone",
+          "template-engine",
+          "text!root/templates/layout.html",
+          "underscore"
+        ],
+        "moduleName": "layout_view",
+        "camelName": "LayoutView",
+        "freeText": "",
+        "@constructor": "",
+        "preamble": "",
+        "nodeType": "CLASS"
+      },
+      "jsDoc": "/**\n * @constructor\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": false,
+  "moduleName": "lib/toolbar/layout-switcher/views/layout-view",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 86,
+    "requires": [
+      "jquery",
+      "backbone",
+      "template-engine",
+      "text!root/templates/layout.html",
+      "underscore"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/lib/toolbar/layout-switcher/views",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 2624,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./layout-view",
+    "uses_console_log": false,
+    "uses_backbone": true,
+    "classes": {
+      "LayoutView": 102
+    },
+    "methods": [
+      {
+        "name": "extend",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "doclet": "/**\n * @param child  \n * @param parent\n */",
+        "args": [
+          "child",
+          "parent"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "var extend = function (child, parent) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "child"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "parent\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "ctor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function ctor() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "LayoutView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 38,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function LayoutView() {",
+        "originalJsDocDescription": {
+          "constructor": {
+            "tag": "constructor",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_select",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 51,
+        "memberOf": "LayoutView.prototype",
+        "doclet": "/**\n * @private\n * @private \n * @param e  \n * @return {Boolean}\n */",
+        "args": [
+          "e"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "LayoutView.prototype._select = function (e) {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "e"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Boolean}\n"
+          }
+        }
+      },
+      {
+        "name": "initialize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 59,
+        "memberOf": "LayoutView.prototype",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutView.prototype.initialize = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 67,
+        "memberOf": "LayoutView.prototype",
+        "doclet": "/**\n * @return {Object} ThisExpression\n */",
+        "description": "",
+        "return": "ThisExpression",
+        "classDeclarationFlag": false,
+        "line": "LayoutView.prototype.render = function () {",
+        "originalJsDocDescription": {
+          "return": {
+            "tag": "return",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} ThisExpression\n"
+          }
+        }
+      },
+      {
+        "name": "highlight",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 74,
+        "memberOf": "LayoutView.prototype",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutView.prototype.highlight = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "unhighlight",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 80,
+        "memberOf": "LayoutView.prototype",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutView.prototype.unhighlight = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/lib/toolbar/layout-switcher/views",
+    "fileName": "layout-view.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 85,
+  "EMPTY": false
+}

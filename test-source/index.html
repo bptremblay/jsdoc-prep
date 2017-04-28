@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <meta charset="UTF-8">
+    <title>Harness</title>
+
+<!--    <link rel="stylesheet" href="./harness.css" />-->
+    <link rel="stylesheet" href="./f.css" />
+    <!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    <script src="../../../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="../../../mock-engine/css/galileoeditor.css">
+
+    <style type="text/css">
+        #galileo .divider-editor-tools .toolbar-row {
+            width: 100%;
+        }
+
+        #galileo .divider-editor-tools .divider-spacing {
+            display: table;
+        }
+
+        #galileo .divider-editor-tools .divider-spacing i {
+            color: #bababa;
+            position: relative;
+            top: 12px;
+            margin: 0 5px 0 4px;
+        }
+
+        #galileo #divider_borderStyle-btn-group > .btn:first-child {
+            width: 160px;
+            padding-left: 10px;
+            padding-right: 5px;
+        }
+
+        #galileo #divider_borderStyle-btn-group > .btn:first-child > span {
+            float: left;
+            s font-size: 12px;
+            margin-right: 10px;
+        }
+
+        #galileo #divider_borderStyle-btn-group > .btn:first-child > b {
+            background-image: url(https://static.ctctcdn.com/ui/images1/galileo/sprite-divider-lines.png);
+            background-repeat: no-repeat;
+            width: 28px;
+            height: 1px;
+            float: left;
+            margin: 10px 0 0 0px;
+        }
+
+        #galileo .dropdown-menu li > a.divider-style {
+            padding-right: 32px;
+        }
+
+        #galileo .divider-style > b {
+            background-image: url(https://static.ctctcdn.com/ui/images1/galileo/sprite-divider-lines.png);
+            background-repeat: no-repeat;
+            display: block;
+            width: 65px;
+            height: 1px;
+            position: relative;
+            left: 60px;
+            top: -21px;
+            margin-right: 27px;
+        }
+
+        #galileo [data-val="solid"] > b {
+            background-position: -30px -110px;
+        }
+
+        #galileo *[data-val="dashed"] > b {
+            background-position: -31px -70px;
+            float: left;
+        }
+
+        #galileo [data-val="none"]:after {
+            content: "";
+        }
+
+        #galileo .divider-editor-tools .ui-spinner-wrapper {
+            display: inline-block;
+        }
+    </style>
+
+    <style id="overlay" type="text/css" media="all">
+        .ui-helper-clearfix,
+        .ui-icon {
+            display: block
+        }
+
+        .ui-helper-clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden
+        }
+
+        * html .ui-helper-clearfix {
+            height: 1%
+        }
+
+        .ui-icon {
+            text-indent: -99999px;
+            overflow: hidden;
+            background-repeat: no-repeat
+        }
+
+        .ui-widget-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        .ui-overlay .ui-button {
+            display: inline-block;
+            position: relative;
+            padding: 0;
+            margin-right: .1em;
+            text-decoration: none!important;
+            cursor: pointer;
+            text-align: center;
+            zoom: 1;
+            overflow: visible;
+            font-size: 12px
+        }
+
+        .ui-overlay .ui-button .ui-button-text {
+            display: block;
+            line-height: 1.4
+        }
+
+        .ui-overlay .ui-button-text-only .ui-button-text {
+            padding: .4em 1em
+        }
+
+        .ui-overlay button.ui-button::-moz-focus-inner {
+            border: 0;
+            padding: 0
+        }
+
+        .ui-overlay .ui-dialog-buttonset .btn-primary {
+            font-weight: 700!important;
+            color: #614b00!important;
+            background: url(//imgssl.constantcontact.com/ui/images1/btn-primary-bg.gif) left top repeat-x #ebac1d!important;
+            border: 1px solid #c8a228!important;
+            text-decoration: none!important;
+            cursor: pointer!important;
+            margin: 0!important
+        }
+
+        .ui-overlay .ui-dialog-buttonset .btn-primary-disabled {
+            margin: 0!important
+        }
+
+        .ui-overlay .ui-dialog-buttonset .btn-primary:hover {
+            background: url(//imgssl.constantcontact.com/ui/images1/btn-primary-bg-hover.gif) left top repeat-x #d5960e!important;
+            text-decoration: none!important
+        }
+
+        .ui-overlay .ui-dialog-buttonset .btn-secondary {
+            color: #007BBF!important;
+            text-decoration: underline!important;
+            border: 0!important;
+            cursor: pointer!important;
+            margin: 0!important;
+            background: 0 0!important;
+            box-shadow: 0
+        }
+
+        .ui-overlay .ui-dialog-buttonset .btn-secondary:hover {
+            background: 0 0;
+            text-decoration: none!important
+        }
+
+        .ui-dialog,
+        .ui-dialog .ui-widget-header {
+            background: #fff
+        }
+
+        .ui-dialog {
+            position: fixed;
+            width: 300px;
+            font-family: Arial, Helvetica, sans-serif;
+            border: 1px solid #43495A;
+            padding: 0;
+            font-size: 12px;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .3);
+            -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .3);
+            -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .3);
+            display: none;
+            overflow: visible
+        }
+
+        .ui-dialog .ui-dialog-titlebar {
+            display: block;
+            padding: 8px 15px;
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/hdr_bkgd.png) repeat-x #1b5285;
+            position: relative;
+            text-align: left
+        }
+
+        .ui-dialog .ui-dialog-title {
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            text-shadow: rgba(0, 0, 0, .5) 0 -1px 0;
+            float: left;
+            margin: 0;
+            font-weight: 700
+        }
+
+        .ui-dialog .ui-dialog-subtitle {
+            color: #666;
+            display: block
+        }
+
+        .ui-dialog .ui-dialog-titlebar-button {
+            float: right
+        }
+
+        .ui-dialog .ui-dialog-titlebar-close {
+            position: absolute;
+            right: .3em;
+            top: 50%;
+            width: 19px;
+            margin: -10px 0 0;
+            padding: 1px;
+            height: 18px
+        }
+
+        .ui-dialog .ui-dialog-titlebar-close span {
+            display: block;
+            margin: 1px
+        }
+
+        .ui-dialog .ui-icon-closethick,
+        .ui-dialog-type-message .ui-dialog-close-btn {
+            display: none
+        }
+
+        .ui-dialog .ui-dialog-close-btn {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/closebox_black.png) 50% 50% no-repeat;
+            height: 30px;
+            width: 30px;
+            z-index: 2000;
+            cursor: pointer
+        }
+
+        .ui-dialog .ui-dialog-titlebar-close:focus,
+        .ui-dialog .ui-dialog-titlebar-close:hover {
+            padding: 0
+        }
+
+        .ui-dialog .ui-dialog-content {
+            position: relative;
+            zoom: 1;
+            padding: 20px!important;
+            overflow: auto;
+            overflow-x: hidden;
+            background: #fff;
+            margin: 0;
+            border: 0!important;
+            text-align: left
+        }
+
+        .ui-dialog .ui-dialog-buttonpane {
+            border-width: 1px 0 0;
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/bg_toolbar.png) repeat-x #D1D5E2;
+            padding: 6px 10px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+            position: relative;
+            margin: 0;
+            left: 0;
+            top: 0
+        }
+
+        .ui-dialog .ui-dialog-buttonpane button {
+            margin: .5em .4em .5em 0;
+            cursor: pointer;
+            border: 1px solid #999
+        }
+
+        .ui-dialog .ui-dialog-buttonpane .btn-secondary-disabled {
+            margin: 0;
+            border: none;
+            color: #aaa!important;
+            font-weight: 400;
+            background: 0 0;
+            text-decoration: none!important;
+            text-shadow: none;
+            cursor: default
+        }
+
+        .ui-dialog .ui-resizable-se {
+            width: 14px;
+            height: 14px;
+            right: 3px;
+            bottom: 3px
+        }
+
+        .ui-draggable .ui-dialog-titlebar {
+            cursor: move;
+            padding: 15px 40px 15px 15px
+        }
+
+        .ui-draggable .ui-dialog-close-btn {
+            top: 10px;
+            right: 10px;
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/overlay_close_inset.png) 50% 50% no-repeat;
+            height: 20px;
+            width: 19px
+        }
+
+        .ui-dialog-type-feature .ui-dialog-content,
+        .ui-dialog-type-frame .ui-dialog-content,
+        .ui-dialog-type-tabs .ui-dialog-content {
+            padding: 0!important
+        }
+
+        .ui-dialog-type-feature iframe {
+            border: 0;
+            width: 698px;
+            margin: 0;
+            height: 350px
+        }
+
+        .ui-dialog-type-frame iframe {
+            border: 0;
+            width: 100%;
+            margin: 0
+        }
+
+        .ui-dialog-type-details .ui-dialog-titlebar {
+            background-color: #F3F3F3;
+            padding: 15px;
+            overflow-y: hidden
+        }
+
+        .ui-dialog-type-details .ui-dialog-title {
+            font-size: 12px;
+            font-weight: 400;
+            text-shadow: none
+        }
+
+        .ui-overlay .distui-member {
+            position: relative
+        }
+
+        .ui-dialog .loading-ind,
+        .ui-overlay .distui-member .loading-ind {
+            position: absolute;
+            text-align: center;
+            left: 50%;
+            top: 50%;
+            margin: -25px 0 0 -60px;
+            white-space: nowrap
+        }
+
+        .ui-dialog .loading-ind .loading-img,
+        .ui-overlay .distui-member .loading-ind .loading-img {
+            width: 32px;
+            height: 32px;
+            margin: 0 auto 5px;
+            background: url(//imgssl.constantcontact.com/ui/images1/ajax_loader.gif) no-repeat
+        }
+
+        .ui-dialog .loading-ind-bg,
+        .ui-overlay .distui-member .loading-ind-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #fff;
+            opacity: .9
+        }
+
+        .ui-widget-content {
+            background: url(//imgssl.constantcontact.com/ui/images1/jquery/1.8.4/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x #fff;
+            color: #222
+        }
+
+        .ui-widget-header {
+            color: #fff;
+            font-weight: 700
+        }
+
+        .ui-widget-header a {
+            color: #007bbf
+        }
+
+        .ui-state-default,
+        .ui-widget-content .ui-state-default,
+        .ui-widget-header .ui-state-default {
+            background: #e6e6e6;
+            font-weight: 400;
+            color: #555
+        }
+
+        .ui-state-default a,
+        .ui-state-default a:link,
+        .ui-state-default a:visited {
+            color: #555;
+            text-decoration: none
+        }
+
+        .ui-state-focus,
+        .ui-state-hover,
+        .ui-widget-content .ui-state-focus,
+        .ui-widget-content .ui-state-hover,
+        .ui-widget-header .ui-state-focus,
+        .ui-widget-header .ui-state-hover {
+            border-color: 1px solid #999;
+            background: #dadada;
+            font-weight: 400;
+            color: #212121
+        }
+
+        .ui-state-hover a,
+        .ui-state-hover a:hover {
+            color: #212121;
+            text-decoration: none
+        }
+
+        .ui-state-active,
+        .ui-widget-content .ui-state-active,
+        .ui-widget-header .ui-state-active {
+            background: #fff;
+            font-weight: 400;
+            color: #212121
+        }
+
+        .ui-state-active a,
+        .ui-state-active a:link,
+        .ui-state-active a:visited {
+            color: #212121;
+            text-decoration: none
+        }
+
+        .ui-widget:active {
+            outline: 0
+        }
+
+        .ui-state-highlight,
+        .ui-widget-content .ui-state-highlight,
+        .ui-widget-header .ui-state-highlight {
+            border: 1px solid #fcefa1;
+            background: #fbf9ee;
+            color: #363636
+        }
+
+        .ui-state-highlight a,
+        .ui-widget-content .ui-state-highlight a,
+        .ui-widget-header .ui-state-highlight a {
+            color: #363636
+        }
+
+        .ui-state-error,
+        .ui-widget-content .ui-state-error,
+        .ui-widget-header .ui-state-error {
+            border: 1px solid #cd0a0a;
+            background: #fef1ec;
+            color: #cd0a0a
+        }
+
+        .ui-corner-tl,
+        .ui-corner-top {
+            -webkit-border-top-left-radius: 4px
+        }
+
+        .ui-corner-top,
+        .ui-corner-tr {
+            -webkit-border-top-right-radius: 4px
+        }
+
+        .ui-corner-bl,
+        .ui-corner-bottom {
+            -webkit-border-bottom-left-radius: 4px
+        }
+
+        .ui-corner-bottom,
+        .ui-corner-br {
+            -webkit-border-bottom-right-radius: 4px
+        }
+
+        .ui-corner-right,
+        .ui-corner-top,
+        .ui-corner-tr {
+            -moz-border-radius-topright: 4px
+        }
+
+        .ui-corner-bottom,
+        .ui-corner-br,
+        .ui-corner-right {
+            -moz-border-radius-bottomright: 4px
+        }
+
+        .ui-corner-left,
+        .ui-corner-tl,
+        .ui-corner-top {
+            -moz-border-radius-topleft: 4px
+        }
+
+        .ui-corner-bl,
+        .ui-corner-bottom,
+        .ui-corner-left {
+            -moz-border-radius-bottomleft: 4px
+        }
+
+        .ui-state-error a,
+        .ui-state-error-text,
+        .ui-widget-content .ui-state-error a,
+        .ui-widget-content .ui-state-error-text,
+        .ui-widget-header .ui-state-error a,
+        .ui-widget-header .ui-state-error-text {
+            color: #cd0a0a
+        }
+
+        .ui-priority-primary,
+        .ui-widget-content .ui-priority-primary,
+        .ui-widget-header .ui-priority-primary {
+            font-weight: 700
+        }
+
+        .ui-priority-secondary,
+        .ui-widget-content .ui-priority-secondary,
+        .ui-widget-header .ui-priority-secondary {
+            opacity: .7;
+            filter: Alpha(Opacity=70);
+            font-weight: 400
+        }
+
+        .ui-state-disabled,
+        .ui-widget-content .ui-state-disabled,
+        .ui-widget-header .ui-state-disabled {
+            opacity: .35;
+            filter: Alpha(Opacity=35);
+            background-image: none
+        }
+
+        .ui-corner-tl {
+            border-top-left-radius: 4px
+        }
+
+        .ui-corner-tr {
+            border-top-right-radius: 4px
+        }
+
+        .ui-corner-bl {
+            border-bottom-left-radius: 4px
+        }
+
+        .ui-corner-br {
+            border-bottom-right-radius: 4px
+        }
+
+        .ui-corner-top {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px
+        }
+
+        .ui-corner-bottom {
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px
+        }
+
+        .ui-corner-right {
+            -webkit-border-top-right-radius: 4px;
+            border-top-right-radius: 4px;
+            -webkit-border-bottom-right-radius: 4px;
+            border-bottom-right-radius: 4px
+        }
+
+        .ui-corner-left {
+            -webkit-border-top-left-radius: 4px;
+            border-top-left-radius: 4px;
+            -webkit-border-bottom-left-radius: 4px;
+            border-bottom-left-radius: 4px
+        }
+
+        .ui-corner-all {
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px
+        }
+
+        .ui-widget-overlay {
+            background: #000;
+            filter: alpha(opacity=50);
+            opacity: .5;
+            -moz-opacity: .5
+        }
+
+        .ui-widget-shadow {
+            margin: -8px 0 0 -8px;
+            padding: 8px;
+            background: url(//imgssl.constantcontact.com/ui/images1/jquery/1.8.4/ui-bg_flat_0_aaaaaa_40x100.png) 50% 50% repeat-x #aaa;
+            opacity: .3;
+            filter: Alpha(Opacity=30);
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            border-radius: 8px
+        }
+
+        .ui-dialog-buttonset .btn-secondary {
+            text-shadow: none
+        }
+
+        .bootstrap-modal.ui-dialog {
+            background-color: #fff;
+            border: 1px solid #999;
+            border: 1px solid rgba(0, 0, 0, .3);
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+            outline: 0;
+            -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, .3);
+            -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, .3);
+            box-shadow: 0 3px 7px rgba(0, 0, 0, .3);
+            -webkit-background-clip: padding-box;
+            -moz-background-clip: padding-box;
+            background-clip: padding-box
+        }
+
+        .bootstrap-modal .ui-dialog-titlebar {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            background: initial
+        }
+
+        .bootstrap-modal .ui-dialog-title {
+            margin: 0;
+            line-height: 30px;
+            font-size: 24.5px;
+            color: #5b5b5b;
+            text-shadow: inherit;
+            font-weight: 400
+        }
+
+        .bootstrap-modal .ui-dialog-content {
+            padding: 15px!important;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            border-radius: 6px;
+            color: #5b5b5b
+        }
+
+        .bootstrap-modal iframe.ui-dialog-content,
+        .bootstrap-modal.ui-dialog-type-frame .ui-dialog-content {
+            padding: 0!important
+        }
+
+        .bootstrap-modal.ui-dialog .ui-dialog-close-btn {
+            top: 15px;
+            right: 15px;
+            height: 14px;
+            width: 14px;
+            background: url(//ui.constantcontact.com/core/bootstrap/images/icn-sprite-contacts.png) -31px -43px no-repeat;
+            padding: 0;
+            cursor: pointer;
+            border: 0;
+            -webkit-appearance: none;
+            float: right;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 20px;
+            color: #000;
+            text-shadow: 0 1px 0 #fff;
+            opacity: 1;
+            filter: alpha(opacity=100)
+        }
+
+        .bootstrap-modal .ui-dialog-close-btn:focus,
+        .bootstrap-modal .ui-dialog-close-btn:hover {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+            opacity: .6;
+            filter: alpha(opacity=60)
+        }
+
+        .bootstrap-modal .ui-dialog-buttonpane {
+            padding: 14px 15px 15px;
+            margin-bottom: 0;
+            text-align: right;
+            background-color: #f5f5f5;
+            border-top: 1px solid #ddd;
+            -webkit-border-radius: 0 0 6px 6px;
+            -moz-border-radius: 0 0 6px 6px;
+            border-radius: 0 0 6px 6px;
+            -webkit-box-shadow: inset 0 1px 0 #fff;
+            -moz-box-shadow: inset 0 1px 0 #fff;
+            box-shadow: inset 0 1px 0 #fff
+        }
+
+        .bootstrap-modal.ui-dialog-type-confirm .ui-dialog-titlebar,
+        .bootstrap-modal.ui-dialog-type-message .ui-dialog-titlebar {
+            padding-top: 30px;
+            text-align: center;
+            border-bottom: none
+        }
+
+        .bootstrap-modal.ui-dialog-type-confirm .ui-dialog-content,
+        .bootstrap-modal.ui-dialog-type-message .ui-dialog-content {
+            text-align: center;
+            font-size: 14px;
+            padding-left: 30px!important;
+            padding-right: 30px!important
+        }
+
+        .bootstrap-modal.ui-dialog-type-message .ui-dialog-buttonpane {
+            background: 0 0;
+            text-align: center;
+            border-top: none
+        }
+
+        .bootstrap-modal.ui-dialog-type-confirm .ui-dialog-buttonpane {
+            border-top: 1px solid #eebd6d;
+            padding: 20px 30px;
+            background: #fff3d8;
+            text-align: center;
+            -webkit-border-radius: 0 0 6px 6px;
+            -moz-border-radius: 0 0 6px 6px;
+            border-radius: 0 0 6px 6px;
+            -webkit-box-shadow: inset 0 1px 0 #fff;
+            -moz-box-shadow: inset 0 1px 0 #fff;
+            box-shadow: inset 0 1px 0 #fff
+        }
+
+        .bootstrap-modal .ui-dialog-buttonset .btn,
+        .bootstrap-modal .ui-dialog-buttonset .btn-primary {
+            background-repeat: repeat-x!important;
+            filter: progid: DXImageTransform.Microsoft.gradient(enabled=false)!important
+        }
+
+        .bootstrap-modal.ui-dialog-type-confirm .ui-dialog-buttonpane .confirm-text {
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #bc7400
+        }
+
+        .bootstrap-modal.ui-dialog .ui-dialog-buttonpane button {
+            border: none;
+            margin: 0
+        }
+
+        .bootstrap-modal.ui-dialog .ui-dialog-buttonset .btn+.btn {
+            margin-left: 5px!important;
+            margin-bottom: 0
+        }
+
+        .bootstrap-modal .ui-button-text-only .ui-button-text {
+            padding: 0
+        }
+
+        .bootstrap-modal .ui-button .ui-button-text {
+            line-height: 20px
+        }
+
+        .bootstrap-modal .ui-dialog-buttonset .btn {
+            display: inline-block;
+            padding: 4px 12px!important;
+            margin-bottom: 0;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            color: #333!important;
+            text-shadow: 0 1px 1px rgba(255, 255, 255, .75)!important;
+            background-color: #2b8fca!important;
+            background-image: -moz-linear-gradient(top, #49A0D1, #0077C0)!important;
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#49A0D1), to(#0077C0))!important;
+            background-image: -webkit-linear-gradient(top, #49A0D1, #0077C0)!important;
+            background-image: -o-linear-gradient(top, #49A0D1, #0077C0)!important;
+            background-image: linear-gradient(to bottom, #49A0D1, #0077C0)!important;
+            border-color: #e6e6e6 #e6e6e6 #bfbfbf!important;
+            border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25)!important;
+            border: 1px solid #bbb!important;
+            border-bottom-color: #a2a2a2!important;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05)!important;
+            -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05)!important;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05)!important
+        }
+
+        .bootstrap-modal .ui-dialog-buttonset .btn.active,
+        .bootstrap-modal .ui-dialog-buttonset .btn:active {
+            background-image: none;
+            outline: 0;
+            -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .05);
+            -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .05);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .05);
+            background-color: #ccc\9
+        }
+
+        .bootstrap-modal .ui-dialog-buttonset .btn.active,
+        .bootstrap-modal .ui-dialog-buttonset .btn.disabled,
+        .bootstrap-modal .ui-dialog-buttonset .btn:active,
+        .bootstrap-modal .ui-dialog-buttonset .btn:focus,
+        .bootstrap-modal .ui-dialog-buttonset .btn:hover,
+        .bootstrap-modal .ui-dialog-buttonset .btn[disabled] {
+            color: #333;
+            background-color: #e6e6e6
+        }
+
+        .bootstrap-modal .ui-dialog-buttonset .btn:focus,
+        .bootstrap-modal .ui-dialog-buttonset .btn:hover {
+            color: #333;
+            text-decoration: none;
+            background-position: 0 -15px!important;
+            -webkit-transition: background-position .1s linear;
+            -moz-transition: background-position .1s linear;
+            -o-transition: background-position .1s linear;
+            transition: background-position .1s linear
+        }
+
+        .bootstrap-modal .btn:focus,
+        .bootstrap-modal a:focus {
+            outline: 0;
+            background-position: 0 0
+        }
+
+        .bootstrap-modal .ui-dialog-buttonset .btn-danger.active,
+        .bootstrap-modal .ui-dialog-buttonset .btn-info.active,
+        .bootstrap-modal .ui-dialog-buttonset .btn-inverse.active,
+        .bootstrap-modal .ui-dialog-buttonset .btn-primary.active,
+        .bootstrap-modal .ui-dialog-buttonset .btn-success.active,
+        .bootstrap-modal .ui-dialog-buttonset .btn-warning.active {
+            color: rgba(255, 255, 255, .75)
+        }
+
+        .bootstrap-modal .ui-dialog-buttonset .btn-primary {
+            font-weight: 400!important;
+            background-color: #2b8fca!important;
+            background-image: -moz-linear-gradient(top, #49a0d1, #0077c0)!important!important;
+            background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#49a0d1), to(#0077c0))!important;
+            background-image: -webkit-linear-gradient(top, #49a0d1, #0077c0)!important;
+            background-image: -o-linear-gradient(top, #49a0d1, #0077c0)!important;
+            background-image: linear-gradient(to bottom, #49a0d1, #0077c0)!important;
+            border-color: #0077c0 #0077c0 #004874!important;
+            border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25)!important
+        }
+
+        .bootstrap-modal .ui-dialog-buttonset .btn-primary,
+        .bootstrap-modal .ui-dialog-buttonset .btn-primary.disabled {
+            color: #fff!important;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, .5)!important
+        }
+
+        .ui-overlay .btn-primary,
+        .ui-overlay .btn-primary-disabled,
+        .ui-overlay .btn-primary-lg,
+        .ui-overlay .btn-secondary,
+        .ui-overlay .btn-secondary-disabled,
+        .ui-overlay .btn-secondary-lg {
+            text-shadow: 0 1px 0 rgba(255, 255, 255, .5)
+        }
+
+        .bootstrap-modal .ui-dialog-buttonset .btn-flat,
+        .bootstrap-modal .ui-dialog-buttonset .btn-flat.disabled,
+        .bootstrap-modal .ui-dialog-buttonset .btn-primary,
+        .bootstrap-modal .ui-dialog-buttonset .btn-primary.disabled,
+        .bootstrap-modal .ui-dialog-buttonset .btn-secondary,
+        .bootstrap-modal .ui-dialog-buttonset .btn-secondary.disabled,
+        .bootstrap-modal .ui-dialog-buttonset .btn-tertiary,
+        .bootstrap-modal .ui-dialog-buttonset .btn-tertiary.disabled {
+            -webkit-font-smoothing: antialiased;
+            -moz-font-smoothing: antialiased;
+            font-smoothing: antialiased
+        }
+
+        .bootstrap-modal .ui-dialog-buttonset .btn-primary.active,
+        .bootstrap-modal .ui-dialog-buttonset .btn-primary.disabled,
+        .bootstrap-modal .ui-dialog-buttonset .btn-primary:active,
+        .bootstrap-modal .ui-dialog-buttonset .btn-primary:focus,
+        .bootstrap-modal .ui-dialog-buttonset .btn-primary:hover,
+        .bootstrap-modal .ui-dialog-buttonset .btn-primary[disabled] {
+            color: #fff!important;
+            background-color: #0077c0!important
+        }
+
+        .bootstrap-modal .ui-dialog-buttonset .btn-primary.active,
+        .bootstrap-modal .ui-dialog-buttonset .btn-primary:active {
+            background-color: #00578d\9
+        }
+
+        .bootstrap-modal .ui-dialog-buttonset .btn-link:focus,
+        .bootstrap-modal .ui-dialog-buttonset .btn-link:hover {
+            color: #005580;
+            text-decoration: underline!important;
+            background-color: transparent!important
+        }
+
+        .bootstrap-modal .ui-dialog-buttonset .btn-link,
+        .bootstrap-modal .ui-dialog-buttonset .btn-link:active,
+        .bootstrap-modal .ui-dialog-buttonset .btn-link[disabled] {
+            background-color: transparent!important;
+            background-image: none!important;
+            -webkit-box-shadow: none!important;
+            -moz-box-shadow: none!important;
+            box-shadow: none!important
+        }
+
+        .bootstrap-modal .ui-dialog-buttonset .btn-link {
+            border-color: transparent!important;
+            cursor: pointer!important;
+            color: #08c!important;
+            -webkit-border-radius: 0!important;
+            -moz-border-radius: 0!important;
+            border-radius: 0!important
+        }
+
+        .bootstrap-modal.ui-dialog-type-confirm>.ui-dialog-titlebar,
+        .bootstrap-modal.ui-dialog-type-message>.ui-dialog-titlebar {
+            background-color: #FFF
+        }
+
+        .bootstrap-modal.ui-dialog-type-message>.ui-dialog-close-btn {
+            display: block
+        }
+
+        .bootstrap-modal.ui-dialog-type-message.ui-widget-content>:first-child {
+            margin-top: 15px
+        }
+
+        .bootstrap-modal .ui-dialog-close-btn {
+            filter: none !ie
+        }
+
+        .ui-overlay .btn-feature,
+        .ui-overlay .btn-feature-fb,
+        .ui-overlay .btn-preview,
+        .ui-overlay .btn-primary,
+        .ui-overlay .btn-primary-action,
+        .ui-overlay .btn-primary-disabled,
+        .ui-overlay .btn-primary-lg,
+        .ui-overlay .btn-secondary,
+        .ui-overlay .btn-secondary-disabled,
+        .ui-overlay .btn-secondary-lg,
+        .ui-overlay .btn-small,
+        .ui-overlay .btn-tertiary,
+        .ui-overlay .btn-tertiary-blue,
+        .ui-overlay .ccui-btn,
+        .ui-overlay .ccui-btn-alt {
+            display: inline-block;
+            font-family: arial, sans-serif;
+            font-size: 1em;
+            border: 1px solid;
+            padding: 6px 8px;
+            margin: 0;
+            line-height: normal;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px
+        }
+
+        .ui-overlay .btn-primary {
+            color: #614b00;
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/btn-primary-bg.gif) left top repeat-x #ebac1d;
+            border-color: #c8a228
+        }
+
+        .ui-overlay .btn-primary:hover {
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/btn-primary-bg-hover.gif) left top repeat-x #d5960e;
+            text-decoration: none
+        }
+
+        .ui-overlay .btn-primary-disabled {
+            color: #868687;
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/btn-disabled-bg.gif) left top repeat-x #d9d9d9;
+            border-color: #cbcbcb;
+            cursor: default
+        }
+
+        .ui-overlay .btn-primary-lg {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #614b00;
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/btn-primary-bg.gif) left top repeat-x #ebac1d;
+            border-color: #c8a228;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px
+        }
+
+        .ui-overlay .btn-primary-lg:hover {
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/btn-primary-bg-hover.gif) left top repeat-x #d5960e;
+            text-decoration: none
+        }
+
+        .ui-overlay .btn-secondary {
+            color: #444;
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/btn-secondary-bg.gif) left top repeat-x #cfcfcf;
+            border-color: #b7b7b7
+        }
+
+        .ui-overlay .btn-secondary .ic-menu {
+            display: block;
+            width: 21px;
+            min-height: 16px;
+            float: right;
+            margin: 0 2px 0 8px
+        }
+
+        .ui-overlay .btn-secondary:hover {
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/btn-secondary-bg-hover.gif) left top repeat-x #bdbdbd;
+            text-decoration: none
+        }
+
+        .ui-overlay .btn-secondary-disabled {
+            color: #868687;
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/btn-disabled-bg.gif) left top repeat-x #d9d9d9;
+            border-color: #cbcbcb;
+            cursor: default
+        }
+
+        .ui-overlay .btn-secondary-lg {
+            font-size: 1.2em;
+            color: #444;
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/btn-secondary-bg.gif) left top repeat-x #cfcfcf;
+            border-color: #b7b7b7;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px
+        }
+
+        .ui-overlay .btn-secondary-lg:hover {
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/btn-secondary-bg-hover.gif) left top repeat-x #bdbdbd;
+            text-decoration: none
+        }
+
+        .ui-overlay .btn-tertiary {
+            color: #5F616C;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/gradient_white_btn_sm2.png) repeat-x #d5d8e0;
+            border-color: #aaaaab #aaaaab #848484
+        }
+
+        .ui-overlay .btn-tertiary:active,
+        .ui-overlay .btn-tertiary:hover {
+            background-image: none
+        }
+
+        .ui-overlay .btn-primary-action {
+            font-size: 1.2em;
+            color: #fff;
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/btn-primary-action-bg.gif) left top repeat-x #7c8506!important;
+            border-color: #9aa719 #869518 #576b16!important;
+            text-shadow: 0 -1px 0 rgba(54, 58, 4, .7)!important
+        }
+
+        .ui-overlay .btn-primary-action:hover {
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/btn-primary-action-hover-bg.gif) left top repeat-x #5f6603!important
+        }
+
+        .ui-overlay .btn-feature {
+            padding: 14px 16px;
+            font-size: 1.1em;
+            color: #FFF;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, .4);
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/gradient_white_btn_sm3.png) repeat-x #68ab1f;
+            border-color: #3e5c1e
+        }
+
+        .ui-overlay .btn-preview,
+        .ui-overlay .btn-small {
+            color: #444;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, .5)
+        }
+
+        .ui-overlay .btn-feature:active,
+        .ui-overlay .btn-feature:hover {
+            background-image: none
+        }
+
+        .ui-overlay .btn-preview {
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/btn-preview-bg.gif) left top repeat-x #d9d9d9;
+            border-color: #b7b7b7;
+            padding: 4px 7px 4px 20px
+        }
+
+        .ui-overlay .btn-small {
+            font-size: .85em;
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/btn-disabled-bg.gif) left top repeat-x #d9d9d9;
+            border-color: #cbcbcb;
+            padding: 2px;
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px
+        }
+
+        .ui-overlay .btn-feature-fb {
+            padding: 0 16px 0 60px;
+            margin-top: 23px;
+            height: 47px;
+            line-height: 45px;
+            font-size: 1.1em;
+            color: #FFF;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, .4);
+            background: url(//imgssl.constantcontact.com/ui/images1/uxCommon/btn_fb_bg.jpg) repeat-x #226aa1;
+            border-color: #3590bf #256890 #154268
+        }
+
+        .ui-overlay .btn-alt {
+            padding: 3px 6px;
+            min-height: 16px;
+            line-height: 1.4
+        }
+
+        .ui-overlay .btn-nostyle {
+            display: inline-block;
+            padding: 4px;
+            margin: 0;
+            line-height: normal;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer
+        }
+
+        .ui-overlay span.btn-primary,
+        .ui-overlay span.btn-secondary {
+            padding: 4px 6px
+        }
+
+        .ui-dialog-buttonpane .ui-widget {
+            margin-left: 10px!important
+        }
+
+        .ui-overlay .btn-primary-action {
+            padding: 8px 15px 8px 10px
+        }
+
+        .ui-overlay .btn-primary-action span.sub-title {
+            font-size: 12px;
+            font-style: italic;
+            font-weight: 400;
+            color: #d6e47a;
+            text-shadow: 0 -1px 0 rgba(54, 58, 4, .5);
+            position: relative;
+            top: -1px
+        }
+
+        .ui-overlay .btn-bar {
+            width: 100%;
+            text-align: center
+        }
+
+        .ui-overlay .btn-primary-disabled,
+        .ui-overlay .btn-primary-disabled:hover {
+            pointer-events: none
+        }
+
+        .ui-drag-helper {
+            z-index: 100;
+            position: relative
+        }
+
+        .ui-drag-helper-badge,
+        .ui-drag-helper-plus {
+            padding: 3px 8px;
+            color: #fff;
+            font-weight: 700;
+            position: absolute
+        }
+
+        .ui-drag-helper img {
+            width: 32px
+        }
+
+        .ui-drag-helper img.custom {
+            width: 37px;
+            height: 55px
+        }
+
+        .ui-drag-helper-badge {
+            background: red;
+            top: -10px;
+            left: -10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px
+        }
+
+        .ui-drag-helper-plus {
+            background: green;
+            bottom: -10px;
+            right: -10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px
+        }
+    </style>
+
+    <style type="text/css">
+        #custom-fields-loading {
+            height: 246px;
+            position: relative;
+        }
+
+        #custom-fields-loading .LoadingIndicator {
+            position: absolute;
+            top: 106.25px;
+            left: 300px;
+        }
+
+        #custom-fields-content {
+            height: 246px;
+            display: none;
+        }
+
+        #custom-fields-content hr {
+            margin: 0;
+        }
+
+        #galileo #fontfamily-dropdown {
+            min-width: 223px;
+            text-align: left;
+        }
+
+        #galileo #fontfamily-dropdown-btn-group {
+            width: 255px;
+        }
+
+        #galileo #fontfamily-dropdown-btn-group ul.dropdown-menu {
+            min-width: 250px;
+            max-height: 264px;
+            overflow-y: scroll;
+        }
+
+        #galileo #fontfamily-dropdown-btn-group li.dropdown-menu-header {
+            color: #606d78;
+            font-weight: 600;
+            font-size: .83125rem;
+            text-transform: uppercase;
+            padding: .5rem .9375rem;
+        }
+
+        #galileo #fontfamily-dropdown-btn-group li.dropdown-menu-header .seperator {
+            height: 1px;
+            background-color: #bbbbbb;
+        }
+
+        #galileo #fontsize-dropdown-btn-group ul.dropdown-menu {
+            min-width: 65px;
+            max-height: 264px;
+            overflow-y: scroll;
+        }
+
+        #galileo #fontsize-dropdown-btn-group .dropdown-toggle:first-child {
+            padding-left: 12px;
+            padding-right: 9px;
+            width: 38px;
+        }
+
+        #galileo #fontsize-dropdown-btn-group > .btn + .dropdown-toggle,
+        #galileo #alignment-dropdown-btn-group > .btn + .dropdown-toggle,
+        #galileo .link .e-btn {
+            width: auto;
+        }
+
+        #galileo #alignment-dropdown-btn-group ul.dropdown-menu {
+            min-width: 50px;
+            max-height: 264px;
+        }
+
+        #galileo #alignment-dropdown-btn-group .dropdown-toggle:first-child {
+            padding-left: 12px;
+            padding-right: 9px;
+            width: 38px;
+        }
+
+        #galileo .editor-buttons .icon-font-select {
+            font-size: 13px;
+            font-weight: bold;
+            position: relative;
+            top: 6px;
+            left: 13px;
+            display: block;
+        }
+
+        #galileo .editor-buttons .icon-link {
+            font-size: 20px;
+            position: relative;
+            left: 12px;
+            top: 10px;
+            -webkit-transform: rotate(70deg);
+            -moz-transform: rotate(70deg);
+            -ms-transform: rotate(70deg);
+            -o-transform: rotate(70deg);
+        }
+
+        #galileo .editor-buttons .icon-link + .txtbtn {
+            position: relative;
+            left: -3px;
+        }
+
+        #galileo .editor-buttons .icon-font-weight-select,
+        #galileo .editor-buttons .icon-font-italic,
+        #galileo .editor-buttons .icon-font-underline {
+            font-size: 12px;
+            position: relative;
+            left: 15px;
+            top: 13px;
+        }
+
+        #galileo .dropdown-toggle .icon-caret {
+            position: relative;
+            top: 0;
+            left: -1px;
+        }
+
+        #galileo .e-btn span.txtbtn {
+            padding: 8px 10px;
+            font-size: 14px;
+            color: #3f3f3f;
+            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+            position: relative;
+            top: 11px;
+        }
+
+        #galileo #insert-dropdown {
+            width: 92px;
+            text-align: left;
+        }
+
+        #galileo .greeting-tag.editable-active,
+        #galileo .greeting-tag,
+        #galileo .contact-detail.editable-active,
+        #galileo .contact-detail,
+        #galileo .entity.editable-active,
+        #galileo .entity {
+            cursor: pointer;
+            outline: 1px dotted #969696 !important;
+            padding: 1px;
+        }
+
+        #galileo .greeting-tag.greeting-tag:hover,
+        #galileo .contact-detail.contact-detail:hover,
+        #galileo .entity.entity:hover {
+            outline: 1px dashed #5dacd6 !important;
+            padding: 1px;
+        }
+    </style>
+    <style type="text/css">
+        #galileo .editor.spacer-editor-tools {
+            width: 262px;
+        }
+
+        #galileo .spacer-editor-tools .spacer-spacing {
+            display: table;
+        }
+
+        #galileo .spacer-editor-tools .spacer-spacing i {
+            color: #bababa;
+            position: relative;
+            top: 12px;
+            margin: 0 6px 0 4px;
+        }
+
+        #galileo .spacer-editor-tools .ui-spinner-wrapper {
+            display: inline-block;
+        }
+
+        .spacer-editable-hover {
+            outline: 1px dashed #5dacd6;
+            background-color: rgba(247, 252, 255, 0.5);
+        }
+
+        .spacer-column-hover {
+            outline: 1px dashed #cccccc;
+        }
+
+        .spacer-editable-active {
+            outline: 1px solid #5dacd6;
+            background-color: rgba(247, 252, 255, 0.5);
+            cursor: move;
+        }
+
+        .spacer-editable-grabber {
+            width: 20%;
+            max-width: 36px;
+            min-width: 10px;
+            height: 5px;
+            border: 1px solid #5dacd6;
+            display: block;
+            visibility: hidden;
+            background-color: #9ECFE5;
+            position: absolute;
+            top: 4px;
+            margin: 0 auto;
+            cursor: ns-resize;
+        }
+
+        #g-main-toolbar {
+            border-style: solid;
+            border-width: 1px;
+            background-color: azure;
+            width: 100%;
+            height: 70px;
+            position: fixed;
+            z-index: 1000;
+        }
+
+        #cc_main_content {
+            margin-top: 71px;
+        }
+    </style>
+
+    <!--
+    <style>
+        #galileo .editor-buttons .icon-link + .txtbtn {
+            position: relative;
+            left: 0px;
+        }
+    </style>
+-->
+
+</head>
+
+<body>
+    <div id="g-main-toolbar" style="top: 0px;">
+        <div id="campaignTitle" class="CommonHeader-column CommonHeader-column--title">
+            Fake Main Toolbar
+            <div class="CommonHeader-column Form CommonHeader-column--title">
+                <div class="Form-inputGroup CommonHeader-title">
+                    <input type="text" id="cmpn-hdr-cmpn-name" class="Form-input" value="" data-qe-id="input-header-name-email" readonly="readonly">
+                    <span class="Form-inputAddOn u-valignMiddle cmpn-hdr-cmpn-name-cursor">
+                      <label id="cmpn-hdr-cmpn-name-pencil" class="cmpn-hdr-cmpn-name-cursor" for="cmpn-hdr-cmpn-name"><i class="Icon Icon--pencil"></i></label>
+                  </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- the id 'nav_menu_template' is required for galileo editor. -->
+        <div class="CommonHeader-column u-paddingFlush" id="nav_menu_template">
+
+            <!-- the id 'nav-menu' is required for galileo editor. -->
+            <div id="nav-menu" data-qe-id="nav-menu">
+                <span class="editor-status-region" data-qe-id="save-status"><span><span class="CommonHeader-action u-marginRight save-status"></span>
+                </span>
+                </span>
+
+                <span class="GalileoToolbar-menuItem u-marginRight b2-u-marginRightHalf"><a id="save-button" type="button" title="Save your edits" href="javascript:void(0);" class="Button Button--link save-button trackable"><i class="Icon--disk"></i><span class="u-hide b2-u-showInlineBlock" aria-hidden="true">Save</span></a>
+                </span>
+                <span class="GalileoToolbar-menuItem u-marginRight b2-u-marginRightHalf"><a id="undo-button" type="button" title="Undo last action" href="javascript:void(0);" class="Button Button--link u-marginRightFlush undo-button is-disabled"><i class="Icon--undo"></i><span class="u-linkComplex-target u-hide b2-u-showInlineBlock" aria-hidden="true">Undo</span></a>
+                </span>
+                <span class="GalileoToolbar-menuItem u-marginRight b2-u-marginRightHalf"><a id="redo-button" type="button" title="Redo last undo action" href="javascript:void(0);" class="Button Button--link redo-button is-disabled"><i class="Icon--redo"></i><span class="u-linkComplex-target u-hide b2-u-showInlineBlock" aria-hidden="true">Redo</span></a>
+                </span>
+                <span class="GalileoToolbar-menuItem u-marginRightHalf"><a id="test" type="button" title="Preview and send a test email" href="javascript:void(0);" class="Button">Preview</a></span>
+
+                <span class="GalileoToolbar-menuItem u-marginRightFlush "><button id="nextButton" type="button" title="Choose recipients and schedule when to send" class="Button Button--primary trackable">Continue</button></span>
+
+            </div>
+        </div>
+    </div>
+    <div id="cc_main_content" class="fed-wrapper-campaign-width">
+        <div>
+            <div id="modular-galileo-editor-wrapper" data-qe-id="modular-galileo-editor-wrapper">
+                <div id="galileo">
+                    <div class="document-editor-container empty">
+                        <div id="harness">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <script data-main="./index.js" src="../../../bower_components/requirejs/require.js"></script>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

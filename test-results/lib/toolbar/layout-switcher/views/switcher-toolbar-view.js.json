@@ -1,0 +1,444 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "backbone",
+        "template-engine",
+        "i18n!galileo-lib/modules/nls/engine",
+        "text!root/templates/switcher-tools.html",
+        "galileo-lib/modules/services/usage-tracking",
+        "toolbar/layout-switcher/views/switcher-view",
+        "underscore"
+      ],
+      "usedAs": [
+        "$",
+        "Backbone",
+        "Mustache",
+        "i18n",
+        "template",
+        "usageTracking",
+        "SwitcherView"
+      ],
+      "moduleName": "switcher-toolbar-view",
+      "AMD": true,
+      "webPath": "/lib/toolbar/layout-switcher/views",
+      "convertedName": "switcher_toolbar_view",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/lib/toolbar/layout-switcher/views/switcher-toolbar-view.js",
+  "folderPath": "test-source/lib/toolbar/layout-switcher/views",
+  "fileName": "switcher-toolbar-view.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/lib/toolbar/layout-switcher/views",
+  "webPath": "/lib/toolbar/layout-switcher/views",
+  "libFile": false,
+  "min": false,
+  "realName": "switcher-toolbar-view",
+  "name": "switcher-toolbar-view",
+  "camelName": "SwitcherToolbarView",
+  "processedFilePath": "test-output/lib/toolbar/layout-switcher/views/switcher-toolbar-view.js",
+  "mappedModuleName": "lib/toolbar/layout-switcher/views/switcher-toolbar-view",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "lib/toolbar/layout-switcher/views/switcher-toolbar-view~SwitcherToolbarView": {
+      "todos": [],
+      "returnType": "",
+      "type": "FunctionDeclaration",
+      "uid": 117,
+      "parentNode": 111,
+      "memberOf": "",
+      "ctor": true,
+      "lineNumber": 46,
+      "line": "function SwitcherToolbarView() {",
+      "comment": 4,
+      "range": [
+        1654,
+        1779
+      ],
+      "name": "SwitcherToolbarView",
+      "commentBody": "/**\n         * @constructor\n         */",
+      "oldComment": {
+        "type": "Block",
+        "value": "*\n         * @constructor\n         ",
+        "range": [
+          1606,
+          1645
+        ],
+        "commentBody": "/**\n         * @constructor\n         */",
+        "lineNumber": 43
+      },
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "tags": [
+          {
+            "tag": "constructor",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        ],
+        "requiresList": [
+          "jquery",
+          "backbone",
+          "template-engine",
+          "i18n!galileo-lib/modules/nls/engine",
+          "text!root/templates/switcher-tools.html",
+          "galileo-lib/modules/services/usage-tracking",
+          "toolbar/layout-switcher/views/switcher-view",
+          "underscore"
+        ],
+        "moduleName": "switcher_toolbar_view",
+        "camelName": "SwitcherToolbarView",
+        "freeText": "",
+        "@constructor": "",
+        "preamble": "",
+        "nodeType": "CLASS"
+      },
+      "jsDoc": "/**\n * @constructor\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": false,
+  "moduleName": "lib/toolbar/layout-switcher/views/switcher-toolbar-view",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 128,
+    "requires": [
+      "jquery",
+      "backbone",
+      "template-engine",
+      "i18n!galileo-lib/modules/nls/engine",
+      "text!root/templates/switcher-tools.html",
+      "galileo-lib/modules/services/usage-tracking",
+      "toolbar/layout-switcher/views/switcher-view",
+      "underscore"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/lib/toolbar/layout-switcher/views",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 4734,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./switcher-toolbar-view",
+    "uses_console_log": false,
+    "uses_backbone": true,
+    "classes": {
+      "SwitcherToolbarView": 117
+    },
+    "methods": [
+      {
+        "name": "extend",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 6,
+        "memberOf": "",
+        "doclet": "/**\n * @param child  \n * @param parent\n */",
+        "args": [
+          "child",
+          "parent"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "var extend = function (child, parent) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "child"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "parent\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "ctor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function ctor() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "SwitcherToolbarView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 46,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function SwitcherToolbarView() {",
+        "originalJsDocDescription": {
+          "constructor": {
+            "tag": "constructor",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_layoutSelected",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 56,
+        "memberOf": "SwitcherToolbarView.prototype",
+        "doclet": "/**\n * @private\n * @private \n * @param layout  \n * @param action\n */",
+        "args": [
+          "layout",
+          "action"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "SwitcherToolbarView.prototype._layoutSelected = function (layout, action) {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "layout"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "action\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "initialize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 77,
+        "memberOf": "SwitcherToolbarView.prototype",
+        "doclet": "/**\n * @param options\n */",
+        "args": [
+          "options"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "SwitcherToolbarView.prototype.initialize = function (options) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "options\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 89,
+        "memberOf": "SwitcherToolbarView.prototype",
+        "doclet": "/**\n * @return {Object} ThisExpression\n */",
+        "description": "",
+        "return": "ThisExpression",
+        "classDeclarationFlag": false,
+        "line": "SwitcherToolbarView.prototype.render = function () {",
+        "originalJsDocDescription": {
+          "return": {
+            "tag": "return",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} ThisExpression\n"
+          }
+        }
+      },
+      {
+        "name": "show",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 97,
+        "memberOf": "SwitcherToolbarView.prototype",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "SwitcherToolbarView.prototype.show = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "hide",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 103,
+        "memberOf": "SwitcherToolbarView.prototype",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "SwitcherToolbarView.prototype.hide = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "enable",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 109,
+        "memberOf": "SwitcherToolbarView.prototype",
+        "doclet": "/**\n * @return {Object} AssignmentExpression\n */",
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "SwitcherToolbarView.prototype.enable = function () {",
+        "originalJsDocDescription": {
+          "return": {
+            "tag": "return",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} AssignmentExpression\n"
+          }
+        }
+      },
+      {
+        "name": "disable",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 115,
+        "memberOf": "SwitcherToolbarView.prototype",
+        "doclet": "/**\n * @return {Object} AssignmentExpression\n */",
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "SwitcherToolbarView.prototype.disable = function () {",
+        "originalJsDocDescription": {
+          "return": {
+            "tag": "return",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} AssignmentExpression\n"
+          }
+        }
+      },
+      {
+        "name": "setCurrentLayoutThumbnail",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 121,
+        "memberOf": "SwitcherToolbarView.prototype",
+        "doclet": "/**\n * @param thumbnail\n */",
+        "args": [
+          "thumbnail"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "SwitcherToolbarView.prototype.setCurrentLayoutThumbnail = function (thumbnail) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "thumbnail\n"
+            }
+          ]
+        }
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/lib/toolbar/layout-switcher/views",
+    "fileName": "switcher-toolbar-view.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 127,
+  "EMPTY": false
+}

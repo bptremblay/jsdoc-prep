@@ -1,0 +1,281 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "position",
+      "AMD": false,
+      "webPath": "/lib",
+      "convertedName": "position",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/lib/position.js",
+  "folderPath": "test-source/lib",
+  "fileName": "position.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/lib",
+  "webPath": "/lib",
+  "libFile": false,
+  "min": false,
+  "realName": "position",
+  "name": "position",
+  "camelName": "Position",
+  "processedFilePath": "test-output/lib/position.js",
+  "mappedModuleName": "lib/position",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": false,
+  "moduleName": "lib/position",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 185,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/lib",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 5382,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./position",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "0": 29,
+      "1": 140
+    },
+    "methods": [
+      {
+        "name": "constructor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 36,
+        "memberOf": "",
+        "doclet": "/**\n * @param width  \n * @param height  \n * @param top  \n * @param left  \n * @param scrollTop  \n * @param scrollLeft  \n * @param scrollWidth  \n * @param scrollHeight\n */",
+        "args": [
+          "width",
+          "height",
+          "top",
+          "left",
+          "scrollTop",
+          "scrollLeft",
+          "scrollWidth",
+          "scrollHeight"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "constructor(width, height, top, left, scrollTop, scrollLeft, scrollWidth, scrollHeight) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "width"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "height"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "top"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "left"
+            },
+            {
+              "tag": "param",
+              "line": 5,
+              "lastLine": 5,
+              "textStartsOnSameLine": true,
+              "text": "scrollTop"
+            },
+            {
+              "tag": "param",
+              "line": 6,
+              "lastLine": 6,
+              "textStartsOnSameLine": true,
+              "text": "scrollLeft"
+            },
+            {
+              "tag": "param",
+              "line": 7,
+              "lastLine": 7,
+              "textStartsOnSameLine": true,
+              "text": "scrollWidth"
+            },
+            {
+              "tag": "param",
+              "line": 8,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "scrollHeight\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "toJSON",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 49,
+        "memberOf": "PositionInfo",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "toJSON() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "getAvailablePerimeterPosition",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 80,
+        "memberOf": "Position",
+        "doclet": "/**\n * @param positioned  \n * @param fixed  \n * @param bounds  \n * @param customOffset  \n * @param preferredPosition\n */",
+        "args": [
+          "positioned",
+          "fixed",
+          "bounds",
+          "customOffset",
+          "preferredPosition"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getAvailablePerimeterPosition(positioned, fixed, bounds, customOffset, preferredPosition) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "positioned"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "fixed"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "bounds"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "customOffset"
+            },
+            {
+              "tag": "param",
+              "line": 5,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "preferredPosition\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "getAdjustedDimension",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 93,
+        "memberOf": "",
+        "doclet": "/**\n * @param theDimension  \n * @param thePos\n */",
+        "args": [
+          "theDimension",
+          "thePos"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "let getAdjustedDimension = function (theDimension, thePos) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "theDimension"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "thePos\n"
+            }
+          ]
+        }
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/lib",
+    "fileName": "position.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 189,
+  "EMPTY": false
+}

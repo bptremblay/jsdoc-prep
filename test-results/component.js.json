@@ -1,0 +1,621 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "component",
+      "AMD": false,
+      "webPath": "",
+      "convertedName": "component",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/component.js",
+  "folderPath": "test-source",
+  "fileName": "component.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "",
+  "webPath": "",
+  "libFile": false,
+  "min": false,
+  "realName": "component",
+  "name": "component",
+  "camelName": "Component",
+  "processedFilePath": "test-output/component.js",
+  "mappedModuleName": "component",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": true,
+  "moduleName": "component",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 232,
+    "requires": [
+      "jquery"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 5581,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./component",
+    "uses_console_log": true,
+    "uses_backbone": false,
+    "classes": {
+      "0": 17
+    },
+    "methods": [
+      {
+        "name": "constructor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 12,
+        "memberOf": "",
+        "doclet": "/**\n * @constructs Component~constructor\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "constructor() {",
+        "originalJsDocDescription": {
+          "constructs": {
+            "tag": "constructs",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "Component~constructor"
+          }
+        }
+      },
+      {
+        "name": "setData",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 28,
+        "memberOf": "Component",
+        "doclet": "/**\n * @param rootObject  \n * @param pathIn\n */",
+        "args": [
+          "rootObject",
+          "pathIn"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setData(rootObject, pathIn) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "rootObject"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "pathIn\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "getData",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 49,
+        "memberOf": "Component",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getData() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "setTemplate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 80,
+        "memberOf": "Component",
+        "doclet": "/**\n * @param templateIn\n */",
+        "args": [
+          "templateIn"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setTemplate(templateIn) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "templateIn\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "getTemplate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 86,
+        "memberOf": "Component",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getTemplate() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "detachFromParent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 92,
+        "memberOf": "Component",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "detachFromParent() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "setDomParent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 99,
+        "memberOf": "Component",
+        "doclet": "/**\n * @param parentIn\n */",
+        "args": [
+          "parentIn"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setDomParent(parentIn) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "parentIn\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "getDomParent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 111,
+        "memberOf": "Component",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getDomParent() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "remove",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 117,
+        "memberOf": "Component",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "remove() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "addChild",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 135,
+        "memberOf": "Component",
+        "doclet": "/**\n * @param childIn\n */",
+        "args": [
+          "childIn"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "addChild(childIn) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "childIn\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "removeChild",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 144,
+        "memberOf": "Component",
+        "doclet": "/**\n * @param childIn\n */",
+        "args": [
+          "childIn"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "removeChild(childIn) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "childIn\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "getChildren",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 154,
+        "memberOf": "Component",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getChildren() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "update",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 160,
+        "memberOf": "Component",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "update() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 166,
+        "memberOf": "Component",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "render() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "uiEvent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 187,
+        "memberOf": "Component",
+        "doclet": "/**\n * @param evt\n */",
+        "args": [
+          "evt"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "uiEvent(evt) {}",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "evt\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "bindEvent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 193,
+        "memberOf": "Component",
+        "doclet": "/**\n * @param elementRef  \n * @param eventId  \n * @param handler\n */",
+        "args": [
+          "elementRef",
+          "eventId",
+          "handler"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "bindEvent(elementRef, eventId, handler) {}",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "elementRef"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "eventId"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "handler\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "unbindEvent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 199,
+        "memberOf": "Component",
+        "doclet": "/**\n * @param elementRef  \n * @param eventId  \n * @param handler\n */",
+        "args": [
+          "elementRef",
+          "eventId",
+          "handler"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "unbindEvent(elementRef, eventId, handler) {}",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "elementRef"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "eventId"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "handler\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "unbindAll",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 203,
+        "memberOf": "Component",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "unbindAll() {}",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "setProperty",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 208,
+        "memberOf": "Component",
+        "doclet": "/**\n * @param key  \n * @param value\n */",
+        "args": [
+          "key",
+          "value"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "setProperty(key, value) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "key"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "value\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "getProperty",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 214,
+        "memberOf": "Component",
+        "doclet": "/**\n * @param key\n */",
+        "args": [
+          "key"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "getProperty(key) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "key\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "onDomAdd",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 220,
+        "memberOf": "Component",
+        "doclet": "/**\n * @param domParent\n */",
+        "args": [
+          "domParent"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "onDomAdd(domParent) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "domParent\n"
+            }
+          ]
+        }
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source",
+    "fileName": "component.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 240,
+  "EMPTY": false
+}

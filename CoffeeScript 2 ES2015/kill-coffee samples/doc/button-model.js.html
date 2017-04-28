@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: button-model.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: button-model.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module button-model
+ * @requires underscore
+ * @requires backbone
+ * @requires button-editor-path/legacy-color-check
+ * @requires i18n!button-editor-path/nls/button-editor
+ * @requires galileo-lib/modules/services/url-validator-service
+ */
+import _ from 'underscore';
+import Backbone from 'backbone';
+import legacyColorCheck from 'button-editor-path/legacy-color-check';
+import i18n from 'i18n!button-editor-path/nls/button-editor';
+import UrlValidator from 'galileo-lib/modules/services/url-validator-service';
+// Can't redefine module values, they are const!! _ ?= window._
+/**
+ * The set color attr.
+ * setColorAttr
+ */
+let setColorAttr = undefined;
+/**
+ * The class ButtonModel.
+ * @constructor
+ * @memberOf module:button-model
+ * @extends Backbone.Model
+ */
+class ButtonModel extends Backbone.Model {
+    /**
+     * initClass
+     */
+    static initClass() {
+            this.prototype.FONT_SIZE_MAX_VALUE = 48;
+            this.prototype.defaults = {
+                link: null,
+                linkType: 'web',
+                text: i18n.placeholder_text,
+                backgroundColor: {
+                    global: '#494',
+                    local: 'transparent'
+                },
+                height: 24,
+                alignment: 'center',
+                fontColor: '',
+                fontFamily: '',
+                fontSize: '',
+                fontWeight: 'normal',
+                fontStyle: 'normal'
+            };
+            /**
+             * @param that
+             * @param colorAttr
+             * @param type
+             * @param newColor
+             * @param options
+             * setColorAttr
+             */
+            setColorAttr = function(that, colorAttr, type, newColor, options) {
+                /**
+                 * The bg color.
+                 * @constant Bg color
+                 * bgColor
+                 */
+                const bgColor = _.clone(that.get(colorAttr)); // ensures change event is triggered
+                bgColor[type] = newColor;
+                return that.set(colorAttr, bgColor, options);
+            };
+        }
+        /**
+         * @constructor
+         * @memberOf module:button-model
+         */
+    constructor() {
+            super(...arguments);
+            /**
+             * method
+             */
+            for (let method of Array.from(_.keys(ButtonModel.prototype.defaults))) {
+                if (this[method] == null) {
+                    this[method] = this._makeGetOrSet(method);
+                }
+            }
+            /**
+             * @param val
+             * @param options
+             * fontSize
+             */
+            this.fontSize = function(val, options) {
+                if (val != null) {
+                    /**
+                     * The newval.
+                     * @constant Newval
+                     */
+                    const newval = !isNaN(parseInt(val)) ?
+                        Math.max(0, Math.min(val, this.FONT_SIZE_MAX_VALUE)) : undefined;
+                    if (newval !== val) {
+                        this.trigger('limit:fontSize', this);
+                        val = newval;
+                    }
+                    return this.set('fontSize', val, options);
+                } else {
+                    return this.get('fontSize');
+                }
+            };
+        }
+        /**
+         * @private
+         * @param attr
+         * @return {Function}
+         * _makeGetOrSet
+         */
+    _makeGetOrSet(attr) {
+            return function(val, options) {
+                if (val != null) {
+                    return this.set(attr, val, options);
+                } else {
+                    return this.get(attr, val);
+                }
+            };
+        }
+        /**
+         * @private
+         * @param url
+         * _cleanURL
+         */
+    _cleanURL(url) {
+            url = url.replace(/^http:\/\//, '').trim();
+            // decode first because ' ' becomes '%20' otherwise
+            if (url.indexOf(' ' === !-1)) {
+                return encodeURI(decodeURI(url));
+            }
+        }
+        /**
+         * @param attrs
+         * @param options
+         * validate
+         */
+    validate(attrs, options) {
+            if (attrs.link != null) {
+                /**
+                 * The url validator.
+                 * @constant Url validator
+                 * urlValidator
+                 */
+                const urlValidator = new UrlValidator(attrs.link);
+                if (!urlValidator.isValid()) {
+                    return urlValidator.getError();
+                }
+            }
+        }
+        /**
+         * getError
+         */
+    getError() {
+            if (!this.isValid()) {
+                return this.validationError;
+            }
+        }
+        /**
+         * @param val
+         * @param options
+         * setLink
+         */
+    setLink(val, options) {
+            if (!val) {
+                this.set('link', null, options);
+                return;
+            }
+            val = val.trim();
+            if (!__guard__(options, x => x.noProtocol)) {
+                val = this._cleanURL(val);
+            }
+            if (__guard__(options, x1 => x1.noProtocol)) {
+                return this.set('link', val, options);
+            } else if (/^.+:/.test(val)) {
+                return this.set('link', val, options);
+            } else if (/^[\w\.-]+@[\w\.-]+\.\w+/.test(val)) {
+                return this.set('link', `mailto:${val}`, options);
+            } else {
+                return this.set('link', `http://${val}`, options);
+            }
+        }
+        /**
+         * toggleBold
+         */
+    toggleBold() {
+            return this._toggle('fontWeight', ['bold', 'normal']);
+        }
+        /**
+         * toggleItalic
+         */
+    toggleItalic() {
+            return this._toggle('fontStyle', ['italic', 'normal']);
+        }
+        /**
+         * @private
+         * @param propertyName
+         * @param options
+         * _toggle
+         */
+    _toggle(propertyName, options) {
+            /**
+             * The property.
+             * @constant Property
+             */
+            const property = this.get(propertyName);
+            if (property === options[0]) {
+                return this.set(propertyName, options[1]);
+            } else {
+                return this.set(propertyName, options[0]);
+            }
+        }
+        /**
+         * usingLocalColors
+         */
+    usingLocalColors() {
+            return this.backgroundColor().local !== 'transparent';
+        }
+        /**
+         * getBackgroundColor
+         */
+    getBackgroundColor() {
+            if (this.usingLocalColors()) {
+                return this.backgroundColor().local;
+            } else if (legacyColorCheck.usesLegacyGlobalColors($(this.get('markup')))) {
+                return this.backgroundColor().global;
+            } else {
+                return '';
+            }
+        }
+        /**
+         * @param newColor
+         * @param options
+         * setGlobalBackgroundColor
+         */
+    setGlobalBackgroundColor(newColor, options) {
+            return setColorAttr(this, 'backgroundColor', 'global', newColor, options);
+        }
+        /**
+         * @param newColor
+         * setLocalBackgroundColor
+         */
+    setLocalBackgroundColor(newColor) {
+        return setColorAttr(this, 'backgroundColor', 'local', newColor);
+    }
+}
+ButtonModel.initClass();
+// Added explicit return to exports at EOF:
+export default ButtonModel;
+/**
+ * @private
+ * @param value
+ * @param transform
+ * @return {Object} ConditionalExpression
+ * __guard__
+ */
+function __guard__(value, transform) {
+    return (typeof value !== 'undefined' &amp;&amp; value !== null) ? transform(value) : undefined;
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-button-editor.html">button-editor</a></li><li><a href="module-button-editor-view.html">button-editor-view</a></li><li><a href="module-button-model.html">button-model</a></li><li><a href="module-button-view.html">button-view</a></li><li><a href="module-editor-model.html">editor-model</a></li><li><a href="module-galileo-jquery-ui-mobile-shim.html">galileo-jquery-ui-mobile-shim</a></li><li><a href="module-legacy-color-check.html">legacy-color-check</a></li><li><a href="module-move-handle-view.html">move-handle-view</a></li><li><a href="module-state-migrations.html">state-migrations</a></li></ul><h3>Classes</h3><ul><li><a href="module-button-editor-view-ButtonEditorView.html">ButtonEditorView</a></li><li><a href="module-button-editor-ButtonEditor.html">ButtonEditor</a></li><li><a href="module-button-model.ButtonModel.html">ButtonModel</a></li><li><a href="module-button-view-ButtonView.html">ButtonView</a></li><li><a href="module-editor-model-ButtonEditorModel.html">ButtonEditorModel</a></li><li><a href="module-galileo-jquery-ui-mobile-shim-SpinnerView.html">SpinnerView</a></li><li><a href="module-legacy-color-check-LegacyColorCheck.html">LegacyColorCheck</a></li><li><a href="module-move-handle-view-MoveHandleView.html">MoveHandleView</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Jan 19 2017 15:24:25 GMT-0500 (EST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

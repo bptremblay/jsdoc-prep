@@ -1,0 +1,563 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [],
+      "moduleName": "text",
+      "AMD": true,
+      "webPath": "",
+      "convertedName": "text",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/text.js",
+  "folderPath": "test-source",
+  "fileName": "text.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "",
+  "webPath": "",
+  "libFile": false,
+  "min": false,
+  "realName": "text",
+  "name": "text",
+  "camelName": "Text",
+  "processedFilePath": "test-output/text.js",
+  "mappedModuleName": "text",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": false,
+  "moduleName": "text",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 290,
+    "requires": [],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 8012,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./text",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "strip",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 17,
+        "memberOf": "",
+        "doclet": "/**\n * @param content\n */",
+        "args": [
+          "content"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "strip: function (content) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "content\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "jsEscape",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 32,
+        "memberOf": "",
+        "doclet": "/**\n * @param content\n */",
+        "args": [
+          "content"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "jsEscape: function (content) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "content\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "createXhr",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 45,
+        "memberOf": "masterConfig",
+        "doclet": "/**\n * @return {object} NewExpression\n */",
+        "description": "",
+        "return": "NewExpression",
+        "classDeclarationFlag": false,
+        "line": "createXhr: masterConfig.createXhr || function () {",
+        "originalJsDocDescription": {
+          "return": {
+            "tag": "return",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{object} NewExpression\n"
+          }
+        }
+      },
+      {
+        "name": "parseName",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 66,
+        "memberOf": "",
+        "doclet": "/**\n * @param name\n */",
+        "args": [
+          "name"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "parseName: function (name) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "name\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "useXhr",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 91,
+        "memberOf": "",
+        "doclet": "/**\n * @param url  \n * @param protocol  \n * @param hostname  \n * @param port  \n * @return {boolean}\n */",
+        "args": [
+          "url",
+          "protocol",
+          "hostname",
+          "port"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "useXhr: function (url, protocol, hostname, port) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "url"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "protocol"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "hostname"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "port"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 5,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{boolean}\n"
+          }
+        }
+      },
+      {
+        "name": "finishLoad",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 112,
+        "memberOf": "",
+        "doclet": "/**\n * @param name  \n * @param strip  \n * @param content  \n * @param onLoad\n */",
+        "args": [
+          "name",
+          "strip",
+          "content",
+          "onLoad"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "finishLoad: function (name, strip, content, onLoad) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "name"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "strip"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "content"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "onLoad\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "load",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 125,
+        "memberOf": "",
+        "doclet": "/**\n * @param name  \n * @param req  \n * @param onLoad  \n * @param config\n */",
+        "args": [
+          "name",
+          "req",
+          "onLoad",
+          "config"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "load: function (name, req, onLoad, config) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "name"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "req"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "onLoad"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "config\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "write",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 157,
+        "memberOf": "",
+        "doclet": "/**\n * @param pluginName  \n * @param moduleName  \n * @param write  \n * @param config\n */",
+        "args": [
+          "pluginName",
+          "moduleName",
+          "write",
+          "config"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "write: function (pluginName, moduleName, write, config) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "pluginName"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "moduleName"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "write"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "config\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "writeFile",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 173,
+        "memberOf": "",
+        "doclet": "/**\n * @param pluginName  \n * @param moduleName  \n * @param req  \n * @param write  \n * @param config\n */",
+        "args": [
+          "pluginName",
+          "moduleName",
+          "req",
+          "write",
+          "config"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "writeFile: function (pluginName, moduleName, req, write, config) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "pluginName"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "moduleName"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "req"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "write"
+            },
+            {
+              "tag": "param",
+              "line": 5,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "config\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "textWrite",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 182,
+        "memberOf": "",
+        "doclet": "/**\n * @param contents\n */",
+        "args": [
+          "contents"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "let textWrite = function (contents) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "contents\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "asModule",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 189,
+        "memberOf": "textWrite",
+        "doclet": "/**\n * @param moduleName  \n * @param contents\n */",
+        "args": [
+          "moduleName",
+          "contents"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "textWrite.asModule = function (moduleName, contents) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "moduleName"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "contents\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "onreadystatechange",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 219,
+        "memberOf": "xhr",
+        "doclet": "/**\n * @param evt\n */",
+        "args": [
+          "evt"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "xhr.onreadystatechange = function (evt) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "evt\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "get",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 240,
+        "memberOf": "text",
+        "doclet": "/**\n * @param url  \n * @param callback\n */",
+        "args": [
+          "url",
+          "callback"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "text.get = function (url, callback) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "url"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "callback\n"
+            }
+          ]
+        }
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source",
+    "fileName": "text.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 312,
+  "EMPTY": false
+}

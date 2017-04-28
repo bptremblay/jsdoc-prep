@@ -1,0 +1,666 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "underscore",
+        "backbone",
+        "text!root/templates/link-toolbar.html",
+        "template-engine",
+        "i18n!galileo-lib/modules/nls/engine",
+        "galileo-lib/modules/services/usage-tracking"
+      ],
+      "usedAs": [
+        "$",
+        "_",
+        "Backbone",
+        "template",
+        "mustache",
+        "i18n",
+        "usageTracking"
+      ],
+      "moduleName": "link-toolbar-view",
+      "AMD": true,
+      "webPath": "/lib/toolbar",
+      "convertedName": "link_toolbar_view",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/lib/toolbar/link-toolbar-view.js",
+  "folderPath": "test-source/lib/toolbar",
+  "fileName": "link-toolbar-view.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/lib/toolbar",
+  "webPath": "/lib/toolbar",
+  "libFile": false,
+  "min": false,
+  "realName": "link-toolbar-view",
+  "name": "link-toolbar-view",
+  "camelName": "LinkToolbarView",
+  "processedFilePath": "test-output/lib/toolbar/link-toolbar-view.js",
+  "mappedModuleName": "lib/toolbar/link-toolbar-view",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "lib/toolbar/link-toolbar-view~LinkToolbarView": {
+      "todos": [],
+      "returnType": "",
+      "type": "FunctionDeclaration",
+      "uid": 132,
+      "parentNode": 123,
+      "memberOf": "",
+      "ctor": true,
+      "lineNumber": 52,
+      "line": "function LinkToolbarView() {",
+      "comment": 5,
+      "range": [
+        1609,
+        1907
+      ],
+      "name": "LinkToolbarView",
+      "commentBody": "/**\n         * @constructor\n         */",
+      "oldComment": {
+        "type": "Block",
+        "value": "*\n         * @constructor\n         ",
+        "range": [
+          1561,
+          1600
+        ],
+        "commentBody": "/**\n         * @constructor\n         */",
+        "lineNumber": 49
+      },
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "tags": [
+          {
+            "tag": "constructor",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        ],
+        "requiresList": [
+          "jquery",
+          "underscore",
+          "backbone",
+          "text!root/templates/link-toolbar.html",
+          "template-engine",
+          "i18n!galileo-lib/modules/nls/engine",
+          "galileo-lib/modules/services/usage-tracking"
+        ],
+        "moduleName": "link_toolbar_view",
+        "camelName": "LinkToolbarView",
+        "freeText": "",
+        "@constructor": "",
+        "preamble": "",
+        "nodeType": "CLASS"
+      },
+      "jsDoc": "/**\n * @constructor\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": false,
+  "moduleName": "lib/toolbar/link-toolbar-view",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 311,
+    "requires": [
+      "jquery",
+      "underscore",
+      "backbone",
+      "text!root/templates/link-toolbar.html",
+      "template-engine",
+      "i18n!galileo-lib/modules/nls/engine",
+      "galileo-lib/modules/services/usage-tracking"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/lib/toolbar",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 11044,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./link-toolbar-view",
+    "uses_console_log": false,
+    "uses_backbone": true,
+    "classes": {
+      "LinkToolbarView": 132
+    },
+    "methods": [
+      {
+        "name": "bind",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "doclet": "/**\n * @param fn  \n * @param me  \n * @return {Function}\n */",
+        "args": [
+          "fn",
+          "me"
+        ],
+        "description": "",
+        "return": "{function}",
+        "classDeclarationFlag": false,
+        "line": "var bind = function (fn, me) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "fn"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "me"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Function}\n"
+          }
+        }
+      },
+      {
+        "name": "extend",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 16,
+        "memberOf": "",
+        "doclet": "/**\n * @param child  \n * @param parent\n */",
+        "args": [
+          "child",
+          "parent"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "extend = function (child, parent) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "child"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "parent\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "ctor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 23,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function ctor() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "LinkToolbarView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 52,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function LinkToolbarView() {",
+        "originalJsDocDescription": {
+          "constructor": {
+            "tag": "constructor",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "preserveInputStateDecorator",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 62,
+        "memberOf": "",
+        "doclet": "/**\n * @param method  \n * @return {Function}\n */",
+        "args": [
+          "method"
+        ],
+        "description": "",
+        "return": "{function}",
+        "classDeclarationFlag": false,
+        "line": "preserveInputStateDecorator = function (method) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "method"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 2,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Function}\n"
+          }
+        }
+      },
+      {
+        "name": "initialize",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 84,
+        "memberOf": "LinkToolbarView.prototype",
+        "doclet": "/**\n * @param options1\n */",
+        "args": [
+          "options1"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LinkToolbarView.prototype.initialize = function (options1) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "options1\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_killEvent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 110,
+        "memberOf": "LinkToolbarView.prototype",
+        "doclet": "/**\n * @private\n * @private \n * @param event  \n * @return {Boolean}\n */",
+        "args": [
+          "event"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "LinkToolbarView.prototype._killEvent = function (event) {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "event"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Boolean}\n"
+          }
+        }
+      },
+      {
+        "name": "_onChangeInput",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 124,
+        "memberOf": "LinkToolbarView.prototype",
+        "doclet": "/**\n * @private\n * @private \n * @param event  \n * @return {Object} ConditionalExpression\n */",
+        "args": [
+          "event"
+        ],
+        "description": "",
+        "return": "ConditionalExpression",
+        "classDeclarationFlag": false,
+        "line": "LinkToolbarView.prototype._onChangeInput = function (event) {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "event"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} ConditionalExpression\n"
+          }
+        }
+      },
+      {
+        "name": "_onLeaveInput",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 140,
+        "memberOf": "LinkToolbarView.prototype",
+        "doclet": "/**\n * @private\n * @private \n * @param event\n */",
+        "args": [
+          "event"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LinkToolbarView.prototype._onLeaveInput = function (event) {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "event\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_updateURILabel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 191,
+        "memberOf": "LinkToolbarView.prototype",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LinkToolbarView.prototype._updateURILabel = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_updateModelURI",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 202,
+        "memberOf": "LinkToolbarView.prototype",
+        "doclet": "/**\n * @private\n * @private \n * @param options\n */",
+        "args": [
+          "options"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LinkToolbarView.prototype._updateModelURI = function (options) {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "options\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "render",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 211,
+        "memberOf": "LinkToolbarView.prototype",
+        "doclet": "/**\n * @param options  \n * @return {Function}\n */",
+        "args": [
+          "options"
+        ],
+        "description": "",
+        "return": "{function}",
+        "classDeclarationFlag": false,
+        "line": "LinkToolbarView.prototype.render = function (options) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "options"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 2,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Function}\n"
+          }
+        }
+      },
+      {
+        "name": "testInput",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 244,
+        "memberOf": "LinkToolbarView.prototype",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LinkToolbarView.prototype.testInput = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_removeLink",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 257,
+        "memberOf": "LinkToolbarView.prototype",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LinkToolbarView.prototype._removeLink = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_placeholderShim",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 267,
+        "memberOf": "LinkToolbarView.prototype",
+        "doclet": "/**\n * @private\n * @private \n * @param $o\n */",
+        "args": [
+          "$o"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LinkToolbarView.prototype._placeholderShim = function ($o) {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "$o\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "clearPlaceholder",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 274,
+        "memberOf": "$o",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "$o.clearPlaceholder = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "val",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 288,
+        "memberOf": "$o",
+        "doclet": "/**\n * @param value\n */",
+        "args": [
+          "value"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "$o.val = function (value) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "value\n"
+            }
+          ]
+        }
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/lib/toolbar",
+    "fileName": "link-toolbar-view.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 316,
+  "EMPTY": false
+}

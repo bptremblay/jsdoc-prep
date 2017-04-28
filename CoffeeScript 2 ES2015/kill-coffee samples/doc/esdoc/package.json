@@ -1,0 +1,40 @@
+{
+  "name": "galileo-button-editor",
+  "version": "1.11.4",
+  "description": "A Galileo component for editing buttons",
+  "main": "src/button-editor.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.roving.com/ES/galileo-button-editor"
+  },
+  "config": {
+    "port": 8008,
+    "karmaPort": 9008,
+    "protocol": "https",
+    "galileo": {
+      "componentType": "content-editor",
+      "type": "button"
+    }
+  },
+  "devDependencies": {
+    "babel-plugin-transform-es2015-modules-amd": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "esdoc": "^0.4.8",
+    "eslint-config-galileo": "^2.1.2",
+    "galileo-coffeelint-config": "^1.0.0",
+    "grunt": "~0.4.5",
+    "grunt-galileo-component-project": "^1.0.0"
+  },
+  "scripts": {
+    "setup": "rm -rf node_modules; npm i",
+    "start": "grunt server",
+    "clean": "grunt galileo-build:clean",
+    "lint": "coffeelint src/ spec/ && eslint -c .eslintrc.json src/ spec/",
+    "docs": "esdoc -c .esdoc.json",
+    "test": "grunt test",
+    "test-all": "grunt test-all",
+    "coverage": "grunt coverage",
+    "dev-build": "grunt --no-color dev-build",
+    "release-build": "grunt --no-color release-build"
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "position-affix-jquery",
+      "AMD": false,
+      "webPath": "/lib",
+      "convertedName": "position_affix_jquery",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/lib/position-affix-jquery.js",
+  "folderPath": "test-source/lib",
+  "fileName": "position-affix-jquery.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/lib",
+  "webPath": "/lib",
+  "libFile": false,
+  "min": false,
+  "realName": "position-affix-jquery",
+  "name": "position-affix-jquery",
+  "camelName": "PositionAffixJquery",
+  "processedFilePath": "test-output/lib/position-affix-jquery.js",
+  "mappedModuleName": "lib/position-affix-jquery",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": false,
+  "moduleName": "lib/position-affix-jquery",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 166,
+    "requires": [
+      "jquery"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/lib",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 4651,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./position-affix-jquery",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "getPositionInfo",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 19,
+        "memberOf": "",
+        "doclet": "/**\n * @param $elem  \n * @return {Object} NewExpression\n */",
+        "args": [
+          "$elem"
+        ],
+        "description": "",
+        "return": "NewExpression",
+        "classDeclarationFlag": false,
+        "line": "function getPositionInfo($elem) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "$elem"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 2,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} NewExpression\n"
+          }
+        }
+      },
+      {
+        "name": "applyCustomOffset",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 48,
+        "memberOf": "",
+        "doclet": "/**\n * @param theDimension  \n * @param thePos  \n * @param undefined  \n * @param undefined  \n * @return {Object} ConditionalExpression\n */",
+        "args": [
+          "theDimension",
+          "thePos",
+          null,
+          null
+        ],
+        "description": "",
+        "return": "ConditionalExpression",
+        "classDeclarationFlag": false,
+        "line": "function applyCustomOffset(theDimension, thePos, negative = false, customOffset = config.offset) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "theDimension"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "thePos"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "undefined"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "undefined"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 5,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} ConditionalExpression\n"
+          }
+        }
+      },
+      {
+        "name": "getPosition",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 60,
+        "memberOf": "",
+        "doclet": "/**\n * @param $this\n */",
+        "args": [
+          "$this"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function getPosition($this) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "$this\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "applyPosition",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 100,
+        "memberOf": "",
+        "doclet": "/**\n * @param $this\n */",
+        "args": [
+          "$this"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function applyPosition($this) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "$this\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "init",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 123,
+        "memberOf": "",
+        "doclet": "/**\n * @param opts  \n * @return {Object} ThisExpression\n */",
+        "args": [
+          "opts"
+        ],
+        "description": "",
+        "return": "ThisExpression",
+        "classDeclarationFlag": false,
+        "line": "init(opts) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "opts"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 2,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} ThisExpression\n"
+          }
+        }
+      },
+      {
+        "name": "update",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 133,
+        "memberOf": "",
+        "doclet": "/**\n * @return {Object} ThisExpression\n */",
+        "description": "",
+        "return": "ThisExpression",
+        "classDeclarationFlag": false,
+        "line": "update() {",
+        "originalJsDocDescription": {
+          "return": {
+            "tag": "return",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} ThisExpression\n"
+          }
+        }
+      },
+      {
+        "name": "updateTarget",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 141,
+        "memberOf": "",
+        "doclet": "/**\n * @param $elem  \n * @return {Object} ThisExpression\n */",
+        "args": [
+          "$elem"
+        ],
+        "description": "",
+        "return": "ThisExpression",
+        "classDeclarationFlag": false,
+        "line": "updateTarget($elem) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "$elem"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 2,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} ThisExpression\n"
+          }
+        }
+      },
+      {
+        "name": "positionAffix",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 151,
+        "memberOf": "",
+        "doclet": "/**\n * @param method  \n * @param {...*} args\n */",
+        "args": [
+          "method",
+          "args"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "$.fn.positionAffix = function positionAffix(method, ...args) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "method"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "{...*} args\n"
+            }
+          ]
+        }
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/lib",
+    "fileName": "position-affix-jquery.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 180,
+  "EMPTY": false
+}

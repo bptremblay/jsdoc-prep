@@ -5,7 +5,8 @@ var rollupModuleData = function (projectPath) {
     console.log('rollupModuleData: ', projectPath);
     var map = {};
     var data = JSON.parse(readFile('./modules.json'));
-    for (var m in data) {
+    var m = null;
+    for (m in data) {
         if (data.hasOwnProperty(m)) {
             var sourceModule = data[m].requires;
             //console.log(m, sourceModule);
@@ -14,8 +15,7 @@ var rollupModuleData = function (projectPath) {
                     var dependency = sourceModule[dm];
                     var hash = map[dm];
                     if (hash) {
-                        var count = hash + 1;
-                        map[dm] = count;
+                        map[dm] = hash + 1;
                     } else {
                         map[dm] = 1;
                     }
@@ -25,7 +25,7 @@ var rollupModuleData = function (projectPath) {
         }
     }
     var output = [];
-    for (var m in map) {
+    for (m in map) {
         if (map.hasOwnProperty(m)) {
             //console.log(m);
             var kind = '?';
@@ -43,6 +43,9 @@ var rollupModuleData = function (projectPath) {
             //            } else if (m.indexOf('i18n!') !== -1) {
             //                kind = 'LOCAL-I18N';
             //            }
+            if (m === 'exports'){
+              continue;
+            }
             output.push({
                 name: m,
                 count: map[m],
@@ -64,12 +67,12 @@ var rollupModuleData = function (projectPath) {
         }
         return 0;
     });
-    console.log('rollupModuleData: ', rollupModuleData);
+    console.log('rollupModuleData: ', output.length);
     writeFile(projectPath + '/module-stats.json', JSON.stringify(output, null, 2));
     var buffer = [];
     buffer.push("NAME" + ',' + "REFERENCES" + ',' + "LOCATION");
     for (var index = 0; index < output.length; index++) {
-        var record = output[index]
+        var record = output[index];
         buffer.push(record.name + ',' + record.count + ',' + record.kind);
     }
     writeFile(projectPath + '/module-stats' + '.csv', buffer.join('\n'));

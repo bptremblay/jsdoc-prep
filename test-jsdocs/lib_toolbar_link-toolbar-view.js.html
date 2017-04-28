@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: lib/toolbar/link-toolbar-view.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: lib/toolbar/link-toolbar-view.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @param fn  
+ * @param me  
+ * @return {Function}
+ */
+var bind = (fn, me) =>
+  function () {
+    return fn.apply(me, arguments);
+  },
+  /**
+   * @param child  
+   * @param parent
+   */
+  extend = function (child, parent) {
+    for (let key in parent) {
+      if (hasProp.call(parent, key)) child[key] = parent[key];
+    }
+    /**
+     * @function
+     */
+    function ctor() {
+      this.constructor = child;
+    }
+    ctor.prototype = parent.prototype;
+    child.prototype = new ctor();
+    child.__super__ = parent.prototype;
+    return child;
+  },
+  hasProp = {}.hasOwnProperty,
+  {
+    slice
+  } = [];
+define(['jquery', 'underscore', 'backbone', 'text!root/templates/link-toolbar.html', 'template-engine', 'i18n!galileo-lib/modules/nls/engine', 'galileo-lib/modules/services/usage-tracking'],
+  /**
+   * @exports src/lib/toolbar/link-toolbar-view
+   * @requires jquery
+   * @requires underscore
+   * @requires backbone
+   * @requires text!root/templates/link-toolbar.html
+   * @requires template-engine
+   * @requires i18n!galileo-lib/modules/nls/engine
+   * @requires galileo-lib/modules/services/usage-tracking
+   */
+  function ($, _, Backbone, template, mustache, i18n, usageTracking) {
+    let LinkToolbarView;
+    return LinkToolbarView = ( /**@lends module:lib/toolbar/link-toolbar-view~LinkToolbarView# */ function (superClass) {
+      let preserveInputStateDecorator;
+      extend(LinkToolbarView, superClass);
+      /**
+       * @constructor
+       */
+      function LinkToolbarView() {
+        this._removeLink = bind(this._removeLink, this);
+        this.testInput = bind(this.testInput, this);
+        this._updateModelURI = bind(this._updateModelURI, this);
+        return LinkToolbarView.__super__.constructor.apply(this, arguments);
+      }
+      /**
+       * @param method  
+       * @return {Function}
+       */
+      preserveInputStateDecorator = method =>
+        function () {
+          let args, end, input, length, lengthDiff, start;
+          args = 1 &lt;= arguments.length ? slice.call(arguments, 0) : [];
+          input = this.ui.uriInput.get(0);
+          start = typeof input.selectionStart === 'number' ? input.selectionStart : void 0;
+          end = typeof input.selectionEnd === 'number' ? input.selectionEnd : void 0;
+          ({
+            length
+          } = input.value);
+          method.apply(this, args);
+          if ((start != null) &amp;&amp; (end != null)) {
+            lengthDiff = input.value.length - length;
+            input.selectionStart = start + lengthDiff;
+            return input.selectionEnd = end + lengthDiff;
+          }
+        };
+      LinkToolbarView.prototype._updateDomDelayShort = 200;
+      LinkToolbarView.prototype._updateDomDelayLong = 1000;
+      LinkToolbarView.prototype.className = 'link-properties insert-link editor-button toolbar-row left';
+      /**
+       * @param options1
+       */
+      LinkToolbarView.prototype.initialize = function (options1) {
+        this.options = options1;
+        return this.listenTo(this.model, 'change', (_this =>
+          (model, event) => _this.updateDOM(_this.model.changed, event)
+        )(this));
+      };
+      LinkToolbarView.prototype.events = {
+        'focusout input': '_onLeaveInput',
+        'click [data-js=link-toolbar-test-button]' (event) {
+          event.preventDefault();
+          return this.testInput();
+        },
+        'click [data-js=link-toolbar-remove-button]' (event) {
+          event.preventDefault();
+          return this._removeLink();
+        },
+        'submit': '_killEvent',
+        'keyup input': '_onChangeInput'
+      };
+      /**
+       * @private
+       * @private 
+       * @param event  
+       * @return {Boolean}
+       */
+      LinkToolbarView.prototype._killEvent = function (event) {
+        if (typeof event.preventDefault === "function") {
+          event.preventDefault();
+        }
+        if (typeof event.stopImmediatePropagation === "function") {
+          event.stopImmediatePropagation();
+        }
+        return false;
+      };
+      /**
+       * @private
+       * @private 
+       * @param event  
+       * @return {Object} ConditionalExpression
+       */
+      LinkToolbarView.prototype._onChangeInput = function (event) {
+        let ref;
+        if ((event.keyCode || event.which || event.charCode) === 13) {
+          this._killEvent(event);
+          this._updateModelURI();
+          return (ref = this.options.onEnterInput) != null ? ref.call(this, event) : void 0;
+        } else {
+          if (this.model.uri() !== this.ui.uriInput.val()) {
+            return this._updateModelURI();
+          }
+        }
+      };
+      /**
+       * @private
+       * @private 
+       * @param event
+       */
+      LinkToolbarView.prototype._onLeaveInput = function (event) {
+        return this.updateDOM(null, {
+          fromLinkToolbarView: true
+        });
+      };
+      LinkToolbarView.prototype.updateDOM = (function () {
+        let updateDOMTimeout;
+        updateDOMTimeout = null;
+        return function (data, event) {
+          let showErrorFeedback, updateDOMDelay, uri;
+          if (data == null) {
+            data = this.model.toJSON();
+          }
+          if (event == null) {
+            event = {};
+          }
+          ({
+            uri
+          } = data);
+          showErrorFeedback = event.showErrorFeedback || (event.showErrorFeedback == null) &amp;&amp; !this.model.isValidURI(uri);
+          if (!(uri > '')) {
+            this.ui.testLinkButton.hide();
+          }
+          if (!showErrorFeedback) {
+            this.ui.uriInputContainer.removeClass('error');
+            this._updateURILabel();
+          }
+          if (event.fromLinkToolbarView) {
+            updateDOMDelay = this._updateDomDelayLong;
+          } else {
+            updateDOMDelay = this._updateDomDelayShort;
+          }
+          clearTimeout(updateDOMTimeout);
+          updateDOMTimeout = setTimeout((_this =>
+            function () {
+              if (showErrorFeedback) {
+                _this.ui.uriInputContainer.addClass('error');
+              } else if (uri > '') {
+                _this.ui.testLinkButton.show();
+              }
+              if (_this.ui.uriInput.val() !== uri) {
+                return preserveInputStateDecorator(() => _this.ui.uriInput.val(uri || '')).call(_this);
+              }
+            }
+          )(this), updateDOMDelay);
+          return this;
+        };
+      })();
+      /**
+       * @private
+       * @private 
+       */
+      LinkToolbarView.prototype._updateURILabel = function () {
+        if (this.model.uriScheme() === 'mailto') {
+          return this.ui.uriTypeLabel.text(i18n['link_type_label_email']);
+        } else {
+          return this.ui.uriTypeLabel.text(i18n['link_type_label_webpage']);
+        }
+      };
+      /**
+       * @private
+       * @private 
+       * @param options
+       */
+      LinkToolbarView.prototype._updateModelURI = function (options) {
+        return this.model.uri(this.ui.uriInput.val(), $.extend({}, options, {
+          fromLinkToolbarView: true
+        }));
+      };
+      /**
+       * @param options  
+       * @return {Function}
+       */
+      LinkToolbarView.prototype.render = function (options) {
+        if (options == null) {
+          options = {};
+        }
+        this.$el.html(mustache.render(template, _.extend(this.model.toJSON(), {
+          nls: i18n
+        })));
+        this.ui = {
+          uriInput: this._placeholderShim((_this =>
+            function () {
+              let $input;
+              $input = _this.$('[data-js=link-toolbar-input]');
+              if (_this.options.forcePlaceholderShim) {
+                delete $input.get(0).placeholder;
+              }
+              return $input;
+            }
+          )(this)()),
+          uriInputContainer: this.$('[data-js=link-toolbar-input-container]'),
+          testLinkButton: this.$('[data-js=link-toolbar-test-button]'),
+          removeLinkbutton: this.$('[data-js=link-toolbar-remove-button]'),
+          uriTypeLabel: this.$('label[for=link-href]')
+        };
+        this.updateDOM(null, options);
+        return this;
+      };
+      LinkToolbarView.prototype.focus = preserveInputStateDecorator(function () {
+        let base;
+        return typeof (base = this.ui.uriInput.focus()).clearPlaceholder === "function" ? base.clearPlaceholder() : void 0;
+      });
+      /**
+       * @function
+       */
+      LinkToolbarView.prototype.testInput = function () {
+        let options;
+        if (this.model.isValidURI()) {
+          options = {
+            block_name: 'Aloha Text Editor'
+          };
+          usageTracking.track('link_test', options);
+          return window.open(this.model.uri(), '', 'width=800,height=600');
+        }
+      };
+      /**
+       * @private
+       * @private 
+       */
+      LinkToolbarView.prototype._removeLink = function () {
+        this.ui.uriInput.val('');
+        return this._updateModelURI({
+          removeLink: true
+        });
+      };
+      /**
+       * @private
+       * @private 
+       * @param $o
+       */
+      LinkToolbarView.prototype._placeholderShim = function ($o) {
+        let originalMethod;
+        if (!('placeholder' in ($o.get(0) || {}))) {
+          originalMethod = _.bind($o.val, $o);
+          /**
+           * @function
+           */
+          $o.clearPlaceholder = function () {
+            if (originalMethod() === $o.attr('placeholder')) {
+              return originalMethod('');
+            }
+          };
+          $o.on('focusin focus click', $o.clearPlaceholder);
+          $o.on('focusout', function () {
+            if (originalMethod() === '') {
+              return originalMethod($o.attr('placeholder'));
+            }
+          });
+          /**
+           * @param value
+           */
+          $o.val = function (value) {
+            if (value != null) {
+              if (value === '') {
+                return originalMethod($o.attr('placeholder'));
+              } else {
+                return originalMethod(value);
+              }
+            } else {
+              value = originalMethod();
+              if (value !== $o.attr('placeholder')) {
+                return value;
+              } else {
+                return '';
+              }
+            }
+          };
+          originalMethod($o.attr('placeholder'));
+        }
+        return $o;
+      };
+      return LinkToolbarView;
+    })(Backbone.View);
+  });</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="jquery.module_parsecss.html">parsecss</a></li><li><a href="module-button-editor-nls.html">button-editor-nls</a></li><li><a href="module-component.html">component</a></li><li><a href="module-component-editor.html">component-editor</a></li><li><a href="module-component-factory.html">component-factory</a></li><li><a href="module-delegator.html">delegator</a></li><li><a href="module-delete-button.html">delete-button</a></li><li><a href="module-done-button.html">done-button</a></li><li><a href="module-donkey-editor.html">donkey-editor</a></li><li><a href="module-dropdown.html">dropdown</a></li><li><a href="module-function.html">function</a></li><li><a href="module-group.html">group</a></li><li><a href="module-index.html">index</a></li><li><a href="module-jquery.html">jquery</a></li><li><a href="module-layout-editor.html">layout-editor</a></li><li><a href="module-layout-toolbar.html">layout-toolbar</a></li><li><a href="module-observable.html">observable</a></li><li><a href="module-observer.html">observer</a></li><li><a href="module-position.html">position</a></li><li><a href="module-position-affix-jquery.html">position-affix-jquery</a></li><li><a href="module-row.html">row</a></li><li><a href="module-src_i18n.html">src/i18n</a></li><li><a href="module-src_lib_toolbar.html">src/lib/toolbar</a></li><li><a href="module-src_lib_toolbar_galileo-insert-link-tool.html">src/lib/toolbar/galileo-insert-link-tool</a></li><li><a href="module-src_lib_toolbar_layout-switcher_layout-switcher-toolbar.html">src/lib/toolbar/layout-switcher/layout-switcher-toolbar</a></li><li><a href="module-src_lib_toolbar_layout-switcher_models_layout.html">src/lib/toolbar/layout-switcher/models/layout</a></li><li><a href="module-src_lib_toolbar_layout-switcher_models_layout-family.html">src/lib/toolbar/layout-switcher/models/layout-family</a></li><li><a href="module-src_lib_toolbar_layout-switcher_views_layout-view.html">src/lib/toolbar/layout-switcher/views/layout-view</a></li><li><a href="module-src_lib_toolbar_layout-switcher_views_switcher-toolbar-view.html">src/lib/toolbar/layout-switcher/views/switcher-toolbar-view</a></li><li><a href="module-src_lib_toolbar_layout-switcher_views_switcher-view.html">src/lib/toolbar/layout-switcher/views/switcher-view</a></li><li><a href="module-src_lib_toolbar_link-toolbar-view.html">src/lib/toolbar/link-toolbar-view</a></li><li><a href="module-toolbar.html">toolbar</a></li><li><a href="src_lib_toolbar_galileo-toolbar.module_jquery.html">jquery</a></li></ul><h3>Classes</h3><ul><li><a href="module-component-editor-ComponentEditor.html">ComponentEditor</a></li><li><a href="module-component-factory-ComponentFactory.html">ComponentFactory</a></li><li><a href="module-component-Component.html">Component</a></li><li><a href="module-delete-button-DeleteButton.html">DeleteButton</a></li><li><a href="module-done-button-DoneButon.html">DoneButon</a></li><li><a href="module-dropdown-DropdownMenu.html">DropdownMenu</a></li><li><a href="module-group-Group.html">Group</a></li><li><a href="module-layout-editor-LayoutEditor.html">LayoutEditor</a></li><li><a href="module-layout-toolbar-LayoutToolbar.html">LayoutToolbar</a></li><li><a href="module-lib_toolbar_galileo-insert-link-tool-GalileoInsertLinkTool_-GalileoInsertLinkTool.html">GalileoInsertLinkTool</a></li><li><a href="module-lib_toolbar_layout-switcher_layout-switcher-toolbar-LayoutSwitcherToolbar_-LayoutSwitcherToolbar.html">LayoutSwitcherToolbar</a></li><li><a href="module-lib_toolbar_layout-switcher_models_layout-family-LayoutFamily_-LayoutFamily.html">LayoutFamily</a></li><li><a href="module-lib_toolbar_layout-switcher_models_layout-Layout_-Layout.html">Layout</a></li><li><a href="module-lib_toolbar_layout-switcher_views_layout-view-LayoutView_-LayoutView.html">LayoutView</a></li><li><a href="module-lib_toolbar_layout-switcher_views_switcher-toolbar-view-SwitcherToolbarView_-SwitcherToolbarView.html">SwitcherToolbarView</a></li><li><a href="module-lib_toolbar_layout-switcher_views_switcher-view-SwitcherView_-SwitcherView.html">SwitcherView</a></li><li><a href="module-lib_toolbar_link-toolbar-view-LinkToolbarView_-LinkToolbarView.html">LinkToolbarView</a></li><li><a href="module-observable-Observable.html">Observable</a></li><li><a href="module-position-Position.html">Position</a></li><li><a href="module-position-PositionInfo.html">PositionInfo</a></li><li><a href="module-row-Row.html">Row</a></li><li><a href="module-toolbar-Toolbar.html">Toolbar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addIfExists">addIfExists</a></li><li><a href="global.html#addPart">addPart</a></li><li><a href="global.html#bind">bind</a></li><li><a href="global.html#extend">extend</a></li><li><a href="global.html#mixin">mixin</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Thu Apr 27 2017 09:57:07 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

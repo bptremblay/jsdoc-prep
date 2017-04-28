@@ -1,0 +1,946 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "galileo-lib/modules/events",
+        "root/engine/services/highlighting-service",
+        "toolbar/layout-switcher/models/layout",
+        "toolbar/layout-switcher/models/layout-family",
+        "toolbar/layout-switcher/views/switcher-toolbar-view"
+      ],
+      "usedAs": [
+        "$",
+        "events",
+        "highlightingService",
+        "Layout",
+        "LayoutFamily",
+        "SwitcherToolbarView"
+      ],
+      "moduleName": "layout-switcher-toolbar",
+      "AMD": true,
+      "webPath": "/lib/toolbar/layout-switcher",
+      "convertedName": "layout_switcher_toolbar",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/lib/toolbar/layout-switcher/layout-switcher-toolbar.js",
+  "folderPath": "test-source/lib/toolbar/layout-switcher",
+  "fileName": "layout-switcher-toolbar.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/lib/toolbar/layout-switcher",
+  "webPath": "/lib/toolbar/layout-switcher",
+  "libFile": false,
+  "min": false,
+  "realName": "layout-switcher-toolbar",
+  "name": "layout-switcher-toolbar",
+  "camelName": "LayoutSwitcherToolbar",
+  "processedFilePath": "test-output/lib/toolbar/layout-switcher/layout-switcher-toolbar.js",
+  "mappedModuleName": "lib/toolbar/layout-switcher/layout-switcher-toolbar",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "lib/toolbar/layout-switcher/layout-switcher-toolbar~LayoutSwitcherToolbar": {
+      "todos": [],
+      "params": [
+        "layoutEditor",
+        "options"
+      ],
+      "paramsRaw": [
+        {
+          "type": "Identifier",
+          "name": "layoutEditor",
+          "range": [
+            9664,
+            9676
+          ],
+          "parentNode": 864,
+          "uid": 866
+        },
+        {
+          "type": "Identifier",
+          "name": "options",
+          "range": [
+            9678,
+            9685
+          ],
+          "parentNode": 864,
+          "uid": 867
+        }
+      ],
+      "returnType": "",
+      "type": "FunctionDeclaration",
+      "uid": 864,
+      "parentNode": 61,
+      "memberOf": "",
+      "ctor": true,
+      "lineNumber": 269,
+      "line": "function LayoutSwitcherToolbar(layoutEditor, options) {",
+      "comment": 30,
+      "range": [
+        9633,
+        10432
+      ],
+      "name": "LayoutSwitcherToolbar",
+      "commentBody": "/**\n         * @constructor\n         * @param layoutEditor\n         * @param options\n         */",
+      "oldComment": {
+        "type": "Block",
+        "value": "*\n         * @constructor\n         * @param layoutEditor\n         * @param options\n         ",
+        "range": [
+          9528,
+          9624
+        ],
+        "commentBody": "/**\n         * @constructor\n         * @param layoutEditor\n         * @param options\n         */",
+        "lineNumber": 264
+      },
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [
+          {
+            "tagName": "param",
+            "name": "layoutEditor",
+            "type": "",
+            "description": " "
+          },
+          {
+            "tagName": "param",
+            "name": "options",
+            "type": "",
+            "description": ""
+          }
+        ],
+        "tags": [
+          {
+            "tag": "constructor",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          {
+            "tag": "param",
+            "line": 2,
+            "lastLine": 2,
+            "textStartsOnSameLine": true,
+            "text": "layoutEditor"
+          },
+          {
+            "tag": "param",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "options\n"
+          }
+        ],
+        "requiresList": [
+          "jquery",
+          "galileo-lib/modules/events",
+          "root/engine/services/highlighting-service",
+          "toolbar/layout-switcher/models/layout",
+          "toolbar/layout-switcher/models/layout-family",
+          "toolbar/layout-switcher/views/switcher-toolbar-view"
+        ],
+        "moduleName": "layout_switcher_toolbar",
+        "camelName": "LayoutSwitcherToolbar",
+        "freeText": "",
+        "@constructor": "",
+        "preamble": "",
+        "nodeType": "CLASS"
+      },
+      "jsDoc": "/**\n * @constructor\n * @param layoutEditor  \n * @param options\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": false,
+  "moduleName": "lib/toolbar/layout-switcher/layout-switcher-toolbar",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 288,
+    "requires": [
+      "jquery",
+      "galileo-lib/modules/events",
+      "root/engine/services/highlighting-service",
+      "toolbar/layout-switcher/models/layout",
+      "toolbar/layout-switcher/models/layout-family",
+      "toolbar/layout-switcher/views/switcher-toolbar-view"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/lib/toolbar/layout-switcher",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 10505,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./layout-switcher-toolbar",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "LayoutSwitcherToolbar": 864
+    },
+    "methods": [
+      {
+        "name": "bind",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 7,
+        "memberOf": "",
+        "doclet": "/**\n * @param fn  \n * @param me  \n * @return {Function}\n */",
+        "args": [
+          "fn",
+          "me"
+        ],
+        "description": "",
+        "return": "{function}",
+        "classDeclarationFlag": false,
+        "line": "var bind = function (fn, me) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "fn"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "me"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Function}\n"
+          }
+        }
+      },
+      {
+        "name": "_adjustSideTools",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 35,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n * @param topToolsVisible\n */",
+        "args": [
+          "topToolsVisible"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._adjustSideTools = function (topToolsVisible) {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "topToolsVisible\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_uninitialized",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 47,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._uninitialized = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_onContainerHover",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 53,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._onContainerHover = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_onToolbarHover",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 61,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._onToolbarHover = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_showToolbar",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 67,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._showToolbar = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_hideToolbar",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 76,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._hideToolbar = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_highlightContainer",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 86,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n * @param show\n */",
+        "args": [
+          "show"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._highlightContainer = function (show) {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "show\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_listenForMouseExit",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 92,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._listenForMouseExit = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "over",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 103,
+        "memberOf": "",
+        "doclet": "/**\n * @param selector  \n * @param event  \n * @return {Boolean}\n */",
+        "args": [
+          "selector",
+          "event"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "over = function (selector, event) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "selector"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "event"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Boolean}\n"
+          }
+        }
+      },
+      {
+        "name": "_stopListeningForMouseExit",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 120,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._stopListeningForMouseExit = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_listenForHover",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 127,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._listenForHover = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_stopListeningForHover",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 134,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._stopListeningForHover = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_createModel",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 142,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n * @param layouts\n */",
+        "args": [
+          "layouts"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._createModel = function (layouts) {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "layouts\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_prependToolbarView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 159,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._prependToolbarView = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_initNamespacedEvents",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 169,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n * @return {Object} AssignmentExpression\n */",
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._initNamespacedEvents = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "return": {
+            "tag": "return",
+            "line": 2,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} AssignmentExpression\n"
+          }
+        }
+      },
+      {
+        "name": "_hasLayoutOptionsToDisplay",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 183,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._hasLayoutOptionsToDisplay = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "_layoutChanged",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 190,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n * @param layout\n */",
+        "args": [
+          "layout"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._layoutChanged = function (layout) {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "layout\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_createSwitcherToolbarView",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 197,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n * @param layoutThumbnail\n */",
+        "args": [
+          "layoutThumbnail"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._createSwitcherToolbarView = function (layoutThumbnail) {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "layoutThumbnail\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "_initSideTools",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 210,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n * @return {Object} AssignmentExpression\n */",
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._initSideTools = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "return": {
+            "tag": "return",
+            "line": 2,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} AssignmentExpression\n"
+          }
+        }
+      },
+      {
+        "name": "_handleHoverEffectsDisabledEvent",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 216,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @private\n * @private \n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype._handleHoverEffectsDisabledEvent = function () {",
+        "originalJsDocDescription": {
+          "private": {
+            "tag": "private",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "activate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 224,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype.activate = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "deactivate",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 233,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype.deactivate = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "enableLayoutSwitching",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 243,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype.enableLayoutSwitching = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "disableLayoutSwitching",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 249,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype.disableLayoutSwitching = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "setLayoutChangedCb",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 255,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @param layoutChangedCb\n */",
+        "args": [
+          "layoutChangedCb"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype.setLayoutChangedCb = function (layoutChangedCb) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "layoutChangedCb\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "setLayoutThumbnail",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 261,
+        "memberOf": "LayoutSwitcherToolbar.prototype",
+        "doclet": "/**\n * @param thumbnail\n */",
+        "args": [
+          "thumbnail"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "LayoutSwitcherToolbar.prototype.setLayoutThumbnail = function (thumbnail) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "thumbnail\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "LayoutSwitcherToolbar",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 269,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n * @param layoutEditor  \n * @param options\n */",
+        "args": [
+          "layoutEditor",
+          "options"
+        ],
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function LayoutSwitcherToolbar(layoutEditor, options) {",
+        "originalJsDocDescription": {
+          "constructor": {
+            "tag": "constructor",
+            "line": 1,
+            "lastLine": 1,
+            "textStartsOnSameLine": true,
+            "text": ""
+          },
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "layoutEditor"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "options\n"
+            }
+          ]
+        }
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/lib/toolbar/layout-switcher",
+    "fileName": "layout-switcher-toolbar.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 302,
+  "EMPTY": false
+}

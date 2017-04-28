@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: lib/toolbar/layout-switcher/models/layout.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: lib/toolbar/layout-switcher/models/layout.js</h1>
+
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @param child  
+ * @param parent
+ */
+var extend = function (child, parent) {
+    for (let key in parent) {
+      if (hasProp.call(parent, key)) child[key] = parent[key];
+    }
+    /**
+     * @function
+     */
+    function ctor() {
+      this.constructor = child;
+    }
+    ctor.prototype = parent.prototype;
+    child.prototype = new ctor();
+    child.__super__ = parent.prototype;
+    return child;
+  },
+  hasProp = {}.hasOwnProperty;
+define(['backbone'],
+  /**
+   * @exports src/lib/toolbar/layout-switcher/models/layout
+   * @requires backbone
+   * @requires backbone
+   * @requires underscore
+   */
+  function (Backbone) {
+    let Layout;
+    return Layout = ( /**@lends module:lib/toolbar/layout-switcher/models/layout~Layout# */ function (superClass) {
+      extend(Layout, superClass);
+      /**
+       * @constructor
+       */
+      function Layout() {
+        return Layout.__super__.constructor.apply(this, arguments);
+      }
+      return Layout;
+    })(Backbone.Model);
+  });</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="jquery.module_parsecss.html">parsecss</a></li><li><a href="module-button-editor-nls.html">button-editor-nls</a></li><li><a href="module-component.html">component</a></li><li><a href="module-component-editor.html">component-editor</a></li><li><a href="module-component-factory.html">component-factory</a></li><li><a href="module-delegator.html">delegator</a></li><li><a href="module-delete-button.html">delete-button</a></li><li><a href="module-done-button.html">done-button</a></li><li><a href="module-donkey-editor.html">donkey-editor</a></li><li><a href="module-dropdown.html">dropdown</a></li><li><a href="module-function.html">function</a></li><li><a href="module-group.html">group</a></li><li><a href="module-index.html">index</a></li><li><a href="module-jquery.html">jquery</a></li><li><a href="module-layout-editor.html">layout-editor</a></li><li><a href="module-layout-toolbar.html">layout-toolbar</a></li><li><a href="module-observable.html">observable</a></li><li><a href="module-observer.html">observer</a></li><li><a href="module-position.html">position</a></li><li><a href="module-position-affix-jquery.html">position-affix-jquery</a></li><li><a href="module-row.html">row</a></li><li><a href="module-src_i18n.html">src/i18n</a></li><li><a href="module-src_lib_toolbar.html">src/lib/toolbar</a></li><li><a href="module-src_lib_toolbar_galileo-insert-link-tool.html">src/lib/toolbar/galileo-insert-link-tool</a></li><li><a href="module-src_lib_toolbar_layout-switcher_layout-switcher-toolbar.html">src/lib/toolbar/layout-switcher/layout-switcher-toolbar</a></li><li><a href="module-src_lib_toolbar_layout-switcher_models_layout.html">src/lib/toolbar/layout-switcher/models/layout</a></li><li><a href="module-src_lib_toolbar_layout-switcher_models_layout-family.html">src/lib/toolbar/layout-switcher/models/layout-family</a></li><li><a href="module-src_lib_toolbar_layout-switcher_views_layout-view.html">src/lib/toolbar/layout-switcher/views/layout-view</a></li><li><a href="module-src_lib_toolbar_layout-switcher_views_switcher-toolbar-view.html">src/lib/toolbar/layout-switcher/views/switcher-toolbar-view</a></li><li><a href="module-src_lib_toolbar_layout-switcher_views_switcher-view.html">src/lib/toolbar/layout-switcher/views/switcher-view</a></li><li><a href="module-src_lib_toolbar_link-toolbar-view.html">src/lib/toolbar/link-toolbar-view</a></li><li><a href="module-toolbar.html">toolbar</a></li><li><a href="src_lib_toolbar_galileo-toolbar.module_jquery.html">jquery</a></li></ul><h3>Classes</h3><ul><li><a href="module-component-editor-ComponentEditor.html">ComponentEditor</a></li><li><a href="module-component-factory-ComponentFactory.html">ComponentFactory</a></li><li><a href="module-component-Component.html">Component</a></li><li><a href="module-delete-button-DeleteButton.html">DeleteButton</a></li><li><a href="module-done-button-DoneButon.html">DoneButon</a></li><li><a href="module-dropdown-DropdownMenu.html">DropdownMenu</a></li><li><a href="module-group-Group.html">Group</a></li><li><a href="module-layout-editor-LayoutEditor.html">LayoutEditor</a></li><li><a href="module-layout-toolbar-LayoutToolbar.html">LayoutToolbar</a></li><li><a href="module-lib_toolbar_galileo-insert-link-tool-GalileoInsertLinkTool_-GalileoInsertLinkTool.html">GalileoInsertLinkTool</a></li><li><a href="module-lib_toolbar_layout-switcher_layout-switcher-toolbar-LayoutSwitcherToolbar_-LayoutSwitcherToolbar.html">LayoutSwitcherToolbar</a></li><li><a href="module-lib_toolbar_layout-switcher_models_layout-family-LayoutFamily_-LayoutFamily.html">LayoutFamily</a></li><li><a href="module-lib_toolbar_layout-switcher_models_layout-Layout_-Layout.html">Layout</a></li><li><a href="module-lib_toolbar_layout-switcher_views_layout-view-LayoutView_-LayoutView.html">LayoutView</a></li><li><a href="module-lib_toolbar_layout-switcher_views_switcher-toolbar-view-SwitcherToolbarView_-SwitcherToolbarView.html">SwitcherToolbarView</a></li><li><a href="module-lib_toolbar_layout-switcher_views_switcher-view-SwitcherView_-SwitcherView.html">SwitcherView</a></li><li><a href="module-lib_toolbar_link-toolbar-view-LinkToolbarView_-LinkToolbarView.html">LinkToolbarView</a></li><li><a href="module-observable-Observable.html">Observable</a></li><li><a href="module-position-Position.html">Position</a></li><li><a href="module-position-PositionInfo.html">PositionInfo</a></li><li><a href="module-row-Row.html">Row</a></li><li><a href="module-toolbar-Toolbar.html">Toolbar</a></li></ul><h3>Global</h3><ul><li><a href="global.html#addIfExists">addIfExists</a></li><li><a href="global.html#addPart">addPart</a></li><li><a href="global.html#bind">bind</a></li><li><a href="global.html#extend">extend</a></li><li><a href="global.html#mixin">mixin</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Thu Apr 27 2017 09:57:07 GMT-0400 (EDT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

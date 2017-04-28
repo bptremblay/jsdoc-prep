@@ -1,0 +1,234 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "dropdown",
+      "AMD": false,
+      "webPath": "/toolbar-components",
+      "convertedName": "dropdown",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/toolbar-components/dropdown.js",
+  "folderPath": "test-source/toolbar-components",
+  "fileName": "dropdown.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/toolbar-components",
+  "webPath": "/toolbar-components",
+  "libFile": false,
+  "min": false,
+  "realName": "dropdown",
+  "name": "dropdown",
+  "camelName": "Dropdown",
+  "processedFilePath": "test-output/toolbar-components/dropdown.js",
+  "mappedModuleName": "toolbar-components/dropdown",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": true,
+  "moduleName": "toolbar-components/dropdown",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 80,
+    "requires": [
+      "jquery"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/toolbar-components",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 2146,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./dropdown",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "0": 17
+    },
+    "methods": [
+      {
+        "name": "constructor",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 13,
+        "memberOf": "",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "constructor() {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "extendBSDropdown",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 22,
+        "memberOf": "DropdownMenu",
+        "doclet": "/**\n * @param $o  \n * @return {Object} AssignmentExpression\n */",
+        "args": [
+          "$o"
+        ],
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "extendBSDropdown($o) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "$o"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 2,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} AssignmentExpression\n"
+          }
+        }
+      },
+      {
+        "name": "val",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 33,
+        "memberOf": "$o",
+        "doclet": "/**\n * @param val  \n * @param triggerChange  \n * @return {Object} AssignmentExpression\n */",
+        "args": [
+          "val",
+          "triggerChange"
+        ],
+        "description": "",
+        "return": "AssignmentExpression",
+        "classDeclarationFlag": false,
+        "line": "$o.val = function (val, triggerChange) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "val"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "triggerChange"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} AssignmentExpression\n"
+          }
+        }
+      },
+      {
+        "name": "onDomAdd",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 67,
+        "memberOf": "DropdownMenu",
+        "doclet": "/**\n * @param domParent\n */",
+        "args": [
+          "domParent"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "onDomAdd(domParent) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "domParent\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "handleValueChange",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 76,
+        "memberOf": "DropdownMenu",
+        "doclet": "/**\n * @param handler\n */",
+        "args": [
+          "handler"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "handleValueChange(handler) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "handler\n"
+            }
+          ]
+        }
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/toolbar-components",
+    "fileName": "dropdown.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 87,
+  "EMPTY": false
+}

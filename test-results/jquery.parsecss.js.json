@@ -1,0 +1,594 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery"
+      ],
+      "moduleName": "jquery.parsecss",
+      "AMD": false,
+      "webPath": "",
+      "convertedName": "jquery.parsecss",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/jquery.parsecss.js",
+  "folderPath": "test-source",
+  "fileName": "jquery.parsecss.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "",
+  "webPath": "",
+  "libFile": false,
+  "min": false,
+  "realName": "jquery.parsecss",
+  "name": "jquery.parsecss",
+  "camelName": "Jquery.parsecss",
+  "processedFilePath": "test-output/jquery.parsecss.js",
+  "mappedModuleName": "jquery.parsecss",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": false,
+  "moduleName": "jquery.parsecss",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 297,
+    "requires": [
+      "jquery"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 10567,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./jquery",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "findandfilter",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 5,
+        "memberOf": "$.fn",
+        "doclet": "/**\n * @param selector\n */",
+        "args": [
+          "selector"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "$.fn.findandfilter = function (selector) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "selector\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "parse",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "doclet": "/**\n * @param str\n */",
+        "args": [
+          "str"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "var parse = function (str) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "str\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "parsecss",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 38,
+        "memberOf": "$",
+        "doclet": "/**\n * @param str  \n * @param callback  \n * @return {String}\n */",
+        "args": [
+          "str",
+          "callback"
+        ],
+        "description": "",
+        "return": "{string}",
+        "classDeclarationFlag": false,
+        "line": "$.parsecss = function (str, callback) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "str"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "callback"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{String}\n"
+          }
+        }
+      },
+      {
+        "name": "query",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 56,
+        "memberOf": "window.media && window.media",
+        "doclet": "/**\n * @param str  \n * @return {Boolean}\n */",
+        "args": [
+          "str"
+        ],
+        "description": "",
+        "return": "{boolean}",
+        "classDeclarationFlag": false,
+        "line": "$.parsecss.mediumApplies = (window.media && window.media.query) || function (str) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "str"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 2,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Boolean}\n"
+          }
+        }
+      },
+      {
+        "name": "isValidSelector",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 67,
+        "memberOf": "$.parsecss",
+        "doclet": "/**\n * Returns true if is valid selector.\n * @param str  \n * @return {Object} boolean\n */",
+        "args": [
+          "str"
+        ],
+        "description": "\n Returns true if is valid selector.",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "$.parsecss.isValidSelector = function (str) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "str"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Object} boolean\n"
+          }
+        }
+      },
+      {
+        "name": "parseArguments",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 75,
+        "memberOf": "$.parsecss",
+        "doclet": "/**\n * @param str  \n * @return {array}\n */",
+        "args": [
+          "str"
+        ],
+        "description": "",
+        "return": "{array}",
+        "classDeclarationFlag": false,
+        "line": "$.parsecss.parseArguments = function (str) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "str"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 2,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{array}\n"
+          }
+        }
+      },
+      {
+        "name": "jquery",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 92,
+        "memberOf": "$.parsecss",
+        "doclet": "/**\n * @param css\n */",
+        "args": [
+          "css"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "$.parsecss.jquery = function (css) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "css\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "parsedeclarations",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 109,
+        "memberOf": "",
+        "doclet": "/**\n * @param index\n */",
+        "args": [
+          "index"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function parsedeclarations(index) { // take a string from the munged array and parse it into an object of property: value pairs",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "index\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "munge",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 132,
+        "memberOf": "",
+        "doclet": "/**\n * @param str  \n * @param full  \n * @return {String}\n */",
+        "args": [
+          "str",
+          "full"
+        ],
+        "description": "",
+        "return": "{string}",
+        "classDeclarationFlag": false,
+        "line": "function munge(str, full) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "str"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "full"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 3,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{String}\n"
+          }
+        }
+      },
+      {
+        "name": "restore",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 152,
+        "memberOf": "",
+        "doclet": "/**\n * @param str\n */",
+        "args": [
+          "str"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "function restore(str) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "str\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "processAtRule",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 163,
+        "memberOf": "",
+        "doclet": "/**\n * @param rule  \n * @param callback\n */",
+        "args": [
+          "rule",
+          "callback"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function processAtRule(rule, callback) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "rule"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "callback\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "dojQuery",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 188,
+        "memberOf": "",
+        "doclet": "/**\n * @param selector  \n * @param which  \n * @param value  \n * @param value2  \n * @return {Function}\n */",
+        "args": [
+          "selector",
+          "which",
+          "value",
+          "value2"
+        ],
+        "description": "",
+        "return": "{function}",
+        "classDeclarationFlag": false,
+        "line": "function dojQuery(selector, which, value, value2) { // value2 is the value for the livequery no longer match",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "selector"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "which"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "value"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "value2"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 5,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Function}\n"
+          }
+        }
+      },
+      {
+        "name": "p",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 200,
+        "memberOf": "",
+        "doclet": "/**\n * @param str  \n * @return {Function}\n */",
+        "args": [
+          "str"
+        ],
+        "description": "",
+        "return": "{function}",
+        "classDeclarationFlag": false,
+        "line": "function p(str) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "str"
+            }
+          ],
+          "return": {
+            "tag": "return",
+            "line": 2,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "{Function}\n"
+          }
+        }
+      },
+      {
+        "name": "fn[which]",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 237,
+        "memberOf": "$",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "$.fn[which] = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "fn[plugin]",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 256,
+        "memberOf": "$",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "$.fn[plugin] = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "styleAttributes",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 280,
+        "memberOf": "",
+        "doclet": "/**\n * @param HTMLtext  \n * @param callback\n */",
+        "args": [
+          "HTMLtext",
+          "callback"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function styleAttributes(HTMLtext, callback) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "HTMLtext"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "callback\n"
+            }
+          ]
+        }
+      }
+    ],
+    "is_module": false,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source",
+    "fileName": "jquery.parsecss.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 300,
+  "EMPTY": false
+}

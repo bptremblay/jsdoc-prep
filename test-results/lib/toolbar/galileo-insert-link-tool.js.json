@@ -1,0 +1,229 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "jquery",
+        "toolbar",
+        "template-engine",
+        "text!root/templates/link-editor-tools.html",
+        "i18n!galileo-lib/modules/nls/engine"
+      ],
+      "usedAs": [
+        "$",
+        "galileoToolbar",
+        "Mustache",
+        "template",
+        "i18n"
+      ],
+      "moduleName": "galileo-insert-link-tool",
+      "AMD": true,
+      "webPath": "/lib/toolbar",
+      "convertedName": "galileo_insert_link_tool",
+      "min": false,
+      "main": 0,
+      "uses_$": true,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": false
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/lib/toolbar/galileo-insert-link-tool.js",
+  "folderPath": "test-source/lib/toolbar",
+  "fileName": "galileo-insert-link-tool.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "/lib/toolbar",
+  "webPath": "/lib/toolbar",
+  "libFile": false,
+  "min": false,
+  "realName": "galileo-insert-link-tool",
+  "name": "galileo-insert-link-tool",
+  "camelName": "GalileoInsertLinkTool",
+  "processedFilePath": "test-output/lib/toolbar/galileo-insert-link-tool.js",
+  "mappedModuleName": "lib/toolbar/galileo-insert-link-tool",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {
+    "lib/toolbar/galileo-insert-link-tool~GalileoInsertLinkTool": {
+      "todos": [],
+      "type": "FunctionDeclaration",
+      "uid": 44,
+      "parentNode": 30,
+      "memberOf": "",
+      "returnType": "",
+      "ctor": true,
+      "lineNumber": 23,
+      "line": "function GalileoInsertLinkTool() {",
+      "comment": 3,
+      "range": [
+        856,
+        1151
+      ],
+      "name": "GalileoInsertLinkTool",
+      "commentBody": "/**\n         * @constructor\n         */",
+      "oldComment": {
+        "type": "Block",
+        "value": "*\n         * @constructor\n         ",
+        "range": [
+          808,
+          847
+        ],
+        "commentBody": "/**\n         * @constructor\n         */",
+        "lineNumber": 20
+      },
+      "ctorType": "@constructor",
+      "doclet": {
+        "params": [],
+        "tags": [
+          {
+            "tag": "constructor",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        ],
+        "requiresList": [
+          "jquery",
+          "toolbar",
+          "template-engine",
+          "text!root/templates/link-editor-tools.html",
+          "i18n!galileo-lib/modules/nls/engine"
+        ],
+        "moduleName": "galileo_insert_link_tool",
+        "camelName": "GalileoInsertLinkTool",
+        "freeText": "",
+        "@constructor": "",
+        "preamble": "",
+        "nodeType": "CLASS"
+      },
+      "jsDoc": "/**\n * @constructor\n */"
+    }
+  },
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": false,
+  "moduleName": "lib/toolbar/galileo-insert-link-tool",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 43,
+    "requires": [
+      "jquery",
+      "toolbar",
+      "template-engine",
+      "text!root/templates/link-editor-tools.html",
+      "i18n!galileo-lib/modules/nls/engine"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source/lib/toolbar",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": true,
+    "chars": 1509,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./galileo-insert-link-tool",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {
+      "GalileoInsertLinkTool": 44
+    },
+    "methods": [
+      {
+        "name": "get$Toolbar",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 17,
+        "memberOf": "GalileoInsertLinkTool.prototype",
+        "doclet": "/**\n * @function\n */",
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "GalileoInsertLinkTool.prototype.get$Toolbar = function () {",
+        "originalJsDocDescription": {
+          "function": {
+            "tag": "function",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "GalileoInsertLinkTool",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 23,
+        "memberOf": "",
+        "doclet": "/**\n * @constructor\n */",
+        "description": "",
+        "return": "",
+        "classDeclarationFlag": true,
+        "line": "function GalileoInsertLinkTool() {",
+        "originalJsDocDescription": {
+          "constructor": {
+            "tag": "constructor",
+            "line": 1,
+            "lastLine": -1,
+            "textStartsOnSameLine": true,
+            "text": "\n"
+          }
+        }
+      },
+      {
+        "name": "freeMarkerFormatUrl",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 33,
+        "memberOf": "GalileoInsertLinkTool.prototype",
+        "doclet": "/**\n * @param href\n */",
+        "args": [
+          "href"
+        ],
+        "description": "",
+        "return": "?",
+        "classDeclarationFlag": false,
+        "line": "GalileoInsertLinkTool.prototype.freeMarkerFormatUrl = function (href) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "href\n"
+            }
+          ]
+        }
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source/lib/toolbar",
+    "fileName": "galileo-insert-link-tool.js",
+    "strict": false,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 41,
+  "EMPTY": false
+}

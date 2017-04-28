@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/button-editor.js | galileo-button-editor@1.11.4 API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.roving.com/ES/galileo-button-editor">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-editor-view.js~ButtonEditorView.html">ButtonEditorView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-editor.js~ButtonEditor.html">ButtonEditor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-model.js~ButtonModel.html">ButtonModel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-view.js~ButtonView.html">ButtonView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/editor-model.js~ButtonEditorModel.html">ButtonEditorModel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/legacy-color-check.js~LegacyColorCheck.html">LegacyColorCheck</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/move-handle-view.js~MoveHandleView.html">MoveHandleView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-legacyColorCheck">legacyColorCheck</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">nls</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-root">root</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/button-editor.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @module button-editor
+ * @requires jquery
+ * @requires underscore
+ * @requires backbone
+ * @requires template-engine
+ * @requires galileo-lib/modules/events
+ * @requires galileo-lib/modules/services/descriptors/content/button-content-descriptor
+ * @requires button-editor-path/delete-atomic-content
+ * @requires button-editor-path/state-migrations
+ * @requires button-editor-path/button-model
+ * @requires button-editor-path/button-view
+ * @requires button-editor-path/button-editor-view
+ * @requires button-editor-path/editor-model
+ * @requires button-editor-path/legacy-color-check
+ * @requires toolbar
+ * @requires text!button-editor-path/tmpl/button.html
+ * @requires i18n!button-editor-path/nls/button-editor
+ * @requires text!button-editor-path/tmpl/content-decorator.html
+ * @requires button-editor-path/lib/change-element-type.jquery
+ * @requires css!button-editor-path/css/button-editor
+ */
+import $ from &apos;jquery&apos;;
+import _ from &apos;underscore&apos;;
+import Backbone from &apos;backbone&apos;;
+import Mustache from &apos;template-engine&apos;;
+import galileoEvents from &apos;galileo-lib/modules/events&apos;;
+import ButtonContentDescriptor from &apos;galileo-lib/modules/services/descriptors/content/button-content-descriptor&apos;;
+import deleteAtomicContent from &apos;button-editor-path/delete-atomic-content&apos;;
+import stateMigrations from &apos;button-editor-path/state-migrations&apos;;
+import ButtonModel from &apos;button-editor-path/button-model&apos;;
+import ButtonView from &apos;button-editor-path/button-view&apos;;
+import ButtonEditorView from &apos;button-editor-path/button-editor-view&apos;;
+import ButtonEditorModel from &apos;button-editor-path/editor-model&apos;;
+import legacyColorCheck from &apos;button-editor-path/legacy-color-check&apos;;
+import toolbar from &apos;toolbar&apos;;
+import buttonTemplate from &apos;text!button-editor-path/tmpl/button.html&apos;;
+import i18n from &apos;i18n!button-editor-path/nls/button-editor&apos;;
+import contentDecorator from &apos;text!button-editor-path/tmpl/content-decorator.html&apos;;
+import &apos;button-editor-path/lib/change-element-type.jquery&apos;;
+import &apos;css!button-editor-path/css/button-editor&apos;;
+/**
+ * The button editor view.
+ * @type {Object}
+ * buttonEditorView
+ */
+let buttonEditorView = null;
+galileoEvents.on(galileoEvents.TYPES.EDITOR_REINIT, () =&gt; buttonEditorView = null);
+/**
+ * @param html
+ * scrapeStyleFromHTML
+ */
+const scrapeStyleFromHTML = function(html) {
+    /**
+     * The value.
+     */
+    let value;
+    /**
+     * The falsy defaults.
+     * @constant Falsy defaults
+     * falsyDefaults
+     */
+    const falsyDefaults = (obj, defaults) =&gt;
+        (() =&gt; {
+            /**
+             * The result.
+             * @constant Result
+             */
+            const result = [];
+            /**
+             * key
+             */
+            for (let key of Object.keys(defaults || {})) {
+                /**
+                 * The value.
+                 * @constant Value
+                 */
+                const value = defaults[key];
+                /**
+                 * The item.
+                 */
+                let item;
+                if (value &amp;&amp; !obj[key]) {
+                    item = obj[key] = defaults[key];
+                }
+                result.push(item);
+            }
+            return result;
+        })();
+    /**
+     * @param string
+     * stripQuotes
+     */
+    const stripQuotes = function(string) {
+        /**
+         * The quote regex.
+         * @constant Quote regex
+         * quoteRegex
+         */
+        const quoteRegex = /[&apos;&quot;]([^&apos;]*)[&apos;&quot;]/;
+        /**
+         * The matches.
+         * @constant Matches
+         */
+        const matches = quoteRegex.exec(string);
+        if (matches != null) {
+            return matches[1];
+        } else {
+            return string;
+        }
+    };
+    /**
+     * @param o
+     * styleObject
+     */
+    const styleObject = function(o) {
+        /**
+         * The retval.
+         * @constant Retval
+         */
+        const retval = {};
+        /**
+         * pair
+         */
+        for (let pair of Array.from(o.cssText.split(/;\s?/))) {
+            /**
+             * The ?.
+             */
+            let [key, value] = pair.split(/:\s?/);
+            if ((key != null) &amp;&amp; (value != null)) {
+                key = `${key}`;
+                retval[key] = value;
+            }
+        }
+        return retval;
+    };
+    /**
+     * The $el.
+     * @constant $el
+     */
+    const $el = $(html);
+    /**
+     * The el.
+     * @constant El
+     */
+    const el = $el[0];
+    /**
+     * The style.
+     * @constant Style
+     */
+    const style = _.extend({}, styleObject(el.style));
+    /**
+     * key
+     */
+    for (var key of Object.keys(style || {})) {
+        value = style[key];
+        style[key] = stripQuotes(value);
+    }
+    $el.find(&apos;[style]&apos;).each(function() {
+        falsyDefaults(style, styleObject(this.style));
+        return (() =&gt; {
+            /**
+             * The result.
+             * @constant Result
+             */
+            const result = [];
+            for (key of Object.keys(style || {})) {
+                value = style[key];
+                result.push(style[key] = stripQuotes(value));
+            }
+            return result;
+        })();
+    });
+    return style;
+};
+/**
+ * The find text.
+ * @constant Find text
+ * findText
+ */
+const findText = markup =&gt; $(&apos;.MainTextFullWidth&apos;, markup).text();
+// A way that wouldn&apos;t depend on how the markup is written but doesn&apos;t
+// seem to work in some situations:
+// textNodeFilter = -&gt; @nodeType is 3
+// @$el.contents().filter(textNodeFilter).parent()
+/**
+ * The class ButtonEditor.
+ */
+class ButtonEditor {
+    /**
+     * initClass
+     */
+    static initClass() {
+            this.prototype.$ = Backbone.View.prototype.$;
+        }
+        /**
+         * @constructor
+         * @memberOf module:button-editor
+         * @param layoutEditor
+         * @param config
+         */
+    constructor(layoutEditor, config) {
+            this._cleanup = this._cleanup.bind(this);
+            this.renderForPublish = this.renderForPublish.bind(this);
+            this.init = this.init.bind(this);
+            this._stateUpdated = this._stateUpdated.bind(this);
+            this.layoutEditor = layoutEditor;
+            this.config = config;
+            this.events = _.extend({}, Backbone.Events);
+            this.buttonModel = new ButtonModel(this.state);
+            this.model = new ButtonEditorModel(this.state);
+            this.buttonView = new ButtonView({
+                model: this.buttonModel,
+                editorModel: this.model,
+                editor: this,
+                contentMovable: this.config.featureSupport.contentMove,
+                descriptorProviderFn: this.config.descriptorProviderFn
+            });
+            Backbone.listenTo(this.model, &apos;change:doneWasClicked&apos;, () =&gt; {
+                toolbar.hide();
+                return this.model.doneWasClicked(false);
+            });
+            // For some unknown reason using `Backbone.listenTo` wasn&apos;t working
+            // here, so using `Model::on` instead.
+            // Backbone.listenTo @buttonModel, &apos;change&apos;, @_stateUpdated
+            this.buttonModel.on(&apos;change&apos;, this._stateUpdated, this);
+            galileoEvents.on(galileoEvents.TYPES.EDITOR_REINIT, this._cleanup);
+            // VN-3024: Backbone will trigger a change event for each field updated,
+            // debounce the stateUpdated event handler to group changes into a single
+            // state change
+            this._lazyUpdate = _.debounce(function() {
+                return this.config.eventHandlers.stateUpdated(this);
+            }, 10, true);
+            Backbone.listenTo(this.buttonModel, &apos;change:alignment&apos;, () =&gt; {
+                // This needs to be deferred because the button view needs to be re-rendered
+                // before updating the toolbar, or else the toolbar will be rendered in
+                // the previous (incorrect) location.
+                if (toolbar.getToolbar().is(&apos;:visible&apos;)) {
+                    return _.defer(() =&gt; {
+                        return toolbar.updateAndShow(this.buttonView.$el, &apos;button-editor-tools&apos;, &apos;button tools&apos;);
+                    });
+                }
+            });
+            // Prevent toolbar from closing when user clicks on the color picker
+            // by adding the color picker to what the toolbar considers part of
+            // itself.
+            toolbar.registerToolbarEventCondition(function(evt) {
+                /**
+                 * The click target.
+                 * @constant Click target
+                 * clickTarget
+                 */
+                const clickTarget = evt.originalEvent.target;
+                return $(clickTarget).closest(&apos;#colorPicker&apos;).length;
+            });
+        }
+        /**
+         * @private
+         * _cleanup
+         */
+    _cleanup() {
+            galileoEvents.off(galileoEvents.TYPES.EDITOR_REINIT, this._cleanup);
+            this.buttonView.editor = null;
+            this.buttonModel.off();
+            return Backbone.stopListening(this.model);
+        }
+        /**
+         * @param contentDescriptor
+         * createMarkup
+         */
+    static createMarkup(contentDescriptor) {
+            return Mustache.render(buttonTemplate, contentDescriptor);
+        }
+        /**
+         * @return {array}
+         * getContentDescriptors
+         */
+    static getContentDescriptors() {
+            return [
+                new ButtonContentDescriptor({
+                    thumbnailUrl: require.toUrl(&apos;button-editor-path/img/button.svg&apos;),
+                    payload: {
+                        text: i18n.placeholder_text
+                    }
+                })
+            ];
+        }
+        /**
+         * @param contentId
+         * getContentDecorators
+         */
+    static getContentDecorators(contentId) {
+            /**
+             * The deco prop name.
+             * @constant Deco prop name
+             * decoPropName
+             */
+            const decoPropName = contentId + &apos;!&apos; + contentId;
+            // pull this in from an external file (module)
+            /**
+             * The result.
+             * @constant Result
+             */
+            const result = {};
+            result[decoPropName] = {
+                fromEditor: true,
+                version: &apos;1.1.0&apos;,
+                markup: contentDecorator
+            };
+            return result;
+        }
+        // Returns the content display element for the editor,
+        // wrapped in the expected object.
+        // @return [Array] An array of content decorators.
+        /**
+         * getContentDisplayElement
+         */
+    static getContentDisplayElement() {
+            /**
+             * The result.
+             * @constant Result
+             */
+            const result = {
+                fromEditor: true,
+                version: &apos;1.0.0&apos;,
+                markup: buttonTemplate
+            };
+            return result;
+        }
+        /**
+         * getStateVersion
+         */
+    getStateVersion() {
+            return {
+                major: 1,
+                minor: 2,
+                patch: 0
+            };
+        }
+        /**
+         * getStateMigrations
+         */
+    getStateMigrations() {
+            return stateMigrations;
+        }
+        /**
+         * renderForEdit
+         */
+    renderForEdit() {
+            return this.$el;
+        }
+        /**
+         * renderForPublish
+         */
+    renderForPublish() {
+            /**
+             * The $html.
+             * @constant $html
+             */
+            const $html = this.$el.clone();
+            $html.find(&apos;[data-gl-remove-on-publish]&apos;).remove();
+            $html.find(&apos;.MainTextFullWidth &gt; div&apos;)
+                .attr({
+                    &apos;href&apos;: this.buttonModel.get(&apos;link&apos;) || &apos;#&apos;,
+                    &apos;data-original-href&apos;: this.buttonModel.get(&apos;link&apos;),
+                    &apos;contentEditable&apos;: false
+                })
+                .changeElementType(&apos;a&apos;);
+            // auth-platform will reject the document if it contains &amp;quot;
+            // Some browsers (Chrome, Firefox) will change this to a &quot; which
+            // will also be rejected by auth-platform.
+            // change them to single quotes (this will be for the font-family)
+            return $html[0].outerHTML.replace(/&amp;quot;/g, &apos;&apos;);
+        }
+        /**
+         * setStyles
+         */
+    setStyles() {}
+        /**
+         * getState
+         */
+    getState() {
+            return _.extend(this.state, this.model.toJSON(), this.buttonModel.toJSON());
+        }
+        /**
+         * @param state
+         * setState
+         */
+    setState(state) {
+            this.state = _.extend(this.createState(), state);
+            this.buttonModel.set(state, {
+                changedByGalileo: true
+            });
+            return undefined;
+        }
+        /**
+         * init
+         */
+    init() {
+            this.$el = Backbone.$(this.state.markup);
+            this.$el.attr(&apos;data-editor-name&apos;, this._getName());
+            /**
+             * The original href.
+             * @constant Original href
+             * originalHref
+             */
+            const originalHref = this.$el.find(&apos;[href]&apos;).attr(&apos;href&apos;);
+            this.hasEditableURL = __guard__(originalHref, x =&gt; x.indexOf(&apos;${&apos;)) === -1;
+            if (!this.hasEditableURL) {
+                this.buttonModel.setLink(originalHref, {
+                    noProtocol: true,
+                    changedByGalileo: true
+                });
+            }
+            /**
+             * The $button.
+             * @constant $button
+             */
+            const $button = this.$el.find(&apos;table&apos;);
+            if (buttonEditorView == null) {
+                this._setupToolbar();
+            }
+            this.buttonEditorView = buttonEditorView;
+            this.buttonView.setElement($button).render();
+            return this.buttonView.$el.on(&apos;click&apos;, () =&gt; {
+                buttonEditorView.setButtonView(this.buttonView);
+                buttonEditorView.setModel(this.model);
+                buttonEditorView.setButtonModel(this.buttonModel);
+                buttonEditorView.setEditor(this);
+                buttonEditorView.update();
+                toolbar.updateAndShow(this.buttonView.$el, &apos;button-editor-tools&apos;, &apos;button tools&apos;);
+                return this._setupDeleteAtomicContent();
+            });
+        }
+        /**
+         * @param type
+         * @param data
+         * receiveMessage
+         */
+    receiveMessage(type, data) {}
+        /**
+         * activate
+         */
+    activate() {}
+        /**
+         * deactivate
+         */
+    deactivate() {
+            return toolbar.hide();
+        }
+        /**
+         * destroy
+         */
+    destroy() {}
+        /**
+         * @param $hovered
+         * getDefaultColorId
+         */
+    getDefaultColorId($hovered) {
+            // determine if we&apos;re changing the text color or the bg color
+            /**
+             * The color id.
+             * colorId
+             */
+            let colorId = $hovered.data(&apos;style-color&apos;);
+            if (colorId == null) {
+                colorId = this.$el.find(&apos;[data-style-background-color]&apos;).data(&apos;style-background-color&apos;);
+            }
+            return colorId.toLowerCase();
+        }
+        /**
+         * @param colors
+         * @param preview
+         * @return {Boolean}
+         * applyColors
+         */
+    applyColors(colors, preview) {
+            if (this.buttonModel.usingLocalColors()) {
+                return true;
+            }
+            if (!legacyColorCheck.usesLegacyGlobalColors($(this.buttonModel.get(&apos;markup&apos;)))) {
+                return true;
+            }
+            // Other wise, apply global colors using this legacy behavior
+            /**
+             * The get.
+             * @constant Get
+             */
+            const get = cssColorProperty =&gt; {
+                /**
+                 * The key.
+                 * @constant Key
+                 */
+                const key = __guard__($(&apos;&lt;div&gt;&apos;).append(this.state.markup)
+                    .find(`[data-style-${cssColorProperty}]`)
+                    .data(`style-${cssColorProperty}`), x =&gt; x.toLowerCase());
+                return colors[key];
+            };
+            if (!preview) {
+                if (get(&apos;background-color&apos;) != null) {
+                    this.buttonModel.setGlobalBackgroundColor(get(&apos;background-color&apos;), {
+                        changedByGalileo: true
+                    });
+                }
+                if (get(&apos;color&apos;) != null) {
+                    this.buttonModel.fontColor(get(&apos;color&apos;), {
+                        changedByGalileo: true
+                    });
+                }
+            }
+            return false;
+        }
+        /**
+         * @private
+         * _setupDeleteAtomicContent
+         */
+    _setupDeleteAtomicContent() {
+            return this.buttonEditorView.setupDeleteAtomicContent(deleteAtomicContent, galileoEvents, this.layoutEditor, this._getName());
+        }
+        /**
+         * @private
+         * _setupToolbar
+         */
+    _setupToolbar() {
+            buttonEditorView = new ButtonEditorView({
+                model: this.model,
+                buttonModel: this.buttonModel,
+                hasEditableURL: this.hasEditableURL,
+                atomicDelete: this._atomicDelete(this.config)
+            });
+            return buttonEditorView.setElement(toolbar.getTools(&apos;button-editor-tools&apos;, &apos;&apos;)).render();
+        }
+        // Determines if atomic delete functionality should be enabled.
+        //
+        // @return [boolean] true if the editor config&apos;s featureSupport.contentDeletion flag is set to true;
+        //                   false if it is set to false or if featureSupport does not contain a
+        //                   contentDeletion flag
+        /**
+         * @private
+         * @return {Boolean}
+         * _atomicDelete
+         */
+    _atomicDelete() {
+            return __guard__(this.config.featureSupport, x =&gt; x.contentDeletion) || false;
+        }
+        /**
+         * @private
+         * @param model
+         * @param options
+         * _stateUpdated
+         */
+    _stateUpdated(model, options) {
+        if (!__guard__(options, x =&gt; x.changedByGalileo)) {
+            return this._lazyUpdate(this);
+        }
+    }
+}
+ButtonEditor.initClass();
+/**
+ * @param markup
+ * @param name
+ * import
+ */
+ButtonEditor.import = function(markup, name) {
+    /**
+     * The style.
+     * @constant Style
+     */
+    const style = scrapeStyleFromHTML(markup);
+    /**
+     * The state.
+     * @constant State
+     */
+    const state = {
+        markup,
+        color: style[&apos;background-color&apos;],
+        fontColor: style[&apos;color&apos;] || &apos;&apos;,
+        fontFamily: style[&apos;font-family&apos;] || &apos;&apos;,
+        fontSize: __guard__(style[&apos;font-size&apos;], x =&gt; x.replace(&apos;px&apos;, &apos;&apos;)) || &apos;&apos;,
+        text: findText(markup)
+    };
+    /**
+     * The $button.
+     * @constant $button
+     */
+    const $button = $(markup);
+    /**
+     * The markup alignment.
+     * @constant Markup alignment
+     * markupAlignment
+     */
+    const markupAlignment = $button.find(&apos;td:first&apos;).attr(&apos;align&apos;);
+    if (markupAlignment) {
+        state.alignment = markupAlignment;
+    }
+    return $.Deferred().resolve(state).promise();
+};
+// Add explicit return to exports:
+export default ButtonEditor;
+/**
+ * @private
+ * @param value
+ * @param transform
+ * @return {Object} ConditionalExpression
+ * __guard__
+ */
+function __guard__(value, transform) {
+    return (typeof value !== &apos;undefined&apos; &amp;&amp; value !== null) ? transform(value) : undefined;
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

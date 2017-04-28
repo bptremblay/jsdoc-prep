@@ -1,253 +1,455 @@
-    /**
-     * Gruntfile.js.
-     */
-    module.exports = function (grunt) {
-        'use strict';
-        var myPath = 'test-source';
-        var outputPath = 'test-output';
-        var reportPath = 'test-results';
-        var docPath = 'test-jsdocs';
-        var myFiles = [myPath + '/**/*.js'];
-        var myProcessedFiles = [outputPath + '/**/*.js'];
-        var _fs = require('fs');
-        var _path = require('path');
-        var _wrench = require('wrench');
-        grunt.initConfig({
-            fileList: myFiles,
-            jsbeautifier: {
-                files: myProcessedFiles,
-                options: {
-                    indent_size: 2,
-                    wrap_line_length: 200
-                }
-            },
-            fixmyjs: {
-                options: {},
-                my_stuff: {
-                    files: [{
-                        expand: true,
-                        cwd: myPath,
-                        src: ['**/*.js'],
-                        dest: myPath,
-                        ext: '.js'
-                    }]
-                }
-            },
-            prepForJsDoc: {
-                scanPath: myPath,
-                outPath: outputPath,
-                resultsPath: reportPath + '/metadata',
-                testPath: reportPath + '/test',
-                docPath: docPath
-            },
-            doc: {
-                scanPath: myPath,
-                outPath: outputPath,
-                resultsPath: reportPath,
-                docPath: docPath
-            },
-            plato: {
-                custom_complexity_v2: {
-                    options: {
-                        jshint: grunt.file.readJSON('.jshintrc'),
-                        complexity: {
-                            logicalor: false,
-                            switchcase: false,
-                            forin: true,
-                            trycatch: true,
-                            newmi: true
+/**
+ * Gruntfile.js.
+ */
+module.exports = function (grunt) {
+    'use strict';
+    var logger = require('./tasks/lib/logger');
+    var writeFile = require('./tasks/lib/singleFileProcessor').writeFile;
+    var setWriteEnable = require('./tasks/lib/singleFileProcessor').setWriteEnable;
+    var rollupModuleData = require('./tasks/lib/rollupModuleData').rollupModuleData;
+    var scanPath = process.cwd();
+    grunt.loadTasks('tasks');
+    grunt.loadNpmTasks('grunt-babel');
+    grunt.loadNpmTasks('grunt-jsbeautifier');
+    grunt.registerTask('initConfiguration', function () {
+        try {
+            var sourceDirectory;
+            var scanPath;
+            var specDirectory;
+            var setupConfig = function (grunt) {
+                grunt.initConfig({
+                    jsdoc: {
+                        default: {
+                            sourceDirectory: 'src',
+                            specDirectory: 'spec',
+                            src: ['src/*.js'],
+                            options: {
+                                destination: 'doc',
+                                template: "node_modules/ink-docstrap/template",
+                                configure: "node_modules/ink-docstrap/template/jsdoc.conf.json"
+                            }
                         }
                     },
-                    src: [myProcessedFiles],
-                    dest: reportPath + '/platonic'
-                }
-            }
-        });
-        grunt.registerTask('beautify', ['jsbeautifier']);
-        grunt.registerTask('doc', function () {
-            var config = grunt.config('doc');
-            var path = require('path');
-            var fs = require('fs');
-            var rimraf = require('rimraf');
-            var outPath = config.outPath;
-            var docPath = config.docPath;
-            var USE_HARUKI = false;
-            /**
-             * Run js doc.
-             * @param gruntInstance
-             * @param sourceDirectory
-             */
-            function runJsDoc(gruntInstance, sourceDirectory) {
-                var done = gruntInstance.async();
-                rimraf(docPath, function () {
-                    var exePath = path.normalize('node_modules/.bin/jsdoc');
-                    var exec = require('child_process').exec;
-                    var cmdLine = exePath;
-                    if (USE_HARUKI) {
-                        cmdLine += ' -r -l -t templates/haruki -d console -q format=json' + ' ' + sourceDirectory + '';
-                    } else {
-                        cmdLine += ' -r -l -d ' + docPath + ' ' + sourceDirectory + '';
+                    'jsbeautifier': {
+                        default: {
+                            src: [scanPath + '/src/**/*.js']
+                        },
+                        src: {
+                            src: [scanPath + '/src/**/*.js']
+                        },
+                        spec: {
+                            src: [scanPath + '/spec/**/*.js']
+                        },
+                        options: {}
+                    },
+                    'scrapeAMD': {
+                        src: {
+                            files: [scanPath + '/src/**/*.coffee']
+                        },
+                        spec: {
+                            files: [scanPath + '/spec/**/*.coffee']
+                        },
+                        'engine-src': {
+                            files: [scanPath + '/js/app/**/*.coffee']
+                        },
+                        'engine-spec': {
+                            files: [scanPath + '/js/test/**/*.coffee']
+                        },
+                        default: {
+                            files: [scanPath + '/test-source/**/*.coffee']
+                        },
+                        options: {
+                            scanPath: scanPath
+                        }
+                    },
+                    babel: {
+                        options: {
+                            sourceMap: true,
+                            presets: ['es2015'],
+                            plugins: ['transform-es2015-modules-amd']
+                        },
+                        src: {
+                            files: [{
+                                expand: true,
+                                src: ['test-source/**/*.js'],
+                                dest: 'temp',
+                                ext: '.js'
+                            }]
+                        },
+                        spec: {
+                            files: [{
+                                expand: true,
+                                src: ['test-source/**/*.js'],
+                                dest: 'temp',
+                                ext: '.js'
+                            }]
+                        }
+                    },
+                    prepForJsDoc: {
+                        default: {
+                            scanPath: scanPath,
+                            outPath: scanPath + '/../converted',
+                            resultsPath: scanPath + '/..//metadata',
+                            testPath: scanPath + '/../test',
+                            docPath: scanPath + '/../doc'
+                        },
+                        src: {
+                            scanPath: scanPath + '/src',
+                            outPath: scanPath + '/src/../converted',
+                            resultsPath: scanPath + '/sr/..//metadata',
+                            testPath: scanPath + '/src/../test',
+                            docPath: scanPath + '/src/../doc'
+                        },
+                        spec: {
+                            scanPath: scanPath + '/spec',
+                            outPath: scanPath + '/spec/../converted',
+                            resultsPath: scanPath + '/spec/..//metadata',
+                            testPath: scanPath + '/spec/../test',
+                            docPath: scanPath + '/spec/../doc'
+                        }
                     }
-                    console.log(cmdLine);
-                    var child = exec(cmdLine, function (error, stdout, stderr) {
-                        console.error(stderr);
-                    });
-                    /**
-                     * Close.
-                     * @param code
-                     */
-                    child.on('close', function (code) {
-                        console.log('child process exited with code ' + code);
-                        done();
-                    });
                 });
-            }
-            runJsDoc(this, outPath);
-        });
-        grunt.registerTask('prepForJsDoc', function () {
-            var config = grunt.config('prepForJsDoc');
-            var path = require('path');
-            var fs = require('fs');
-            var healthCheck = require('./fileSystemProcessor');
-            var rimraf = require('rimraf');
-            var outPath = config.outPath;
-            var testPath = config.testPath;
-            var docPath = config.docPath;
-            var resultsPath = config.resultsPath;
-            var scanPath = config.scanPath;
-            var processingChain = [
-                'badCharactersProc',
-                'jsBeautifyProc',
-                'amdProc',
-                'jsDoccerProc',
-                'jsBeautifyProc',
-                'jsDoc3PrepProc',
-                'jsBeautifyProc',
-                'fixJSDocFormattingProc',
-                'jsBeautifyProc'
-            ];
-            var done = this.async();
-            var opts = {
-                callBack: done,
-                scanPath: scanPath,
-                writePath: outPath,
-                writeTestPath: testPath,
-                writeDocPath: docPath,
-                writeResultsPath: resultsPath,
-                writeEnable: true,
-                processingChain: processingChain
             };
-            rimraf(outPath, function () {
-                healthCheck.run({
-                    callBack: opts.callBack,
-                    scanPath: opts.scanPath,
-                    writePath: outPath,
-                    writeTestPath: testPath,
-                    writeDocPath: docPath,
-                    writeResultsPath: resultsPath,
-                    writeEnable: opts.writeEnable,
-                    processingChain: opts.processingChain
+            var applyConfig = function (grunt, scanPath, sourceDirectory, specDirectory) {
+                // console.log(scanPath, sourceDirectory, specDirectory);
+                grunt.config.merge({
+                    jsdoc: {
+                        default: {
+                            scanPath: scanPath,
+                            sourceDirectory: sourceDirectory,
+                            specDirectory: specDirectory,
+                            src: ['src/*.js'],
+                            options: {
+                                destination: 'doc',
+                                template: "node_modules/ink-docstrap/template",
+                                configure: "node_modules/ink-docstrap/template/jsdoc.conf.json"
+                            }
+                        }
+                    },
+                    'jsbeautifier': {
+                        default: {
+                            src: [scanPath + '/' + sourceDirectory + '/**/*.js']
+                        },
+                        src: {
+                            src: [scanPath + '/' + sourceDirectory + '/**/*.js']
+                        },
+                        spec: {
+                            src: [scanPath + '/' + specDirectory + '/**/*.js']
+                        },
+                        options: {}
+                    },
+                    'scrapeAMD': {
+                        src: {
+                            files: [scanPath + '/' + sourceDirectory + '/**/*.coffee']
+                        },
+                        spec: {
+                            files: [scanPath + '/' + specDirectory + '/**/*.coffee']
+                        },
+                        'engine-src': {
+                            files: [scanPath + '/js/app/**/*.coffee']
+                        },
+                        'engine-spec': {
+                            files: [scanPath + '/js/test/**/*.coffee']
+                        },
+                        default: {
+                            files: [scanPath + '/test-source/**/*.coffee']
+                        },
+                        options: {
+                            scanPath: scanPath
+                        }
+                    },
+                    'pretty': {
+                        src: {
+                            files: [scanPath + '/' + sourceDirectory + '/**/*.js']
+                        },
+                        spec: {
+                            files: [scanPath + '/' + specDirectory + '/**/*.js']
+                        },
+                        'engine-src': {
+                            files: [scanPath + '/js/app/**/*.js']
+                        },
+                        'engine-spec': {
+                            files: [scanPath + '/js/test/**/*.js']
+                        },
+                        default: {
+                            files: [scanPath + '/test-source/**/*.js']
+                        },
+                        options: {
+                            scanPath: scanPath
+                        }
+                    },
+                    babel: {
+                        options: {
+                            sourceMap: true,
+                            presets: ['es2015'],
+                            plugins: ['transform-es2015-modules-amd']
+                        },
+                        src: {
+                            files: [{
+                                expand: true,
+                                src: [sourceDirectory + '/**/*.js'],
+                                dest: 'temp',
+                                ext: '.js'
+                            }]
+                        },
+                        spec: {
+                            files: [{
+                                expand: true,
+                                src: [sourceDirectory + '/**/*.js'],
+                                dest: 'temp',
+                                ext: '.js'
+                            }]
+                        }
+                    },
+                    prepForJsDoc: {
+                        default: {
+                            scanPath: scanPath + '/' + sourceDirectory,
+                            outPath: scanPath + '/' + sourceDirectory,
+                            resultsPath: scanPath + '/doc/metadata/' + sourceDirectory,
+                            testPath: scanPath + '/' + sourceDirectory + '/../test ',
+                            docPath: scanPath + '/doc'
+                        },
+                        src: {
+                            scanPath: scanPath + '/' + sourceDirectory,
+                            outPath: scanPath + '/' + sourceDirectory,
+                            resultsPath: scanPath + '/doc/metadata/' + sourceDirectory,
+                            testPath: scanPath + '/' + sourceDirectory + '/../test ',
+                            docPath: scanPath + '/doc'
+                        },
+                        spec: {
+                            scanPath: scanPath + '/' + specDirectory,
+                            outPath: scanPath + '/' + specDirectory,
+                            resultsPath: scanPath + '/doc/metadata/' + specDirectory,
+                            testPath: scanPath + '/' + specDirectory,
+                            docPath: scanPath + '/doc'
+                        },
+                        options: {
+                            scanPath: scanPath
+                        }
+                    }
                 });
-            });
-        });
-        /**
-         * Read file.
-         * @param filePathName
-         */
-        function readFile(filePathName) {
-            var _fs = require('fs');
-            var _path = require('path');
-            var FILE_ENCODING = 'utf8';
-            filePathName = _path.normalize(filePathName);
-            var source = '';
-            try {
-                source = _fs.readFileSync(filePathName, FILE_ENCODING);
-            } catch (er) {
-                source = '';
+            };
+            setupConfig(grunt);
+            var srcPath = grunt.option('project');
+            if (srcPath) {
+                scanPath = srcPath;
+            } else {
+                grunt.fatal('Please supply -project path.');
             }
-            return source;
-        }
-        /**
-         * Safe create file dir.
-         * @param path
-         */
-        function safeCreateFileDir(path) {
-            var dir = _path.dirname(path);
-            if (!_fs.existsSync(dir)) {
-                _wrench.mkdirSyncRecursive(dir);
+            var srcDirectory = grunt.option('source');
+            if (srcDirectory) {
+                sourceDirectory = srcDirectory;
+            } else {
+                grunt.fatal('Please supply -source directory name (e.g. js/app).');
             }
-        }
-        /**
-         * Safe create dir.
-         * @param dir
-         */
-        function safeCreateDir(dir) {
-            if (!_fs.existsSync(dir)) {
-                _wrench.mkdirSyncRecursive(dir);
+            var spcDirectory = grunt.option('spec');
+            if (spcDirectory) {
+                specDirectory = spcDirectory;
+            } else {
+                grunt.fatal('Please supply -spec directory name (e.g. js/test).');
             }
+            applyConfig(grunt, scanPath, sourceDirectory, specDirectory);
+        } catch (ex) {
+            console.error(ex.stack);
         }
-        /**
-         * Write file.
-         * @param filePathName
-         * @param source
-         */
-        function writeFile(filePathName, source) {
-            filePathName = _path.normalize(filePathName);
-            safeCreateFileDir(filePathName);
-            _fs.writeFileSync(filePathName, source);
-        }
-        /**
-         * Trim.
-         * @param input
-         */
-        function trim(input) {
-            return input.trim();
-        }
-        var firstDoclet = null;
-        /**
-         * Camelize.
-         * @param input
-         */
-        function camelize(input) {
-            var test = input.split('_');
-            if (test.length > 1 && input.indexOf('_') > 0) {
-                for (var index = 0; index < test.length; index++) {
-                    test[index] = capitalize(test[index]);
+    });
+    grunt.registerTask('default', ['initConfiguration', 'scrapeAMD:src', 'scrapeAMD:spec', /* 'jsbeautifier:src', 'jsbeautifier:spec', */ 'jsdoc', 'printToDolList']);
+    grunt.registerTask('native', ['initConfiguration', 'prepForJsDoc', 'jsdoc', 'printToDolList']);
+    grunt.registerTask('doc', ['initConfiguration', 'jsdoc']);
+    //grunt native -force -project=/Users/btremblay/src/galileo-button-editor/build/dev  -source=src -spec=spec
+    var superMap = {};
+
+    function getModuleDependencies(projectPath, srcPath, cb) {
+        logger.log('*********** getModuleDependencies ***********');
+        logger.log(' ');
+
+        function runTheTask(projectPath, srcPath) {
+            logger.log('runTheTask');
+
+            function runTask() {
+                var exec = require('child_process').exec;
+
+                function puts(error, stdout, stderr) {
+                    console.log(stdout)
                 }
-                return test.join('');
+                var cmdLine = 'grunt native -force -project=' + projectPath + '/build/dev' + ' -source=src -spec=spec';
+                console.log(cmdLine);
+                var child = exec(cmdLine, puts);
+                child.on('error', function (err) {
+                    console.log('child errd with: ' + err);
+                });
+                child.on('close',
+                    function (code) {
+                        console.log('child process "node runTask" exited with code ' + code);
+                        // get the data
+                        var json = grunt.file.readJSON(projectPath + '/build/dev/' + srcPath + '/module-stats.json');
+                        for (var index = 0; index < json.length; index++) {
+                            var module = json[index];
+                            if (superMap[module.name]) {
+                                superMap[module.name].count = superMap[module.name].count + module.count;
+                            } else {
+                                superMap[module.name] = module;
+                            }
+                        }
+                        // munge the data
+                        cb(projectPath);
+                    });
+                child.stdout.on('data', function (d) {
+                    console.log('child stdout: ' + d);
+                });
             }
-            test = input.split('-');
-            if (test.length > 1 && input.indexOf('-') > 0) {
-                for (var index = 0; index < test.length; index++) {
-                    test[index] = capitalize(test[index]);
+            runTask();
+        }
+        runTheTask(projectPath, srcPath);
+    }
+    grunt.registerTask('dependencies', function () {
+        var done = this.async();
+        var projectsCounter = 0;
+        var myBaseDirectory = '/Users/btremblay/src/';
+        var projectsToCheck = [
+            "galileo-action-block-editor",
+            "galileo-aloha-text-editor",
+            "galileo-artisanal-layout-editor",
+            "galileo-basic-image-editor",
+            "galileo-build-palette",
+            "galileo-button-editor",
+            "galileo-color-picker-palette",
+            "galileo-column-and-block-layout-editor",
+            "galileo-divider-editor",
+            "galileo-email-document-editor",
+            "galileo-email-footer-layout-editor",
+            "galileo-email-header-layout-editor",
+            "galileo-email-message-settings-editor",
+            "galileo-email-row-layout-editor",
+            "galileo-image-palette",
+            "galileo-rsvp-editor",
+            "galileo-social-button-editor",
+            "galileo-spacer-editor",
+            "galileo-web-content-editor"
+        ];
+
+        function nextBuild() {
+            if (projectsCounter < projectsToCheck.length) {
+                var project = myBaseDirectory + projectsToCheck[projectsCounter];
+                runBuild(project);
+                projectsCounter++;
+            } else {
+                var output = [];
+                var map = superMap;
+                for (var m in map) {
+                    if (map.hasOwnProperty(m)) {
+                        //console.log(m);
+                        var kind = '?';
+                        if (m.indexOf('-path/') !== -1) {
+                            kind = 'LOCAL';
+                        } else if (m.indexOf('/') === -1 || m.indexOf('plugins/') !== -1 || m.indexOf('uiBasePath') !== -1) {
+                            kind = 'COMMON';
+                        } else if (m.indexOf('galileo-lib') !== -1) {
+                            kind = 'ENGINE';
+                        } else if (m.indexOf('css!') !== -1) {
+                            kind = 'LOCAL-CSS';
+                        } else if (m.indexOf('text!') !== -1) {
+                            kind = 'LOCAL-TEMPLATE';
+                        } else if (m.indexOf('i18n!') !== -1) {
+                            kind = 'LOCAL-I18N';
+                        }
+                        if (kind === 'COMMON' || kind === 'ENGINE') {
+                            output.push({
+                                name: m,
+                                count: map[m].count,
+                                kind: kind
+                            });
+                        }
+                    }
                 }
-                return test.join('');
+                output = output.sort(function compare(a, b) {
+                    if (a.kind < b.kind) {
+                        return 1;
+                    } else if (a.kind > b.kind) {
+                        return -1;
+                    } else {
+                        if (a.count < b.count) {
+                            return 1;
+                        } else if (a.count > b.count) {
+                            return -1;
+                        }
+                    }
+                    return 0;
+                });
+                setWriteEnable(true);
+                writeFile('./module-stats.json', JSON.stringify(output, null, 2));
+                var buffer = [];
+                buffer.push("NAME" + ',' + "REFERENCES" + ',' + "LOCATION");
+                for (var index = 0; index < output.length; index++) {
+                    var record = output[index]
+                    buffer.push(record.name + ',' + record.count + ',' + record.kind);
+                }
+                writeFile('./module-stats' + '.csv', buffer.join('\n'));
+                grunt.file.write('./supermap.json', JSON.stringify(superMap, null, 2));
+                done();
             }
-            return capitalize(input);
         }
-        /**
-         * Capitalize.
-         * @param input
-         */
-        function capitalize(input) {
-            if (input == null) {
-                return '';
+
+        function runBuild(projectPath) {
+            logger.log('runBuild: ', projectPath);
+
+            function install() {
+                var exec = require('child_process').exec;
+
+                function puts(error, stdout, stderr) {
+                    logger.log(stdout)
+                }
+                var cmdLine = 'npm --prefix ' + projectPath + ' install';
+                console.log(cmdLine);
+                var child = exec(cmdLine, puts);
+                child.on('error', function (err) {
+                    console.error('child errd with: ' + err);
+                });
+                child.on('close',
+                    function (code) {
+                        logger.log('child process "npm install" exited with code ' + code);
+                        runTheBuild();
+                    });
+                child.stdout.on('data', function (d) {
+                    logger.log('child stdout: ' + d);
+                });
             }
-            input = input.split('');
-            if (input.length === 0) {
-                return '';
+
+            function runTheBuild() {
+                if (false) {
+                    var exec = require('child_process').exec;
+
+                    function puts(error, stdout, stderr) {
+                        logger.log(stdout)
+                    }
+                    var cmdLine = 'npm --prefix ' + projectPath + ' run dev-build';
+                    console.log(cmdLine);
+                    var child = exec(cmdLine, puts);
+                    child.on('error', function (err) {
+                        console.error('child errd with: ' + err);
+                    });
+                    child.on('close',
+                        function (code) {
+                            logger.log('child process "node runBuild" exited with code ' + code);
+                            getModuleDependencies(projectPath, 'src', function (path) {
+                                logger.log('getModuleDependencies DONE');
+                                nextBuild();
+                            });
+                        });
+                    child.stdout.on('data', function (d) {
+                        logger.log('child stdout: ' + d);
+                    });
+                } else {
+                    getModuleDependencies(projectPath, 'src', function (path) {
+                        logger.log('getModuleDependencies DONE');
+                        nextBuild();
+                    });
+                }
+
             }
-            input[0] = input[0].toUpperCase();
-            return input.join('');
+            //install();
+            runTheBuild();
         }
-        grunt.registerTask('hintfix', ['fixmyjs']);
-        grunt.registerTask('default', [
-            'beautify',
-            'prepForJsDoc',
-            'beautify',
-            'doc'
-        ]);
-        grunt.loadNpmTasks('grunt-fixmyjs');
-        grunt.loadNpmTasks('grunt-contrib-jshint');
-        grunt.loadNpmTasks('grunt-jsbeautifier');
-    };
+        nextBuild();
+    });
+};

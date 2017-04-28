@@ -1,0 +1,315 @@
+{
+  "results": {
+    "amdProc": {
+      "requires": [
+        "module"
+      ],
+      "usedAs": [
+        "module"
+      ],
+      "moduleName": "i18n",
+      "AMD": true,
+      "webPath": "",
+      "convertedName": "i18n",
+      "min": false,
+      "main": 0,
+      "uses_$": false,
+      "uses_Y": false,
+      "uses_alert": false,
+      "strict": true
+    }
+  },
+  "errors": {
+    "minFilter": [],
+    "jsBeautifyProc": [],
+    "exportAMDData": [],
+    "jsDoccerProc": [],
+    "jsDocNameFixerProc": [
+      {
+        "id": "(error)",
+        "raw": "jsDoc tag error.",
+        "code": "wfJD",
+        "evidence": "/*jslint regexp: true */",
+        "line": 0,
+        "character": 0,
+        "scope": "(main)",
+        "a": "",
+        "reason": "jsDoc tag error: Comment at top of file begins with /*, not /**."
+      }
+    ],
+    "fixClassDeclarationsProc": [],
+    "jsDoc3PrepProc": []
+  },
+  "outputDirectory": "test-output",
+  "path": "test-source/i18n.js",
+  "folderPath": "test-source",
+  "fileName": "i18n.js",
+  "modulePaths": {
+    "blue": "blue/js"
+  },
+  "packagePath": "",
+  "webPath": "",
+  "libFile": false,
+  "min": false,
+  "realName": "i18n",
+  "name": "i18n",
+  "camelName": "I18n",
+  "processedFilePath": "test-output/i18n.js",
+  "mappedModuleName": "i18n",
+  "couldParseOriginalSource": true,
+  "namedConstructors": {},
+  "checkForRequiresMismatch": true,
+  "preprocessed": true,
+  "NODEJS": false,
+  "ES6": false,
+  "moduleName": "i18n",
+  "inlineDeps": [],
+  "jsDoccerProcData": {
+    "lines": 132,
+    "requires": [
+      "module"
+    ],
+    "className": "n/a",
+    "packagePath": "",
+    "directoryPath": "/Users/btremblay/jsdoc-prep/test-source",
+    "uses_Y": false,
+    "no_lib": true,
+    "inferencedClassName": "n/a",
+    "uses_$": false,
+    "chars": 3960,
+    "uses_YUI": false,
+    "fields": [],
+    "moduleName": "./i18n",
+    "uses_console_log": false,
+    "uses_backbone": false,
+    "classes": {},
+    "methods": [
+      {
+        "name": "addPart",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 14,
+        "memberOf": "",
+        "doclet": "/**\n * @param locale  \n * @param master  \n * @param needed  \n * @param toLoad  \n * @param prefix  \n * @param suffix\n */",
+        "args": [
+          "locale",
+          "master",
+          "needed",
+          "toLoad",
+          "prefix",
+          "suffix"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function addPart(locale, master, needed, toLoad, prefix, suffix) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "locale"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "master"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "needed"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "toLoad"
+            },
+            {
+              "tag": "param",
+              "line": 5,
+              "lastLine": 5,
+              "textStartsOnSameLine": true,
+              "text": "prefix"
+            },
+            {
+              "tag": "param",
+              "line": 6,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "suffix\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "addIfExists",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 29,
+        "memberOf": "",
+        "doclet": "/**\n * @param req  \n * @param locale  \n * @param toLoad  \n * @param prefix  \n * @param suffix\n */",
+        "args": [
+          "req",
+          "locale",
+          "toLoad",
+          "prefix",
+          "suffix"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function addIfExists(req, locale, toLoad, prefix, suffix) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "req"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "locale"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "toLoad"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": 4,
+              "textStartsOnSameLine": true,
+              "text": "prefix"
+            },
+            {
+              "tag": "param",
+              "line": 5,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "suffix\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "mixin",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 40,
+        "memberOf": "",
+        "doclet": "/**\n * @param target  \n * @param source  \n * @param force\n */",
+        "args": [
+          "target",
+          "source",
+          "force"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "function mixin(target, source, force) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "target"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "source"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "force\n"
+            }
+          ]
+        }
+      },
+      {
+        "name": "load",
+        "visibility": "public",
+        "static": false,
+        "lineNumber": 65,
+        "memberOf": "",
+        "doclet": "/**\n * @param name  \n * @param req  \n * @param onLoad  \n * @param config\n */",
+        "args": [
+          "name",
+          "req",
+          "onLoad",
+          "config"
+        ],
+        "description": "",
+        "classDeclarationFlag": false,
+        "line": "load: function (name, req, onLoad, config) {",
+        "originalJsDocDescription": {
+          "params": [
+            {
+              "tag": "param",
+              "line": 1,
+              "lastLine": 1,
+              "textStartsOnSameLine": true,
+              "text": "name"
+            },
+            {
+              "tag": "param",
+              "line": 2,
+              "lastLine": 2,
+              "textStartsOnSameLine": true,
+              "text": "req"
+            },
+            {
+              "tag": "param",
+              "line": 3,
+              "lastLine": 3,
+              "textStartsOnSameLine": true,
+              "text": "onLoad"
+            },
+            {
+              "tag": "param",
+              "line": 4,
+              "lastLine": -1,
+              "textStartsOnSameLine": true,
+              "text": "config\n"
+            }
+          ]
+        }
+      }
+    ],
+    "is_module": true,
+    "uses_alert": false,
+    "uses_y_log": false,
+    "requiresRaw": [],
+    "basePath": "/Users/btremblay/jsdoc-prep/test-source",
+    "fileName": "i18n.js",
+    "strict": true,
+    "min": false,
+    "main": 0
+  },
+  "testStubs": "\n",
+  "couldParseProcessedSource": true,
+  "corrupted": false,
+  "numberOfLines": 132,
+  "EMPTY": false
+}

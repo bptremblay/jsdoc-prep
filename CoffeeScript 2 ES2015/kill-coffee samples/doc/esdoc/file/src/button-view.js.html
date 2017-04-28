@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/button-view.js | galileo-button-editor@1.11.4 API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.roving.com/ES/galileo-button-editor">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-editor-view.js~ButtonEditorView.html">ButtonEditorView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-editor.js~ButtonEditor.html">ButtonEditor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-model.js~ButtonModel.html">ButtonModel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/button-view.js~ButtonView.html">ButtonView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/editor-model.js~ButtonEditorModel.html">ButtonEditorModel</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/legacy-color-check.js~LegacyColorCheck.html">LegacyColorCheck</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/move-handle-view.js~MoveHandleView.html">MoveHandleView</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-legacyColorCheck">legacyColorCheck</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">nls</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-root">root</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/button-view.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @module button-view
+ * @requires underscore
+ * @requires button-editor-path/button-model
+ * @requires button-editor-path/move-handle-view
+ * @requires backbone
+ * @requires button-editor-path/lib/change-element-type.jquery
+ */
+import _ from &apos;underscore&apos;;
+import ButtonModel from &apos;button-editor-path/button-model&apos;;
+import MoveHandleView from &apos;button-editor-path/move-handle-view&apos;;
+import Backbone from &apos;backbone&apos;;
+import &apos;button-editor-path/lib/change-element-type.jquery&apos;;
+/**
+ * The key code tab.
+ * @constant Key code tab
+ * KEY_CODE_TAB
+ */
+const KEY_CODE_TAB = 9;
+/**
+ * The key code end.
+ * @constant Key code end
+ * KEY_CODE_END
+ */
+const KEY_CODE_END = 35;
+/**
+ * The key code home.
+ * @constant Key code home
+ * KEY_CODE_HOME
+ */
+const KEY_CODE_HOME = 36;
+/**
+ * The key code up.
+ * @constant Key code up
+ * KEY_CODE_UP
+ */
+const KEY_CODE_UP = 38;
+/**
+ * The key code down.
+ * @constant Key code down
+ * KEY_CODE_DOWN
+ */
+const KEY_CODE_DOWN = 40;
+/**
+ * The key code insert.
+ * @constant Key code insert
+ * KEY_CODE_INSERT
+ */
+const KEY_CODE_INSERT = 45;
+/**
+ * The key code b.
+ * @constant Key code b
+ * KEY_CODE_B
+ */
+const KEY_CODE_B = 66;
+/**
+ * The key code i.
+ * @constant Key code i
+ * KEY_CODE_I
+ */
+const KEY_CODE_I = 73;
+// Can&apos;t redefine module values, they are const!! # Can&apos;t redefine module values, they are const!! _ ?= window._
+/**
+ * stripHTML
+ */
+$.fn.stripHTML = function() {
+    return this.html(this.text());
+};
+/**
+ * The class ButtonView.
+ * @extends Backbone.View
+ */
+class ButtonView extends Backbone.View {
+    /**
+     * @constructor
+     * @memberOf module:button-view
+     * @param {...*} args
+     */
+    constructor(...args) {
+            // Moved super() up here!
+            super(...args);
+            this.onKeyDown = this.onKeyDown.bind(this);
+            this.saveText = this.saveText.bind(this);
+            this.update = this.update.bind(this);
+            this.highlightBlock = this.highlightBlock.bind(this);
+            // NOT HERE       super(...args);
+        }
+        /**
+         * initClass
+         */
+    static initClass() {
+            this.prototype.events = {
+                &apos;focusout&apos;: &apos;deactivate&apos;
+            };
+        }
+        /**
+         * @param params
+         * initialize
+         */
+    initialize(params) {
+            this.editor = params.editor;
+            this.contentMovable = params.contentMovable;
+            this.descriptorProviderFn = params.descriptorProviderFn;
+            this.listenTo(this.model, &apos;change&apos;, this.update);
+            return this.listenTo(this.editor.events, &apos;highlight-block&apos;, this.highlightBlock);
+        }
+        /**
+         * deactivate
+         */
+    deactivate() {
+            if (this.editableContent().length === 0) {
+                return this.editableContent(ButtonModel.prototype.defaults.text);
+            }
+        }
+        /**
+         * @param e
+         * onPossibleTextChange
+         */
+    onPossibleTextChange(e) {
+            if (e.type === &apos;paste&apos;) {
+                return $(e.target).stripHTML();
+            }
+        }
+        /**
+         * @param e
+         * onKeyDown
+         */
+    onKeyDown(e) {
+            /**
+             * The is meta key.
+             * @constant Is meta key
+             * isMetaKey
+             */
+            const isMetaKey = keyCode =&gt; [
+                KEY_CODE_TAB,
+                KEY_CODE_END,
+                KEY_CODE_HOME,
+                KEY_CODE_UP,
+                KEY_CODE_DOWN,
+                KEY_CODE_INSERT
+            ].includes(keyCode);
+            this.preventSystemFormatting(e);
+            if (this.isBoldAccelerator(e)) {
+                this.model.toggleBold();
+                return this.findTextContainer().focus();
+            } else if (this.isItalicAccelerator(e)) {
+                this.model.toggleItalic();
+                return this.findTextContainer().focus();
+            } else if (isMetaKey(e.keyCode)) {
+                e.preventDefault();
+                e.returnValue = false; // Thanks, IE
+                return false;
+            }
+        }
+        /**
+         * Returns true if is bold accelerator.
+         * @param e
+         * @return {Object} boolean
+         * isBoldAccelerator
+         */
+    isBoldAccelerator(e) {
+            return this.isAccelerator(e) &amp;&amp; (e.keyCode === KEY_CODE_B);
+        }
+        /**
+         * Returns true if is italic accelerator.
+         * @param e
+         * @return {Object} boolean
+         * isItalicAccelerator
+         */
+    isItalicAccelerator(e) {
+            return this.isAccelerator(e) &amp;&amp; (e.keyCode === KEY_CODE_I);
+        }
+        /**
+         * Returns true if is accelerator.
+         * @param e
+         * @return {Object} boolean
+         * isAccelerator
+         */
+    isAccelerator(e) {
+            return e.ctrlKey || e.metaKey;
+        }
+        // The system bold and italic functions only operate on the
+        // selected text, similar to how the text editor works. In the case
+        // of button, we want the formatting to apply across the entire button text.
+        /**
+         * @param e
+         * preventSystemFormatting
+         */
+    preventSystemFormatting(e) {
+            if (this.isBoldAccelerator(e) || this.isItalicAccelerator(e)) {
+                return e.preventDefault();
+            }
+        }
+        /**
+         * saveText
+         */
+    saveText() {
+            /**
+             * The new text.
+             * @constant New text
+             * newText
+             */
+            const newText = this.editableContent();
+            if (newText !== this.model.text()) {
+                return this.model.text(newText);
+            }
+        }
+        /**
+         * @param val
+         * editableContent
+         */
+    editableContent(val) {
+            if (val != null) {
+                return this.findTextContainer().text(val);
+            } else {
+                return this.findTextContainer().text();
+            }
+        }
+        /**
+         * @param model
+         * @param options
+         * update
+         */
+    update(model, options) {
+            /**
+             * The ?.
+             * @constant ?
+             */
+            const {
+                changed
+            } = this.model;
+            if (__guard__(options, x =&gt; x.changedByGalileo) ||
+                (changed.text == null)) {
+                return this.render();
+            }
+        }
+        /**
+         * @return {Object} ThisExpression
+         * render
+         */
+    render() {
+            /**
+             * The json.
+             * @constant Json
+             */
+            const json = this.model.toJSON();
+            /**
+             * The button text.
+             * @constant Button text
+             * buttonText
+             */
+            const buttonText = _.escape(json.text).trim();
+            this.$el.css({
+                &apos;background-color&apos;: this.model.getBackgroundColor()
+            });
+            this.$el.parent().attr(&apos;align&apos;, json.alignment);
+            /**
+             * The text style object.
+             * @constant Text style object
+             * textStyleObject
+             */
+            const textStyleObject = {};
+            /**
+             * The $text container.
+             * @constant $text container
+             * $textContainer
+             */
+            const $textContainer = this.findTextContainer();
+            textStyleObject[&apos;color&apos;] = json.fontColor;
+            textStyleObject[&apos;font-size&apos;] = json.fontSize ? `${json.fontSize}px` : &apos;&apos;;
+            textStyleObject[&apos;font-family&apos;] = json.fontFamily;
+            textStyleObject[&apos;font-weight&apos;] = json.fontWeight;
+            textStyleObject[&apos;font-style&apos;] = json.fontStyle;
+            $textContainer.html(buttonText)
+                .css(textStyleObject)
+                .attr({
+                    &apos;contentEditable&apos;: &apos;true&apos;,
+                    &apos;data-original-href&apos;: json.link
+                })
+                .changeElementType(&apos;div&apos;) // NOTE: returns a new, distinct JQuery selector object!
+                .on(&apos;keydown&apos;, this.onKeyDown)
+                .on(&apos;keydown paste blur&apos;, (_.debounce(this.onPossibleTextChange, 100)))
+                .on(&apos;keydown paste blur&apos;, (_.debounce(this.saveText, 1000)));
+            if (this.contentMovable &amp;&amp; _.isFunction(this.descriptorProviderFn)) {
+                /**
+                 * The move handle.
+                 * @constant Move handle
+                 * moveHandle
+                 */
+                const moveHandle = new MoveHandleView({
+                    descriptorProviderFn: this.descriptorProviderFn,
+                    $elToGhost: this.$el
+                });
+                this.$(&apos;td&apos;).append(moveHandle.render().$el);
+            }
+            return this;
+        }
+        /**
+         * @param $textContainer
+         * @return {Object} AssignmentExpression
+         * getCalculatedCssProperties
+         */
+    getCalculatedCssProperties($textContainer) {
+            /**
+             * The properties.
+             */
+            let properties;
+            if ($textContainer == null) {
+                $textContainer = this.findTextContainer();
+            }
+            return properties = {
+                fontColor: $textContainer.css(&apos;color&apos;),
+                fontSize: $textContainer.css(&apos;font-size&apos;),
+                fontFamily: $textContainer.css(&apos;font-family&apos;),
+                backgroundColor: this.$el.css(&apos;background-color&apos;)
+            };
+        }
+        /**
+         * findTextContainer
+         */
+    findTextContainer() {
+            return this.$(&apos;.MainTextFullWidth &gt; a, .MainTextFullWidth &gt; div&apos;);
+        }
+        // A way that wouldn&apos;t depend on how the markup is written but doesn&apos;t
+        // seem to work in some situations:
+        // textNodeFilter = -&gt; @nodeType is 3
+        // @$el.contents().filter(textNodeFilter).parent()
+        /**
+         * @param toggle
+         * highlightBlock
+         */
+    highlightBlock(toggle) {
+            return this.$el.toggleClass(&apos;delete-hover&apos;, toggle);
+        }
+        /**
+         * publishHTML
+         */
+    publishHTML() {
+        return this.el.outerHTML;
+    }
+}
+ButtonView.initClass();
+// Added explicit return to exports at EOF:
+export default ButtonView;
+/**
+ * @private
+ * @param value
+ * @param transform
+ * @return {Object} ConditionalExpression
+ * __guard__
+ */
+function __guard__(value, transform) {
+    return (typeof value !== &apos;undefined&apos; &amp;&amp; value !== null) ? transform(value) : undefined;
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
