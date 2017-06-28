@@ -4,6 +4,7 @@
 module.exports = function (grunt) {
     'use strict';
     var scanPath = null;
+    var projectRoot = null;
     var logger = require('./lib/logger');
     var readFile = require('./lib/singleFileProcessor').readFile;
     var writeFile = require('./lib/singleFileProcessor').writeFile;
@@ -14,6 +15,9 @@ module.exports = function (grunt) {
             var done = this.async();
             var config = grunt.config('prepForJsDoc');
             scanPath = config.options.scanPath;
+            projectRoot = config.options.scanPath;
+          //  console.log(projectRoot);
+ // dkkdl()
             var args = this.args;
             if (args.length > 0) {
                 config = config[args[0]];
@@ -35,18 +39,21 @@ module.exports = function (grunt) {
                 'minFilter',
                 'jsBeautifyProc',
                 'libFilesFilter',
+                'stripCommentsProc',
                 'amdProc',
                 'exportAMDData',
                 //                'convertCommentsProc',
                 'jsDoccerProc',
                 'esLintFixProc',
-                //'fixES6ModulesProc',
+                'fixES6ModulesProc',
                 //                'fixDecaffeinateProc',
-                'generateJavaProc',
+                //'generateJavaProc',
+
+                'generateTestProc',
                 'esLintFixProc',
 
-                'jsDocNameFixerProc',
-                'fixClassDeclarationsProc',
+                //'jsDocNameFixerProc',
+                //'fixClassDeclarationsProc',
                 'jsDoc3PrepProc',
                 'jsBeautifyProc'
             ];
@@ -62,7 +69,8 @@ module.exports = function (grunt) {
                 writeDocPath: docPath,
                 writeResultsPath: resultsPath,
                 writeEnable: true,
-                processingChain: processingChain
+                processingChain: processingChain,
+                projectRoot: projectRoot
             };
 //            var options = {
 //                sourceFile: sourceFile,
@@ -80,7 +88,8 @@ module.exports = function (grunt) {
                 writeDocPath: docPath,
                 writeResultsPath: resultsPath,
                 writeEnable: opts.writeEnable,
-                processingChain: opts.processingChain
+                processingChain: opts.processingChain,
+                projectRoot: projectRoot
             });
         } catch (ex) {
             logger.error(ex.stack);

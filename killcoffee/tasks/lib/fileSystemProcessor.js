@@ -32,6 +32,7 @@ var allSource = '';
 var totalFiles = [];
 var modulePaths = {};
 var emptyFiles = [];
+var projectRoot = '';
 /**
  * Filter files.
  *
@@ -134,7 +135,7 @@ function __nextFile() {
           cb(resultsBlock);
         }
       }
-    }, WRITE_NEW_FILES);
+    }, WRITE_NEW_FILES, projectRoot);
 }
 var queue = [];
 var results = [];
@@ -249,6 +250,7 @@ function run(options) {
   WRITE_NEW_FILES = options.writeEnable;
   processingChain = getProcs(options.processingChain);
   console.log('scanning source directory: ' + SCAN_PATH);
+  projectRoot = options.projectRoot;
   var files = _wrench.readdirSyncRecursive(SCAN_PATH);
   files = filterFiles(files, ['.*', '.DS_Store',
     /** ,}',. */

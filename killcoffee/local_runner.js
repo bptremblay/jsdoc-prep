@@ -147,61 +147,68 @@ function healthCheckCallback(healthCheckResults) {
   }
   runJsDoc(projectPath + '/test-output');
 }
-//'jsDoc3PrepProc',
+
+
 var processingChain = [
-  // 'trimProc',
-  // 'thirdPartyFilter',
   'minFilter',
-  // 'badCharactersProc',
-  // 'trimProc',
-  // 'amdFilter',
-  //                     'jsBeautifyProc',
-  //'JSONFilter',
   'jsBeautifyProc',
   'stripCommentsProc',
-  // 'fixMyJsProc',
-  //'splitModulesProc',
   'amdProc',
-  'exportAMDData',
   'jsDoccerProc',
   'esLintFixProc',
-  //   'fixES6ModulesProc',
-  //    'fixDecaffeinateProc',
-  //    'esLintFixProc',
+  // fixES6ModulesProc adds @requires and @module jsDoc annotations
+  'fixES6ModulesProc',
+  'exportAMDData', // where to put this???
+  'esLintFixProc',
   'jsDocNameFixerProc',
   'fixClassDeclarationsProc',
   'jsDoc3PrepProc',
-  'jsBeautifyProc'
-  //'generateJavaProc'
+  'esLintFixProc',
+  'esNextProc',
+  'jsBeautifyProc',
+  'generateJavaProc',
+  'generateTestProc'
 ];
-//console.log(processingChain);
-//var processingChain = [
-//// 'trimProc',
-//'thirdPartyFilter',
-//'minFilter',
-//'badCharactersProc',
-////'trimProc',
-//'amdFilter',
-//'jsBeautifyProc',
-//'amdProc',
-//'jsDoccerProc',
-//'jsBeautifyProc'
-//];
+
+var modulePathChain = [
+  // 'thirdPartyFilter',
+  'minFilter',
+  //'jsBeautifyProc',
+  //'amdProc',
+  'fixExportPathsProc'
+];
+
+function fixExportPathsCallback() {
+  opts.callBack = healthCheckCallback;
+  opts.processingChain = modulePathChain;
+  healthCheck.run({
+    modulePaths: opts.modulePaths,
+    callBack: opts.callBack,
+    scanPath: outPath,
+    writePath: outPath,
+    writeTestPath: testPath,
+    writeDocPath: docPath,
+    writeResultsPath: resultsPath,
+    writeEnable: opts.writeEnable,
+    processingChain: opts.processingChain
+  });
+}
+
 var opts = {
-  callBack: healthCheckCallback,
-  scanPath: scanPath,
-  writePath: outPath,
-  writeTestPath: testPath,
-  writeDocPath: docPath,
-  writeResultsPath: resultsPath,
-  writeEnable: true,
-  processingChain: processingChain,
-  modulePaths: {
-    // 'blue': 'blue/js'
-  }
+    callBack: fixExportPathsCallback,
+    scanPath: scanPath,
+    writePath: outPath,
+    writeTestPath: testPath,
+    writeDocPath: docPath,
+    writeResultsPath: resultsPath,
+    writeEnable: true,
+    processingChain: processingChain,
+    modulePaths: {
+        // 'blue': 'blue/js'
+    }
 };
-//console.log(cwd);
-//console.log(projectPath);
+
+
 var justDoc = false;
 if (justDoc) {
   healthCheckCallback({});
@@ -217,7 +224,8 @@ if (justDoc) {
       writeDocPath: docPath,
       writeResultsPath: resultsPath,
       writeEnable: opts.writeEnable,
-      processingChain: opts.processingChain
+      processingChain: opts.processingChain,
+      projectRoot: opts.scanPath
     });
   });
 }

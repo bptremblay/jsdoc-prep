@@ -11,7 +11,7 @@ module.exports = function (grunt) {
   var rollupModuleData = require('./lib/rollupModuleData').rollupModuleData;
   var decafErrorCount = 0;
   var projectPath = '';
-  var FIX_COFFEE_CONSTRUCTOR_ORDER = false;
+  var FIX_COFFEE_CONSTRUCTOR_ORDER = true;
   logger.setGrunt(grunt);
   grunt.todoList = [];
   grunt.coffeeScriptLines = 0;
@@ -296,7 +296,7 @@ module.exports = function (grunt) {
          * @param code
          */
         child.on('close', function (code) {
-          logger.log('convertCoffee', 4);
+          logger.log('convertCoffee', 4, saveErr);
           if (code !== 0 || saveErr) {
             // check to see if
             // "Cannot automatically convert a subclass that uses bound methods."
@@ -324,6 +324,7 @@ module.exports = function (grunt) {
           prebeautify(newFile + '.decaf.js', moduleClassName, amdData.export);
         });
         child.on('error', function (code) {
+          //console.log(arguments);
           logger.log('decaffeinate process errored with code ' + code + ', ' + saveErr);
         });
       };
@@ -440,8 +441,9 @@ module.exports = function (grunt) {
           //                    'convertCommentsProc',
           'jsDoccerProc',
           'esLintFixProc',
-          'fixES6ModulesProc',
+          //'fixES6ModulesProc',
           'fixDecaffeinateProc',
+          'generateTestProc',
           'esLintFixProc',
           'jsDocNameFixerProc',
           'fixClassDeclarationsProc',
@@ -537,8 +539,7 @@ module.exports = function (grunt) {
       });
       if (coffeeFiles.length === 0 && !DELETE_COFFEE_FILES) {
         logger.log('No *.coffee files were found.');
-      }
-      else{
+      } else {
         logger.log('About to TRY to decaffeinate ' + coffeeFiles.length + ' files.');
       }
       decafErrorCount = 0;
